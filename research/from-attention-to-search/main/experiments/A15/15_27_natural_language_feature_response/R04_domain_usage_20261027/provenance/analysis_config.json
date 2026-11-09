@@ -1,0 +1,123 @@
+{
+  "seed": 20261028,
+  "roles": "shared,math_biased,bio_biased;human-domain-referenced candidates,not unsupervised clusters",
+  "dicts": [
+    "SAE",
+    "CC"
+  ],
+  "candidate_cap_shared": 32,
+  "candidate_cap_biased_combined": 32,
+  "min_even_k": 8,
+  "shared": {
+    "support_docs_per_domain": 5,
+    "min_rate_each": 0.005,
+    "strict_ratio": [
+      0.5,
+      2
+    ],
+    "ranking": "descending min(pM,pB),then featureID"
+  },
+  "biased": {
+    "support_docs_dominant": 5,
+    "min_rate_dominant": 0.005,
+    "ratio_at_least": 2,
+    "ranking": "descending Jeffreys(smoothed dominant hits+.5)/(other hits+.5),then featureID"
+  },
+  "equal_k": "largest even<=32 available shared,2*min(math,bio);if<8 descriptive only;no heldout reselection",
+  "contribution": "SAE:z*decoder_column_norm; CC:shared_z*decoder27_norm*TRAIN_RMS27 in residual-post units",
+  "normalization": "token contribution RMS includingzeros from experiment1 discovery160tokenwindows;keep rawz and nativecontribution separately",
+  "classifier": {
+    "standardizer_fit": "discovery only;zero variance zero",
+    "model": "L2 logistic regression C=1,lbfgs,max_iter1000,tol1e-6",
+    "features": "doc mean native contribution of fixed k",
+    "fit_split": "discovery",
+    "development": "implementation check,no tuning",
+    "heldout": "one frozen evaluation",
+    "token_ID_bag_baseline": "counts;L2 logistic C1,discovery standardizer,no new forward"
+  },
+  "random_sets": {
+    "n": 20,
+    "match": "discovery pooled hitrate quartiles x document-support tertiles",
+    "bin": "leftclosed rightopen except lastclosed;tied values not split",
+    "exclude": "tested group only,not force candidate retention",
+    "insufficient": "NA,no arbitrary bin relaxation",
+    "set_sampling": "without replacement within set;between-set repeats permitted"
+  },
+  "permutations": {
+    "n": 1000,
+    "within_each_original_split_preserve_class_counts": true,
+    "redo_selection_and_classifier": true,
+    "insufficient_original_k": "BA=.5;record draw failure",
+    "p": "upper tail(1+#null>=observed)/1001",
+    "BH": "two role probes within each dictionary;report four-test pooled correction descriptively also"
+  },
+  "bootstrap": {
+    "n": 2000,
+    "experiment1": "stratified independent documents within domain,fixed predictions and labels;ratio resample docs",
+    "reference": "source document windows",
+    "experiment2": "basic families"
+  },
+  "probe_operational_support": "BA>=.65 and document bootstrap lower>.5 and BHq<.05;matched random advantage reported separately",
+  "context": {
+    "families": 12,
+    "discovery": 6,
+    "heldout": 6,
+    "prefixes": 72,
+    "direction": "s_i=sign(discovery family/wording mean(xM-xB));zero remainszero",
+    "D": "mean_i mean_wording s_i*(xM-xB)",
+    "U": "mean_i (abs(xMU-xM1)+abs(xBU-xB1))/2",
+    "E": "D-U",
+    "test": "enumerate64family signflips,one-sided meanE>=observed,tiesincluded;symmetryaboutzero assumption",
+    "BH": "two groups per dictionary;pooled4 correction descriptive",
+    "support": "bothwording mean directedD>0;familybootstrapE lower>0;BHq<.05;report sparse support and eachfamily"
+  },
+  "reference": {
+    "asset": "dclm_raw_holdout_global02",
+    "windows": 256,
+    "length": 256,
+    "activation": "native z>0",
+    "low_support_hits_lt": 20,
+    "frequency": "counts/65536positions;DCLMfinite reference only",
+    "selection": "seededhashrank source document ID;full experimental document+token5shingle Jaccard>=.8 exclusion",
+    "uncertainty": "document-window bootstrap;zero support nonparametric interval degenerates,report0 hits and 95% zero-hit document upper bound,not zero truefrequency"
+  },
+  "reconstruction_gates": {
+    "SAE_mean": 0.15,
+    "SAE_p90": 0.3,
+    "CC_alllayer_mean": 0.3,
+    "CC_alllayer_p90": 0.5,
+    "replay_relative_z_l2": 0.02,
+    "support_jaccard": 0.95,
+    "causal_prefix_h_relative": 0.01
+  },
+  "budget": {
+    "check_and_replay": 8,
+    "documents": 120,
+    "reference": 256,
+    "context": 72,
+    "planned": 456,
+    "cap": 512,
+    "reserve": 56,
+    "count": "one actual Base input sequence,including attempts;singleforward capturesboth native hooks;dictionary coding offline not LLMforward"
+  },
+  "no_new_model_or_dictionary_training": true,
+  "sealed_TEST": false,
+  "source_boundaries": [
+    "realweb192tokenfragmentsmayendmid-sentence",
+    "math/bio genres45expo15QA matched;concretehosts/topicmixstilldifferent",
+    "rawDCLMsourcepreviouslyused;currentheldoutnotproof corpus-unseen",
+    "neutral preamble compensatescontextwordinglength;not pureconcept or distancecausal contrast",
+    "E16hookdifferentfromCC;noarchitecture-qualitycomparison"
+  ],
+  "illustrative_feature_ids": {
+    "SAE": [
+      1818,
+      1205
+    ],
+    "CC": [
+      12277,
+      5409
+    ]
+  },
+  "preselection_examples": "IDs only explain z>0 and z*norm,not newactivationclaim or mandated newcandidates"
+}

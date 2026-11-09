@@ -1,0 +1,59 @@
+{
+  "T_depth": {
+    "ci_high": 1.1890594758105761,
+    "ci_low": 0.33267599311088536,
+    "estimate": 0.4513785047941743
+  },
+  "block36_R": 0.6094801294713099,
+  "bootstrap_draws": 2000,
+  "capability_pass": true,
+  "depth_clause_pass": true,
+  "design_late_delta_middle_e": 0.04085721444620912,
+  "design_late_delta_tail_e": 0.03370310187154727,
+  "elapsed_seconds": 94.01797270774841,
+  "embedding_site_0_status": "not_contextualized_na",
+  "energy_pass": true,
+  "half_basis_middle_positive": true,
+  "half_basis_tail_positive": true,
+  "head_argmax_fraction_layers_1_35": {
+    "coarse": 1.0,
+    "fine": 1.0
+  },
+  "head_dominance_pass": true,
+  "heldout_label_permutation_draws": 5000,
+  "late_delta_middle_e": {
+    "ci_high": 0.05624092445341507,
+    "ci_low": -0.004197877419432852,
+    "estimate": 0.03472182441024829
+  },
+  "late_delta_tail_e": {
+    "ci_high": 0.10242744035613692,
+    "ci_low": -0.011767633786061882,
+    "estimate": 0.0359328542358039
+  },
+  "leave_one_parent_T_depth": [
+    0.22523952763805188,
+    0.40566054966456616,
+    0.4767266804025504,
+    0.4184606510166011,
+    0.5567041587869748,
+    0.5301585138433005,
+    0.33210020576610855,
+    0.5834850265414507
+  ],
+  "middle_enrichment_pass": false,
+  "nuisance_residual_late_delta_middle_e": 0.03473627561387201,
+  "nuisance_residual_late_delta_tail_e": 0.03176530262670965,
+  "probe_relative_depth_gain": 0.033203125,
+  "random_subspace_draws": 256,
+  "random_subspace_late_log_ratio_q95": 0.061658214777708054,
+  "spectral_clause_pass": false,
+  "tail_enrichment_pass": false,
+  "template_T_depth": [
+    0.5293806379295638,
+    0.008937110063619136,
+    0.255091754133166,
+    0.684326785231331
+  ],
+  "typed_verdict": "depth_pass_spectral_fail"
+}

@@ -1,0 +1,1277 @@
+{
+  "schema": "R02_text_qualification_v1",
+  "status": "PASS",
+  "processing_agent": "/root/text_panel_r02",
+  "model_forwards": 0,
+  "SAE_calls": 0,
+  "n_cases": 12,
+  "n_sequences": 120,
+  "variant_counts": {
+    "main": 96,
+    "position_control": 12,
+    "unrelated": 12
+  },
+  "relation_counts": {
+    "word_sense_selection": 6,
+    "person_attribute_binding": 6
+  },
+  "max_token_count": 139,
+  "min_token_count": 112,
+  "source_groups": 12,
+  "target_token_ids_by_relation": {
+    "word_sense_selection": [
+      21529
+    ],
+    "person_attribute_binding": [
+      374
+    ]
+  },
+  "short_distance_tokens": [
+    6,
+    7
+  ],
+  "long_distance_tokens": [
+    48,
+    49
+  ],
+  "final_position_and_token_length_matched_all_versions": true,
+  "checkpoint_positions_matched_across_four_combinations": true,
+  "near_far_checkpoint1_and_checkpoint2_absolute_positions": "DIFFER; analyze checkpoint type separately; only final is same-position near/far",
+  "position_without_new_relevant_clue": "after_cue2 to final in every main sequence; also checkpoint1->checkpoint2 in matched neutral-cue2 control",
+  "new_relevant_clue_at_matched_position": "11_short vs 11_short_position_control has identical checkpoint2/final positions",
+  "Q3_qualification_boundary": "Only a planned comparison can adjudicate integration: nonadditivity alone is insufficient. Checkpoint step lengths differ; combine same-position cue2 controls and output compatibility, with cross-case/wording replication. No universal semantic height is defined.",
+  "R01_overlap": {
+    "template_family": [],
+    "source_group": [],
+    "entity_group": [],
+    "entities": []
+  },
+  "text_sha256": "a172212a9f7840ca63a8e84324a5ba01dde129083e80b8ddaae196713eb3e203",
+  "qualified_cases_sha256": "a9299c6a158e16c380bb9812f00d2fa9c47086f94c3e06677b3569d58e72bdce",
+  "details": [
+    {
+      "case_id": "B01",
+      "relation_type": "word_sense_selection",
+      "tokens": 112,
+      "target_token_id": 21529,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 432,
+          "char_end": 436,
+          "target_text": "bass",
+          "token_index": 90,
+          "token_id": 21529,
+          "prefix_end_char": 436,
+          "local_prefix": "bes a musical instrument. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 505,
+          "char_end": 509,
+          "target_text": "bass",
+          "token_index": 106,
+          "token_id": 21529,
+          "prefix_end_char": 509,
+          "local_prefix": "refers to the first card. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 525,
+          "char_end": 529,
+          "target_text": "bass",
+          "token_index": 111,
+          "token_id": 21529,
+          "prefix_end_char": 529,
+          "local_prefix": "card. The bass was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 223,
+          "char_end": 227,
+          "target_text": "bass",
+          "token_index": 48,
+          "token_id": 21529,
+          "prefix_end_char": 227,
+          "local_prefix": "bes a musical instrument. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 296,
+          "char_end": 300,
+          "target_text": "bass",
+          "token_index": 64,
+          "token_id": 21529,
+          "prefix_end_char": 300,
+          "local_prefix": "refers to the first card. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 525,
+          "char_end": 529,
+          "target_text": "bass",
+          "token_index": 111,
+          "token_id": 21529,
+          "prefix_end_char": 529,
+          "local_prefix": "the paper size was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 6,
+      "long_gap": 48,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "B02",
+      "relation_type": "word_sense_selection",
+      "tokens": 112,
+      "target_token_id": 21529,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 483,
+          "char_end": 487,
+          "target_text": "bass",
+          "token_index": 92,
+          "token_id": 21529,
+          "prefix_end_char": 487,
+          "local_prefix": "strument with deep notes. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 561,
+          "char_end": 565,
+          "target_text": "bass",
+          "token_index": 106,
+          "token_id": 21529,
+          "prefix_end_char": 565,
+          "local_prefix": "cts the first photograph. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 581,
+          "char_end": 585,
+          "target_text": "bass",
+          "token_index": 111,
+          "token_id": 21529,
+          "prefix_end_char": 585,
+          "local_prefix": "raph. The bass was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 274,
+          "char_end": 278,
+          "target_text": "bass",
+          "token_index": 50,
+          "token_id": 21529,
+          "prefix_end_char": 278,
+          "local_prefix": "strument with deep notes. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 352,
+          "char_end": 356,
+          "target_text": "bass",
+          "token_index": 64,
+          "token_id": 21529,
+          "prefix_end_char": 356,
+          "local_prefix": "cts the first photograph. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 581,
+          "char_end": 585,
+          "target_text": "bass",
+          "token_index": 111,
+          "token_id": 21529,
+          "prefix_end_char": 585,
+          "local_prefix": "the paper size was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 6,
+      "long_gap": 48,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "B03",
+      "relation_type": "word_sense_selection",
+      "tokens": 121,
+      "target_token_id": 21529,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 499,
+          "char_end": 503,
+          "target_text": "bass",
+          "token_index": 99,
+          "token_id": 21529,
+          "prefix_end_char": 503,
+          "local_prefix": " that produces low notes. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 578,
+          "char_end": 582,
+          "target_text": "bass",
+          "token_index": 115,
+          "token_id": 21529,
+          "prefix_end_char": 582,
+          "local_prefix": "oints to the first entry. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 598,
+          "char_end": 602,
+          "target_text": "bass",
+          "token_index": 120,
+          "token_id": 21529,
+          "prefix_end_char": 602,
+          "local_prefix": "ntry. The bass was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 290,
+          "char_end": 294,
+          "target_text": "bass",
+          "token_index": 57,
+          "token_id": 21529,
+          "prefix_end_char": 294,
+          "local_prefix": " that produces low notes. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 369,
+          "char_end": 373,
+          "target_text": "bass",
+          "token_index": 73,
+          "token_id": 21529,
+          "prefix_end_char": 373,
+          "local_prefix": "oints to the first entry. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 598,
+          "char_end": 602,
+          "target_text": "bass",
+          "token_index": 120,
+          "token_id": 21529,
+          "prefix_end_char": 602,
+          "local_prefix": "the paper size was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 6,
+      "long_gap": 48,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "B04",
+      "relation_type": "word_sense_selection",
+      "tokens": 114,
+      "target_token_id": 21529,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 462,
+          "char_end": 466,
+          "target_text": "bass",
+          "token_index": 93,
+          "token_id": 21529,
+          "prefix_end_char": 466,
+          "local_prefix": "out a musical instrument. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 536,
+          "char_end": 540,
+          "target_text": "bass",
+          "token_index": 108,
+          "token_id": 21529,
+          "prefix_end_char": 540,
+          "local_prefix": "summarize the first note. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 556,
+          "char_end": 560,
+          "target_text": "bass",
+          "token_index": 113,
+          "token_id": 21529,
+          "prefix_end_char": 560,
+          "local_prefix": "note. The bass was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 253,
+          "char_end": 257,
+          "target_text": "bass",
+          "token_index": 51,
+          "token_id": 21529,
+          "prefix_end_char": 257,
+          "local_prefix": "out a musical instrument. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 327,
+          "char_end": 331,
+          "target_text": "bass",
+          "token_index": 66,
+          "token_id": 21529,
+          "prefix_end_char": 331,
+          "local_prefix": "summarize the first note. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 556,
+          "char_end": 560,
+          "target_text": "bass",
+          "token_index": 113,
+          "token_id": 21529,
+          "prefix_end_char": 560,
+          "local_prefix": "the paper size was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 6,
+      "long_gap": 48,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "B05",
+      "relation_type": "word_sense_selection",
+      "tokens": 115,
+      "target_token_id": 21529,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 482,
+          "char_end": 486,
+          "target_text": "bass",
+          "token_index": 95,
+          "token_id": 21529,
+          "prefix_end_char": 486,
+          "local_prefix": " instrument with strings. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 549,
+          "char_end": 553,
+          "target_text": "bass",
+          "token_index": 109,
+          "token_id": 21529,
+          "prefix_end_char": 553,
+          "local_prefix": " chooses the first label. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 569,
+          "char_end": 573,
+          "target_text": "bass",
+          "token_index": 114,
+          "token_id": 21529,
+          "prefix_end_char": 573,
+          "local_prefix": "abel. The bass was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 273,
+          "char_end": 277,
+          "target_text": "bass",
+          "token_index": 53,
+          "token_id": 21529,
+          "prefix_end_char": 277,
+          "local_prefix": " instrument with strings. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 340,
+          "char_end": 344,
+          "target_text": "bass",
+          "token_index": 67,
+          "token_id": 21529,
+          "prefix_end_char": 344,
+          "local_prefix": " chooses the first label. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 569,
+          "char_end": 573,
+          "target_text": "bass",
+          "token_index": 114,
+          "token_id": 21529,
+          "prefix_end_char": 573,
+          "local_prefix": "the paper size was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 6,
+      "long_gap": 48,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "B06",
+      "relation_type": "word_sense_selection",
+      "tokens": 112,
+      "target_token_id": 21529,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 470,
+          "char_end": 474,
+          "target_text": "bass",
+          "token_index": 92,
+          "token_id": 21529,
+          "prefix_end_char": 474,
+          "local_prefix": "lucked string instrument. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 545,
+          "char_end": 549,
+          "target_text": "bass",
+          "token_index": 106,
+          "token_id": 21529,
+          "prefix_end_char": 549,
+          "local_prefix": "ncerns the first passage. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 565,
+          "char_end": 569,
+          "target_text": "bass",
+          "token_index": 111,
+          "token_id": 21529,
+          "prefix_end_char": 569,
+          "local_prefix": "sage. The bass was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 261,
+          "char_end": 265,
+          "target_text": "bass",
+          "token_index": 50,
+          "token_id": 21529,
+          "prefix_end_char": 265,
+          "local_prefix": "lucked string instrument. The bass",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 336,
+          "char_end": 340,
+          "target_text": "bass",
+          "token_index": 64,
+          "token_id": 21529,
+          "prefix_end_char": 340,
+          "local_prefix": "ncerns the first passage. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 565,
+          "char_end": 569,
+          "target_text": "bass",
+          "token_index": 111,
+          "token_id": 21529,
+          "prefix_end_char": 569,
+          "local_prefix": "the paper size was noted. The bass",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 6,
+      "long_gap": 48,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "P01",
+      "relation_type": "person_attribute_binding",
+      "tokens": 137,
+      "target_token_id": 374,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 518,
+          "char_end": 520,
+          "target_text": "is",
+          "token_index": 117,
+          "token_id": 374,
+          "prefix_end_char": 520,
+          "local_prefix": "works as a doctor. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 580,
+          "char_end": 582,
+          "target_text": "is",
+          "token_index": 131,
+          "token_id": 374,
+          "prefix_end_char": 582,
+          "local_prefix": "ried a red folder. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 601,
+          "char_end": 603,
+          "target_text": "is",
+          "token_index": 136,
+          "token_id": 374,
+          "prefix_end_char": 603,
+          "local_prefix": "e answer is noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 309,
+          "char_end": 311,
+          "target_text": "is",
+          "token_index": 75,
+          "token_id": 374,
+          "prefix_end_char": 311,
+          "local_prefix": "works as a doctor. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 371,
+          "char_end": 373,
+          "target_text": "is",
+          "token_index": 89,
+          "token_id": 374,
+          "prefix_end_char": 373,
+          "local_prefix": "ried a red folder. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 601,
+          "char_end": 603,
+          "target_text": "is",
+          "token_index": 136,
+          "token_id": 374,
+          "prefix_end_char": 603,
+          "local_prefix": "er size was noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 7,
+      "long_gap": 49,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "P02",
+      "relation_type": "person_attribute_binding",
+      "tokens": 138,
+      "target_token_id": 374,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 530,
+          "char_end": 532,
+          "target_text": "is",
+          "token_index": 118,
+          "token_id": 374,
+          "prefix_end_char": 532,
+          "local_prefix": "oyed as a teacher. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 590,
+          "char_end": 592,
+          "target_text": "is",
+          "token_index": 132,
+          "token_id": 374,
+          "prefix_end_char": 592,
+          "local_prefix": "ore a green scarf. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 611,
+          "char_end": 613,
+          "target_text": "is",
+          "token_index": 137,
+          "token_id": 374,
+          "prefix_end_char": 613,
+          "local_prefix": "e answer is noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 321,
+          "char_end": 323,
+          "target_text": "is",
+          "token_index": 76,
+          "token_id": 374,
+          "prefix_end_char": 323,
+          "local_prefix": "oyed as a teacher. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 381,
+          "char_end": 383,
+          "target_text": "is",
+          "token_index": 90,
+          "token_id": 374,
+          "prefix_end_char": 383,
+          "local_prefix": "ore a green scarf. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 611,
+          "char_end": 613,
+          "target_text": "is",
+          "token_index": 137,
+          "token_id": 374,
+          "prefix_end_char": 613,
+          "local_prefix": "er size was noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 7,
+      "long_gap": 49,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "P03",
+      "relation_type": "person_attribute_binding",
+      "tokens": 139,
+      "target_token_id": 374,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 542,
+          "char_end": 544,
+          "target_text": "is",
+          "token_index": 119,
+          "token_id": 374,
+          "prefix_end_char": 544,
+          "local_prefix": "ation of a farmer. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 608,
+          "char_end": 610,
+          "target_text": "is",
+          "token_index": 133,
+          "token_id": 374,
+          "prefix_end_char": 610,
+          "local_prefix": "yed a round badge. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 629,
+          "char_end": 631,
+          "target_text": "is",
+          "token_index": 138,
+          "token_id": 374,
+          "prefix_end_char": 631,
+          "local_prefix": "e answer is noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 333,
+          "char_end": 335,
+          "target_text": "is",
+          "token_index": 77,
+          "token_id": 374,
+          "prefix_end_char": 335,
+          "local_prefix": "ation of a farmer. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 399,
+          "char_end": 401,
+          "target_text": "is",
+          "token_index": 91,
+          "token_id": 374,
+          "prefix_end_char": 401,
+          "local_prefix": "yed a round badge. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 629,
+          "char_end": 631,
+          "target_text": "is",
+          "token_index": 138,
+          "token_id": 374,
+          "prefix_end_char": 631,
+          "local_prefix": "er size was noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 7,
+      "long_gap": 49,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "P04",
+      "relation_type": "person_attribute_binding",
+      "tokens": 139,
+      "target_token_id": 374,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 547,
+          "char_end": 549,
+          "target_text": "is",
+          "token_index": 119,
+          "token_id": 374,
+          "prefix_end_char": 549,
+          "local_prefix": "orks as an artist. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 614,
+          "char_end": 616,
+          "target_text": "is",
+          "token_index": 133,
+          "token_id": 374,
+          "prefix_end_char": 616,
+          "local_prefix": " a white notebook. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 635,
+          "char_end": 637,
+          "target_text": "is",
+          "token_index": 138,
+          "token_id": 374,
+          "prefix_end_char": 637,
+          "local_prefix": "e answer is noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 338,
+          "char_end": 340,
+          "target_text": "is",
+          "token_index": 77,
+          "token_id": 374,
+          "prefix_end_char": 340,
+          "local_prefix": "orks as an artist. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 405,
+          "char_end": 407,
+          "target_text": "is",
+          "token_index": 91,
+          "token_id": 374,
+          "prefix_end_char": 407,
+          "local_prefix": " a white notebook. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 635,
+          "char_end": 637,
+          "target_text": "is",
+          "token_index": 138,
+          "token_id": 374,
+          "prefix_end_char": 637,
+          "local_prefix": "er size was noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 7,
+      "long_gap": 49,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "P05",
+      "relation_type": "person_attribute_binding",
+      "tokens": 139,
+      "target_token_id": 374,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 531,
+          "char_end": 533,
+          "target_text": "is",
+          "token_index": 119,
+          "token_id": 374,
+          "prefix_end_char": 533,
+          "local_prefix": "living as a baker. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 592,
+          "char_end": 594,
+          "target_text": "is",
+          "token_index": 133,
+          "token_id": 374,
+          "prefix_end_char": 594,
+          "local_prefix": "used a silver pen. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 613,
+          "char_end": 615,
+          "target_text": "is",
+          "token_index": 138,
+          "token_id": 374,
+          "prefix_end_char": 615,
+          "local_prefix": "e answer is noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 322,
+          "char_end": 324,
+          "target_text": "is",
+          "token_index": 77,
+          "token_id": 374,
+          "prefix_end_char": 324,
+          "local_prefix": "living as a baker. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 383,
+          "char_end": 385,
+          "target_text": "is",
+          "token_index": 91,
+          "token_id": 374,
+          "prefix_end_char": 385,
+          "local_prefix": "used a silver pen. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 613,
+          "char_end": 615,
+          "target_text": "is",
+          "token_index": 138,
+          "token_id": 374,
+          "prefix_end_char": 615,
+          "local_prefix": "er size was noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 7,
+      "long_gap": 49,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    },
+    {
+      "case_id": "P06",
+      "relation_type": "person_attribute_binding",
+      "tokens": 138,
+      "target_token_id": 374,
+      "readout_positions_short": [
+        {
+          "name": "after_cue1",
+          "char_start": 533,
+          "char_end": 535,
+          "target_text": "is",
+          "token_index": 118,
+          "token_id": 374,
+          "prefix_end_char": 535,
+          "local_prefix": "ian by profession. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 596,
+          "char_end": 598,
+          "target_text": "is",
+          "token_index": 132,
+          "token_id": 374,
+          "prefix_end_char": 598,
+          "local_prefix": "ied an orange bag. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 617,
+          "char_end": 619,
+          "target_text": "is",
+          "token_index": 137,
+          "token_id": 374,
+          "prefix_end_char": 619,
+          "local_prefix": "e answer is noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "readout_positions_long": [
+        {
+          "name": "after_cue1",
+          "char_start": 324,
+          "char_end": 326,
+          "target_text": "is",
+          "token_index": 76,
+          "token_id": 374,
+          "prefix_end_char": 326,
+          "local_prefix": "ian by profession. The answer is",
+          "expected_candidate_index": null,
+          "allowed_candidate_indices": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "after_cue2",
+          "char_start": 387,
+          "char_end": 389,
+          "target_text": "is",
+          "token_index": 90,
+          "token_id": 374,
+          "prefix_end_char": 389,
+          "local_prefix": "ied an orange bag. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        },
+        {
+          "name": "final",
+          "char_start": 617,
+          "char_end": 619,
+          "target_text": "is",
+          "token_index": 137,
+          "token_id": 374,
+          "prefix_end_char": 619,
+          "local_prefix": "er size was noted. The answer is",
+          "expected_candidate_index": 0,
+          "allowed_candidate_indices": [
+            0
+          ]
+        }
+      ],
+      "short_gap": 7,
+      "long_gap": 49,
+      "factorial_checkpoints_same_absolute_positions": true,
+      "neutral_cue2_control_same_positions": true,
+      "unrelated_edit_same_positions": true,
+      "causal_stage1_prefix_equal_across_unseen_factor2": true
+    }
+  ]
+}

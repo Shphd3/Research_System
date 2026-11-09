@@ -1,0 +1,18 @@
+{
+  "reviewed_by": "/root",
+  "reviewed_utc": "2026-10-30T03:10:22.683296+00:00",
+  "main_figures": [
+    "figure1_frequency.png",
+    "figure2_decoder_spectrum.png",
+    "figure3_overlap_and_use.png",
+    "figure4_real_tokens.png",
+    "figure5_context.png"
+  ],
+  "observed_fixes": [
+    "Figure5 symlog linthresh explicitly .001; raw values/zeros visible",
+    "Figure5 legend/title separated; tiny category count moved into legend",
+    "Figure4 caption specifies120 documents and20 heldout docs/domain"
+  ],
+  "status": "INSPECTED_ACTUAL_RENDERED_IMAGES",
+  "no_metric_changes": true
+}

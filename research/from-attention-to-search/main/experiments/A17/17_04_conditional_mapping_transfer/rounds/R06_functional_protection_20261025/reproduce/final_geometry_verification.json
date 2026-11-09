@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "metric_rows": 8640,
+  "harmful_F_cases": 1479,
+  "D_own_state_norm_matches": 2160,
+  "F_finite_loss_checks": 90,
+  "F_actual_probe_loss_increases": 69,
+  "numerical_tolerance": "g_dot_desired<=max(1e-10,abs(g_dot_candidate)*1e-5); D norm relative1e-6",
+  "finite_loss_increase_is_not_an_implementation_failure": true
+}

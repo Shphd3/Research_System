@@ -1,0 +1,112 @@
+{
+  "checks": {
+    "condition_registry": {
+      "condition_codes": [
+        "T0",
+        "B0",
+        "B1",
+        "O-F",
+        "O-HF",
+        "O-HR",
+        "O-S",
+        "S-F",
+        "S-HF",
+        "S-HR",
+        "S-S",
+        "L1-SEQ",
+        "L1-JOINT"
+      ],
+      "passed": true
+    },
+    "data_manifest": {
+      "manifest_sha256": "0250e7e554f37b16d9ef5ba97051d2f053bb0f7307ee5fe02901d1fab026d4df",
+      "passed": true,
+      "split_sha256": {
+        "DEV-ID": "6a368a521eeba9ce503da472ed7d5ad8220b63cf430dc08b75a6c4733323cb04",
+        "DEV-OOD": "ef455d861d57ea4fa9d68bf0cd2df837081b4440e38e8daf416354947192e415",
+        "TEST-ID": "be7275c8e12e2b507e88144e91ab6746a32f24bf97ad4fc1f23152ba818efac4",
+        "TEST-OOD": "763c3d2d48452eebf535b816f7dfc4fd7b6eb8dafba55ff09cef58be2b785346",
+        "TRAIN": "aaa5fb3fabd1f7dda0dcfebc8e4a375a3396c32c5c749ee15e9221104990999a"
+      }
+    },
+    "hardware": {
+      "inventory": [
+        {
+          "memory_gib": 79.6474609375,
+          "name": "NVIDIA H100 80GB HBM3"
+        },
+        {
+          "memory_gib": 79.6474609375,
+          "name": "NVIDIA H100 80GB HBM3"
+        },
+        {
+          "memory_gib": 79.6474609375,
+          "name": "NVIDIA H100 80GB HBM3"
+        },
+        {
+          "memory_gib": 79.6474609375,
+          "name": "NVIDIA H100 80GB HBM3"
+        }
+      ],
+      "passed": true
+    },
+    "parameter_flop_match": {
+      "active_path_flop_relative_difference": 0.0,
+      "parameter_relative_difference": 9.938579578206683e-06,
+      "passed": true
+    },
+    "protocol": {
+      "frozen_fields": {
+        "execution_surface": "acp",
+        "experiment_id": "A15_13_E01_three_layer_semantic_supervision_residual_growth",
+        "full_run_authorized": true,
+        "implementation_authorized": true,
+        "primary_anchor": "A15_13_semantic_supervision_middle_layer_formation",
+        "resource_profile": "h100-4-reserved",
+        "scientific_contract_frozen": true,
+        "smoke_authorized": true,
+        "status": "APPROVED_FOR_IMPLEMENTATION_SMOKE_FULL_RUN"
+      },
+      "passed": true
+    },
+    "source_files": {
+      "file_count": 26,
+      "passed": true
+    }
+  },
+  "input_sha256": {
+    "data_manifest": "0250e7e554f37b16d9ef5ba97051d2f053bb0f7307ee5fe02901d1fab026d4df",
+    "protocol": "d90da0f617a970b905072443744a4006ef76ed0f489dc8f52f43dc3fb4d881ac"
+  },
+  "passed": true,
+  "schema_version": "a15_13_preflight_v1",
+  "source_sha256": {
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/analysis.py": "d87aefef38698ba14831403338f5dbe4c97990f595c5d860071520df596cd4e5",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/artifact_manifest.py": "e28e4fbd0c96a78881dedb54547ee18b1f54e3e6e4431a9c44d1c7f1397036a4",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/completion_audit.py": "14c9f0dd32f4a243097a43c2bade386020c767102e9ab0d47d93b4c99f1011bf",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/data.py": "50bed172db4c578ea546bdf644bde6292f8e32240add24e2638ccecbb03cae2d",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/execution.py": "f49086520b32222791718a7d090b2a4108fc054660ddaf4b3804938a782ca9a8",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/labels_metrics.py": "adb5770325b8ddac65e16cfe643811443cddf598ed06d0250611db2f309307f5",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/model.py": "70189628800aa78610542be79f58862546282787940042194da1e327d67bbb17",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/pipeline.py": "4dbfe4f5a2854a2120d2df69613b4b7dacbeccaa8f77eea1449838c994394b6b",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/preflight.py": "033fdb36efb7ed9173f597782f8c279a736c33a783622842d852356e836a431b",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/render_results.py": "1dfdaafdd336cf6479be2b6b4e1fd3fd996ba112d3a076ec8c08e01aa0da01b0",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/runner.py": "471c7c9ffd3b5546a8e4970e53ddefb86e63256028c433a084d2a9921bc33e14",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/scripts/activate_runtime.sh": "fdd7dea88b6f45142f0df4a5c33ba154c7611f62c22c1a68c9588d8d36e5d2ae",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/scripts/run_pipeline.sh": "894f9cafeaa6856453796b5b0e76cb6d708df9711433171a2a619b02b261b424",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/scripts/submit_h100_4_reserved.sh": "3b1daafc9a2b24c556accad50c787e34dabc178a830a38a8fbcdc420a4d81f69",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_analysis.py": "fe1ca079270695759f877c3b4a23aab0c5b3f05571bc0adc997edf81fc643707",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_artifact_manifest.py": "8860dec853c084f354aada9d2398f31c6008b8010fcf591ccc432d904623c65d",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_completion_audit.py": "03aa93185f422b6d1e347cad82bef457958ba8575b678746d44d59e6bcd5f68c",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_data.py": "1c8fba4a096ddf4229aa9bba8b053b1a6398e54908c37e7d2247cff6b65c9eda",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_execution_contract.py": "2f1d7d0045e316e3cf2b181f78f1a22699f3d389fef6d2d11d6a4dfb7c453a0b",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_labels_metrics.py": "503c05de3eacd69b25572d8c7949838ac5f87e342705551b5075df10e5ab7669",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_model.py": "06879ab6a69eabfd2978600ad4b923b0df67559b04dedb47116a6d333baf7c99",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_pipeline_contract.py": "f53929f68be55d8d176cea2a262f73b9ba097aa9d43211262dba5c2e97c4526e",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_preflight.py": "2f20173bba67915ef9588145795ac820ff6824ba7360c0258604e516e2306c9a",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_render_results.py": "9df3469f85ee1eafbb2fffb16227692b34619ee66ede940772a29418bc9fc837",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_runner.py": "f4566dd22ae9e4f0a2238a38aab7dcca8cd5e6004280fd5e593e40e713366230",
+    "/data/250010109/MoE_Router/experiments/20260830_a15_13_semantic_supervision_hierarchical_experts/tests/test_submit_contract.py": "1180b1a44f6101b8896d221b68e38851929718e6a5cc7cefc5d4c51570fd2c43"
+  },
+  "written_at_utc": "2026-08-30T18:12:22.711739+00:00"
+}

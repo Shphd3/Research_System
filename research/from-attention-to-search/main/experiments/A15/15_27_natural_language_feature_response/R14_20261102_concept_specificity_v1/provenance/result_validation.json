@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "checks": {
+    "all_conditions_present": true,
+    "prefix_rows": true,
+    "candidate_rows": true,
+    "family_rows": true,
+    "evaluation_families": true,
+    "J_identity": true,
+    "mean_only_J_zero": true,
+    "all_PC_exact_all_scored_positions": true,
+    "full_KL_zero": true
+  },
+  "elapsed_seconds": 133.88493275642395,
+  "raw_candidate_rows": 192384,
+  "raw_prefix_rows": 48096,
+  "bootstrap_seed": 21102,
+  "bootstrap_replicates": 4000
+}

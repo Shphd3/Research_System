@@ -1,0 +1,25 @@
+{
+  "GPU": "_CudaDeviceProperties(name='NVIDIA H100 80GB HBM3 MIG 3g.40gb', major=9, minor=0, total_memory=40448MB, multi_processor_count=60)",
+  "TEST_opened": false,
+  "all_branches_independent_restores": true,
+  "candidate_checkpoint_saves": 0,
+  "completed_utc": "2026-10-26T02:34:06.235144+00:00",
+  "continuation_training_updates": 0,
+  "elapsed_seconds": 24.472692728042603,
+  "finite_scaling_new_batch_readout": "NOT_RUN_BY_PLAN forbudget; oldprobeandindependentoldmeasured",
+  "full120Adam_moments_restored": true,
+  "new_job_or_resource": false,
+  "proposals_per_state": 2,
+  "remaining_budget": 576,
+  "rows": {
+    "directions": 54,
+    "losses": 138,
+    "noise": 18
+  },
+  "sequence_budget": 12000,
+  "sequence_forwards": 11424,
+  "source_step_replay": "numericagreementchecked for12/16batch; notclaimedallbitwise",
+  "states": 6,
+  "status": "PASS",
+  "temporary_Adam_proposals": 12
+}

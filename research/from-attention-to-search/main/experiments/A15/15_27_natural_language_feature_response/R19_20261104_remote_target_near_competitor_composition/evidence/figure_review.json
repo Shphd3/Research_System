@@ -1,0 +1,39 @@
+{
+  "UTC": "2026-11-04T05:16:52.334104+00:00",
+  "reviewer": "Codex /root; visual self-review, not independent human review",
+  "reviewed": [
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/figures/ATTN_SAE_F23_case.png",
+      "sha256": "f94f4a6cd4bcce485d0c5391cb11f8a5666fcdcb552fd2ce608c90ff2b0d3cb6"
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/figures/ATTN_SAE_membership_geometry.png",
+      "sha256": "c9992fb512ffa74442f8e8f103608b5ea5f8266575732410b938353c9c53e1c4"
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/figures/MLPIN_SAE_F23_case.png",
+      "sha256": "dd7b417dd6ed6cffd8b5ab212f756dc5a5ffdcfe99ebf058467e9e89ad59e348"
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/figures/MLPIN_SAE_membership_geometry.png",
+      "sha256": "e6fa5e2c56a9f4a9936e22c8a95163a7b9ba34dd25962384f8fc1711b52f4a5c"
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/figures/frequency_participation.png",
+      "sha256": "6f6f8da898c148edda6ed5c53f599aa2d29e1317837a038e13344a8a9df9d72e"
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/figures/joint_marginal_controls.png",
+      "sha256": "fe3d6a2d71bf2674bc355c866c05ffafbdb2b4ead95efd59b02310293eeb3c5c"
+    }
+  ],
+  "status": "PASS",
+  "checks": [
+    "All6actual scientific PNGs opened; final frequency/joint layout reviewed after correction",
+    "Cell numbers are raw native z, colors explicitly display-only standardized",
+    "Two dictionaries separate; all family IDs and support denominators visible",
+    "Joint family CI and conditional p distinguished; no all-family support inferred",
+    "Text-frame separator and raw-score bar signs retained"
+  ],
+  "remaining_limit": "A few nearby scatter labels can overlap; exact per-family data retained in numeric annex."
+}

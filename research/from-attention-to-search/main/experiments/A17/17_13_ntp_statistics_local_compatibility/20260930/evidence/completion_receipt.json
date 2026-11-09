@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE_OPERATIONAL",
+  "records": 2048,
+  "valid_targets": 32768,
+  "sae_activation_positions": 32768,
+  "functional_contexts": 4096,
+  "functional_vjps": 32768,
+  "model_updates": 0,
+  "sae_updates": 0,
+  "checkpoint_unchanged": true,
+  "elapsed_seconds": 222.95781258493662,
+  "scientific_judgment": "Unknown",
+  "primary": {
+    "verdict": "INSUFFICIENT",
+    "T": 0.006637042976948929,
+    "SE": 0.0051700209161948335,
+    "CI95": [
+      -0.0037378211272439503,
+      0.01701190708114181
+    ],
+    "df": 51.903704081795034,
+    "threshold": 0.01,
+    "v0": 100.77199611476297,
+    "quartets": 192,
+    "strata": 24,
+    "eligible": true,
+    "population": "one metadata-assigned matched-target event per endpoint document",
+    "independence": "record-approximate; no paper identity; historical source exposure",
+    "scientific_judgment": "Unknown"
+  }
+}

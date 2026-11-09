@@ -1,0 +1,5 @@
+# Exploratory diagnostic evidence
+
+Execution directory: `/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/diagnostic_20261028`. Registered derived-analysis asset: `analysis_a15_27_r04_token_location_diagnostic_20261028`. Parents are the actual R04 analysis/cache and fixed data assets. This is within the existing R04 task, with no new Work/Codex task, fitting or model forward.
+
+Source identity and fixed rules precede the new analysis. Original zip SHA remains32cf80b18aa742c1130a10305bff7a0ad2820fadf10d7d6dc74fe9c3a661c055. The241-check audit preserves86input hashes and independently reduces CSR counts. `tables/` contains all32original biased candidates per dictionary; `figures/` has the fixed8-row token heatmap. Raw nonzero hit records, zero-inclusive display matrices, token annotations, all per-sequence support and code remain execution-side and in the diagnostic zip. No original R04 result or candidate file was changed. See provenance/delivery_checks.json for actual elapsed time and remaining boundaries.

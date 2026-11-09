@@ -1,0 +1,1144 @@
+{
+  "ATTN_SAE": {
+    "animal": {
+      "groups": {
+        "common": [
+          23899,
+          18691,
+          9522
+        ],
+        "cat_recruit": [
+          28120
+        ],
+        "cat_loss": [
+          9495,
+          5567,
+          27013
+        ],
+        "dog_recruit": [
+          23896
+        ],
+        "dog_loss": [
+          15178,
+          9495,
+          27013
+        ]
+      },
+      "matched_controls": {
+        "common": {
+          "ids": [
+            17795,
+            17229,
+            2254
+          ],
+          "qualified": false,
+          "matches": [
+            {
+              "candidate": 23899,
+              "control": 17795,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.75,
+              "candidate_positive_mean": 33.33110609650612,
+              "control_positive_mean": 2.9727492382129035,
+              "qualified": false
+            },
+            {
+              "candidate": 18691,
+              "control": 17229,
+              "candidate_frequency": 0.375,
+              "control_frequency": 0.375,
+              "candidate_positive_mean": 5.17390900850296,
+              "control_positive_mean": 3.6582597891489663,
+              "qualified": true
+            },
+            {
+              "candidate": 9522,
+              "control": 2254,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.609375,
+              "candidate_positive_mean": 3.6368109695613384,
+              "control_positive_mean": 3.572834638448862,
+              "qualified": false
+            }
+          ]
+        },
+        "cat_recruit": {
+          "ids": [
+            25754
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 28120,
+              "control": 25754,
+              "candidate_frequency": 0.109375,
+              "control_frequency": 0.109375,
+              "candidate_positive_mean": 3.285991294043405,
+              "control_positive_mean": 3.242924860545567,
+              "qualified": true
+            }
+          ]
+        },
+        "cat_loss": {
+          "ids": [
+            15880,
+            10041,
+            13261
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 9495,
+              "control": 15880,
+              "candidate_frequency": 0.0625,
+              "control_frequency": 0.03125,
+              "candidate_positive_mean": 4.636471927165985,
+              "control_positive_mean": 4.538118839263916,
+              "qualified": true
+            },
+            {
+              "candidate": 5567,
+              "control": 10041,
+              "candidate_frequency": 0.59375,
+              "control_frequency": 0.609375,
+              "candidate_positive_mean": 2.7287071190382304,
+              "control_positive_mean": 2.9040430111762805,
+              "qualified": true
+            },
+            {
+              "candidate": 27013,
+              "control": 13261,
+              "candidate_frequency": 0.078125,
+              "control_frequency": 0.078125,
+              "candidate_positive_mean": 2.34052312374115,
+              "control_positive_mean": 2.3646339893341066,
+              "qualified": true
+            }
+          ]
+        },
+        "dog_recruit": {
+          "ids": [
+            14723
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 23896,
+              "control": 14723,
+              "candidate_frequency": 0.09375,
+              "control_frequency": 0.09375,
+              "candidate_positive_mean": 2.8836675882339478,
+              "control_positive_mean": 2.815448045730591,
+              "qualified": true
+            }
+          ]
+        },
+        "dog_loss": {
+          "ids": [
+            715,
+            15880,
+            13261
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 15178,
+              "control": 715,
+              "candidate_frequency": 0.25,
+              "control_frequency": 0.25,
+              "candidate_positive_mean": 2.432952716946602,
+              "control_positive_mean": 2.5046118944883347,
+              "qualified": true
+            },
+            {
+              "candidate": 9495,
+              "control": 15880,
+              "candidate_frequency": 0.0625,
+              "control_frequency": 0.03125,
+              "candidate_positive_mean": 4.636471927165985,
+              "control_positive_mean": 4.538118839263916,
+              "qualified": true
+            },
+            {
+              "candidate": 27013,
+              "control": 13261,
+              "candidate_frequency": 0.078125,
+              "control_frequency": 0.078125,
+              "candidate_positive_mean": 2.34052312374115,
+              "control_positive_mean": 2.3646339893341066,
+              "qualified": true
+            }
+          ]
+        }
+      },
+      "typical": {
+        "cat": [
+          0.9825072189435461,
+          0.14363720604177413,
+          0.11852391220480177
+        ],
+        "dog": [
+          0.9694453446509452,
+          0.21484625118941839,
+          0.11839261836982683
+        ]
+      },
+      "discovery_ranges": {
+        "cat": {
+          "min": [
+            27.52341651916504,
+            3.3097035884857178,
+            2.5851011276245117
+          ],
+          "max": [
+            38.567508697509766,
+            5.977751731872559,
+            5.876684188842773
+          ],
+          "min_norm": 28.255188719140047,
+          "max_norm": 38.96961343960848
+        },
+        "dog": {
+          "min": [
+            28.127904891967773,
+            5.692094326019287,
+            2.710698127746582
+          ],
+          "max": [
+            39.24506378173828,
+            8.38457202911377,
+            6.172486782073975
+          ],
+          "min_norm": 29.37994398811849,
+          "max_norm": 40.18409212748339
+        }
+      },
+      "other_typical": {
+        "cat": [
+          0.7593027853849824,
+          0.21470308482671854,
+          0.6142978638026494
+        ],
+        "dog": [
+          0.6840813014732828,
+          0.34739636239066435,
+          0.6413645923905947
+        ]
+      },
+      "other_discovery_ranges": {
+        "cat": {
+          "min": [
+            1.6815885305404663,
+            0.0,
+            0.0
+          ],
+          "max": [
+            4.562615871429443,
+            4.8998847007751465,
+            4.818558692932129
+          ],
+          "min_norm": 2.2183945178985596,
+          "max_norm": 6.6359604781411745
+        },
+        "dog": {
+          "min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            4.399790287017822,
+            5.213996887207031,
+            4.567623138427734
+          ],
+          "min_norm": 1.9628804922103882,
+          "max_norm": 6.341620984598841
+        }
+      },
+      "component_shuffle": [
+        2,
+        0,
+        1
+      ],
+      "selection_source": "Only original64explicit discovery rows and frozen S06 selection; no use of S06 heldout scores to choose IDs.",
+      "frequencies_denominator": 64
+    },
+    "vehicle": {
+      "groups": {
+        "common": [
+          23899,
+          9522
+        ],
+        "bicycle_recruit": [
+          1081,
+          14503,
+          15178
+        ],
+        "bicycle_loss": [
+          5567,
+          5897,
+          10899
+        ]
+      },
+      "matched_controls": {
+        "common": {
+          "ids": [
+            17795,
+            2254
+          ],
+          "qualified": false,
+          "matches": [
+            {
+              "candidate": 23899,
+              "control": 17795,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.75,
+              "candidate_positive_mean": 33.33110609650612,
+              "control_positive_mean": 2.9727492382129035,
+              "qualified": false
+            },
+            {
+              "candidate": 9522,
+              "control": 2254,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.609375,
+              "candidate_positive_mean": 3.6368109695613384,
+              "control_positive_mean": 3.572834638448862,
+              "qualified": false
+            }
+          ]
+        },
+        "bicycle_recruit": {
+          "ids": [
+            5624,
+            9495,
+            715
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 1081,
+              "control": 5624,
+              "candidate_frequency": 0.09375,
+              "control_frequency": 0.125,
+              "candidate_positive_mean": 6.7620101769765215,
+              "control_positive_mean": 4.921719580888748,
+              "qualified": true
+            },
+            {
+              "candidate": 14503,
+              "control": 9495,
+              "candidate_frequency": 0.09375,
+              "control_frequency": 0.0625,
+              "candidate_positive_mean": 4.5084502299626665,
+              "control_positive_mean": 4.636471927165985,
+              "qualified": true
+            },
+            {
+              "candidate": 15178,
+              "control": 715,
+              "candidate_frequency": 0.25,
+              "control_frequency": 0.25,
+              "candidate_positive_mean": 2.432952716946602,
+              "control_positive_mean": 2.5046118944883347,
+              "qualified": true
+            }
+          ]
+        },
+        "bicycle_loss": {
+          "ids": [
+            10041,
+            24998,
+            2585
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 5567,
+              "control": 10041,
+              "candidate_frequency": 0.59375,
+              "control_frequency": 0.609375,
+              "candidate_positive_mean": 2.7287071190382304,
+              "control_positive_mean": 2.9040430111762805,
+              "qualified": true
+            },
+            {
+              "candidate": 5897,
+              "control": 24998,
+              "candidate_frequency": 0.421875,
+              "control_frequency": 0.4375,
+              "candidate_positive_mean": 2.70235934080901,
+              "control_positive_mean": 2.6527508326939175,
+              "qualified": true
+            },
+            {
+              "candidate": 10899,
+              "control": 2585,
+              "candidate_frequency": 0.21875,
+              "control_frequency": 0.21875,
+              "candidate_positive_mean": 2.7453409263065884,
+              "control_positive_mean": 2.8553916726793562,
+              "qualified": true
+            }
+          ]
+        }
+      },
+      "typical": {
+        "car": [
+          0.9955616640797641,
+          0.09411149246893798
+        ],
+        "bicycle": [
+          0.9937458418711956,
+          0.11166558003121864
+        ]
+      },
+      "discovery_ranges": {
+        "car": {
+          "min": [
+            29.345415115356445,
+            1.8783116340637207
+          ],
+          "max": [
+            41.207096099853516,
+            5.224068641662598
+          ],
+          "min_norm": 29.545222036307443,
+          "max_norm": 41.24988270986018
+        },
+        "bicycle": {
+          "min": [
+            27.612213134765625,
+            2.1629767417907715
+          ],
+          "max": [
+            40.34657287597656,
+            5.946404457092285
+          ],
+          "min_norm": 27.848323334723474,
+          "max_norm": 40.441299043273084
+        }
+      },
+      "other_typical": {
+        "car": [
+          0.7165242810813813,
+          0.6975621510810415
+        ],
+        "bicycle": [
+          0.655251299100241,
+          0.7554109709472364
+        ]
+      },
+      "other_discovery_ranges": {
+        "car": {
+          "min": [
+            0.0,
+            0.0
+          ],
+          "max": [
+            4.235442161560059,
+            4.862078666687012
+          ],
+          "min_norm": 0.0,
+          "max_norm": 6.4481609211443764
+        },
+        "bicycle": {
+          "min": [
+            0.0,
+            0.0
+          ],
+          "max": [
+            3.9423446655273438,
+            4.384294033050537
+          ],
+          "min_norm": 0.0,
+          "max_norm": 5.896110211830716
+        }
+      },
+      "component_shuffle": [
+        1,
+        0
+      ],
+      "selection_source": "Only original64explicit discovery rows and frozen S06 selection; no use of S06 heldout scores to choose IDs.",
+      "frequencies_denominator": 64
+    }
+  },
+  "MLPIN_SAE": {
+    "animal": {
+      "groups": {
+        "common": [
+          14481,
+          29342,
+          29506,
+          17390,
+          11190,
+          21902
+        ],
+        "cat_recruit": [
+          22958,
+          8856,
+          11234
+        ],
+        "cat_loss": [
+          25899,
+          24399,
+          334
+        ],
+        "dog_loss": [
+          25899,
+          24399,
+          11013
+        ]
+      },
+      "matched_controls": {
+        "common": {
+          "ids": [
+            16240,
+            861,
+            966,
+            20696,
+            5196,
+            17366
+          ],
+          "qualified": false,
+          "matches": [
+            {
+              "candidate": 14481,
+              "control": 16240,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.84375,
+              "candidate_positive_mean": 89.47032117843628,
+              "control_positive_mean": 9.079170681812146,
+              "qualified": false
+            },
+            {
+              "candidate": 29342,
+              "control": 861,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.875,
+              "candidate_positive_mean": 56.56074678897858,
+              "control_positive_mean": 4.839372605085373,
+              "qualified": false
+            },
+            {
+              "candidate": 29506,
+              "control": 966,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.765625,
+              "candidate_positive_mean": 29.233239233493805,
+              "control_positive_mean": 5.54995237564554,
+              "qualified": false
+            },
+            {
+              "candidate": 17390,
+              "control": 20696,
+              "candidate_frequency": 0.984375,
+              "control_frequency": 0.375,
+              "candidate_positive_mean": 10.863780407678513,
+              "control_positive_mean": 10.099583377440771,
+              "qualified": false
+            },
+            {
+              "candidate": 11190,
+              "control": 5196,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.5625,
+              "candidate_positive_mean": 10.312008820474148,
+              "control_positive_mean": 5.891895406776005,
+              "qualified": false
+            },
+            {
+              "candidate": 21902,
+              "control": 17366,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.359375,
+              "candidate_positive_mean": 9.449303150177002,
+              "control_positive_mean": 7.995744767396347,
+              "qualified": false
+            }
+          ]
+        },
+        "cat_recruit": {
+          "ids": [
+            29396,
+            47,
+            8758
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 22958,
+              "control": 29396,
+              "candidate_frequency": 0.1875,
+              "control_frequency": 0.203125,
+              "candidate_positive_mean": 7.1238910754521685,
+              "control_positive_mean": 6.055979031782884,
+              "qualified": true
+            },
+            {
+              "candidate": 8856,
+              "control": 47,
+              "candidate_frequency": 0.4375,
+              "control_frequency": 0.40625,
+              "candidate_positive_mean": 6.62089352948325,
+              "control_positive_mean": 6.485837422884428,
+              "qualified": true
+            },
+            {
+              "candidate": 11234,
+              "control": 8758,
+              "candidate_frequency": 0.40625,
+              "control_frequency": 0.4375,
+              "candidate_positive_mean": 4.138004046220046,
+              "control_positive_mean": 4.532989799976349,
+              "qualified": true
+            }
+          ]
+        },
+        "cat_loss": {
+          "ids": [
+            20746,
+            15123,
+            20157
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 25899,
+              "control": 20746,
+              "candidate_frequency": 0.09375,
+              "control_frequency": 0.09375,
+              "candidate_positive_mean": 4.606040279070537,
+              "control_positive_mean": 4.641340494155884,
+              "qualified": true
+            },
+            {
+              "candidate": 24399,
+              "control": 15123,
+              "candidate_frequency": 0.25,
+              "control_frequency": 0.25,
+              "candidate_positive_mean": 6.894692212343216,
+              "control_positive_mean": 6.428518295288086,
+              "qualified": true
+            },
+            {
+              "candidate": 334,
+              "control": 20157,
+              "candidate_frequency": 0.078125,
+              "control_frequency": 0.078125,
+              "candidate_positive_mean": 5.424422073364258,
+              "control_positive_mean": 5.271332740783691,
+              "qualified": true
+            }
+          ]
+        },
+        "dog_loss": {
+          "ids": [
+            20746,
+            15123,
+            16905
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 25899,
+              "control": 20746,
+              "candidate_frequency": 0.09375,
+              "control_frequency": 0.09375,
+              "candidate_positive_mean": 4.606040279070537,
+              "control_positive_mean": 4.641340494155884,
+              "qualified": true
+            },
+            {
+              "candidate": 24399,
+              "control": 15123,
+              "candidate_frequency": 0.25,
+              "control_frequency": 0.25,
+              "candidate_positive_mean": 6.894692212343216,
+              "control_positive_mean": 6.428518295288086,
+              "qualified": true
+            },
+            {
+              "candidate": 11013,
+              "control": 16905,
+              "candidate_frequency": 0.140625,
+              "control_frequency": 0.125,
+              "candidate_positive_mean": 3.8969082037607827,
+              "control_positive_mean": 3.905458480119705,
+              "qualified": true
+            }
+          ]
+        }
+      },
+      "typical": {
+        "cat": [
+          0.8065497807217307,
+          0.5099676201714891,
+          0.2533246649325745,
+          0.09068773648293041,
+          0.09482472022942477,
+          0.08956058628754558
+        ],
+        "dog": [
+          0.8066057818702481,
+          0.5117580410915141,
+          0.25045280320138896,
+          0.0918263515032686,
+          0.09312915734251476,
+          0.08751625347613884
+        ]
+      },
+      "discovery_ranges": {
+        "cat": {
+          "min": [
+            84.52435302734375,
+            50.33286666870117,
+            22.444643020629883,
+            3.8680591583251953,
+            8.619490623474121,
+            8.089945793151855
+          ],
+          "max": [
+            91.68122100830078,
+            63.44316101074219,
+            32.33616638183594,
+            14.644037246704102,
+            14.080520629882812,
+            12.995856285095215
+          ],
+          "min_norm": 107.74366548994372,
+          "max_norm": 114.25788557197193
+        },
+        "dog": {
+          "min": [
+            85.4520263671875,
+            51.0400390625,
+            21.790510177612305,
+            4.0720038414001465,
+            8.501973152160645,
+            8.238375663757324
+          ],
+          "max": [
+            91.62244415283203,
+            64.14665985107422,
+            32.60763931274414,
+            14.85084342956543,
+            14.130824089050293,
+            13.212882995605469
+          ],
+          "min_norm": 109.38209523306367,
+          "max_norm": 114.94521283965781
+        }
+      },
+      "other_typical": {
+        "cat": [
+          0.4806750579893751,
+          0.4052305841937895,
+          0.39054194640162415,
+          0.0,
+          0.23407463739904855,
+          0.6304170956503367
+        ],
+        "dog": [
+          0.3408942718080704,
+          0.34902240212321806,
+          0.20714050974416004,
+          0.0,
+          0.17401296760251483,
+          0.8299317770718746
+        ]
+      },
+      "other_discovery_ranges": {
+        "cat": {
+          "min": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            3.4723644256591797
+          ],
+          "max": [
+            12.669921875,
+            9.346412658691406,
+            8.159600257873535,
+            0.0,
+            6.489534854888916,
+            9.433356285095215
+          ],
+          "min_norm": 7.434491446313022,
+          "max_norm": 15.682128733455677
+        },
+        "dog": {
+          "min": [
+            0.0,
+            3.1358108520507812,
+            0.0,
+            0.0,
+            0.0,
+            7.44075870513916
+          ],
+          "max": [
+            12.524422645568848,
+            9.833846092224121,
+            8.551138877868652,
+            0.0,
+            5.884021282196045,
+            14.217074394226074
+          ],
+          "min_norm": 9.107856957837711,
+          "max_norm": 18.834515390704592
+        }
+      },
+      "component_shuffle": [
+        5,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "selection_source": "Only original64explicit discovery rows and frozen S06 selection; no use of S06 heldout scores to choose IDs.",
+      "frequencies_denominator": 64
+    },
+    "vehicle": {
+      "groups": {
+        "common": [
+          14481,
+          29342,
+          29506,
+          16240,
+          20696,
+          11190,
+          21902
+        ],
+        "car_recruit": [
+          19178
+        ],
+        "bicycle_recruit": [
+          16830,
+          18933,
+          22309
+        ],
+        "bicycle_loss": [
+          8048,
+          19327,
+          5196
+        ]
+      },
+      "matched_controls": {
+        "common": {
+          "ids": [
+            17390,
+            861,
+            966,
+            17366,
+            47,
+            27346,
+            8856
+          ],
+          "qualified": false,
+          "matches": [
+            {
+              "candidate": 14481,
+              "control": 17390,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.984375,
+              "candidate_positive_mean": 89.47032117843628,
+              "control_positive_mean": 10.863780407678513,
+              "qualified": false
+            },
+            {
+              "candidate": 29342,
+              "control": 861,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.875,
+              "candidate_positive_mean": 56.56074678897858,
+              "control_positive_mean": 4.839372605085373,
+              "qualified": false
+            },
+            {
+              "candidate": 29506,
+              "control": 966,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.765625,
+              "candidate_positive_mean": 29.233239233493805,
+              "control_positive_mean": 5.54995237564554,
+              "qualified": false
+            },
+            {
+              "candidate": 16240,
+              "control": 17366,
+              "candidate_frequency": 0.84375,
+              "control_frequency": 0.359375,
+              "candidate_positive_mean": 9.079170681812146,
+              "control_positive_mean": 7.995744767396347,
+              "qualified": false
+            },
+            {
+              "candidate": 20696,
+              "control": 47,
+              "candidate_frequency": 0.375,
+              "control_frequency": 0.40625,
+              "candidate_positive_mean": 10.099583377440771,
+              "control_positive_mean": 6.485837422884428,
+              "qualified": true
+            },
+            {
+              "candidate": 11190,
+              "control": 27346,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.625,
+              "candidate_positive_mean": 10.312008820474148,
+              "control_positive_mean": 4.632953023910522,
+              "qualified": false
+            },
+            {
+              "candidate": 21902,
+              "control": 8856,
+              "candidate_frequency": 1.0,
+              "control_frequency": 0.4375,
+              "candidate_positive_mean": 9.449303150177002,
+              "control_positive_mean": 6.62089352948325,
+              "qualified": false
+            }
+          ]
+        },
+        "car_recruit": {
+          "ids": [
+            10617
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 19178,
+              "control": 10617,
+              "candidate_frequency": 0.109375,
+              "control_frequency": 0.09375,
+              "candidate_positive_mean": 4.311838797160557,
+              "control_positive_mean": 4.305432836214702,
+              "qualified": true
+            }
+          ]
+        },
+        "bicycle_recruit": {
+          "ids": [
+            2073,
+            10013,
+            28550
+          ],
+          "qualified": true,
+          "matches": [
+            {
+              "candidate": 16830,
+              "control": 2073,
+              "candidate_frequency": 0.125,
+              "control_frequency": 0.125,
+              "candidate_positive_mean": 10.005130529403687,
+              "control_positive_mean": 8.134548306465149,
+              "qualified": true
+            },
+            {
+              "candidate": 18933,
+              "control": 10013,
+              "candidate_frequency": 0.203125,
+              "control_frequency": 0.21875,
+              "candidate_positive_mean": 3.9568983041323147,
+              "control_positive_mean": 3.9088540077209473,
+              "qualified": true
+            },
+            {
+              "candidate": 22309,
+              "control": 28550,
+              "candidate_frequency": 0.296875,
+              "control_frequency": 0.328125,
+              "candidate_positive_mean": 4.952326209921586,
+              "control_positive_mean": 4.41466034026373,
+              "qualified": true
+            }
+          ]
+        },
+        "bicycle_loss": {
+          "ids": [
+            4700,
+            25150,
+            808
+          ],
+          "qualified": false,
+          "matches": [
+            {
+              "candidate": 8048,
+              "control": 4700,
+              "candidate_frequency": 0.71875,
+              "control_frequency": 0.640625,
+              "candidate_positive_mean": 3.844892004261846,
+              "control_positive_mean": 4.2182226413633765,
+              "qualified": false
+            },
+            {
+              "candidate": 19327,
+              "control": 25150,
+              "candidate_frequency": 0.1875,
+              "control_frequency": 0.1875,
+              "candidate_positive_mean": 3.518208066622416,
+              "control_positive_mean": 3.488378723462423,
+              "qualified": true
+            },
+            {
+              "candidate": 5196,
+              "control": 808,
+              "candidate_frequency": 0.5625,
+              "control_frequency": 0.53125,
+              "candidate_positive_mean": 5.891895406776005,
+              "control_positive_mean": 5.46536056434407,
+              "qualified": true
+            }
+          ]
+        }
+      },
+      "typical": {
+        "car": [
+          0.796102902877007,
+          0.506358595980369,
+          0.271242797296262,
+          0.09778680728612872,
+          0.10586107631327121,
+          0.09160422019245396,
+          0.08419219030292965
+        ],
+        "bicycle": [
+          0.8033547617952369,
+          0.5045273338434979,
+          0.26801115764249434,
+          0.09271512575434925,
+          0.05161749193043266,
+          0.091455114235852,
+          0.09283758693597205
+        ]
+      },
+      "discovery_ranges": {
+        "car": {
+          "min": [
+            78.37093353271484,
+            50.15867614746094,
+            23.7463436126709,
+            6.694656848907471,
+            8.05155086517334,
+            8.108707427978516,
+            7.029799938201904
+          ],
+          "max": [
+            92.68619537353516,
+            62.75990295410156,
+            35.57645034790039,
+            18.420135498046875,
+            15.967791557312012,
+            13.552050590515137,
+            13.275588035583496
+          ],
+          "min_norm": 108.30386678369422,
+          "max_norm": 113.24273710755303
+        },
+        "bicycle": {
+          "min": [
+            79.44621276855469,
+            48.37248229980469,
+            23.491518020629883,
+            5.156764030456543,
+            3.8174965381622314,
+            8.34243106842041,
+            8.533263206481934
+          ],
+          "max": [
+            92.47750854492188,
+            61.6754264831543,
+            34.66284942626953,
+            14.473852157592773,
+            7.566889762878418,
+            13.720918655395508,
+            13.762200355529785
+          ],
+          "min_norm": 107.48246580991051,
+          "max_norm": 112.75033459279662
+        }
+      },
+      "other_typical": {
+        "car": [
+          0.7464612782536147,
+          0.4131330116816799,
+          0.32301492439097457,
+          0.0,
+          0.2896751208188029,
+          0.21430777558021125,
+          0.19477816882795485
+        ],
+        "bicycle": [
+          0.8394118771258121,
+          0.26901662370099877,
+          0.3172106176428982,
+          0.0,
+          0.21139944791635468,
+          0.20876620630729037,
+          0.18472175099854685
+        ]
+      },
+      "other_discovery_ranges": {
+        "car": {
+          "min": [
+            0.0,
+            3.3124139308929443,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            13.685808181762695,
+            9.17731761932373,
+            8.70861530303955,
+            0.0,
+            8.830485343933105,
+            6.92510986328125,
+            7.929012298583984
+          ],
+          "min_norm": 8.265898990989118,
+          "max_norm": 18.61998399001897
+        },
+        "bicycle": {
+          "min": [
+            4.678058624267578,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max": [
+            13.562808990478516,
+            8.359469413757324,
+            8.398740768432617,
+            0.0,
+            7.233309268951416,
+            6.189193248748779,
+            8.73330307006836
+          ],
+          "min_norm": 8.870983388127485,
+          "max_norm": 17.3244273057672
+        }
+      },
+      "component_shuffle": [
+        6,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "selection_source": "Only original64explicit discovery rows and frozen S06 selection; no use of S06 heldout scores to choose IDs.",
+      "frequencies_denominator": 64
+    }
+  }
+}

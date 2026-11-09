@@ -1,0 +1,71 @@
+{
+  "UTC": "2026-11-03T17:22:50.673403+00:00",
+  "authorization": "Current follow-up user request explicitly authorizes temporary SAE feature deletion/strength interventions after complete saved main experiment; no training or permanent weights edits.",
+  "main": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104",
+  "main_package": {
+    "UTC": "2026-11-03T17:17:34.295519+00:00",
+    "path": "/data/250010109/Research_System/daily_research_reports/1104/20261104_SAE_hierarchy_analysis.zip",
+    "bytes": 3960995,
+    "MB_decimal": 3.960995,
+    "sha256": "c753da6ce3cb820128d8674561f3ce26cc0c45966225fab893d6cb69055758d8",
+    "CRC": "PASS",
+    "extract_and_source_SHA": "PASS",
+    "files": 107,
+    "offline_numeric_replay": "{\"status\": \"PASS\", \"prefixes\": 384, \"overlaps_replayed\": 2688, \"max_Jaccard_error\": 0.0, \"max_q_error\": 2.220446049250313e-16, \"max_joint_projection_error\": 0.0, \"max_token_score_sum_error\": 0.0}\n",
+    "large_cache_index": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/large_files_index.json",
+    "published": false
+  },
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "input_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "sites": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "loader": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/e16_sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.self_attn.o_proj output before residual addition"
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "loader": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.mlp forward_pre_hook actual input after residual addition and post_attention_layernorm"
+    }
+  },
+  "panel_sha256": "3fa0e7397092b7eb3ea21a9086ce5a1fa3c5f9dddc93399ae23aa354a957d9fb",
+  "selection_sha256": "cca53439e50f0067734cfaccc0c49ac36fecb61c5d9037fd2b209609341b6fe2",
+  "rows": 96,
+  "seed": 20261104,
+  "device": "CPU",
+  "threads": 2,
+  "capture_shape": [
+    4,
+    128
+  ],
+  "tail_batch": 32,
+  "interventions": "Native hook h_new=h_original+W_decoder*(z_new-z_original), decoder bias cancels; preserve original reconstruction residual. Only last prefix colon at block27, not other positions or layers.",
+  "groups": "Exact main discovery H2 common list; each nonempty recruited/lost list first3 in its original discovery ranking. Empty lists stay unavailable. Per-domain/site independent.",
+  "deletion": "Zero selected z coordinates. Match baseline: same-size frozen other-feature list selected in discovery by frequency(+/-2/64) and positive-mean intensity ratio[.5,2], or closest unqualified list with full discrepancy reporting. Additional exact representation-norm random positive-combination addition on noncandidate currently active coordinates; separate operation, not a claimed deletion match.",
+  "swap": "For each destination child and alpha in[.25,.5,1], w=(1-alpha)*v/r+alpha*t_destination; v_new=r*w/||w||2; r=||v||2. Typical t=unit-normalized mean of8discovery per-row unit vectors. Other features unchanged, nonnegative. Mark support changes if an originallyzero member is recruited. alpha0 is identity.",
+  "controls": "Same-member component-shuffled destination typical pattern, matching actual decoder-space perturbation norm via deterministic65grid and20bisection on beta in[0,1]. Own-side typical pattern control similarly norm-matched where feasible. Other frozen frequency/intensity-nearest members with their discovery typical patterns, similarly norm-matched. Exact match tolerance10%; report failures, no output-based beta tuning. Random deletion-norm combination draw uses independent seed and active noncandidate members, positive additions normalized in representation space.",
+  "primary": "8 explicit tests:2sites x2domains x(deletion common;strength opposite alpha.5). Family-mean correct-sibling-margin loss, candidate minus comparator; deletion comparator is discovery matched list only if qualified and per-text active count equal; strength comparator shuffled same-members only if decoder norm ratio within10% and original support retained. Need>=6/8 eligible template clusters; exact family sign flips, Holm .05 and4096family bootstrap intervals. Also report raw intervention-vs-baseline effects, classwise and all norm/count controls independently. Replacement groups,alpha sweep,property and offdomain checks are secondary, not rescue tests.",
+  "outputs": "All4complete candidate scores including period; correct sibling margin/counts; full-vocabulary first-token ranks/probabilities,top20token probabilities/tail mass,entropy,KL vs baseline, and four-candidate normalized probabilities. Full vocabulary rank is not constrained4candidate rank. No generated examples substituted for scores.",
+  "tail": "Because edits occur after final block27 attention, final-layer prefix edits cannot affect candidate-position hidden states/period scores: their K/V use pre-edit final-block inputs, and no later attention layer exists. ATT delta: r_after_attn=block_input+attn_output+delta, output=r_after_attn+MLP(RMSNorm(r_after_attn)); MLPIN delta: output=r_after_attn+MLP(original_MLP_input+delta). Apply finalRMSNorm/head. This is exact architecture-specific computation, not a linear approximation. Validate complete-hook forwards against cached-tail full candidate scores,zero/noop before scaling up; tolerance1e-4FP32, otherwise full forward fallback with same scope.",
+  "ranking": "Compute each candidate first-word rank=1+number vocabulary logits strictly greater; tie rank recorded implicitly. p_vocab uses full vocabulary softmax; p_four uses logsoftmax over4complete sequence scores. Save top20 strings/IDs/probabilities, tail mass, entropy and distribution shift. No need to save multi-GB full logits.",
+  "calibration": "F09 cat and car, both sites: identity, common deletion,alpha.5opposite; full hooked4candidate call vs cached tail. Native baseline for every96prefix must replay S06 within1e-4. Actual decoder norms/bias and injected norms retained.",
+  "stop": "Complete all feasible groups, preserve unavailable/zero/ineligible cases, audit, figures and bounded AI effect update, package with main<20MB. No router, checkpoint update or automatic unbounded follow-up.",
+  "scientific_acceptance": "Unknown"
+}

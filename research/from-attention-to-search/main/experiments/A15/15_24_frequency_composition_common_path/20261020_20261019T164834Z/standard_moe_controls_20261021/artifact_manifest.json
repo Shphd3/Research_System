@@ -1,0 +1,39 @@
+{
+  "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/standard_moe_controls/20261021T042742Z",
+  "jobs": [
+    "pt-0hi8ldns"
+  ],
+  "config": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/standard_moe_controls/20261021T042742Z/config/frozen.json",
+  "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/standard_moe_controls/20261021T042742Z/code/train_controls.py",
+  "runtime": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/standard_moe_controls/20261021T042742Z/provenance/training_runtime.json",
+  "results": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/standard_moe_controls/20261021T042742Z/training/final_evaluation/condition_results.csv",
+  "comparison": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/standard_moe_controls/20261021T042742Z/training/final_evaluation/paired_comparisons.csv",
+  "registration": {
+    "status": "REGISTERED_ACCESS_PASS",
+    "asset_ids": [
+      "checkpoint_family_ordinary_top2_moe_20261021t042742z_moe_seed11",
+      "checkpoint_family_ordinary_top2_moe_20261021t042742z_moe_seed22",
+      "checkpoint_family_ordinary_top2_moe_20261021t042742z_moe_lb_seed11",
+      "checkpoint_family_ordinary_top2_moe_20261021t042742z_moe_lb_seed22",
+      "checkpoint_ordinary_top2_moe_smoke_20261021t042742z",
+      "analysis_ordinary_top2_moe_controls_20261021t042742z"
+    ],
+    "access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-21_050649_ordinary_top2_moe_outputs.json",
+    "strict_exit_code": 0,
+    "stdout": "Checked: 2026-10-21T05:06:49.991126+00:00 ; context UID: 0\nfrom-attention-to-search\tACCESSIBLE\tPROJECT_ENTRYPOINTS\ncheckpoint_family_ordinary_top2_moe_20261021t042742z_moe_seed11\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_ordinary_top2_moe_20261021t042742z_moe_seed22\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_ordinary_top2_moe_20261021t042742z_moe_lb_seed11\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_ordinary_top2_moe_20261021t042742z_moe_lb_seed22\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_ordinary_top2_moe_smoke_20261021t042742z\tACCESSIBLE\tMODEL_STATE_PRESENT\nanalysis_ordinary_top2_moe_controls_20261021t042742z\tACCESSIBLE\tARRAY_FILES_PRESENT\nRead access does not certify loadability, identity or scientific eligibility.\n",
+    "stderr": "",
+    "all_previous_entries_preserved": true
+  },
+  "producer_job_ids": [
+    "pt-0hi8ldns"
+  ],
+  "submission_job_ids": [
+    "pt-50sa30mo",
+    "pt-0hi8ldns"
+  ],
+  "canceled_before_start_job_ids": [
+    "pt-50sa30mo"
+  ],
+  "producer_identity_correction": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_rankone_progress/20261022_review/producer_metadata_correction.json",
+  "saved_artifact_audit_20261022": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_rankone_progress/20261022_review/controls_audit.json"
+}

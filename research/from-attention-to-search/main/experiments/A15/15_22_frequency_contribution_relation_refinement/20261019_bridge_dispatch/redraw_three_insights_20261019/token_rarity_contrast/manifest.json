@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-10-19T12:35:48.581219+08:00",
+  "scope": "existing aggregate descriptive contrast only",
+  "asset": "analysis_crosscoder_frequency_contribution_bridge_20261019t025630z",
+  "sources": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/token_frequency_bridge_groups.csv": "b55c7f9caf98ba3eb0c184f67319dcbccf25294d5ee692e8cae1fee4fcde00fa",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/bridge.json": "5d7e823bac364d1477e26ff8a48184210a0bae9000831d029abac4a948cca5a3",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/config/train_frozen.json": "7b98d945a4e1a37bdc247e21d345d8293fce39812397d4c3ee6235b3fbd117bf"
+  },
+  "code": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/token_rarity_contrast_20261019/code/redraw.py",
+  "code_sha256": "993c498c4b409f606b13486edfe9529b40d9b3598fbf605e3994c32048e5c2ee",
+  "figures": [
+    {
+      "path": "figures/figure1_all_bands_absolute_shares.png",
+      "sha256": "c7c328d1dcf3d97909e69db386eafe12e0244617a924f6fdbbbd19be1744a1a2",
+      "bytes": 241806
+    },
+    {
+      "path": "figures/figure1_all_bands_absolute_shares.svg",
+      "sha256": "8809d8365c941332d2958c6aaee5a27dfd08d7dea1bf556c756c0cb9ff671fa3",
+      "bytes": 42747
+    },
+    {
+      "path": "figures/figure1_all_bands_absolute_shares.pdf",
+      "sha256": "fc8e3ef3714f1be7fb9ca3c23fdc67588b756a420d26d27fa49ff386de38b232",
+      "bytes": 18130
+    },
+    {
+      "path": "figures/figure2_relative_contrast.png",
+      "sha256": "599ca740475241cef84a75fd4fb7a8721949592774cc98bfc2ce2f712041abba",
+      "bytes": 99435
+    },
+    {
+      "path": "figures/figure2_relative_contrast.svg",
+      "sha256": "8ced909270438c1a98bb0923b0a6ae55ed4716a30af50374639d83863c3eab93",
+      "bytes": 10487
+    },
+    {
+      "path": "figures/figure2_relative_contrast.pdf",
+      "sha256": "ebb236a110a4dd9fb3c13a4284d6a8f425049177c0542e35c533b56b3047f691",
+      "bytes": 15165
+    }
+  ],
+  "metric": "EVAL position-mean final-decoder contribution share",
+  "contrast": "original G1 (TRAIN current-token count=1) vs G5 (count>=5)",
+  "uncertainty": "no new intervals or tests; original Spearman intervals reused",
+  "known_EVAL_N": 19070,
+  "TRAIN_unseen_EVAL_N": 3376,
+  "empty_G2": "NA",
+  "source_changed": false,
+  "inference": false,
+  "training": false,
+  "cache_scan": false,
+  "explanation_amendment": "Output representation before final norm; joint code versus final decoder; use token terminology, numeric results unchanged"
+}

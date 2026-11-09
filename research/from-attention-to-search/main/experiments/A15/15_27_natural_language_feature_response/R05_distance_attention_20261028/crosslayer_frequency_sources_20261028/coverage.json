@@ -1,0 +1,61 @@
+{
+  "items": [
+    {
+      "item": "original14layer joint-z and decoder units",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "config.json"
+    },
+    {
+      "item": "all16384 fixed DCLM groups",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "tables/frequency_group_definitions.csv"
+    },
+    {
+      "item": "A/B all layers/distances/domain/strata",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "tables/group_layer_means.csv.gz"
+    },
+    {
+      "item": "primaryfourpairedtests",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "tables/primary4_tests.csv"
+    },
+    {
+      "item": "common nearfar/five support and losses",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "tables/support_summary.csv"
+    },
+    {
+      "item": "window32:192 sensitivity",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "tables/all_primary_type_contrasts.csv"
+    },
+    {
+      "item": "attention/position/whitespace/punctuation diagnostics",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "tables/document_weighted_diagnostics.csv"
+    },
+    {
+      "item": "native scale auxiliary",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "figures/aux_model_member_contribution.png"
+    },
+    {
+      "item": "all active member support",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "tables/active_member_support_by_document.csv.gz"
+    },
+    {
+      "item": "threefiguretypesandreadableexplanation",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "figures_cn.md"
+    }
+  ],
+  "missing_in_scope": [],
+  "not_run_out_of_scope": [
+    "new independent confirmation",
+    "lexical or attention interventions",
+    "model forward/training/dictionary"
+  ],
+  "new_forwards": 0
+}

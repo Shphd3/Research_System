@@ -1,0 +1,448 @@
+{
+  "UTC": "2026-11-03T12:16:51.629223+00:00",
+  "execution_owner": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24",
+  "asset_id": "analysis_r17_d1_s03_animal_h1_h2_24_dual_sae_20261103",
+  "exception": "Current user explicitly requests data/scripts/figures/raw outputs in this new experiment child; byte-identical local reading copies, no model/SAE weights.",
+  "files": [
+    {
+      "path": "data/S02_original_behavior_scores.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/data/S02_original_behavior_scores.jsonl",
+      "sha256": "f7ac273167f6fdcafc8e01116189dd6a24716658da4891406f368dfff0901a26",
+      "bytes": 12806,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "data/S02_original_panel.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/data/S02_original_panel.jsonl",
+      "sha256": "2e433f0436968ea018f46c8785161b39360cf0e9f7ed181874f18d4aacfd4c66",
+      "bytes": 5066,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "data/panel.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/data/panel.jsonl",
+      "sha256": "1e5d55aebef00aa6daad00aad3a935d33c0ed2637ac84c0a37ff108e6840391f",
+      "bytes": 23034,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "data/text_differences.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/data/text_differences.jsonl",
+      "sha256": "5f041a12da635b1c30d86078494d6e1b1443a638e15e82b1a11d01f7a1affdec",
+      "bytes": 2316,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/analyze.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/analyze.py",
+      "sha256": "8c87d43a595898d154fdaa75e4ac469a22bc37962e80557b4d91292070c0cf94",
+      "bytes": 13209,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/common.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/common.py",
+      "sha256": "904f76d8d3a03efd9d7d6fb7e54a40e1dcdd85b01ebbfe2cc69694b1a6a9d61d",
+      "bytes": 1201,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/deliver.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/deliver.py",
+      "sha256": "154f5284d7c41bad6e4ea8eef3119d784bf1b4d4cd5c572f8a8d16a5a7705b37",
+      "bytes": 5921,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/explain_cases.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/explain_cases.py",
+      "sha256": "14d9e3526a1dcf4a39ebdc0695467e590b72d6541e1c34d68eb4199a2ed90d05",
+      "bytes": 5985,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/extract.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/extract.py",
+      "sha256": "5038ce6c011a2b63847fe2d144911733207043dd29d107c6f3f1ef06e076cb6b",
+      "bytes": 5573,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/polish_figures.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/polish_figures.py",
+      "sha256": "33c48716e4450c3a72ed07fb9bfd68003c20fc234c6af430d16ca1d1cbe36b5e",
+      "bytes": 3802,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/prepare.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/prepare.py",
+      "sha256": "40192d9976a0f97650ceb155674dfc52efea2e753b91ef9800e10cc64b1f91d4",
+      "bytes": 7044,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/report.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/report.py",
+      "sha256": "47dcd9c1f5193f009a4b21f0a258e6c7b705b1e610fb3d37cac1c9ab392a41d4",
+      "bytes": 24661,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/select.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/select.py",
+      "sha256": "d3887c860093ea66953e6bedca88667203f8c305324c192cad2580fa9cdd06b9",
+      "bytes": 2976,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "code/verify.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/verify.py",
+      "sha256": "31be5a89c2eacf609b2536238c044a2f852361cd30a6a5d8b3233c31b6cbd3a2",
+      "bytes": 4772,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "cache/exploration.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/cache/exploration.npz",
+      "sha256": "368a55685a256df1c6f32cc649a1b01d1b8c6d1e00c57c1a792d75efe3f08d08",
+      "bytes": 2736121,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "cache/heldout_check.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/cache/heldout_check.npz",
+      "sha256": "4abc8dc429969d2392d2b7357365d11a3e421073a4c3de46cd0acd53345bc4a6",
+      "bytes": 2737845,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/ATTN_SAE/H1_common_patterns.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/ATTN_SAE/H1_common_patterns.csv",
+      "sha256": "65de8ded5835420766457fb4f8cc9e1c00d1b333235ab6958ec0ef86f499bd5c",
+      "bytes": 4336,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/ATTN_SAE/H2_directions.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/ATTN_SAE/H2_directions.csv",
+      "sha256": "32a8cfd4716e7e890947334e0f9db058a3a73ba68f51354ce7a80a46ec9354a5",
+      "bytes": 12522,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/ATTN_SAE/H2_pairs.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/ATTN_SAE/H2_pairs.csv",
+      "sha256": "ea029f92aa5aad690800f22f532ae093a503473d82200d85fd5fe66f5b1c1dbc",
+      "bytes": 1227,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/ATTN_SAE/active_sets_with_full_text.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/ATTN_SAE/active_sets_with_full_text.jsonl",
+      "sha256": "95f7a459891713e60f96154d7cf289e1280c92647ea0d538b27d83946a95b314",
+      "bytes": 31115,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/ATTN_SAE/candidate_values.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/ATTN_SAE/candidate_values.csv",
+      "sha256": "3ffff6eda2a52007e7130a5c85a014bffe69c7da37e75f5b3d8593f324335444",
+      "bytes": 80930,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/ATTN_SAE/pattern_failures.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/ATTN_SAE/pattern_failures.csv",
+      "sha256": "f4493dfd4473596935caf68206b0def7cf8d2b60999a885e8651f8ed0e869f7a",
+      "bytes": 3573,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/ATTN_SAE/transitions.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/ATTN_SAE/transitions.csv",
+      "sha256": "b856ec74dee9b427494b740e12eec2f82102b03daa91a09a2fa00a9cf5cc35dc",
+      "bytes": 13680,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/MLPIN_SAE/H1_common_patterns.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/MLPIN_SAE/H1_common_patterns.csv",
+      "sha256": "69c1595c550c7b5f8944ca0e029de19b9b6ae2477f8f47c6f0e18c4fcaa5e0a2",
+      "bytes": 4411,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/MLPIN_SAE/H2_directions.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/MLPIN_SAE/H2_directions.csv",
+      "sha256": "d6c250a712440141f053de96fb75affded41952f1ec08608b2f1e9a21c13a12c",
+      "bytes": 12723,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/MLPIN_SAE/H2_pairs.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/MLPIN_SAE/H2_pairs.csv",
+      "sha256": "f6b8cd9921a8a6f24b7b60c4f075094f00052cb7335ccf0bc19beee5c83f7899",
+      "bytes": 1216,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/MLPIN_SAE/active_sets_with_full_text.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/MLPIN_SAE/active_sets_with_full_text.jsonl",
+      "sha256": "7e7ebc835add616e4d1d93dbd1913e160a7b53312e9c9ca223807552dc27b6ec",
+      "bytes": 31147,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/MLPIN_SAE/candidate_values.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/MLPIN_SAE/candidate_values.csv",
+      "sha256": "9c4dc8a76dd6305d7cf3c1e94d276ad97b2ea67e595926dcb85c47e60150db86",
+      "bytes": 81580,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/MLPIN_SAE/pattern_failures.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/MLPIN_SAE/pattern_failures.csv",
+      "sha256": "d8c8a538400a615350d9f0785511f67660e6783001bf50dfb1975dbed1f5e984",
+      "bytes": 3593,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/MLPIN_SAE/transitions.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/MLPIN_SAE/transitions.csv",
+      "sha256": "973ac600e89a29b311df64630e910057b45bdf77a25a426e9e6e40b6975064fc",
+      "bytes": 12698,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/active_values.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/active_values.csv",
+      "sha256": "2cd973b214d4126119cf2a653e49616b8c9962c1f128bef72333613672bd9009",
+      "bytes": 183320,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/all_pattern_failures.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/all_pattern_failures.csv",
+      "sha256": "7ef5fd229fc3fe017908d969e5b7cf30ef3597cad109b11c6b164433307df2a5",
+      "bytes": 7106,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/common_intersections.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/common_intersections.csv",
+      "sha256": "50d85284fd2d71945282d3c056936f23d2c9cf8a5ced0770b5f412a7024490fd",
+      "bytes": 2650,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/exploration_candidate_ranking.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/exploration_candidate_ranking.csv",
+      "sha256": "d8501c8630c129f7f4044bafd4f7e542f74650e322ebaf9226dd90e10467d8f8",
+      "bytes": 5658,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/member_transition_values.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/member_transition_values.csv",
+      "sha256": "d3ee1309b8a23e33d1a2b88af8b5c0f162cece55922c3c7bcb1fd492f3380c1b",
+      "bytes": 512000,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/pattern_coverage.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/pattern_coverage.csv",
+      "sha256": "76dff25ed4edc34769a7606dcdd70961134863bd0f39867c125d29fbe499bdba",
+      "bytes": 4558,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/selection.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/selection.json",
+      "sha256": "eddcfe0940247c03250cc1e4dd777fb728d86f19c122647dcb2a7ee1402a4d2a",
+      "bytes": 3672,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "results/summary.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/results/summary.json",
+      "sha256": "a18fdd1bb5a3de1e0102c6830fd0bd603e5c5425f4355be0b135806def79cc67",
+      "bytes": 12063,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/analysis_complete.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/analysis_complete.json",
+      "sha256": "a75c97d09078050bcb365ea98493567e1fb6fac7455808aae98ef32bea293b47",
+      "bytes": 329,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/audit_data.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/audit_data.md",
+      "sha256": "2fb88982bb1e70baecf1d053d269164daca64de4d63b4185cc647ea3671d95e1",
+      "bytes": 217,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/audit_identification.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/audit_identification.md",
+      "sha256": "9d4ab9565eb9b576118936364a03a8031b0db3554b83e7ad95afff9ce84cd288",
+      "bytes": 212,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/audit_implementation.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/audit_implementation.md",
+      "sha256": "9e67246aa087e2db3f20ac205079e4cd5f2e4bbf209b7986177ab1753b9fb0fc",
+      "bytes": 238,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/candidates_frozen_before_heldout.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/candidates_frozen_before_heldout.json",
+      "sha256": "93c2dd5519928fb49d8263b5a3dd5f2924296c1ded25b04c5be3e6a8a4d7b54a",
+      "bytes": 707,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/capture_exploration.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/capture_exploration.json",
+      "sha256": "191cd5a4c181f0af6cbdc23f3db08f99d5859428e807a75fbc25d65a2fa00121",
+      "bytes": 3125,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/capture_heldout_check.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/capture_heldout_check.json",
+      "sha256": "9757777cc91716def6e7566984f20631f5a2b4c35d142b2d0b1abda394479e6e",
+      "bytes": 3190,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/completed.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/completed.json",
+      "sha256": "f1b26c1fbecdae8fa6fa16acfe30e672e85a7035aba10c26f9be9aaca76536c9",
+      "bytes": 853,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/data_audit.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/data_audit.json",
+      "sha256": "38a7c89def987557a924a44a06fc2aeaa1e9ec7146aa35c0cacc1b5ce2c48ae7",
+      "bytes": 2886,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/input_access.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/input_access.json",
+      "sha256": "b62ba91d56f6a7e1ca5dfd98b52bd47e670d87c513acdbeee7ac6662279ed1d0",
+      "bytes": 12220,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/old_steps_immutable_before.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/old_steps_immutable_before.json",
+      "sha256": "5da7dde7f6100882bcca3aea1e871e3cec5e774aa42f1fe21f7ea109029fe010",
+      "bytes": 39051,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/protocol_freeze.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/protocol_freeze.json",
+      "sha256": "ac9f41b37d3a029d2a9b2f87627cce1bfaa64294ebe7a8dbf31c7c025e44cb57",
+      "bytes": 536,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/reader_explanation.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/reader_explanation.json",
+      "sha256": "2673aef19bd408b61154100e977e1b9619e205436058fb259864895e09e087c1",
+      "bytes": 298,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/verification.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/verification.json",
+      "sha256": "f51e6f5143f57ad864e142abcf44ac17b151fde236ec83cfc2863b1e4272161b",
+      "bytes": 1304,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "evidence/visual_layout_repair.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/visual_layout_repair.json",
+      "sha256": "da967047f8cf91551dc620462c74997744bf71f73edcffc931c3ded3c553b336",
+      "bytes": 1743,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "figures/ATTN_SAE_H1_common.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/figures/ATTN_SAE_H1_common.png",
+      "sha256": "7c8217f580aa0435de1daf658cb9c258059754be66d7211e1ec7593cf1fbebda",
+      "bytes": 351859,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "figures/ATTN_SAE_H1_transitions.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/figures/ATTN_SAE_H1_transitions.png",
+      "sha256": "9b00b3746346ca894606c8dfa9f2baee1f1a1dcc7d7191005e85973d7d10f66f",
+      "bytes": 63344,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "figures/ATTN_SAE_H2_joint.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/figures/ATTN_SAE_H2_joint.png",
+      "sha256": "078f1061d2a9702077fb8ea4438880d93e985501d4dcac13ef1ebadffce722b9",
+      "bytes": 358881,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "figures/MLPIN_SAE_H1_common.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/figures/MLPIN_SAE_H1_common.png",
+      "sha256": "3b3c560f21d4986a86838b9bce4af7400d3885acdf20c2c3de3f31c8c564d017",
+      "bytes": 351680,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "figures/MLPIN_SAE_H1_transitions.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/figures/MLPIN_SAE_H1_transitions.png",
+      "sha256": "94acbc5d850919c05a30612344e8e5fc04f3098a67682683e98f2c44739a1bda",
+      "bytes": 64383,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "figures/MLPIN_SAE_H2_joint.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/figures/MLPIN_SAE_H2_joint.png",
+      "sha256": "70db56fa9d250045f03a4fab0c8bff704378b72f47da6d5031b5725b3d7c0e92",
+      "bytes": 377416,
+      "role": "user-requested generated evidence reading copy; execution owns source"
+    },
+    {
+      "path": "frozen_plan.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/frozen_plan.json",
+      "sha256": "e997551578c171f002595389f126c1519c1eca97f1a9d9c9142ccce4c6445e02",
+      "bytes": 4933
+    },
+    {
+      "path": "evidence/output_access.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/output_access.json",
+      "sha256": "32b3651e0c6547dae337f9b4d74e46de2ed11a2262a89e4cfaacb40929f28ba7",
+      "bytes": 7280,
+      "role": "requested evidence reading copy"
+    },
+    {
+      "path": "evidence/figure_review.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/evidence/figure_review.json",
+      "sha256": "dff26f3c6fa4a182e9fc52f06e330360673b31841fb4c5730c966823c37e3767",
+      "bytes": 949,
+      "role": "requested evidence reading copy"
+    },
+    {
+      "path": "code/package.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S03_animal_H1_H2_24/code/package.py",
+      "sha256": "968a32f4e9e5125a6c42f4e24a030cfad7035d86edfaa60dd13fb4e1d89f6ffe",
+      "bytes": 5475,
+      "role": "requested evidence reading copy"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+# S04 protocol: neutral suffix, native behavior and fixed S03 candidates
+
+## Purpose, authorization and hypotheses
+
+APPROVED_FOR_BOUNDED_S04 by current direct user request,2026-11-03. Preserve all S02/S03 records. This step changes only the entire suffix of S03's24bodies to one fixed neutral string and checks native behavior and existing candidate responses. Original H1 (incremental information from added members) and H2 (incremental information from relative strength after identity/scale controls) are unchanged. This is a context robustness description, not a functional test or scientific acceptance. The same question owners15_27_06/15_27_07 and R17_D1 line are retained; no Anchor/Focus reset.
+
+## Inputs, data and suffix fixed before new responses
+
+Same frozen Qwen3-0.6B Base/tokenizer and two original native final-block SAEs as S03; verify exact input and loader hashes, current strict access and old payload hashes. Reuse all24body strings and labels, including P fine category unspecified and N chair. Only suffix changes to exactly newline+'Description:' (no trailing space). This suffix contains none of animal/cat/dog/chair and can follow all complete object-description sentences naturally. Save complete concatenated prefix, all token IDs/pieces/offsets, exact last suffix token and zero/one-based position. No subsequent candidate token is visible to representation capture. Old target is space-a; new target and absolute indices may differ. All S03 family assignments remain F01-03 exploration/F04-06 check. These names distinguish previous selection roles; six exposed short families do not become independent statistical confirmation.
+
+P and N still differ in body class word animal/chair and an/An versus a/A; both use object referents. Cat/dog bodies still explicitly contain those words and use animal referents. Equal suffix removes that particular condition-dependent suffix difference in the new panel but not all lexical/context differences. S02 native scores used a different suffix; old/new differences do not isolate any one word or prove causal feature use.
+
+## Frozen dictionaries and candidate lists
+
+No selection or ranking is run. Copy original S03 ordered H1_common, H1_added_cat, H1_added_dog and H2 lists and original H2 exploration directions byte-identically before new responses. ATTN_SAE: block27 self_attn.o_proj output BEFORE residual addition. MLPIN_SAE: actual block27 mlp input after residual addition and post_attention_layernorm. Each original loader encodes linear+bias, ReLU, Top32 of30000, no extra input normalization or decoder-bias subtraction. This is not an MLP input/output causal pair. Dictionary IDs never align across sites.
+
+Save native Top32 indices separately from z>0 active flags. z is final raw activation; d is own decoder-column L2 norm; u=z*d is single-direction magnitude, not causal or combined reconstruction contribution. For each unchanged named candidate list independently compute q_z=z/||z||2 and q_u=u/||u||2; keep all list positions including zeros. Zero norm is undefined/null/gray, not zero. Record raw, weighted, normalized values and list norms side by side. Existing S03 H2 normalized values must replay exactly; old H1-added normalization, when shown, is a new derived S04 table from original arrays, not a rewrite of S03.
+
+## Native behavior
+
+Use that same new prefix with exact complete candidates ' cat.' and ' dog.', leading space and period included. Tokenize concatenations first and verify boundary stability, IDs and lengths. Score sum of conditional natural log probabilities of ALL candidate tokens including period; use FP32 logsoftmax and FP64 sum. No length normalization, prior subtraction, calibration, classifier, generation or prompt search. Higher total wins; exact ties use fixed cat-first order and are recorded. Cat and dog bodies have corresponding gold labels; P and N have no correct cat/dog answer and report preference only. Report all24rows, six paired changes, separate cat/dog correct counts and all errors. S02 scores are historical different-context references only. No additional neutral body or other question is introduced.
+
+## H2 old/new comparisons and counting
+
+For every fixed H2 atom and family retain old/new cat/dog z,u,q_raw,q_weighted, raw and normalized cat-minus-dog differences and signs. Primary direction is q_weighted; abs difference<=1e-8 is zero. Also report raw difference signs and same/opposite counts. Compare (a) to that family's old sign and (b) to the original frozen S03 discovery sign. For raw metric (b), fix old-exploration mean raw difference before any new response; for weighted-q use original frozen sign. No new direction is estimated from new exploration data.
+
+For each site/atom/metric/reference and each3-family split, exclusive count priority is: zero_norm for normalized metric; member_inactive if either cat/dog under the new suffix is not positive (also require old active for old-pair comparison); no_reference if old reference sign is zero/undefined; same/opposite/zero_difference otherwise. Report the inactive and zero-norm flags separately as well, so a numerical difference caused by support disappearance is visible but not labeled fixed-membership direction replication. Each exclusive count sums to3. No p-values or architecture ranking. Particularly display all six old/new text pairs and values for ATTN #14602 and #3516, not just favorable cases. Never transfer these IDs to MLPIN.
+
+## H1 and figures
+
+Report native full supports and every frozen H1 candidate's P/cat/dog/N z,u,preactivation,Top32 and activity for both suffixes. Retain old/new common/addition patterns with original meanings; no new candidates. Per family, count P-cat/P-dog/P-N/cat-dog/cat-N/dog-N retained/new/lost members and denominators; also old->new per condition. Top32 replacement is dictionary-support change, not independent new semantics. Add compact per-site raw/weighted and relative heatmaps on exact lists, plus per-site old/new H2 difference plots and a behavior score table. Figure axes name list, units and family split; nulls gray. Inspect renders.
+
+## Execution, validation and stopping
+
+CPU FP32, two threads, fixed4x192physical shape as S02/S03. One no-hook prefix forward verifies capture is non-mutating; native encoding equivalence; two duplicate candidate lanes verify numeric consistency. No hooks during native answer scoring; no answer tokens in saved representations. Hash all old S02/S03 execution/canonical files before/after. Save original arrays,token-level scores,code,metadata and all failed patterns. Independently replay sums,choices,normalizations,count partitions,old H2 arithmetic and selection hashes. Strict-register actual reusable outputs; save bilingual Summary/protocol and detailed Chinese evidence in new S04 directory, append one bounded R17_D1 entry. No commit/push or scientific state transition.
+
+Support weaker context stability only when frozen responses remain eligible and direction repeats. Opposite, inactive, undefined and behavior errors remain observations; no eligible candidates or zero norms identify a representation/list coverage limitation, not absence of concepts. All results remain descriptive with explicit words and six families. Stop after delivery. No new data/categories, feature screening, SVD, training, probes, H3/H4 or interventions. Next scientific decision awaits joint review.

@@ -1,0 +1,42 @@
+{
+  "pass": true,
+  "smoke": {
+    "pass": true,
+    "identity_NLL_max_abs_all737": 0.0,
+    "replay": [
+      {
+        "condition": "k1",
+        "NLL_max_abs": 0.0,
+        "saved_top20_probability_max_abs": 0.0
+      },
+      {
+        "condition": "k16",
+        "NLL_max_abs": 0.0,
+        "saved_top20_probability_max_abs": 0.0
+      }
+    ],
+    "torch": "2.8.0+cu128",
+    "transformers": "4.53.3",
+    "GPU": "NVIDIA GeForce RTX 5090",
+    "trainable_parameters": 0,
+    "no_transformer_forward": true
+  },
+  "data": {
+    "pass": true,
+    "records": 4422,
+    "positions": 737,
+    "new_records": 1474,
+    "reused_records": 2948,
+    "primary37": true,
+    "natural175documents700positions": true,
+    "no_training": true,
+    "no_new_transformer_forward": true,
+    "subgroups_fixed": true,
+    "identity_agreement_all": true,
+    "document_bootstrap": 2000
+  },
+  "local_links_missing": [],
+  "figures_visually_inspected": 3,
+  "output_asset": "analysis_a15_27_05_native_spectral_pc1_pc2_pc8_pc16_20261102",
+  "scope": "same-modelsame-cache,userrequested4conditions;noexpandedexperiments"
+}

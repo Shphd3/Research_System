@@ -1,0 +1,97 @@
+{
+  "UTC": "2026-11-05T04:05:03.179062+00:00",
+  "experiment": "S11_four_domain_relative_frequency_1105",
+  "execution_authorized": true,
+  "authorization": "Current user explicitly approves4coarsecategories expansion and sequential development/confirmation afterdefinitions/freeze;no training,interventions,router",
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "input_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "sites": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "loader": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/e16_sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.self_attn.o_proj output before residual addition"
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "loader": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.mlp forward_pre_hook actual input after residual addition and post_attention_layernorm"
+    }
+  },
+  "domains": {
+    "animal": [
+      "animal",
+      "cat",
+      "dog"
+    ],
+    "vehicle": [
+      "vehicle",
+      "car",
+      "bicycle"
+    ],
+    "fruit": [
+      "fruit",
+      "apple",
+      "banana"
+    ],
+    "furniture": [
+      "furniture",
+      "chair",
+      "sofa"
+    ]
+  },
+  "wordings": [
+    "explicit",
+    "named_rephrase",
+    "attribute",
+    "scenario"
+  ],
+  "seed": 20261105,
+  "development_families": 32,
+  "confirmation_families": 64,
+  "controlled_rows": 4608,
+  "reference_questions": 6000,
+  "reference_general": 6000,
+  "reference_sampling": "newsourceIDs;excludeold771questions+R15documents;freshinferenceonly",
+  "runtime": {
+    "device": "CPU",
+    "threads": 4,
+    "wall_ceiling_seconds": 10800,
+    "calibration_rows": 64
+  },
+  "analysis": {
+    "bootstrap": 2000,
+    "sign_draws": 9999,
+    "coactive_list_development_fraction": 0.75,
+    "minimum_family_profile_fraction": 0.75,
+    "reference_supported_count": 5,
+    "reference_mass_coverage": 0.8,
+    "behavior_accuracy": 0.75,
+    "primary_tests_per_reference": 24
+  },
+  "data_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/data/controlled_panel.jsonl": "83b437fbb903705c3b860e2dcf6a0ba9a2e2f288a8de112ada1b6e06a8a443f2",
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/data/families.json": "a92c2eb8f352ffa5825164b55d16bdbecb3584754aaf2acde3050c58d6244e87",
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/data/reference_general.jsonl": "4a8a953955dae4d3c064e098b06d7370f4e6fb02fc46132c24986404c5a899a6",
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/data/reference_questions.jsonl": "e0df854ee0ca806821e0f6bf5577131a9cbc7e712d28f4c202cdf9da288d7bc5",
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/data/reference_sources.json": "f0746f70b31d52ae23c78c136996677600476dcedaaaa6eb9e6dd7147bb06adb",
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105/data/source_availability.csv": "a1a166f3c40dd93ae497d22ae05730a4e4dbc19b5806ab7ce3841341d6fc4a26"
+  },
+  "scientific_acceptance": "Unknown",
+  "closure": "Unknown"
+}

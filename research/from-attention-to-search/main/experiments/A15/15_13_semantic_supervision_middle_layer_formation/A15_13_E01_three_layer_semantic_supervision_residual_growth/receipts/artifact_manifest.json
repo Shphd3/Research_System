@@ -1,0 +1,51 @@
+{
+  "required_artifacts": [
+    {
+      "bytes": 1746,
+      "kind": "table",
+      "path": "tables/primary_metrics.csv",
+      "sha256": "814aac9535ae8b5b494a1481dafe5cd63542692dd2d5a06431402b3f6c4c2d17"
+    },
+    {
+      "bytes": 1424,
+      "kind": "table",
+      "path": "tables/registered_contrasts.csv",
+      "sha256": "666df97525f747cba1aa5b7d9d275666263b3061681938071ed2a8f71f5427d3"
+    },
+    {
+      "bytes": 116546,
+      "kind": "figure",
+      "path": "figures/primary_margin.png",
+      "sha256": "8380cbc76de6810ec3fcec1b1e81fc66c826a3e0d551018376f22af8f9203c08"
+    },
+    {
+      "bytes": 106376,
+      "kind": "figure",
+      "path": "figures/language_guard_nll.png",
+      "sha256": "a2a4e7006efafc80a53671c343a22f999961b2a2d3d692801ea1bc2234144806"
+    },
+    {
+      "bytes": 40170,
+      "kind": "result",
+      "path": "results/aggregate.json",
+      "sha256": "149974c3c3b8ce9f08a4938dd5d63883a1f25b5fde283335de4a564760669749"
+    },
+    {
+      "bytes": 2420,
+      "kind": "result",
+      "path": "figures/figure_contracts.json",
+      "sha256": "aba47738320f52974c5b5c6a73e9a7c9ec4f87012012b7ccfd92cedcec627936"
+    },
+    {
+      "bytes": 7579,
+      "kind": "code_receipt",
+      "path": "preflight_receipt.json",
+      "sha256": "b0316617f933a37d47d9a5f051081b932ff25c0c10b6a01b03543aac1e5d0a9f"
+    }
+  ],
+  "run_scope": "full",
+  "schema_version": "a15_13_artifact_manifest_v1",
+  "scientific_result_may_be_negative": true,
+  "scientific_run": true,
+  "written_at_utc": "2026-08-30T18:34:06.471501+00:00"
+}

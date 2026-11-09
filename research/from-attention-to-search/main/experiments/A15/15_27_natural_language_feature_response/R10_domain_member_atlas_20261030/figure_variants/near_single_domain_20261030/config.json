@@ -1,0 +1,20 @@
+{
+  "revision": "R10-near-single-domain-v1",
+  "frozen_utc": "2026-10-30T04:18:20.843775+00:00",
+  "parent_main_freeze_sha256": "dbe0a02209a9f47ebf8fd15461777e3b3b48600fb946342993bb25a5ac917946",
+  "candidate_pool": "only frozen R10 AUC>=.75 members433math/527bio; no dictionary rescreening",
+  "activation": "native z>0,not mean strength",
+  "strict": "preferred>=5discovery documents,opposite0discovery documents",
+  "near95": "preferred>=5discovery documents,opposite<=5%documents(<=1/30),preferred>=95%of positive token positions across equal-domain panels",
+  "sensitivity": "shares90/95/99% x opposite doc caps0/1/3/unrestricted; do not change primary rule",
+  "heldout": "membership stays discovery-fixed; assess same95%event rule,opposite<=5%docs(<=1/20),preferred>=5docs; report old AUC and each failure separately",
+  "reference_frequency": "same DCLM counts/65536,original cuts and<20support exclusions; also log-rule sensitivity",
+  "reference_uncertainty": "1000canonical-reference-document bootstrap draws; all windows of a document travel together, variable denominator",
+  "token_categories": "input discovery occurrence support, independent of feature responses: shared>=5docs EACH domain;math/bio-associated>=5in that domain and<=1other;remaining insufficient/other; not semantic-exclusive",
+  "token_composition": "existing R10 high-event thresholds and>=5events/2heldoutdocs composition gate; member-equal; analytic document-exposure-matched background; all main subsets retained",
+  "geometry": "same common1024-PC basis/unit decoder; exact existing A01 finer matching rule for near95 sizes,including selected in eligible pool",
+  "new_forwards": 0,
+  "training": 0,
+  "new_PCA": 0,
+  "scientific_acceptance": "Unknown"
+}

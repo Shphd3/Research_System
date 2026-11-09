@@ -1,0 +1,94 @@
+{
+  "jobs": {
+    "spot_smoke_stopped": "pt-mljn674o",
+    "reserved_smoke_dependency_restart_stopped": "pt-an3xzwpn",
+    "reserved_smoke_succeeded": "pt-11i6h4tv",
+    "reserved_full_succeeded": "pt-loe1371e"
+  },
+  "single_gpu_4096_preflight": {
+    "sequence_tokens": 4096,
+    "target_tokens": 7,
+    "native_seconds": 1.5384926795959473,
+    "native_nll": 2.7274677753448486,
+    "native_replay_token_nll_max_abs": 0.0,
+    "candidate_losses_finite": true,
+    "peak_allocated_gib": 57.10838794708252,
+    "peak_reserved_gib": 57.185546875,
+    "free_gib_after": 21.32257080078125,
+    "total_gib": 79.1788330078125
+  },
+  "four_gpu_smoke": {
+    "samples": 8,
+    "indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "shards": 4,
+    "conditions_ok": true,
+    "finite": true,
+    "native_nll_max_abs": 0.0,
+    "noop_nll_max_abs": 0.0,
+    "candidate_nll_max_abs": 0.0,
+    "candidate_logit_max_abs": 0.0,
+    "peak_allocated_gib": [
+      57.013718128204346,
+      57.02828598022461,
+      57.092183113098145,
+      57.04180097579956
+    ],
+    "completed": [
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "full_workers": [
+    {
+      "rank": 0,
+      "assigned": 64,
+      "completed": 64,
+      "peak_allocated_gib": 57.08297634124756,
+      "peak_reserved_gib": 57.35546875
+    },
+    {
+      "rank": 1,
+      "assigned": 64,
+      "completed": 64,
+      "peak_allocated_gib": 57.07030010223389,
+      "peak_reserved_gib": 57.419921875
+    },
+    {
+      "rank": 2,
+      "assigned": 64,
+      "completed": 64,
+      "peak_allocated_gib": 57.154945850372314,
+      "peak_reserved_gib": 57.328125
+    },
+    {
+      "rank": 3,
+      "assigned": 64,
+      "completed": 64,
+      "peak_allocated_gib": 57.14385461807251,
+      "peak_reserved_gib": 57.5234375
+    }
+  ],
+  "full_peak_allocated_gib": [
+    57.08297634124756,
+    57.07030010223389,
+    57.154945850372314,
+    57.14385461807251
+  ],
+  "full_peak_reserved_gib": [
+    57.35546875,
+    57.419921875,
+    57.328125,
+    57.5234375
+  ]
+}

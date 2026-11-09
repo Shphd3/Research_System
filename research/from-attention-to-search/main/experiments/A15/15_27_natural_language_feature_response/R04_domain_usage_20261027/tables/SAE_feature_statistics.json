@@ -1,0 +1,1922 @@
+[
+  {
+    "feature": 47,
+    "role": "shared",
+    "discovery_pM": 0.6308333333333334,
+    "discovery_pB": 0.6027083333333333,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1743,
+    "heldout_hitsB": 1853,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.5446875,
+    "heldout_pB": 0.5790625,
+    "heldout_log2ratio_Jeffreys": -0.08826575104245128,
+    "heldout_ratio_CI95_log2": [
+      -0.4898852953633875,
+      0.32098664651341824
+    ],
+    "DCLM_hits": 24462,
+    "DCLM_reference_rate": 0.373260498046875,
+    "DCLM_CI95_documentbootstrap": [
+      0.3394827974759615,
+      0.40848066640454667
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 10.396092264936723
+  },
+  {
+    "feature": 721,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.036875,
+    "discovery_supportM": 0,
+    "discovery_supportB": 5,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 113,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 2,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.0353125,
+    "heldout_log2ratio_Jeffreys": -7.826548487290915,
+    "heldout_ratio_CI95_log2": [
+      -9.231221180711186,
+      0.0
+    ],
+    "DCLM_hits": 38,
+    "DCLM_reference_rate": 0.000579833984375,
+    "DCLM_CI95_documentbootstrap": [
+      0.0001999261811023622,
+      0.0010459155909297389
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 0.7744754186528998
+  },
+  {
+    "feature": 1069,
+    "role": "math_biased",
+    "discovery_pM": 0.058541666666666665,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 29,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 179,
+    "heldout_hitsB": 6,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 1,
+    "heldout_pM": 0.0559375,
+    "heldout_pB": 0.001875,
+    "heldout_log2ratio_Jeffreys": 4.78740031568196,
+    "heldout_ratio_CI95_log2": [
+      3.0986573892166542,
+      8.731319031025064
+    ],
+    "DCLM_hits": 114,
+    "DCLM_reference_rate": 0.001739501953125,
+    "DCLM_CI95_documentbootstrap": [
+      0.0010901162790697674,
+      0.0025330731249231047
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 1.8004920934014548
+  },
+  {
+    "feature": 1804,
+    "role": "shared",
+    "discovery_pM": 0.04770833333333333,
+    "discovery_pB": 0.03979166666666667,
+    "discovery_supportM": 20,
+    "discovery_supportB": 19,
+    "heldout_hitsM": 300,
+    "heldout_hitsB": 122,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 19,
+    "heldout_supportB": 15,
+    "heldout_pM": 0.09375,
+    "heldout_pB": 0.038125,
+    "heldout_log2ratio_Jeffreys": 1.294583241708615,
+    "heldout_ratio_CI95_log2": [
+      0.4664683943789883,
+      2.2405577217269617
+    ],
+    "DCLM_hits": 4655,
+    "DCLM_reference_rate": 0.0710296630859375,
+    "DCLM_CI95_documentbootstrap": [
+      0.062191652312992125,
+      0.08069114685058593
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 4.077749376687321
+  },
+  {
+    "feature": 2189,
+    "role": "shared",
+    "discovery_pM": 0.07979166666666666,
+    "discovery_pB": 0.05395833333333333,
+    "discovery_supportM": 27,
+    "discovery_supportB": 27,
+    "heldout_hitsM": 217,
+    "heldout_hitsB": 137,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 13,
+    "heldout_supportB": 13,
+    "heldout_pM": 0.0678125,
+    "heldout_pB": 0.0428125,
+    "heldout_log2ratio_Jeffreys": 0.6615837823240687,
+    "heldout_ratio_CI95_log2": [
+      -0.5150323102195816,
+      1.8485131239418189
+    ],
+    "DCLM_hits": 4368,
+    "DCLM_reference_rate": 0.066650390625,
+    "DCLM_CI95_documentbootstrap": [
+      0.053450141366072526,
+      0.08062782287597656
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.3389984843254454
+  },
+  {
+    "feature": 2280,
+    "role": "shared",
+    "discovery_pM": 0.12375,
+    "discovery_pB": 0.078125,
+    "discovery_supportM": 28,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 475,
+    "heldout_hitsB": 247,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 19,
+    "heldout_supportB": 18,
+    "heldout_pM": 0.1484375,
+    "heldout_pB": 0.0771875,
+    "heldout_log2ratio_Jeffreys": 0.9420168158935914,
+    "heldout_ratio_CI95_log2": [
+      0.09033629409301512,
+      1.778149006879707
+    ],
+    "DCLM_hits": 2651,
+    "DCLM_reference_rate": 0.0404510498046875,
+    "DCLM_CI95_documentbootstrap": [
+      0.03512495746762734,
+      0.04572447843329851
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 1.3691090738023972
+  },
+  {
+    "feature": 2439,
+    "role": "shared",
+    "discovery_pM": 0.05875,
+    "discovery_pB": 0.050208333333333334,
+    "discovery_supportM": 26,
+    "discovery_supportB": 26,
+    "heldout_hitsM": 270,
+    "heldout_hitsB": 155,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 18,
+    "heldout_supportB": 18,
+    "heldout_pM": 0.084375,
+    "heldout_pB": 0.0484375,
+    "heldout_log2ratio_Jeffreys": 0.7987140136962126,
+    "heldout_ratio_CI95_log2": [
+      -0.07949572196667999,
+      1.7516177052889759
+    ],
+    "DCLM_hits": 2443,
+    "DCLM_reference_rate": 0.0372772216796875,
+    "DCLM_CI95_documentbootstrap": [
+      0.03193639620082585,
+      0.042832565307617185
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.7199701388554396
+  },
+  {
+    "feature": 3989,
+    "role": "shared",
+    "discovery_pM": 0.49041666666666667,
+    "discovery_pB": 0.44395833333333334,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1497,
+    "heldout_hitsB": 1393,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.4678125,
+    "heldout_pB": 0.4353125,
+    "heldout_log2ratio_Jeffreys": 0.10384300057233879,
+    "heldout_ratio_CI95_log2": [
+      -0.03219131297136967,
+      0.23537217211443243
+    ],
+    "DCLM_hits": 32710,
+    "DCLM_reference_rate": 0.499114990234375,
+    "DCLM_CI95_documentbootstrap": [
+      0.48898854293222505,
+      0.5085814468503937
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 20.121164711304072
+  },
+  {
+    "feature": 4127,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.051458333333333335,
+    "discovery_supportM": 0,
+    "discovery_supportB": 15,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 135,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 10,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.0421875,
+    "heldout_log2ratio_Jeffreys": -8.08214904135387,
+    "heldout_ratio_CI95_log2": [
+      -9.255263920578926,
+      -5.832890014164742
+    ],
+    "DCLM_hits": 47,
+    "DCLM_reference_rate": 0.0007171630859375,
+    "DCLM_CI95_documentbootstrap": [
+      0.00015378937007874016,
+      0.0015686515748031496
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.6080105922136736
+  },
+  {
+    "feature": 4168,
+    "role": "shared",
+    "discovery_pM": 0.51125,
+    "discovery_pB": 0.40541666666666665,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1626,
+    "heldout_hitsB": 1457,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.508125,
+    "heldout_pB": 0.4553125,
+    "heldout_log2ratio_Jeffreys": 0.158274938953273,
+    "heldout_ratio_CI95_log2": [
+      -0.13662794315783808,
+      0.47809295164205123
+    ],
+    "DCLM_hits": 28053,
+    "DCLM_reference_rate": 0.4280548095703125,
+    "DCLM_CI95_documentbootstrap": [
+      0.40500416793222505,
+      0.45126582957562716
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 13.101884948024248
+  },
+  {
+    "feature": 4344,
+    "role": "shared",
+    "discovery_pM": 0.5058333333333334,
+    "discovery_pB": 0.6620833333333334,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1564,
+    "heldout_hitsB": 2221,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.48875,
+    "heldout_pB": 0.6940625,
+    "heldout_log2ratio_Jeffreys": -0.5058324827690821,
+    "heldout_ratio_CI95_log2": [
+      -0.7566328015699099,
+      -0.2484024521742834
+    ],
+    "DCLM_hits": 28469,
+    "DCLM_reference_rate": 0.4344024658203125,
+    "DCLM_CI95_documentbootstrap": [
+      0.4129291534423828,
+      0.45602426750715386
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 13.394652189964383
+  },
+  {
+    "feature": 4452,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.031041666666666665,
+    "discovery_supportM": 0,
+    "discovery_supportB": 29,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 111,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 17,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.0346875,
+    "heldout_log2ratio_Jeffreys": -7.800899899920305,
+    "heldout_ratio_CI95_log2": [
+      -8.317638035598804,
+      -7.098032082960526
+    ],
+    "DCLM_hits": 17,
+    "DCLM_reference_rate": 0.0002593994140625,
+    "DCLM_CI95_documentbootstrap": [
+      7.62939453125e-05,
+      0.000518798828125
+    ],
+    "DCLM_low_support": true,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 0.8223090739577958
+  },
+  {
+    "feature": 5196,
+    "role": "shared",
+    "discovery_pM": 0.21583333333333332,
+    "discovery_pB": 0.23,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 592,
+    "heldout_hitsB": 846,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.185,
+    "heldout_pB": 0.264375,
+    "heldout_log2ratio_Jeffreys": -0.5146949141100203,
+    "heldout_ratio_CI95_log2": [
+      -1.0262575041176585,
+      0.07348251811833637
+    ],
+    "DCLM_hits": 22750,
+    "DCLM_reference_rate": 0.347137451171875,
+    "DCLM_CI95_documentbootstrap": [
+      0.3259224268395131,
+      0.3669307708740234
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0000001192092896,
+    "discovery_token_contribution_RMS": 4.391606004221805
+  },
+  {
+    "feature": 5903,
+    "role": "shared",
+    "discovery_pM": 0.05458333333333333,
+    "discovery_pB": 0.04770833333333333,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 161,
+    "heldout_hitsB": 154,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.0503125,
+    "heldout_pB": 0.048125,
+    "heldout_log2ratio_Jeffreys": 0.06392732678955021,
+    "heldout_ratio_CI95_log2": [
+      -0.37829296002456064,
+      0.5228970452116183
+    ],
+    "DCLM_hits": 2103,
+    "DCLM_reference_rate": 0.0320892333984375,
+    "DCLM_CI95_documentbootstrap": [
+      0.030004167932225025,
+      0.03420275590551181
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.1112940022690827
+  },
+  {
+    "feature": 7318,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.044375,
+    "discovery_supportM": 0,
+    "discovery_supportB": 14,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 100,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 9,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.03125,
+    "heldout_log2ratio_Jeffreys": -7.651051691178929,
+    "heldout_ratio_CI95_log2": [
+      -8.50402391089004,
+      -6.108524456778169
+    ],
+    "DCLM_hits": 31,
+    "DCLM_reference_rate": 0.0004730224609375,
+    "DCLM_CI95_documentbootstrap": [
+      9.227362204724409e-05,
+      0.0010151754618413073
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.4405131003768603
+  },
+  {
+    "feature": 7446,
+    "role": "shared",
+    "discovery_pM": 0.04666666666666667,
+    "discovery_pB": 0.05604166666666666,
+    "discovery_supportM": 30,
+    "discovery_supportB": 29,
+    "heldout_hitsM": 126,
+    "heldout_hitsB": 208,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 18,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.039375,
+    "heldout_pB": 0.065,
+    "heldout_log2ratio_Jeffreys": -0.7209099987503534,
+    "heldout_ratio_CI95_log2": [
+      -1.4074770750239014,
+      -0.05155561605513412
+    ],
+    "DCLM_hits": 4516,
+    "DCLM_reference_rate": 0.06890869140625,
+    "DCLM_CI95_documentbootstrap": [
+      0.06455957307590274,
+      0.07360394741823137
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0000001192092896,
+    "discovery_token_contribution_RMS": 8.340210935627962
+  },
+  {
+    "feature": 8066,
+    "role": "shared",
+    "discovery_pM": 0.473125,
+    "discovery_pB": 0.4666666666666667,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1524,
+    "heldout_hitsB": 1363,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.47625,
+    "heldout_pB": 0.4259375,
+    "heldout_log2ratio_Jeffreys": 0.16102145009448512,
+    "heldout_ratio_CI95_log2": [
+      -0.16021153554552314,
+      0.5196077262382741
+    ],
+    "DCLM_hits": 21110,
+    "DCLM_reference_rate": 0.322113037109375,
+    "DCLM_CI95_documentbootstrap": [
+      0.30130403173251413,
+      0.3449878692626953
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 6.339671335339595
+  },
+  {
+    "feature": 8296,
+    "role": "math_biased",
+    "discovery_pM": 0.15479166666666666,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 26,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 424,
+    "heldout_hitsB": 0,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 17,
+    "heldout_supportB": 0,
+    "heldout_pM": 0.1325,
+    "heldout_pB": 0.0,
+    "heldout_log2ratio_Jeffreys": 9.729620743553038,
+    "heldout_ratio_CI95_log2": [
+      8.939579214314692,
+      10.256208688527387
+    ],
+    "DCLM_hits": 109,
+    "DCLM_reference_rate": 0.0016632080078125,
+    "DCLM_CI95_documentbootstrap": [
+      0.0003002737450787402,
+      0.0038908799354557843
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.0387430757988927
+  },
+  {
+    "feature": 8331,
+    "role": "shared",
+    "discovery_pM": 0.100625,
+    "discovery_pB": 0.119375,
+    "discovery_supportM": 29,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 447,
+    "heldout_hitsB": 246,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.1396875,
+    "heldout_pB": 0.076875,
+    "heldout_log2ratio_Jeffreys": 0.8603000357737072,
+    "heldout_ratio_CI95_log2": [
+      0.35164735842693046,
+      1.4014950807110913
+    ],
+    "DCLM_hits": 5119,
+    "DCLM_reference_rate": 0.0781097412109375,
+    "DCLM_CI95_documentbootstrap": [
+      0.06753773580070671,
+      0.0895988404281496
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 5.2953168166234565
+  },
+  {
+    "feature": 8848,
+    "role": "math_biased",
+    "discovery_pM": 0.17458333333333334,
+    "discovery_pB": 0.00020833333333333335,
+    "discovery_supportM": 21,
+    "discovery_supportB": 1,
+    "heldout_hitsM": 406,
+    "heldout_hitsB": 0,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 13,
+    "heldout_supportB": 0,
+    "heldout_pM": 0.126875,
+    "heldout_pB": 0.0,
+    "heldout_log2ratio_Jeffreys": 9.667111542075027,
+    "heldout_ratio_CI95_log2": [
+      8.29920801838728,
+      10.462553359540681
+    ],
+    "DCLM_hits": 188,
+    "DCLM_reference_rate": 0.00286865234375,
+    "DCLM_CI95_documentbootstrap": [
+      0.0003509521484375,
+      0.006655156062199507
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.7595040266943296
+  },
+  {
+    "feature": 8856,
+    "role": "shared",
+    "discovery_pM": 0.19791666666666666,
+    "discovery_pB": 0.13083333333333333,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 668,
+    "heldout_hitsB": 447,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.20875,
+    "heldout_pB": 0.1396875,
+    "heldout_log2ratio_Jeffreys": 0.5790398779417341,
+    "heldout_ratio_CI95_log2": [
+      0.08267298852837845,
+      1.061714114060338
+    ],
+    "DCLM_hits": 24312,
+    "DCLM_reference_rate": 0.3709716796875,
+    "DCLM_CI95_documentbootstrap": [
+      0.35216720516789507,
+      0.3899237204724409
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 9.320819848124286
+  },
+  {
+    "feature": 9730,
+    "role": "math_biased",
+    "discovery_pM": 0.1425,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 22,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 363,
+    "heldout_hitsB": 0,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 16,
+    "heldout_supportB": 0,
+    "heldout_pM": 0.1134375,
+    "heldout_pB": 0.0,
+    "heldout_log2ratio_Jeffreys": 9.505811553919594,
+    "heldout_ratio_CI95_log2": [
+      8.75137630354936,
+      10.10204124801461
+    ],
+    "DCLM_hits": 132,
+    "DCLM_reference_rate": 0.00201416015625,
+    "DCLM_CI95_documentbootstrap": [
+      0.0001983642578125,
+      0.005282627452503549
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.7662060991771895
+  },
+  {
+    "feature": 10033,
+    "role": "shared",
+    "discovery_pM": 0.08833333333333333,
+    "discovery_pB": 0.13,
+    "discovery_supportM": 15,
+    "discovery_supportB": 18,
+    "heldout_hitsM": 285,
+    "heldout_hitsB": 393,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 10,
+    "heldout_supportB": 13,
+    "heldout_pM": 0.0890625,
+    "heldout_pB": 0.1228125,
+    "heldout_log2ratio_Jeffreys": -0.46287289014464367,
+    "heldout_ratio_CI95_log2": [
+      -1.792212999909622,
+      0.7056029902103473
+    ],
+    "DCLM_hits": 932,
+    "DCLM_reference_rate": 0.01422119140625,
+    "DCLM_CI95_documentbootstrap": [
+      0.0074424130338994685,
+      0.0223236083984375
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.456851038060184
+  },
+  {
+    "feature": 10331,
+    "role": "bio_biased",
+    "discovery_pM": 0.00020833333333333335,
+    "discovery_pB": 0.12166666666666667,
+    "discovery_supportM": 1,
+    "discovery_supportB": 15,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 209,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 7,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.0653125,
+    "heldout_log2ratio_Jeffreys": -8.710806433699352,
+    "heldout_ratio_CI95_log2": [
+      -9.902450411749328,
+      -5.554588851677638
+    ],
+    "DCLM_hits": 40,
+    "DCLM_reference_rate": 0.0006103515625,
+    "DCLM_CI95_documentbootstrap": [
+      7.62939453125e-05,
+      0.0014649383781492242
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.3707373624610324
+  },
+  {
+    "feature": 10496,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.04041666666666666,
+    "discovery_supportM": 0,
+    "discovery_supportB": 10,
+    "heldout_hitsM": 1,
+    "heldout_hitsB": 41,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 1,
+    "heldout_supportB": 3,
+    "heldout_pM": 0.0003125,
+    "heldout_pB": 0.0128125,
+    "heldout_log2ratio_Jeffreys": -4.7900769306257684,
+    "heldout_ratio_CI95_log2": [
+      -7.851749041416057,
+      1.584962500721156
+    ],
+    "DCLM_hits": 3,
+    "DCLM_reference_rate": 4.57763671875e-05,
+    "DCLM_CI95_documentbootstrap": [
+      0.0,
+      0.0001220703125
+    ],
+    "DCLM_low_support": true,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.403468774063841
+  },
+  {
+    "feature": 10916,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.035416666666666666,
+    "discovery_supportM": 0,
+    "discovery_supportB": 10,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 1,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 1,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.0003125,
+    "heldout_log2ratio_Jeffreys": -1.5849625007211563,
+    "heldout_ratio_CI95_log2": [
+      -2.807354922057604,
+      0.0
+    ],
+    "DCLM_hits": 3,
+    "DCLM_reference_rate": 4.57763671875e-05,
+    "DCLM_CI95_documentbootstrap": [
+      0.0,
+      9.227362204724409e-05
+    ],
+    "DCLM_low_support": true,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.1112869895413622
+  },
+  {
+    "feature": 11234,
+    "role": "shared",
+    "discovery_pM": 0.21458333333333332,
+    "discovery_pB": 0.3260416666666667,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 606,
+    "heldout_hitsB": 998,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.189375,
+    "heldout_pB": 0.311875,
+    "heldout_log2ratio_Jeffreys": -0.7192547823234624,
+    "heldout_ratio_CI95_log2": [
+      -1.0421613413153852,
+      -0.385095769356317
+    ],
+    "DCLM_hits": 19523,
+    "DCLM_reference_rate": 0.2978973388671875,
+    "DCLM_CI95_documentbootstrap": [
+      0.2864328192185986,
+      0.3100524139404297
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 6.035940353939755
+  },
+  {
+    "feature": 11263,
+    "role": "math_biased",
+    "discovery_pM": 0.12666666666666668,
+    "discovery_pB": 0.00020833333333333335,
+    "discovery_supportM": 16,
+    "discovery_supportB": 1,
+    "heldout_hitsM": 292,
+    "heldout_hitsB": 1,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 11,
+    "heldout_supportB": 1,
+    "heldout_pM": 0.09125,
+    "heldout_pB": 0.0003125,
+    "heldout_log2ratio_Jeffreys": 7.60733031374961,
+    "heldout_ratio_CI95_log2": [
+      5.145267594239368,
+      10.102302370429541
+    ],
+    "DCLM_hits": 331,
+    "DCLM_reference_rate": 0.0050506591796875,
+    "DCLM_CI95_documentbootstrap": [
+      7.62939453125e-05,
+      0.013031627948467545
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 2.391537673886096
+  },
+  {
+    "feature": 11399,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.051875,
+    "discovery_supportM": 0,
+    "discovery_supportB": 22,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 98,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 12,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.030625,
+    "heldout_log2ratio_Jeffreys": -7.622051819456376,
+    "heldout_ratio_CI95_log2": [
+      -8.290476851512787,
+      -6.6293566200796095
+    ],
+    "DCLM_hits": 20,
+    "DCLM_reference_rate": 0.00030517578125,
+    "DCLM_CI95_documentbootstrap": [
+      0.00012303149606299212,
+      0.0005340576171875
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.2239873553285874
+  },
+  {
+    "feature": 12096,
+    "role": "math_biased",
+    "discovery_pM": 0.07333333333333333,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 28,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 181,
+    "heldout_hitsB": 1,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 1,
+    "heldout_pM": 0.0565625,
+    "heldout_pB": 0.0003125,
+    "heldout_log2ratio_Jeffreys": 6.918863237274595,
+    "heldout_ratio_CI95_log2": [
+      5.48235532512264,
+      8.829722735086058
+    ],
+    "DCLM_hits": 97,
+    "DCLM_reference_rate": 0.0014801025390625,
+    "DCLM_CI95_documentbootstrap": [
+      0.0003662109375,
+      0.003153066560039368
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0000001192092896,
+    "discovery_token_contribution_RMS": 1.9489000173603839
+  },
+  {
+    "feature": 12478,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.0975,
+    "discovery_supportM": 0,
+    "discovery_supportB": 25,
+    "heldout_hitsM": 4,
+    "heldout_hitsB": 579,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 1,
+    "heldout_supportB": 15,
+    "heldout_pM": 0.00125,
+    "heldout_pB": 0.1809375,
+    "heldout_log2ratio_Jeffreys": -7.00873984956416,
+    "heldout_ratio_CI95_log2": [
+      -10.694401394314813,
+      -5.0336711731260655
+    ],
+    "DCLM_hits": 122,
+    "DCLM_reference_rate": 0.001861572265625,
+    "DCLM_CI95_documentbootstrap": [
+      0.00032295767716535435,
+      0.00427284240722656
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.161347570311392
+  },
+  {
+    "feature": 12842,
+    "role": "shared",
+    "discovery_pM": 0.07729166666666666,
+    "discovery_pB": 0.05479166666666667,
+    "discovery_supportM": 29,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 263,
+    "heldout_hitsB": 227,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.0821875,
+    "heldout_pB": 0.0709375,
+    "heldout_log2ratio_Jeffreys": 0.21193641655115614,
+    "heldout_ratio_CI95_log2": [
+      -0.36980797327230625,
+      0.7810136002656217
+    ],
+    "DCLM_hits": 1919,
+    "DCLM_reference_rate": 0.0292816162109375,
+    "DCLM_CI95_documentbootstrap": [
+      0.026321209885004,
+      0.03256251417745755
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.8590503776603469
+  },
+  {
+    "feature": 13047,
+    "role": "math_biased",
+    "discovery_pM": 0.099375,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 19,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 258,
+    "heldout_hitsB": 1,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 11,
+    "heldout_supportB": 1,
+    "heldout_pM": 0.080625,
+    "heldout_pB": 0.0003125,
+    "heldout_log2ratio_Jeffreys": 7.429057969593779,
+    "heldout_ratio_CI95_log2": [
+      5.602685963232803,
+      9.63135852716114
+    ],
+    "DCLM_hits": 211,
+    "DCLM_reference_rate": 0.0032196044921875,
+    "DCLM_CI95_documentbootstrap": [
+      0.0005067359744094489,
+      0.008487163218416891
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.9455406854017054
+  },
+  {
+    "feature": 13093,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.035416666666666666,
+    "discovery_supportM": 0,
+    "discovery_supportB": 8,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 30,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 6,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.009375,
+    "heldout_log2ratio_Jeffreys": -5.930737337562886,
+    "heldout_ratio_CI95_log2": [
+      -6.89541890015711,
+      -3.4594316186372973
+    ],
+    "DCLM_hits": 13,
+    "DCLM_reference_rate": 0.0001983642578125,
+    "DCLM_CI95_documentbootstrap": [
+      9.225559985543799e-05,
+      0.00031795058139534886
+    ],
+    "DCLM_low_support": true,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 0.8354124531922892
+  },
+  {
+    "feature": 13566,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.08541666666666667,
+    "discovery_supportM": 0,
+    "discovery_supportB": 18,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 116,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 8,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.03625,
+    "heldout_log2ratio_Jeffreys": -7.864186144654281,
+    "heldout_ratio_CI95_log2": [
+      -8.963040275033709,
+      -4.523561956057013
+    ],
+    "DCLM_hits": 125,
+    "DCLM_reference_rate": 0.0019073486328125,
+    "DCLM_CI95_documentbootstrap": [
+      9.225559985543799e-05,
+      0.00480784919318251
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 1.5372670215143582
+  },
+  {
+    "feature": 14174,
+    "role": "shared",
+    "discovery_pM": 0.04041666666666666,
+    "discovery_pB": 0.045625,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 148,
+    "heldout_hitsB": 140,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 19,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.04625,
+    "heldout_pB": 0.04375,
+    "heldout_log2ratio_Jeffreys": 0.07989280057983976,
+    "heldout_ratio_CI95_log2": [
+      -0.3675976143019899,
+      0.4822957681926995
+    ],
+    "DCLM_hits": 2560,
+    "DCLM_reference_rate": 0.0390625,
+    "DCLM_CI95_documentbootstrap": [
+      0.03662841796875,
+      0.04181822843329851
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 3.2540258394698243
+  },
+  {
+    "feature": 14481,
+    "role": "shared",
+    "discovery_pM": 0.8677083333333333,
+    "discovery_pB": 0.8297916666666667,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 2590,
+    "heldout_hitsB": 2820,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.809375,
+    "heldout_pB": 0.88125,
+    "heldout_log2ratio_Jeffreys": -0.12272035335478271,
+    "heldout_ratio_CI95_log2": [
+      -0.21130776265989004,
+      -0.04220316739808776
+    ],
+    "DCLM_hits": 58277,
+    "DCLM_reference_rate": 0.8892364501953125,
+    "DCLM_CI95_documentbootstrap": [
+      0.8759118628314161,
+      0.9017910798827291
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 62.25194930960566
+  },
+  {
+    "feature": 14536,
+    "role": "shared",
+    "discovery_pM": 0.29833333333333334,
+    "discovery_pB": 0.21833333333333332,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1077,
+    "heldout_hitsB": 645,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.3365625,
+    "heldout_pB": 0.2015625,
+    "heldout_log2ratio_Jeffreys": 0.7391988686692699,
+    "heldout_ratio_CI95_log2": [
+      0.2557462586584452,
+      1.2540434434398438
+    ],
+    "DCLM_hits": 25230,
+    "DCLM_reference_rate": 0.384979248046875,
+    "DCLM_CI95_documentbootstrap": [
+      0.36104249969242125,
+      0.40900341327373796
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 4.33430422627708
+  },
+  {
+    "feature": 16012,
+    "role": "shared",
+    "discovery_pM": 0.050625,
+    "discovery_pB": 0.04479166666666667,
+    "discovery_supportM": 30,
+    "discovery_supportB": 29,
+    "heldout_hitsM": 160,
+    "heldout_hitsB": 200,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.05,
+    "heldout_pB": 0.0625,
+    "heldout_log2ratio_Jeffreys": -0.32102893933261717,
+    "heldout_ratio_CI95_log2": [
+      -0.7958903274986813,
+      0.1259191419721079
+    ],
+    "DCLM_hits": 2579,
+    "DCLM_reference_rate": 0.0393524169921875,
+    "DCLM_CI95_documentbootstrap": [
+      0.03688392639160156,
+      0.04182472229003906
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0000001192092896,
+    "discovery_token_contribution_RMS": 3.9324369091350992
+  },
+  {
+    "feature": 16240,
+    "role": "shared",
+    "discovery_pM": 0.645625,
+    "discovery_pB": 0.35083333333333333,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 2318,
+    "heldout_hitsB": 1056,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.724375,
+    "heldout_pB": 0.33,
+    "heldout_log2ratio_Jeffreys": 1.133898959439585,
+    "heldout_ratio_CI95_log2": [
+      0.5675632499959815,
+      1.877674336499095
+    ],
+    "DCLM_hits": 31712,
+    "DCLM_reference_rate": 0.48388671875,
+    "DCLM_CI95_documentbootstrap": [
+      0.43470022577233264,
+      0.5301881193204689
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0000001192092896,
+    "discovery_token_contribution_RMS": 8.93101795059808
+  },
+  {
+    "feature": 17390,
+    "role": "shared",
+    "discovery_pM": 0.35041666666666665,
+    "discovery_pB": 0.405625,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1179,
+    "heldout_hitsB": 1323,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.3684375,
+    "heldout_pB": 0.4134375,
+    "heldout_log2ratio_Jeffreys": -0.16618277625593594,
+    "heldout_ratio_CI95_log2": [
+      -0.36347136637389454,
+      0.03230186004666627
+    ],
+    "DCLM_hits": 22941,
+    "DCLM_reference_rate": 0.3500518798828125,
+    "DCLM_CI95_documentbootstrap": [
+      0.34105556553000826,
+      0.3599456926816288
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 9.688217520579393
+  },
+  {
+    "feature": 17558,
+    "role": "math_biased",
+    "discovery_pM": 0.052083333333333336,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 5,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 24,
+    "heldout_hitsB": 6,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 4,
+    "heldout_supportB": 2,
+    "heldout_pM": 0.0075,
+    "heldout_pB": 0.001875,
+    "heldout_log2ratio_Jeffreys": 1.914270125974116,
+    "heldout_ratio_CI95_log2": [
+      -1.5849625007211563,
+      6.066089190457772
+    ],
+    "DCLM_hits": 11,
+    "DCLM_reference_rate": 0.0001678466796875,
+    "DCLM_CI95_documentbootstrap": [
+      1.52587890625e-05,
+      0.0003814697265625
+    ],
+    "DCLM_low_support": true,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.5823334037236947
+  },
+  {
+    "feature": 18336,
+    "role": "shared",
+    "discovery_pM": 0.03854166666666667,
+    "discovery_pB": 0.06895833333333333,
+    "discovery_supportM": 29,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 138,
+    "heldout_hitsB": 196,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 19,
+    "heldout_supportB": 19,
+    "heldout_pM": 0.043125,
+    "heldout_pB": 0.06125,
+    "heldout_log2ratio_Jeffreys": -0.504643336209418,
+    "heldout_ratio_CI95_log2": [
+      -1.2786274108721933,
+      0.30486614529127154
+    ],
+    "DCLM_hits": 2206,
+    "DCLM_reference_rate": 0.033660888671875,
+    "DCLM_CI95_documentbootstrap": [
+      0.029618679256889765,
+      0.03788176780523256
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0000001192092896,
+    "discovery_token_contribution_RMS": 1.4965349500464262
+  },
+  {
+    "feature": 19280,
+    "role": "math_biased",
+    "discovery_pM": 0.185625,
+    "discovery_pB": 0.00020833333333333335,
+    "discovery_supportM": 19,
+    "discovery_supportB": 1,
+    "heldout_hitsM": 289,
+    "heldout_hitsB": 2,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 6,
+    "heldout_supportB": 2,
+    "heldout_pM": 0.0903125,
+    "heldout_pB": 0.000625,
+    "heldout_log2ratio_Jeffreys": 6.855491443101874,
+    "heldout_ratio_CI95_log2": [
+      3.649609883571248,
+      9.634901671767187
+    ],
+    "DCLM_hits": 89,
+    "DCLM_reference_rate": 0.0013580322265625,
+    "DCLM_CI95_documentbootstrap": [
+      0.0001678466796875,
+      0.0031682052011564954
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 3.5602113233159245
+  },
+  {
+    "feature": 19524,
+    "role": "shared",
+    "discovery_pM": 0.04833333333333333,
+    "discovery_pB": 0.03916666666666667,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 137,
+    "heldout_hitsB": 137,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.0428125,
+    "heldout_pB": 0.0428125,
+    "heldout_log2ratio_Jeffreys": 0.0,
+    "heldout_ratio_CI95_log2": [
+      -0.4621135045399967,
+      0.475401518629218
+    ],
+    "DCLM_hits": 2288,
+    "DCLM_reference_rate": 0.034912109375,
+    "DCLM_CI95_documentbootstrap": [
+      0.03271071366437777,
+      0.03730952129947557
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 4.334639213806423
+  },
+  {
+    "feature": 19999,
+    "role": "shared",
+    "discovery_pM": 0.36270833333333335,
+    "discovery_pB": 0.48625,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1117,
+    "heldout_hitsB": 1691,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.3490625,
+    "heldout_pB": 0.5284375,
+    "heldout_log2ratio_Jeffreys": -0.5980283457233082,
+    "heldout_ratio_CI95_log2": [
+      -0.9450146718895774,
+      -0.2795484232039233
+    ],
+    "DCLM_hits": 22550,
+    "DCLM_reference_rate": 0.344085693359375,
+    "DCLM_CI95_documentbootstrap": [
+      0.3220516204833984,
+      0.3659425750492126
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 7.023635672327942
+  },
+  {
+    "feature": 20058,
+    "role": "shared",
+    "discovery_pM": 0.2972916666666667,
+    "discovery_pB": 0.23041666666666666,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 989,
+    "heldout_hitsB": 755,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.3090625,
+    "heldout_pB": 0.2359375,
+    "heldout_log2ratio_Jeffreys": 0.38926795188268304,
+    "heldout_ratio_CI95_log2": [
+      0.11089395304513826,
+      0.6829689659805648
+    ],
+    "DCLM_hits": 18004,
+    "DCLM_reference_rate": 0.27471923828125,
+    "DCLM_CI95_documentbootstrap": [
+      0.2628671572189923,
+      0.2865909576416016
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 4.207425037645096
+  },
+  {
+    "feature": 20289,
+    "role": "shared",
+    "discovery_pM": 0.5245833333333333,
+    "discovery_pB": 0.6716666666666666,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1716,
+    "heldout_hitsB": 1999,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.53625,
+    "heldout_pB": 0.6246875,
+    "heldout_log2ratio_Jeffreys": -0.2201694238528728,
+    "heldout_ratio_CI95_log2": [
+      -0.44994576641884504,
+      0.030201738088442925
+    ],
+    "DCLM_hits": 21787,
+    "DCLM_reference_rate": 0.3324432373046875,
+    "DCLM_CI95_documentbootstrap": [
+      0.3112458416796106,
+      0.354624371847914
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 9.501329603628118
+  },
+  {
+    "feature": 20651,
+    "role": "math_biased",
+    "discovery_pM": 0.04541666666666667,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 22,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 171,
+    "heldout_hitsB": 1,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 19,
+    "heldout_supportB": 1,
+    "heldout_pM": 0.0534375,
+    "heldout_pB": 0.0003125,
+    "heldout_log2ratio_Jeffreys": 6.837102265451656,
+    "heldout_ratio_CI95_log2": [
+      5.3474631869945,
+      8.778077129535358
+    ],
+    "DCLM_hits": 69,
+    "DCLM_reference_rate": 0.0010528564453125,
+    "DCLM_CI95_documentbootstrap": [
+      0.0004388630029985351,
+      0.001937746062992126
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 1.0658804633493995
+  },
+  {
+    "feature": 22098,
+    "role": "math_biased",
+    "discovery_pM": 0.07354166666666667,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 26,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 209,
+    "heldout_hitsB": 11,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 17,
+    "heldout_supportB": 2,
+    "heldout_pM": 0.0653125,
+    "heldout_pB": 0.0034375,
+    "heldout_log2ratio_Jeffreys": 4.187244477642339,
+    "heldout_ratio_CI95_log2": [
+      2.3419666796516423,
+      9.030804798154605
+    ],
+    "DCLM_hits": 58,
+    "DCLM_reference_rate": 0.000885009765625,
+    "DCLM_CI95_documentbootstrap": [
+      0.00030517578125,
+      0.0016700087483846238
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.0843703170953956
+  },
+  {
+    "feature": 24633,
+    "role": "math_biased",
+    "discovery_pM": 0.04583333333333333,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 20,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 209,
+    "heldout_hitsB": 0,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 8,
+    "heldout_supportB": 0,
+    "heldout_pM": 0.0653125,
+    "heldout_pB": 0.0,
+    "heldout_log2ratio_Jeffreys": 8.710806433699352,
+    "heldout_ratio_CI95_log2": [
+      7.1799090900149345,
+      9.521600439723727
+    ],
+    "DCLM_hits": 127,
+    "DCLM_reference_rate": 0.0019378662109375,
+    "DCLM_CI95_documentbootstrap": [
+      6.103515625e-05,
+      0.005721733513779524
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.254213545188759
+  },
+  {
+    "feature": 25661,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.036458333333333336,
+    "discovery_supportM": 0,
+    "discovery_supportB": 14,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 66,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 10,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.020625,
+    "heldout_log2ratio_Jeffreys": -7.05528243550119,
+    "heldout_ratio_CI95_log2": [
+      -8.071729529526555,
+      -5.044394119358453
+    ],
+    "DCLM_hits": 7,
+    "DCLM_reference_rate": 0.0001068115234375,
+    "DCLM_CI95_documentbootstrap": [
+      3.0517578125e-05,
+      0.00019535035125968972
+    ],
+    "DCLM_low_support": true,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 0.7964361613307177
+  },
+  {
+    "feature": 26129,
+    "role": "math_biased",
+    "discovery_pM": 0.06916666666666667,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 18,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 561,
+    "heldout_hitsB": 0,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 15,
+    "heldout_supportB": 0,
+    "heldout_pM": 0.1753125,
+    "heldout_pB": 0.0,
+    "heldout_log2ratio_Jeffreys": 10.133142212400601,
+    "heldout_ratio_CI95_log2": [
+      9.444807263275143,
+      10.617467465294196
+    ],
+    "DCLM_hits": 332,
+    "DCLM_reference_rate": 0.00506591796875,
+    "DCLM_CI95_documentbootstrap": [
+      0.0007627051646315207,
+      0.011479075823643407
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.9207507650114537
+  },
+  {
+    "feature": 26403,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.030625,
+    "discovery_supportM": 0,
+    "discovery_supportB": 15,
+    "heldout_hitsM": 1,
+    "heldout_hitsB": 121,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 1,
+    "heldout_supportB": 10,
+    "heldout_pM": 0.0003125,
+    "heldout_pB": 0.0378125,
+    "heldout_log2ratio_Jeffreys": -6.339850002884625,
+    "heldout_ratio_CI95_log2": [
+      -8.778728476826558,
+      -3.7865963618908065
+    ],
+    "DCLM_hits": 41,
+    "DCLM_reference_rate": 0.0006256103515625,
+    "DCLM_CI95_documentbootstrap": [
+      0.00013521634615384616,
+      0.0013073358010119334
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 1.3470386075130718
+  },
+  {
+    "feature": 26486,
+    "role": "math_biased",
+    "discovery_pM": 0.13,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 26,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 453,
+    "heldout_hitsB": 6,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 19,
+    "heldout_supportB": 2,
+    "heldout_pM": 0.1415625,
+    "heldout_pB": 0.001875,
+    "heldout_log2ratio_Jeffreys": 6.12451902238743,
+    "heldout_ratio_CI95_log2": [
+      4.539659138853947,
+      10.06750152534953
+    ],
+    "DCLM_hits": 124,
+    "DCLM_reference_rate": 0.00189208984375,
+    "DCLM_CI95_documentbootstrap": [
+      0.0005034424537836119,
+      0.003921896266186329
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.1428558194556637
+  },
+  {
+    "feature": 27076,
+    "role": "shared",
+    "discovery_pM": 0.08875,
+    "discovery_pB": 0.14604166666666665,
+    "discovery_supportM": 27,
+    "discovery_supportB": 28,
+    "heldout_hitsM": 249,
+    "heldout_hitsB": 562,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 17,
+    "heldout_supportB": 13,
+    "heldout_pM": 0.0778125,
+    "heldout_pB": 0.175625,
+    "heldout_log2ratio_Jeffreys": -1.172813280767139,
+    "heldout_ratio_CI95_log2": [
+      -2.37472033849608,
+      0.018414821478097244
+    ],
+    "DCLM_hits": 25076,
+    "DCLM_reference_rate": 0.38262939453125,
+    "DCLM_CI95_documentbootstrap": [
+      0.3474536925788939,
+      0.4171721210629921
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 3.336414443700131
+  },
+  {
+    "feature": 27699,
+    "role": "math_biased",
+    "discovery_pM": 0.095,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 17,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 420,
+    "heldout_hitsB": 0,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 10,
+    "heldout_supportB": 0,
+    "heldout_pM": 0.13125,
+    "heldout_pB": 0.0,
+    "heldout_log2ratio_Jeffreys": 9.715961990255144,
+    "heldout_ratio_CI95_log2": [
+      7.417428187920805,
+      10.742519374837523
+    ],
+    "DCLM_hits": 4,
+    "DCLM_reference_rate": 6.103515625e-05,
+    "DCLM_CI95_documentbootstrap": [
+      1.5024038461538462e-05,
+      0.00012303149606299212
+    ],
+    "DCLM_low_support": true,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.3203389809657593
+  },
+  {
+    "feature": 28111,
+    "role": "shared",
+    "discovery_pM": 0.16645833333333335,
+    "discovery_pB": 0.31604166666666667,
+    "discovery_supportM": 26,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 493,
+    "heldout_hitsB": 1045,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 15,
+    "heldout_supportB": 19,
+    "heldout_pM": 0.1540625,
+    "heldout_pB": 0.3265625,
+    "heldout_log2ratio_Jeffreys": -1.0830710721331815,
+    "heldout_ratio_CI95_log2": [
+      -2.628219879637906,
+      -0.045015812314493454
+    ],
+    "DCLM_hits": 22097,
+    "DCLM_reference_rate": 0.3371734619140625,
+    "DCLM_CI95_documentbootstrap": [
+      0.2979022979736328,
+      0.3790455929068632
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 4.7121890467344825
+  },
+  {
+    "feature": 28357,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.035833333333333335,
+    "discovery_supportM": 0,
+    "discovery_supportB": 11,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 256,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 9,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.08,
+    "heldout_log2ratio_Jeffreys": -9.002815015607053,
+    "heldout_ratio_CI95_log2": [
+      -10.037546953962178,
+      -6.657490111184994
+    ],
+    "DCLM_hits": 9,
+    "DCLM_reference_rate": 0.0001373291015625,
+    "DCLM_CI95_documentbootstrap": [
+      1.5378937007874016e-05,
+      0.00029830259926622813
+    ],
+    "DCLM_low_support": true,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 0.9999999403953552,
+    "discovery_token_contribution_RMS": 0.9038475048006968
+  },
+  {
+    "feature": 28487,
+    "role": "math_biased",
+    "discovery_pM": 0.08104166666666666,
+    "discovery_pB": 0.0,
+    "discovery_supportM": 25,
+    "discovery_supportB": 0,
+    "heldout_hitsM": 166,
+    "heldout_hitsB": 0,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 15,
+    "heldout_supportB": 0,
+    "heldout_pM": 0.051875,
+    "heldout_pB": 0.0,
+    "heldout_log2ratio_Jeffreys": 8.379378367071261,
+    "heldout_ratio_CI95_log2": [
+      7.33046603004386,
+      9.152284842306582
+    ],
+    "DCLM_hits": 84,
+    "DCLM_reference_rate": 0.00128173828125,
+    "DCLM_CI95_documentbootstrap": [
+      0.0005338522104116587,
+      0.0023957169900728956
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.3271807263158937
+  },
+  {
+    "feature": 28673,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.05,
+    "discovery_supportM": 0,
+    "discovery_supportB": 7,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 54,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 3,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.016875,
+    "heldout_log2ratio_Jeffreys": -6.768184324776926,
+    "heldout_ratio_CI95_log2": [
+      -8.144658242831882,
+      0.0
+    ],
+    "DCLM_hits": 21,
+    "DCLM_reference_rate": 0.0003204345703125,
+    "DCLM_CI95_documentbootstrap": [
+      0.0,
+      0.000953494094488189
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 1.0133579271238822
+  },
+  {
+    "feature": 28864,
+    "role": "bio_biased",
+    "discovery_pM": 0.0,
+    "discovery_pB": 0.09416666666666666,
+    "discovery_supportM": 0,
+    "discovery_supportB": 13,
+    "heldout_hitsM": 0,
+    "heldout_hitsB": 47,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 0,
+    "heldout_supportB": 4,
+    "heldout_pM": 0.0,
+    "heldout_pB": 0.0146875,
+    "heldout_log2ratio_Jeffreys": -6.569855608330948,
+    "heldout_ratio_CI95_log2": [
+      -7.734709620225838,
+      -2.321928094887362
+    ],
+    "DCLM_hits": 89,
+    "DCLM_reference_rate": 0.0013580322265625,
+    "DCLM_CI95_documentbootstrap": [
+      0.0,
+      0.003844734251968504
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 2.048144563795704
+  },
+  {
+    "feature": 29342,
+    "role": "shared",
+    "discovery_pM": 0.331875,
+    "discovery_pB": 0.23708333333333334,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 1057,
+    "heldout_hitsB": 650,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.3303125,
+    "heldout_pB": 0.203125,
+    "heldout_log2ratio_Jeffreys": 0.7010367012895167,
+    "heldout_ratio_CI95_log2": [
+      0.21627336994396268,
+      1.194730812200017
+    ],
+    "DCLM_hits": 30124,
+    "DCLM_reference_rate": 0.45965576171875,
+    "DCLM_CI95_documentbootstrap": [
+      0.4389970173207364,
+      0.4809876509538786
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0000001192092896,
+    "discovery_token_contribution_RMS": 13.992327776944109
+  },
+  {
+    "feature": 29506,
+    "role": "shared",
+    "discovery_pM": 0.27958333333333335,
+    "discovery_pB": 0.37041666666666667,
+    "discovery_supportM": 30,
+    "discovery_supportB": 30,
+    "heldout_hitsM": 924,
+    "heldout_hitsB": 988,
+    "heldout_positions_per_domain": 3200,
+    "heldout_supportM": 20,
+    "heldout_supportB": 20,
+    "heldout_pM": 0.28875,
+    "heldout_pB": 0.30875,
+    "heldout_log2ratio_Jeffreys": -0.09656764632501205,
+    "heldout_ratio_CI95_log2": [
+      -0.5427073786217087,
+      0.3213372921444397
+    ],
+    "DCLM_hits": 25278,
+    "DCLM_reference_rate": 0.385711669921875,
+    "DCLM_CI95_documentbootstrap": [
+      0.361741681306461,
+      0.4099163021299195
+    ],
+    "DCLM_low_support": false,
+    "DCLM_zero_hit_document_upper95": null,
+    "native_decoder_norm": 1.0,
+    "discovery_token_contribution_RMS": 9.414911881857183
+  }
+]

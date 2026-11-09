@@ -1,0 +1,147 @@
+{
+  "id": "A15_27_01_R07_fixed_target_domain_spectrum_20261029",
+  "name_cn": "1029-固定目标词的领域响应与谱定位",
+  "problem_key": "fixed_target_domain_spectrum",
+  "frozen_utc": "2026-10-29T04:37:07.737016+00:00",
+  "authorization": "current user explicitly authorizes whole bounded frozen-model experiment,Anchor/Protocol and report under existing task;linear readout fitting allowed;no LM/SAE/CC/MoEtraining,resources or newtasks",
+  "owner": {
+    "focus": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_fixed_target_domain_spectrum.md",
+    "anchor": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_01_fixed_target_domain_spectrum_anchor.md",
+    "protocol": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/protocol.md",
+    "execution": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029"
+  },
+  "model": "/data/share/Qwen3-0.6B-Base",
+  "model_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+  "hook": "model.layers[27] forward output BEFORE model.norm,zero based block27 residual-post,1024dim,no extra normalization",
+  "precision": "native BF16 model;captured vector convertedFP32;analysis FP64;SDPA,eval,inference_mode,1x256padded shape,explicitcausalmaskandpositionIDs",
+  "runtime": "/root/anaconda3/envs/spectral-hier/bin/python",
+  "basis": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/analysis/CC_common_basis.npz",
+  "basis_use": "reuse only realCC_h hook basis,not dictionary coordinates or reconstruction;old60discoverydocs*160positions=9600;pooledmean,complete1024orthonormalPCs;no newPCA",
+  "data": {
+    "families": 48,
+    "versions_per_family": 8,
+    "inputs": 384,
+    "split_families": {
+      "discovery": 24,
+      "development": 12,
+      "heldout": 12
+    },
+    "targets": [
+      " example",
+      " explanation"
+    ],
+    "same_domainpaired_targetposition": true,
+    "same_targetID": true,
+    "source": "controlledsyntheticEnglish",
+    "family_split_seed": 2026102901,
+    "sequence_max": 256
+  },
+  "inference_budget": {
+    "main": 384,
+    "causality_checks": 4,
+    "replay_checks": 2,
+    "oldhook_replay_checks": 2,
+    "total_cap": 392,
+    "new_reference_forwards": 0,
+    "charge_before_attempt": true,
+    "no_auto_retries": true
+  },
+  "direction": {
+    "fit": "mathmean-minus-biomean ondiscovery192rows withfamilies/wordings/endings equal,normalizeunitL2;freeze sign mathpositive",
+    "score": "(true_h-discovery class midpoint) dot fixedunitdifference",
+    "threshold": "zero afterdiscoverymidpoint,neverfitdevelopmentorheldout",
+    "eval": "development then one heldout evaluation;pooledand4wordingxendingcells;familybundledbootstrap",
+    "criterion": "pooled andALL4cell pairedscoremeanpositive with95%familyCI>0 andpooledBH5q<.05;otherwise bounded/insufficient;neverrename descriptive spectrum as stablesemanticlocation",
+    "swap": "all4096 label swaps at12heldoutfamilylevel;all4pairedversionswithin family swappedtogether;two-sided mean signedscore;discoverydirection fixed",
+    "multiple": "BH5 pooledand4cell signswap p,development descriptive"
+  },
+  "spectral": {
+    "bands": 16,
+    "bandwidth": 64,
+    "direction": "square ofunitdiscoverydirection dotPCs,unweighted by eigenvalue;sum1fullbasis",
+    "heldout": "mean-differencealignmentwithfixeddiscoverydirection andperbands descriptively;neverreorient",
+    "old_mean_difference": "oldnaturaltextdomainmeandifference alreadydone,referenceonlynotnewresult"
+  },
+  "classifier": {
+    "kind": "L2penalizedlogisticregression,intercept,balancedlabels;simplelinearanalysisreadoutonly",
+    "spaces": [
+      "head",
+      "tail",
+      "random_Haar",
+      "full"
+    ],
+    "dimensions": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "random_draws": 20,
+    "random_seed": 2026102902,
+    "random_nested": "independent1024x256GaussianQRbasisperdraw;firstdcolumns fordimensiond;fixedbeforeevaluation",
+    "centering": "oldreferencepooledmean;no per-domaincenter,noper-coordinate/noper-subspacewhitening",
+    "scale": "ONEglobal discovery centeredcoordinateRMS,usedidenticallyforallspaces",
+    "C_grid": [
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10,
+      100,
+      1000,
+      10000
+    ],
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "tol": 1e-09,
+    "fit_split": "discoveryonly",
+    "selection": "highestdevelopmentbalancedaccuracy;tiebreaksmallestC(strongestregularization)",
+    "selection_count": 111,
+    "final": "freezeallweights,Cs,basesbeforeheldoutevaluation;readoutfittingnotmodeltraining"
+  },
+  "statistics": {
+    "family_bootstrap": 10000,
+    "seed": 2026102903,
+    "unit": "wholefamily8rows;domainswordingsendingsremainpaired",
+    "primary": "directionpairedscoreandBH5;classifiercurvesdescriptivefamilypairedCIs,not111newhypothesistests",
+    "metrics": [
+      "balancedaccuracy atfrozenthreshold",
+      "AUROC chance ofmathscore>bioscore,tieshalf",
+      "pairedmathminusbioscore",
+      "pairedorderingfraction"
+    ]
+  },
+  "figures": [
+    "heldoutdirection4wordingendingpanels",
+    "16banddiscoverydirectionprojection",
+    "same-dimensionheadtailrandom20drawandfullreadoutaccuracy"
+  ],
+  "reuse_decision": "adapt originalR04 model loading andlayer27hook,but do not instantiate SAE/CC;reuseverifiedPCA;newcontrolledtext andtargetonlyh;oldmean-difference notnew",
+  "scientific_judgment": "Unknown;noformation,naturalclusters,knowledgecoordinates,causality,routingorexperts",
+  "new_LM_training": 0,
+  "new_SAE_CC_training": 0,
+  "new_PCA": 0,
+  "new_tasks": 0,
+  "new_resources": 0,
+  "input_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/analysis/CC_common_basis.npz": "dbb7e924dd9e3048992d0d47bd6ca2bdd7421a87ee2bf691266f86eb160344ad",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/dual_parent_identity.json": "f06ecf06045bc45055da96bc46a1abd814bed93382d8525245ec7483e2e84832",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/documents.jsonl": "32e1e8a2e661808bf34a0b3df6636dd30aea784375adebe225c47a392db4a943",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/run_dual_forward.py": "4c7a84cd3e5b1a2b4cd161297d1e30cd5e987ad699d43ea8c4b6672d3455e1dd",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/spectrum.py": "b8b39b609565404c5347e4aaa3e778bb6ea85ed6e34482468587ce5d9110f788",
+    "/data/share/Qwen3-0.6B-Base/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "/data/share/Qwen3-0.6B-Base/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/share/Qwen3-0.6B-Base/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/share/Qwen3-0.6B-Base/tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/data/causal_checks.json": "9f9ef7c22f7aaa2817cd5dde9f0827c0e83f4b9b560d43834543fb310477c809",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/data/data_manifest.json": "931a06f3fb51d0620a570653ce606aec3700f9344d3a3d7e8b3087cced506503",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/data/data_qa.json": "26f6c2be8a511a77eb33af5693c21d8fca9d7bb046eed0d3ae7decbd299207e2",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/data/families.jsonl": "88a8c70e87ef81df9ac71889a6d8e35e63d564e73dab88f63dca36410d52458b",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/data/panel.jsonl": "9322ceaf811ba08cde00179ba461af7505720c618489c1652a0980cdec73ac83",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/data/six_examples.md": "a84fcfc38d3195f9907eca15ad9c8cdadb4b78edce2c92d62c6a86cf1a5e53f2",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/families.py": "5311158e387c48665c420635274aee1611bb1b5e163207ca328959b7ed85db87",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/build_data.py": "baae16826af9b788ea7710ced1334008a53eee1dae00294ccf49ee46f42381ae"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "status": "COMPLETED_STEP1_STOP_FOR_JOINT_REVIEW",
+  "UTC": "2026-11-03T08:19:54.003245+00:00",
+  "started_UTC": "2026-11-03T08:15:38.661912+00:00",
+  "elapsed_seconds": 255.306254863739,
+  "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "transformers_source": "/data/250010109/dependency_packages/hf_transformers_qwen3/transformers/utils/__init__.py",
+  "device": "cpu",
+  "threads": 2,
+  "GPU_jobs": 0,
+  "model_updates": 0,
+  "dictionaries_loaded": 0,
+  "hooks": 0,
+  "probes_fitted": 0,
+  "raw_records": 74,
+  "matrix_decisions": 72,
+  "candidate_sequences": 222,
+  "neutral_decisions": 2,
+  "max_duplicate_lane_score_error": 0.0,
+  "frozen_plan_SHA256": "4344fe4c33c0bb573d091eee58c6daf2e9cbd5d80c458e532cd2d700513ba42f",
+  "input_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "raw_scores_SHA256": "9920f97942aa00ab634d2b69305de96b37fa313ba89306caed922f49da4c9638",
+  "code_SHA256": "472a1a5cf26e2f9a9533ce61e0b356403f734ccabfca0a15caa53c6e8b8d2332",
+  "old_score_reuse": false,
+  "nextstep_executed": false
+}

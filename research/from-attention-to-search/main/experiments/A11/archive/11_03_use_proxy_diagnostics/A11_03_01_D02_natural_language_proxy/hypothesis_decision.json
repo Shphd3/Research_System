@@ -1,0 +1,18 @@
+{
+  "adjudicable": false,
+  "cannot_claim": [
+    "MTP uses fewer FLOPs.",
+    "Pretrained LLMs obtain the same benefit.",
+    "The result transfers to open-ended assistant benchmarks."
+  ],
+  "claim": "The fixed small-model run does not support an MTP semantic-efficiency advantage.",
+  "local_guard_pass_count": 5,
+  "mtp_auc_higher_count": 0,
+  "mtp_faster_count": 0,
+  "mtp_final_not_lower_count": 2,
+  "mtp_threshold_reach_count": 0,
+  "ntp_threshold_reach_count": 0,
+  "overall_status": "insufficient",
+  "required_seed_count": 4,
+  "validity_all_pass": true
+}

@@ -1,55 +1,46 @@
 ---
 name: research-progress-core
-description: "Maintain Focus-level research judgment, discover or refine a question, choose a minimal falsifier, or interpret results and failures. Not remote operations, publication or final-report ownership."
+description: "Maintain question-level research judgment, discover or refine a question, choose a minimal falsifier, or interpret results and failures. Not remote operations, publication or final-report ownership."
 ---
 
 # Research Progress Core
 
 Reduce one consequential uncertainty with the smallest test that can change a
-judgment. The researcher owns scientific choices; AI audits, proposes labeled
-alternatives and maintains authorized facts. `Unknown` is valid.
+judgment. The researcher owns scientific choices; AI proposes labeled
+alternatives (`AI 建议`). `Unknown` is valid.
 
-For open research, find the tension among the observations and try a minimal
-explanation that connects them. State what it adds beyond the simplest rival,
-what would overturn it, and which one uncertainty is worth reducing next. A
-provisional explanation is useful work; labeling limits alone is not an answer
-to a request for understanding. Use the shared
-[review-mode rule](../../../docs/research_analysis_review_contract.md#review-mode)
-for when to deliver interpretation.
-For a material theory connection or equivalence claim, use the kernel's
-[mechanism bridge](../../../docs/methodology/research_exploration_kernel.md#mechanism-bridges-and-operational-equivalence).
+## Exploration lane output (default)
 
-## Select The Applicable Reference
+Write or append one entry in `main/explore/MMDD_<slug>/log.md`
+(`templates/explore_log_cn.md`): 假设, 先验→模型→计算, 跑前预测 (A/B/不足 branches), 竞争解释,
+结果 with raw numbers, 研究者决定, 链条位置. Before running, the prediction and
+branches must exist. After results, decide by the pre-written branch first, then
+interpret. End the day with `今日认识更新`. Check the project's active-question
+budget (≤3, `PROJECTS.md`) before opening a new question.
 
-- New/reopened question: [discovery](references/problem_discovery.md).
-- Evidence-driven child/dependency or upward answer:
-  [refinement](references/question_refinement.md).
-- Focus creation/reset/maintenance: [Focus cycle](references/focus_cycle.md).
-- Completed result or failure: [interpretation](references/result_interpretation.md).
-  Add [failure decomposition](references/failure_decomposition.md) only when the
-  cause is unresolved; [goal audit](references/goal_audit.md) after repeated failure
-  or a demonstrated metric/purpose mismatch.
-- Fragile algorithm: [specification](references/algorithm_specification.md).
-  Stage-level evidence design: [profiling](references/profiling_and_evidence.md).
+## How to think
 
-Do not run every mode. Reuse unchanged instructions and verify relevant sources.
+- Start from structure, not a metric: state the falsifiable prior, derive the
+  mathematical quantity or objective it implies, then the computation that
+  measures it. If a proposed step cannot be traced this way, say so and repair
+  the chain before running.
 
-## Boundaries And Completion
+- Find the tension among observations and offer the minimal explanation that
+  connects them; say what it adds beyond the simplest rival and what would
+  overturn it. A provisional explanation is useful work.
+- Name the rival at the same level and the cheapest comparison where they differ.
+- Keep observation, readout, intervention and training benefit apart; a local
+  effect is not a design decision.
+- Say which routing/architecture decision the step could change, or mark `纯理解`.
 
-Return requested status/numbers first. Separate direct evidence, interpretation,
-claim and next decision. Do not confuse readable features, route agreement,
-intervention utility or end-task gain, or local effects with a design decision.
+## References (read only when needed)
 
-Connect the purpose and question to the hypothesis, distinguishing comparison,
-evidence and bounded answer in plain language. Use the shared
-[writing and acceptance rules](../../../docs/report_writing.md#check-the-text-itself),
-not a fixed heading order or length cap. Confirming a question does not approve
-its design; a discussed experiment stays NOT RUN until execution is evidenced.
-Execution approval is separate from both; record an evidenced start or failure
-even if no completed result exists.
+New question: [discovery](references/problem_discovery.md) ·
+child question: [refinement](references/question_refinement.md) ·
+result or failure: [interpretation](references/result_interpretation.md),
+[failure decomposition](references/failure_decomposition.md) ·
+repeated failure: [goal audit](references/goal_audit.md) ·
+fragile algorithm: [specification](references/algorithm_specification.md).
 
-Finish factual audit despite missing human interpretation, labeling proposals.
-Do not activate/reset Focus, execute, publish or change scientific state beyond
-scope. Anchor, Protocol/results, remote operations and requested communications
-retain their respective owners. Completion is an evidenced bounded answer or
-artifact with the exact remaining decision, not a new automatic workflow.
+Do not create Focus files (retired), execute, publish or change scientific state
+beyond scope. Formal records keep their own owners (`docs/formal_lane.md`).

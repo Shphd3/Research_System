@@ -1,0 +1,25 @@
+{
+  "audited_at": "2026-08-12",
+  "auditor": "Codex",
+  "overall_status": "PASS",
+  "figures": {
+    "figure1_eight_representative_adjacent_pairs.png": {
+      "sha256": "c630655fe500ece330aa0303a53adbe635ddae7ad80f8d70bdb8b18cdc30da2a",
+      "resolution": [3344, 3256],
+      "status": "PASS",
+      "notes": "Eight pairs are visibly separate, log axes and layer identities are legible, F9-F12 shading is consistent, and every panel reports the all-35 simultaneous D_sem interval."
+    },
+    "figure2_all_adjacent_transition_atlas.png": {
+      "sha256": "ee1f63a508a7615e98a5a91dc06922b926802094c04996bf3d2c3e6c59f36f2f",
+      "resolution": [3630, 2596],
+      "status": "PASS",
+      "notes": "All 35 transitions and 16 bands are visible; normalized and raw metrics are separated; stage boundaries and uncertainty envelopes are labeled."
+    },
+    "figure3_depth_difference_inference.png": {
+      "sha256": "b8408125b84adb57c042212b824c35fd59dfa45e8814ae65d3757cb6b77d0d14",
+      "resolution": [3036, 2090],
+      "status": "PASS",
+      "notes": "Stage means, simultaneous contrasts, and the non-significant slope are legible. The title explicitly warns that the registered equal-third summary has a separate boundary-sensitivity audit."
+    }
+  }
+}

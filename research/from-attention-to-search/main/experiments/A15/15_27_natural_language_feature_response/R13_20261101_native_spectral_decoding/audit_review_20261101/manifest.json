@@ -1,0 +1,145 @@
+{
+  "created_at": "2026-11-01T16:51:25.634634+08:00",
+  "type": "interactive audit reading,not new experiment",
+  "original_owner": "15_27_05",
+  "original_protocol_unchanged": true,
+  "anchor_update": "pending discussion",
+  "GPU_calls": 0,
+  "first_curve_raw_rebuild_max_abs_error": 6.938893903907228e-17,
+  "source_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/freeze.json": "cf2b4c1270479b910009020cf5927d0614647db1e7f3d47bd6d087fb36b78693",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/provenance/protocol_executed_A4.md": "151ea50042f115c80a4d1d3c15ba29b4b2cc78f9d5c37ea238a9e4c3a734fb34",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/scripts/run_gpu.py": "1572cd65574f0b58783cf0f61a3bc4c1d1df3c9ee67b16b14bbcef745d1856f3",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/recovery_by_full_top1_type.csv": "d449470fce99ab3e63e51f7a5187d3f070db54ab189fb969e26a46ca567e403c",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/position_metrics.csv": "55a7182e7fdaa806f41dd2de1067fa8307c4b2428414cde385e46d3558b63dca",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/paired_contrasts.csv": "41804dc4aa22ffa46259cbc187f4c5193410d4417fcc5ca0428eb45bf41c5f54",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/frequency.npz": "99b9c9b379421f40ac97246b3cebc8e0c91bb52519fda13b41011101a99bbbd1"
+  },
+  "figures": [
+    "main1_recovery_audited.png",
+    "main2_addition_controls_audited.png"
+  ],
+  "figure1_denominator": "within-group average per doc,then mean over eligible docs; reference groups fixed by unprojected head argmax",
+  "figure1_CI": "stored2000 within-group doc bootstrap,not simultaneous",
+  "sensitivity": {
+    "kind": "posthoc_audit_sensitivity_not_replacing_primary_estimand",
+    "shared_documents": 113,
+    "difference_common_minus_other": 0.275811209439528,
+    "CI95": [
+      0.206452802359882,
+      0.34808259587020646
+    ],
+    "retained_common_positions": 226,
+    "retained_other_positions": 173,
+    "remaining_limit": "same document, different positions/lexical roles; not a semantic/frequency intervention"
+  },
+  "raw_support": [
+    {
+      "panel": "natural",
+      "group": "format",
+      "positions": 108,
+      "documents": 81,
+      "matched_positions": 40
+    },
+    {
+      "panel": "natural",
+      "group": "nonformat_common",
+      "positions": 386,
+      "documents": 163,
+      "matched_positions": 118
+    },
+    {
+      "panel": "natural",
+      "group": "nonformat_other",
+      "positions": 206,
+      "documents": 125,
+      "matched_positions": 3
+    },
+    {
+      "panel": "the",
+      "group": "format",
+      "positions": 1,
+      "documents": 1,
+      "matched_positions": 0
+    },
+    {
+      "panel": "the",
+      "group": "nonformat_common",
+      "positions": 16,
+      "documents": 16,
+      "matched_positions": 3
+    },
+    {
+      "panel": "the",
+      "group": "nonformat_other",
+      "positions": 20,
+      "documents": 20,
+      "matched_positions": 1
+    }
+  ],
+  "selected_evidence_outputs": [
+    {
+      "path": "audit.md",
+      "bytes": 586,
+      "sha256": "d331c296d0f97c517e7c5b013ebc7c7dc1a911fe0677ddbef6abcef00b8091fd"
+    },
+    {
+      "path": "audit_cn.md",
+      "bytes": 6227,
+      "sha256": "40fcc52f8348fd55d188729ebbafaf268e10f17a451eea3ad018f74fdfeb4949"
+    },
+    {
+      "path": "figure1_raw_counts_k64.csv",
+      "bytes": 220,
+      "sha256": "c97f5ba8d8cf017ec052d71d1d9d36ca33376aa8eade33b926e5cbfb9a6b6ef9"
+    },
+    {
+      "path": "figure2_all_document_changes.csv",
+      "bytes": 1117,
+      "sha256": "ae568c384f089d6d112bdda9d42b16dd448b2574244083c02f71a3f5646284f3"
+    },
+    {
+      "path": "issues.json",
+      "bytes": 3647,
+      "sha256": "3aec8ff7c5785f1ad49071ef36a252c058e62f447f97ab2c85de4f6b04d5b0c5"
+    },
+    {
+      "path": "main1_recovery_audited.png",
+      "bytes": 276137,
+      "sha256": "0810240e69c95af259ca133185028ea54b33667ec5d4fb1a88140e2c341b370e"
+    },
+    {
+      "path": "main2_addition_controls_audited.png",
+      "bytes": 93710,
+      "sha256": "57c50dd0da140bd1f37347c4f11c85038f1daf23521af09140c030040a40a4ea"
+    },
+    {
+      "path": "reproduce_audit.py",
+      "bytes": 15169,
+      "sha256": "fb5c3bcab969ad7a772dc07dbd32cc9ab16038f1254314f2de2c59fd799c85d2"
+    },
+    {
+      "path": "same_document_sensitivity.json",
+      "bytes": 401,
+      "sha256": "ff016eca334fce613e0a135cef88b5bb771046c0025baa0bb96d8529907e4308"
+    },
+    {
+      "path": "archive/main1_legend_overlaps_curve.png",
+      "bytes": 263997,
+      "sha256": "c0c709293bb5c4878b285783aa6fa393f87108fae82f6741cb8ded92f4d25583"
+    }
+  ],
+  "visual_review": "main1 legend moved away from data; no numerical changes",
+  "live_identity_checks": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": true,
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": true,
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": true,
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer_config.json": true,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/config.json": true,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R12_spectral_semantic_granularity_20261031/data/selected_metadata.jsonl": true,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R11_three_domain_replication_20261030/qualified_three_domain_A02/data/documents.jsonl": true,
+    "PCA_V_exact_reuse": true,
+    "PCA_mean_exact_reuse": true,
+    "all_R12_the_eval_doc_positions_exact": true
+  }
+}

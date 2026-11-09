@@ -1,0 +1,145 @@
+{
+  "type": "derived visual reading; no new experiment",
+  "created_at": "2026-10-19T12:27:51.023947+08:00",
+  "code": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/presentation_redraw_20261019/code/redraw.py",
+  "code_sha256": "acca778d64cffe6412aaeb0d5edab344dc5d40e1b8c8214ae91f801e84b2bb5b",
+  "source_hashes": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/frequency_bands.csv": "b4a3fc347a040390548038fbeeaf29b41df2c9f12228967e39788e7e10b4eac1",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/eval_profile_summary.json": "f97b7a7d23202ea7a97560ca92c4fddc77b031efa12b3658a7073cb59fae1f3a",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_summary.csv": "5513062a10315394ee9cf40f8fe2e8dfc579cc0f48c08df7d4bc1e4c7404001d",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_review.csv": "64be1335e03194ad718a7881c0aaafa9db7e3106d73680158a93e3603dd7e2eb",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/half_stability.csv": "df7e2ededdbbd1209420eaaf2011cf251f3a642aae45ca5e1661ea0aed9f6564",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/tables/expert_training_evidence.csv": "77fb20efda26661bd9a4b9b60b283ced2f1520440600a63dd08b10ddd89e49ed"
+  },
+  "figures": [
+    {
+      "path": "figures/figure1_members_and_contribution.png",
+      "bytes": 144265,
+      "sha256": "48f2f7741b035e10e8e54d5f26ade1103f2d271438decae5d7a83b4c665f3422",
+      "question": "Does membership size represent input contribution?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/frequency_bands.csv",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/eval_profile_summary.json"
+      ]
+    },
+    {
+      "path": "figures/figure1_members_and_contribution.svg",
+      "bytes": 15061,
+      "sha256": "e87af24c630eb7f2b7f3ce10a119159affe13847e58ac8a634bad03fa62a8df2",
+      "question": "Does membership size represent input contribution?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/frequency_bands.csv",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/eval_profile_summary.json"
+      ]
+    },
+    {
+      "path": "figures/figure1_members_and_contribution.pdf",
+      "bytes": 15733,
+      "sha256": "41d853d26446bf66c7981a84f64cd65e70fc1184463cbc14c8dc4b15ef2151c7",
+      "question": "Does membership size represent input contribution?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/frequency_bands.csv",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics/eval_profile_summary.json"
+      ]
+    },
+    {
+      "path": "figures/figure2_heldout_phi.png",
+      "bytes": 111021,
+      "sha256": "31fac85cf197c7ebbebb6b324bfe9a8811ec64b5123062f2e664b7a3e85358f0",
+      "question": "Is extra coactivation retained beyond frequency-matched random grouping?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_summary.csv",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_review.csv"
+      ]
+    },
+    {
+      "path": "figures/figure2_heldout_phi.svg",
+      "bytes": 29592,
+      "sha256": "6cec424f5350a6a90d987a26d7eb3829ff7c53f5f0cd28758a39e3c278bc387a",
+      "question": "Is extra coactivation retained beyond frequency-matched random grouping?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_summary.csv",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_review.csv"
+      ]
+    },
+    {
+      "path": "figures/figure2_heldout_phi.pdf",
+      "bytes": 16545,
+      "sha256": "c3f7139fa93ed3166a1b139045dab5953e533d8b22ca45b8b5498d45e6199271",
+      "question": "Is extra coactivation retained beyond frequency-matched random grouping?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_summary.csv",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_review.csv"
+      ]
+    },
+    {
+      "path": "figures/figure2b_membership_stability.png",
+      "bytes": 145737,
+      "sha256": "ccce6494c61a5449d71b6e0b703fec3a7a3430efaeb752dbe5cf6e2e4629ef00",
+      "question": "Does retained coactivation give a stable member partition?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/half_stability.csv",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_review.csv"
+      ]
+    },
+    {
+      "path": "figures/figure2b_membership_stability.svg",
+      "bytes": 23028,
+      "sha256": "f73e73a766813e33b3c22b020d509bbee8863f4eb30d99d8cc5006da4af4a5df",
+      "question": "Does retained coactivation give a stable member partition?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/half_stability.csv",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_review.csv"
+      ]
+    },
+    {
+      "path": "figures/figure2b_membership_stability.pdf",
+      "bytes": 18547,
+      "sha256": "cf5fb2da201d71e44370c9a89085b0e46b471797c5b6c8e7a75b0e550f9a3a62",
+      "question": "Does retained coactivation give a stable member partition?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/half_stability.csv",
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/tables/relation_review.csv"
+      ]
+    },
+    {
+      "path": "figures/figure3_old_T_S1_regional_delta_NLL.png",
+      "bytes": 143384,
+      "sha256": "f2e7d3461a8715bf15dc30d3eecd9ce2bdc993743bf134211065b9790c5df8dd",
+      "question": "Do all natural receiving regions improve at the old epoch1 checkpoint?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/tables/expert_training_evidence.csv"
+      ]
+    },
+    {
+      "path": "figures/figure3_old_T_S1_regional_delta_NLL.svg",
+      "bytes": 21953,
+      "sha256": "05faaf012cdbd5597dba986690b04e8eb33affce2bd88c00db8b576b47ae11a3",
+      "question": "Do all natural receiving regions improve at the old epoch1 checkpoint?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/tables/expert_training_evidence.csv"
+      ]
+    },
+    {
+      "path": "figures/figure3_old_T_S1_regional_delta_NLL.pdf",
+      "bytes": 17865,
+      "sha256": "371e0128c8144309a7e75979185946f884bdf38a5cf9d446f716b69ba734f730",
+      "question": "Do all natural receiving regions improve at the old epoch1 checkpoint?",
+      "source_files": [
+        "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/tables/expert_training_evidence.csv"
+      ]
+    }
+  ],
+  "NA_handling": "preserved, not replaced by0",
+  "old_training_epoch": 1,
+  "old_condition": "T_S1",
+  "old_seeds": [
+    11,
+    22
+  ],
+  "intervals": "existing dialogue bootstrap; not recomputed",
+  "inference": false,
+  "training": false,
+  "bootstrap_recomputed": false,
+  "render_seconds": 3.1616267394274473
+}

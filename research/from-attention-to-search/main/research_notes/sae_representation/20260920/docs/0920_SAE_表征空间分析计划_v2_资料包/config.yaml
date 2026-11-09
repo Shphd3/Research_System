@@ -1,0 +1,75 @@
+protocol_version: sae_attn_audit_v2_20260920
+execution_mode: frozen_backbone_analysis
+model_config:
+  n_layers_expected: 8
+  reported_parameters_approx: 280000000
+  actual_parameters: null
+  hidden_size: null
+  training_context_reported: 2048
+  actual_context_config: null
+  tokenizer_name_reported: Qwen3-0.6B-Base
+  tokenizer_revision: null
+  training_seed: null
+main_runs: [dense, sall_orig_l1]
+main_checkpoints_tokens: [15000000000, 21000000000]
+optional_runs: [m2_mediated, s7_orig_l1, s7_rw_l01]
+optional_checkpoints: from_verified_manifest_only
+s7_branch:
+  reported_parent_tokens: 15466000000
+  exact_parent_tokens: null
+  exact_parent_weight_sha256: null
+  old_reconstruction_coefficient: 1.0
+  new_reconstruction_coefficient: 0.1
+site:
+  name: attention_output_projection_after_before_residual_add
+  expected_main_layers_human: [4, 8]
+  expected_main_layers_code: [3, 7]
+  scan_layers_human: [1,2,3,4,5,6,7,8]
+  module_paths: null
+  main_path_contract_per_run: null
+pooling:
+  keep_both: [mean, last]
+  primary: {P_rel_v1: last, N8_v1: mean, PAWS_wiki_final: mean}
+  exclude_auto_special_tokens: true
+  exclude_padding: true
+  encode_sae_before_pooling: true
+  accumulation_dtype: float32
+inference:
+  eval_mode: true
+  teacher_forced_fixed_inputs: true
+  use_cache_for_main_extraction: false
+  validate_incremental_cache_equivalence: true
+data:
+  seed: 20260920
+  P_rel_v1:
+    entity_groups: {fit: 120, dev: 40, test: 40}
+    templates_per_family: {fit: 4, dev: 2, test: 2}
+    expected_total_sentences: 12800
+    primary_test: test_joint
+  N8_v1:
+    configs: [cs.CL, cs.CV, math.AG, math.NT,
+              physics.optics, physics.flu-dyn, q-bio.GN, q-bio.NC]
+    content_tokens: 256
+    per_class_target: {fit: 300, dev: 100, test: 200}
+    source_revision: null
+  PAWS_wiki_final:
+    version: labeled_final
+    target_pairs: {fit: 8000, dev: 2000, test: 2000}
+    require_source_mapping_for_isolation_claim: true
+cka:
+  kernel: linear
+  estimators: [biased, u_corrected]
+  dtype: float64
+  n_permutations: 100
+  diagnose_first_pc: true
+  report_sample_count_and_group_count: true
+probe:
+  linear_C_grid: [0.01, 0.1, 1, 10, 100]
+  mlp_hidden: 64
+  mlp_seeds: [17,29,43]
+  resampling_seeds: [17,29,43,71,97]
+statistics:
+  paired_group_bootstrap: 2000
+  confidence: 0.95
+  correction_for_two_primary_layer_tests: Holm
+  training_seed_generalization_claim: false

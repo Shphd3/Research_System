@@ -1,0 +1,31 @@
+{
+  "experiment_id": "A15_08_01_E01_layerwise_long_range_gain_and_representation_rank",
+  "repair_id": "A2_activate_frozen_qwen3_transformers_dependency",
+  "approved_at": "2026-08-11T12:51:13Z",
+  "failed_job_id": "pt-luxlf19m",
+  "failed_job_quota_type": "RESERVED",
+  "failed_job_terminal_state": "FAILED",
+  "failed_at_stage": "environment_runtime_import_preflight",
+  "produced_scientific_evidence": false,
+  "before": {
+    "pythonpath_included_transformers_dependency": false,
+    "runtime_stderr_preserved": false
+  },
+  "after": {
+    "transformers_root": "/data/250010109/dependency_packages/hf_transformers_qwen3",
+    "pythonpath_includes_transformers_dependency": true,
+    "runtime_stderr_artifact": "environment/runtime.stderr.log",
+    "verified_transformers_version": "4.53.3",
+    "model_independent_tests_passed": 34,
+    "fresh_raw_root": "/data/250010109/MoE_Router/experiments/20260811_a15_08_01_layerwise_long_range_gain_rank_r1",
+    "replacement_job_id": "pt-z5m90trk",
+    "replacement_job_created_at": "2026-08-11T12:51:42Z",
+    "replacement_job_verified_quota_type": "RESERVED",
+    "replacement_job_terminal_state": "FAILED",
+    "replacement_job_completed_at": "2026-08-11T12:52:47Z",
+    "replacement_job_produced_scientific_evidence": false
+  },
+  "affected_protocol_block": "G runtime activation and failure observability only",
+  "scientific_design_changed": false,
+  "scientific_body_sha256": "7197183c95b4cbfefeaf431f13da0d06313100c7c10649ea3272ac053430a08a"
+}

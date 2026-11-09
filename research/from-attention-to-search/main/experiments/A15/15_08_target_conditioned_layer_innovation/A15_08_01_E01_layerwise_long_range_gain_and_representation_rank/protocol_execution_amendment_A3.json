@@ -1,0 +1,23 @@
+{
+  "experiment_id": "A15_08_01_E01_layerwise_long_range_gain_and_representation_rank",
+  "amendment_id": "A3_requested_image_and_current_container_runtime",
+  "approved_at": "2026-08-11T12:58:34Z",
+  "human_instruction": "Use shphd-lite-0710:container1-20260710154849 for subsequent jobs and activate the current container environment.",
+  "container_image": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0710:container1-20260710154849",
+  "quota_type": "reserved",
+  "runtime_activation": "current_container_plus_frozen_qwen3_transformers",
+  "runtime_versions": {
+    "python_major_minor": [3, 10],
+    "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+    "torch_cuda": "12.4",
+    "numpy": "1.24.4",
+    "transformers": "4.53.3",
+    "scipy": "1.12.0",
+    "sklearn": "1.2.0",
+    "matplotlib": "3.8.4"
+  },
+  "online_install_permitted": false,
+  "model_independent_tests_passed": 37,
+  "scientific_design_changed": false,
+  "scientific_body_sha256": "7197183c95b4cbfefeaf431f13da0d06313100c7c10649ea3272ac053430a08a"
+}

@@ -1,0 +1,3 @@
+# Fixed cross-layer actual-contribution supplement
+
+All native A22 coordinates and shared joint z on original40R04heldout documents,160positions/document. Primary z*training-space decoder L2 norm; native model scale separate. Fixed DCLM groups, zero-inclusive equal-feature/equal-document means, separate conditional diagnostics and per-position norm-sum compositions.42 primary layerwise contrasts with independent-domain document resampling andBH;14layers never selected after outcomes. Config preserves exact null assumptions, seeds, missingness and sensitivity scope. No model forward, training, new dictionary, task, candidate selection or Attention grouping.

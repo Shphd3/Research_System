@@ -1,0 +1,18 @@
+{
+  "experiment": "H0522_svd_feature_mixing_seq32",
+  "h0521b_run": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/h0521b_seq32_contiguous_ab/h0521b_seq32_contiguous_ab_4gpu_20260521",
+  "seeds": [
+    20260521,
+    20260522,
+    20260523,
+    20260524
+  ],
+  "n_eval_per_class": 4096,
+  "motif_position": 15,
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "tables": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0522_svd_feature_mixing_seq32/tables",
+  "figures": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/H0521_router_feature_specialization/H0522_svd_feature_mixing_seq32/figures"
+}

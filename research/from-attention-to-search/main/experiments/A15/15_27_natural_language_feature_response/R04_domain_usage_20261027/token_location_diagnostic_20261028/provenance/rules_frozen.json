@@ -1,0 +1,133 @@
+{
+  "label": "EXPLORATORY_SAVED_CACHE_DIAGNOSTIC",
+  "start_utc": "2026-10-27T16:44:33+00:00",
+  "deadline_utc": "2026-10-27T17:44:33+00:00",
+  "scope": "read existingR04reportzip,savedtokens/nativez/decoder scales and oldresults only;no fitting,no model/coderforward,attention,newWork/Codextask or candidate changes",
+  "candidate_sets": "eachdictionary originalbiased32only;all32in coverage and tables;never select new features",
+  "data": "primary40heldoutdocuments160positions and all36heldoutcontrolledversions across6families;discovery untouched fornewselection;originalfrozenalltokenRMS reused",
+  "coverage": "hit iff originalstoredz>0;union feature coverage,tokenpositionhit proportion and sequences/families supporting eachfeature separately",
+  "regions": {
+    "documents": "oldmeasurementwindow zero-based32:192",
+    "controlled_prefix": "strictly before first token of complete target phrase",
+    "controlled_target": "originalfinaltargettokenonly",
+    "other_target_tokens": "firsttargetdeterminer separately toavoid callingtargetprefix a domainclue",
+    "cue": "domain sentence after date and before common suffix",
+    "suffix": "commonlocalwords beforetarget",
+    "neutral": "preamble/date"
+  },
+  "silent_target_group": "original32biased minus anypositivez at all36 finaltargets;recompute exact28/27,do not assume",
+  "silent_feature_partition": [
+    "earlierprefixactive butfinaltargetsilent",
+    "earliertargetphraseonlyactive",
+    "nowhereinanycontrolledsequence"
+  ],
+  "sparsity": "counts and numberofdistinctfamilies;no new significance tests;different textlengths/observationcounts forbid directprobabilitycausalinterpretation",
+  "display_rule": {
+    "families": [
+      "F08",
+      "F09",
+      "F11"
+    ],
+    "reason": "preexistingcounterexample F08,CCsuccessF09,SAEsuccessF11 selected before thisnewtokenanalysis",
+    "variants": [
+      "M1",
+      "B1"
+    ],
+    "features": {
+      "SAE": [
+        8296,
+        9730,
+        26486,
+        13047,
+        12478,
+        28864,
+        13566,
+        11399
+      ],
+      "CC": [
+        16195,
+        12030,
+        12960,
+        4797,
+        15457,
+        12630,
+        12314,
+        10013
+      ]
+    },
+    "feature_reason": "originalfirst4mathbiased and first3biobiased plus previouslyreportedpositivefeature;SAEpositivealreadyfirstbio sofirst4bio;no newactivationbasedchoice",
+    "heatmap": "samefixed8rowsperdictionary in3casepanels;columnsactualtokens;nativecontribution/discoverytokenRMS;fixedcolor0to4withsaturationflag;all32coverage reported"
+  },
+  "token_categories": {
+    "term_annotation": "predefinednarrowtechnicalword/phrases,character-spanmatchbefore activation;descriptive proxy,notsemanticgroundtruth",
+    "ordinary": "alphabeticwordtokens outsidefixedtermspans;neutral/suffix/target markedseparately",
+    "math_terms": [
+      "prime numbers",
+      "prime",
+      "integers",
+      "integer",
+      "polynomials",
+      "polynomial",
+      "equations",
+      "equation",
+      "induction",
+      "topology",
+      "topologist",
+      "algebra",
+      "theorem",
+      "divisors",
+      "divisor",
+      "numerical sequence",
+      "coefficient",
+      "radius",
+      "linear",
+      "converged"
+    ],
+    "bio_terms": [
+      "proteins",
+      "protein",
+      "cells",
+      "cell",
+      "DNA",
+      "bacterial",
+      "bacteria",
+      "enzymes",
+      "enzyme",
+      "membrane",
+      "chromosomes",
+      "chromosome",
+      "antibiotic",
+      "pollination",
+      "pollen",
+      "neuron",
+      "neurons",
+      "seedlings",
+      "seedling",
+      "physiologist",
+      "physiology",
+      "nucleus",
+      "nuclei",
+      "tissues",
+      "tissue",
+      "fluorescent",
+      "gene",
+      "genes",
+      "genetic",
+      "genome",
+      "species",
+      "organism",
+      "organisms",
+      "leaves",
+      "leaf"
+    ]
+  },
+  "examples": "for eachoriginalbiasedfeature retain top3uniqueheldoutdocument tokenhits bynativecontribution thenID/position;forfixeddisplayrows report allcontrolledterm/ordinary/target tokens includingzero;positiveandzeroexamples distinguished;topactivations are illustrations,not confirmation",
+  "interpretation_rules": [
+    "earlierprefixactive+finaltargetsilent supports positionselection limitation,not informationtransfer or exclusivecause",
+    "wholecontrolledsequenceabsent favors text/domaincontent/lexicalmismatch rival;doesnot establishabsenceofdomaininformationelsewhereindictionary",
+    "hitsrestrictedtofixedterms retain lexicalexplanation;termlexicon incomplete so cannot prove termonly beyondobservedpanel",
+    "response acrossdistinctwordings/tokens permits next-roundcandidateonly;thisposthocanalysiscannotbeconfirmation",
+    "bothlocationandcontentrivalscan coexist;shortcontrolledprefixesfeweropportunities andhardgate sparsityremainconfounds",
+    "CCsharedzmaydependon14layers;lastlayerdecodercontributionisnativevectorlength,notfunctionalimportance"
+  ]
+}

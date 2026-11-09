@@ -1,0 +1,899 @@
+{
+  "schema": "tulu_sft_selected_evidence_manifest_v1",
+  "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z",
+  "job": "pt-ihan2rw2",
+  "input_assets": [
+    "model_qwen3_0p6b_base",
+    "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+    "data_tulu_sft_route_20261019t012300z",
+    "representation_tulu_sft_route_20261019t012300z"
+  ],
+  "actual_output_asset_ids": [
+    "adapter_tulu_sft_learned_seed11_20261019t012300z",
+    "adapter_tulu_sft_learned_seed22_20261019t012300z",
+    "adapter_tulu_sft_learnedlb_seed11_20261019t012300z",
+    "adapter_tulu_sft_learnedlb_seed22_20261019t012300z",
+    "adapter_tulu_sft_r11_s0_seed11_20261019t012300z",
+    "adapter_tulu_sft_r11_s0_seed22_20261019t012300z",
+    "adapter_tulu_sft_r11_s1_seed11_20261019t012300z",
+    "adapter_tulu_sft_r11_s1_seed22_20261019t012300z",
+    "adapter_tulu_sft_r11_s2_seed11_20261019t012300z",
+    "adapter_tulu_sft_r11_s2_seed22_20261019t012300z",
+    "adapter_tulu_sft_r11_s3_seed11_20261019t012300z",
+    "adapter_tulu_sft_r11_s3_seed22_20261019t012300z",
+    "adapter_tulu_sft_t_s0_seed11_20261019t012300z",
+    "adapter_tulu_sft_t_s0_seed22_20261019t012300z",
+    "adapter_tulu_sft_t_s1_seed11_20261019t012300z",
+    "adapter_tulu_sft_t_s1_seed22_20261019t012300z",
+    "adapter_tulu_sft_t_s2_seed11_20261019t012300z",
+    "adapter_tulu_sft_t_s2_seed22_20261019t012300z",
+    "adapter_tulu_sft_t_s3_seed11_20261019t012300z",
+    "adapter_tulu_sft_t_s3_seed22_20261019t012300z",
+    "adapter_tulu_sft_smoke_resume_20261019t012300z",
+    "analysis_tulu_sft_route_20261019t012300z"
+  ],
+  "output_checkpoint_families": [
+    {
+      "asset_id": "adapter_tulu_sft_learned_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101607190,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 303016304,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 303016304,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 303016304,
+          "sha256": "0b5c0c5ff8123e137f23001d9f01d4576b73ff55d9004aabb5b6796658ded2f8"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_learned_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101607190,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 303016304,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 303016368,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 303016368,
+          "sha256": "921479ad47190f3c398f5a80879a8509a60c75297f6d7e1dc212aabc5a5232c7"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/Learned/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_learnedlb_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101607190,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 303016304,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 303016304,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 303016304,
+          "sha256": "13f71f1d11fd4afc9e23e5403583c2d8da576e990c6edfa573591661cc33380a"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_learnedlb_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101607190,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 303016304,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 303016368,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 303016368,
+          "sha256": "61791fb53642c11e74851f61c25969991d40402a9e2eba20d2f2e78eeeefeaf1"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/LearnedLB/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_r11_s0_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "a1fba78d48552947151b3dc6b3699af91890f1320afd3c5d86b764ed5dd17bf4"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_r11_s0_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "aab34fa0190007668de689f00e7c41cb5fdc3de9cc81fa9f98014f5a0d78521f"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S0/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_r11_s1_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "f4950758baa64a099c561ed55838ba7d11e0f16999757ab1166dbbd1dff9729c"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_r11_s1_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "c96d7db858c9c0fff6d399476ebb5b2ddd120beef8ae832490f5f07d9b22c6f4"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S1/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_r11_s2_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "02afae60f7c68410ff9b90996c6be5fff1bcc0b240e819b9122152b5f5e77aae"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_r11_s2_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "30b2d6bde19e1e2c8b864f7a92cf320a3f3b47f8bb371bd6ce00705654a85c3f"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S2/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_r11_s3_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "85f7e832c6271911bcb28e8adc9a977741bfec156b2925e9f0e1e46a81107342"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_r11_s3_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "cb346e61bf20acba9e03395722edd121660259409bd8c9fc3b8bbf3cb1f49e28"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/R11_S3/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_t_s0_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 126742070,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 126742070,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 126742070,
+          "sha256": "5e5425b229740099357c7c45a2260b3db7c71040145af20c1c7cfac0e5fb435b"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_t_s0_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 126742070,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 126742070,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 126742070,
+          "sha256": "8ef936484137aa7fe75851830ac4fa0792624625ca6645895e7ceb7db2e6c6d5"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S0/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_t_s1_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "b5c3ea5ab94f0aa871c8c0a38b4e0009214d628f7de44c34d678e5e912d819af"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_t_s1_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "a8ad013cf6b71eddc2631331fe541b59ca3795d756b807744e60b530b5c760c1"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S1/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_t_s2_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 151909906,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 151909906,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 151909906,
+          "sha256": "fbf5f70c64720004e04a8e15073cfb7f49601443c56309878e08f872a98cff44"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_t_s2_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 151909906,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 151909906,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 151909906,
+          "sha256": "27cac0c19d4c50c29f0a4b179de0080c336bc90e85b73f8a4a3c5964fc2f3dd4"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S2/seed22/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_t_s3_seed11_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed11/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed11/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed11/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed11/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "8037843b522468f5c9c3d673be6f1b64f97059197e4e0aef28599aa26265d817"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed11/complete.json"
+    },
+    {
+      "asset_id": "adapter_tulu_sft_t_s3_seed22_20261019t012300z",
+      "members": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed22/epoch0.pt",
+          "epoch": 0,
+          "bytes": 101574170,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed22/epoch1.pt",
+          "epoch": 1,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed22/epoch2.pt",
+          "epoch": 2,
+          "bytes": 302916988,
+          "sha256": "NOT_CHECKED"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed22/epoch3.pt",
+          "epoch": 3,
+          "bytes": 302916988,
+          "sha256": "5e01f1ff665ca2f9dc1b7d7c948572c2bb4ce0e18a6ffbcb63bdd1f4e13d6585"
+        }
+      ],
+      "complete": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/training/T_S3/seed22/complete.json"
+    }
+  ],
+  "selected_evidence_exception": "curated tables, figures and small receipts only; no checkpoint/cache/raw stream",
+  "selected_files": [
+    {
+      "path": "figures/figure1_primary_learning.pdf",
+      "bytes": 23399,
+      "sha256": "3ed2834e7a1ead0222bfaec8c7140b309413d36913ade76af94ab96758557894",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure1_primary_learning.pdf"
+    },
+    {
+      "path": "figures/figure1_primary_learning.png",
+      "bytes": 211517,
+      "sha256": "e0df450286a4f024b25eb6b597afed70dab0011633717086a2626cf9321d84a5",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure1_primary_learning.png"
+    },
+    {
+      "path": "figures/figure1_primary_learning.svg",
+      "bytes": 68215,
+      "sha256": "0bf57f3073154460408fee45bb02b2ac5327bc7b8a3436464aad08344a7dadc4",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure1_primary_learning.svg"
+    },
+    {
+      "path": "figures/figure2_learned_references.pdf",
+      "bytes": 17387,
+      "sha256": "9c5ff3dc734ff96ec00604ee301270993c1e0062474dcb48bef7b3b5b0f16867",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure2_learned_references.pdf"
+    },
+    {
+      "path": "figures/figure2_learned_references.png",
+      "bytes": 164435,
+      "sha256": "84be771cfb555b93067da8a28bec106e288cae6af664492917137f079a438b5a",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure2_learned_references.png"
+    },
+    {
+      "path": "figures/figure2_learned_references.svg",
+      "bytes": 50117,
+      "sha256": "808f155020ecff4a9a6018540faa35d68302947bf791e742e50e1db9dae36265",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure2_learned_references.svg"
+    },
+    {
+      "path": "figures/figure3_routing.pdf",
+      "bytes": 23479,
+      "sha256": "0933272d6d05853c313c5f605f64cbc8cf9208baa4c9913363ce244e257e5c36",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure3_routing.pdf"
+    },
+    {
+      "path": "figures/figure3_routing.png",
+      "bytes": 99282,
+      "sha256": "be63a319bd3adfcf2e849c1e944728d3242241a8c6fab647c8c6866ebb309608",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure3_routing.png"
+    },
+    {
+      "path": "figures/figure3_routing.svg",
+      "bytes": 59348,
+      "sha256": "6bb80b3b666441ef4a7c9de7633e85f5ae49f0df9ffc96de1e43d08679321fec",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure3_routing.svg"
+    },
+    {
+      "path": "figures/figure4_sources.pdf",
+      "bytes": 16977,
+      "sha256": "f3ecb1a7a9c00e422e3a8ef90b7c7e77c242fec80ae6bb98c1a4763655a1fdc9",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure4_sources.pdf"
+    },
+    {
+      "path": "figures/figure4_sources.png",
+      "bytes": 115234,
+      "sha256": "f00e2ea21ccccf3406e4edf54af6a7f6fee062ba4e56b071e69f5752189b4023",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure4_sources.png"
+    },
+    {
+      "path": "figures/figure4_sources.svg",
+      "bytes": 45236,
+      "sha256": "1e10ebd0a62b3d93b939c2a62826bebe19f9f444c3ab2b3fd454485511db6779",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/figures/figure4_sources.svg"
+    },
+    {
+      "path": "tables/all_condition_results.csv",
+      "bytes": 3807,
+      "sha256": "9b1f011c001172aa70a933158dd72fa5ae7a237158169d3871112dc07d36e1bf",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/all_condition_results.csv"
+    },
+    {
+      "path": "tables/dialogue_nll.csv",
+      "bytes": 240111,
+      "sha256": "2483a7d98c8c7bcb9d55a723d159ffd1a54edd4ef1053df7853f73dba50b39fe",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/dialogue_nll.csv"
+    },
+    {
+      "path": "tables/frequency_shift.csv",
+      "bytes": 680171,
+      "sha256": "36aa4f8dd39ce0f204ac4df4b27e7370f27f35b3638b0e362902432bcebe9a79",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/frequency_shift.csv"
+    },
+    {
+      "path": "tables/group_members.csv",
+      "bytes": 1435938,
+      "sha256": "8b9c5b4d084f20190a0b97c7fb8737717504e82beb0a5145451a7bbda4145c58",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/group_members.csv"
+    },
+    {
+      "path": "tables/learning_curves.csv",
+      "bytes": 14686,
+      "sha256": "9929eb30cda15aa0d73dffe30e0f693926f479176ddde7984d1536b4edb108c7",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/learning_curves.csv"
+    },
+    {
+      "path": "tables/low_feature_nll.csv",
+      "bytes": 1475152,
+      "sha256": "eb15ea718d656d5f3331f94558359727396734af3d4343505ea9f2977fdb8d68",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/low_feature_nll.csv"
+    },
+    {
+      "path": "tables/low_support_ge5.csv",
+      "bytes": 3218,
+      "sha256": "b25a89c18a677691b9a3c34891913617d35ef7da8b0538be9481a718653bc9b4",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/low_support_ge5.csv"
+    },
+    {
+      "path": "tables/paired_comparisons.csv",
+      "bytes": 6897,
+      "sha256": "87a5b0189af70f15efd8c4ed56470bbb57391327f06d32f238d1d585053688e7",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/paired_comparisons.csv"
+    },
+    {
+      "path": "tables/source_nll.csv",
+      "bytes": 12767,
+      "sha256": "4c57faab1bf333918b1b2da9bdddcbbfecbdf8cf1b1d39a8e3f79d3ff638f6ab",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/tables/source_nll.csv"
+    },
+    {
+      "path": "evidence/CPU_label_verification.json",
+      "bytes": 1118,
+      "sha256": "384d94a8fad4a4ba5452064d253d587c815977e22eb2919d18acc97e0ac1d345",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/analysis.json",
+      "bytes": 544,
+      "sha256": "ad342aacadada7966087767ab0e5897ac080cb628775cb2090e952887142f944",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/code_snapshot.json",
+      "bytes": 1206,
+      "sha256": "fcf9fa89a027285d0a75ca87a43c27a032a7db743cb94f04674129c542a92047",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/completion.json",
+      "bytes": 145,
+      "sha256": "158494b96c2dcb68330808c93fba8f9e76fb5a9e1de837ef97c2fc453b5b8972",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/delivery_receipt.json",
+      "bytes": 1357,
+      "sha256": "7c7e1d22a43412e016489cbfbb8eea2014ba06a6f9f5021dd1d74fe6f4a9eb58",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/denominators.json",
+      "bytes": 1176,
+      "sha256": "46895b72302e3024fc2fd9a3d3c0b0ed92baeb219a88aa7e35aa6745d716ed71",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/extraction.json",
+      "bytes": 785,
+      "sha256": "1801882de9e54903c2bd8dacd8f4be2c0a5242cce882829cc9f4ee77344fcd69",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/freeze.json",
+      "bytes": 899,
+      "sha256": "cfaabed9897de067bbc48a416ff2a8a80cca6c398e67f4c65d70ed6a79859ff1",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/frozen.json",
+      "bytes": 6591,
+      "sha256": "f5f59924ca6ab055c80e5a326e65b060005816b170737a8eee3f236034e69ae8",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/manifest.json",
+      "bytes": 3870,
+      "sha256": "c56a492385c69251c9aa2e98e804da4673ff9dd04cec65df43e562de825e5088",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/metadata_interpretation.json",
+      "bytes": 870,
+      "sha256": "5f3c554313ccdbadead3f24b2eb5857a78992fd1b7b4dc77c97f2992a1fa9ddd",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/output_asset_access.json",
+      "bytes": 52516,
+      "sha256": "eb2457a70deecc47d803f040be305aaed45c8acdca91d163aa8fc416aaedf7ab",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/output_assets.json",
+      "bytes": 29444,
+      "sha256": "a5679ebfa396830e45838bef02c830c2ac9461d4a91d0281a5a8dbbb1e7cce09",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/preparation_receipt.json",
+      "bytes": 254,
+      "sha256": "b0758f23d57cac4a5b57bdd07cd10eb22e1a2816efd165ecdcbfdb9dc9a33cc7",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/receipt.json",
+      "bytes": 1029,
+      "sha256": "7b9c7152ebeb051b8c733126fc2822913d26df13be2c00b8b4f95b6184ff645c",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/runtime.json",
+      "bytes": 308,
+      "sha256": "c7864aa110c64e11b709dd84d79e920566615c2a675a257e38f8da64356ce745",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/smoke_gate.json",
+      "bytes": 1128,
+      "sha256": "de9da086b86ee89405f24e24a80a96dbc8ccc19e6ca09d8749bdebc58d915e84",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/telemetry_verification.json",
+      "bytes": 2415,
+      "sha256": "5165d80742712e7875c53c70c0a5395c34e7e1a8d277ef2db4db565c3236548b",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    },
+    {
+      "path": "evidence/training_processes.json",
+      "bytes": 1415,
+      "sha256": "3dbda82d4461a49525834d31ae57dc0b3b720f1bc3889b0272acec7216e548ca",
+      "source": "execution provenance or scoped asset-access receipt; see FULL_ASSETS.md"
+    }
+  ],
+  "source_code_final": {
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/analyze_sft.py": "f34d1c146998352b912cd844d7945008d022e387e0696473f0071877a982540f",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/common.py": "c3a789dd59e84e7b1a9fb8cefff2a260c7b1417f4ef9466e25261c14e53c0afe",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/extract_sft.py": "8445535f498e61b56b8b39cd7374d8601b8dbad182d9702b3647928896f56a83",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/pipeline.py": "0d2bdbb0f0a1c360ca4ccdfbbbdc4d12f77c178aa945da6bdbb00782f77b61c9",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/prepare_sft.py": "f005b1acf336f9cf7d11f900f7cbb6e9dd68e039659ca8fa72776121e0e7c66f",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/register_outputs.py": "604de72708f17997f479cca9d5b5d21ee0bb3bf7dfcc8dc99c2fe11b9312e83b",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/render_routing_alignment.py": "227afe013cf435ab6f2a4e455a1d8bfd26431c078019b8330e614a7b58bb956e",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/select_data.py": "bd31db6a271bd84e617a16b430161ac4969e6f553f5075f3b773257750816916",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/train.py": "f02cb82f87cd3829e68f57d3c2018d41b711174586e31c8b38bfa392651171c5",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/verify_data_cpu.py": "7c0baadc94de933e6773021b7caec6ec7bbe0eb2f64f6c557a6defb8c2730d32",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/code/write_reports.py": "4041fc18281201522df25f6b9fc0e4ac3de47c6e23b7bcc41ea9ec1ea5108552"
+  },
+  "frozen_sources": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_tulu_sft/protocol_cn.md": "6dd1ac7f975024b4427a099482f46dd678f045481ad0b976bd72247edb813474",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_tulu_sft/protocol.md": "fa226fa131e6430414812c47feea220a154c11b0986e78b9a9762af65ff83e70",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/config/frozen.json": "f5f59924ca6ab055c80e5a326e65b060005816b170737a8eee3f236034e69ae8",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/manifest.json": "c56a492385c69251c9aa2e98e804da4673ff9dd04cec65df43e562de825e5088"
+  }
+}

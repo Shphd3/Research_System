@@ -15,7 +15,7 @@ logs and checkpoints. Daily folders hold meetings and short reading indexes.
   ([中文](docs/project_access_cn.md)); use the resolver or generated reading bundle.
 
 [Daily reading](daily_research_reports/README_cn.md) ·
-[from project](Projects/from-attention-to-search/main/roadmap_cn.md) ·
+[from project](research/from-attention-to-search/main/roadmap_cn.md) ·
 [Skills](docs/skills.md) · [Writing](docs/report_writing_cn.md)
 
 For project material readable from System alone, use the

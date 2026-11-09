@@ -1,0 +1,158 @@
+{
+  "status": "COMPUTED",
+  "new_panel_qualified": true,
+  "measured_sequences": 36,
+  "base_cases": 6,
+  "graphs": {
+    "R": {
+      "group_union_features": [],
+      "summaries": {
+        "absolute": {
+          "N": 0,
+          "mean": null,
+          "CI": [
+            null,
+            null
+          ],
+          "p_one_sided_exact": null,
+          "positive_cases": 0,
+          "effective_cases": 0,
+          "effective_relation_types": []
+        },
+        "hook_normalized": {
+          "N": 0,
+          "mean": null,
+          "CI": [
+            null,
+            null
+          ],
+          "p_one_sided_exact": null,
+          "positive_cases": 0,
+          "effective_cases": 0,
+          "effective_relation_types": []
+        }
+      },
+      "p_intersection": null,
+      "eligibility": false,
+      "q_BH2": null,
+      "verdict": "INSUFFICIENT"
+    },
+    "C": {
+      "group_union_features": [
+        227,
+        322,
+        630,
+        666,
+        2039,
+        2174,
+        2470,
+        3013,
+        3204,
+        3394,
+        3399,
+        3495,
+        4153,
+        4267,
+        4356,
+        4829,
+        5359,
+        5403,
+        5409,
+        6159,
+        6654,
+        6667,
+        6696,
+        6966,
+        6974,
+        7184,
+        7492,
+        7603,
+        7727,
+        7978,
+        8166,
+        8426,
+        8673,
+        9005,
+        9125,
+        9146,
+        9218,
+        9334,
+        9606,
+        9806,
+        10239,
+        10712,
+        11171,
+        11208,
+        11335,
+        11676,
+        11689,
+        12099,
+        12271,
+        12277,
+        12641,
+        12648,
+        12670,
+        12677,
+        12691,
+        12877,
+        13915,
+        14035,
+        14038,
+        14351,
+        14425,
+        14586,
+        14688,
+        14711,
+        14760,
+        14893,
+        15398,
+        15748,
+        15900,
+        16190,
+        16227,
+        16335
+      ],
+      "summaries": {
+        "absolute": {
+          "N": 6,
+          "mean": 0.16003705975797378,
+          "CI": [
+            0.039337136183397535,
+            0.3202943908194318
+          ],
+          "p_one_sided_exact": 0.015625,
+          "positive_cases": 6,
+          "effective_cases": 6,
+          "effective_relation_types": [
+            "person_role",
+            "word_sense"
+          ]
+        },
+        "hook_normalized": {
+          "N": 6,
+          "mean": 0.00017292779419014054,
+          "CI": [
+            4.46101722895755e-05,
+            0.0003459595027357607
+          ],
+          "p_one_sided_exact": 0.015625,
+          "positive_cases": 6,
+          "effective_cases": 6,
+          "effective_relation_types": [
+            "person_role",
+            "word_sense"
+          ]
+        }
+      },
+      "p_intersection": 0.015625,
+      "eligibility": true,
+      "q_BH2": 0.03125,
+      "verdict": "BOUNDED_CONTEXT_RESPONSE_SUPPORTED"
+    }
+  },
+  "grouped_differences_are_same_target_within_case": true,
+  "relative_scale_from_independent_D_cache": true,
+  "distance_order_confound": true,
+  "semantic_outputs_auxiliary_not_feature_causality": true,
+  "per_group_and_relation_type": "descriptive only; at most3cases per relation cannot achieve p<.05 in a one-sided exact signflip test"
+}

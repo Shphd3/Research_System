@@ -1,0 +1,99 @@
+{
+  "record_type": "document intake and extraction; no scientific approval or execution",
+  "recorded_at_utc": "2026-10-19T02:50:40.676812+00:00",
+  "processing_agent": "Codex /root; read-only audit and disjoint document subtasks by /root/audit_new_anchor and /root/protocol_import_translation",
+  "user_authorized_operations": [
+    "read and explain supplied Anchor and Protocol",
+    "extract and place project-owned documents",
+    "remove large transfer ZIP after verifying retained result access"
+  ],
+  "execution_scope": "NONE; no new statistics, model forward, inference, training or GPU work",
+  "state": "DRAFT_NOT_EXECUTABLE",
+  "source_files": [
+    {
+      "path": "/root/.codex/attachments/ef70b5a6-0264-4866-961d-e7a6c0341d2c/飞书报告与Anchor_频率优先路由_v0.1.md",
+      "bytes": 11531,
+      "sha256": "896b3aaa5ad0179040e60b70168bf91aa232f122dbf03474f1dd7e2ce7853bbb"
+    },
+    {
+      "path": "/root/.codex/attachments/ef70b5a6-0264-4866-961d-e7a6c0341d2c/Protocol_频率贡献桥梁与关系细分_v0.1.md",
+      "bytes": 12102,
+      "sha256": "74a652f03be13dfd3d2aac5a34e48f5b60f57a1c90f15e1905c99583d491f9e9"
+    }
+  ],
+  "exact_source_preservation": {
+    "combined_source": {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/crosscoder_feature_relations/frequency_contribution_relation_refinement/sources/feishu_report_anchor_v0.1_cn.md",
+      "bytes": 11531,
+      "sha256": "896b3aaa5ad0179040e60b70168bf91aa232f122dbf03474f1dd7e2ce7853bbb"
+    },
+    "protocol_original": {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/protocol_cn.md",
+      "bytes": 12102,
+      "sha256": "74a652f03be13dfd3d2aac5a34e48f5b60f57a1c90f15e1905c99583d491f9e9"
+    }
+  },
+  "extraction_map": {
+    "source_1_background": "Anchor sections 1 and 7",
+    "source_2_purpose": "Anchor section 1",
+    "source_3_intuition": "Anchor section 2",
+    "source_4_hypotheses": "Anchor section 3",
+    "source_5_model": "Anchor section 4",
+    "source_6_route": "Anchor section 5",
+    "source_7_decision_branches": "Anchor section 6",
+    "source_8_meeting_attribution": "retained verbatim in combined source; not independently verified",
+    "source_9_meeting_narrative": "retained verbatim in combined source; no invented new conclusion"
+  },
+  "approval_boundary": {
+    "raw_main_rule_confirmation": "asserted by supplied source; not independently promoted to run approval",
+    "suggested_defaults": "B=4, K=8, 2 subgroups per band, positive log-frequency equal-width bands, average-linkage and randomization settings remain proposals",
+    "resources": "not frozen by current request",
+    "existing_eval": "already viewed; prospective reuse remains exploratory",
+    "learning": "H3 remains future work under a separate protocol and authorization"
+  },
+  "old_records_unchanged": [
+    "old Anchor scientific body",
+    "old Protocol scientific body",
+    "Focus",
+    "roadmap",
+    "frozen result snapshots and receipts"
+  ],
+  "derived_documents": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/crosscoder_feature_relations/frequency_contribution_relation_refinement/anchor_cn.md",
+      "bytes": 12848,
+      "sha256": "929993c293d7c19a309f548685aec160d05016dc497ffa87088448629b2578a3"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/crosscoder_feature_relations/frequency_contribution_relation_refinement/anchor.md",
+      "bytes": 16233,
+      "sha256": "f13b2bd0735a666d23a790544de5deffd5667650488f7b60a14fb26c00a7d973"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/README_cn.md",
+      "bytes": 4276,
+      "sha256": "1e2f365e176c66a7270541a9c9454fefb4cb0ef200a328faa30ba4ebfff7c36e"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/README.md",
+      "bytes": 3281,
+      "sha256": "ef8142c605d2b4a962788e43084892bae2963fbe40cbd3e5d5e772e4f4b73c4e"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/protocol_cn.md",
+      "bytes": 12102,
+      "sha256": "74a652f03be13dfd3d2aac5a34e48f5b60f57a1c90f15e1905c99583d491f9e9"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch/protocol.md",
+      "bytes": 17595,
+      "sha256": "83c801cd0fb3afb8395feb66c192c2386fc2cc1ed05e1cd4b212d4aedc8b03b7"
+    }
+  ],
+  "zip_cleanup_receipt": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_normalized_learning/portable_zip_cleanup_receipt_20261019.json",
+  "navigation_check": {
+    "command": "python tools/check_current_entrypoints.py --working-tree",
+    "exit_code": 1,
+    "preexisting_issue": "Missing Projects/ntp_learning_mechanisms/README_cn.md; one present entrypoint pending tracking; unrelated to changed scope"
+  }
+}

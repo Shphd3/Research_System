@@ -1,0 +1,47 @@
+[
+  {
+    "figure": "01_concept_and_upper_judgements",
+    "question": "删除组之后具体区分与上位判断各自改变多少？",
+    "source": "analysis/summary.csv;family_metrics.csv",
+    "run": "R14_20261102_concept_specificity_v1",
+    "model": "official Qwen3-0.6B-Base;block27 residual-post before finalnorm;one native RMSNorm+lm_head",
+    "independent_units": "12 evaluation families/domain;36 total;two paraphrases not independent",
+    "interval": "4000 paired family bootstrap95% pointwise;not measurement noise or training-seed uncertainty"
+  },
+  {
+    "figure": "02_spectral_conditions_secondary",
+    "question": "保留、删除和追加谱方向的效果是否超过同维参照？",
+    "source": "analysis/summary.csv;all_paired_contrasts.csv;conditions.json",
+    "run": "R14_20261102_concept_specificity_v1",
+    "model": "official Qwen3-0.6B-Base;block27 residual-post before finalnorm;one native RMSNorm+lm_head",
+    "independent_units": "12 evaluation families/domain;36 total;two paraphrases not independent",
+    "interval": "4000 paired family bootstrap95% pointwise;not measurement noise or training-seed uncertainty"
+  },
+  {
+    "figure": "03_frequency_deletion_matched_controls",
+    "question": "频率组贡献是否超过匹配对照？",
+    "source": "analysis/primary_feature_contrasts.csv;individual_random_contrasts.csv",
+    "run": "R14_20261102_concept_specificity_v1",
+    "model": "official Qwen3-0.6B-Base;block27 residual-post before finalnorm;one native RMSNorm+lm_head",
+    "independent_units": "12 evaluation families/domain;36 total;two paraphrases not independent",
+    "interval": "4000 paired family bootstrap95% pointwise;not measurement noise or training-seed uncertainty"
+  },
+  {
+    "figure": "A01_actual_group_spectral_positions",
+    "question": "各组实际响应向量处于哪些谱位置？",
+    "source": "analysis/group_spectral_contributions.csv.gz;group_spectral_cross_terms.csv.gz",
+    "run": "R14_20261102_concept_specificity_v1",
+    "model": "official Qwen3-0.6B-Base;block27 residual-post before finalnorm;one native RMSNorm+lm_head",
+    "independent_units": "12 evaluation families/domain;36 total;two paraphrases not independent",
+    "interval": "4000 paired family bootstrap95% pointwise;not measurement noise or training-seed uncertainty"
+  },
+  {
+    "figure": "04_fixed_concept_cases",
+    "question": "固定自然语言线索下具体概念和上位判断分别怎么变？",
+    "source": "analysis/paraphrase_metrics.csv;data/prefixes.jsonl",
+    "run": "R14_20261102_concept_specificity_v1",
+    "model": "official Qwen3-0.6B-Base;block27 residual-post before finalnorm;one native RMSNorm+lm_head",
+    "independent_units": "12 evaluation families/domain;36 total;two paraphrases not independent",
+    "interval": "4000 paired family bootstrap95% pointwise;not measurement noise or training-seed uncertainty"
+  }
+]

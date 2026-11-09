@@ -1,0 +1,32 @@
+# Dense checkpoint dynamics: execution audit and reading session
+
+Status: factual preparation complete; researcher discussion and take-away card pending. No Anchor or scientific-status update yet. This record is derived, not an amended protocol.
+
+Evidence: the initial user request; archived pre-forward protocol and freeze; actual config/collector/analyzer/plotter; pod LOAD/DONE log; per-checkpoint completion metadata; cached covariance and paired evaluation arrays; per-document classifier predictions; source-table and figure hashes. See verified_checks.json and review_manifest.json. Canonical source tables are two levels above under tables/.
+
+Actual scope: 12 readable checkpoints from one 281,431,040-parameter Dense trajectory, 0.5–33B cumulative training tokens, main final block residual-post before final norm. Early/middle layer supplements only at 0.5/17/33B: 18 layer states total. Geometry uses 1024 reference plus 1024 evaluation records, 32 fixed positions each, N=32768 per split, fixed 256-token contexts. All five frozen panel hashes and record/text/token cross-split checks pass. Paper-level family independence is unavailable, so population generalization remains unverified. Eight manifested missing-weight checkpoints remain missing, with no interpolated measurements.
+
+New in the run: Dense activations and all PCA/mean/alignment/classifier fits. Reused historical text/tokens, R12 the positions/external labels/TRAIN-DEV IDs, model source/runtime, and the run's own repeated smoke cache. No Qwen activation or old classifier fit substitutes for Dense data. Independent readout refits: 126 conditions, 504 C candidates; H sizes 37(18/19), 17(9/8), 18(9/9), with historical exposure and limited matching. Thirty final alignment matrices have determinant +1. Independent current cache checks reconstructed both late covariances and 31-to-33B residual/CKA, and all 126 balanced accuracies from per-record predictions. No new forwards, classifier/PCA fits, allocation or numerical result changes in this review.
+
+Severity and fixes:
+
+|Class|Evidence|Affected claims|Minimum repair|Recompute|
+|---|---|---|---|---|
+|Implementation error, already fixed: initial orthogonal alignment allowed reflections|frozen protocol section8; A01; rotation_only_correction.json|Six aligned pairs only|Use final SO(d) results; retain superseded originals|Already repaired from caches; all thirty determinants independently checked|
+|Evidence gap: paper families unavailable|geometry metadata source_group_scope; prepare.py|Generalization and sampling/onset inference|Restrict to observed record panel; any recovered-family split is a new design|No current recomputation; new panel needs researcher decision|
+|Evidence gap: unstable estimated middle/tail bases|sampling_reference_summary.csv|Attributing all subspace movement to training|Keep direction stability insufficient; distinguish estimation sensitivity|Existing caches do not add independent observations|
+|Evidence gap: small, historically exposed semantic H and source confounds|semantic_task_counts and readout_predictions|Semantic onset and reproducible incremental information|Show per-class counts and paired predictions; keep exploratory|No fix by reselecting splits; fresh matched evidence requires a new plan|
+|Interpretation risk: half-split ranges, perfect-score bootstrap, endpoint self-distance|analyze.py102–142/179–189; plot.py27–31|Confidence or final-convergence overclaim|Call split ranges descriptive; [1,1] is conditional empirical bootstrap; 33B self-distance zero is identity|No numeric repair; calibrated inference is separate work|
+|Presentation: unequal token gaps|plot.py19–32; pair_metrics token_gap_B/per_B|Mistaking lower raw distance for lower change rate|Read rates alongside distances; connecting lines do not create missing measurements|No new plotting/forwards necessary|
+
+Resource evidence verifies this job's two-5090 allocation and sequential single-device collection. All-time overlap of all other analyses is not verified by the retained evidence; do not claim a global concurrency audit passed. No new numerical implementation error was found within the listed checks; other checkpoints' full covariance matrices were not independently reconstructed this review.
+
+Prepared main figures, shown one per turn: original figure1_spectra_scale_shape.png (scale/shape, all checkpoints) then final A01 figure3_rotation_and_relations.png (paired raw/aligned/CKA controls). Optional figure4_semantic_timing.png only if needed. Full encoding, denominators, counts, errors and source pointers are recorded in audit_cn.md. Existing figures and input hashes match execution sources; figure1 was visually inspected. Figure2 here means the second selected reading figure, not the original file named figure2_subspace_drift.
+
+Late factual anchors: trace86733.0713 to83565.3921(-3.6522%); normalized-spectrum TV.0306787 over2B. Shape rate.0153394/B versus.00752876/B over22.018691584-to31B. Paired evaluation raw residual.6085498, rotation-aligned.3574164, CKA.9550273. These figures do not establish final convergence, semantic invariance or router optimality. The researcher has not yet confirmed the knowledge-update card or next decision.
+
+## User-directed leading singular-value view
+
+Added top1/figure_top1_singular_value.png from all twelve index1 spectrum.csv rows; no numerical replacement, refit or forward. Every s1 matches stored NPZ and s1 squared/(32768-1)=lambda1. Fixed N=32768,1024 reference records,32 positions each,own mean. Blue line connects measurements; no error bars or imputed checkpoints. The rendered figure was inspected. Sources, hashes and reproducible code are in top1/figure_manifest.json and plot_top1.py. Original Protocol and Anchor remain unchanged.
+
+All saved PC1 adjacent diagnostics meet the frozen relative-eigengap guard (minimum approximately34.1%). Direct basis checks reproduce a sign-invariant31-to33B first-direction angle32.8184degrees. Eight existing33B512/512record halves yield descriptive2.5/50/97.5percentile angles1.4259/1.6713/2.2519degrees, not a population CI;31B has no matching split reference. This supports continued sampled original-coordinate PC1 direction change, not continuous rotation between measurements, persistent semantic identity or functional change. In contrast,s1 itself increases only2.1797percent31-to33B; do not describe every late magnitude change as large. Researcher confirmation remains pending.

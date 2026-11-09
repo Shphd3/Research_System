@@ -1,0 +1,83 @@
+{
+  "amendment_id": "A01_REAL_H_COMPLETION",
+  "approved_at_recorded_utc": "2026-10-28T02:34:21.257232+00:00",
+  "authorization_source": "current user: if PCA unmeasured, execute forwards, supplement missing readout, then complete all statistics",
+  "parent_config_sha256": "756edbf0ff586c8e6610ef47974d99bbcaf1f5e15b63630461999a6a0493323d",
+  "candidate_freeze_sha256": "0bf533bedfa06dd2f755e06a0faa831af1b7908fdc37bd392b42bf41e844161a",
+  "new_forward_cap": 124,
+  "document_forwards": 120,
+  "check_forwards": 4,
+  "old_R04_forwards": 456,
+  "new_R04_plus_this_branch_cap": 580,
+  "borrow_old_unused_budget": false,
+  "freeze_candidate_direction_and_frequency": true,
+  "source_forward_loader": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/run_dual_forward.py",
+  "source_forward_loader_sha256": "4c7a84cd3e5b1a2b4cd161297d1e30cd5e987ad699d43ea8c4b6672d3455e1dd",
+  "source_data": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/documents.jsonl",
+  "true_h_save": "native float32 arrays copied from BF16 Base hook, full192 visible positions; analysis32:192",
+  "spaces": {
+    "SAE": "zero-basedblock27MLPinputaftermodelpostattentionRMSNorm",
+    "CC": "zero-basedblock27residualpost,pre-finalglobalnorm"
+  },
+  "same_BF16_frozen_Base": true,
+  "same_native_dictionary_replay": true,
+  "base_input_shape": [
+    1,
+    256
+  ],
+  "sparse_SAE_encoder_batch": 256,
+  "sparse_CC_encoder_batch": 1024,
+  "acceptance_original_z": {
+    "max_relative_L2": 0.02,
+    "min_support_jaccard": 0.95,
+    "full120_docs_compared": true
+  },
+  "check_schedule": [
+    "repeat first discovery math",
+    "repeat first discovery biology",
+    "first discovery math truncated128same256padding",
+    "first discovery biology truncated128same256padding"
+  ],
+  "PCA": {
+    "fit_split": "discovery",
+    "n_fit_docs": 60,
+    "n_tokens_per_doc": 160,
+    "n_fit_rows": 9600,
+    "dimension": 1024,
+    "centering": "single pooled mean,math/bio equal,eachdoc equal",
+    "extra_standardization": false,
+    "solver": "float64 centered covariance symmetric eigh, descending eigenvalue;largest absolute-loading component positive",
+    "basis_columns": 1024,
+    "rank_tolerance": "lambda_max*max(N,D)*float64_eps",
+    "rank_bands": 16,
+    "band_size": 64,
+    "full_projection_sum_tolerance": 1e-09,
+    "allow_reconstructed_h": false,
+    "allow_old_corpus_basis": false
+  },
+  "reproduction": {
+    "development": "20docs /3200positions,projectfrozenbasis",
+    "heldout": "40docs /6400positions,projectfrozenbasis",
+    "real_variance": "within pooled split variance of projections; also secondmoment aroundfrozenmean separately",
+    "domain_mean_difference": "difference of equal-document mean vectors M-B; record raw squared bandlength and fraction of totalnorm2",
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 2026102806,
+    "bootstrap_unit": "stratified documents;full same-document moments and means",
+    "direction_alignment": "cosine(discovery mean-difference, split mean-difference), no new classifier"
+  },
+  "geometry": {
+    "universe": "all newly eligible coordinates plus all retained original candidates, originalrandomset union",
+    "norm_restore": "SAE unchanged;CC final TRAIN_RMS27 scalar restores raw residualunits",
+    "primary": "unit-native-decoder squared projection in complete PCbasis;sum1",
+    "group_stat": "mean unit-direction fraction per band",
+    "random_seed_and_ID": "reuse original frozen1000 matched sets, no new matching or fallback",
+    "main_test_family": "top16 x2dictionaries x16bands=32 two-sided matched-background tail comparisons, BH32;exploratory,reusedholdout/selectionnotcontrolled",
+    "other_groups": "descriptive matchedbackgroundwhereavailable;NAgroupsunchanged"
+  },
+  "activation_weighted_auxiliary": "for group sum_i E[z_i^2]*native_decoder_norm_i^2*unit_projection_i_band; no cross terms, NOT totalrepresentationvariance, not normalizedto100percent",
+  "training": 0,
+  "new_clustering": 0,
+  "functional_intervention": 0,
+  "new_task_or_resource": 0,
+  "sealed_TEST": false
+}

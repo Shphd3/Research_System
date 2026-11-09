@@ -1,0 +1,142 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "relative_z_l2_error": 0.01936035044491291,
+      "support_jaccard": 0.9817591331765323,
+      "max_abs_z_error": 0.014885671436786652,
+      "pass": true,
+      "kind": "cache_replay",
+      "context": 0,
+      "eligible_positions": 1023
+    },
+    {
+      "relative_z_l2_error": 0.019063355401158333,
+      "support_jaccard": 0.9814280398247226,
+      "max_abs_z_error": 0.022265871986746788,
+      "pass": true,
+      "kind": "cache_replay",
+      "context": 1,
+      "eligible_positions": 1023
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "identical_replay",
+      "seq_id": "S01_A_far"
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "identical_replay",
+      "seq_id": "R01_A_far"
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "fixed_shape_prefix",
+      "seq_id": "S01_A_far",
+      "token_index": 32,
+      "cut_name": "cue_content_before_end",
+      "relative_h_error": 0.0
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "fixed_shape_prefix",
+      "seq_id": "S01_A_far",
+      "token_index": 34,
+      "cut_name": "first_token_after_cue",
+      "relative_h_error": 0.0
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "fixed_shape_prefix",
+      "seq_id": "S01_A_far",
+      "token_index": 56,
+      "cut_name": "middle_neutral_filler",
+      "relative_h_error": 0.0
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "fixed_shape_prefix",
+      "seq_id": "S01_A_far",
+      "token_index": 84,
+      "cut_name": "final_target",
+      "relative_h_error": 0.0
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "fixed_shape_prefix",
+      "seq_id": "R01_A_far",
+      "token_index": 29,
+      "cut_name": "cue_content_before_end",
+      "relative_h_error": 0.0
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "fixed_shape_prefix",
+      "seq_id": "R01_A_far",
+      "token_index": 31,
+      "cut_name": "first_token_after_cue",
+      "relative_h_error": 0.0
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "fixed_shape_prefix",
+      "seq_id": "R01_A_far",
+      "token_index": 53,
+      "cut_name": "middle_neutral_filler",
+      "relative_h_error": 0.0
+    },
+    {
+      "relative_z_l2_error": 0.0,
+      "support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "pass": true,
+      "kind": "fixed_shape_prefix",
+      "seq_id": "R01_A_far",
+      "token_index": 82,
+      "cut_name": "final_target",
+      "relative_h_error": 0.0
+    }
+  ],
+  "reconstruction_target_mean": 0.08069919049739838,
+  "reconstruction_target_p90": 0.12802545726299286,
+  "reconstruction_gate_mean": 0.3,
+  "reconstruction_gate_p90": 0.5,
+  "measured_sequences": 36,
+  "planned_sequences": 36,
+  "planned_texts_total": 72,
+  "remaining_sequences_not_run_due_to_gate": 0,
+  "original_doc_independence": "UNKNOWN",
+  "causal_gate_scope": "eight preselected visible-prefix checks only; not each token independently replayed",
+  "buffers_unchanged": true,
+  "no_parameter_updates": true,
+  "no_interventions": true,
+  "peak_GPU_bytes": 4767910400,
+  "no_threshold_relaxation": true
+}

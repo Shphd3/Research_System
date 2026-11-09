@@ -30,11 +30,14 @@ still requires its protocol execution scope to be authorized.
 This block is the only copy of these values.
 
 ```yaml
-updated: "2026-09-28"
+updated: "2026-11-09"
 default_profile: h100-4-reserved
 default_image: shphd-lite-0911
 
 researcher_decisions:
+  - date: "2026-11-09"
+    scope: reserved_workspace_access
+    decision: "The researcher explicitly selected both share-space and P12 Reserved resources for future training and requested a detailed Agent submission guide. Register p12-h100-4-reserved with the same verified hardware, image and AFS mount as h100-4-reserved, changing only the workspace. P12 engineering job pt-mqi6ojfn SUCCEEDED: four H100 80GB devices, per-device matmul, four-rank NCCL all-reduce, and AFS bidirectional hash verification passed. Keep each main training task in one selected workspace; separate smoke tests are allowed, but no automatic duplicate main submission or Spot fallback. This resource selection does not approve an unspecified training experiment."
   - date: "2026-11-01"
     scope: r13_native_spectral_decoding
     decision: "The researcher authorized frozen Qwen native spectral decoding on at most two approved RTX5090 Spot GPUs. Reuse registered5090-2-spot, embedded smoke before main analysis. No training, H100 use, new paid resource class, new conversation, commit, push or publication."
@@ -199,6 +202,56 @@ profiles:
     workspace: share-space
     aec2: share-cluster
     worker_spec: n6ls.iu.i40.4
+    worker_nodes: 1
+    worker_processes: 4
+    gpus: "4x H100 80GB SXM5"
+    quota_type: reserved
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
+  p12-h100-4-reserved:
+    status: requires_explicit_selection
+    selected_on: "2026-11-09"
+    selection_source: "Researcher explicitly selected P12 and share-space Reserved resources for future training in the current chat."
+    verified_by: "2026-11-09 Beijing time: pt-mqi6ojfn SUCCEEDED; four H100 80GB HBM3 devices, four-rank NCCL all-reduce, per-GPU matmul and existing AFS bidirectional hash checks PASS. Execution certificate: /data/250010109/MoE_Router/experiments/20261108_p12_four_gpu_storage_smoke/20261108T155519Z/execution_certificate_completed.json"
+    surface: acp
+    workspace: p12-large-model-training-platform-on-domestic-computing
+    aec2: share-cluster
+    worker_spec: n6ls.iu.i40.4
+    worker_nodes: 1
+    worker_processes: 4
+    gpus: "4x H100 80GB SXM5"
+    quota_type: reserved
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
+  h100-4-reserved-16c256g:
+    status: requires_explicit_selection
+    selected_on: "2026-11-09"
+    allowed_scope: "A17_13 R03 teacher routing 1B Smoke and formal chains only"
+    selection_source: "Researcher explicitly approved both workspaces changing from 88vCPU/960GiB to16vCPU/256GiB with unchanged four H10080GB Reserved, image, storage, numeric settings and full token batch in the1109teacher training chat."
+    verified_by: "Platform resourceSpecs lists n6ls.iu.i40.4.16c256g; training qualification is the R03 Smoke, not the earlier full-host P12 engineering test."
+    surface: acp
+    workspace: share-space
+    aec2: share-cluster
+    worker_spec: n6ls.iu.i40.4.16c256g
+    worker_nodes: 1
+    worker_processes: 4
+    gpus: "4x H100 80GB SXM5"
+    quota_type: reserved
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
+  p12-h100-4-reserved-16c256g:
+    status: requires_explicit_selection
+    selected_on: "2026-11-09"
+    allowed_scope: "A17_13 R03 teacher routing 1B Smoke and formal chains only"
+    selection_source: "Researcher explicitly approved both workspaces changing from 88vCPU/960GiB to16vCPU/256GiB with unchanged four H10080GB Reserved, image, storage, numeric settings and full token batch in the1109teacher training chat."
+    verified_by: "Platform resourceSpecs lists n6ls.iu.i40.4.16c256g; training qualification is the R03 Smoke, not the earlier full-host P12 engineering test."
+    surface: acp
+    workspace: p12-large-model-training-platform-on-domestic-computing
+    aec2: share-cluster
+    worker_spec: n6ls.iu.i40.4.16c256g
     worker_nodes: 1
     worker_processes: 4
     gpus: "4x H100 80GB SXM5"
@@ -373,6 +426,13 @@ not be reused for a new run. A protocol that records neither a registry key nor
 a legacy key is a drift case, not an exception.
 
 ## 3. Routing
+
+For explicit share-space or P12 four-H100 Reserved training, follow the
+[workspace guide](sco_reserved_training_guide.md) / [中文操作指南](sco_reserved_training_guide_cn.md).
+`templates/execution/acp_submit_reserved_workspace.sh` selects one registered
+workspace profile and reuses the existing submission template, its gates,
+durable logging and receipts. It does not change the global default or submit
+the same main task to both workspaces.
 
 | Work | Profile | Note |
 | --- | --- | --- |

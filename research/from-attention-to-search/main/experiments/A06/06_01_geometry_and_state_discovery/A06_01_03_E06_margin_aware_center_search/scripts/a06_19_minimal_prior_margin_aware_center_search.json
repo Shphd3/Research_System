@@ -1,0 +1,59 @@
+{
+  "seed": 20260623,
+  "seeds": [20260623, 20260624],
+  "cell": "C4_all_position_scope",
+  "data": {
+    "vocab_size": 4096,
+    "seq_len": 32,
+    "num_features": 4,
+    "num_nuisance": 4,
+    "num_experts": 4,
+    "slot_token_len": 4,
+    "slot_starts": [2, 10, 18],
+    "calibration_samples_per_combo": 48,
+    "eval_samples_per_combo": 48,
+    "batch_size": 512,
+    "functional_batch_size": 128,
+    "feature_token_start": 10,
+    "route_marker_token": 90,
+    "target_token_start": 101,
+    "nuisance_token_start": 201,
+    "neutral_token_start": 1000,
+    "neutral_token_count": 512
+  },
+  "model": {
+    "d_model": 128,
+    "n_heads": 4,
+    "ffn_dim": 256,
+    "num_experts": 4,
+    "dropout": 0.0,
+    "router_metric": "dot_product",
+    "router_eps": 1e-6,
+    "use_positional_embedding": false
+  },
+  "method": {
+    "kmeans_backend": "torch",
+    "kmeans_n_init": 5,
+    "kmeans_max_iter": 50,
+    "kmeans_tol": 1e-5,
+    "weighted_kmeans_n_init": 3,
+    "weighted_kmeans_max_iter": 50,
+    "fit_sample_cap": 20000,
+    "bootstrap_sample_cap": 12000,
+    "bootstrap_banks": 16,
+    "split_seed_offset": 240001,
+    "candidate_seed_offset": 350003,
+    "alpha_source": "random_router_mean_norm",
+    "gradient_clip_quantile": 0.95,
+    "gradient_top_fraction": 0.20,
+    "m2_weight_modes": ["continuous", "top20"],
+    "score_stability_weight": 1.0,
+    "score_gap_p05_weight": 0.05,
+    "score_load_penalty": 1.0,
+    "score_functional_weight": 0.10
+  },
+  "output": {
+    "result_dir": "active/synthetic_data_understanding/results/a06_19_minimal_prior_margin_aware_center_search",
+    "figure_dir": "active/synthetic_data_understanding/figures/a06_19_minimal_prior_margin_aware_center_search"
+  }
+}

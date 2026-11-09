@@ -1,0 +1,23 @@
+{
+  "phase": "reference",
+  "pass": true,
+  "time_utc": "2026-10-26T16:26:52.704608+00:00",
+  "processing_agent": "/root",
+  "n_model_sequences": 1024,
+  "n_measured_positions": 245760,
+  "nmse_mean": 0.059897389839813776,
+  "nmse_p90": 0.10544148534536363,
+  "nmse_max": 0.6031403541564941,
+  "decoder_formula_max_relerror": 1.5578882539557526e-07,
+  "replay_and_causal_checks": [],
+  "elapsed_seconds": 47.60971474647522,
+  "peak_cuda_bytes": 1687291392,
+  "parameter_updates": 0,
+  "sealed_TEST_read": false,
+  "new_resources": 0,
+  "model_dtype": "BF16",
+  "SAE_dtype": "FP32",
+  "torch": "2.5.1+cu121",
+  "transformers": "4.53.3",
+  "source_code_sha256": "9eb467ffcdc15005c92787c558b011639fc3c28ef01f6f993e9a431a9bf2fee3"
+}

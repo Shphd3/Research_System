@@ -1,0 +1,18 @@
+{
+  "primary_tests_per_question": 8,
+  "primary_multiplicity": "Holm8 within each question; Holm24 also reported",
+  "member_multiplicity": "Holm across all primary explicit-colon member/label Q1 tests; within-domain Holm also shown; experts receive simultaneous bootstrap max-deviation bands",
+  "bootstrap": "2000 shared whole-scene multinomial draws; 95% percentile intervals of raw statistic, not null-adjusted causal effects",
+  "minimum_estimated_fraction": 0.8,
+  "minimum_valid_bootstrap_fraction": 0.95,
+  "minimum_valid_random_draws": 800,
+  "Q1": "equal average of within-category TV(f conditional route mass versus category load) over unique fixed(feature,label) roles: shared both labels, A_bias in A, B_bias in B",
+  "Q2": "equal shared-feature mean TV of its route-mass profile between A/B; conditional null preserves category route baselines",
+  "Q3": "TV between equal-feature mean profiles of A-biased candidates on A tokens and B-biased candidates on B tokens",
+  "global_permutation": "whole16scene blocks plus one common24label permutation; independently reorder3family slots per scene, shared across all labels/wordings; then pair with fixed feature rows",
+  "conditional_permutation": "whole scene blocks within frozen length bins, category roles fixed; three-family slot permutations shared across labels/wordings",
+  "length_rule": "DEV scene mean prefix length median; CONF bins assigned from this cutoff, merge to one bin if any bin has fewer4scene blocks; report if length matching is lost",
+  "random_matching": "1000 frozen no-replacement sets from DEV/reference-only candidate pools; empirical control distributions are descriptive, not calibrated randomization p-values",
+  "effect_rule": "5 percentage-point TV is only a pre-outcome display screen; no scientific utility threshold",
+  "missing": "zero occurrence -> NA; no zero filling; each estimate reports observed/eligible coverage; insufficient behavior remains descriptive"
+}

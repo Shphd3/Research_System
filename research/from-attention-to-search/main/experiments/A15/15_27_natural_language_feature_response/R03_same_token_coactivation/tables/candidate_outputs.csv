@@ -1,0 +1,13 @@
+case_id,relation_type,distance,candidate_contrast_AminusB,candidate_unrelated_change,A_candidate0_margin,B_candidate1_margin,both_candidates_compatible
+R01,person_role,near,-1.125,0.25,0.25,-1.375,False
+R01,person_role,far,0.0,0.125,0.875,-0.875,False
+R02,person_role,near,4.4375,0.125,-0.875,5.3125,False
+R02,person_role,far,4.5625,0.0,-0.625,5.1875,False
+R03,person_role,near,-0.25,0.25,1.5,-1.75,False
+R03,person_role,far,1.625,0.25,1.75,-0.125,False
+S01,word_sense,near,7.1875,0.0,5.4375,1.75,True
+S01,word_sense,far,5.75,0.0625,5.1875,0.5625,True
+S02,word_sense,near,5.375,0.125,9.9375,-4.5625,False
+S02,word_sense,far,5.0,0.0625,10.625,-5.625,False
+S03,word_sense,near,5.6875,0.0,7.5625,-1.875,False
+S03,word_sense,far,2.375,0.0625,6.8125,-4.4375,False

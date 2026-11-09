@@ -1,0 +1,8 @@
+{
+  "nonexact_entries": 562,
+  "total_entries": 754688,
+  "original_zero_at_all_nonexact": true,
+  "max_abs_cast_difference": 1.4921397450962104e-13,
+  "FP64_reconstruction_max_abs": 6.821210263296962e-13,
+  "diagnosis": "zeros become floating-point roundoff at about1e-13; BF16 retains this exponent. Bit equality is inappropriate; direct identity and decoder output comparisons remain mandatory."
+}

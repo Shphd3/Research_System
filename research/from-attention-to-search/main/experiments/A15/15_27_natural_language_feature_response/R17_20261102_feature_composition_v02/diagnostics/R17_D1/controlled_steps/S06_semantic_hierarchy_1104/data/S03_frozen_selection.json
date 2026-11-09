@@ -1,0 +1,143 @@
+{
+  "UTC": "2026-11-03T12:08:11.898834+00:00",
+  "source": "cache/exploration.npz ONLY; no heldout response exists",
+  "exploration_cache_SHA256": "368a55685a256df1c6f32cc649a1b01d1b8c6d1e00c57c1a792d75efe3f08d08",
+  "rules": {
+    "H1_common": {
+      "min_triple_active_families": 2,
+      "min_triple_min_weighted_gt_N_families": 2,
+      "max_candidates": 6,
+      "ranking": "descending triple_active count, descending positive contrast count, descending mean(min(u_P,u_cat,u_dog)-u_N), ascending atomID"
+    },
+    "H1_added": {
+      "min_zeroP_positiveFine_families": 2,
+      "max_candidates_per_fine": 6,
+      "ranking": "descending zeroP-positiveFine coverage, descending mean fine u among zeroP-positiveFine rows, ascending atomID; cat and dog selected separately; opposite fine response reported, not a selection gate"
+    },
+    "H2": {
+      "min_joint_cat_dog_active_families": 2,
+      "max_candidates": 6,
+      "ranking": "descending joint cat/dog active coverage, descending mean min(u_cat,u_dog), ascending atomID; no fine difference ranking",
+      "direction": "sign(mean exploration(q_cat-q_dog)); abs(mean)<=1e-8 is zero; q uses same fixed list and own L2 norm",
+      "normalizations": [
+        "q_raw=z_C/||z_C||2",
+        "q_weighted=u_C/||u_C||2"
+      ],
+      "zero_norm": "undefined, serialize null and plot gray; no epsilon replacement",
+      "support_subsets": [
+        "entire SAE positive support exactly equal",
+        "selected H2-list positive support exactly equal; not equivalent to full support control"
+      ]
+    }
+  },
+  "sites": {
+    "ATTN_SAE": {
+      "H1_common": [
+        9495,
+        23899,
+        13973,
+        12146,
+        27614,
+        1955
+      ],
+      "H1_added": {
+        "cat": [
+          22344,
+          24256,
+          4586,
+          15833,
+          14602,
+          18691
+        ],
+        "dog": [
+          24256,
+          18691,
+          4586,
+          13711,
+          15833,
+          14602
+        ]
+      },
+      "H2": [
+        23899,
+        9495,
+        3516,
+        14602,
+        24256,
+        12146
+      ],
+      "H2_discovery_direction": {
+        "23899": 1,
+        "9495": 1,
+        "3516": -1,
+        "14602": -1,
+        "24256": -1,
+        "12146": 1
+      },
+      "H2_discovery_mean_weighted_q_difference": {
+        "23899": 0.03437380292753889,
+        "9495": 0.06707719624801167,
+        "3516": -0.013628562816098958,
+        "14602": -0.14075647440884956,
+        "24256": -0.06875059818913122,
+        "12146": 0.00252407185384824
+      },
+      "eligible_common": 8,
+      "eligible_H2": 20
+    },
+    "MLPIN_SAE": {
+      "H1_common": [
+        25899,
+        27880,
+        17366,
+        27076,
+        29342,
+        17056
+      ],
+      "H1_added": {
+        "cat": [
+          22958,
+          1292,
+          20989,
+          1560,
+          17874,
+          14536
+        ],
+        "dog": [
+          1292,
+          20989,
+          21533,
+          14536,
+          1560,
+          17893
+        ]
+      },
+      "H2": [
+        14481,
+        2682,
+        27076,
+        25899,
+        5196,
+        27880
+      ],
+      "H2_discovery_direction": {
+        "14481": 1,
+        "2682": -1,
+        "27076": 1,
+        "25899": 1,
+        "5196": 1,
+        "27880": -1
+      },
+      "H2_discovery_mean_weighted_q_difference": {
+        "14481": 0.00930989859577743,
+        "2682": -0.023480998788932745,
+        "27076": 0.024372513220348436,
+        "25899": 0.0028156759241078355,
+        "5196": 0.007112649472624771,
+        "27880": -0.04116362052332167
+      },
+      "eligible_common": 6,
+      "eligible_H2": 24
+    }
+  }
+}

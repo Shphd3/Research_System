@@ -1,0 +1,31 @@
+{
+  "reviewed_at_utc": "2026-11-01T08:45:00.041486+00:00",
+  "run": "pt-0o94658v",
+  "initial_freeze": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/freeze.json",
+  "effective_version": "initial frozen design + A01 proper-rotation correction + A02 actual-missing inventory clarification + A03 derived-cache guard + presentation-only plot update",
+  "current_script_hash_checks": {
+    "acp_workspace_compat_proxy.py": true,
+    "analysis_cache_identity.py": true,
+    "analyze.py": true,
+    "audit_cached.py": true,
+    "calibrate.py": true,
+    "collect.py": true,
+    "correct_rotation_only.py": true,
+    "metrics.py": true,
+    "plot.py": true,
+    "prepare.py": true,
+    "run.sh": true
+  },
+  "independent_checks": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/audit/interactive_review_20261101/verified_checks.json",
+  "verification_code": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/audit/interactive_review_20261101/verify_existing.py",
+  "figures_prepared": [
+    "figures/figure1_spectra_scale_shape.png",
+    "figures/figure3_rotation_and_relations.png"
+  ],
+  "optional_figure": "figures/figure4_semantic_timing.png",
+  "display_rule": "One figure and one understanding question per turn; wait for researcher response.",
+  "anchor_update": "PENDING_DISCUSSION_CONFIRMATION; no scientific status transition",
+  "numerical_changes_this_review": 0,
+  "new_model_forwards": 0,
+  "new_resource_allocations": 0
+}

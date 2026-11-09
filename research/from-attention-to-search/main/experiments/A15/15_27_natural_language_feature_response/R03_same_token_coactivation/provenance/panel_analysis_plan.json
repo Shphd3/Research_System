@@ -1,0 +1,14 @@
+{
+  "primary_family": [
+    "R_stable_union_far_semantic_minus_unrelated",
+    "C_stable_union_far_semantic_minus_unrelated"
+  ],
+  "scale": "D native contribution RMS; equivalent to z/D_z_RMS for absolute differences; hook-normalized contribution retained separately",
+  "case_unit": "six complete base scenarios; variants never independent",
+  "exact_test": "one-sided enumeration of all64 case sign flips; intersection of absolute and hook-normalized tests then BH2",
+  "CI": "2000base-case bootstrap,seed2026102703/4",
+  "eligibility": "measurement gates pass;all6cases;>=4effective;both relation types supported;>=4positive;bothCI lower>0;q<.05",
+  "individual_group_and_relation_results": "descriptive only,3cases per relation cannot pass exact p<.05",
+  "no_causal_or_semantic_height_claim": true,
+  "effective_case": "absolute D-RMS-scaled semantic effect>1e-4 for both representations; normalized effect has no separate same-number support cutoff"
+}

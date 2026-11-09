@@ -1,0 +1,22 @@
+{
+  "experiment_id": "A09_01_common_band_rare_discrimination",
+  "run_name": "a09_common_rare_spectral_full_20260629_1",
+  "run_stage": "full",
+  "date": "2026-06-29",
+  "workspace": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments",
+  "runner": "active/synthetic_data_understanding/scripts/run_a09_common_rare_spectral_discrimination.py",
+  "config": "active/synthetic_data_understanding/configs/a09_common_rare_spectral_discrimination.json",
+  "command": "python active/synthetic_data_understanding/scripts/run_a09_common_rare_spectral_discrimination.py --config active/synthetic_data_understanding/configs/a09_common_rare_spectral_discrimination.json --run-name a09_common_rare_spectral_full_20260629_1 --run-stage full --device cpu",
+  "device": "cpu",
+  "job_id": null,
+  "raw_result_dir": "active/synthetic_data_understanding/results/a09_common_rare_spectral_discrimination/a09_common_rare_spectral_full_20260629_1",
+  "curated_result_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A09/A09_01_common_band_rare_discrimination",
+  "primary_metric": "G_mis at audit rank 4",
+  "primary_result": {
+    "baseline_g_mis": 0.4864527955651283,
+    "estimated_split_delta_g_mis": 0.4864543455692534,
+    "estimated_split_rare_loss_improvement": 0.9957118481397629,
+    "estimated_split_common_loss_regression": -0.002851690456736833,
+    "pass": true
+  }
+}

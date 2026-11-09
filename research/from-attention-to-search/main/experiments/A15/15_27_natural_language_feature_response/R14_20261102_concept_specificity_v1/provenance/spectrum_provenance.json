@@ -1,0 +1,119 @@
+{
+  "source_spectrum_metadata": {
+    "n_fit_positions": 9600,
+    "n_fit_documents": 60,
+    "fit_split": "R04 discovery",
+    "mean_centering": "one pooled TRAIN mean; raw residual model units; no RMS normalization",
+    "effective_rank_entropy": 281.9151014431905,
+    "numerical_rank": 1024,
+    "min_eigenvalue": 4.213581851236012,
+    "max_eigenvalue": 11685.494185146363,
+    "orthogonality_max_abs": 3.4243441415782172e-15,
+    "adjacent_relative_gaps_lt_1pct": 924,
+    "eigengaps": {
+      "1": 0.16651494973177755,
+      "4": 0.08946032198993609,
+      "16": 0.09842134633355493,
+      "64": 0.005098783093469529,
+      "128": 0.005399599370370587,
+      "256": 0.004814161061932562,
+      "480": 0.00466275296361966,
+      "512": 0.001712470464739208,
+      "544": 0.0012121559824305526,
+      "768": 0.0020159661936523837,
+      "960": 0.0052270868958632245
+    },
+    "reuse_independent_replication": false,
+    "all_PC_identity_max_abs": 6.821210263296962e-13
+  },
+  "numerical_rank_relative_1e-10": 1024,
+  "entropy_effective_rank": 281.915101443191,
+  "eigenvalue_min": 4.213581851236012,
+  "eigenvalue_max": 11685.494185146363,
+  "adjacent_relative_eigengaps_below1percent": 924,
+  "mu_sha256_tensor": "1b85134afd403e0e5d6d09dcb088418aac7275dbaaffb920c5097318d2a500db",
+  "basis_sha256_tensor": "bb4823c73adfa6a18840739459e183d3e7135eaca06e77f8c851cb04b53d6330",
+  "reference_weighting": "60 reference documents,160positions each;pooled9600vectors=equal document weighting;math30,bio30,physics0",
+  "bands": [
+    {
+      "band": "B1",
+      "left": 0,
+      "right": 1,
+      "dimensions": 1,
+      "dimension_fraction": 0.0009765625,
+      "reference_variance_fraction": 0.07561943859563283,
+      "left_gap": null,
+      "right_gap": 0.16651494973177755
+    },
+    {
+      "band": "B2",
+      "left": 1,
+      "right": 16,
+      "dimensions": 15,
+      "dimension_fraction": 0.0146484375,
+      "reference_variance_fraction": 0.27573157321571057,
+      "left_gap": 0.16651494973177755,
+      "right_gap": 0.09842134633355493
+    },
+    {
+      "band": "B3",
+      "left": 16,
+      "right": 64,
+      "dimensions": 48,
+      "dimension_fraction": 0.046875,
+      "reference_variance_fraction": 0.17931076775880686,
+      "left_gap": 0.09842134633355493,
+      "right_gap": 0.005098783093469529
+    },
+    {
+      "band": "B4",
+      "left": 64,
+      "right": 128,
+      "dimensions": 64,
+      "dimension_fraction": 0.0625,
+      "reference_variance_fraction": 0.10932944013320449,
+      "left_gap": 0.005098783093469529,
+      "right_gap": 0.005399599370370587
+    },
+    {
+      "band": "B5",
+      "left": 128,
+      "right": 256,
+      "dimensions": 128,
+      "dimension_fraction": 0.125,
+      "reference_variance_fraction": 0.1249682695194475,
+      "left_gap": 0.005399599370370587,
+      "right_gap": 0.004814161061932562
+    },
+    {
+      "band": "B6",
+      "left": 256,
+      "right": 512,
+      "dimensions": 256,
+      "dimension_fraction": 0.25,
+      "reference_variance_fraction": 0.13369243920583945,
+      "left_gap": 0.004814161061932562,
+      "right_gap": 0.001712470464739208
+    },
+    {
+      "band": "B7",
+      "left": 512,
+      "right": 768,
+      "dimensions": 256,
+      "dimension_fraction": 0.25,
+      "reference_variance_fraction": 0.06851563647876814,
+      "left_gap": 0.001712470464739208,
+      "right_gap": 0.0020159661936523837
+    },
+    {
+      "band": "B8",
+      "left": 768,
+      "right": 1024,
+      "dimensions": 256,
+      "dimension_fraction": 0.25,
+      "reference_variance_fraction": 0.032832435092590165,
+      "left_gap": 0.0020159661936523837,
+      "right_gap": null
+    }
+  ]
+}

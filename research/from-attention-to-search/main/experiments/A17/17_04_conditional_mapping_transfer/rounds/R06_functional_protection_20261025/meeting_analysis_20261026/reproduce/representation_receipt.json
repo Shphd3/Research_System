@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-26T01:06:27.844482+00:00",
+  "checkpoint_count": 9,
+  "sequence_forwards": 1152,
+  "optimizer_updates": 0,
+  "TEST_opened": false,
+  "resource": "existing collaboration H100 MIG; no new job or allocation",
+  "GPU": "_CudaDeviceProperties(name='NVIDIA H100 80GB HBM3 MIG 3g.40gb', major=9, minor=0, total_memory=40448MB, multi_processor_count=60)",
+  "frozen_upstream_unchanged": true,
+  "input_site": "q_proj normalized input at final prefix token",
+  "output_site": "raw o_proj output at final prefix token before residual addition",
+  "source_logit_targets": "oldgold and counterfactual newgold, one token each; verified originaltokenIDs",
+  "sample_selection_lock_sha256": "0d74675a49365bf192cae0c96cf698fa0da62e367d66459b867e99987d45ccd0",
+  "states": [
+    {
+      "condition": {
+        "seed": 29,
+        "method": "U",
+        "old_slots": 0,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_29/old_00/U/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "5176b0250f8091b02ae5bfce4642433bf1a1a8a7329e08d54e773a99e021f3f0",
+      "sequences": 128,
+      "replay_max_CE_error": 3.4332275390625e-05,
+      "all_predictions_equal": true
+    },
+    {
+      "condition": {
+        "seed": 29,
+        "method": "U",
+        "old_slots": 4,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_29/old_04/U/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "5a93cf5e17bf321bd3ca294195241fea218ae0e89ef51e19355a735ddd261c8a",
+      "sequences": 128,
+      "replay_max_CE_error": 2.574920654296875e-05,
+      "all_predictions_equal": true
+    },
+    {
+      "condition": {
+        "seed": 29,
+        "method": "F",
+        "old_slots": 4,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_29/old_04/F/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "c8098274dbfc094abdfeaa6db01220eec234d6d512fc8d154f4e9582158bd075",
+      "sequences": 128,
+      "replay_max_CE_error": 1.239776611328125e-05,
+      "all_predictions_equal": true
+    },
+    {
+      "condition": {
+        "seed": 43,
+        "method": "U",
+        "old_slots": 0,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_43/old_00/U/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "df18fa2245e5975ed9bb75294e89d377f5fbf630a1a4b8c4cbfce2d20d5e5091",
+      "sequences": 128,
+      "replay_max_CE_error": 3.814697265625e-05,
+      "all_predictions_equal": true
+    },
+    {
+      "condition": {
+        "seed": 43,
+        "method": "U",
+        "old_slots": 4,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_43/old_04/U/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "79f9dca7d4b2c6acfccb00e97f57d3d799addd7b50fcaa3318c1197b8df7165c",
+      "sequences": 128,
+      "replay_max_CE_error": 1.9669532775878906e-05,
+      "all_predictions_equal": true
+    },
+    {
+      "condition": {
+        "seed": 43,
+        "method": "F",
+        "old_slots": 4,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_43/old_04/F/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "3a982aa6b99136d0db610355ed6857e5745cdd35de808b0a802a56709afc556e",
+      "sequences": 128,
+      "replay_max_CE_error": 1.8596649169921875e-05,
+      "all_predictions_equal": true
+    },
+    {
+      "condition": {
+        "seed": 71,
+        "method": "U",
+        "old_slots": 0,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_71/old_00/U/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "84cac71e4bb53cd1c48b783ad062a8dd0b532f18429eea1db96d509eda4d7484",
+      "sequences": 128,
+      "replay_max_CE_error": 2.6702880859375e-05,
+      "all_predictions_equal": true
+    },
+    {
+      "condition": {
+        "seed": 71,
+        "method": "U",
+        "old_slots": 4,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_71/old_04/U/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "2559a430233bc7ff643d7fdc4b47c71af92656510a0ca8e95b00ebca2f9beb69",
+      "sequences": 128,
+      "replay_max_CE_error": 8.344650268554688e-06,
+      "all_predictions_equal": true
+    },
+    {
+      "condition": {
+        "seed": 71,
+        "method": "F",
+        "old_slots": 4,
+        "checkpoint": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_71/old_04/F/checkpoints/step_000240.pt"
+      },
+      "checkpoint_sha256": "e43b8fa35212d00cb4206d171b45c33bd77e4226b43f8fcf70be933c6b86e023",
+      "sequences": 128,
+      "replay_max_CE_error": 2.0265579223632812e-05,
+      "all_predictions_equal": true
+    }
+  ],
+  "inference_boundary": "within-model mode differences; neither representational availability nor nonzero gap proves actual causal use; posthoc correctness-stratified64pairs not representative fullDEV estimate"
+}

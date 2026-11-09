@@ -1,0 +1,10 @@
+split,contrast,metric,delta,lo,hi,unit
+train,T_H-T_F,fixed-T-B1 macro own-list receive rate,-0.06489079242438844,-0.07055382201343849,-0.060040181372207305,"fraction; negative means lower nominal receive, not worse learning"
+train,R_H-R_F,fixed-T-B1 macro own-list receive rate,-0.0820914753136609,-0.08644804179324937,-0.07280590622931798,"fraction; negative means lower nominal receive, not worse learning"
+train,(T_H-T_F)-(R_H-R_F),fixed-T-B1 macro own-list receive rate,0.017200682889272456,0.005506692207771814,0.02347500195494143,fraction; not a learning interaction
+eval,T_H-T_F,fixed-T-B1 macro own-list receive rate,-0.060369186318556256,-0.06674798237853075,-0.05016628724539591,"fraction; negative means lower nominal receive, not worse learning"
+eval,R_H-R_F,fixed-T-B1 macro own-list receive rate,-0.0777190393034912,-0.08819701616741878,-0.06421942522096102,"fraction; negative means lower nominal receive, not worse learning"
+eval,(T_H-T_F)-(R_H-R_F),fixed-T-B1 macro own-list receive rate,0.017349852984934938,0.004343597691681961,0.03126253325205881,fraction; not a learning interaction
+dev,T_H-T_F,fixed-T-B1 macro own-list receive rate,-0.06017126981695997,-0.07221389270999859,-0.048386839566658194,"fraction; negative means lower nominal receive, not worse learning"
+dev,R_H-R_F,fixed-T-B1 macro own-list receive rate,-0.08297770579990149,-0.0939082298915659,-0.06677499848531039,"fraction; negative means lower nominal receive, not worse learning"
+dev,(T_H-T_F)-(R_H-R_F),fixed-T-B1 macro own-list receive rate,0.02280643598294152,0.004353925955549164,0.036908752199893334,fraction; not a learning interaction

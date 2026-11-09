@@ -1,0 +1,58 @@
+{
+  "same_probe_records": "take_grad(...order[probe]) and probe_loss(...order[probe]) within same update; frozen orders identify64records",
+  "same_loss": "both return sum answer CE /64, probe_microbatch16; before from gradient pass, after from no_grad pass",
+  "same_parameter_start": "g and before loss computed before objective backward/Adam; backward/clip do not change parameters; initial parameter clones immediately before opt.step",
+  "final_displacement": "actual=p-before after post-Adam filter and FP32copy; dot and loss after that final copy; no further optimizer clipping/weight decay after this",
+  "deterministic_mode": "QwenCarrier.eval().requires_grad_(False), selectedweights requires_grad True, CachedAnswerLM uses the eval child layers; no .train() call; r05.configure deterministic algorithms, FP32 noTF32",
+  "precision_limit": "gradient pass and no_grad pass may use different backend kernels; empirical same-state no-op/repeat loss noise NOT SAVED; available rounding bounds quantify parameter-copy contribution only",
+  "source_sha256": "4b6c65530b7e95f5fadd1bde9d553f8633fe0a0613ed785097563b19d4b48776",
+  "source_locations": {
+    "def take_grad": 142,
+    "def probe_loss": 153,
+    "def update": 159,
+    "d=[p-w": 181,
+    "actual=[p-w": 183,
+    "g_dot_actual": 229,
+    "after=probe_loss": 191
+  },
+  "inherited_source_locations": {
+    "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/source/retention_r05_v1.py": {
+      "sha256": "ec28e43c3197c76da870895bbb027ff57912587db4c22f34257be3fd2137a8e5",
+      "lines": [
+        {
+          "line": 75,
+          "source": "torch.use_deterministic_algorithms(True)"
+        },
+        {
+          "line": 76,
+          "source": "torch.backends.cuda.matmul.allow_tf32 = False"
+        },
+        {
+          "line": 77,
+          "source": "torch.backends.cudnn.allow_tf32 = False"
+        },
+        {
+          "line": 98,
+          "source": "carrier.model.eval().requires_grad_(False)"
+        },
+        {
+          "line": 129,
+          "source": "class CachedAnswerLM(nn.Module):"
+        },
+        {
+          "line": 153,
+          "source": "losses = F.cross_entropy(logits.float(), targets, reduction='none')"
+        }
+      ]
+    },
+    "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/source/carriers.py": {
+      "sha256": "802f596b655fbf0c415437925c987ca7ae62ecc4de25860b78a807e1fd46e354",
+      "lines": [
+        {
+          "line": 38,
+          "source": "low_cpu_mem_usage=True,attn_implementation='sdpa').to(device).eval().requires_grad_(False)"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "rows": [
+    {
+      "task": "16equal64bands_by28layers_and2scopes",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "analysis/natural_equal64_matrix.csv"
+    },
+    {
+      "task": "mean_restored_vs_centered_only",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "analysis/paired_mean_effect.csv"
+    },
+    {
+      "task": "mean_zero_fullcentered_controls",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "analysis/summary_metrics.csv"
+    },
+    {
+      "task": "fixed_real_text_examples",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "casebook_cn.md"
+    },
+    {
+      "task": "frequency_energy_and_conditional_hypotheses",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "summary_cn.md"
+    },
+    {
+      "task": "numerical_identity_causal_replay_and_chunk_lineage",
+      "status": "DONE_VALID",
+      "evidence": "audit/validation.json"
+    },
+    {
+      "task": "scope_resource_and_provenance",
+      "status": "DONE_VALID",
+      "evidence": "completion_manifest.json"
+    }
+  ],
+  "scientific_acceptance": "Unknown"
+}

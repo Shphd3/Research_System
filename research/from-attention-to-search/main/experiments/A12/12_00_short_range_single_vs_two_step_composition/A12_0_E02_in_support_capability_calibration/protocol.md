@@ -1,0 +1,131 @@
+# Protocol: A12_0_E02 In-Support Capability Calibration
+
+## 0. Approval Snapshot
+
+- **Approval status:** approved by the user on 2026-07-14 through the request to complete the full run after the E01 support-set decision.
+- **Purpose:** remove held-out ordered-rule-pair generalization as the verified E01 capability confound while preserving the short single-step/two-step comparison.
+- **Primary anchor:** [12_0 short-range single-step versus two-step composition](../../../../problem_anchors/12_structured_compositional_mtp_workload/12_00_short_range_single_vs_two_step_composition/12_00_short_range_single_vs_two_step_composition_anchor.md).
+- **Anchor decision question:** after capability and a user-fixed threshold exist, is MTP's reduction in standard-head training steps larger for two-step composition than for the matched single-step task?
+- **Experiment role:** operationalization repair and capability gate, not hypothesis confirmation.
+- **Changed variable:** ordered-rule-pair support only. Training and evaluation now share all 64 ordered rule pairs.
+- **Held fixed:** sequence, answer distance, rules, states, models, objectives, optimizer, seeds, evaluation interval, and 20,000-step budget.
+- **Stage-primary metric:** full-support standard-head answer-accuracy trajectories.
+- **Anchor-primary metric:** steps to a user-fixed standard-head accuracy threshold; still undefined and not used here.
+- **Unambiguous capability pass:** at least one formal scale, 2 or 4 layers, reaches and sustains exact full-support standard-head accuracy `1.0` for both tasks, both objectives, and both calibration seeds.
+- **Capability fail:** no formal scale satisfies that exact finite-truth-table criterion.
+- **Insufficient:** implementation/infrastructure failure or incomplete trajectories.
+- **Cannot claim:** unseen rule-pair generalization, internal intermediate-state computation, causal use, or an NTP/MTP training-speed interaction.
+- **Approval decision:** execute all 24 calibration runs; do not run confirmation seeds.
+- **Execution:** ACP job `pt-s9fu4zsd`, run `a12_0_in_support_full_20260714_181202`, one reserved `n6ls.iu.i40.4` worker with four GPUs.
+- **Execution status:** completed successfully; 24/24 conditions finished.
+- **Stage outcome:** capability passed at both formal scales. All task/objective/seed conditions at 2 and 4 layers maintained exact standard-head accuracy `1.0` from steps 19,000--20,000. The threshold and mechanism verdict remain unset.
+
+## 1. Terminology / Definitions
+
+| Term | Plain meaning | Concrete object / computation | Unit | Why it matters | Cannot prove |
+|---|---|---|---|---|---|
+| in-support evaluation | evaluation uses the same rule-pair support as training | all \(8\times8=64\) ordered rule pairs and all 32 states | 2,048 exact inputs per task | removes pair generalization from capability | generalization to unseen pairs |
+| standard head | common next-token head in NTP and MTP | \(q_1(h_{\mathrm{SHARED}})\) predicts `ANSWER_Y` | accuracy | common behavioral surface | causal use of \(B\) |
+| capability pass | the finite target function is stably learned by both objectives | last 11 evaluations, steps 19,000--20,000, all equal `1.0` at an eligible scale | Boolean | prevents floor/instability comparisons | why the model learned |
+| confirmation threshold | future accuracy level defining steps-to-threshold | user-fixed \(\tau\) applied to untouched seeds | accuracy | decides the anchor's speed metric | not selected in E02 |
+
+## 2. Anchor Alignment
+
+- **Physical prior tested:** E01 may have failed because it combined two-step learning with unseen rule-pair generalization.
+- **Core model term:** the capability prerequisite for \(T_{d,c,o}(\tau)\).
+- **Falsifier:** if neither 2 nor 4 layers stably learns the finite in-support two-step truth table under both objectives, model/optimization capability remains unresolved.
+- **Claim boundary:** E02 may establish an eligible in-support surface only. It cannot adjudicate positive \(\Gamma_d(\tau)\).
+
+## 3. Tested Hypothesis
+
+Removing rule-pair support shift is sufficient for at least one formal model scale to learn both the single-step and two-step finite functions under NTP and MTP across both calibration seeds.
+
+## 4. Rival Explanations
+
+1. **Model/optimization limitation:** even the finite in-support two-step function may remain unstable.
+2. **MTP gradient interference:** MTP weight 1 may make the capability surface objective-specific.
+3. **Memorization:** success may come from fitting 2,048 inputs rather than factorized rule composition.
+4. **Capacity floor/ceiling:** 1 layer may fail, while 2 or 4 layers may pass; all scales may learn too quickly to separate speed later.
+
+## 5. Data, Model, and Objective
+
+Each example has fixed length 9:
+
+```text
+[BOS, DEPTH_1|DEPTH_2, STATE_A, RULE_r1, RULE_r2,
+ DECIDE, SHARED, ANSWER_Y, EOS]
+```
+
+- 32 states and eight fixed bijective rules generated by seed 1200.
+- All 64 ordered pairs occur in training and in the full-support evaluation.
+- Single-step: \(Y=r_1(A)\); \(r_2\) is a matched distractor.
+- Two-step: \(B=r_1(A)\) and \(Y=r_2(B)\).
+- Model depths: 1, 2, and 4 layers; width 128; four heads; FFN width 512; dropout 0; pre-LN.
+- NTP: \(L=L_1\).
+- MTP: \(L=L_1+L_2\), standard two-head \(K=2\) with second-head weight 1.
+- Both objectives instantiate both heads and match parameter count and forward computation.
+
+## 6. Conditions, Seeds, and Budget
+
+| Item | Role | Conditions | Evidence |
+|---|---|---|---|
+| task structure | anchor variable | single, two-step | \(q_1\) learning curve |
+| objective | anchor variable | NTP, MTP | \(q_1\) learning curve; \(q_2\) diagnostic |
+| depth | capability guard | 1 diagnostic; 2 and 4 formal | scale-local stability |
+| seeds | calibration stability | 1201, 1202 | single-run and cross-seed evidence |
+
+Total: \(3\times2\times2\times2=24\) runs.
+
+Training is unchanged from E01: AdamW, learning rate \(10^{-3}\) to \(10^{-4}\) cosine decay, 200-step warmup, betas \((0.9,0.95)\), weight decay 0.01, gradient clip 1, batch 512, FP32, 20,000 steps, evaluation every 100 steps.
+
+Confirmation seeds 1301--1305 remain prohibited.
+
+## 7. Metrics and Decision Rules
+
+### Stage-primary capability evidence
+
+- full-support standard-head answer accuracy at every 100 steps;
+- exact stability over steps 19,000--20,000;
+- cross-objective and cross-seed pass at the same formal scale.
+
+Because the evaluation is the complete finite support, exact `1.0` means every supported input is correct. This exact-function criterion is not the future confirmation threshold \(\tau\).
+
+### Secondary evidence
+
+- second-head answer accuracy;
+- format-token accuracy;
+- final losses;
+- final \(B\) ridge-probe accuracy, formation-only and non-causal;
+- time-to-exact-fit as descriptive calibration evidence only.
+
+## 8. Known Cases
+
+- **Known good:** all E01 single-step conditions reached exact accuracy `1.0`.
+- **Known bad:** E01 1-layer and 2-layer held-out-pair two-step conditions remained partial.
+- **Known confusing:** E01 4-layer NTP seed 1202 reached `0.9375` while the paired seed remained `0.2969`; a single successful seed is not capability stability.
+
+## 9. Stop and Output Contract
+
+- Run all conditions to 20,000 steps; no threshold early stop.
+- Stop with insufficient evidence on a reproducible implementation or infrastructure failure.
+- Write configuration snapshot, data manifest, shard logs/tables, aggregate learning curves, final metrics, summary JSON, and one central learning-curve figure.
+- Do not issue the anchor interaction verdict and do not execute confirmation.
+
+Raw outputs:
+
+```text
+active/synthetic_data_understanding/results/
+  a12_0_in_support_capability_calibration/
+  a12_0_in_support_full_20260714_181202/
+```
+
+Runtime logs:
+
+```text
+active/synthetic_data_understanding/logs/acp/
+  a12_0_in_support_full_20260714_181202/
+```
+
+## 10. Review Notes
+
+This revision changes only the support-set contract identified by E01. It deliberately accepts a weaker claim: a pass shows learnability of the controlled finite distribution, and may include memorization. Whether \(B\) is formed and causally used remains a downstream `12_03` question.

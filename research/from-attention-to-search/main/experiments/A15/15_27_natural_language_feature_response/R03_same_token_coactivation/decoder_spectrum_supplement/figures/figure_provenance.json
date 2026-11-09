@@ -1,0 +1,94 @@
+{
+  "schema": "R03_decoder_spectrum_figures_v1",
+  "rendered_at_utc": "2026-10-27T06:56:24.411122+00:00",
+  "renderer_sha256": "e6a6e050b520914353775686b51409794703b358de0da5817292ae2cb4a34eb2",
+  "producer": "/root/supplement_figures",
+  "new_estimates": false,
+  "model_forwards": 0,
+  "new_clustering": 0,
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/geometry_results.json",
+      "sha256": "b7dde553ed3caefe3c7e52a65698394c4b991a723a201b043774d3970f2a0b64"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/geometry_nulls.npz",
+      "sha256": "f1c0faaf1ebc668258ce0c3dd2e47b1b8dfb09b3a59cb5b1b99d36db9903e90a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/spectrum_results.json",
+      "sha256": "4585f84d74f135bd41ff0293e803d97641defcab14140bfdb161cd254a832afd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/spectrum_groups.csv",
+      "sha256": "3db59dc647dd19f587430bb3097d97adfe712bbab3803490902d2195ce2e76ed"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/spectrum_features.csv",
+      "sha256": "0106566b841acc1df65b4cc73fa2565f21f58b235c877a4dfa79a1792ab7069c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/panel_spectrum_groups.csv",
+      "sha256": "a5614da288203a1a467df79dcee7b74ef83d4e43d6b070bd724e1464927652ca"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/panel_spectrum_features.csv",
+      "sha256": "49e4af84639c246bcd98040f94d4afaef00d3f3991cd3c4802e7a45dc86a68bd"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure1_fixed_groups_decoder_cosine.pdf",
+      "bytes": 27787,
+      "sha256": "2e33b515ef855771f0de1c2cc2d284b216ffd3dac1b0fbfd6fa1c7c6d5935b45"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure1_fixed_groups_decoder_cosine.png",
+      "bytes": 204933,
+      "sha256": "13517c91d7130ea8c51702f3696e108e1757f895ae72c417e37138a17dd751cb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure2_decoder_spectral_locations.pdf",
+      "bytes": 19002,
+      "sha256": "4f10dd2525ea5bc0008a1da18694a60c876b5cbe5dc8225dc4395ec82839b26c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure2_decoder_spectral_locations.png",
+      "bytes": 227859,
+      "sha256": "ef61fb12ba947e303aa08b3bb5d4140331120b7b9a5f2eeb9c9e72f8242bbbd3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure3_same_panel_spectral_edits.pdf",
+      "bytes": 24121,
+      "sha256": "e72bcf3be9cf01688f4dc774014f0cb36509ef4ec1e51c71c9acf28c6867b5d9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure3_same_panel_spectral_edits.png",
+      "bytes": 328053,
+      "sha256": "e491d4b6310be2dadcb10833aa807f0c889d4bc97a311d4f2c5ab0c3b4600f70"
+    }
+  ],
+  "visual_review": "PASS_ACTUAL_PNG_INSPECTION",
+  "visual_review_at_utc": "2026-10-27T06:56:47.622640+00:00",
+  "visual_review_checks": {
+    "all3PNGs_viewed": true,
+    "figure1_labels_and_footer_overlap_fixed": true,
+    "figure2_legend_above_numbers": true,
+    "figure3_relevant_member_count_label_explicit_on_both_panels": true,
+    "colorbar_shared_percentage_scale": true,
+    "other640_separated_from_equal128bands": true,
+    "no_new_estimators_or_group_changes": true
+  },
+  "caption_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/caption.md",
+      "sha256": "3349de468285f2d7f200e83d338d70561e9e8556d23c3ff9e1b546c2d905ec66",
+      "bytes": 2479
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/caption_cn.md",
+      "sha256": "76d6858089fb9ff0a67af33dc890868ab92b1ebb04b69129e911ee04ef5099fa",
+      "bytes": 3424
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "owner": "15_27_05/R13",
+  "created_utc": "2026-11-02T04:25:53.083967+00:00",
+  "date_user_facing": "2026-11-02 Asia/Shanghai",
+  "project": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_disjoint_bands_and_tail",
+  "execution": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_disjoint_bands_and_tail",
+  "parent": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding",
+  "bands": [
+    {
+      "condition": "b16_32",
+      "PC_start_one_based": 16,
+      "PC_stop_exclusive_one_based": 32,
+      "dimensions": 16,
+      "numpy_slice": [
+        15,
+        31
+      ]
+    },
+    {
+      "condition": "b32_64",
+      "PC_start_one_based": 32,
+      "PC_stop_exclusive_one_based": 64,
+      "dimensions": 32,
+      "numpy_slice": [
+        31,
+        63
+      ]
+    },
+    {
+      "condition": "b64_128",
+      "PC_start_one_based": 64,
+      "PC_stop_exclusive_one_based": 128,
+      "dimensions": 64,
+      "numpy_slice": [
+        63,
+        127
+      ]
+    },
+    {
+      "condition": "b128_256",
+      "PC_start_one_based": 128,
+      "PC_stop_exclusive_one_based": 256,
+      "dimensions": 128,
+      "numpy_slice": [
+        127,
+        255
+      ]
+    },
+    {
+      "condition": "b256_512",
+      "PC_start_one_based": 256,
+      "PC_stop_exclusive_one_based": 512,
+      "dimensions": 256,
+      "numpy_slice": [
+        255,
+        511
+      ]
+    },
+    {
+      "condition": "b512_768",
+      "PC_start_one_based": 512,
+      "PC_stop_exclusive_one_based": 768,
+      "dimensions": 256,
+      "numpy_slice": [
+        511,
+        767
+      ]
+    },
+    {
+      "condition": "b768_960",
+      "PC_start_one_based": 768,
+      "PC_stop_exclusive_one_based": 960,
+      "dimensions": 192,
+      "numpy_slice": [
+        767,
+        959
+      ]
+    },
+    {
+      "condition": "b960_1025",
+      "PC_start_one_based": 960,
+      "PC_stop_exclusive_one_based": 1025,
+      "dimensions": 65,
+      "numpy_slice": [
+        959,
+        1024
+      ]
+    },
+    {
+      "condition": "equal64_512",
+      "PC_start_one_based": 512,
+      "PC_stop_exclusive_one_based": 576,
+      "dimensions": 64,
+      "numpy_slice": [
+        511,
+        575
+      ]
+    },
+    {
+      "condition": "equal64_768",
+      "PC_start_one_based": 768,
+      "PC_stop_exclusive_one_based": 832,
+      "dimensions": 64,
+      "numpy_slice": [
+        767,
+        831
+      ]
+    },
+    {
+      "condition": "equal64_961",
+      "PC_start_one_based": 961,
+      "PC_stop_exclusive_one_based": 1025,
+      "dimensions": 64,
+      "numpy_slice": [
+        960,
+        1024
+      ]
+    }
+  ],
+  "primary_panel": "natural",
+  "documents": 175,
+  "positions": 700,
+  "auxiliary_the_positions": 37,
+  "main_cases": [
+    "natural:R11_A02_134:144",
+    "natural:R11_A02_242:78",
+    "natural:R11_A02_434:160"
+  ],
+  "all_fixed_cases": [
+    "natural:R11_A02_122:174",
+    "natural:R11_A02_135:181",
+    "natural:R11_A02_096:71",
+    "natural:R11_A02_134:144",
+    "natural:R11_A02_242:78",
+    "natural:R11_A02_255:117",
+    "natural:R11_A02_285:134",
+    "natural:R11_A02_281:110",
+    "natural:R11_A02_410:109",
+    "natural:R11_A02_419:64",
+    "natural:R11_A02_434:160",
+    "natural:R11_A02_422:151"
+  ],
+  "permutation_seed": 20261103,
+  "permutation_eligible_positions": 312,
+  "permutation_eligible_documents": 158,
+  "asset_ids": [
+    "representation_qwen3_0p6b_block27_native_spectral_decoding_20261101",
+    "analysis_a15_27_05_native_spectral_decoding_20261101",
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5"
+  ],
+  "training_updates": 0,
+  "scientific_acceptance": "Unknown",
+  "status": "COMPLETE_EXPLORATORY",
+  "output_asset_id": "analysis_a15_27_05_isolated_spectral_bands_tail_20261102",
+  "terminal": {
+    "status": "COMPLETE",
+    "all_positions_including_auxiliary": 737,
+    "primary_natural_positions": 700,
+    "conditions": 11,
+    "control_eligible_positions": 312,
+    "new_transformer_forwards": 0,
+    "training_updates": 0,
+    "elapsed_seconds": 76.66482186317444,
+    "peak_GPU_bytes": 1316706304,
+    "device_used": [
+      0
+    ]
+  },
+  "manual_context_review": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_disjoint_bands_and_tail/provenance/manual_context_review.json",
+  "all700_full_contexts": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_disjoint_bands_and_tail/all_contexts/index_cn.md"
+}

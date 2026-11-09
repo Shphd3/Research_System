@@ -1,0 +1,46 @@
+{
+  "id": "R04_spectrum_attention_source_link_20261028",
+  "frozen_utc": "2026-10-28T04:17:18.988110+00:00",
+  "exploratory": true,
+  "new_forwards": 0,
+  "new_training": 0,
+  "new_candidates": 0,
+  "new_clustering": 0,
+  "new_PCA": 0,
+  "new_task": 0,
+  "source_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/analysis/candidate_freeze.json": "0bf533bedfa06dd2f755e06a0faa831af1b7908fdc37bd392b42bf41e844161a",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/analysis/spectral_results.json": "bf0072a3f9af238c821edc6c98756f88cccef15198ace1f767bc29208c8be9b2",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/analysis/candidate_freeze.json": "2f6c6ce217a4fad70b3b3d4c30b365a1572506ecee67b0d462c376a6b9651d9b",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/analysis/candidate_freeze.json": "dd641e5f6a11a5a0d5fca4686996768483edf6df74e676f8cfd92fb6060132fa",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/endpoint_composition_20261028/config.json": "4454c76f8d55d8ba3726ad1d8ff2b86b7d9c384b1c2ddd3975c3bc4a7fae456c",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/data/A.jsonl": "b93273a836510072897772b2a7671fc90610fcd47440b963b561db0f8d70f098"
+  },
+  "primary": "same original heldout40 documents, identical query/head cells present in bins0/4; stratum different_tokenID_nonpunctuation; cells and position/head/query/document weighting unchanged from endpoint composition",
+  "primary_cohorts": "frozen Top16 split by discovery direction:9math/7bio each dictionary; all4 document-domain x candidate-direction combinations retained",
+  "metrics": [
+    "native z>0 activation fraction",
+    "native contribution when active",
+    "zero-inclusive native contribution"
+  ],
+  "conditional": "within each document ratio of identically weighted zero-inclusive contribution and hit fraction; NA if no hit, then average defined document values; all native per-feature rows retained",
+  "set_aggregation": "equal member mean; hit and zero-inclusive include inactive members; normalized strength uses fixed discovery token RMS per feature before averaging, native per-feature and native cohort means also saved; conditional mean over estimable members only with counts",
+  "primary_contrasts": [
+    "far_high-minus-near_high",
+    "far_middle-minus-near_middle",
+    "difference_in_differences"
+  ],
+  "inference": "5000 paired document bootstrap seed2026102807;19999 signflips symmetry assumption; BH24 across2dict*2documentdomains*2directioncohorts*3contrasts for normalized zero-inclusive mean only; other intervals descriptive",
+  "completeness": "expandedmath64,expandedbio64,oldshared32,oldmath16,oldbio16 and pooledtop16, no reselection",
+  "spectrum": "reuse saved full1024basis and squared unit decoder PC projection,16x64rankbands; no eigenvalue weighting,no activation weighting,no PCA refit",
+  "background": "reuse original existing1000matched sets for existing cohorts; new direction-splitTop16 subsets exact same bins floor(log2(DCLMhits+.5)) x floor(discovery_total_support/5),exclude entireTop16,1000draws seed2026102808; fail without relaxing",
+  "token_inventory": "all original eligible heldout matched pair events in near/far bins for all strata, plus flags for primary common query/head support; automatic word-shape/lexicon labels for ALL events, semantic role remains candidate/uncertain, not validated POS or coreference",
+  "cases": "first source-order math term farhigh;first biology term farhigh;first whitespace farhigh;first matching-domain Top16-silent farhigh ordinary/term token;input/content selection except explicitly selected illustrative negative,not population evidence",
+  "boundaries": [
+    "nativeSAEblock27MLPinput vs CCjoint14layerz withlastresidualpostdecoder contribution separate",
+    "no causal information transmission,not longrange semantics,not semantic module",
+    "old heldout repeatedly inspected",
+    "position lexical source and structure rivals",
+    "spectral geometry not activity strength"
+  ]
+}

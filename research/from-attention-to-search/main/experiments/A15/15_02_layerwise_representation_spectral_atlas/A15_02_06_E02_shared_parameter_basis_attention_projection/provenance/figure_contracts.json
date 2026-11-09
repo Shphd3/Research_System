@@ -1,0 +1,51 @@
+{
+  "figure1_normalized_log_curves_selected_layers.png": {
+    "aggregation": "population-weighted parent and child means; 129-rank moving average only for rendering",
+    "allowed_conclusion": "shape and depth ordering within each registered basis",
+    "axes": "x normalized shared-basis rank; y normalized density on logarithmic scale; color decoder depth",
+    "limitation": "does not identify individual semantic directions or information absent from the residual stream",
+    "metric": "4096 times within-layer normalized conditional-fine projected variance",
+    "question": "Do shallow and deep layers allocate normalized fine variance differently in each fixed common basis?",
+    "source": "analysis_arrays.npz: normalized_energy"
+  },
+  "figure2_normalized_log_curves_all_layers.png": {
+    "aggregation": "all 36 layers; display-only moving average",
+    "allowed_conclusion": "continuity, reversals, and block-36 boundary pattern",
+    "axes": "same as Figure 1",
+    "limitation": "dense lines are descriptive; registered statistics are unsmoothed",
+    "metric": "same as Figure 1",
+    "question": "Is the apparent depth change gradual or driven by selected layers?",
+    "source": "analysis_arrays.npz: normalized_energy"
+  },
+  "figure3_layer_rank_heatmaps.png": {
+    "aggregation": "none over direction; shared 1st-to-99th percentile color limits across bases",
+    "allowed_conclusion": "relative allocation atlas within each basis",
+    "axes": "x normalized rank; y decoder block",
+    "limitation": "color saturation clips the outer one percent and does not imply causal gain",
+    "metric": "log10(4096 times normalized projected variance)",
+    "question": "Where is normalized fine variance allocated over layer and common rank?",
+    "source": "analysis_arrays.npz: normalized_energy"
+  },
+  "figure4_centroid_and_coordinate_audit.png": {
+    "aggregation": "point estimates over all parents; T uses late-layer median minus early-layer median",
+    "allowed_conclusion": "registered depth contrast and minimal coordinate-screen status",
+    "axes": "x decoder block; y centroid or log validity ratio",
+    "limitation": "passing Haar does not mean exact simultaneous diagonalization or shared semantics",
+    "metric": "normalized-rank centroid and diagonal-energy ratio to analytic Haar expectation",
+    "question": "Does the registered centroid shift with depth, and is each basis more diagonal than a random orientation?",
+    "source": "analysis_arrays.npz and coordinate_validity.csv"
+  },
+  "figure5_basis_alignment_and_reading_difference.png": {
+    "aggregation": "16 fixed rank bands; early and late medians use the registered windows",
+    "allowed_conclusion": "global basis alignment and the depth region responsible for basis sensitivity",
+    "axes": "basis-band pair or decoder block",
+    "limitation": "high subspace overlap does not make individual eigenvectors identifiable",
+    "metric": "normalized 256-rank projector overlap and centroid difference",
+    "question": "How similarly do the two common bases order subspaces, and at which depths do their semantic-location readings differ?",
+    "source": "shared_bases.pt and analysis_arrays.npz: centroids"
+  },
+  "render_limits": {
+    "heatmap_vmax": 0.4338318713577851,
+    "heatmap_vmin": -0.4185777577027296
+  }
+}

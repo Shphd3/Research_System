@@ -1,0 +1,94 @@
+{
+  "id": "R04_all_active_contribution_spectrum_20261028",
+  "frozen_at_utc": "2026-10-28T05:10:42.249805+00:00",
+  "authorization": "current user explicitly authorizes all existing-cache computations in same task; no training/new dictionary/forward/candidate reselection",
+  "new_forwards": 0,
+  "new_training": 0,
+  "new_PCA": 0,
+  "new_clustering": 0,
+  "new_tasks": 0,
+  "primary_object": "ALL native z>0 source features, not domain candidate subset",
+  "dictionaries": [
+    "SAE",
+    "CC"
+  ],
+  "domains": [
+    "math",
+    "biology"
+  ],
+  "dataset": "original40 repeatedly inspected heldout docs,20/domain; exploratory",
+  "query_support": "originalstratum0 different-tokenID/nonpunctuation; originalmatchedpairs; samequery/head common cells atbins0,4; same heads and weighting",
+  "distance": {
+    "near": [
+      1,
+      32
+    ],
+    "far": [
+      129,
+      160
+    ]
+  },
+  "attention": "originalwithinbin topceil10% andmiddle40-60%,unrenormalizedoriginalprobabilities",
+  "weighted": "v_i=z_i*raw-hook decoder_i; sum_i squared PC projections / sum_i full-vector norm squared, no cross terms, no eigenvalue/singularvalue weighting, no perfeatureRMS",
+  "equal": "mean of unit decoder squared PC projections across native-active members; if zero direction active mark equality undefined",
+  "synthesized": "firstsum allfeaturecontributionvectors(no decoderbias/noresidual),thenPCproject,squareandnormalize; includescross terms; not centered",
+  "raw": "true nativehook h minus original pooled discovery mean, then PCproject square andnormalize, independently named",
+  "mean_rank": "sum_{j=1..1024} j*normalized perPC squared mass; NOT bandmidpoints",
+  "bands": "reuse full1024 basis,16fixedbandsx64",
+  "aggregation": "sourceposition mean within query/head/distance/attention, heads equal within query, queries equal within document, documents equal within domain; no activationweighted pooling acrosspositions",
+  "window_sensitivity": "keep ORIGINAL matchedpair onlyif BOTH high/control sources in32:192; re-intersect validquery/head cells acrossnear/far; no substitutes; allfour groups recomputed; report document/query/cell/pair counts",
+  "metrics": [
+    "mean_PC_rank",
+    "head64_share",
+    "all16bandshares"
+  ],
+  "primary_contrasts": [
+    "far_high-minus-near_high",
+    "(far_high-minus-near_high)-(far_middle-minus-near_middle)"
+  ],
+  "primary_family": "2dict*2domain*2contrasts=8,weightedmeanrank originalsupport ONLY",
+  "statistics": {
+    "bootstrap": 5000,
+    "seed": 2026102809,
+    "unit": "paired document within domain",
+    "CI": "percentile95% pointwise",
+    "signflips": 19999,
+    "signflip_seed": 2026102810,
+    "test": "two-sided document sign flip about0, symmetry assumption,MonteCarlo plus1",
+    "correction": "BH8",
+    "minimum_documents_for_interval": 10,
+    "sensitivity_and_other_readouts": "descriptive intervals,notnew primarytests"
+  },
+  "diagnostics": [
+    "original attention probability",
+    "exact distance",
+    "source absoluteposition",
+    "sourcebefore32 proportion",
+    "whitespace fraction",
+    "connector/structure lexicon fraction",
+    "denominatorzero counts",
+    "perposition componentpower and synthesizedcross terms"
+  ],
+  "auxiliary_groups": "old R04 shared32/math16/bio16/other form a partition; newTop16math9/bio7 separate overlapping auxiliary decompositions, no reselection",
+  "input_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/attention_source_link_20261028/config.json": "2a5b97790ef0cdc22e185db80b5bf2612973ee0641ee08ef12489d812b280a3e",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/attention_source_link_20261028/analysis/member_document_values.npz": "036216aa8f3e40c4bab4c3ab01f6d3915c266714e859b8bb2a6bf06352b032f1",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/attention_source_link_20261028/analysis/completed.json": "e893c11fad181ccef65f30cc65e19582a7900e5e50f6d52dea7347e4a27417a8",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/attention_source_link_20261028/tables/all_near_far_source_events.csv.gz": "a7e872d8872a2a2f5406039301e68fd026b85dae22b69f94efd12c20ce944ff7",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/analysis/candidate_freeze.json": "0bf533bedfa06dd2f755e06a0faa831af1b7908fdc37bd392b42bf41e844161a",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/amendment.json": "0ae340f16bad8282305767357c271b364d532a168c3c20105c3b9db4351e80d4",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/completed.json": "88ff55407ad85104cc8ad7aef9a5575ab96aa767d40aadde16d66b431371c76b",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/data/A.jsonl": "b93273a836510072897772b2a7671fc90610fcd47440b963b561db0f8d70f098",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/forward/decoder_scales.npz": "a542aa53411623d767693f1099537668a89665e493f4ecfc278abcdbcc7fd0eb",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/analysis/SAE_common_basis.npz": "e74d8de56605bcf3036df386794597f8f67c4c1592becf3b3b56909ce679aad9",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/analysis/CC_common_basis.npz": "dbb7e924dd9e3048992d0d47bd6ca2bdd7421a87ee2bf691266f86eb160344ad"
+  },
+  "decoder_paths": {
+    "SAE": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+    "CC": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt"
+  },
+  "expected_decoder_sha256": {
+    "SAE": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+    "CC": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628"
+  }
+}

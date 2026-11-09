@@ -1,0 +1,77 @@
+{
+  "scope": "Descriptive only; predeclared C3 and fixed-list-with-zeros, fact-swapped membership control. No new fitting or hypothesis family.",
+  "membership": [
+    {
+      "site": "ATTN_SAE",
+      "role": "16_to_64",
+      "families": 12,
+      "same_mean": 0.6795050209684357,
+      "swapped_mean": 0.44732210740305867,
+      "difference": 0.23218291356537693,
+      "CI": [
+        0.18159809750977624,
+        0.27826555786578416
+      ]
+    },
+    {
+      "site": "ATTN_SAE",
+      "role": "16_to_128",
+      "families": 12,
+      "same_mean": 0.6373891824708317,
+      "swapped_mean": 0.44010182069911075,
+      "difference": 0.19728736177172088,
+      "CI": [
+        0.15181877174267863,
+        0.2405917955443218
+      ]
+    },
+    {
+      "site": "ATTN_SAE",
+      "role": "64_to_128",
+      "families": 12,
+      "same_mean": 0.8226553359680294,
+      "swapped_mean": 0.4704941156507491,
+      "difference": 0.3521612203172804,
+      "CI": [
+        0.26899575203576487,
+        0.42156119875934667
+      ]
+    },
+    {
+      "site": "MLPIN_SAE",
+      "role": "16_to_64",
+      "families": 12,
+      "same_mean": 0.8032886738769093,
+      "swapped_mean": 0.645792136421148,
+      "difference": 0.1574965374557612,
+      "CI": [
+        0.11146864211879687,
+        0.20300270817336438
+      ]
+    },
+    {
+      "site": "MLPIN_SAE",
+      "role": "16_to_128",
+      "families": 12,
+      "same_mean": 0.777382796577843,
+      "swapped_mean": 0.6198448812056001,
+      "difference": 0.15753791537224293,
+      "CI": [
+        0.10794828761679175,
+        0.211363803112274
+      ]
+    },
+    {
+      "site": "MLPIN_SAE",
+      "role": "64_to_128",
+      "families": 12,
+      "same_mean": 0.892674645615822,
+      "swapped_mean": 0.6559101781181371,
+      "difference": 0.23676446749768507,
+      "CI": [
+        0.1835608916104272,
+        0.2860284827701576
+      ]
+    }
+  ]
+}

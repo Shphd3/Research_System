@@ -1,0 +1,18 @@
+{
+  "schema": "sft_metadata_interpretation_v1",
+  "unchanged_frozen_config": true,
+  "unused_parent_fields": [
+    "paths.stamp",
+    "paths.staging",
+    "report_deadline_utc",
+    "hard_no_new_training_after_CST",
+    "priority",
+    "bootstrap.unit"
+  ],
+  "effective_current_contract": "protocol_cn.md; new pipeline.py uses 30minute active ceiling, common config train_N85548 eval_N22446 and actual504steps/256644targets, no target/spectral stage",
+  "legacy_smoke_estimate": "estimated20_training_eval_wall_seconds uses old768/65402 and must not be used for this round",
+  "current_smoke_median_step_seconds": 0.04659934155642986,
+  "training_only_ideal_lower_bound_seconds": 117.43034072220325,
+  "real_ETA_includes": "evaluation, four-model startup, checkpoint I/O, exposure statistics; target3–6minutes after smoke",
+  "scientific_parameters_changed": false
+}

@@ -1,0 +1,11 @@
+# Reproduction and files
+
+Read summary_cn.md, then detailed_cn.md and casebook_cn.md. protocol.md/config.json are frozen; assets_manifest.json gives actual external model, SAE, tokenizer and historical source hashes. Source weights are NOT packaged.
+
+`python code/verify.py` independently replays all192 means using Python sets and full sparse activations; full source checks require external source paths. `OPENBLAS_NUM_THREADS=4 python code/analyze.py` recalculates statistics from the saved MoE sparse codes and original IDs, without a model. `python code/report.py` makes derived reading files and figures (external font named in source). `code/infer.py` is the producer, not required for audit; do not run setup.py over completed frozen files. Running inference requires matched external weights, existing CUDA device and current scope authorization; code uses same native source loader, no training.
+
+data/*_z_csr.npz are complete primary positive native Top32 coordinates and values for all6912+12000inputs, at colon and final-body positions. data/*metrics.npz save L1,L2,h norm,NMSE,cutoff32,cutoff33. Per-candidate token/full-sequence logprob results are in results/*scores.jsonl. All2sibling candidates were fully scored; no16-way rank or generation is claimed. Original source texts remain indexed externally; selected reference visible prefixes and every ID/source/token are included. No full preactivations, model weights, all-vocabulary logits or null trace exists in this round. cache chunks can be left outside the portable packet because full consolidated codes and per-example scores are included.
+
+All widths and IDs are local to this MoE dictionary. Empty sets/zero weighted mass are missing. Q/G frequencies separate. No P4/null/readout/training/intervention/new-scene result is implied. All old Qwen results remain unchanged.
+
+Run report.py then supplement.py for complete cases, candidate tables and factual records. User-facing training-progress interpretation is a subsequent discussion note in summary_cn.md; it changes no frozen result. Packaged data/history_qwen_frequency.csv is byte-identical to the old comparison table so numerical analysis needs no original source directory. Portable set replay is code/portable_replay.py.

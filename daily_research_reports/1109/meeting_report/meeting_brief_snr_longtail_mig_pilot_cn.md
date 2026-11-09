@@ -1,6 +1,6 @@
 # 11/9 组会：长尾为什么学得慢——信噪比视角的先导结果
 
-> 来源记录：[R02 Summary（H1）](../../../Projects/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/summary_cn.md) · [S18 Summary（H3）](../../../Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S18_nesting_reuse_1108/summary_cn.md) · [H2 待批配置](../../../Projects/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/h2_4xh100_config_NOT_RUN_cn.md)
+> 来源记录：[R02 Summary（H1）](../../../research/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/summary_cn.md) · [S18 Summary（H3）](../../../research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S18_nesting_reuse_1108/summary_cn.md) · [H2 待批配置](../../../research/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/h2_4xh100_config_NOT_RUN_cn.md)
 > 本稿是派生汇报，不改变科学状态。下文的判定都是 AI 判定；研究者科学判断：Unknown。
 
 ## 目的
@@ -98,8 +98,8 @@
 
 ## 下一步（AI 建议）
 
-1. **周三：H2 训练比较**（[待批配置](../../../Projects/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/h2_4xh100_config_NOT_RUN_cn.md)）。需老师/研究者批准 4×H100，并确定目标 feature 与“长尾”的频率阈值。
-2. **记忆实验诊断**（[设计](../../../Projects/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/memory_diagnostic_design_NOT_RUN_cn.md)）：checkpoint 已保存，可在 MIG 上只前向测槽纯度、训练集准确率与 WikiText 命中。已有记录显示所有事实都写进同一个槽，这等于没有分工。
+1. **周三：H2 训练比较**（[待批配置](../../../research/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/h2_4xh100_config_NOT_RUN_cn.md)）。需老师/研究者批准 4×H100，并确定目标 feature 与“长尾”的频率阈值。
+2. **记忆实验诊断**（[设计](../../../research/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R02_20261108_snr_mig_pilot/memory_diagnostic_design_NOT_RUN_cn.md)）：checkpoint 已保存，可在 MIG 上只前向测槽纯度、训练集准确率与 WikiText 命中。已有记录显示所有事实都写进同一个槽，这等于没有分工。
 3. 可选：在 MIG 上用约 1000 次抽样、匹配损失与 gate 的簇对，直接观测 H1 的交叉点（<30 GPU 分钟）。
 
 ## 附录

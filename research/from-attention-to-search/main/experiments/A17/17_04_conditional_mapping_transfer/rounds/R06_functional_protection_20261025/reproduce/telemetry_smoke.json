@@ -1,0 +1,31 @@
+{
+  "first_two_target_count": 72,
+  "status": "PASS",
+  "tags": [
+    "tokens/train_lm_loss",
+    "updates/train_lm_loss",
+    "tokens/train_total_loss",
+    "updates/train_total_loss",
+    "tokens/loss_component/new_raw",
+    "updates/loss_component/new_raw",
+    "tokens/loss_component/new_weighted",
+    "updates/loss_component/new_weighted",
+    "tokens/loss_component/old_active_raw",
+    "updates/loss_component/old_active_raw",
+    "tokens/loss_component/old_active_weighted",
+    "updates/loss_component/old_active_weighted",
+    "updates/learning_rate",
+    "progress/tokens_seen",
+    "progress/optimizer_step",
+    "progress/effective_tokens_per_update",
+    "progress/new_targets",
+    "progress/probe_label_accesses",
+    "diagnostics/candidate_norm",
+    "diagnostics/actual_norm",
+    "diagnostics/g_dot_candidate",
+    "diagnostics/g_dot_actual",
+    "diagnostics/probe_loss",
+    "diagnostics/actual_C_energy_fraction",
+    "diagnostics/objective_grad_raw_norm"
+  ]
+}

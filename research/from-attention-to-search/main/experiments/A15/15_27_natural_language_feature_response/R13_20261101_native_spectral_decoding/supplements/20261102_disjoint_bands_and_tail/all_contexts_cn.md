@@ -1,0 +1,5 @@
+# 全部自然位置的完整输入与输出
+
+[全部700位置分领域入口](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_disjoint_bands_and_tail/all_contexts/index_cn.md)。完整原始逐token窗口和当前位置索引：[contexts.jsonl](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_disjoint_bands_and_tail/analysis/contexts.jsonl)。
+
+[项目内固定12例](casebook_cn.md)提供相同格式的精读材料；其中三例在看本轮输出前固定为主图。

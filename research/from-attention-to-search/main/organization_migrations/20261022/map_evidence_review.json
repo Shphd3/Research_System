@@ -1,0 +1,232 @@
+{
+  "reviewed_priority_ids": [
+    "15_08_07",
+    "15_13_10",
+    "15_13_11",
+    "15_18",
+    "15_25",
+    "16_01_01",
+    "17_04_01",
+    "17_12",
+    "15_07",
+    "15_17_02",
+    "15_19",
+    "15_20",
+    "15_21",
+    "15_22",
+    "15_23",
+    "15_24",
+    "17_05",
+    "15_09_01"
+  ],
+  "edited_ids": [
+    "15_08_07",
+    "15_25",
+    "15_13_10",
+    "15_13_11",
+    "15_18",
+    "16_01_01",
+    "17_04_01",
+    "15_07",
+    "15_17_02",
+    "15_19",
+    "15_20",
+    "15_21",
+    "15_22",
+    "15_23",
+    "15_24",
+    "17_05",
+    "15_09_01"
+  ],
+  "changes": [
+    {
+      "id": "15_08_07",
+      "before": "该Anchor保留APPROVED_AND_FROZEN_FOR_EXECUTION的历史状态，正文主要是已冻结设计及前任务rank256事实，没有在本文件给出CLINC150本轮结果；不能把前任务通过移植为当前通过。",
+      "after": "冻结 Anchor 之外已有多轮不同数据／模型的结果。Qwen3-8B 合成层级任务 E02 功能准入不足，对齐 E03 的完整更新准入通过；E04 在完整状态 Z 上支持局部子空间贡献，而 E05 的严格校正未确认旧单域低维说法。后继 Qwen3-30B E06 完成全部拟合，但独立640行新表达未确认共享功能秩，R_U 的完整增益也未准入，注册结果为 ELIGIBLE / INSUFFICIENT，研究者判断待定。各轮数据、对象和模型分别记账，不将某轮通过移植为 CLINC150 或全部表征的通过。",
+      "evidence_sources": [
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E02_hierarchical_taxonomy_replication/summary.md",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E03_aligned_hierarchical_taxonomy_replication/summary.md",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E04_z_ru_hierarchical_geometry_comparison/summary.md",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E05_contrast_corrected_shared_scaling/summary.md",
+        "main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_07_E06_rank_specific_multirepresentation_shared_scaling/summary.md"
+      ]
+    },
+    {
+      "id": "15_25",
+      "before": "设计引用最终字典16384特征及第28层重构行为偏差等既有报告事实，但说明未重新加载远端验证；本轮图与候选是否成立尚未给出新结果，原始文档独立性为UNKNOWN。",
+      "after": "阶段一已经完成：214,711条发现边中206,136条通过同bin复核（96.01%），约简后146,947条边，并交付4对候选、16幅局部图、14层热图及118条文本。两对高组成重叠候选的8个共同项中有7个是Top10高频节点，不能排除联合背景支配；原文档和近重复独立性为 UNKNOWN，复核窗口此前已用于评估。阶段一按协议交付后停止，未启动共享／分离专家、MoE 或新字典训练。",
+      "evidence_sources": [
+        "main/experiments/A15/15_25_joint_feature_graph/summary.md",
+        "main/experiments/A15/15_25_joint_feature_graph/summary_cn.md"
+      ]
+    },
+    {
+      "id": "15_13_10",
+      "before": "本Anchor完整记录A6的12轨迹全部比task-only差，最好SAE-B均差+0.005936nat/token；A6R1是已批准后继，本文尚未承担最终结果，随后15_13_11明确记录其完成与种子反向。",
+      "after": "本 Anchor 记录恒定0.1系数 A6 的12条轨迹均差于 task-only，最好 SAE-B 的平均损失差仍为+0.005936 nat/token。后继 15_13_11 已记录 A6R1 的12条轨迹完成：GMM-B 平均损失较低，但三种子差为−0.003897、−0.002480、+0.000322 nat/token，因此“全种子稳定优势”未通过。",
+      "evidence_sources": [
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E20_sae_flat_router_eight_task_mixed_training/A6_online_regularized_router/summary.md",
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_11_structural_routing_incremental_learning_anchor.md"
+      ]
+    },
+    {
+      "id": "15_13_11",
+      "before": "A6R1已完成12轨迹，GMM-B减task-only三种子为-0.003897/-0.002480/+0.000322，否定全种子稳定优势；S0–S6在冻结时未有结果。后补E21确已执行：动态teacher变化传至Router，但未稳定改变表示轨迹或任务损失，仅DERIVED_NOT_SCIENTIFIC_VERDICT。",
+      "after": "A6R1已完成12轨迹，GMM-B减task-only三种子为-0.003897/-0.002480/+0.000322，否定全种子稳定优势；S0–S6在冻结时未有结果。后补E21确已执行：动态teacher变化传至Router，但未稳定改变表示轨迹或任务损失，仅DERIVED_NOT_SCIENTIFIC_VERDICT。",
+      "evidence_sources": [
+        "main/problem_anchors/15_spectral_representation_and_functional_routing/15_13_semantic_supervision_middle_layer_formation/subanchors/15_13_11_structural_routing_incremental_learning_anchor.md",
+        "main/experiments/A15/15_13_semantic_supervision_middle_layer_formation/A15_13_E21_dynamic_structural_teacher/supplementary_0911/summary.md"
+      ]
+    },
+    {
+      "id": "15_18",
+      "before": "Anchor记录128族、2048变体及适用原生分析已运行；E00–E10有终态收据，最终功能无操作误差为0。频率尚未识别，任务上的SAE重构无效，机制判断仍待研究者审阅。",
+      "after": "Anchor记录128族、2048变体及适用原生分析已运行；E00–E10有终态收据，最终功能无操作误差为0。频率尚未识别，任务上的SAE重构无效，机制判断仍待研究者审阅。",
+      "evidence_sources": [
+        "main/experiments/A15/15_18_context_relation_organization_use/first_flow_v3/summary.md"
+      ]
+    },
+    {
+      "id": "16_01_01",
+      "before": "Anchor记录父模型与功能文档库可用，但本子问题的条件分支和冻结遗憾门仍为NOT RUN；此前无复制收益不是本子问题的阴性结果。",
+      "after": "Anchor 冻结记录中，父模型和功能文档库可用，但条件分支及冻结遗憾门记为 NOT RUN；所链接 E01、E02 在本次项目记录核对中只有协议，未见正式结果摘要。父实验此前的反向种子效果只构成本条动机，不能当作该条件分支的阴性结果。",
+      "evidence_sources": [
+        "main/experiments/A16/A16_01_01_E01_frozen_regret_distillation_gate/protocol.md",
+        "main/experiments/A16/A16_01_01_E02_30b_conditional_innovation_confirmation/protocol.md"
+      ]
+    },
+    {
+      "id": "17_04_01",
+      "before": "原Anchor保留各轮运行前NOT RUN快照；后续父Anchor/E03已记录末层Q/K/V/O AdamW两指令两DEV面板均达100%，该SGD配置未过资格。",
+      "after": "子 Anchor 保留运行前 NOT RUN 快照；后续 E03 Summary 已记录末层 Q/K/V/O 的 AdamW 设置在两条指令、两个 DEV 面板均达100%，测试过的 SGD 设置未过资格。这只给父条件映射研究提供合格旧起点，不代表迁移假设、优化器机制或问题关闭已经通过。",
+      "evidence_sources": [
+        "main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/17_04_conditional_mapping_transfer_anchor.md",
+        "main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E03_single_attention_acquisition/summary.md"
+      ]
+    },
+    {
+      "id": "15_07",
+      "before": "Anchor修订时C4与MASSIVE当前结果写作NOT RUN，旧打开集支持候选8/56维曲线；它同时记录CLINC150未获原入口资格。头部EXECUTION_APPROVED_RUNNING是记录当时状态，不能当实时作业状态。",
+      "after": "正式结果已完成，研究者判断仍待确认。E01 的两套新受控面板通过低维功能保留与谱段检查，MASSIVE 在 block24 的完整更新准入通过，但自然任务的局部／共享90%维数仍不足。E02 后继图谱在16个领域—层配对中15个有完整新增可读性，但各任务需七个完整类别对比方向，三个固定谱基均未过完整留出稳健性门槛，因此没有合格的紧凑固定轴路由图谱。",
+      "evidence_sources": [
+        "main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E01_stable_domain_discriminant_subspaces/summary.md",
+        "main/experiments/A15/15_07_layerwise_conditional_fine_discriminant_directions/A15_07_E02_fixed_axis_and_learned_subspace_atlas/summary.md"
+      ]
+    },
+    {
+      "id": "15_17_02",
+      "before": "源文记录三精确17B资产与小样本Smoke身份/replay均过，前192例面板存在几何和复用历史差，但本轮17B N8科学结果NOT RUN。",
+      "after": "精确17B的 E01 测量已 COMPLETE / ELIGIBLE：fresh S7 相对 Dense 为+1.4375个百分点，97.5%区间跨零，主方向为 INSUFFICIENT；更集中的 reweighted S7 比 fresh 低14.9375个百分点，历史对比方向成立。E02 的15B／17B八条件矩阵也经 CPU 恢复完成描述性分析，保留原GPU作业失败和原子批形差异记录，不另改 E01 注册裁定。机制解释仍待研究者确认。",
+      "evidence_sources": [
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E01_n8_17b_separability_audit/summary.md",
+        "main/experiments/A15/15_17_three_model_sae_representation_trajectory/A15_17_02_E02_n8_15b17b_matrix/detailed.md"
+      ]
+    },
+    {
+      "id": "15_19",
+      "before": "源文给出的既有事实是最高频专家接收91.68%的TRAIN输入，原作业在接收门槛处停止，正式A/B、C/D学习和训练后谱均NOT RUN；源文还要求执行者核查这些交接事实。",
+      "after": "实际接收审计已完成：原频率分组下964个低频目标在TRAIN和EVAL的指定专家接收率均为零，两个随机分组的EVAL逐特征均值为4.44%和10.30%。评分分解定位了低频组在竞争中落败的来源，检查过的共现约束并不强迫它零接收；但全局可行分组和替代评分尚未建立。此轮测接收而未训练专家，研究者判断仍待审阅。",
+      "evidence_sources": [
+        "main/experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/summary.md"
+      ]
+    },
+    {
+      "id": "15_20",
+      "before": "Anchor记载旧最高频专家接收91.68%，原低频名单964个特征在指定专家接收率为0；当前文本是冻结前计划，分支实际结果由所链执行冻结文件拥有，不能由计划推定已完成。",
+      "after": "固定分发操作已完成。按对数频率重分组仍把全部EVAL位置送给一个专家，去Top10后仅一个位置改道，960／964个低频目标仍零接收；共激活调整提高名单目标却未改变任何输入目的地。匹配随机名单的低频接收较高，故本轮未解决实际接收，没有专家训练或学习收益结果。",
+      "evidence_sources": [
+        "main/experiments/A15/15_20_frequency_priority_actual_dispatch/20261019_dispatch/summary.md"
+      ]
+    },
+    {
+      "id": "15_21",
+      "before": "源文保留执行冻结时NOT RUN的状态及预先给定的0.01nat/token收益与整体伤害边界；后续真实结果须读取所链Summary/Detailed，本Anchor没有回写为机制支持。",
+      "after": "DCLM和Tulu后继学习结果均已交付，各完成10条件×2种子、3个epoch；校准改善接收，但固定第三epoch的20个模型均比冻结Base具有更高整体及低频损失，主联合收益规则未过。目标特征的8项匹配适配也未找到安全分配。另按研究者指定的第一epoch做了探索性几何审计：160个专家中130个过曝光门、49个同时过该分析的留出收益规则；这些局部标签不改写第三epoch负终点，也不等于收敛或机制确认。",
+      "evidence_sources": [
+        "main/experiments/A15/15_21_activation_to_expert_learning/20261019_normalized_learning/summary.md",
+        "main/experiments/A15/15_21_activation_to_expert_learning/20261019_tulu_sft/summary.md",
+        "main/experiments/A15/15_21_activation_to_expert_learning/20261019_epoch1_expert_geometry/summary.md"
+      ]
+    },
+    {
+      "id": "15_22",
+      "before": "本文明确为DRAFT_NOT_EXECUTABLE、待研究者确认，本轮NOT RUN。它引用既有DCLM/Tulu末层sidecar在固定端点未改善保留集表现，并保留早期改善后反弹的事实；这些不是当前新规则的结果。",
+      "after": "后续获准的无训练 A–C 分析及大样本跨层复核已完成；这些报告没有执行学习收益检验，另行学习由 A15_21 持有。Tulu中当前token稀有程度与最低频贡献份额的位置相关约0.259，但DCLM大窗为0.00619、按token身份等权为−0.11904；逐feature的平均命中token关联是另一统计量。接收主要受频带校准改变，段内关系增量较小且名单不稳定，14层共享同一激活并非独立重复，研究者判断仍待定。",
+      "evidence_sources": [
+        "main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_bridge_dispatch/summary.md",
+        "main/experiments/A15/15_22_frequency_contribution_relation_refinement/20261019_large_token_layer_validation/summary.md"
+      ]
+    },
+    {
+      "id": "15_23",
+      "before": "源文记载旧raw路由5/8空槽、最低频带0%；ratio为2/8空槽、最低频带12.43%，低频特征宏平均接收从0到72.22%。当前均值实验的结局在该设计文本中未给出。",
+      "after": "冻结均值分析已完成。最高频带沿真实隐藏均值方向的有符号投影为TRAIN −0.0931、复核 −0.0712，而预处理偏移贡献+1.4569，因此“高频feature正向组成原始均值”的对应在此不获支持。低频逐feature接收为原始0%、比值校准72.22%、减均值评分17.58%；减法送至最低频带的位置有87.33%原本没有该带激活，接收和空槽指标不能据此转成学习收益。",
+      "evidence_sources": [
+        "main/experiments/A15/15_23_mean_component_frequency_routing/20261019_mean_component_routing_20261019T082513Z/summary.md"
+      ]
+    },
+    {
+      "id": "15_24",
+      "before": "Anchor引用既有低频接收72.22%、均值减法17.58%且其中87.33%位置无原B1激活等事实；注册时本轮结果尚未计算，科学判断保持Unknown。",
+      "after": "表征分析和四个学习条件×两个种子均已完成。强制高频路径相对自由选择的低频损失差在两种子方向不一致，均值及交互未满足支持规则，变化也小于预定0.01 nat幅度；本轮不支持强制调用改善低频输入学习的假设。10月21日冻结诊断另有实际执行，结果受旧NLL重放差异限制，不代替主结果；研究者机制判断仍待审阅。",
+      "evidence_sources": [
+        "main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/summary.md",
+        "main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/diagnostics_20261021/results.md"
+      ]
+    },
+    {
+      "id": "17_05",
+      "before": "正式Anchor保留DRAFT_FOR_REVIEW及NOT RUN登记快照，基础四H100工程Smoke已通过；迁移没有把草案或工程通过升级成科学确认。",
+      "after": "后续阶段性开发读数已记录18条训练轨迹和三套回滚，CONFIRM仍封存。两组单独适配均改善，等本组曝光下共享S16有较小落后，但同总参数隔离D8比S16更差；预设早期回滚的跨组平均效应是帮助，未通过稳定局部互损方向。此处来源是开发／诊断研究笔记，不是正式独立确认结论，原Anchor的草案状态没有被升级。",
+      "evidence_sources": [
+        "main/experiments/A17/17_05_shared_parameter_interference/20260924/README_cn.md",
+        "main/research_notes/shared_updates/20260924/docs/analysis/dev_rollback_reading_cn.md"
+      ]
+    },
+    {
+      "id": "15_09_01",
+      "before": "源文仅记录前项16维共享压缩及标准化平均重合0.04184，同任务0.47829；当前稳定标签依赖复用和原始方差定位均NOT RUN。",
+      "after": "源文仅记录前项16维共享压缩和平均重合对照；本条稳定标签依赖复用与原始方差定位在Anchor登记时为NOT RUN。当前项目owner目录只提供协议，没有可用于本图的后继正式结果。",
+      "evidence_sources": []
+    }
+  ],
+  "all_table_checks": {
+    "owners": 145,
+    "unique_ids": 145,
+    "missing_fields": [],
+    "placeholder_fields": [],
+    "invalid_sources": []
+  },
+  "remaining_action": {
+    "id": "15_13_10",
+    "field": "boundary_cn",
+    "issue": "The final phrase is a historical after-submission hold instruction, not a research boundary. It may read as a fresh current instruction despite the later completed A6R1/E21 records.",
+    "suggested_text": "本条比较恒定与衰减结构压力的任务损失；结构损失下降本身不能证明语义真值或专家功能，语义独特必要性还缺随机teacher对照。"
+  },
+  "final_validation": {
+    "owners": 145,
+    "issues": [],
+    "evidence_links": 41,
+    "unique_edited_ids": [
+      "15_08_07",
+      "15_25",
+      "15_13_10",
+      "15_13_11",
+      "15_18",
+      "16_01_01",
+      "17_04_01",
+      "15_07",
+      "15_17_02",
+      "15_19",
+      "15_20",
+      "15_21",
+      "15_22",
+      "15_23",
+      "15_24",
+      "17_05",
+      "15_09_01"
+    ]
+  },
+  "scope": "Independent source consistency review of the derived reading map; no scientific state change.",
+  "final_adjustment": "A15_13_10 boundary excludes an inherited operational next-step instruction and states the remaining scientific limit."
+}

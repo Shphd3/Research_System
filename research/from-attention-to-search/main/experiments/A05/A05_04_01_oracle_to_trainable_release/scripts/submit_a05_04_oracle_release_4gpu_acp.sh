@@ -1,0 +1,123 @@
+﻿#!/usr/bin/env bash
+set -euo pipefail
+
+cd /data/250010109/Research_System
+export PATH=/root/.sco/bin:$PATH
+
+export WORKSPACE_NAME="${WORKSPACE_NAME:-share-space}"
+export CLUSTER_NAME="${CLUSTER_NAME:-share-cluster}"
+export WORKER_SPEC="${WORKER_SPEC:-n6ls.iu.i40.4}"
+export IMAGE_URL="${IMAGE_URL:-registry.cn-sh-01.sensecore.cn/ccr-zhicheng-03/shphd-private-lite:container1-20260523142552}"
+export MOUNT_SPEC="${MOUNT_SPEC:-01995892-d478-76d8-aec7-13fd8284477e:/data}"
+export CONDA_ENV="${CONDA_ENV:-spectral-hier}"
+export JOB_PRIORITY="${JOB_PRIORITY:-normal}"
+export RUN_NAME="${RUN_NAME:-a05_04_oracle_to_trainable_release_4gpu_20260609}"
+export JOB_NAME="${JOB_NAME:-ats-a0504-oracle-release-4gpu}"
+export EXP_DIR="${EXP_DIR:-/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A05/A05_04_01_oracle_to_trainable_release}"
+export CONFIG_PATH="${CONFIG_PATH:-/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/configs/h0605a_true_token_conditioned_inhibition_replay.json}"
+export MAX_PARALLEL="${MAX_PARALLEL:-4}"
+export TRAIN_STEPS="${TRAIN_STEPS:-1600}"
+export TRAIN_SAMPLES_PER_SLOT="${TRAIN_SAMPLES_PER_SLOT:-5000}"
+export BATCH_SIZE="${BATCH_SIZE:-384}"
+export EVAL_BATCH_SIZE="${EVAL_BATCH_SIZE:-512}"
+export EVAL_SAMPLES_PER_SLOT="${EVAL_SAMPLES_PER_SLOT:-256}"
+export SEEDS="${SEEDS:-20260521,20260522,20260523}"
+export VARIANTS="${VARIANTS:-O0_oracle_frozen_all,R1_release50_plain,R2_release100_plain,R3_release200_plain,R4_release100_inhibition,R5_release100_route_ce}"
+export ROUTER_METRICS="${ROUTER_METRICS:-cosine}"
+export CALIBRATION_STEPS="${CALIBRATION_STEPS:-300}"
+export CALIBRATION_LR="${CALIBRATION_LR:-0.05}"
+export ROUTE_CE_WEIGHT="${ROUTE_CE_WEIGHT:-0.05}"
+
+SCO_WIDE_ARGS=()
+[ -z "${SCO_SUBSCRIPTION:-}" ] || SCO_WIDE_ARGS+=("--subscription=${SCO_SUBSCRIPTION}")
+[ -z "${SCO_RESOURCE_GROUP:-}" ] || SCO_WIDE_ARGS+=("--resource-group=${SCO_RESOURCE_GROUP}")
+[ -z "${SCO_ZONE:-}" ] || SCO_WIDE_ARGS+=("--zone=${SCO_ZONE}")
+
+SCO_CREATE_ARGS=()
+[ -z "${QUOTA_TYPE:-}" ] || SCO_CREATE_ARGS+=("--quota-type=${QUOTA_TYPE}")
+
+mkdir -p "${EXP_DIR}/logs/acp"
+RUN_RECORD="${EXP_DIR}/logs/acp/${RUN_NAME}_submit_$(date +%Y%m%d_%H%M%S).log"
+{
+  echo "time=$(date -Is)"
+  echo "workspace=${WORKSPACE_NAME}"
+  echo "cluster=${CLUSTER_NAME}"
+  echo "worker_spec=${WORKER_SPEC}"
+  echo "image_url=${IMAGE_URL}"
+  echo "mount_spec=${MOUNT_SPEC}"
+  echo "conda_env=${CONDA_ENV}"
+  echo "run_name=${RUN_NAME}"
+  echo "job_name=${JOB_NAME}"
+  echo "config_path=${CONFIG_PATH}"
+  echo "max_parallel=${MAX_PARALLEL}"
+  echo "train_steps=${TRAIN_STEPS}"
+  echo "train_samples_per_slot=${TRAIN_SAMPLES_PER_SLOT}"
+  echo "batch_size=${BATCH_SIZE}"
+  echo "eval_batch_size=${EVAL_BATCH_SIZE}"
+  echo "eval_samples_per_slot=${EVAL_SAMPLES_PER_SLOT}"
+  echo "seeds=${SEEDS}"
+  echo "variants=${VARIANTS}"
+  echo "router_metrics=${ROUTER_METRICS}"
+  echo "calibration_steps=${CALIBRATION_STEPS}"
+  echo "calibration_lr=${CALIBRATION_LR}"
+  echo "route_ce_weight=${ROUTE_CE_WEIGHT}"
+} | tee -a "${RUN_RECORD}"
+
+COMMAND=$(cat <<EOF
+set -euo pipefail
+export CONDA_ENV="${CONDA_ENV}"
+export EXP_DIR="${EXP_DIR}"
+export CONFIG_PATH="${CONFIG_PATH}"
+export RUN_NAME="${RUN_NAME}"
+cd /data/250010109/Research_System
+source /root/anaconda3/etc/profile.d/conda.sh || source /root/miniconda3/etc/profile.d/conda.sh || true
+conda activate "\${CONDA_ENV}" || true
+export PYTHONUNBUFFERED=1
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+mkdir -p "\${EXP_DIR}/logs/acp"
+LOG_PATH="\${EXP_DIR}/logs/acp/\${RUN_NAME}_runtime_\$(date +%Y%m%d_%H%M%S).log"
+echo "runtime_log=\${LOG_PATH}"
+python "\${EXP_DIR}/scripts/run_a05_04_oracle_to_trainable_release.py" \
+  --config "\${CONFIG_PATH}" \
+  --output-dir "\${EXP_DIR}" \
+  --run-name "\${RUN_NAME}" \
+  --run-stage full \
+  --variants "${VARIANTS}" \
+  --router-metrics "${ROUTER_METRICS}" \
+  --seeds "${SEEDS}" \
+  --train-steps "${TRAIN_STEPS}" \
+  --train-samples-per-slot "${TRAIN_SAMPLES_PER_SLOT}" \
+  --batch-size "${BATCH_SIZE}" \
+  --eval-batch-size "${EVAL_BATCH_SIZE}" \
+  --eval-samples-per-slot "${EVAL_SAMPLES_PER_SLOT}" \
+  --calibration-steps "${CALIBRATION_STEPS}" \
+  --calibration-lr "${CALIBRATION_LR}" \
+  --route-ce-weight "${ROUTE_CE_WEIGHT}" \
+  --parallel \
+  --max-parallel "${MAX_PARALLEL}" \
+  >"\${LOG_PATH}" 2>&1
+echo "completed runtime_log=\${LOG_PATH}"
+EOF
+)
+export COMMAND
+echo "command=${COMMAND}" >> "${RUN_RECORD}"
+
+if [[ "${A0505_ORACLE_RELEASE_ALLOW_REAL_SUBMIT:-0}" != "1" ]]; then
+  echo "[dry-run] Set A0505_ORACLE_RELEASE_ALLOW_REAL_SUBMIT=1 to submit ACP job." | tee -a "${RUN_RECORD}"
+  exit 0
+fi
+
+sco acp jobs create \
+  "${SCO_WIDE_ARGS[@]}" \
+  "${SCO_CREATE_ARGS[@]}" \
+  --workspace-name="${WORKSPACE_NAME}" \
+  --aec2-name="${CLUSTER_NAME}" \
+  --job-name="${JOB_NAME}" \
+  --container-image-url="${IMAGE_URL}" \
+  --training-framework=pytorch \
+  --worker-nodes=1 \
+  --worker-spec="${WORKER_SPEC}" \
+  --priority="${JOB_PRIORITY}" \
+  --storage-mount="${MOUNT_SPEC}" \
+  --command="${COMMAND}" 2>&1 | tee -a "${RUN_RECORD}"

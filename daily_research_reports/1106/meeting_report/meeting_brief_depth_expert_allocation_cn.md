@@ -2,7 +2,7 @@
 
 **结果：4卡H100 reserved的A／B完整成对实验已完成；深层递增B的低频损失比均匀A高0.2172，整体损失高0.01426。**这是一个单种子、约2.291亿训练目标下的负结果，不证明所有分层架构无效；机制判断与科学接受Unknown。
 
-[正式Summary](../../../Projects/from-attention-to-search/main/experiments/A15/15_31_depth_expert_allocation/R01_paired_token_frequency/summary_cn.md) · [完整账本／方法／审计](../../../Projects/from-attention-to-search/main/experiments/A15/15_31_depth_expert_allocation/R01_paired_token_frequency/detailed_cn.md) · [全部曲线](../../../Projects/from-attention-to-search/main/experiments/A15/15_31_depth_expert_allocation/R01_paired_token_frequency/figures/all_frequency_curves_and_differences.png)
+[正式Summary](../../../research/from-attention-to-search/main/experiments/A15/15_31_depth_expert_allocation/R01_paired_token_frequency/summary_cn.md) · [完整账本／方法／审计](../../../research/from-attention-to-search/main/experiments/A15/15_31_depth_expert_allocation/R01_paired_token_frequency/detailed_cn.md) · [全部曲线](../../../research/from-attention-to-search/main/experiments/A15/15_31_depth_expert_allocation/R01_paired_token_frequency/figures/all_frequency_curves_and_differences.png)
 
 ## 两分钟短讲稿
 

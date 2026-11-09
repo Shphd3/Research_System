@@ -1,0 +1,3 @@
+# Fixed English prefixes and literal decoding outputs
+
+[Complete12-case table](casebook_cn.md) retainsfullEnglishvisibleprefix,currenttokenID,zero/one-basedpositions,neighborswithvisibilityflags,andcandidateIDs/probabilities/ranksforall11isolatedbandsplusmean/full. ChineseheadingsexplainoriginalEnglishdata;post-positiontextisreferenceonly.

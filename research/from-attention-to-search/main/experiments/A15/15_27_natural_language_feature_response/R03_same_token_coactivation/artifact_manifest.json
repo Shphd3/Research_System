@@ -1,0 +1,2148 @@
+{
+  "schema": "R03_delivery_artifact_manifest_v1",
+  "generated_at_utc": "2026-10-27T02:24:23.667441+00:00",
+  "producer": "/root/build_delivery_manifest.py; packaging only",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation",
+  "canonical_root": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation",
+  "frozen_source_manifest": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/pre_analysis_freeze.json",
+  "frozen_at_utc": "2026-10-27T01:40:58.096271+00:00",
+  "identity": {
+    "model_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "dictionary_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "panel_sha256": "57c1d0358b5128a116128f73514d6d855454bdb689e706c941ed76f6a27e01b9"
+  },
+  "budget": {
+    "parent": 1452,
+    "R03": 48,
+    "combined": 1500,
+    "cap": 1500,
+    "main_panel": 36,
+    "qualification": 12,
+    "planned_but_not_run": 36,
+    "ledger_events": 48,
+    "training_steps": 0,
+    "interventions": 0
+  },
+  "asset_ids": [
+    "data_same_token_coactivation_panel_r03_20261027",
+    "reference_same_token_coactivation_r03_20261027",
+    "representation_crosscoder_context_r03_20261027",
+    "analysis_same_token_coactivation_r03_20261027"
+  ],
+  "entries": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/assemble_records.py",
+      "relative_path": "assemble_records.py",
+      "bytes": 35047,
+      "sha256": "107e8a34c7129a211f189bf52fa2503c4b4701a7d9fe8efb0f972b3e3ccdeb89",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/context_text_boundary_selection.json",
+      "relative_path": "audit/context_text_boundary_selection.json",
+      "bytes": 566,
+      "sha256": "0658050f80321f57e0aacca662108c00c6066b44498fba7c51839647654cdbda",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/existing_intervention_audit.json",
+      "relative_path": "audit/existing_intervention_audit.json",
+      "bytes": 22037,
+      "sha256": "629bbbed5fc5287461f7943b96c6268823a01d29ba12f08a142c885fbb26d1d4",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/existing_intervention_audit.md",
+      "relative_path": "audit/existing_intervention_audit.md",
+      "bytes": 3115,
+      "sha256": "95f165e810f79e9dd791ce5e21a3e5c9b3770cbe1449470b432c95be484b489a",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/existing_intervention_audit.py",
+      "relative_path": "audit/existing_intervention_audit.py",
+      "bytes": 10513,
+      "sha256": "c4f5da5ec10ba2bfc78296e7a8878b9f8493d275a097b4f7cdfea97d7f710fce",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/existing_intervention_coordinate_crosswalk.csv",
+      "relative_path": "audit/existing_intervention_coordinate_crosswalk.csv",
+      "bytes": 30285,
+      "sha256": "a862807ed48aae9b03552916278f1c48e8f3c22aa965a93cda22241da9f17005",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/first8_contexts_boundary_audit.jsonl",
+      "relative_path": "audit/first8_contexts_boundary_audit.jsonl",
+      "bytes": 202140,
+      "sha256": "f07ded54c5125c8704435b4fe11624b9d53b47aee9ea0e4d9902fcdd7eb8ba3a",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/main_input_access.json",
+      "relative_path": "audit/main_input_access.json",
+      "bytes": 18771,
+      "sha256": "c0f0389dcc79848e45d9bceb93fe272d7db6dcf3618f740ee0d5b58746aea29b",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/main_input_access_20261027.json",
+      "relative_path": "audit/main_input_access_20261027.json",
+      "bytes": 18771,
+      "sha256": "82ee37f6bfbb6f9266f81a33a4a7b52b7ebc529a8a31a964831241d76a04f3bd",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_O_frequency_edges.csv",
+      "relative_path": "audit/original_O_frequency_edges.csv",
+      "bytes": 61592818,
+      "sha256": "844290cd4e3b06140aa4771192e905bcec0a7827d642d3053e4af0b03321137a",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_O_frequency_edges_attempt1_partial.csv",
+      "relative_path": "audit/original_O_frequency_edges_attempt1_partial.csv",
+      "bytes": 314193,
+      "sha256": "6b4e0b4e42067efa01fb5b58f976c4a44295e7ddec219ac05145a6fc503b2cd6",
+      "role": "ENGINEERING_FAILED_ATTEMPT_NOT_SCIENTIFIC_EVIDENCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_O_frequency_summary.csv",
+      "relative_path": "audit/original_O_frequency_summary.csv",
+      "bytes": 432,
+      "sha256": "be2911ada30b96fcaa268abe17dccb65e450fc53deddadf95cb2e1ffecc9f593",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_O_frequency_summary.json",
+      "relative_path": "audit/original_O_frequency_summary.json",
+      "bytes": 18650,
+      "sha256": "54d2b877fbd4659a92f19b3c83c97a4844726c919556cc1a61c33ab82c6e977a",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_O_frequency_summary.md",
+      "relative_path": "audit/original_O_frequency_summary.md",
+      "bytes": 1543,
+      "sha256": "7bdd10343e4dc8ce897fcf9b54e3860628fc146caad13f2ae385effbdc7e346a",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_cache_chunk_presence.json",
+      "relative_path": "audit/original_cache_chunk_presence.json",
+      "bytes": 220861,
+      "sha256": "ce220f9cfbb01a2b91dd62d1ffcfeba195d3b1db4c816efe3e1954857a2ba96d",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_graph_access.json",
+      "relative_path": "audit/original_graph_access.json",
+      "bytes": 13510,
+      "sha256": "a90295894f0c3210c0b87cb7c467706c98ff2b7fde01fcee5e073ab817058b23",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_graph_audit.json",
+      "relative_path": "audit/original_graph_audit.json",
+      "bytes": 18805,
+      "sha256": "30fb9e6eb407f199f07962321c82486e921c544feb68901f2f04ce17b871e362",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_graph_audit.md",
+      "relative_path": "audit/original_graph_audit.md",
+      "bytes": 9516,
+      "sha256": "02d8bbfa24b9a2c69a44bc5752c6aff0c9e2b0fb3d5237f096ffeaac12755200",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_graph_audit_cn.md",
+      "relative_path": "audit/original_graph_audit_cn.md",
+      "bytes": 5428,
+      "sha256": "f390ef9f24b0af5dd9691a59229b9c2bf38dd4f2de9770bfe337aa3d81350f1e",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_graph_parent_access.json",
+      "relative_path": "audit/original_graph_parent_access.json",
+      "bytes": 10683,
+      "sha256": "4c7ad8e0d8268c8653c2d10bb270fea793eb392a4ce11b8bd9d51d9f379064be",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_graph_structure_check.json",
+      "relative_path": "audit/original_graph_structure_check.json",
+      "bytes": 285,
+      "sha256": "91e89531a31cddf2ebcb585579d9510f9139692e9f0dd9448deeb8650b70f37f",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/panel_input_access.json",
+      "relative_path": "audit/panel_input_access.json",
+      "bytes": 4203,
+      "sha256": "221e7567f576337db84b788796e731e6b51733ca5c9f63dd89e59246133996d5",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/recover_text_boundaries.py",
+      "relative_path": "audit/recover_text_boundaries.py",
+      "bytes": 3226,
+      "sha256": "8ebf5b385cb3ad6987165f3d92a28607d3ee04ba4a77dfe6dac49386a9e854fd",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/summarize_original_O.py",
+      "relative_path": "audit/summarize_original_O.py",
+      "bytes": 8945,
+      "sha256": "9ec88ae29a8b120b9096b561fff91fea9ed65a1a565f005822a1ce73991dd64b",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/text_boundary_audit_summary.json",
+      "relative_path": "audit/text_boundary_audit_summary.json",
+      "bytes": 2446,
+      "sha256": "665f3daf6a5b8cca6909381d1fdb5c7da994af1b7e310dd0820bf917dad2477a",
+      "role": "SOURCE_AUDIT_OR_DESCRIPTIVE_POSTHOC",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/build_delivery_manifest.py",
+      "relative_path": "build_delivery_manifest.py",
+      "bytes": 21870,
+      "sha256": "bb538f5468509cf1f024ae61fc4922d01c03c0fcda5ab7f78ca9a0e94ce9fcd5",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/check_delivery.py",
+      "relative_path": "check_delivery.py",
+      "bytes": 10553,
+      "sha256": "e60055349cdbf6dcaac41f5b1b0d480072c7b2384500aba4eb74463694d09994",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure1_graphs_frequency.pdf",
+      "relative_path": "figures/figure1_graphs_frequency.pdf",
+      "bytes": 76442,
+      "sha256": "b8ffced640a33fba9fbb693d43ab675d97804ac3617dcab8e2832542fc1e8441",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure1_graphs_frequency.png",
+      "relative_path": "figures/figure1_graphs_frequency.png",
+      "bytes": 1849605,
+      "sha256": "38bafbe21d7db993e85416f492148bf5e05a1d2bd2e11457953243f3cd5f90c1",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_target_detail.pdf",
+      "relative_path": "figures/figure2a_sense_target_detail.pdf",
+      "bytes": 175640,
+      "sha256": "f9ca0d35ca2318589e07fe1bcd9f25d842e43adc7a7f5fc47941b335b076f727",
+      "role": "POSTHOC_INSTANCE_RENDERING_ONLY",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_target_detail.png",
+      "relative_path": "figures/figure2a_sense_target_detail.png",
+      "bytes": 1590137,
+      "sha256": "60ca1af5c2d9b21e14bb51fcf843d53c8a52fd919bc301967bb9df9b28fab763",
+      "role": "POSTHOC_INSTANCE_RENDERING_ONLY",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_tokens.pdf",
+      "relative_path": "figures/figure2a_sense_tokens.pdf",
+      "bytes": 1233104,
+      "sha256": "c76940ac7e5c4f635dd3fdc113093553b09d576e064a2c5c302b9622952f8fb4",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_tokens.png",
+      "relative_path": "figures/figure2a_sense_tokens.png",
+      "bytes": 1339441,
+      "sha256": "1bf2097e9f87a2396d578e1afc6cea578b24599c37584c186efef88a306ca133",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_target_detail.pdf",
+      "relative_path": "figures/figure2b_person_target_detail.pdf",
+      "bytes": 170666,
+      "sha256": "8ec94b2cec5497e1d10f586390d4d0c1fed04faff951cba76452a0c73242bf43",
+      "role": "POSTHOC_INSTANCE_RENDERING_ONLY",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_target_detail.png",
+      "relative_path": "figures/figure2b_person_target_detail.png",
+      "bytes": 1571152,
+      "sha256": "4462650d4c886bcf6a82f04d90ad22d8e80ad802a3c040862ea15add680263f4",
+      "role": "POSTHOC_INSTANCE_RENDERING_ONLY",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_tokens.pdf",
+      "relative_path": "figures/figure2b_person_tokens.pdf",
+      "bytes": 793550,
+      "sha256": "344d72294407ea5b9e563d93ca0a0fea741cc836c6983e6091411a57d5e681b7",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_tokens.png",
+      "relative_path": "figures/figure2b_person_tokens.png",
+      "bytes": 1565229,
+      "sha256": "8ef75f5ebf7feb9c9beba3c1e7936a20b30671a46267ed9e96c4b51584bdcb13",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure3_near_far.pdf",
+      "relative_path": "figures/figure3_near_far.pdf",
+      "bytes": 40686,
+      "sha256": "99abbb70d3babbcafc8c9c69b129c2d146319ba1b73a401edb9aa1b446b73e16",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure3_near_far.png",
+      "relative_path": "figures/figure3_near_far.png",
+      "bytes": 464542,
+      "sha256": "582f615a9d59e93a0af3584787bd90cd84a7780f08d61d4b7fe429333ce81523",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/graph_distance_contracts.md",
+      "relative_path": "figures/graph_distance_contracts.md",
+      "bytes": 5427,
+      "sha256": "5e2c12e6dc1a1c38d4c122e95bf645de220d928d0c5770a5f723226f17c4e6b6",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/graph_distance_plot_provenance.json",
+      "relative_path": "figures/graph_distance_plot_provenance.json",
+      "bytes": 5054,
+      "sha256": "aa8c597ff954392395446fdbeba5ad90cddcef3249f422e9460b1d187886f9eb",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/graph_distance_render.log",
+      "relative_path": "figures/graph_distance_render.log",
+      "bytes": 598,
+      "sha256": "ac860370d6c26685089e0715d7db53ccb0c390b61f12e899e7f01750d242e2d3",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/target_detail_figures_provenance.json",
+      "relative_path": "figures/target_detail_figures_provenance.json",
+      "bytes": 11661,
+      "sha256": "d6789df06e669df99aa2aca4229283dad8bf08212815753d6a8df938226d347c",
+      "role": "POSTHOC_INSTANCE_RENDERING_ONLY",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/target_detail_visual_review.json",
+      "relative_path": "figures/target_detail_visual_review.json",
+      "bytes": 1446,
+      "sha256": "ff43a587c60096fe98fe51f23d7f7bdb4785fc0b020a4992611150b6e6e744dc",
+      "role": "POSTHOC_INSTANCE_RENDERING_ONLY",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/token_figures_provenance.json",
+      "relative_path": "figures/token_figures_provenance.json",
+      "bytes": 18143,
+      "sha256": "a65e94f89775df85c4f180a1c6d23fc25e2770b82fe0726b43c52e3bde95e254",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/token_figures_visual_review.json",
+      "relative_path": "figures/token_figures_visual_review.json",
+      "bytes": 1865,
+      "sha256": "9368043dd11aed12a03f5f68a0b3f93d3db8ee3e8ac8c58ee5f8259ff5544666",
+      "role": "FIGURE_OR_RENDER_PROVENANCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/finish_delivery.py",
+      "relative_path": "finish_delivery.py",
+      "bytes": 17991,
+      "sha256": "d998702d21c10ef84b59be5bc89dc839974f7d82b8f615fb4723da9f3f2afe0f",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_A_far.npz",
+      "relative_path": "forward/R01_A_far.npz",
+      "bytes": 114812,
+      "sha256": "1f18b9d19fb72e70592ff54ed4461332d9d61d130d0bb2dba1924d3b60831b0d",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_A_far_hooks.npz",
+      "relative_path": "forward/R01_A_far_hooks.npz",
+      "bytes": 2296267,
+      "sha256": "686b59c8b7a85b7ad91429e3f9f779cf0d0be750a921c673059bb24dc1e1bf3b",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_A_near.npz",
+      "relative_path": "forward/R01_A_near.npz",
+      "bytes": 114297,
+      "sha256": "7bcc08ab56536636ad049d7ad9a7420157f65498794a38e27695056c0912dc5b",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_B_far.npz",
+      "relative_path": "forward/R01_B_far.npz",
+      "bytes": 114972,
+      "sha256": "f5a8e1f9a5159d67259738027b2be711c1eb1040401cd70cd3137c4b86394561",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_B_near.npz",
+      "relative_path": "forward/R01_B_near.npz",
+      "bytes": 114402,
+      "sha256": "ac6ddc3edf466924672bbf0bf82e09248dbb4d55d115b82b7010c0bd63184545",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_U_far.npz",
+      "relative_path": "forward/R01_U_far.npz",
+      "bytes": 114600,
+      "sha256": "b270d77e42bfc97cddcad291b07f4e95ef6c11db3925e5745a5489402b8f5776",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_U_near.npz",
+      "relative_path": "forward/R01_U_near.npz",
+      "bytes": 114158,
+      "sha256": "cfbe13e977fe31e8b9621bc81f6e2063fcac3fb3e4487f82cc9744b0b809d4f2",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R02_A_far.npz",
+      "relative_path": "forward/R02_A_far.npz",
+      "bytes": 115955,
+      "sha256": "79b1ffa3af9a0a633e291f45d1d03c994a3d66ac3dfbafa90fe520103747549b",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R02_A_near.npz",
+      "relative_path": "forward/R02_A_near.npz",
+      "bytes": 114160,
+      "sha256": "c8e94a4a407ba50d6c2ee43fd753ba17e965f894c3a8e3c66d851ec5cb3d85c8",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R02_B_far.npz",
+      "relative_path": "forward/R02_B_far.npz",
+      "bytes": 115906,
+      "sha256": "acdbcbf1d30a6d40beac03c693d23e44316af64370c46c28153f4f0a8904a21d",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R02_B_near.npz",
+      "relative_path": "forward/R02_B_near.npz",
+      "bytes": 114036,
+      "sha256": "3d0ff097ccf3e8c0073af4b022f282dd9646c6c0e63b3440550c882697a9b112",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R02_U_far.npz",
+      "relative_path": "forward/R02_U_far.npz",
+      "bytes": 115878,
+      "sha256": "fa1d7c364ef3360810abc2738dbe9ef421ca20e4497d3d2d012fef95eeb58bc1",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R02_U_near.npz",
+      "relative_path": "forward/R02_U_near.npz",
+      "bytes": 114243,
+      "sha256": "2bc5fcfced43907e960877cb285bd1b1043dbcc933e7671940f198d840d5b4d6",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R03_A_far.npz",
+      "relative_path": "forward/R03_A_far.npz",
+      "bytes": 115535,
+      "sha256": "fafcfd8e25461c115331ce74af1d8cfa01138584c491ab6b50a89c3f25ac9d22",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R03_A_near.npz",
+      "relative_path": "forward/R03_A_near.npz",
+      "bytes": 113977,
+      "sha256": "e4821b53b65d160c3d3a86758c5db6ad156d63a91d665db4cdff70486c5f90ec",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R03_B_far.npz",
+      "relative_path": "forward/R03_B_far.npz",
+      "bytes": 115383,
+      "sha256": "1134acd657ad95046b309170adc7d7c3eae24a31f02cd6eddd89b4e651ff14e3",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R03_B_near.npz",
+      "relative_path": "forward/R03_B_near.npz",
+      "bytes": 113910,
+      "sha256": "8434bec311b2c49f519a87389a8f0b2f91ac7917ead040e95de76438f344d545",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R03_U_far.npz",
+      "relative_path": "forward/R03_U_far.npz",
+      "bytes": 115325,
+      "sha256": "6de035c629af3a15c872824d9e7f733a00209b460284a2bb04a21f2d269013b6",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R03_U_near.npz",
+      "relative_path": "forward/R03_U_near.npz",
+      "bytes": 113938,
+      "sha256": "dd6f7dc35fb4567f57f4a030d458f7e219716280d4044e941e6330ad16f1c677",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_A_far.npz",
+      "relative_path": "forward/S01_A_far.npz",
+      "bytes": 116719,
+      "sha256": "ad09cae2f8a4b141e7047e1d268c42d15152440bdd1e324aefa4cd2745ce84dd",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_A_far_hooks.npz",
+      "relative_path": "forward/S01_A_far_hooks.npz",
+      "bytes": 2351576,
+      "sha256": "0be156c866431196e0cf4521e7f5f7ea820696e6a41550bc34492b262b053a99",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_A_near.npz",
+      "relative_path": "forward/S01_A_near.npz",
+      "bytes": 117352,
+      "sha256": "110f5c5b45d55d1499f41ff32bd9d825fe61a1b101be4a1452f2f93f7cebb3eb",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_B_far.npz",
+      "relative_path": "forward/S01_B_far.npz",
+      "bytes": 116306,
+      "sha256": "1175a7337477ed22d6d7df3f4fb197d04934d7ed04e57af3ca80a3152b210e01",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_B_near.npz",
+      "relative_path": "forward/S01_B_near.npz",
+      "bytes": 117833,
+      "sha256": "00b5df123efa09b2f6b0957a9aa1cc2d8cca8d493db98270061758194259d556",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_U_far.npz",
+      "relative_path": "forward/S01_U_far.npz",
+      "bytes": 116694,
+      "sha256": "ef772124fa3a5d24d1e6a1f3ac7cfe03b819fb85120503d95abcbce11f849e0e",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_U_near.npz",
+      "relative_path": "forward/S01_U_near.npz",
+      "bytes": 117195,
+      "sha256": "03fd7757eb5dab0b670130594935e26f5ff111cd1ce3a04381bcc57536923def",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S02_A_far.npz",
+      "relative_path": "forward/S02_A_far.npz",
+      "bytes": 112872,
+      "sha256": "7d0c25ba183fceada40aaaadaf7030eed3b5de5d4670e83d7dbe908acfe9013f",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S02_A_near.npz",
+      "relative_path": "forward/S02_A_near.npz",
+      "bytes": 111736,
+      "sha256": "78972e85f473a541086101df4db4f883c32389d9aa30feae06ab0ac60b852703",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S02_B_far.npz",
+      "relative_path": "forward/S02_B_far.npz",
+      "bytes": 112125,
+      "sha256": "95881064f55f4e21e13b990c4220a8e9eeada59f7834bf5b7653ab8fa66f24cc",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S02_B_near.npz",
+      "relative_path": "forward/S02_B_near.npz",
+      "bytes": 111458,
+      "sha256": "56a2b5e7cf57525af0867b08e15c293f9bbead8d08101859769c8e7de50bf005",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S02_U_far.npz",
+      "relative_path": "forward/S02_U_far.npz",
+      "bytes": 112513,
+      "sha256": "536fdbbca9a9619a4a1fda72f40b8798d22c35142af48a977fb58cdfa321ced9",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S02_U_near.npz",
+      "relative_path": "forward/S02_U_near.npz",
+      "bytes": 111626,
+      "sha256": "8ef76fa842aaf0dcb06303e61231fd6425097951dfeacc8126d959fcaa7461b4",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S03_A_far.npz",
+      "relative_path": "forward/S03_A_far.npz",
+      "bytes": 113748,
+      "sha256": "33323cbaef1552a57b7cb6d0c0f369dc0b816bf5ec0af0610a0390a859fd0640",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S03_A_near.npz",
+      "relative_path": "forward/S03_A_near.npz",
+      "bytes": 114050,
+      "sha256": "4b431e126bd684f96057582a7eaf2be9b8d462dfaa19317b7db918fd1312e645",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S03_B_far.npz",
+      "relative_path": "forward/S03_B_far.npz",
+      "bytes": 113175,
+      "sha256": "780f96b7b18216c9f6d8342397773431dab37882062859a5b1ca88fe78178b1f",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S03_B_near.npz",
+      "relative_path": "forward/S03_B_near.npz",
+      "bytes": 113592,
+      "sha256": "258f9d9b60a18297f2e2241a9d74f695074590214a2eb5ff314af94f3e3e8c6e",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S03_U_far.npz",
+      "relative_path": "forward/S03_U_far.npz",
+      "bytes": 113773,
+      "sha256": "f503408944d4a334a8c4499f9414a085c7755a367ea6bd1476b1dd9ebf27637e",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S03_U_near.npz",
+      "relative_path": "forward/S03_U_near.npz",
+      "bytes": 113542,
+      "sha256": "9cb137112e2c0013cb36aab4419caf1bb2d7bed636eb5d9e50322c62a790cc71",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/cache_qualification.json",
+      "relative_path": "forward/cache_qualification.json",
+      "bytes": 590,
+      "sha256": "d371788fd421567ee05d25ecd86331686e6fd286db0ba3648133e23cfbbe69f0",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/decoder_geometry.npz",
+      "relative_path": "forward/decoder_geometry.npz",
+      "bytes": 1772223,
+      "sha256": "15727364c71be7786cdb06d0af64d24f16353ae761e320fd160419e1a34ed8b0",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/panel_qualification.json",
+      "relative_path": "forward/panel_qualification.json",
+      "bytes": 3850,
+      "sha256": "7ff9937ec0926ad7c2b61f24aab3178a455277be8211828c19bd05c7a0a35b71",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/panel_readouts.jsonl",
+      "relative_path": "forward/panel_readouts.jsonl",
+      "bytes": 23894,
+      "sha256": "2113a500951813180c043fbc33d844820784a77b059ee5fc9eac2aeb8af4a373",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/runtime.json",
+      "relative_path": "forward/runtime.json",
+      "bytes": 554,
+      "sha256": "57aa8305c178297a87c65c648019a2576a945c6a8312469ed343b13155bffa0d",
+      "role": "MEASURED_SHARED_Z_OR_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward_run.log",
+      "relative_path": "forward_run.log",
+      "bytes": 97,
+      "sha256": "9e87f41e21e5994177e581488a045114ca6ed207811cd66623bace20da1030bb",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/naming/naming_groups.json",
+      "relative_path": "naming/naming_groups.json",
+      "bytes": 3805422,
+      "sha256": "9c187365daf257500df16c20800468aa59297cb3d7ff5581c685891c9ec2504c",
+      "role": "CANDIDATE_NAMING_NOT_FUNCTIONAL_VALIDATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/naming/naming_groups.md",
+      "relative_path": "naming/naming_groups.md",
+      "bytes": 9284,
+      "sha256": "52d1bd7b49be74f2e01fcce38db5fe458856b9754fdf06839d965495d7edfc31",
+      "role": "CANDIDATE_NAMING_NOT_FUNCTIONAL_VALIDATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/naming/naming_summary_selected.json",
+      "relative_path": "naming/naming_summary_selected.json",
+      "bytes": 288171,
+      "sha256": "20cfae0933cbdd1bc5a97ac4b1a3d329bfc67a6f3d7d1de2c01a5430ecf3797c",
+      "role": "CANDIDATE_NAMING_NOT_FUNCTIONAL_VALIDATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/naming_run.log",
+      "relative_path": "naming_run.log",
+      "bytes": 491,
+      "sha256": "dc2d627337ea3da303a4d240631eb34b6e311fdd028edc4390e6f3947cf6cd15",
+      "role": "ENGINEERING_FAILED_ATTEMPT_NOT_SCIENTIFIC_EVIDENCE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/naming_run_attempt2.log",
+      "relative_path": "naming_run_attempt2.log",
+      "bytes": 113,
+      "sha256": "fc3b5b753d4a4fe15fca8ed644becd37351e2e6aad68da10e522e0c0a6adee08",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/audit_execution.py",
+      "relative_path": "offline/audit_execution.py",
+      "bytes": 11357,
+      "sha256": "a2dc0dfbffa65746f563c6f50c12df1000ddae526c32974d40e6bd086033c88a",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/coactivation.py",
+      "relative_path": "offline/coactivation.py",
+      "bytes": 26873,
+      "sha256": "9b8940ed5d203b3ca3993a6972370554bfcc7f30738d79c5a933d2028ef88903",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/input_access.json",
+      "relative_path": "offline/input_access.json",
+      "bytes": 9642,
+      "sha256": "53e4e7eee4e3c94515908a10bd3dfc294845d3ffdbb4204154058f7eb6b3f1fc",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/name_groups.py",
+      "relative_path": "offline/name_groups.py",
+      "bytes": 16823,
+      "sha256": "592035b0c6a42c4b275c92d39032b0fb949dfc040631b54bec0e3fc6407ee512",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/naming_plan.md",
+      "relative_path": "offline/naming_plan.md",
+      "bytes": 3766,
+      "sha256": "c13318567cdae4fa24d6b5993d99f61e5ddd0efb28e027024ffde60d0d2f259f",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/naming_synthetic_checks.json",
+      "relative_path": "offline/naming_synthetic_checks.json",
+      "bytes": 405,
+      "sha256": "249b07573a43ad95e29e8bd00c7e8b819b295f602984ea04309b6df79b820585",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/panel_analysis.py",
+      "relative_path": "offline/panel_analysis.py",
+      "bytes": 9850,
+      "sha256": "7f15963151e56f6db182c970fb94368cf37e51c92614426af0e32cd4e916d0b4",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/proposed_config.json",
+      "relative_path": "offline/proposed_config.json",
+      "bytes": 1643,
+      "sha256": "3f8e9f5475313ea5bf13662d614e4c0389af4f2b974870e2c72a69e3f780760b",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/render_graph_distance.py",
+      "relative_path": "offline/render_graph_distance.py",
+      "bytes": 14579,
+      "sha256": "f13e50e57c60eff20389f3c8879919cb6b1f09ae6977066139fc8ed16d5e9de1",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/render_target_detail_figures.py",
+      "relative_path": "offline/render_target_detail_figures.py",
+      "bytes": 11988,
+      "sha256": "a1fbc4ff2235726c72a4912a81958745b7b9909aa20618287e0b9c419236ebbd",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/render_token_figures.py",
+      "relative_path": "offline/render_token_figures.py",
+      "bytes": 16718,
+      "sha256": "eaae35e5abfaeea9601f3fe4bd5efb125af585ac10dc28d852ad2868d2ada12d",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/statistical_plan.md",
+      "relative_path": "offline/statistical_plan.md",
+      "bytes": 6747,
+      "sha256": "600018ee21ee2762523fa7b77129ce8112e1795e449d6cb872d6214ae822a019",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/structural_summary.log",
+      "relative_path": "offline/structural_summary.log",
+      "bytes": 1199,
+      "sha256": "ac9a70933908769b03f71ba9450b83f5eb5de71959b1d381d764d31148c947c1",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/summarize_structural.py",
+      "relative_path": "offline/summarize_structural.py",
+      "bytes": 2106,
+      "sha256": "fc3aa83e39d05ed0e0350e5b323e5959202c9f272ffeaa545fa93eee091516cc",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/switch.cpp",
+      "relative_path": "offline/switch.cpp",
+      "bytes": 881,
+      "sha256": "7b57cf31e0fc1aa95669aa6cbc86a5dae35a93ad9adf7a3564300186f8760a8c",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/switch.so",
+      "relative_path": "offline/switch.so",
+      "bytes": 15144,
+      "sha256": "a8ce2c8a1dcb7eb2c38b5e8d91cea471bc05b3d84e90e336813adae5132b37b2",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/synthetic_checks.json",
+      "relative_path": "offline/synthetic_checks.json",
+      "bytes": 941,
+      "sha256": "85594c305c18429f4cd5ee15bc1e54bcde5b7499182f0ba5fa4ce25fac1ec9c2",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline_run_completed.json",
+      "relative_path": "offline_run_completed.json",
+      "bytes": 800,
+      "sha256": "9de8c9f8d5ed38242ccf32eee8ade8dfc9e3f148c5e78d520d2f755d09773643",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline_run_started.json",
+      "relative_path": "offline_run_started.json",
+      "bytes": 456,
+      "sha256": "efee07c6754fb1029c3e418e6caca5033ee5a70273a1df9949bb38d0c7804b72",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/build.log",
+      "relative_path": "panel/build.log",
+      "bytes": 5167,
+      "sha256": "54569f76a5be926b9f6928dabdc6916817455ecb6e5748f2a3e51cb77c5e1a24",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/build_panel.py",
+      "relative_path": "panel/build_panel.py",
+      "bytes": 13121,
+      "sha256": "de087e8f9b7fbbec0c6f80136f38862cd8be6333291d847cb2eea4e18a70fb6d",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/cases.jsonl",
+      "relative_path": "panel/cases.jsonl",
+      "bytes": 309643,
+      "sha256": "214c0e38d391738562380127c7d08d914bacc1f4ec9ef3be02ffe1448ac3ca95",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/exclusions.json",
+      "relative_path": "panel/exclusions.json",
+      "bytes": 1446,
+      "sha256": "a5927524c2ad0281290d94f6485f18e183d7b9d4539b2df2a153e6bdee79e54a",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/execution_selection.json",
+      "relative_path": "panel/execution_selection.json",
+      "bytes": 1334,
+      "sha256": "0e4b702adb58a3aa118019e781338a92583da565dad19ae29216458ea5350dbc",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/finish_panel.py",
+      "relative_path": "panel/finish_panel.py",
+      "bytes": 14879,
+      "sha256": "f18432822fc47ac4f16d166606085d4ce89cdd344a92e5d12dc4c58a53b37f83",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/fixed_display_sentences.json",
+      "relative_path": "panel/fixed_display_sentences.json",
+      "bytes": 14520,
+      "sha256": "16b6758bcf9f2665e987795bd09058afb1b12af5a6b250683118e0ceacd28c21",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/manifest.json",
+      "relative_path": "panel/manifest.json",
+      "bytes": 2638,
+      "sha256": "a3ef9d9b1c3980b7e14b49d5437fc4e31c48ff9dd046aaa895c027a07952a088",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/panel_readme.md",
+      "relative_path": "panel/panel_readme.md",
+      "bytes": 4036,
+      "sha256": "ebd0d177e6b8d381526ffe5190d1a73fac13215341d888aa139f1172c94ca2a8",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/panel_readme_cn.md",
+      "relative_path": "panel/panel_readme_cn.md",
+      "bytes": 3904,
+      "sha256": "7b2c4752ba38dea72891c20220d8f5bc894d1517e38dd06b73e7c9bf83094cf5",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/prefix_qualification_positions.json",
+      "relative_path": "panel/prefix_qualification_positions.json",
+      "bytes": 10975,
+      "sha256": "0800017f77773c0473af23a08bda40eb441c5c8753eb74351f70dc2897dc0cfb",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/qualification.json",
+      "relative_path": "panel/qualification.json",
+      "bytes": 5802,
+      "sha256": "2deedcbe7ba246aac8af57969be1683fe29a0c2b2357362992326a4bc167c596",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/qualified_cases.jsonl",
+      "relative_path": "panel/qualified_cases.jsonl",
+      "bytes": 309643,
+      "sha256": "214c0e38d391738562380127c7d08d914bacc1f4ec9ef3be02ffe1448ac3ca95",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/sequences_for_forward.jsonl",
+      "relative_path": "panel/sequences_for_forward.jsonl",
+      "bytes": 148150,
+      "sha256": "e6fd3140a8af30a7e1f4e04ff07e5b383592001cf7571b720b2ea0a9716de694",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel/tokenized_sequences.jsonl",
+      "relative_path": "panel/tokenized_sequences.jsonl",
+      "bytes": 297040,
+      "sha256": "57c1d0358b5128a116128f73514d6d855454bdb689e706c941ed76f6a27e01b9",
+      "role": "FROZEN_TEXT_OR_PRE_RESPONSE_QUALIFICATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/candidate_outputs.csv",
+      "relative_path": "panel_analysis/candidate_outputs.csv",
+      "bytes": 772,
+      "sha256": "c1e7cc18bea72ec4eae6c1da84a7318534337309fb54a5fd0716ed8824b1eeb2",
+      "role": "FROZEN_CONTRAST_RESULT_OR_EXPLANATORY_EXAMPLE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/fixed_sentence_descriptions.json",
+      "relative_path": "panel_analysis/fixed_sentence_descriptions.json",
+      "bytes": 620,
+      "sha256": "b6cc7748ab4edead8038bfeac8a45ddaa8a2dfcee52713300ca9cd590dd10914",
+      "role": "FROZEN_CONTRAST_RESULT_OR_EXPLANATORY_EXAMPLE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/fixed_sentence_token_projections.jsonl",
+      "relative_path": "panel_analysis/fixed_sentence_token_projections.jsonl",
+      "bytes": 3372226,
+      "sha256": "5797da519290fb6e7b2ffedf272740d22f02d416ab91fb35ae1159aa602df5b0",
+      "role": "FROZEN_CONTRAST_RESULT_OR_EXPLANATORY_EXAMPLE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/group_case_effects.csv",
+      "relative_path": "panel_analysis/group_case_effects.csv",
+      "bytes": 25104,
+      "sha256": "8fc6a3ae75d1706129bd218dc79e21b8d7f345c39274120090ffe1d46e06e910",
+      "role": "FROZEN_CONTRAST_RESULT_OR_EXPLANATORY_EXAMPLE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/member_support_dominance.csv",
+      "relative_path": "panel_analysis/member_support_dominance.csv",
+      "bytes": 572,
+      "sha256": "02bf064d3e4a9c0744cec37998fa56b929d3096f0eabacb2bb7092875384a4ec",
+      "role": "FROZEN_CONTRAST_RESULT_OR_EXPLANATORY_EXAMPLE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/pre_panel_group_ids.json",
+      "relative_path": "panel_analysis/pre_panel_group_ids.json",
+      "bytes": 11121,
+      "sha256": "4348259ae47bfc2d9ffa52969c15c1800e9a29d6920a7c2acf4d41259b3adaf2",
+      "role": "FROZEN_CONTRAST_RESULT_OR_EXPLANATORY_EXAMPLE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/results.json",
+      "relative_path": "panel_analysis/results.json",
+      "bytes": 3291,
+      "sha256": "f996eafec5c11415099e818881aa4dc9d4626b876fe38ec51633b08384fc0b81",
+      "role": "FROZEN_CONTRAST_RESULT_OR_EXPLANATORY_EXAMPLE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/worked_examples.json",
+      "relative_path": "panel_analysis/worked_examples.json",
+      "bytes": 6086,
+      "sha256": "7dbcbf00fcceab4ae3795bb9c1edc60f45bcdd2792d27ee47c3d13dea005bd9f",
+      "role": "FROZEN_CONTRAST_RESULT_OR_EXPLANATORY_EXAMPLE",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/pre_analysis_freeze.json",
+      "relative_path": "pre_analysis_freeze.json",
+      "bytes": 17356,
+      "sha256": "a67187ad480dc261b17678fbed42aa9424b87ec1c4517eed90bdc87a78607b2b",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/prepare_records.py",
+      "relative_path": "prepare_records.py",
+      "bytes": 21733,
+      "sha256": "03743478fe2c6ee67d976e1ce652478b0cdfbff8a3842e5ad657f5932c621f8a",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/delivery_checks.json",
+      "relative_path": "provenance/delivery_checks.json",
+      "bytes": 20192,
+      "sha256": "e4dce87529e523f56071ac2e13dd4c624fe00df6b9c1b918a8eef9e62ccfdc6c",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/execution_audit.log",
+      "relative_path": "provenance/execution_audit.log",
+      "bytes": 612,
+      "sha256": "eb5ffa4ba08c2004ef710e6d0bcdb0394a882ea9159025c5e782779c44142cd5",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/execution_certificate.json",
+      "relative_path": "provenance/execution_certificate.json",
+      "bytes": 5142,
+      "sha256": "5ce3c6006e59ac70a9df34a9c36a580e894497c1a3bf05f46186141dc055fd8a",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/execution_certificate.md",
+      "relative_path": "provenance/execution_certificate.md",
+      "bytes": 2812,
+      "sha256": "17e8e343f989f5eb6e4f28da37600fd07688577f6e1d4d43f0347e94c6d522ee",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/factual_focus_update.json",
+      "relative_path": "provenance/factual_focus_update.json",
+      "bytes": 1409,
+      "sha256": "6d6dc0debdd76f0c6c34b715c1575775ed720db23ca641a206f7f449a400830c",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/final_frozen_source_check.json",
+      "relative_path": "provenance/final_frozen_source_check.json",
+      "bytes": 14529,
+      "sha256": "5614ab3ed978368f8a51729c028074926bfca67c9b9120de7604166978624350",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/forward_ledger.jsonl",
+      "relative_path": "provenance/forward_ledger.jsonl",
+      "bytes": 13941,
+      "sha256": "643cc143a9c511cec0917fbe0e1893efdb539505f8a49b9ea34c1c73ed759065",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/frozen_focus_before_factual_update/focus_natural_language_feature_response.md",
+      "relative_path": "provenance/frozen_focus_before_factual_update/focus_natural_language_feature_response.md",
+      "bytes": 1760,
+      "sha256": "8bfd39ab27f26143500bd82b0e86c16388db56e080a65a234c0cf081580c7cf3",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/frozen_focus_before_factual_update/focus_natural_language_feature_response_cn.md",
+      "relative_path": "provenance/frozen_focus_before_factual_update/focus_natural_language_feature_response_cn.md",
+      "bytes": 1522,
+      "sha256": "a7abcfdda08f84bc287ac35bc5bbeaf46e9722a9ae9b20e317caec30b707fd80",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/panel_analysis_plan.json",
+      "relative_path": "provenance/panel_analysis_plan.json",
+      "bytes": 959,
+      "sha256": "b0e2a05ec8e058e295db2e996a2015cce11379d3ecaf1792b3f0cc0f958ab406",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/panel_implementation_checks.json",
+      "relative_path": "provenance/panel_implementation_checks.json",
+      "bytes": 259,
+      "sha256": "acc94531a5090721d111a5c6154d730ec8478c5363b3980dbecaa8e8377e4bcf",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/parent_endpoint.json",
+      "relative_path": "provenance/parent_endpoint.json",
+      "bytes": 671,
+      "sha256": "c716c05eac303921bb7e1cc8cc6a9e2c86b98b7d685c281937d6f99e541f9ba9",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/pre_R03_owner_snapshots/15_27_natural_language_feature_response_anchor.md",
+      "relative_path": "provenance/pre_R03_owner_snapshots/15_27_natural_language_feature_response_anchor.md",
+      "bytes": 8887,
+      "sha256": "42d46c22d1996a651be2a1a86603b11c415a323bf783dae4db09f58498de13d4",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/pre_R03_owner_snapshots/15_27_natural_language_feature_response_anchor_cn.md",
+      "relative_path": "provenance/pre_R03_owner_snapshots/15_27_natural_language_feature_response_anchor_cn.md",
+      "bytes": 6958,
+      "sha256": "9e7e0e9a57ef5ea78bdf12efa26e5d2d0da9d41c0ee7fe6012671ff677a0facc",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/pre_R03_owner_snapshots/focus_natural_language_feature_response.md",
+      "relative_path": "provenance/pre_R03_owner_snapshots/focus_natural_language_feature_response.md",
+      "bytes": 4100,
+      "sha256": "25f77fa98edebd205fb8600674f3fcd7ae1158dfc63727d49c75f592b04c3cb9",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/pre_R03_owner_snapshots/focus_natural_language_feature_response_cn.md",
+      "relative_path": "provenance/pre_R03_owner_snapshots/focus_natural_language_feature_response_cn.md",
+      "bytes": 3398,
+      "sha256": "8e83662a4265d41f4334847390d6a07b326f2ba5fc67323e05cbd870dcacd511",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/pre_R03_owner_snapshots/manifest.json",
+      "relative_path": "provenance/pre_R03_owner_snapshots/manifest.json",
+      "bytes": 2207,
+      "sha256": "9a7763a934969bd10d27d0a2b8b0d55898e4740e4deb26792c2d5765385e6dac",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/registered_assets.json",
+      "relative_path": "provenance/registered_assets.json",
+      "bytes": 360,
+      "sha256": "166dedf6cc3184368a65a5ad42bf50df53cce80e3ef3f35f9d88f14033195c97",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/selection_pre_data.json",
+      "relative_path": "provenance/selection_pre_data.json",
+      "bytes": 6991,
+      "sha256": "3557de7831745d3c45e43d72c9545e78ea896331324c5d18753779a288b9d2e1",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/completed.json",
+      "relative_path": "results/completed.json",
+      "bytes": 283,
+      "sha256": "f89d37be3d8e1a0e976583ced3f84f7ebdc6aea458e4bfc10857d12c77e2595b",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/covariate_adjusted_association.npz",
+      "relative_path": "results/covariate_adjusted_association.npz",
+      "bytes": 9917274,
+      "sha256": "c4d7c7dc2ad592b185aac9793889cfc7b4a8a554cf6045e540b1803302a342b4",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/covariate_definition.json",
+      "relative_path": "results/covariate_definition.json",
+      "bytes": 483,
+      "sha256": "7de72734a003e63b533eb72ced48d915452281e1f1d5c53f21bc1b879b899f62",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/cycle_structure.json",
+      "relative_path": "results/cycle_structure.json",
+      "bytes": 9622,
+      "sha256": "b1102077db7149c94c3357805bd9d27e46c3e5382544167e4a8589d7c872e186",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/descriptive_structural_summary.json",
+      "relative_path": "results/descriptive_structural_summary.json",
+      "bytes": 1629,
+      "sha256": "205b29c0bec7bb2edb1bcca59d50edb915cd75b904165007f805d7a9e9e4de89",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/edges_D_frozen.csv",
+      "relative_path": "results/edges_D_frozen.csv",
+      "bytes": 1107349,
+      "sha256": "24a5f197e8e95ca2d9607806b3163e70ae0dc20efec6cf09d8b02d4b67265523",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/feature_frequency.csv",
+      "relative_path": "results/feature_frequency.csv",
+      "bytes": 86690,
+      "sha256": "9e0cc673203c4aa983acd2428692b2b51ec233c04b77a79a590fb15016b71dfb",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/null_draws.jsonl",
+      "relative_path": "results/null_draws.jsonl",
+      "bytes": 14728216,
+      "sha256": "f4d4eff2ee81ab004b4942963aa03d8af31d95b6ba81920d6b8549e4f68f6b06",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/null_results.json",
+      "relative_path": "results/null_results.json",
+      "bytes": 3219,
+      "sha256": "4a1b6e97464154da5db6ddb4c8584193b320a8a55603ac19149b76be6196191a",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/observed_graphs.json",
+      "relative_path": "results/observed_graphs.json",
+      "bytes": 142466,
+      "sha256": "5e7c9363227f688ae52395c3c4d44675fc371bb6a10b8e921a71e439f0c070e3",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/selected_binary.npz",
+      "relative_path": "results/selected_binary.npz",
+      "bytes": 2075640,
+      "sha256": "4e4cd19431d2f43ed66cb27e3fd808cba9ea9542f0036e3bd239db5bfe9ec59e",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/selected_counts.npz",
+      "relative_path": "results/selected_counts.npz",
+      "bytes": 364706,
+      "sha256": "47cda196e65c6b3d02aec59d33432296d3544a0fea37936da0416c02c83d0d44",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/selected_moments.npz",
+      "relative_path": "results/selected_moments.npz",
+      "bytes": 23716,
+      "sha256": "a18df4b9f536c27e7b551c85455d9fc5ad5081a33c23a34ddb41c7646cc7e47b",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/selection.json",
+      "relative_path": "results/selection.json",
+      "bytes": 46368,
+      "sha256": "1bcf3087619a10bddcb47d374324934d0d0c03d0713aec7d330911301e871d5b",
+      "role": "NATURAL_REFERENCE_GRAPH_AND_NULL",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results_run.log",
+      "relative_path": "results_run.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/run_forward.py",
+      "relative_path": "run_forward.py",
+      "bytes": 12950,
+      "sha256": "af7409f7f004a1807ddbe0128419744f84309a910131e79bf3047ae4814de59e",
+      "role": "IMPLEMENTATION",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/target_detail_figures_run.log",
+      "relative_path": "target_detail_figures_run.log",
+      "bytes": 97,
+      "sha256": "933642c33902ef61ec7a2c9561d015dedcdd1d31b628ad6ffe1fd1bccf68ca70",
+      "role": "POSTHOC_INSTANCE_RENDERING_ONLY",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/token_figures_run.log",
+      "relative_path": "token_figures_run.log",
+      "bytes": 112,
+      "sha256": "bb32e8a4b1c6231172f69e59ed8093a2a5870f3c974194e999a33ac1cf8e2506",
+      "role": "PROVENANCE_OR_PACKAGING",
+      "source_surface": "execution",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/README.md",
+      "relative_path": "README.md",
+      "bytes": 3068,
+      "sha256": "cf3874fad3bd34b3093207a449add472cabc5bc7bc3055b6680b0e75b1cc1408",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/README_cn.md",
+      "relative_path": "README_cn.md",
+      "bytes": 2433,
+      "sha256": "1a749f925df4a637ce9bebf36d56d12a649410c01283108429225a9c0459a2a5",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/asset_audit.md",
+      "relative_path": "asset_audit.md",
+      "bytes": 6612,
+      "sha256": "36fde371df418071f0f90cefb30b9a3a6ac1426b97589dbb0e451e204224f3af",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/asset_audit_cn.md",
+      "relative_path": "asset_audit_cn.md",
+      "bytes": 5163,
+      "sha256": "835f966d8bbdc0f77ad0ae90b7bfdd0bb086c7c93d2011f2c1aeda4b25c59e33",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/delivery_checks.md",
+      "relative_path": "delivery_checks.md",
+      "bytes": 2711,
+      "sha256": "bd17acfedd1afd721bf7c7b2537e779394a2076fe93b9a2d27d66b4e83191024",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/delivery_checks_cn.md",
+      "relative_path": "delivery_checks_cn.md",
+      "bytes": 2720,
+      "sha256": "98211ffc38baec55901f1e582e37fefdedffbc9e2306ea4c9c76ae17bd4346dc",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/detailed.md",
+      "relative_path": "detailed.md",
+      "bytes": 11504,
+      "sha256": "1b26e528378b2fcc80a86272fc37d9717c9f7228a437aa1ff1a662d5b1ae06c7",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/detailed_cn.md",
+      "relative_path": "detailed_cn.md",
+      "bytes": 10879,
+      "sha256": "f838cdc2b99444436265ef3ea986937332deb68f84b6df46634906d6c32fd10c",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/examples.md",
+      "relative_path": "examples.md",
+      "bytes": 1906,
+      "sha256": "c6b2460adb5b1431b412b45c0ecdfb383b8141d941be352ef05c395db0828844",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/examples_cn.md",
+      "relative_path": "examples_cn.md",
+      "bytes": 3581,
+      "sha256": "38842d579f586a5fc71f4f1d29ee7036a37557e808649f8c1aa2b20e82cf84a1",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/figures/README.md",
+      "relative_path": "figures/README.md",
+      "bytes": 11330,
+      "sha256": "4593246621a80faaa94f04c47b0840e9ae5f5198c0bc702ca565bdabdefe91c6",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/figures/README_cn.md",
+      "relative_path": "figures/README_cn.md",
+      "bytes": 9677,
+      "sha256": "5b442a8f546b117caff3fee9d368fa4abe9efcc0c8546fb2852fc89c61da49bd",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/figures/figure1_graphs_frequency.png",
+      "relative_path": "figures/figure1_graphs_frequency.png",
+      "bytes": 1849605,
+      "sha256": "38bafbe21d7db993e85416f492148bf5e05a1d2bd2e11457953243f3cd5f90c1",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_target_detail.png",
+      "relative_path": "figures/figure2a_sense_target_detail.png",
+      "bytes": 1590137,
+      "sha256": "60ca1af5c2d9b21e14bb51fcf843d53c8a52fd919bc301967bb9df9b28fab763",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_tokens.png",
+      "relative_path": "figures/figure2a_sense_tokens.png",
+      "bytes": 1339441,
+      "sha256": "1bf2097e9f87a2396d578e1afc6cea578b24599c37584c186efef88a306ca133",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_target_detail.png",
+      "relative_path": "figures/figure2b_person_target_detail.png",
+      "bytes": 1571152,
+      "sha256": "4462650d4c886bcf6a82f04d90ad22d8e80ad802a3c040862ea15add680263f4",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_tokens.png",
+      "relative_path": "figures/figure2b_person_tokens.png",
+      "bytes": 1565229,
+      "sha256": "8ef75f5ebf7feb9c9beba3c1e7936a20b30671a46267ed9e96c4b51584bdcb13",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/figures/figure3_near_far.png",
+      "relative_path": "figures/figure3_near_far.png",
+      "bytes": 464542,
+      "sha256": "582f615a9d59e93a0af3584787bd90cd84a7780f08d61d4b7fe429333ce81523",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/internal_audits.md",
+      "relative_path": "internal_audits.md",
+      "bytes": 4724,
+      "sha256": "5a802fe71785fbefe2413df24bd69058435040c0a220f90e0a5e92e43100f130",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/protocol.md",
+      "relative_path": "protocol.md",
+      "bytes": 18877,
+      "sha256": "abbe66867390bf1904670f007cec2a414cf4a18cbde8f226a6b0151b38657a32",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/protocol_cn.md",
+      "relative_path": "protocol_cn.md",
+      "bytes": 14079,
+      "sha256": "b22181ee3cdaca453b931d2b046e95cfbcaf2773f900a2b63184daea29d5db2e",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/cache_qualification.json",
+      "relative_path": "provenance/cache_qualification.json",
+      "bytes": 590,
+      "sha256": "d371788fd421567ee05d25ecd86331686e6fd286db0ba3648133e23cfbbe69f0",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/cycle_structure.json",
+      "relative_path": "provenance/cycle_structure.json",
+      "bytes": 9622,
+      "sha256": "b1102077db7149c94c3357805bd9d27e46c3e5382544167e4a8589d7c872e186",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/descriptive_structural_summary.json",
+      "relative_path": "provenance/descriptive_structural_summary.json",
+      "bytes": 1629,
+      "sha256": "205b29c0bec7bb2edb1bcca59d50edb915cd75b904165007f805d7a9e9e4de89",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/execution_certificate.json",
+      "relative_path": "provenance/execution_certificate.json",
+      "bytes": 5142,
+      "sha256": "5ce3c6006e59ac70a9df34a9c36a580e894497c1a3bf05f46186141dc055fd8a",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/existing_intervention_audit.json",
+      "relative_path": "provenance/existing_intervention_audit.json",
+      "bytes": 22037,
+      "sha256": "629bbbed5fc5287461f7943b96c6268823a01d29ba12f08a142c885fbb26d1d4",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/factual_focus_update.json",
+      "relative_path": "provenance/factual_focus_update.json",
+      "bytes": 1409,
+      "sha256": "6d6dc0debdd76f0c6c34b715c1575775ed720db23ca641a206f7f449a400830c",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/final_frozen_source_check.json",
+      "relative_path": "provenance/final_frozen_source_check.json",
+      "bytes": 14529,
+      "sha256": "5614ab3ed978368f8a51729c028074926bfca67c9b9120de7604166978624350",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/graph_distance_plot_provenance.json",
+      "relative_path": "provenance/graph_distance_plot_provenance.json",
+      "bytes": 5054,
+      "sha256": "aa8c597ff954392395446fdbeba5ad90cddcef3249f422e9460b1d187886f9eb",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/input_access.json",
+      "relative_path": "provenance/input_access.json",
+      "bytes": 18771,
+      "sha256": "82ee37f6bfbb6f9266f81a33a4a7b52b7ebc529a8a31a964831241d76a04f3bd",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/naming_summary_selected.json",
+      "relative_path": "provenance/naming_summary_selected.json",
+      "bytes": 288171,
+      "sha256": "20cfae0933cbdd1bc5a97ac4b1a3d329bfc67a6f3d7d1de2c01a5430ecf3797c",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/null_results.json",
+      "relative_path": "provenance/null_results.json",
+      "bytes": 3219,
+      "sha256": "4a1b6e97464154da5db6ddb4c8584193b320a8a55603ac19149b76be6196191a",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/observed_graphs.json",
+      "relative_path": "provenance/observed_graphs.json",
+      "bytes": 142466,
+      "sha256": "5e7c9363227f688ae52395c3c4d44675fc371bb6a10b8e921a71e439f0c070e3",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/original_O_frequency_summary.json",
+      "relative_path": "provenance/original_O_frequency_summary.json",
+      "bytes": 18650,
+      "sha256": "54d2b877fbd4659a92f19b3c83c97a4844726c919556cc1a61c33ab82c6e977a",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/output_asset_access.json",
+      "relative_path": "provenance/output_asset_access.json",
+      "bytes": 9849,
+      "sha256": "edddfe886c7648f7932c2b89a7d5211cdc328b79db474c2197dedb1c4e50de2a",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/panel_analysis_plan.json",
+      "relative_path": "provenance/panel_analysis_plan.json",
+      "bytes": 959,
+      "sha256": "b0e2a05ec8e058e295db2e996a2015cce11379d3ecaf1792b3f0cc0f958ab406",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/panel_input_access.json",
+      "relative_path": "provenance/panel_input_access.json",
+      "bytes": 4203,
+      "sha256": "221e7567f576337db84b788796e731e6b51733ca5c9f63dd89e59246133996d5",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/panel_qualification.json",
+      "relative_path": "provenance/panel_qualification.json",
+      "bytes": 3850,
+      "sha256": "7ff9937ec0926ad7c2b61f24aab3178a455277be8211828c19bd05c7a0a35b71",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/panel_results.json",
+      "relative_path": "provenance/panel_results.json",
+      "bytes": 3291,
+      "sha256": "f996eafec5c11415099e818881aa4dc9d4626b876fe38ec51633b08384fc0b81",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/pre_analysis_freeze.json",
+      "relative_path": "provenance/pre_analysis_freeze.json",
+      "bytes": 17356,
+      "sha256": "a67187ad480dc261b17678fbed42aa9424b87ec1c4517eed90bdc87a78607b2b",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/runtime.json",
+      "relative_path": "provenance/runtime.json",
+      "bytes": 554,
+      "sha256": "57aa8305c178297a87c65c648019a2576a945c6a8312469ed343b13155bffa0d",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/target_detail_figures_provenance.json",
+      "relative_path": "provenance/target_detail_figures_provenance.json",
+      "bytes": 11661,
+      "sha256": "d6789df06e669df99aa2aca4229283dad8bf08212815753d6a8df938226d347c",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/target_detail_visual_review.json",
+      "relative_path": "provenance/target_detail_visual_review.json",
+      "bytes": 1446,
+      "sha256": "ff43a587c60096fe98fe51f23d7f7bdb4785fc0b020a4992611150b6e6e744dc",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/text_qualification.json",
+      "relative_path": "provenance/text_qualification.json",
+      "bytes": 5802,
+      "sha256": "2deedcbe7ba246aac8af57969be1683fe29a0c2b2357362992326a4bc167c596",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/token_figures_provenance.json",
+      "relative_path": "provenance/token_figures_provenance.json",
+      "bytes": 18143,
+      "sha256": "a65e94f89775df85c4f180a1c6d23fc25e2770b82fe0726b43c52e3bde95e254",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/token_figures_visual_review.json",
+      "relative_path": "provenance/token_figures_visual_review.json",
+      "bytes": 1865,
+      "sha256": "9368043dd11aed12a03f5f68a0b3f93d3db8ee3e8ac8c58ee5f8259ff5544666",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/provenance/worked_examples.json",
+      "relative_path": "provenance/worked_examples.json",
+      "bytes": 6086,
+      "sha256": "7dbcbf00fcceab4ae3795bb9c1edc60f45bcdd2792d27ee47c3d13dea005bd9f",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/selected_evidence_payload_manifest.json",
+      "relative_path": "selected_evidence_payload_manifest.json",
+      "bytes": 23857,
+      "sha256": "47e941de523d8295bef0ff0d76176341f5e2b7019feed749ec4b656da545029b",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/summary.md",
+      "relative_path": "summary.md",
+      "bytes": 6718,
+      "sha256": "31604dc18492599729e026355170d7fd65e0c3367ec282c65a69ab84f34ebcfd",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/summary_cn.md",
+      "relative_path": "summary_cn.md",
+      "bytes": 5098,
+      "sha256": "9ddad3814febf5d0070eb7b3bbe30530f453f224383598ec9c5fca2eac26e1ae",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/tables/candidate_outputs.csv",
+      "relative_path": "tables/candidate_outputs.csv",
+      "bytes": 772,
+      "sha256": "c1e7cc18bea72ec4eae6c1da84a7318534337309fb54a5fd0716ed8824b1eeb2",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/tables/edges_D_frozen.csv",
+      "relative_path": "tables/edges_D_frozen.csv",
+      "bytes": 1107349,
+      "sha256": "24a5f197e8e95ca2d9607806b3163e70ae0dc20efec6cf09d8b02d4b67265523",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/tables/feature_frequency.csv",
+      "relative_path": "tables/feature_frequency.csv",
+      "bytes": 86690,
+      "sha256": "9e0cc673203c4aa983acd2428692b2b51ec233c04b77a79a590fb15016b71dfb",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/tables/group_case_effects.csv",
+      "relative_path": "tables/group_case_effects.csv",
+      "bytes": 25104,
+      "sha256": "8fc6a3ae75d1706129bd218dc79e21b8d7f345c39274120090ffe1d46e06e910",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/tables/member_support_dominance.csv",
+      "relative_path": "tables/member_support_dominance.csv",
+      "bytes": 572,
+      "sha256": "02bf064d3e4a9c0744cec37998fa56b929d3096f0eabacb2bb7092875384a4ec",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/text_manifest.md",
+      "relative_path": "text_manifest.md",
+      "bytes": 2368,
+      "sha256": "ced67f9f82ffa95577592bc5ab95e829c42e1f464b639070090d9f38e1c0f7e4",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R03_same_token_coactivation/text_manifest_cn.md",
+      "relative_path": "text_manifest_cn.md",
+      "bytes": 2169,
+      "sha256": "52b8e51c1e7a1e26d80c7328ca831f01443b108b81a4017d2e29d276a772ffd5",
+      "role": "CANONICAL_RESULT_OR_SELECTED_EVIDENCE",
+      "source_surface": "project",
+      "complete": true
+    }
+  ],
+  "inventory_exclusions": [
+    "manifest self and its human-readable indexes (avoid recursive hashes)",
+    "Python bytecode",
+    "synthetic temporary directories; artificial check receipts remain included"
+  ],
+  "scientific_eligibility": "per-claim in Detailed, Protocol, lineage below; complete files do not imply complete scientific evidence",
+  "publication": "LOCAL_ONLY_NO_COMMIT_PUSH",
+  "question_closure": "Unknown"
+}

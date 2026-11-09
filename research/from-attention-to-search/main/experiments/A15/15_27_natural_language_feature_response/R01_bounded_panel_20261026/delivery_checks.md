@@ -1,0 +1,11 @@
+# Delivery checks
+
+Processing agent:/root. Source code and all scientific decision rules were frozen before model response observation. An independent panel/implementation reader and an independent statistical reviewer checked the interfaces,missingness,source-group independence and claim boundaries. Three synthetic implementation checks passed before inference. The final after-analysis freeze check verified all26 original frozen sources unchanged before the factual Focus task-state update; original Focus bytes remain execution-side in frozen_sources. Protocol,analysis code,parameters,text,candidate list,scales and results remain unchanged.
+
+Measured budget:292forwards(288panel+4replay),11612prefix tokens; no new model/dictionary/expert training,activation intervention,sealed TEST access,resource allocation or purchase. Both local reconstruction gates passed. Three produced asset entries passed current strict access.
+
+The actual final figures were visually inspected. A separate renderer corrected colorbar overlap,cropped labels and source-author wording; its plot-only revision preserves frozen statistics and records exact hashes. H2 target support was described without new tests or retuning. Its bass concentration,unmatched target-conditioned null,reference-parent/precision limits,H3 distance/order confound and sparse panel-average equivalence remain visible in Summary/Detailed.
+
+Initial navigation check had10 existing issues(9 untracked source entries and a missing15_25_03 derived map row). This task registers and links only15_27; unrelated issues are preserved. Math checks examine source syntax,not rendered mathematics or scientific truth. The reading copy is local and derived; no commit,push or external publication occurs.
+
+Actual completion evidence: [verification.json](verification.json). New-scope24Markdown link/math checks,20selected evidence copy hashes,82execution artifact hashes,three output assets and root/project payload checks pass. The working-tree navigation check now retains only the pre-existing15_25_03 missing map row;15_27 is registered and mapped. Pending Git tracking is recorded without claiming a commit. Portable exact/reading hashes pass; omitted worker/other-owner dependencies remain explicit.

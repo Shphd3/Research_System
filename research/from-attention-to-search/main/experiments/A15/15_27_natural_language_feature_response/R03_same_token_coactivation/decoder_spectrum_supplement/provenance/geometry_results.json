@@ -1,0 +1,482 @@
+{
+  "schema": "R03_decoder_geometry_v1",
+  "time_utc": "2026-10-27T06:48:48.493384+00:00",
+  "model_forwards": 0,
+  "training_updates": 0,
+  "new_clustering": 0,
+  "new_resource_requests": 0,
+  "layer_zero_based": 27,
+  "hook": "residual-post before final global RMSNorm",
+  "dimension": 1024,
+  "shared_z_layer_decoder_is_not_independent_layer_activation": true,
+  "spec_sha256": "b6d278a6947f12b1f365e520390ee60c2ce4a8505c5fc64106c1b18c01703e4a",
+  "code_sha256": "e3587a4392257859fd7201e588e57b83ac266aa02717ba5b8460866d79128186",
+  "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+  "checkpoint_hash_seconds": 25.91721056960523,
+  "checkpoint_bytes": 5637826757,
+  "selected_decoder_shape": [
+    512,
+    1024
+  ],
+  "pool_size": 492,
+  "groups": [
+    {
+      "group": "R-02",
+      "primary": false,
+      "size": 12,
+      "members": [
+        6852,
+        7485,
+        7878,
+        8225,
+        10116,
+        10330,
+        10619,
+        10704,
+        11993,
+        12674,
+        12902,
+        14256
+      ],
+      "qualification": "fixed D/V-replicated graph group; C03 alone passed all-member V>=200",
+      "mean_signed_pair_cosine": -0.0061627244317334524,
+      "mean_absolute_pair_cosine_descriptive": 0.028092383267926936,
+      "null_signed_mean_summary": {
+        "mean": 0.0002443365495569503,
+        "median": 0.00047390666336344974,
+        "q025": -0.009716327392908217,
+        "q975": 0.007764592376978177,
+        "min": -0.016915625621736603,
+        "max": 0.012010047603185177
+      },
+      "null_absolute_mean_summary": {
+        "mean": 0.02840741155780489,
+        "median": 0.028079265835020826,
+        "q025": 0.023896303524616677,
+        "q975": 0.03754820691346235,
+        "min": 0.020322027752223863,
+        "max": 0.04338439186199648
+      },
+      "valid_nulls": 999,
+      "p_upper_conditional": 0.936,
+      "eligible": true,
+      "forced_member_ids": [
+        6852,
+        11993
+      ],
+      "forced_member_count": 2,
+      "forced_member_fraction": 0.16666666666666666,
+      "overlap_count_summary": {
+        "mean": 5.362362362362362,
+        "median": 5.0,
+        "q025": 3.0,
+        "q975": 8.0,
+        "min": 2.0,
+        "max": 10.0
+      },
+      "mean_log_V_frequency_balance": {
+        "mean": -0.007565134796099159,
+        "median": -0.00867662237766087,
+        "q025": -0.03973774529931458,
+        "q975": 0.02615039946016346,
+        "min": -0.057138622568105646,
+        "max": 0.03827997396781058
+      },
+      "mean_log_D_frequency_balance_descriptive": {
+        "mean": -0.04742157189309391,
+        "median": -0.04954465633940508,
+        "q025": -0.10597175787963103,
+        "q975": 0.019968192930066523,
+        "min": -0.14938976131865456,
+        "max": 0.06410931472548231
+      },
+      "max_pair_V_frequency_ratio": 1.2669172932330828,
+      "support_matching": "V_hit_contexts exact within each joint stratum; V_count ratio equals frequency ratio at fixed N",
+      "mean_cosine_minus_null_median": -0.006636631095096902,
+      "randomization_scope": "finite frozen512feature universe; observed members can recur; no population/causal inference",
+      "minimum_pair_posthoc_counterexample": {
+        "A": 12902,
+        "B": 14256,
+        "cosine": -0.12673692481005677,
+        "selection": "lowest signed within-group cosine, descriptive only"
+      },
+      "maximum_pair_posthoc_example": {
+        "A": 6852,
+        "B": 7485,
+        "cosine": 0.07109719330004874,
+        "selection": "highest signed within-group cosine, descriptive only"
+      },
+      "q_BH3": 0.936,
+      "result_description": "not demonstrably higher than frozen matched groups"
+    },
+    {
+      "group": "C-02",
+      "primary": false,
+      "size": 64,
+      "members": [
+        226,
+        272,
+        394,
+        561,
+        962,
+        1478,
+        1502,
+        2084,
+        2315,
+        2403,
+        2471,
+        3319,
+        3408,
+        3698,
+        3753,
+        4064,
+        4834,
+        4915,
+        4975,
+        4982,
+        5686,
+        5877,
+        6169,
+        6515,
+        6852,
+        6882,
+        6930,
+        7339,
+        7464,
+        7485,
+        7878,
+        8082,
+        8225,
+        8909,
+        9733,
+        9965,
+        9980,
+        9994,
+        10053,
+        10081,
+        10116,
+        10330,
+        10619,
+        10704,
+        10779,
+        11273,
+        11308,
+        11319,
+        11716,
+        11839,
+        11993,
+        12141,
+        12580,
+        12674,
+        12902,
+        13340,
+        14256,
+        14285,
+        14290,
+        14316,
+        14590,
+        15294,
+        15649,
+        15844
+      ],
+      "qualification": "fixed D/V-replicated graph group; C03 alone passed all-member V>=200",
+      "mean_signed_pair_cosine": 0.0010714549705459538,
+      "mean_absolute_pair_cosine_descriptive": 0.028936591498677354,
+      "null_signed_mean_summary": {
+        "mean": 0.0009276475440288592,
+        "median": 0.000930152953408774,
+        "q025": -0.0003195631317079958,
+        "q975": 0.002230036478948509,
+        "min": -0.0013119110911393723,
+        "max": 0.002833224252536677
+      },
+      "null_absolute_mean_summary": {
+        "mean": 0.02769196687845249,
+        "median": 0.027688283354209763,
+        "q025": 0.026748818424507846,
+        "q975": 0.02860369339899969,
+        "min": 0.02623817306081538,
+        "max": 0.029243662358664463
+      },
+      "valid_nulls": 999,
+      "p_upper_conditional": 0.421,
+      "eligible": true,
+      "forced_member_ids": [
+        272,
+        394,
+        962,
+        2403,
+        3408,
+        4915,
+        4975,
+        6852,
+        7339,
+        7485,
+        11308,
+        11993,
+        12141,
+        14285,
+        14316,
+        15844
+      ],
+      "forced_member_count": 16,
+      "forced_member_fraction": 0.25,
+      "overlap_count_summary": {
+        "mean": 36.966966966966964,
+        "median": 37.0,
+        "q025": 31.950000000000003,
+        "q975": 42.049999999999955,
+        "min": 29.0,
+        "max": 45.0
+      },
+      "mean_log_V_frequency_balance": {
+        "mean": 0.01233752179606111,
+        "median": 0.01234064679669089,
+        "q025": -0.004266156940366093,
+        "q975": 0.029087981909642697,
+        "min": -0.011605705035856673,
+        "max": 0.03851326608649419
+      },
+      "mean_log_D_frequency_balance_descriptive": {
+        "mean": 0.0037558170308116096,
+        "median": 0.0034967233365517103,
+        "q025": -0.030798391204876374,
+        "q975": 0.039623784669857366,
+        "min": -0.050125079285699314,
+        "max": 0.06264125344640092
+      },
+      "max_pair_V_frequency_ratio": 1.349206349206349,
+      "support_matching": "V_hit_contexts exact within each joint stratum; V_count ratio equals frequency ratio at fixed N",
+      "mean_cosine_minus_null_median": 0.00014130201713717986,
+      "randomization_scope": "finite frozen512feature universe; observed members can recur; no population/causal inference",
+      "minimum_pair_posthoc_counterexample": {
+        "A": 14256,
+        "B": 15649,
+        "cosine": -0.7394820534743703,
+        "selection": "lowest signed within-group cosine, descriptive only"
+      },
+      "maximum_pair_posthoc_example": {
+        "A": 3408,
+        "B": 4915,
+        "cosine": 0.25515353986105443,
+        "selection": "highest signed within-group cosine, descriptive only"
+      },
+      "q_BH3": 0.6315,
+      "result_description": "not demonstrably higher than frozen matched groups"
+    },
+    {
+      "group": "C-03",
+      "primary": true,
+      "size": 72,
+      "members": [
+        227,
+        322,
+        630,
+        666,
+        2039,
+        2174,
+        2470,
+        3013,
+        3204,
+        3394,
+        3399,
+        3495,
+        4153,
+        4267,
+        4356,
+        4829,
+        5359,
+        5403,
+        5409,
+        6159,
+        6654,
+        6667,
+        6696,
+        6966,
+        6974,
+        7184,
+        7492,
+        7603,
+        7727,
+        7978,
+        8166,
+        8426,
+        8673,
+        9005,
+        9125,
+        9146,
+        9218,
+        9334,
+        9606,
+        9806,
+        10239,
+        10712,
+        11171,
+        11208,
+        11335,
+        11676,
+        11689,
+        12099,
+        12271,
+        12277,
+        12641,
+        12648,
+        12670,
+        12677,
+        12691,
+        12877,
+        13915,
+        14035,
+        14038,
+        14351,
+        14425,
+        14586,
+        14688,
+        14711,
+        14760,
+        14893,
+        15398,
+        15748,
+        15900,
+        16190,
+        16227,
+        16335
+      ],
+      "qualification": "fixed D/V-replicated graph group; C03 alone passed all-member V>=200",
+      "mean_signed_pair_cosine": 0.0017586256582471209,
+      "mean_absolute_pair_cosine_descriptive": 0.029430416787431947,
+      "null_signed_mean_summary": {
+        "mean": 0.000528057233908805,
+        "median": 0.00048521086537750167,
+        "q025": -0.000714312049425061,
+        "q975": 0.0018866096653565078,
+        "min": -0.0014201060866030459,
+        "max": 0.0027992483407455766
+      },
+      "null_absolute_mean_summary": {
+        "mean": 0.026874056178669073,
+        "median": 0.026854823313198353,
+        "q025": 0.025948061914769668,
+        "q975": 0.027830073257584766,
+        "min": 0.025492456350448407,
+        "max": 0.028312036757827917
+      },
+      "valid_nulls": 999,
+      "p_upper_conditional": 0.042,
+      "eligible": true,
+      "forced_member_ids": [
+        2470,
+        3013,
+        3495,
+        4356,
+        6159,
+        7727,
+        8166,
+        9125,
+        11335,
+        12677,
+        14038,
+        14351,
+        14586,
+        15900,
+        16227
+      ],
+      "forced_member_count": 15,
+      "forced_member_fraction": 0.20833333333333334,
+      "overlap_count_summary": {
+        "mean": 39.11811811811812,
+        "median": 39.0,
+        "q025": 33.0,
+        "q975": 45.0,
+        "min": 30.0,
+        "max": 48.0
+      },
+      "mean_log_V_frequency_balance": {
+        "mean": -0.0049630925666459035,
+        "median": -0.004987574644171211,
+        "q025": -0.019099135643593577,
+        "q975": 0.008646849077763398,
+        "min": -0.03141618034042004,
+        "max": 0.01786416448972261
+      },
+      "mean_log_D_frequency_balance_descriptive": {
+        "mean": 0.00991020345845538,
+        "median": 0.009473893053993265,
+        "q025": -0.019943050900650895,
+        "q975": 0.04032573627844231,
+        "min": -0.035209086681583734,
+        "max": 0.0573682067381176
+      },
+      "max_pair_V_frequency_ratio": 1.332572546462341,
+      "support_matching": "V_hit_contexts exact within each joint stratum; V_count ratio equals frequency ratio at fixed N",
+      "mean_cosine_minus_null_median": 0.0012734147928696192,
+      "randomization_scope": "finite frozen512feature universe; observed members can recur; no population/causal inference",
+      "minimum_pair_posthoc_counterexample": {
+        "A": 14425,
+        "B": 16335,
+        "cosine": -0.12916811094752037,
+        "selection": "lowest signed within-group cosine, descriptive only"
+      },
+      "maximum_pair_posthoc_example": {
+        "A": 14425,
+        "B": 14893,
+        "cosine": 0.3991066508531661,
+        "selection": "highest signed within-group cosine, descriptive only"
+      },
+      "q_BH3": 0.126,
+      "result_description": "not demonstrably higher than frozen matched groups"
+    }
+  ],
+  "preselected_example_pairs": [
+    {
+      "A": 12277,
+      "B": 5409,
+      "signed_cosine": 0.02624924938057031,
+      "groups": {
+        "s12277": [
+          "C-03"
+        ],
+        "s5409": [
+          "C-03"
+        ]
+      }
+    },
+    {
+      "A": 12277,
+      "B": 1478,
+      "signed_cosine": 0.056053572119574686,
+      "groups": {
+        "s12277": [
+          "C-03"
+        ],
+        "s1478": [
+          "C-02"
+        ]
+      }
+    },
+    {
+      "A": 12277,
+      "B": 2174,
+      "signed_cosine": 0.07110090926640278,
+      "groups": {
+        "s12277": [
+          "C-03"
+        ],
+        "s2174": [
+          "C-03"
+        ]
+      }
+    }
+  ],
+  "matching": "exact size and joint half-octave V-frequency/exact V-hit-context strata; within-group sampling without replacement",
+  "uncertainty": "null2.5/97.5percentiles are conditional random-group reference intervals, not confidence intervals from independent features",
+  "runtime": {
+    "seconds": 46.65238376148045,
+    "python": "3.10.20",
+    "numpy": "2.2.5",
+    "torch": "2.5.1+cu121",
+    "device": "CPU",
+    "torch_threads": 8
+  },
+  "claim_boundary": "Geometry of existing groups, not decoder-direction clustering, semantic function, causation or specialization"
+}

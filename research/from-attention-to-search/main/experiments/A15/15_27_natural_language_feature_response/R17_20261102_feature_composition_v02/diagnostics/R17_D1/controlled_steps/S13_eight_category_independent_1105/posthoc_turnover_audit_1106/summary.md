@@ -1,0 +1,11 @@
+# Top32 turnover frequency audit
+
+Scope: cache-only review of exposed S11/S13 data, not new confirmation. Only binary entry/exit is analyzed; no amplitude/readout/joint/functional/model training. Existing shared-layering results are reused unchanged.
+
+Original S11 explicit incidence channel has6LOCAL_SUPPORT,5CLEAR_OPPOSITE,4VALID_BUT_UNRESOLVED,1INSUFFICIENT across4domains×2SAEs×2reference axes. These source labels and original joint intervals are preserved, not recomputed. MLP cat/dog coarse6.727%→fine4.940%,D+1.787pp; car/bicycle coarse6.727%→fine13.497%,D−6.770pp; chair/sofa coarse10.649%→fine18.995%,D−8.346pp. Reference frequency is Top32 incidence at the fixed independent-reference position, not knowledge frequency.
+
+Frozen DEVweights are absolute net incidence differences normalized over all features, not a list where each member is independently stable. Each evaluation frame renormalizes those weights on actual XOR members; reverse events remain. Zero mass is missing. Signed original-direction R is a separate estimand. MLP cat/dog feature22958(cat64/dog0of64,Q26/6000)accounts69.10%of profile mass; mean effective active members2.13. Car/bicycle includes both low-frequency16830 and high-frequency8048(Q4481/6000,car54/bicycle15of64,39forward/0reverse events). This explains coexistence of rare discriminators and a higher mean. Whole-family delete-one retains main directions; coordinate deletion is purely statistical sensitivity, not a model intervention.
+
+DEVstable-mask sensitivity changes the estimand and coverage, and never rescues/relabels original results. Other coarse references and balanced-category/source sensitivities are reported separately. S13 uses the same rule on its originalDEV and exposedCONF48frames/16clusters; it retains category-dependent signs but is exploratory. New intervals condition on fixed references, not original joint reference intervals. Full raw means, counts, effects, denominators, examples and contrary conditions are in the Chinese Summary/Detailed and CSV.
+
+A separate frozen independent-confirmation proposal is NOT RUN:24newDEV/64newCONF scene clusters,3frames/cluster,24labels,2wordings,12672prospective prefixes. Texts do not yet exist;1pp meaningful effect is an AI operational proposal, not established science. No automatic execution. Scientific acceptance/closure Unknown.

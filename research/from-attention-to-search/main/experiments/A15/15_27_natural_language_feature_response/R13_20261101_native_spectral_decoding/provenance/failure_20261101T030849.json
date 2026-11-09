@@ -1,0 +1,5 @@
+{
+  "time_utc": "2026-11-01T03:08:49.004099+00:00",
+  "error": "AssertionError('smoke failed; main decoding stopped')",
+  "traceback": "Traceback (most recent call last):\n  File \"/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/scripts/run_gpu.py\", line 87, in <module>\n    try:main()\n  File \"/data/250010109/dependency_packages/dense_baseline_torch280_cu128_py310/site-packages/torch/utils/_contextlib.py\", line 120, in decorate_context\n    return func(*args, **kwargs)\n  File \"/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/scripts/run_gpu.py\", line 61, in main\n    assert all(x['pass'] for x in smoke),'smoke failed; main decoding stopped'\nAssertionError: smoke failed; main decoding stopped\n"
+}

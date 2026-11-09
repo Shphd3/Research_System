@@ -1,0 +1,53 @@
+{
+  "recorded_at_utc": "2026-10-27T01:56:46.719042+00:00",
+  "processing_agent": "/root/r03_stats_run",
+  "role": "plot-only readability; no new statistical fit,threshold,feature selection or model call",
+  "renderer": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/offline/render_graph_distance.py",
+  "renderer_sha256": "f13e50e57c60eff20389f3c8879919cb6b1f09ae6977066139fc8ed16d5e9de1",
+  "layout": "R/C share fixed sorted-dictionary-ID circle; O hub insets use first16 actual source IDs per named archived hub",
+  "frequency_colors": "O original D; R/C new V; same probability/log color scale; no semantic labels in colors",
+  "input_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/observed_graphs.json": "5e7c9363227f688ae52395c3c4d44675fc371bb6a10b8e921a71e439f0c070e3",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/selected_counts.npz": "47cda196e65c6b3d02aec59d33432296d3544a0fea37936da0416c02c83d0d44",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/descriptive_structural_summary.json": "205b29c0bec7bb2edb1bcca59d50edb915cd75b904165007f805d7a9e9e4de89",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/null_results.json": "4a1b6e97464154da5db6ddb4c8584193b320a8a55603ac19149b76be6196191a",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_O_frequency_summary.json": "54d2b877fbd4659a92f19b3c83c97a4844726c919556cc1a61c33ab82c6e977a",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/results.json": "f996eafec5c11415099e818881aa4dc9d4626b876fe38ec51633b08384fc0b81",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/group_case_effects.csv": "8fc6a3ae75d1706129bd218dc79e21b8d7f345c39274120090ffe1d46e06e910",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/panel_analysis/candidate_outputs.csv": "c1e7cc18bea72ec4eae6c1da84a7318534337309fb54a5fd0716ed8824b1eeb2",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/naming/naming_groups.json": "9c187365daf257500df16c20800468aa59297cb3d7ff5581c685891c9ec2504c",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/raw_edges.npz": "e017e5d43235f4ed74691e2afc4ca003387e1ac96dee76de1f635ecade5806e1",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_frequency.npz": "f345204412633144a7f1af36668cb3e2a98dbcaf03ef66f43ce3ace40c916c7c"
+  },
+  "output_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure1_graphs_frequency.png": "38bafbe21d7db993e85416f492148bf5e05a1d2bd2e11457953243f3cd5f90c1",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure1_graphs_frequency.pdf": "b8ffced640a33fba9fbb693d43ab675d97804ac3617dcab8e2832542fc1e8441",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure3_near_far.png": "582f615a9d59e93a0af3584787bd90cd84a7780f08d61d4b7fe429333ce81523",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure3_near_far.pdf": "99abbb70d3babbcafc8c9c69b129c2d146319ba1b73a401edb9aa1b446b73e16"
+  },
+  "visual_inspection": {
+    "status": "PASS",
+    "agent": "/root/r03_stats_run",
+    "time_utc": "2026-10-27T01:58:53.917091+00:00",
+    "actual_pngs_opened": true,
+    "checks": [
+      "all axis/legend text readable",
+      "no colorbar overlap",
+      "shared R/C ID-circle positions",
+      "O full-scope hub summary retained",
+      "C03 outline legend present",
+      "near-zero case labels staggered",
+      "relation types and expected-candidate margin directions separate"
+    ],
+    "layout_only_revisions": [
+      "PNG180dpi to keep selected evidence below2MiB",
+      "C03 outline legend added",
+      "near-zero case labels staggered"
+    ],
+    "statistical_parameters_or_values_changed": false
+  },
+  "png_bytes": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure1_graphs_frequency.png": 1849605,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure3_near_far.png": 464542
+  }
+}

@@ -10,7 +10,7 @@
 
 ## 主图与读法
 
-![距离、成员与事实差异](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/figures/main_distance.png)
+![距离、成员与事实差异](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/figures/main_distance.png)
 
 左图是仍共同使用的成员数，右图是A/B差的范数相对整体码尺度，再与近距作比。共同成员变少、事实差异幅度仍在可以同时发生。固定六成员方向cos约0.94/0.96不能替代完整码；完整事实差方向约0.60/0.73，幅度与方向必须分开说。
 
@@ -25,4 +25,4 @@ F11保留较多成员仍有轻微差异减弱；F19的Attention约0.79倍、MLP�
 
 这些随距离重组但未平均衰减的事实差异，哪些真正被答案读取？
 
-本轮不设计或运行相应干预/训练；待共同审阅。[完整结果](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/summary_cn.md) · [四组全文与反例](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/casebook_cn.md) · [所有原始数据/方法/代码](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/artifacts_cn.md)。
+本轮不设计或运行相应干预/训练；待共同审阅。[完整结果](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/summary_cn.md) · [四组全文与反例](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/casebook_cn.md) · [所有原始数据/方法/代码](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/artifacts_cn.md)。

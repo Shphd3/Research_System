@@ -1,0 +1,22 @@
+{
+  "schema": "R02_fixed_reference_v1",
+  "source_asset_id": "dclm_pair_v1",
+  "source_manifest": "/data/250010109/training_data_views/dclm_pair_v1/manifest.json",
+  "source_manifest_sha256": "8a91bdbb0eb537bd80612015b99f178ca1cbb54a2fa7cf8442ab1eae7f0a2f2d",
+  "seed": 2026102602,
+  "windows": 1024,
+  "bins": 16,
+  "windows_per_bin": 64,
+  "tokens_per_sequence": 256,
+  "burn_in_tokens": 16,
+  "eligible_positions": 245760,
+  "input_ids_sha256": "5d072a6c4680efea66c319ec11abdc0dc91ba663f75962039be04fbecc0eda0e",
+  "sequence_manifest_sha256": "bd9ba44baa99390e0ac8c3ef5c5b50a364bb5370ea65c99f79a6297d9035655e",
+  "frequency_definition": "positive native FP32 E16 Top32 activation count /245760 eligible token positions",
+  "reference_inference_precision": "same model BF16 and native SAE FP32 as R01 and R02 panel",
+  "scope": "frequency on this fixed finite TRAIN corpus and <=256-token visible windows, not overall language frequency",
+  "selection": "first16 sorted TRAIN bins,64 uniformly sampled disjoint256-token windows per bin; no feature results used",
+  "sealed_TEST_read": false,
+  "model_forwards_at_freeze": 0,
+  "uncertainty": "resample complete reference windows; tokens are not independent replicates"
+}

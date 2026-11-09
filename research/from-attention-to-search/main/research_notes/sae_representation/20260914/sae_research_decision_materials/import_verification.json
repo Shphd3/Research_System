@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "file": "0914_SAE_会议复盘与实验决策方案.docx",
+      "expected": "95fc7e9a58339341a46e8fce20c0d3e0b1f8083e74761e07be4b6e7717ce7a20",
+      "actual": "95fc7e9a58339341a46e8fce20c0d3e0b1f8083e74761e07be4b6e7717ce7a20",
+      "match": true
+    },
+    {
+      "file": "0914_SAE_会议复盘与实验决策方案.md",
+      "expected": "015d82745d76c2d25833d1c2d7bd5546aab5dc6a6d005f61de000f2f2a2708de",
+      "actual": "015d82745d76c2d25833d1c2d7bd5546aab5dc6a6d005f61de000f2f2a2708de",
+      "match": true
+    },
+    {
+      "file": "README.md",
+      "expected": "c8bfa04de7897970051dada578bf78f92be796091b328eb08364acce33f7e261",
+      "actual": "c8bfa04de7897970051dada578bf78f92be796091b328eb08364acce33f7e261",
+      "match": true
+    },
+    {
+      "file": "identity_checks.json",
+      "expected": "d1e1c3e4aff1a0cc57e5862475376968c467d97fe96a5a9805102dade370d25f",
+      "actual": "d1e1c3e4aff1a0cc57e5862475376968c467d97fe96a5a9805102dade370d25f",
+      "match": true
+    },
+    {
+      "file": "verify_sae_identity.py",
+      "expected": "04339470fb48aa07648844a69bdf9d124d762676cf4118296edd74fb785bdbf8",
+      "actual": "04339470fb48aa07648844a69bdf9d124d762676cf4118296edd74fb785bdbf8",
+      "match": true
+    }
+  ],
+  "docx_text_characters": 22364,
+  "original_transcript_found": "../meeting/meeting01/0914 SAE model training.md",
+  "attached_script_executed": false
+}

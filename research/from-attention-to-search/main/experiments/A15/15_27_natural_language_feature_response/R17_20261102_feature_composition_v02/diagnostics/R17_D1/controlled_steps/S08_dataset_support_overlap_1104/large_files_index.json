@@ -1,0 +1,13 @@
+{
+  "UTC": "2026-11-04T01:21:08.678190+00:00",
+  "excluded_from_package": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104/cache/document_kernels.npz",
+      "bytes": 14647291,
+      "sha256": "fa6c6dc0cd716fd19f415d7a943257b1ced7d7f95bb802f86d3d6ee95175f76d",
+      "reason": "Derived dense document kernels; reconstruct from included sparse activations with analyze.py; portable_replay.py requires no kernels"
+    }
+  ],
+  "full_original_Arrow_and_model_SAE_weights": "Not included; exact source paths/revisions and hashes recorded",
+  "all_selected_question_texts_and_sparse_activations_included": true
+}

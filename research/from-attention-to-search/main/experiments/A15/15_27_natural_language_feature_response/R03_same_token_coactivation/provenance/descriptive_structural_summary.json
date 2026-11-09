@@ -1,0 +1,66 @@
+{
+  "R": {
+    "edges": {
+      "D": {
+        "observed": 26,
+        "null_min": 0,
+        "null_median": 0.0,
+        "null_max": 0,
+        "null_95pct_range": [
+          0.0,
+          0.0
+        ]
+      },
+      "V": {
+        "observed": 18,
+        "null_min": 0,
+        "null_median": 0.0,
+        "null_max": 0,
+        "null_95pct_range": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "C": {
+    "edges": {
+      "D": {
+        "observed": 2792,
+        "null_min": 82,
+        "null_median": 108.0,
+        "null_max": 137,
+        "null_95pct_range": [
+          91.0,
+          129.09999999999997
+        ]
+      },
+      "V": {
+        "observed": 2916,
+        "null_min": 83,
+        "null_median": 109.0,
+        "null_max": 131,
+        "null_95pct_range": [
+          87.0,
+          129.04999999999998
+        ]
+      }
+    }
+  },
+  "C_D_fixed_edges_V": {
+    "n": 2792,
+    "delta_positive": 2703,
+    "delta_atleast05": 2011,
+    "context_descriptive_delta_CI_positive": 2361,
+    "median_raw_delta": 0.0751492340907321,
+    "median_after_token_position_adjustment": 0.06439478327536297,
+    "token_position_adjusted_positive": 2658,
+    "token_position_adjusted_atleast05": 1763
+  },
+  "provenance": {
+    "producer": "/root/r03_stats_run",
+    "code_sha256": "fc3aa83e39d05ed0e0350e5b323e5959202c9f272ffeaa545fa93eee091516cc",
+    "role": "post-run descriptive aggregation of already frozen quantities; no additional p family, selection, fitting or new model forward",
+    "confidence_boundary": "context resampling only; original document/sentence independence is unavailable"
+  }
+}

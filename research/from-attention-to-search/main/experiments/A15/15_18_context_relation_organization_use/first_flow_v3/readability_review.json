@@ -1,0 +1,237 @@
+{
+  "kind": "READABILITY_SELF_AUDIT",
+  "date": "2026-10-22T08:14:57.930318+00:00",
+  "reader_request": "Explain state/complete state; clarify distance/frequency/representation relation; improve readability; defer questions until after reading",
+  "issues_found": [
+    "circular definition of complete state without layer/position scope",
+    "whole-sequence states and saved position vectors not distinguished",
+    "dense method labels precede concrete operations",
+    "distance and exposure frequency could be mistaken for predefined representation regions",
+    "comprehension questions were shown before the requested reading stage"
+  ],
+  "changes": [
+    "plain-language reading guide in existing bilingual Summary",
+    "concrete operation at each E00–E10 entry",
+    "Chinese labels and local computation definitions",
+    "existing questions deferred without creating a new scientific report"
+  ],
+  "numeric_rows_preserved": true,
+  "test_recount": {
+    "n": 640,
+    "truth_yes": 320,
+    "truth_no": 320,
+    "predicted_no": 611,
+    "ties": 40,
+    "correct": 329
+  },
+  "files": {
+    "summary_cn.md": {
+      "before_sha256": "f1bb54e267a817950cf60f191f265417e021646537658cd7f83ac3a04399c557",
+      "after_sha256": "5939b8a83c564b0933a03937869c9acb8e306567ace40d45ea6e4c029598e072"
+    },
+    "summary.md": {
+      "before_sha256": "b4b5f63abbb42f50a116e743675f264c207225ef10d3fd6bb81283b2fc52e6c6",
+      "after_sha256": "a544ff9a4dfde2b483f6cf1161b41e9d137a30374457b97a688b44882a067a91"
+    }
+  },
+  "unchanged": [
+    "Protocol",
+    "Anchor",
+    "Focus judgments",
+    "raw experiment outputs"
+  ],
+  "verification_boundary": "Self-audit of wording and source consistency, not independent-reader validation or a guarantee of comprehension.",
+  "record_history_note": "The original top-level fields retain the previous self-audit unchanged. The revisions array records subsequent edits; its latest entry describes the current documents.",
+  "revisions": [
+    {
+      "revision_id": "20261022_reader_dependency_rewrite",
+      "date": "2026-10-22T08:35:27.002134+00:00",
+      "reader_request": "Summary is too long and hard to understand; Detailed is poorly organized. Reduce the cost of understanding and discussing the analysis.",
+      "scope": "Exposition within the existing A15_18 first_flow_v3 experiment record; bilingual Summary, Detailed and owning explanation appendices.",
+      "changes": [
+        "Summary gives the research question, a real reversal pair, the separate C/D/F definitions, the four behavior cells and intervals, and what the three measurement groups answer.",
+        "Detailed explains task construction, scoring, saved states, each internal measurement, necessary controls, validity repairs, and evidence tracing in reader-dependency order.",
+        "The complete former Summary bodies remain byte-for-byte in explanation appendices of the same experiment record, retaining E00–E10 coverage and original cases.",
+        "Near-zero average correct-answer margins are explained alongside actual individual margins and 611 No selections; the mean is not described as an item-level tie.",
+        "Probe fit convergence is separated from held-out performance. Intervention references distinguish their own fresh native batches from E02 scores.",
+        "One simple understanding question remains after the factual reading. AI mechanism judgment waits for the researcher’s review."
+      ],
+      "reading_roles": {
+        "summary": "One first reading: why the audit was run, one actual example, decisive observed values, what each group of measurements can answer, and the pending researcher review.",
+        "detailed": "How the observed values were produced and compared: concrete computations, controls, numerical repairs and direct evidence links.",
+        "explanation_appendix": "The full original E00–E10 explanation and audit detail, retained once for traceability within this experiment."
+      },
+      "files": {
+        "summary.md": {
+          "before_sha256": "a544ff9a4dfde2b483f6cf1161b41e9d137a30374457b97a688b44882a067a91",
+          "after_sha256": "299b1491443ae2cb0cca31797550d41d7b882414746cb3f7cbc1049035b8b158",
+          "before_lines": 220,
+          "after_lines": 80
+        },
+        "summary_cn.md": {
+          "before_sha256": "5939b8a83c564b0933a03937869c9acb8e306567ace40d45ea6e4c029598e072",
+          "after_sha256": "c13b7ce0926f9fdcec140ffbfb543ad8358c53c3dc0148fbea050dc74209bece",
+          "before_lines": 933,
+          "after_lines": 80
+        },
+        "detailed.md": {
+          "before_sha256": "498725de219f5aec7d505b3c17e0ae3148f251aa3a4888f7a0ab048d4a8903c7",
+          "after_sha256": "cbb402af114752ccab9518650ede97af2fe5a5b1a10869b576536800f603799b",
+          "before_lines": 31,
+          "after_lines": 171
+        },
+        "detailed_cn.md": {
+          "before_sha256": "b3cfa4c1aa9d7cf183d74f278bccec763392d730d67de923ef545fda1b6a3490",
+          "after_sha256": "ae43dc2c56bdcfea38df67ca24ebf3428037a6fda9bc49193cba6bd2f9c0a1e3",
+          "before_lines": 15,
+          "after_lines": 173
+        }
+      },
+      "appendix_preservation": [
+        {
+          "original": "summary.md",
+          "appendix": "explanation_appendix.md",
+          "archive": "/data/250010109/MoE_Router/research_record_archives/20261022_readability/A15_18_a544ff9a4dfd_summary.md",
+          "original_sha256": "a544ff9a4dfde2b483f6cf1161b41e9d137a30374457b97a688b44882a067a91",
+          "original_body_preserved_byte_for_byte": true,
+          "appendix_sha256": "abab2989a93e827cdefeb99422aabd64c6a2a4580a58967f78bfe85066c52146"
+        },
+        {
+          "original": "summary_cn.md",
+          "appendix": "explanation_appendix_cn.md",
+          "archive": "/data/250010109/MoE_Router/research_record_archives/20261022_readability/A15_18_5939b8a83c56_summary_cn.md",
+          "original_sha256": "5939b8a83c564b0933a03937869c9acb8e306567ace40d45ea6e4c029598e072",
+          "original_body_preserved_byte_for_byte": true,
+          "appendix_sha256": "a130309a3df3c93de3d4e993a403d3637a058ecb4f86dac4553181d7655c987c"
+        }
+      ],
+      "numeric_checks": {
+        "test_rows": 640,
+        "truth_yes": 320,
+        "truth_no": 320,
+        "correct": 329,
+        "predicted_no": 611,
+        "exact_ties": 40,
+        "recount_source": "/data/250010109/MoE_Router/experiments/20261022_relation_organization_audit_v3/E02/per_row.jsonl",
+        "independently_recomputed_primary_interaction_nat": 0.02421875447034836,
+        "reported_primary_interaction_nat_rounded": 0.024219,
+        "primary_family_bootstrap_95_interval_nat": [
+          -0.011718741850927472,
+          0.060937496358528735
+        ],
+        "four_cell_estimates_and_intervals": "Copied from the existing E02 output; no recomputation changes to the registered results.",
+        "raw_experiment_outputs_changed": false
+      },
+      "validation": {
+        "local_links_checked": 210,
+        "missing_local_links": [],
+        "math_source_check": "6 files SOURCE PASS; no rendering claim",
+        "E00_E10_A_to_F_retained_in_chinese_appendix": true,
+        "execution_side_validation": "/data/250010109/MoE_Router/research_record_archives/20261022_readability/A15_18_readability_validation.json",
+        "archive_manifest": "/data/250010109/MoE_Router/research_record_archives/20261022_readability/A15_18_pre_readability_manifest.json"
+      },
+      "unchanged": [
+        "Protocol",
+        "Anchor",
+        "Focus judgments",
+        "raw experiment outputs",
+        "model and dictionary parameters",
+        "scientific state Unknown; pending researcher review"
+      ],
+      "verification_boundary": "Source and numerical consistency self-audit. Parent agent reviewed the new Summary. No independent comprehension study, rendered-math verification or new scientific verdict is claimed."
+    },
+    {
+      "revision_id": "20261022_reader_dependency_rewrite_review_final",
+      "date": "2026-10-22T08:37:48.262328+00:00",
+      "reader_request": "Make Summary understandable in one reading and Detailed explain the actual analysis, reducing the cost of discussion. Keep a factual user review before AI mechanism judgment.",
+      "review_source": "Parent agent supplied an independent readability review; all five requested exposition changes were applied in both languages.",
+      "changes": [
+        "Real C and D examples",
+        "Controls before intervention counts/results",
+        "First-use method objects and state-energy units",
+        "Readout results before solver repairs",
+        "Reversal-distance heading"
+      ],
+      "reading_roles": {
+        "summary": "One first reading: why the audit was run, one actual example, decisive observed values, what each group of measurements can answer, and the pending researcher review.",
+        "detailed": "How the observed values were produced and compared: concrete computations, controls, numerical repairs and direct evidence links.",
+        "explanation_appendix": "The full original E00–E10 explanation and audit detail, retained once for traceability within this experiment."
+      },
+      "files": {
+        "summary.md": {
+          "before_sha256": "299b1491443ae2cb0cca31797550d41d7b882414746cb3f7cbc1049035b8b158",
+          "after_sha256": "cd9e60e9d644daeaadadab4ed3561ca550dcfd7503c2b4b0a6ee0efb6be114b3",
+          "after_lines": 86
+        },
+        "summary_cn.md": {
+          "before_sha256": "c13b7ce0926f9fdcec140ffbfb543ad8358c53c3dc0148fbea050dc74209bece",
+          "after_sha256": "05f162bc66218b3e3352b9b74b18da35b44a623ba8fe60aff324f353b7d84ef1",
+          "after_lines": 86
+        },
+        "detailed.md": {
+          "before_sha256": "cbb402af114752ccab9518650ede97af2fe5a5b1a10869b576536800f603799b",
+          "after_sha256": "5feb06d49e2fd64fc12bade53b446abb7fb9283de57b316ea6606076eb668294",
+          "after_lines": 173
+        },
+        "detailed_cn.md": {
+          "before_sha256": "ae43dc2c56bdcfea38df67ca24ebf3428037a6fda9bc49193cba6bd2f9c0a1e3",
+          "after_sha256": "18ea70790dcefae1492af4dbd1a92b09062d4c101dde64021abce47242beeee0",
+          "after_lines": 175
+        }
+      },
+      "appendix_preservation": [
+        {
+          "original": "summary.md",
+          "appendix": "explanation_appendix.md",
+          "archive": "/data/250010109/MoE_Router/research_record_archives/20261022_readability/A15_18_a544ff9a4dfd_summary.md",
+          "original_sha256": "a544ff9a4dfde2b483f6cf1161b41e9d137a30374457b97a688b44882a067a91",
+          "original_body_preserved_byte_for_byte": true,
+          "appendix_sha256": "abab2989a93e827cdefeb99422aabd64c6a2a4580a58967f78bfe85066c52146"
+        },
+        {
+          "original": "summary_cn.md",
+          "appendix": "explanation_appendix_cn.md",
+          "archive": "/data/250010109/MoE_Router/research_record_archives/20261022_readability/A15_18_5939b8a83c56_summary_cn.md",
+          "original_sha256": "5939b8a83c564b0933a03937869c9acb8e306567ace40d45ea6e4c029598e072",
+          "original_body_preserved_byte_for_byte": true,
+          "appendix_sha256": "a130309a3df3c93de3d4e993a403d3637a058ecb4f86dac4553181d7655c987c"
+        }
+      ],
+      "numeric_checks": {
+        "test_rows": 640,
+        "truth_yes": 320,
+        "truth_no": 320,
+        "correct": 329,
+        "predicted_no": 611,
+        "exact_ties": 40,
+        "recount_source": "/data/250010109/MoE_Router/experiments/20261022_relation_organization_audit_v3/E02/per_row.jsonl",
+        "independently_recomputed_primary_interaction_nat": 0.02421875447034836,
+        "reported_primary_interaction_nat_rounded": 0.024219,
+        "primary_family_bootstrap_95_interval_nat": [
+          -0.011718741850927472,
+          0.060937496358528735
+        ],
+        "four_cell_estimates_and_intervals": "Copied from the existing E02 output; no recomputation changes to the registered results.",
+        "raw_experiment_outputs_changed": false
+      },
+      "validation": {
+        "local_links_checked": 214,
+        "missing_local_links": [],
+        "math_source_check": "6 files SOURCE PASS; rendering and mathematical truth not checked",
+        "execution_side_validation": "/data/250010109/MoE_Router/research_record_archives/20261022_readability/A15_18_readability_validation.json",
+        "exact_original_summary_bytes_in_appendices": true
+      },
+      "scientific_state_changed": false,
+      "comprehension_question": "One factual understanding question remains at the end of each Summary. The previous top-level request to defer questions is historical, not the instruction for this revision.",
+      "unchanged": [
+        "Protocol",
+        "Anchor",
+        "Focus judgments",
+        "raw experiment outputs",
+        "model and dictionary parameters",
+        "scientific state Unknown; pending researcher review"
+      ],
+      "verification_boundary": "Source/number consistency audit plus independent exposition review. No measured comprehension study or new scientific verdict."
+    }
+  ]
+}

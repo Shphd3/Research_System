@@ -1,0 +1,59 @@
+{
+  "recorded_at_utc": "2026-10-28T02:50:12.417187+00:00",
+  "acquisition_gpu_wall_seconds": 177.8143446445465,
+  "PCA_and_spectral_statistics_seconds": 17.64629864692688,
+  "previous_offline_stats_seconds": 14.578072547912598,
+  "new_forwards": 124,
+  "statistical_PCA_fits": 2,
+  "bootstrap_draws_per_split": 2000,
+  "matched_sets_available": {
+    "SAE": 1000,
+    "CC": 3000
+  },
+  "code_files": [
+    {
+      "path": "analyze.py",
+      "sha256": "65b94dac0eb53cfbe1d2abc522a3b243d9aff04e5181bb315a16fee0ceea8aca"
+    },
+    {
+      "path": "audit.py",
+      "sha256": "fed955a039d343dbbb32bfe55346834d001f436878b47b3b4607b9d161db82e6"
+    },
+    {
+      "path": "extract_provenance_examples.py",
+      "sha256": "2ea02e6515077c57bfe39f44c50ad17558d81b63d44d5af979f0237d80d32875"
+    },
+    {
+      "path": "package.py",
+      "sha256": "40bca912deb36bfea5b0032f0f7ef2214767606d1e821ecd4322b28b050b8256"
+    },
+    {
+      "path": "real_spectrum_A01/acquire_true_h.py",
+      "sha256": "f170a1b9825d63e2b18c6ef4e2d786670227728c9dd279207da9a083ee9dabbb"
+    },
+    {
+      "path": "real_spectrum_A01/audit_spectrum.py",
+      "sha256": "6fe160da0ec78af2754568f14aacd08e7adf3367529eebab9c64df81ea31ab93"
+    },
+    {
+      "path": "real_spectrum_A01/render_spectrum.py",
+      "sha256": "74314147924e46bd127fea1772e326e4f820de4f96776abc65507bc03a3026c5"
+    },
+    {
+      "path": "real_spectrum_A01/spectrum.py",
+      "sha256": "b8b39b609565404c5347e4aaa3e778bb6ea85ed6e34482468587ce5d9110f788"
+    },
+    {
+      "path": "real_spectrum_A01/write_complete_records.py",
+      "sha256": "835392b380a29e5a766dec6960e1a998c0e061f11da03f437d031b0099abf6fe"
+    },
+    {
+      "path": "render.py",
+      "sha256": "4840915952a52ee35be09aaec6d53f21183e68e1570cbf06ae4ab290993d05a3"
+    },
+    {
+      "path": "write_records.py",
+      "sha256": "31a00758f226c736b1acb106eac9bc13f8a6d86cf1fa5b59a4782c9d5603553d"
+    }
+  ]
+}

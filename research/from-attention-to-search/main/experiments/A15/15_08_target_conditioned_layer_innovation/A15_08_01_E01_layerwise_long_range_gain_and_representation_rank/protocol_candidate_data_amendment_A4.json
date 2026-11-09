@@ -1,0 +1,35 @@
+{
+  "experiment_id": "A15_08_01_E01_layerwise_long_range_gain_and_representation_rank",
+  "amendment_id": "A4_compact_disjoint_entity_surface_forms",
+  "state": "HUMAN_CONFIRMED_AND_EXECUTABLE",
+  "confirmed_at": "2026-08-11T13:02:50Z",
+  "human_confirmation": "Approved; submit promptly and update the daily report after results exist.",
+  "remote_execution_paused": false,
+  "eligible_job_id": "pt-yiwkpm3p",
+  "eligible_job_created_at": "2026-08-11T13:03:17Z",
+  "eligible_job_verified_quota_type": "RESERVED",
+  "eligible_job_initial_state": "QUEUEING",
+  "eligible_job_terminal_state": "FAILED_IDENTITY_GUARD",
+  "eligible_job_completed_at": "2026-08-11T13:08:22Z",
+  "eligible_job_produced_scientific_evidence": false,
+  "reason": "The original long entity strings made the mandatory fact table exceed the registered far-slot prefix under the exact Qwen3 tokenizer.",
+  "candidate_entity_schema": {
+    "source": "s<split><world_hex3><target_hex1>",
+    "bridge": "b<split><world_hex3><target_hex1>",
+    "split_codes": {"train": "t", "development": "d", "confirmation": "c"},
+    "characters_per_entity": 6
+  },
+  "exact_tokenizer_preflight": {
+    "worlds": 320,
+    "records": 10240,
+    "records_per_condition": 2560,
+    "max_mandatory_prefix_tokens": 161,
+    "min_far_slot_start": 370,
+    "minimum_margin_tokens": 209,
+    "cross_split_entity_overlap": 0,
+    "passed": true
+  },
+  "model_output_existed_before_repair": false,
+  "confirmation_representation_existed_before_repair": false,
+  "scientific_body_sha256": "7197183c95b4cbfefeaf431f13da0d06313100c7c10649ea3272ac053430a08a"
+}

@@ -1,0 +1,3 @@
+# Feature activation-frequency distribution
+
+[Chinese explanation](README_cn.md). Complete16384-feature dictionary,85548 unique TRAIN answer-prediction positions. Hit=shared frozen gated z>0, frequency=hits/N; no decoder weighting, no extra epochs counted. Rank curve includes all features in linear coordinates and positive-frequency features in a log view. Histogram uses20 fixed equal-width bins over[0,1],includes zeros in the first bin,and shows identical counts with linear/log count axes. A separate descriptive five-bin equal-width illustration does not change routing or train experts. A long tail is visually observed; no formal Zipf/power-law claim. Per-feature CSVs,exact bin counts and source metadata are included.

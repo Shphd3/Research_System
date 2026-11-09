@@ -1,0 +1,119 @@
+{
+  "UTC": "2026-11-04T07:29:14.973522+00:00",
+  "source": "R19reanalysis only; not supplemental outcomes",
+  "frozen_rule_source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R20_20261104_distance_composition/protocol.md",
+  "median_pooled_log_ratio": 0.15214974287807242,
+  "no_remaining_opposite": true,
+  "families": [
+    {
+      "role": "relatively_stable",
+      "family": "F11",
+      "selection_value": 0.8984375,
+      "reason": "Largest mean16→128retained fraction across sites/facts; ties family ID"
+    },
+    {
+      "role": "larger_turnover",
+      "family": "F15",
+      "selection_value": 0.7734375,
+      "reason": "Smallest retained fraction among unselected families"
+    },
+    {
+      "role": "smaller_fact_contrast_change",
+      "family": "F27",
+      "selection_value": 0.003940627630979802,
+      "reason": "Smallest mean log normalized fact-separation ratio among unselected families; may still be positive"
+    },
+    {
+      "role": "site_disagreement_fallback",
+      "family": "F19",
+      "selection_value": 0.8728076865752381,
+      "reason": "No remaining family opposite to pooled median; largest between-site log-ratio disagreement"
+    }
+  ],
+  "all_family_selection_inputs": [
+    {
+      "family": "F07",
+      "retention": 0.875,
+      "mean_log_ratio": 0.14649566307929965,
+      "ATTN_log_ratio": 0.1286544729275878,
+      "MLPIN_log_ratio": 0.1643368532310115
+    },
+    {
+      "family": "F08",
+      "retention": 0.8125,
+      "mean_log_ratio": 0.07119702201472734,
+      "ATTN_log_ratio": 0.0969924845094021,
+      "MLPIN_log_ratio": 0.0454015595200526
+    },
+    {
+      "family": "F11",
+      "retention": 0.8984375,
+      "mean_log_ratio": -0.061069491125530104,
+      "ATTN_log_ratio": -0.0906934089350357,
+      "MLPIN_log_ratio": -0.0314455733160245
+    },
+    {
+      "family": "F12",
+      "retention": 0.890625,
+      "mean_log_ratio": 0.1578038226768452,
+      "ATTN_log_ratio": 0.1446040603929147,
+      "MLPIN_log_ratio": 0.1710035849607757
+    },
+    {
+      "family": "F15",
+      "retention": 0.7734375,
+      "mean_log_ratio": 0.1254792786134856,
+      "ATTN_log_ratio": 0.1425187953838926,
+      "MLPIN_log_ratio": 0.1084397618430786
+    },
+    {
+      "family": "F16",
+      "retention": 0.8203125,
+      "mean_log_ratio": 0.17734195111904438,
+      "ATTN_log_ratio": 0.2065449536000138,
+      "MLPIN_log_ratio": 0.148138948638075
+    },
+    {
+      "family": "F19",
+      "retention": 0.7890625,
+      "mean_log_ratio": 0.19967752114839313,
+      "ATTN_log_ratio": -0.2367263221392259,
+      "MLPIN_log_ratio": 0.6360813644360122
+    },
+    {
+      "family": "F20",
+      "retention": 0.8203125,
+      "mean_log_ratio": 0.20681118462454845,
+      "ATTN_log_ratio": 0.1210852750636863,
+      "MLPIN_log_ratio": 0.2925370941854106
+    },
+    {
+      "family": "F23",
+      "retention": 0.7734375,
+      "mean_log_ratio": 0.22330526234147205,
+      "ATTN_log_ratio": 0.163977235775837,
+      "MLPIN_log_ratio": 0.2826332889071071
+    },
+    {
+      "family": "F24",
+      "retention": 0.7734375,
+      "mean_log_ratio": 0.2841368815529171,
+      "ATTN_log_ratio": 0.3246834753242833,
+      "MLPIN_log_ratio": 0.2435902877815509
+    },
+    {
+      "family": "F27",
+      "retention": 0.8359375,
+      "mean_log_ratio": 0.003940627630979802,
+      "ATTN_log_ratio": 0.0599108166819964,
+      "MLPIN_log_ratio": -0.0520295614200368
+    },
+    {
+      "family": "F28",
+      "retention": 0.8203125,
+      "mean_log_ratio": 0.017065321411236054,
+      "ATTN_log_ratio": -0.1343282379056994,
+      "MLPIN_log_ratio": 0.1684588807281715
+    }
+  ]
+}

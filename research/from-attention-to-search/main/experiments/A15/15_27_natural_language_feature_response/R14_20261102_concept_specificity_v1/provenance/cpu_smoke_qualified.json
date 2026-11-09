@@ -1,0 +1,55 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "domain": "biology",
+      "native_head_logit_max": 0.0,
+      "native_target_logprob_max": 0.0,
+      "all_pc_logit_max": 0.0,
+      "identity_logit_max": 0.0,
+      "fresh_cache_h_max": 0.0,
+      "causal_visible_h_max": 0.0,
+      "cc_replay_max": 0.0,
+      "linear_reconstruction_residual_max": 9.5367431640625e-07,
+      "native_CC_vs_FP32_linear_reconstruction_relative": 0.002426677383482456,
+      "empty_group_h_max": 0.0,
+      "threshold": 0.051281172782182693,
+      "pass": true
+    },
+    {
+      "domain": "mathematics",
+      "native_head_logit_max": 0.0,
+      "native_target_logprob_max": 0.0,
+      "all_pc_logit_max": 0.0,
+      "identity_logit_max": 0.0,
+      "fresh_cache_h_max": 0.0,
+      "causal_visible_h_max": 0.0,
+      "cc_replay_max": 0.0,
+      "linear_reconstruction_residual_max": 9.5367431640625e-07,
+      "native_CC_vs_FP32_linear_reconstruction_relative": 0.0016551094595342875,
+      "empty_group_h_max": 0.0,
+      "threshold": 0.051281172782182693,
+      "pass": true
+    },
+    {
+      "domain": "physics",
+      "native_head_logit_max": 0.0,
+      "native_target_logprob_max": 0.0,
+      "all_pc_logit_max": 0.0,
+      "identity_logit_max": 0.0,
+      "fresh_cache_h_max": 0.0,
+      "causal_visible_h_max": 0.0,
+      "cc_replay_max": 0.0,
+      "linear_reconstruction_residual_max": 9.5367431640625e-07,
+      "native_CC_vs_FP32_linear_reconstruction_relative": 0.002213776111602783,
+      "empty_group_h_max": 0.0,
+      "threshold": 0.051281172782182693,
+      "pass": true
+    }
+  ],
+  "time": "2026-11-01T17:27:50.480093+00:00",
+  "threshold_frozen": 0.051281172782182693,
+  "device": "CPU BF16, two threads",
+  "dtype": "BF16 forward/head; FP64 spectral;FP32 probability and raw decoder contributions",
+  "training_updates": 0
+}

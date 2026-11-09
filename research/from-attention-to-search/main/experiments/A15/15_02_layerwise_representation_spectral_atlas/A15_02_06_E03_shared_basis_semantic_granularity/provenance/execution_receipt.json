@@ -1,0 +1,24 @@
+{
+  "full_run": {
+    "command": "python scripts/run_analysis.py --config configs/experiment.json",
+    "status": "PASS",
+    "layers": 36,
+    "parent_bootstrap_replicates": 2000,
+    "random_pairing_replicates": 256
+  },
+  "real_smoke": {
+    "command": "python scripts/smoke_real.py",
+    "layers": [1, 18, 35],
+    "status": "PASS"
+  },
+  "tests": {
+    "command": "python -m pytest -q tests",
+    "passed": 5,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "tdd_red": {
+    "failure": "ModuleNotFoundError: No module named 'src.granularity'",
+    "status": "EXPECTED_FAIL_BEFORE_IMPLEMENTATION"
+  }
+}

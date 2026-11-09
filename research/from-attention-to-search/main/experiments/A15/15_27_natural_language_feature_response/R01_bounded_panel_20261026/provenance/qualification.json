@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "forward_sequences": 0,
+  "n_cases": 72,
+  "n_sequences": 288,
+  "unique_source_groups": 72,
+  "source_group_dependency": "All 72 source groups have distinct constructed cue wording; B/C retain the same six relation concepts, and target-level dependence remains explicit.",
+  "per_panel_split": {
+    "A": {
+      "discovery": 12,
+      "holdout": 12
+    },
+    "B": {
+      "discovery": 12,
+      "holdout": 12
+    },
+    "C": {
+      "discovery": 12,
+      "holdout": 12
+    }
+  },
+  "max_token_count": 77,
+  "min_token_count": 14,
+  "target_ids": {
+    "bank": [
+      6073
+    ],
+    "bass": [
+      21529
+    ],
+    "bat": [
+      15743
+    ],
+    "crane": [
+      72947
+    ],
+    "port": [
+      2635
+    ],
+    "seal": [
+      25349
+    ]
+  },
+  "C_near_clue_distance_tokens": [
+    1
+  ],
+  "C_far_clue_distance_tokens": [
+    40,
+    41,
+    45,
+    46
+  ],
+  "A_B_same_token_count_and_position": true,
+  "C_same_token_count_and_position": true,
+  "cross_split_overlap": {
+    "template_family": [],
+    "source_group": [],
+    "entity_group": []
+  },
+  "preselected_illustrations": [
+    "A01",
+    "B01",
+    "C01"
+  ],
+  "preselected_negative_control": "A02",
+  "tokenizer_directory": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "tokenizer_files": {
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+  },
+  "tokenization": "no_special_tokens_no_chat_template_no_suffix",
+  "qualified_manifest_sha256": "945914b9007a4a576f6de99b00b791af56e8daf4464de9169959e733b20d2246",
+  "candidate_status": "Semantic compatibility candidates are predeclared and single token, not a functional correctness label.",
+  "C_distance_qualified": true,
+  "C_distance_qualification_scope": "token_count_target_position_target_ID_and_identical_clue_wording_only_not_distance_causality"
+}

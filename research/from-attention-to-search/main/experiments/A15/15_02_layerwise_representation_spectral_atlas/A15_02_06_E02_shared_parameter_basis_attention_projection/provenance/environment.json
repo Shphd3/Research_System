@@ -1,0 +1,26 @@
+{
+  "command": [
+    "/usr/bin/python",
+    "scripts/run_analysis.py",
+    "--config",
+    "configs/experiment.json"
+  ],
+  "cuda_available": true,
+  "cuda_version": "12.4",
+  "cwd": "/data/250010109/MoE_Router/experiments/20260811_a15_02_06_shared_parameter_basis_attention_projection",
+  "device": "cuda:0",
+  "gpu": {
+    "compute_capability": [
+      9,
+      0
+    ],
+    "name": "NVIDIA H100 80GB HBM3",
+    "total_memory_bytes": 85017624576
+  },
+  "matplotlib": "3.8.4",
+  "numpy": "1.24.4",
+  "platform": "Linux-5.14.0-284.25.1.el9_2.x86_64-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]",
+  "safetensors": "0.8.0",
+  "torch": "2.3.0a0+6ddf5cf85e.nv24.04"
+}

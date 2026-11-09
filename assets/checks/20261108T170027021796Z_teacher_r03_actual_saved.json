@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-08T17:00:27.402474+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-j6qqt",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 18479,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "checkpoint_family_teacher_routing_r03_engineering_smoke_direct40_through_000040_20261109",
+      "title_cn": "R03 engineering_smoke direct40 实际保存至40步",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000020/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1184,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000020/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096182550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000020/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000020/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000020/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14924,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000020/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000040/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1185,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000040/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096182550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000040/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000040/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000040/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14924,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke/direct40/checkpoints/step_00000040/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_teacher_routing_r03_training_A0_through_000200_20261109",
+      "title_cn": "R03 training A0 实际保存至200步",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/milestones/token_000052428800/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1184,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/milestones/token_000052428800/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096182550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/milestones/token_000052428800/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/milestones/token_000052428800/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/milestones/token_000052428800/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14924,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/milestones/token_000052428800/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14988,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

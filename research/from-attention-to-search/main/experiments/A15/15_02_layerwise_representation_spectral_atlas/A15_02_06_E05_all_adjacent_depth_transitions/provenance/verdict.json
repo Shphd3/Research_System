@@ -1,0 +1,128 @@
+{
+  "D_sem_simultaneous_radius": 0.008340077474713326,
+  "G_sem_simultaneous_radius": 0.47376203536987305,
+  "G_sem_stage_contrast_simultaneous_radius": 0.019751140847802162,
+  "claim_boundary": "Fixed-depth variance-proxy robustness only; no residual-relative novelty, low-rank, causal, new-knowledge, or Router claim.",
+  "depth_contrast_deep_minus_early": {
+    "point": 0.005778953433036804,
+    "simultaneous_ci95": [
+      0.005018801428377628,
+      0.00653910543769598
+    ]
+  },
+  "e04_crosscheck_absolute_errors": {
+    "A": {
+      "D_sem": 0.0,
+      "G_sem": 0.0
+    },
+    "B": {
+      "D_sem": 0.0,
+      "G_sem": 0.0
+    },
+    "full": {
+      "D_sem": 0.0,
+      "G_sem": 0.0
+    }
+  },
+  "experiment_id": "A15_02_06_E05_all_adjacent_depth_transitions",
+  "linear_depth_slope": {
+    "ci95": [
+      -4.6258584916358814e-05,
+      1.2650749340537004e-05
+    ],
+    "point": -2.271621451654937e-05
+  },
+  "outcome": "stage_dependent_nonmonotonic",
+  "posthoc_boundary_sensitivity": {
+    "deep_minus_early_max": 0.006355423480272293,
+    "deep_minus_early_min": -0.0005352452863007784,
+    "note": "Post-hoc descriptive only; the registered equal-third result is boundary-sensitive."
+  },
+  "run_id": "a15-02-06-e05-20260812-all-adjacent",
+  "simultaneously_negative_D_sem_transition_starts": [
+    3,
+    5,
+    8,
+    9,
+    11,
+    16,
+    22,
+    24,
+    27,
+    30,
+    34
+  ],
+  "simultaneously_negative_G_sem_transition_starts": [
+    13,
+    25,
+    28,
+    31
+  ],
+  "simultaneously_positive_D_sem_transition_starts": [
+    1,
+    2,
+    4,
+    6,
+    7,
+    10,
+    12,
+    13,
+    19,
+    20,
+    25,
+    26,
+    29,
+    31,
+    33,
+    35
+  ],
+  "simultaneously_positive_G_sem_transition_starts": [
+    1,
+    2,
+    3,
+    6,
+    8,
+    9,
+    14,
+    20,
+    23,
+    24,
+    26,
+    27,
+    29,
+    30,
+    33,
+    34
+  ],
+  "stage_D_sem": {
+    "deep": 0.007947116158902645,
+    "early": 0.002168162725865841,
+    "middle": -0.0037785654421895742
+  },
+  "stage_D_sem_half_A": {
+    "deep": 0.008010845631361008,
+    "early": 0.002261136891320348,
+    "middle": -0.003830565372481942
+  },
+  "stage_D_sem_half_B": {
+    "deep": 0.008063998073339462,
+    "early": 0.001986233750358224,
+    "middle": -0.003693073056638241
+  },
+  "stage_G_sem": {
+    "deep": 0.25447431206703186,
+    "early": 0.6831225752830505,
+    "middle": 0.4370872676372528
+  },
+  "stage_G_sem_half_A": {
+    "deep": 0.266239196062088,
+    "early": 0.6869999766349792,
+    "middle": 0.41405704617500305
+  },
+  "stage_G_sem_half_B": {
+    "deep": 0.24831609427928925,
+    "early": 0.6653876304626465,
+    "middle": 0.4733923375606537
+  },
+  "stage_contrast_simultaneous_radius": 0.0007601521210744977
+}

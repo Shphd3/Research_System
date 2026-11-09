@@ -1,0 +1,11 @@
+# S10 results bundle
+
+Start with summary_cn.md, then the main frequency figure, casebook_cn.md and results/joint/reading_cn.md. Protocol/config/initial versions and amendments retain decision/exposure history. English companions preserve the same bounded results. The two named latest20261104source documents were unavailable; user account is the only advisor wording source.
+
+INCLUDED: all384newconfirmation/384reference/48lexical rawtexts+authoritative tokenIDs and fulltwoSAE sparsez; oldS06full384texts/sparsez; independent-frequency tables andoriginalS08/S09metadata/frozenmarginals; completecompactperactivefeatureCSVforeachcohort/pair,mainfrequencycoresummaries, lockedIDs/signs/directions, candidate/model scores, nullstatistics/constraints/mixing audits, editableSVG/PDF/PNG andcode. CompactperfeaturerowsretainIDs/events/rawz/p_ref/groups; row-scales/RMSretainnormalizationdenominators. A bootstrap CI on fixedbands does not propagate allreferencefrequency uncertainty. Rightmainfigure bars are discovery candidates, not validated-success-only members.
+
+EXTERNAL/INDEXED: originalS08activationcache,fullpreactivation arrays, fullnullstate/statistic tensors, repeatedold/confirmationanalysis snapshots,fullrepeatedperfeaturecolumns,largeall-axis/list-familytablesandjointcomponent/orderdetails. Selectedmain-axis summarycopiesfilterreference_axis==mainwithoutdroppingcohorts/wordings/relations; not everymain-axistableisincluded. Exactpaths/bytes/hashes in large_files_index.json. Completefrozenmatchedrandomlists forjointstrengthareexternal; notreportedasincluded. No model/SAEweights orfontfiles.
+
+Run `python code/portable_replay.py` after extraction for model-free pointreplays. It verifies allmainJaccardmeans,all60000referencecounts,allcaseunionrawvalues and1376fixedcandidateeffects. Fulloriginal-source audit/verifier may need indexedexternalpaths; do not confuse portablepointreplay with fullnullrecomputation. Fullworkingtree: /data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105.
+
+H1localfrequencydescription; H2doesnotshowaconsistentgradient(animalinsufficient); H3localmember/amplitudechanges,butbeyond-marginaljointcontrastnotclearlyreplicated. No routing/causal/efficiency conclusion. ScientificacceptanceUnknown. No training/intervention.

@@ -1,0 +1,69 @@
+{
+  "time_utc": "2026-11-01T08:43:33.821262+00:00",
+  "audit_basis": "original request in conversation;initial Protocol bytes;config+actualcode+logs+cache+models+raw tables;no Summary used as proof",
+  "frozen_files_verified": 15,
+  "original_Protocol_unchanged": true,
+  "original_H_cache_matches_saved_arrays": true,
+  "R12_D_V_IDs_exact": true,
+  "prefix_token_and_no_family_split_leakage": true,
+  "actual_unique_D_V_H": {
+    "discovery": 32,
+    "development": 17,
+    "heldout": 37
+  },
+  "saved_original_readout_models": 648,
+  "C_grid_and_V_selection_verified": true,
+  "new_large_model_weights_not_rehashed": "not loaded by R13;producer bindings only",
+  "current_zero_channel_score_max_abs": 2.5274156101318113e-09,
+  "zero_channel_prediction_mismatches": 0,
+  "first_result_recomputed_without_refitting": [
+    {
+      "task": "coarse",
+      "corrected": 6,
+      "new_errors": 10,
+      "paired_BA_interval95": [
+        -0.26169590643274854,
+        0.06578947368421054
+      ],
+      "paired_BA_interval_simultaneous": [
+        -0.34210526315789475,
+        0.1637719298245567
+      ]
+    },
+    {
+      "task": "math_fine",
+      "corrected": 1,
+      "new_errors": 2,
+      "paired_BA_interval95": [
+        -0.24305555555555555,
+        0.125
+      ],
+      "paired_BA_interval_simultaneous": [
+        -0.3611111111111111,
+        0.19444444444444445
+      ]
+    },
+    {
+      "task": "bio_fine",
+      "corrected": 2,
+      "new_errors": 1,
+      "paired_BA_interval95": [
+        -0.1111111111111111,
+        0.2222222222222222
+      ],
+      "paired_BA_interval_simultaneous": [
+        -0.2222222222222222,
+        0.3333333333333333
+      ]
+    }
+  ],
+  "source_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/fit_freeze.json": "2464410a46355ca3822f2132248012940d92dd95d6b40ba5801afb797469aba5",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/config.json": "86a95cf7b136cb33d6a1e5bf3e859bfb86e6baf09f5542e9f121aee226dbd47a",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/analysis/metrics_all_conditions.csv": "e636aa4f9f2eaf3ac18b45436d2bbde66785d8efd7433fe4ed9682d4209e2485",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/analysis/paired_contrasts.csv": "94fb9a3eb2d375069f1c9c9c041af0cd8704b52d2d59f4b7a59f9dcd61a88652",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/analysis/predictions_all_seeds.csv": "88f2163a44db5fb7881e63ca17c9c79eec9f1dc3a558fafe65c54bb02de230d6",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/models.pkl": "e0b3cdab641be7aadb03ff132103a88a47e7d34d29ae5166c7202456ac7f483a"
+  },
+  "no_new_fits_or_forwards": true
+}

@@ -1,0 +1,36 @@
+{
+  "processing_agent": "/root/offline_analysis",
+  "checks": [
+    {
+      "review": "known_numerics_and_missingness",
+      "PASS": true,
+      "identical_feature_correlation": 1.0,
+      "degenerate_similarity": "NA",
+      "global_amplitude_residual_max": 1.0658141036401503e-14,
+      "BH_known_values": "PASS"
+    },
+    {
+      "review": "independence_and_stability",
+      "PASS": true,
+      "duplicate_cases": 3,
+      "independent_groups": 2,
+      "identical_group_coassignment": 1.0
+    },
+    {
+      "review": "synthetic_end_to_end_interface",
+      "PASS": true,
+      "all_data_synthetic": true,
+      "discovery_holdout_cases": [
+        36,
+        36
+      ],
+      "candidate_freeze_unchanged_after_evaluation": true,
+      "zero_model_forwards": true,
+      "candidate_count": 10,
+      "figures_written": true
+    }
+  ],
+  "actual_response_files_read": false,
+  "model_forwards": 0,
+  "all_PASS": true
+}

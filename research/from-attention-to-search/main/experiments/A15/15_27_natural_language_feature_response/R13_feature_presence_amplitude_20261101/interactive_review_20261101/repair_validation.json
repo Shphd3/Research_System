@@ -1,0 +1,15 @@
+{
+  "time_utc": "2026-11-01T08:46:27.653149+00:00",
+  "issue": "Word-form exporter could reintroduce hardcoded assumed the fields when regenerated,despite current audited copies already being correct",
+  "severity": "IMPLEMENTATION_ANNOTATION_EXPORT_ONLY",
+  "repair": "remove target_complete_word/target_full_word in audited copies;set annotation version",
+  "classification_tables_models_figures_changed": false,
+  "new_fits_or_forwards": 0,
+  "original_scientific_freeze_unchanged": true,
+  "validation": {
+    "text_cases_word_audited.json": "EXACTLY_SAME_AUDITED_CONTENT_NO_LEGACY_FIELD",
+    "exhaustive_error_texts_word_audited.json": "EXACTLY_SAME_AUDITED_CONTENT_NO_LEGACY_FIELD"
+  },
+  "old_source_and_outputs_preserved": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/audits/interactive_review_20261101",
+  "original_result_statements_affected": "None;Cword-identity reproduction now agrees with prior documented boundary"
+}

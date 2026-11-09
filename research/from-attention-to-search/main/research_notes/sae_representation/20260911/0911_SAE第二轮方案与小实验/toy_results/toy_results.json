@@ -1,0 +1,58 @@
+{
+  "warning": "Constructed four-point geometry plus a tiny autograd/optimization check; not LLM evidence.",
+  "geometry": {
+    "start": {
+      "W": 0.04761904761904762,
+      "B": 0.1904761904761905,
+      "B_over_W": 4.0,
+      "mean_norm_squared": 0.761904761904762,
+      "identity_residual": 8.326672684688674e-17
+    },
+    "end": {
+      "W": 0.050590901732232484,
+      "B": 0.21887647725433063,
+      "B_over_W": 4.3264000000000005,
+      "mean_norm_squared": 0.730532621013437,
+      "identity_residual": 5.551115123125783e-17
+    },
+    "relative_change": {
+      "W": 0.06240893637688205,
+      "B": 0.1491015055852356,
+      "B_over_W": 0.08160000000000012
+    },
+    "R_mean_abs_all_pairs": 0.03137214089132506,
+    "R_mean_abs_off_diagonal": 0.04182952118843334,
+    "partition_FM": 1.0,
+    "known_sign_classifier_accuracy_start": 1.0,
+    "known_sign_classifier_accuracy_end": 1.0
+  },
+  "common_rotation_R": 3.122502256758253e-16,
+  "component_renaming": {
+    "raw_code_mse": 0.2666666666666667,
+    "max_relation_difference": 5.551115123125783e-17
+  },
+  "gradient_checks": [
+    {
+      "mode": "observe_only",
+      "detach_input": true,
+      "updates": 25,
+      "initial_loss": 0.29800269512140093,
+      "final_loss": 0.20866117600066172,
+      "initial_upstream_gradient_norm": 0.0,
+      "rms_change_in_h": 0.0,
+      "sae_parameter_change": 0.32813525932946386,
+      "note": "No task loss is used; this isolates reconstruction-gradient connectivity."
+    },
+    {
+      "mode": "joint_reconstruction",
+      "detach_input": false,
+      "updates": 25,
+      "initial_loss": 0.29800269512140093,
+      "final_loss": 0.11984604685388785,
+      "initial_upstream_gradient_norm": 0.4778643421381449,
+      "rms_change_in_h": 0.20136119117110834,
+      "sae_parameter_change": 0.20672297396999106,
+      "note": "No task loss is used; this isolates reconstruction-gradient connectivity."
+    }
+  ]
+}

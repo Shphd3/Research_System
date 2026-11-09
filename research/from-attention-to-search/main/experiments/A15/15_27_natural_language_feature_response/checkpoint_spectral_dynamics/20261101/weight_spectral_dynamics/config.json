@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-01T14:41:41.959883+00:00",
+  "parent_analysis": "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics",
+  "input_asset": "checkpoint_family_dense_spectral_dynamics_20261101",
+  "modules": [
+    "embed.weight",
+    "blocks.0.attn.q.weight",
+    "blocks.0.attn.k.weight",
+    "blocks.0.attn.v.weight",
+    "blocks.0.attn.o.weight",
+    "blocks.0.gate.weight",
+    "blocks.0.up.weight",
+    "blocks.0.down.weight",
+    "blocks.1.attn.q.weight",
+    "blocks.1.attn.k.weight",
+    "blocks.1.attn.v.weight",
+    "blocks.1.attn.o.weight",
+    "blocks.1.gate.weight",
+    "blocks.1.up.weight",
+    "blocks.1.down.weight",
+    "blocks.2.attn.q.weight",
+    "blocks.2.attn.k.weight",
+    "blocks.2.attn.v.weight",
+    "blocks.2.attn.o.weight",
+    "blocks.2.gate.weight",
+    "blocks.2.up.weight",
+    "blocks.2.down.weight",
+    "blocks.3.attn.q.weight",
+    "blocks.3.attn.k.weight",
+    "blocks.3.attn.v.weight",
+    "blocks.3.attn.o.weight",
+    "blocks.3.gate.weight",
+    "blocks.3.up.weight",
+    "blocks.3.down.weight",
+    "blocks.4.attn.q.weight",
+    "blocks.4.attn.k.weight",
+    "blocks.4.attn.v.weight",
+    "blocks.4.attn.o.weight",
+    "blocks.4.gate.weight",
+    "blocks.4.up.weight",
+    "blocks.4.down.weight",
+    "blocks.5.attn.q.weight",
+    "blocks.5.attn.k.weight",
+    "blocks.5.attn.v.weight",
+    "blocks.5.attn.o.weight",
+    "blocks.5.gate.weight",
+    "blocks.5.up.weight",
+    "blocks.5.down.weight",
+    "blocks.6.attn.q.weight",
+    "blocks.6.attn.k.weight",
+    "blocks.6.attn.v.weight",
+    "blocks.6.attn.o.weight",
+    "blocks.6.gate.weight",
+    "blocks.6.up.weight",
+    "blocks.6.down.weight",
+    "blocks.7.attn.q.weight",
+    "blocks.7.attn.k.weight",
+    "blocks.7.attn.v.weight",
+    "blocks.7.attn.o.weight",
+    "blocks.7.gate.weight",
+    "blocks.7.up.weight",
+    "blocks.7.down.weight"
+  ],
+  "checkpoint_tokens": [
+    500000000,
+    1000000000,
+    3000000000,
+    5000000000,
+    10000000000,
+    15000000000,
+    17000000000,
+    19000000000,
+    21000000000,
+    22018691584,
+    31000000000,
+    33000000000
+  ],
+  "centering": "NONE: uncentered native weight matrices",
+  "decomposition": "W=U diag(s) V^T, smaller 1024x1024 FP64 Gram eigh; opposite-side top65 recovered by Wv/s or W^Tu/s; eigen and singular residual guards",
+  "precision": "FP64 statistics; original saved weight dtype recorded; CPU only",
+  "cpu_threads": 4,
+  "gpus": 0,
+  "max_wall_seconds": 900,
+  "max_output_gib": 3,
+  "main_ranks": [
+    1,
+    64
+  ],
+  "stored_rank": 65,
+  "top1_isolation_relative_singular_gap": 0.05,
+  "numerical_gap_floor": 1e-10,
+  "uncertainty": "Full saved weights, no text sampling; deterministic numerical residuals and eigengaps, single trajectory only",
+  "comparisons": [
+    "adjacent",
+    "endpoint33B"
+  ],
+  "stability_rule": "EXPLORATORY tolerance sensitivity only,not mathematical convergence. Earliest start of a terminal suffix with >=3 consecutive observed intervals satisfying BOTH raw displacement and displacement per actual training B,with no later observed rebound. Missing intervals remain missing. No endpoint distance used as proof.",
+  "stability_tolerances": {
+    "s1": {
+      "raw": [
+        0.01,
+        0.03,
+        0.05
+      ],
+      "per_B": [
+        0.0025,
+        0.01,
+        0.02
+      ]
+    },
+    "pc1_angle_deg": {
+      "raw": [
+        5,
+        10,
+        20
+      ],
+      "per_B": [
+        1,
+        3,
+        5
+      ]
+    },
+    "top64_projection_distance": {
+      "raw": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "per_B": [
+        0.005,
+        0.01,
+        0.02
+      ]
+    }
+  },
+  "counterfactuals": [
+    "identity",
+    "simultaneous sign flip",
+    "fixed singular values with rotated singular vectors",
+    "near-degenerate leading values",
+    "full span distance structurally zero"
+  ],
+  "authorization": "Explicit current user requests all-checkpoint per-module parameter spectral measurement,then top64 dynamics; no training,new GPU allocation or scope change. CPU bounded analysis uses current environment.",
+  "smoke": "Read state schema/count,counters; model-independent numerical cases; one real query projection direct SVD crosscheck. Timing-only preflight q+embedding0.5B already visible; no convergence threshold chosen from that result."
+}

@@ -5,69 +5,32 @@ description: "Audit research purposes, hypotheses, causal or mathematical mechan
 
 # Research Reasoning Auditor
 
-Clarify inference before polishing. Use the named evidence and requested depth;
-a quick question does not require a new artifact or a full research workflow.
+Clarify the inference before polishing. A quick question needs no new artifact.
+Lead with the most useful conditional explanation, then audit the decisive step.
 
-## Read By Need
+## Checks (only those that could change the conclusion or next decision)
 
-- Quick audit: use the checks below; no extra reference merely to repeat them.
-- Deep chain, experiment rationale or formalization: read the
-  [audit contract](references/reasoning_audit_contract.md).
-- To assess a claimed mechanism-to-outcome link or diagnose a missing model,
-  read [mechanism closure](references/mathematical_mechanism_closure.md). An equation,
-  toy model or curve merely appearing in the source does not trigger this read.
-- Repeated confusion: inspect only the relevant
-  [failure pattern](references/recurrent_failure_modes.md).
+1. Separate observation, hypothesis, mechanism, prediction, measurement or
+   intervention, conclusion and decision.
+2. Start from the phenomenon and system structure: object → operation/update →
+   prediction or loss consequence, in words before mathematics.
+3. For each explanatory arrow: assumptions, competing cause, evidence. Name
+   which is missing: derivation, test, explanation, or a decision leap.
+4. Name a credible rival at the same level and a prediction where it differs.
+   Do not invent a rival to a proved identity.
+5. State what each proxy measures and cannot prove. Description, prediction,
+   causation and utility differ; a failed readout does not prove absence.
+6. State how support, non-support or insufficiency would change the prior
+   judgment. Stopping is valid when no measurement would change the answer.
 
-Reuse unchanged rules; refresh decision-bearing sources. Before saying a model
-or experiment is absent, inspect relevant existing work and state search limits.
-When several questions compete, locate the confusion in phenomenon, mechanism,
-evidence or decision; resolve the dependency that blocks understanding first.
-Name the parent unknown and which part this round can actually answer.
+When a claim is too strong, give its strongest useful conditional form and the
+untested bridge, plus a usable separator experiment. Before saying something is
+absent, inspect existing work and state the search limit.
 
-## Checks
+## References (only when needed)
 
-For mechanism exploration, lead with the most useful conditional explanation,
-then audit the decisive inference. Prioritize issues that could change the
-conclusion or next decision: a wrong reference, unmeasured core variable,
-severe confounding or inconsistent units. For equivalence claims use the shared
-[mechanism bridge](../../../docs/methodology/research_exploration_kernel.md#mechanism-bridges-and-operational-equivalence).
-Develop the needed repair rather than burying the explanation in minor caveats.
+Deep chain or experiment rationale: [audit contract](references/reasoning_audit_contract.md) ·
+mechanism-to-outcome link: [mechanism closure](references/mathematical_mechanism_closure.md) ·
+repeated confusion: [failure patterns](references/recurrent_failure_modes.md).
 
-Use the shared [objects, comparison rationale and formula meaning rules](../../../docs/report_writing.md#objects-operations-and-first-use-terms).
-Audit an actual first-use passage, not just a glossary. Reconstruct its operations
-from the owning evidence before proposing clearer terms. Distinguish an exposition
-repair from missing research; preserve frozen protocols and result identities.
-Check the purpose-to-evidence inference, not compliance with heading order or a
-no-growth budget. Use natural, accurately defined terms and layered detail; a
-co-occurrence is not an identified mechanism and a proposed test is not a result.
-
-1. Separate observation, unknown, purpose, hypothesis, mechanism, prediction,
-   measurement/intervention, conclusion and decision.
-2. Start from the phenomenon and system structure, not a convenient metric or
-   preferred method. Explain object -> operation/update -> prediction/loss
-   consequence in words before necessary mathematics.
-3. Check each explanatory arrow, assumptions, competing cause and evidence.
-   Distinguish absent derivation, untested link, missing explanation and decision leap.
-4. Name a credible rival at the same level and a prediction on which it differs.
-   Do not invent a rival to a proved identity or force a defect in sound reasoning.
-5. State what each proxy measures and cannot prove; description, prediction,
-   causation and practical utility differ; failed estimation/readout does not
-   establish absent structure, and skipped tests remain unmeasured.
-6. Choose evidence appropriate to the claim; state how support, non-support or
-   insufficiency changes a prior judgment, not merely a metric or status.
-   Report when a round only qualifies measurement or narrows a claim.
-7. Bound the claim; justify necessary dependencies before imposing gates.
-   Apply only current-stage obligations; preserve conjectures as such.
-   Suggest only a check that could change a named judgment; stopping is valid
-   when another measurement would not change the current bounded answer.
-
-Return the core answer, material gap if any, evidence boundary and only the
-necessary repair. When a claim is too strong, reconstruct its strongest useful
-conditional form before naming the untested bridge. Distinguish a wrong model,
-unknown applicability, imprecise estimation and an unidentified mechanism; each
-needs a different repair. Supply a usable candidate explanation or separator
-when possible, rather than ending at “insufficient to prove.” Preserve sound
-arguments without manufacturing defects. No compulsory checklist-shaped reply.
-The researcher owns scientific judgment; this skill audits/proposes, not approval, execution or
-unrequested documents. Formal outputs retain their existing task owners.
+The researcher owns judgment; this skill audits and proposes only.

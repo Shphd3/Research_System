@@ -1,0 +1,98 @@
+{
+  "rows": 36,
+  "families": 12,
+  "per_condition": 12,
+  "matched_family_skeletons": 12,
+  "unique_texts": 36,
+  "labels_checked": "all36directlyaudited; no semantic ambiguities;12grammaticalarticles corrected before responses",
+  "text_revisions": [
+    {
+      "stage": "before any modelresponse",
+      "rows": 12,
+      "change": "a invertible→an invertible; A invertible→An invertible",
+      "reason": "grammaticalarticleagreement only; labels unchanged",
+      "retained_version": "versions/pre_response_article_fix"
+    }
+  ],
+  "forbidden_inference_cues": 0,
+  "boundary_token_checks": 222,
+  "max_full_input_tokens": 49,
+  "candidates": [
+    {
+      "format": "F1",
+      "candidates": [
+        {
+          "label": "yes",
+          "text": "是。",
+          "order": 0,
+          "candidate_token_ids": [
+            20412,
+            1773
+          ],
+          "candidate_tokens": 2
+        },
+        {
+          "label": "no",
+          "text": "否。",
+          "order": 1,
+          "candidate_token_ids": [
+            32376,
+            1773
+          ],
+          "candidate_tokens": 2
+        },
+        {
+          "label": "unknown",
+          "text": "无法确定。",
+          "order": 2,
+          "candidate_token_ids": [
+            101068,
+            60610,
+            1773
+          ],
+          "candidate_tokens": 3
+        }
+      ]
+    },
+    {
+      "format": "F2",
+      "candidates": [
+        {
+          "label": "unknown",
+          "text": "无法判断。",
+          "order": 0,
+          "candidate_token_ids": [
+            101068,
+            104317,
+            1773
+          ],
+          "candidate_tokens": 3
+        },
+        {
+          "label": "no",
+          "text": "不是奇异矩阵。",
+          "order": 1,
+          "candidate_token_ids": [
+            99520,
+            117223,
+            115000,
+            1773
+          ],
+          "candidate_tokens": 4
+        },
+        {
+          "label": "yes",
+          "text": "是奇异矩阵。",
+          "order": 2,
+          "candidate_token_ids": [
+            20412,
+            117223,
+            115000,
+            1773
+          ],
+          "candidate_tokens": 4
+        }
+      ]
+    }
+  ]
+}

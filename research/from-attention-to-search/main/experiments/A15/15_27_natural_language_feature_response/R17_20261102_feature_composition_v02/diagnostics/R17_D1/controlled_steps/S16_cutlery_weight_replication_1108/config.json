@@ -1,0 +1,40 @@
+{
+  "model": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000/state.pt",
+  "sae": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/formal/sae_full_final.pt",
+  "tokenizer": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+  "native_source": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/source",
+  "batch": 16,
+  "dtype": "float32",
+  "tf32": false,
+  "max_gpu_gib": 12,
+  "seed": 2026110816,
+  "scenes": 24,
+  "families_per_scene": 2,
+  "labels": [
+    "spoon",
+    "fork"
+  ],
+  "words": [
+    "explicit",
+    "named_rephrase"
+  ],
+  "new_prefixes": 192,
+  "positions": [
+    "colon"
+  ],
+  "permutations": 9999,
+  "bootstraps": 2000,
+  "wall_seconds": 600,
+  "evaluation_min_frames": 12,
+  "evaluation_min_clusters": 12,
+  "group_coverage": 0.8,
+  "behavior_threshold": 0.75,
+  "primary": "S15 cutlery Q3 actual gate-mass TV on fixed A_bias-on-spoon versus B_bias-on-fork; conditional block permutation",
+  "primary_alpha": 0.05,
+  "minimum_direction_alignment": 0,
+  "secondary": "named_rephrase same estimand; hard IDs/category baselines/residual profiles/whole2wording Holm supplement",
+  "primary_decision": "behavior and coverage adequate, conditional p<=.05, old-direction signed contrast>0; otherwise unresolved or insufficient",
+  "length_strata": "pre-forward new explicit scene-mean prefix length median; each bin needs>=4scenes or merge; exact A/B token length paired",
+  "authorization": "User explicitly selected execute cutlery independent new-scene replication; no training/intervention/new resources; 24scenes*2families budget inherited proposal",
+  "origin": "AI-authored synthetic English physical-use scenarios, not natural-source documents; independently held out from previous measurements, common author/suffix remain"
+}

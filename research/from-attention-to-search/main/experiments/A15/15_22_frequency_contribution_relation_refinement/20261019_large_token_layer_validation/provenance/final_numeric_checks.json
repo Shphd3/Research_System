@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "checks": [
+    "56 layer/pool rows;4 binary rows;840 group rows",
+    "positive decoder norms;zero/nonzero exact alignment",
+    "global nonzero conditional mean identities",
+    "paired layer2/28 identical NA sets",
+    "source table copies"
+  ],
+  "paired": [
+    {
+      "dataset": "dclm",
+      "pool": "local",
+      "complete_pair_blocks": 41,
+      "NA_blocks": 0,
+      "same_estimable_set": true
+    },
+    {
+      "dataset": "dclm",
+      "pool": "old_tulu",
+      "complete_pair_blocks": 41,
+      "NA_blocks": 0,
+      "same_estimable_set": true
+    },
+    {
+      "dataset": "tulu",
+      "pool": "local",
+      "complete_pair_blocks": 227,
+      "NA_blocks": 29,
+      "same_estimable_set": true
+    },
+    {
+      "dataset": "tulu",
+      "pool": "old_tulu",
+      "complete_pair_blocks": 227,
+      "NA_blocks": 29,
+      "same_estimable_set": true
+    }
+  ],
+  "metadata_tables_correction": {
+    "before": 8,
+    "actual_core_tables": 10,
+    "derived_tables": 1
+  },
+  "reference_support_exact_count_corrections": [],
+  "derived_conditional_table": "group_conditional_means.csv; E[X]/P(any low); no resampling",
+  "scope": "no inference, training, cache scan, new hypothesis test, threshold or core metric change"
+}

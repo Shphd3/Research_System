@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-12",
+  "scope": "document/source/arithmetic checks only; no model load, data evaluation, Smoke or remote execution",
+  "design_state": "DRAFT_NOT_EXECUTABLE",
+  "result_state": "NOT_RUN",
+  "human_scientific_approval": "NOT_INFERRED",
+  "checks": {
+    "eight_section_anchors": "PASS",
+    "local_links": "PASS",
+    "math_source_delimiters": "PASS_SOURCE_ONLY_RENDERING_NOT_CHECKED",
+    "parameter_budget_arithmetic": "PASS",
+    "exposure_arithmetic": "PASS",
+    "English_Chinese_key_values": "PASS_STATIC",
+    "implementation_tests": "NOT_RUN",
+    "compute_profile": "NOT_RUN"
+  },
+  "per_rank_parameters": 10240,
+  "parameter_counts": {
+    "S16": {
+      "total": 163840,
+      "shared": 163840,
+      "private_per_mode": 0,
+      "active": 163840
+    },
+    "U8/8": {
+      "total": 163840,
+      "shared": 0,
+      "private_per_mode": 81920,
+      "active": 81920
+    },
+    "H8/4/4": {
+      "total": 163840,
+      "shared": 81920,
+      "private_per_mode": 40960,
+      "active": 122880
+    },
+    "S8": {
+      "total": 81920,
+      "shared": 81920,
+      "private_per_mode": 0,
+      "active": 81920
+    },
+    "S12": {
+      "total": 122880,
+      "shared": 122880,
+      "private_per_mode": 0,
+      "active": 122880
+    }
+  },
+  "planned_updates": {
+    "primary": 240,
+    "terminal": 1200
+  },
+  "targets_per_update": 20,
+  "primary_old_new_targets": [
+    2400,
+    2400
+  ],
+  "terminal_old_new_targets": [
+    12000,
+    12000
+  ],
+  "planned_trajectories": 15,
+  "checked_local_links": 62,
+  "document_sha256": {
+    "problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/subanchors/17_04_02_shared_routed_budget_anchor.md": "41cee861765f23b1c102c71eb4e9afcbb5a1c8f3ce8f6f680d0f40f4da4252ca",
+    "problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/subanchors/17_04_02_shared_routed_budget_anchor_cn.md": "3875ccac14c30b5126649f0504f37880c2656577e24e937d28099cd271ab47a6",
+    "protocol.md": "3d1bbd324eb20bf457d44f6e2b87e9afccf369c6a1808514d654d35df41bfa5b",
+    "protocol_cn.md": "d183e52ac2d67bbb13226c492ce8d97ccda1277dd2acbf907d726d24967d3d97"
+  }
+}

@@ -1,0 +1,5 @@
+# A01 authorization and frozen spectral implementation
+
+Current user explicitly approved acquiring missing real hook vectors and completing PCA statistics. Cap124newforwards=120sameR04documents+4replay/prefix checks. Keep original456ledger unchanged; total580for these stages. Reuse existing resource/native Runner, fixed Base/E16/A22, hooks/gates/precision/batches and original candidate/scale/frequency/random IDs. No task/resource/training/clustering/intervention/TEST. Save raw true-h; never reconstruct a PCA surrogate.
+
+Separate60-document/9600-position pooled-centered FP64PCA bases, no extra standardization, full1024directions split16x64ranks. Dev/holdout projection only. Native unit-decoder full squared/cumulative projections, true variance, document mean difference and2000stratified-document bootstrap(seed2026102806). Existing1000matched IDs unchanged; insufficient matching staysNA. Primary top16x2x16=32background comparisons useBH32, exploratory only. Auxiliary individual squared activation contributions omit cross terms, are not total variance and not normalizedto100%. See amendment.json for exact frozen before-acquisition choices and hashes.

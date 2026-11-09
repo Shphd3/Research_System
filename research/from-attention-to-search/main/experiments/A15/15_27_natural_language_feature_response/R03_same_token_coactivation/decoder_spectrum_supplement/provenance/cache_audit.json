@@ -1,0 +1,1022 @@
+{
+  "schema": "R03_decoder_spectrum_reference_cache_audit_v1",
+  "recorded_at_utc": "2026-10-27T06:43:02.355519+00:00",
+  "processing_agent": "/root/spectrum_cache_audit",
+  "scope": "read-only asset and metadata audit; writes only cache_audit.json and cache_audit_cn.md",
+  "model_forward_calls": 0,
+  "PCA_SVD_runs": 0,
+  "decoder_cosine_runs": 0,
+  "reclustering_runs": 0,
+  "model_or_dictionary_weights_loaded": false,
+  "sealed_TEST_payload_read": false,
+  "current_strict_access": {
+    "schema_version": 1,
+    "checked_at_utc": "2026-10-27T06:42:59.328625+00:00",
+    "context": {
+      "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-gtt26",
+      "real_uid": 0,
+      "effective_uid": 0
+    },
+    "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+    "catalog": "/data/250010109/Research_System/assets/catalog.json",
+    "projects": [
+      {
+        "id": "from-attention-to-search",
+        "title_cn": "当前主研究项目",
+        "category": "project",
+        "projects": [],
+        "access_status": "ACCESSIBLE",
+        "payload_status": "PROJECT_ENTRYPOINTS",
+        "required_access_passed": true,
+        "strict_passed": true,
+        "loading_or_scientific_eligibility": "NOT_CHECKED",
+        "locations": [
+          {
+            "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+            "expected": "directory",
+            "status": "LISTABLE_DIRECTORY",
+            "ok": true,
+            "role": "project_or_storage_root",
+            "required": true,
+            "probes": [
+              {
+                "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 7411,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 8245,
+                "ok": true,
+                "required": true
+              }
+            ],
+            "qualified_access": true
+          }
+        ],
+        "required_for_selection": false
+      },
+      {
+        "id": "moe-router-execution",
+        "title_cn": "实验代码与原始产物执行工作区",
+        "category": "project",
+        "projects": [],
+        "access_status": "ACCESSIBLE",
+        "payload_status": "PROJECT_ENTRYPOINTS",
+        "required_access_passed": true,
+        "strict_passed": true,
+        "loading_or_scientific_eligibility": "NOT_CHECKED",
+        "locations": [
+          {
+            "path": "/data/250010109/MoE_Router",
+            "expected": "directory",
+            "status": "LISTABLE_DIRECTORY",
+            "ok": true,
+            "role": "project_or_storage_root",
+            "required": true,
+            "probes": [],
+            "qualified_access": true
+          }
+        ],
+        "required_for_selection": false
+      }
+    ],
+    "assets": [
+      {
+        "id": "representation_crosscoder_relation_learning_20261015t164000z",
+        "title_cn": "CrossCoder关系/频率/匹配随机固定路由真实NTP缓存",
+        "category": "representation",
+        "projects": [
+          "from-attention-to-search",
+          "moe-router-execution"
+        ],
+        "access_status": "ACCESSIBLE",
+        "payload_status": "ARRAY_FILES_PRESENT",
+        "required_access_passed": true,
+        "strict_passed": true,
+        "loading_or_scientific_eligibility": "NOT_CHECKED",
+        "locations": [
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data",
+            "expected": "directory",
+            "status": "LISTABLE_DIRECTORY",
+            "ok": true,
+            "role": "saved learning cache",
+            "required": true,
+            "probes": [
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/train.pt",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 408963520,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/eval.pt",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 203207471,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/cache_manifest.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 6921,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/train_manifest.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 2904,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/eval_manifest.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 2390,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/route_maps.npz",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 525774,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/prefix_causality.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 2402,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/native_zero_guard.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 535,
+                "ok": true,
+                "required": true
+              }
+            ],
+            "qualified_access": true
+          }
+        ]
+      },
+      {
+        "id": "representation_crosscoder_relation_learning_eval512_20261015t164000z",
+        "title_cn": "CrossCoder关系/频率/匹配随机固定路由真实NTP缓存（512评估contexts版本）",
+        "category": "representation",
+        "projects": [
+          "from-attention-to-search",
+          "moe-router-execution"
+        ],
+        "access_status": "ACCESSIBLE",
+        "payload_status": "ARRAY_FILES_PRESENT",
+        "required_access_passed": true,
+        "strict_passed": true,
+        "loading_or_scientific_eligibility": "NOT_CHECKED",
+        "locations": [
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512",
+            "expected": "directory",
+            "status": "LISTABLE_DIRECTORY",
+            "ok": true,
+            "role": "saved learning cache",
+            "required": true,
+            "probes": [
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/train.pt",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 408963520,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/eval.pt",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 1630452719,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/cache_manifest.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 14111,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/train_manifest.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 2904,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/eval_manifest.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 7788,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/route_maps.npz",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 525774,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/prefix_causality.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 2402,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/native_zero_guard.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 535,
+                "ok": true,
+                "required": true
+              }
+            ],
+            "qualified_access": true
+          }
+        ]
+      },
+      {
+        "id": "analysis_crosscoder_report_spectra_20261016",
+        "title_cn": "截图原报告补充、完整186组频率与学习图重绘、固定14成员贡献及原hidden谱",
+        "category": "representation",
+        "projects": [
+          "from-attention-to-search",
+          "moe-router-execution"
+        ],
+        "access_status": "ACCESSIBLE",
+        "payload_status": "ARRAY_FILES_PRESENT",
+        "required_access_passed": true,
+        "strict_passed": true,
+        "loading_or_scientific_eligibility": "NOT_CHECKED",
+        "locations": [
+          {
+            "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement",
+            "expected": "directory",
+            "status": "LISTABLE_DIRECTORY",
+            "ok": true,
+            "role": "selected derived reading evidence; no model/cache payloads",
+            "required": true,
+            "probes": [
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/report_cn.md",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 15627,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/artifact_manifest.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 16733,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/delivery_checks.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 3838,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/figures/appendix_shuffled_figure3_normalized_spectrum.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 103367,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/figures/appendix_shuffled_figure4_first_direction_share.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 311681,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/figures/figure1_frequency_difference.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 83645,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/figures/figure2_prediction_loss.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 152220,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/figures/figure3_normalized_spectrum.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 103140,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/figures/figure4_first_direction_share.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 311890,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/figures/figure5_raw_hidden_normalized_spectrum.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 122149,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_report_supplement/figures/figure6_raw_hidden_first_direction_share.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 269310,
+                "ok": true,
+                "required": true
+              }
+            ],
+            "qualified_access": true
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_delivery.json",
+            "expected": "file",
+            "status": "READABLE_FILE",
+            "size_bytes": 1012,
+            "ok": true,
+            "role": "actual execution delivery receipt",
+            "required": true,
+            "probes": [],
+            "qualified_access": true
+          }
+        ]
+      },
+      {
+        "id": "analysis_crosscoder_phi_group_input_spectrum_20261016",
+        "title_cn": "冻结φ关系组R/F/N胜组对应真实输入原谱与逐组去中心化PC1剩余谱",
+        "category": "representation",
+        "projects": [
+          "from-attention-to-search",
+          "moe-router-execution"
+        ],
+        "access_status": "ACCESSIBLE",
+        "payload_status": "ARRAY_FILES_PRESENT",
+        "required_access_passed": true,
+        "strict_passed": true,
+        "loading_or_scientific_eligibility": "NOT_CHECKED",
+        "locations": [
+          {
+            "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum",
+            "expected": "directory",
+            "status": "LISTABLE_DIRECTORY",
+            "ok": true,
+            "role": "selected derived reading evidence; no model/cache payloads",
+            "required": true,
+            "probes": [
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum/report_cn.md",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 10625,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum/artifact_manifest.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 10375,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum/delivery_checks.json",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 4464,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum/figures/figure10_phi_residual_first_share.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 161612,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum/figures/figure7_phi_raw_spectrum.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 123854,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum/figures/figure8_phi_raw_first_share.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 170874,
+                "ok": true,
+                "required": true
+              },
+              {
+                "path": "/data/250010109/Research_System/daily_research_reports/1016/crosscoder_phi_input_spectrum/figures/figure9_phi_residual_spectrum.png",
+                "expected": "file",
+                "status": "READABLE_FILE",
+                "size_bytes": 126385,
+                "ok": true,
+                "required": true
+              }
+            ],
+            "qualified_access": true
+          },
+          {
+            "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/delivery_receipt.json",
+            "expected": "file",
+            "status": "READABLE_FILE",
+            "size_bytes": 780,
+            "ok": true,
+            "role": "actual execution delivery receipt",
+            "required": true,
+            "probes": [],
+            "qualified_access": true
+          }
+        ]
+      }
+    ],
+    "selected_required_failures": []
+  },
+  "recommended_reference_for_next_stage": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/train.pt",
+  "matching_hook": {
+    "layer_zero_based": 27,
+    "layer_one_based": 28,
+    "tensor": "Qwen3 block residual-post before final global RMSNorm",
+    "dimension": 1024,
+    "cached_dtype": "torch.bfloat16",
+    "PCA_preprocessing_not_yet_executed": "fit one reference mean and PCA on chosen train hidden; do not reuse saved CrossCoder TRAIN center as empirical PCA center"
+  },
+  "cache_payloads": [
+    {
+      "split": "train",
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/train.pt",
+      "asset_id": "representation_crosscoder_relation_learning_20261015t164000z",
+      "bytes": 408963520,
+      "expected_sha256": "e7ff8530a006749e3811ee1f07f1de35da3cc3fc5fd5c3d78976f134d7c14f97",
+      "fresh_sha256": "e7ff8530a006749e3811ee1f07f1de35da3cc3fc5fd5c3d78976f134d7c14f97",
+      "sha256_matches": true,
+      "hash_seconds": 1.9616487715393305,
+      "tensor_schema": {
+        "hidden": {
+          "shape": [
+            130712,
+            1024
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "target": {
+          "shape": [
+            130712
+          ],
+          "dtype": "torch.int64"
+        },
+        "feature_ptr": {
+          "shape": [
+            130713
+          ],
+          "dtype": "torch.int64"
+        },
+        "feature_ids": {
+          "shape": [
+            33567565
+          ],
+          "dtype": "torch.int32"
+        },
+        "block_id": {
+          "shape": [
+            130712
+          ],
+          "dtype": "torch.int32"
+        },
+        "position_id": {
+          "shape": [
+            130712
+          ],
+          "dtype": "torch.int64"
+        },
+        "low_ids": {
+          "shape": [
+            3916
+          ],
+          "dtype": "torch.int64"
+        },
+        "high_ids": {
+          "shape": [
+            3916
+          ],
+          "dtype": "torch.int64"
+        },
+        "discovery_frequency": {
+          "shape": [
+            16384
+          ],
+          "dtype": "torch.float64"
+        },
+        "frequency_cuts": {
+          "shape": [
+            9
+          ],
+          "dtype": "torch.float64"
+        }
+      },
+      "continuous_latent_z_saved": false,
+      "source_paths": [
+        "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_5_of_10_shard_00000041_processed.bin"
+      ],
+      "source_split": "original CrossCoder TRAIN bins; source files disjoint from structure VAL",
+      "source_identities_recorded": [
+        {
+          "bytes": 448370876,
+          "mtime_ns": 1765876048802258392,
+          "path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_5_of_10_shard_00000041_processed.bin",
+          "sha256": "d17bbe927ea567857c540cb988f7f16ce7bd5fa7528fdbfc1e1b7d854b7853ce"
+        }
+      ],
+      "contexts": 128,
+      "context_ids": [
+        8192,
+        8193,
+        8194,
+        8195,
+        8196,
+        8197,
+        8198,
+        8199,
+        8200,
+        8201,
+        8202,
+        8203,
+        8204,
+        8205,
+        8206,
+        8207,
+        8208,
+        8209,
+        8210,
+        8211,
+        8212,
+        8213,
+        8214,
+        8215,
+        8216,
+        8217,
+        8218,
+        8219,
+        8220,
+        8221,
+        8222,
+        8223,
+        8224,
+        8225,
+        8226,
+        8227,
+        8228,
+        8229,
+        8230,
+        8231,
+        8232,
+        8233,
+        8234,
+        8235,
+        8236,
+        8237,
+        8238,
+        8239,
+        8240,
+        8241,
+        8242,
+        8243,
+        8244,
+        8245,
+        8246,
+        8247,
+        8248,
+        8249,
+        8250,
+        8251,
+        8252,
+        8253,
+        8254,
+        8255,
+        8256,
+        8257,
+        8258,
+        8259,
+        8260,
+        8261,
+        8262,
+        8263,
+        8264,
+        8265,
+        8266,
+        8267,
+        8268,
+        8269,
+        8270,
+        8271,
+        8272,
+        8273,
+        8274,
+        8275,
+        8276,
+        8277,
+        8278,
+        8279,
+        8280,
+        8281,
+        8282,
+        8283,
+        8284,
+        8285,
+        8286,
+        8287,
+        8288,
+        8289,
+        8290,
+        8291,
+        8292,
+        8293,
+        8294,
+        8295,
+        8296,
+        8297,
+        8298,
+        8299,
+        8300,
+        8301,
+        8302,
+        8303,
+        8304,
+        8305,
+        8306,
+        8307,
+        8308,
+        8309,
+        8310,
+        8311,
+        8312,
+        8313,
+        8314,
+        8315,
+        8316,
+        8317,
+        8318,
+        8319
+      ],
+      "hidden_hook": "raw final Qwen3 block residual-post before final norm, BF16",
+      "original_document_independence": "UNKNOWN",
+      "target_field": "next-token ID, not independently verified semantic label"
+    },
+    {
+      "split": "eval",
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/eval.pt",
+      "asset_id": "representation_crosscoder_relation_learning_20261015t164000z",
+      "bytes": 203207471,
+      "expected_sha256": "43715c78f97db1ae50bdfae60a82274445e19dc5e01ff5e25f1f937d10cab004",
+      "fresh_sha256": "43715c78f97db1ae50bdfae60a82274445e19dc5e01ff5e25f1f937d10cab004",
+      "sha256_matches": true,
+      "hash_seconds": 0.96537228487432,
+      "tensor_schema": {
+        "hidden": {
+          "shape": [
+            65402,
+            1024
+          ],
+          "dtype": "torch.bfloat16"
+        },
+        "target": {
+          "shape": [
+            65402
+          ],
+          "dtype": "torch.int64"
+        },
+        "feature_ptr": {
+          "shape": [
+            65403
+          ],
+          "dtype": "torch.int64"
+        },
+        "feature_ids": {
+          "shape": [
+            16416360
+          ],
+          "dtype": "torch.int32"
+        },
+        "block_id": {
+          "shape": [
+            65402
+          ],
+          "dtype": "torch.int32"
+        },
+        "position_id": {
+          "shape": [
+            65402
+          ],
+          "dtype": "torch.int64"
+        },
+        "low_ids": {
+          "shape": [
+            3916
+          ],
+          "dtype": "torch.int64"
+        },
+        "high_ids": {
+          "shape": [
+            3916
+          ],
+          "dtype": "torch.int64"
+        },
+        "discovery_frequency": {
+          "shape": [
+            16384
+          ],
+          "dtype": "torch.float64"
+        },
+        "frequency_cuts": {
+          "shape": [
+            9
+          ],
+          "dtype": "torch.float64"
+        }
+      },
+      "continuous_latent_z_saved": false,
+      "source_paths": [
+        "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin"
+      ],
+      "source_split": "original CrossCoder TRAIN bins; source files disjoint from structure VAL",
+      "source_identities_recorded": [
+        {
+          "bytes": 779698984,
+          "mtime_ns": 1765872985672944516,
+          "path": "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_2_of_10_shard_00000247_processed.bin",
+          "sha256": "759fee238aeee446a0abcd8101d904decb8c256584d03914356caaf01039fa29"
+        }
+      ],
+      "contexts": 64,
+      "context_ids": [
+        117658,
+        117659,
+        117660,
+        117661,
+        117662,
+        117663,
+        117664,
+        117665,
+        117666,
+        117667,
+        117668,
+        117669,
+        117670,
+        117671,
+        117672,
+        117673,
+        117674,
+        117675,
+        117676,
+        117677,
+        117678,
+        117679,
+        117680,
+        117681,
+        117682,
+        117683,
+        117684,
+        117685,
+        117686,
+        117687,
+        117688,
+        117689,
+        117690,
+        117691,
+        117692,
+        117693,
+        117694,
+        117695,
+        117696,
+        117697,
+        117698,
+        117699,
+        117700,
+        117701,
+        117702,
+        117703,
+        117704,
+        117705,
+        117706,
+        117707,
+        117708,
+        117709,
+        117710,
+        117711,
+        117712,
+        117713,
+        117714,
+        117715,
+        117716,
+        117717,
+        117718,
+        117719,
+        117720,
+        117721
+      ],
+      "hidden_hook": "raw final Qwen3 block residual-post before final norm, BF16",
+      "original_document_independence": "UNKNOWN",
+      "target_field": "next-token ID, not independently verified semantic label"
+    }
+  ],
+  "model_binding": {
+    "producer_BASE": "/data/share/Qwen3-0.6B-Base",
+    "producer_CKPT": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+    "known_base_weight_sha256_from_A22_R03_chain": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "known_dictionary_sha256_from_A22_R03_chain": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "direct_Base_weight_sha_in_old_cache_manifest": false,
+    "producer_uses_from_model_not_inspect_model_identity": true,
+    "qualification": "BOUNDED_SOURCE_CHAIN_MATCH; cached raw hook and producer path/code verified, but old cache lacks a separately saved Base-weight hash",
+    "not_claimed": "fresh hash of raw cache does not prove which historic model bytes generated it"
+  },
+  "independence": {
+    "relative_to_R03_graph_reference": "source files disjoint from original structure VAL",
+    "train_vs_eval": "source files and global context IDs disjoint per saved manifests",
+    "relative_to_dictionary_training": "NOT independent; CrossCoder saw learning text during dictionary training",
+    "original_document_or_near_duplicate_independence": "UNKNOWN",
+    "sealed_TEST": "not used; cached train/eval originate from original CrossCoder TRAIN bins"
+  },
+  "activation_values": {
+    "matched_reference_full_gated_positive_events": "feature_ptr and feature_ids present",
+    "continuous_z": "ABSENT",
+    "use_for_activation_weighted_contribution": "R03 own z caches and saved moments can supply controlled-case/finite-reference weights, with source scope explicitly separated; do not invent z for relation-learning cache"
+  },
+  "producer_sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis_tools/relation_learning/data_routes.py",
+      "sha256": "935e0f2c0b7de3788ffe45e6fa0ab8b5c7e0073065aac43c86d6afcfe5f73d98",
+      "lines": [
+        [
+          26,
+          27
+        ],
+        [
+          289,
+          301
+        ],
+        [
+          435,
+          489
+        ]
+      ],
+      "purpose": "fixed model/checkpoint; 14-layer extractor; saves raw[:,-1,:] and CSR events"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/extraction_a16.py",
+      "sha256": "df2931b3b961153331bfc26ad7b879dcffd41981b9f2aa8a88b975e48c7cef94",
+      "lines": [
+        [
+          1,
+          5
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          119,
+          125
+        ],
+        [
+          164,
+          222
+        ]
+      ],
+      "purpose": "residual-post interface and injected-model identity boundary"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/data_source_manifest_final.json",
+      "sha256": "96bafd23694e22cda215f7eb7cc8c2f92b0e38d502a04e8baf63809f83bb45a0",
+      "lines": [],
+      "purpose": "frozen producer source SHA"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/config/source_freeze_R1_6.json",
+      "sha256": "e905abdce5af621a968337b6b4457f1f51a8c1ecffcaf82cb70654b745e3e7d6",
+      "lines": [],
+      "purpose": "pre-cache source freeze"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/config/formal.json",
+      "sha256": "c2d8b038aec7a86f55adc1d54008ee6079cb8ad24592b7d798739cf1df307b65",
+      "lines": [],
+      "purpose": "saved train/eval cache hashes"
+    }
+  ],
+  "legacy_spectra": [
+    {
+      "asset_id": "analysis_crosscoder_report_spectra_20261016",
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_raw_hidden/same_frequency_raw_hidden_spectra.npz",
+      "existing_object": "1119 frequency-defined groups, separately sampled 128 raw-hidden positions/group, centered separately",
+      "saved_keys": [
+        "eigenvalues",
+        "normalized",
+        "sampled_cache_row",
+        "sampled_absolute_position_id",
+        "members"
+      ],
+      "cannot_directly_reuse_as_current_basis": [
+        "No eigenvectors saved",
+        "Not the current R03 groups",
+        "Each group uses different selected input positions and its own mean/basis",
+        "Sample rank <=127 in hidden1024; null directions are sample-rank limitation"
+      ]
+    },
+    {
+      "asset_id": "analysis_crosscoder_phi_group_input_spectrum_20261016",
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/N_input_hidden_spectra.npz",
+      "existing_object": "phi-selected group raw-hidden eigenvalues before/after within-group PC1 removal",
+      "saved_keys": [
+        "group_id",
+        "group_size",
+        "eigenvalues_original",
+        "eigenvalues_residual",
+        "normalized_original",
+        "normalized_residual",
+        "support_qualified",
+        "estimable_original",
+        "estimable_residual",
+        "sampled_cache_row",
+        "sampled_absolute_position_id",
+        "original_trace",
+        "residual_trace",
+        "removed_trace"
+      ],
+      "cannot_directly_reuse_as_current_basis": [
+        "No shared reference eigenvectors saved",
+        "Group-specific sampling and PC1 subtraction differ from proposed same-reference direction projections",
+        "Not current R03 C03 membership"
+      ]
+    }
+  ],
+  "additional_matching_cache": {
+    "asset_id": "representation_crosscoder_relation_learning_eval512_20261015t164000z",
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/eval.pt",
+    "positions": 523136,
+    "contexts": 512,
+    "sha256_recorded": "d37dbcd979067b83bc5088b25c1fbb251fac8e1b98cef8c97bc35d4f58d98e83",
+    "fresh_full_hash_in_this_audit": false,
+    "use_boundary": "already exposed descriptive EVAL; same hook; not fresh semantic holdout"
+  },
+  "conclusion": "Offline centered PCA and fixed decoder projections are feasible using saved layer27 hidden with the stated identity/independence boundaries; no new forward required. Semantic labels require separate qualification."
+}

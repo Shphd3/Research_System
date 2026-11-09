@@ -1,0 +1,114 @@
+{
+  "main_members": {
+    "math": 31,
+    "biology": 24
+  },
+  "broad_shared_token_IDs": 34,
+  "the_summary": [
+    {
+      "feature_group": "math",
+      "target_token_id": 279,
+      "target_string": " the",
+      "level": "local",
+      "members": 31,
+      "matched_document_pairs": 15,
+      "matched_position_pairs": 24,
+      "preferred_minus_other_high_fraction": 0.012186379928315411,
+      "CI_low": 0.004301075268817204,
+      "CI_high": 0.02151433691756272,
+      "native_supported_members": 19,
+      "high_supported_members": 6,
+      "retained_math_positions": 0.2033898305084746,
+      "retained_biology_positions": 0.14035087719298245,
+      "math_source_hosts": 8,
+      "biology_source_hosts": 4,
+      "mean_position_distance": 10.875,
+      "interval_status": "EXPLORATORY_DOC_PAIR_BOOTSTRAP"
+    },
+    {
+      "feature_group": "biology",
+      "target_token_id": 279,
+      "target_string": " the",
+      "level": "local",
+      "members": 24,
+      "matched_document_pairs": 15,
+      "matched_position_pairs": 24,
+      "preferred_minus_other_high_fraction": 0.013888888888888888,
+      "CI_low": 0.0013888888888888887,
+      "CI_high": 0.03055555555555555,
+      "native_supported_members": 11,
+      "high_supported_members": 5,
+      "retained_math_positions": 0.2033898305084746,
+      "retained_biology_positions": 0.14035087719298245,
+      "math_source_hosts": 8,
+      "biology_source_hosts": 4,
+      "mean_position_distance": 10.875,
+      "interval_status": "EXPLORATORY_DOC_PAIR_BOOTSTRAP"
+    },
+    {
+      "feature_group": "math",
+      "target_token_id": 279,
+      "target_string": " the",
+      "level": "source_local",
+      "members": 31,
+      "matched_document_pairs": 6,
+      "matched_position_pairs": 10,
+      "preferred_minus_other_high_fraction": 0.017025089605734765,
+      "CI_low": 0.0026881720430107525,
+      "CI_high": 0.03763440860215054,
+      "native_supported_members": 14,
+      "high_supported_members": 4,
+      "retained_math_positions": 0.0847457627118644,
+      "retained_biology_positions": 0.05847953216374269,
+      "math_source_hosts": 1,
+      "biology_source_hosts": 1,
+      "mean_position_distance": 13.1,
+      "interval_status": "EXPLORATORY_DOC_PAIR_BOOTSTRAP"
+    },
+    {
+      "feature_group": "biology",
+      "target_token_id": 279,
+      "target_string": " the",
+      "level": "source_local",
+      "members": 24,
+      "matched_document_pairs": 6,
+      "matched_position_pairs": 10,
+      "preferred_minus_other_high_fraction": 0.01736111111111111,
+      "CI_low": 0.0,
+      "CI_high": 0.04513888888888889,
+      "native_supported_members": 7,
+      "high_supported_members": 2,
+      "retained_math_positions": 0.0847457627118644,
+      "retained_biology_positions": 0.05847953216374269,
+      "math_source_hosts": 1,
+      "biology_source_hosts": 1,
+      "mean_position_distance": 13.1,
+      "interval_status": "EXPLORATORY_DOC_PAIR_BOOTSTRAP"
+    }
+  ],
+  "predetermined_members": [
+    16271,
+    1391
+  ],
+  "prefix_proposals": 6400,
+  "human_review_status": "PENDING",
+  "annotation_primary_counts": {
+    "domain_terms_objects": 2923,
+    "domain_relations_reasoning": 1011,
+    "general_narration": 2060,
+    "format_quote": 406
+  },
+  "matching_levels": {
+    "local": {
+      "tokens_with_any_pairs": 18,
+      "tokens_with_ge5_docpairs": 5
+    },
+    "source_local": {
+      "tokens_with_any_pairs": 11,
+      "tokens_with_ge5_docpairs": 2
+    }
+  },
+  "source_boundary": "source-controlled pool can have substantial coverage loss; local token/genre/position matching is not a full syntactic or semantic control",
+  "new_model_forwards": 0,
+  "new_training": 0
+}

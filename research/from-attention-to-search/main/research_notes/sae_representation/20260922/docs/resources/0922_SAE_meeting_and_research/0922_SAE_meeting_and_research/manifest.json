@@ -1,0 +1,131 @@
+{
+  "title": "0922 — SAE 几何集中是否选择性保留任务信息：组会与研究整理",
+  "date_label": "2026-09-22",
+  "status": "AI_DRAFT_AWAITING_HUMAN_CONFIRMATION",
+  "new_experiments_executed": false,
+  "repository_changed": false,
+  "primary_materials": [
+    "sources/meeting.md",
+    "sources/Draft(3).pdf",
+    "sources/17B_report_original.md"
+  ],
+  "figure_provenance": {
+    "figures/legacy_loss.png": {
+      "source": "sources/Draft(3).pdf",
+      "page": 3,
+      "role": "training_loss_original"
+    },
+    "figures/legacy_atom_scores.png": {
+      "source": "sources/Draft(3).pdf",
+      "page": 3,
+      "role": "pretruncation_atom_scores_original"
+    },
+    "figures/legacy_variance.png": {
+      "source": "sources/Draft(3).pdf",
+      "page": 4,
+      "role": "variance_summary_original"
+    },
+    "figures/legacy_domain.png": {
+      "source": "sources/Draft(3).pdf",
+      "page": 4,
+      "role": "domain_readout_original"
+    },
+    "figures/legacy_cka.png": {
+      "source": "sources/Draft(3).pdf",
+      "page": 5,
+      "role": "cross_layer_cka_original"
+    }
+  },
+  "files": [
+    {
+      "path": "01_advisor_expectations_cn.md",
+      "bytes": 3729,
+      "sha256": "13046c2687c39cf37a31b2943533771379a1ccbf0bd6c40e118e591aaf79b114"
+    },
+    {
+      "path": "02_meeting_report_cn.md",
+      "bytes": 19925,
+      "sha256": "7541d3324770361eba1ed05ef0b29e713b115463ea0463950162fb4043cdde86"
+    },
+    {
+      "path": "03_research_thinking_and_handoff_cn.md",
+      "bytes": 13288,
+      "sha256": "e81d71c399c5814e661d21bb4476aa0c74ad6b497154ebcb24993f04546d6644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1725,
+      "sha256": "a4cf9f2ab796e2c49433c34d256908f7300a14e5affddce65f500cea1038f0f7"
+    },
+    {
+      "path": "figures/legacy_atom_scores.png",
+      "bytes": 194458,
+      "sha256": "7d828ad631cd7afe01950cf7d40746b3adac5889b719f2f0cba1d537f61aab71"
+    },
+    {
+      "path": "figures/legacy_cka.png",
+      "bytes": 186309,
+      "sha256": "34e544dcacbfe3cccd259bec835593bbba98d84ec3602f2be3508feb503ededa"
+    },
+    {
+      "path": "figures/legacy_domain.png",
+      "bytes": 170260,
+      "sha256": "84ed8753b7c2bb1f3534f4b09f67d91265b0196c9af42428803b4c9ea8ac8cb8"
+    },
+    {
+      "path": "figures/legacy_loss.png",
+      "bytes": 293805,
+      "sha256": "831985ac37d21120e3b3e2abec398ebc3922a445ec1da98be6a469e7e339aaff"
+    },
+    {
+      "path": "figures/legacy_variance.png",
+      "bytes": 156576,
+      "sha256": "141d18f8b546c2ba6fbf20a24e578d2af7c79daa61f8e7bb3c2c4b9d5e5561f7"
+    },
+    {
+      "path": "sources/17B_report_original.md",
+      "bytes": 4949,
+      "sha256": "dd87a02169d6e30ad6902fbeca588a2279aefb55a9f0c2a9e903e54719bb815b"
+    },
+    {
+      "path": "sources/Draft(3).pdf",
+      "bytes": 1550505,
+      "sha256": "2d0799e00d40cc521268c076168806647e969d953bed872635f21c0810eac064"
+    },
+    {
+      "path": "sources/meeting.md",
+      "bytes": 19590,
+      "sha256": "88890a0d58cb292ba8fc52e6cc0ec03ba36859bc265bbc6726a30332505df430"
+    },
+    {
+      "path": "sources/previous_handoff_cn.md",
+      "bytes": 31739,
+      "sha256": "67439374a231b4686794d215d9b9ac7652761f53659f1791fa1736aa6a3d4ecf"
+    },
+    {
+      "path": "sources/previous_plan/0922_Codex_execution_brief_cn.md",
+      "bytes": 11262,
+      "sha256": "f15a27773019156cd282eb7ee4e724177f9f99b4eeade84eee063910a9e440c0"
+    },
+    {
+      "path": "sources/previous_plan/0922_SAE_task_information_plan_cn.md",
+      "bytes": 41816,
+      "sha256": "207c15a20dcca55df712bfa606fdaa0e44dfb232c157394c37269cd5f7ea1743"
+    },
+    {
+      "path": "sources/previous_plan/previous_handoff/0922_SAE研究总结与新对话交接_cn.md",
+      "bytes": 31739,
+      "sha256": "67439374a231b4686794d215d9b9ac7652761f53659f1791fa1736aa6a3d4ecf"
+    },
+    {
+      "path": "sources/previous_plan/previous_handoff/17B训练历史对照_用户提供报告.md",
+      "bytes": 4949,
+      "sha256": "dd87a02169d6e30ad6902fbeca588a2279aefb55a9f0c2a9e903e54719bb815b"
+    },
+    {
+      "path": "sources/previous_plan/previous_handoff/新对话启动说明.txt",
+      "bytes": 2237,
+      "sha256": "13992f3c5f9e627b8558b9b91a3ae1abcc15e0f164f1e0282f7f50ee5b6e5c8d"
+    }
+  ]
+}

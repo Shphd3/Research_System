@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "actual_smoke_states": [
+    500000000,
+    33000000000
+  ],
+  "rows": 256,
+  "dimension": 1024,
+  "covariance_eigenvalue_vs_direct_svd_relative_error": 2.4215305621979117e-15,
+  "numerical_zero_tail_relative_norm": 4.367768419205113e-16,
+  "actual_paired_cka_gram": 0.6342819159366679,
+  "actual_paired_cka_stream": 0.6342819159366668,
+  "cka_formula_absolute_error": 1.1102230246251565e-15,
+  "initial_frozen_sources_verified": 14,
+  "authorized_post_start_current_files_differ": [
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/protocol.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/checkpoint_spectral_dynamics/20261101/protocol_cn.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/checkpoint_spectral_dynamics/anchor.md",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/checkpoint_spectral_dynamics/anchor_cn.md",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/manifest.json",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/calibrate.py",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/metrics.py",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/plot.py",
+    "/data/250010109/MoE_Router/experiments/20261101_dense_checkpoint_spectral_dynamics/scripts/prepare.py"
+  ],
+  "new_forwards": 0,
+  "note": "Implementation identity only;smallsmoke spectrum not scientific large-reference estimate. Initial bytes verified from live or archive;current amendments validated by separate source-freeze audit"
+}

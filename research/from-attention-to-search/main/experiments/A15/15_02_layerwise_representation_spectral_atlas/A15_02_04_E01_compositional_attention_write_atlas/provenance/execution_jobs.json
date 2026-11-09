@@ -1,0 +1,35 @@
+{
+  "resource_profile": "one ACP node, 8x5090 SPOT, n12lp.nn.i10a.8",
+  "jobs": [
+    {
+      "job_id": "om-pbybysxg",
+      "name": "a15-01-07-e01-extract-20260806T182500Z",
+      "role": "full 8704-prompt extraction and consolidation",
+      "state": "SUCCEEDED",
+      "retries": 0,
+      "created_utc": "2026-08-06T18:24:18Z",
+      "completed_utc": "2026-08-06T18:30:11Z"
+    },
+    {
+      "job_id": "om-bj8mm9ot",
+      "name": "a15-01-07-e01-analysis-20260806T183600Z",
+      "role": "36-layer pre/post statistics, bootstrap, nulls, and controls",
+      "state": "FAILED_AFTER_SCIENTIFIC_OUTPUTS_COMPLETE",
+      "retries": 1,
+      "created_utc": "2026-08-06T18:30:43Z",
+      "completed_utc": "2026-08-06T18:38:20Z",
+      "failure": "NumPy int64 JSON serialization after all registered CSV and NPZ statistics had been written"
+    },
+    {
+      "job_id": "om-v4omoym1",
+      "name": "a15-01-07-e01-finalize-20260806T184340Z",
+      "role": "deterministic verdict reconstruction and artifact packaging",
+      "state": "SUCCEEDED",
+      "retries": 0,
+      "created_utc": "2026-08-06T18:43:41Z",
+      "completed_utc": "2026-08-06T18:44:02Z"
+    }
+  ],
+  "scientific_recomputation_after_failure": false,
+  "note": "The repair changed serialization and rendering only. No data, model, split, metric, bootstrap sample, null draw, threshold, or scientific condition changed."
+}

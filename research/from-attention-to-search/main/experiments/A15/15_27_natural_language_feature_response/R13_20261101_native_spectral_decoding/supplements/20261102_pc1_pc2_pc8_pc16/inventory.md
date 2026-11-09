@@ -1,0 +1,3 @@
+# Token-ID membership inventory
+
+Referencecommon means independentTRAIN top1%tokenIDfrequency excluding the inherited Unicodepunctuation/whitespace-onlymask,not awordlist. The referenceuniversecontains1412common non-formatIDs and4547formatIDs. Actualfull-top1members ofnaturalpanel:165commonIDs/386positions,31formatIDs/108positions,andremaining206positions. Full literal rows,decoded whitespace/escapes,tokenIDs,counts and document support: [human-readable inventory](inventory_cn.md),[complete observed membership](evidence/observed_original_top1_IDs_complete.csv),[full reference universe](evidence/reference_group_IDs_complete.csv). Digits,subwords and symbols `$`,` $`,`=`,` =` belong to the original common group; no silent regrouping.

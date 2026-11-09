@@ -1,0 +1,93 @@
+{
+  "id": "A15_27_02_R08",
+  "name_cn": "1029—领域内部与混合表征的主要子空间",
+  "frozen_utc": "2026-10-29T13:13:36.000857+00:00",
+  "owner": {
+    "anchor": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_02_within_mixed_subspaces_anchor.md",
+    "focus": "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_within_mixed_domain_subspaces.md",
+    "protocol": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R08_within_mixed_subspaces_20261029/protocol.md",
+    "execution": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R08_within_mixed_subspaces_20261029"
+  },
+  "parent": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029",
+  "model": "/data/share/Qwen3-0.6B-Base",
+  "checkpoint": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+  "layers": [
+    1,
+    13,
+    27
+  ],
+  "cc_layers": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+  ],
+  "hook": "model.layers[l] forward output residual-post, zero-based; before final model.norm",
+  "k": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "dtype": "native BF16 LM and A22 GEMM; captured FP32; analysis FP64",
+  "n_inputs": 384,
+  "max_new_forwards": 384,
+  "checks": "All 384 final targets compared to R07 saved vectors; no extra texts or replay forward. First two targets check native CC forward vs existing threshold formula offline.",
+  "pca": {
+    "fit": "discovery only, domain-centered math/bio, pooled-centered mixture; sample denominator n; equal families, versions, domains",
+    "rank": "singular value > smax*max(n,1024)*float64_eps",
+    "max_saved_basis": 32,
+    "whitening": false,
+    "standardization": false
+  },
+  "resampling": {
+    "split_repeats": 200,
+    "split_seed": 2026102908,
+    "bootstrap_repeats": 200,
+    "bootstrap_seed": 2026102909,
+    "random_space_repeats": 200,
+    "random_seed": 2026102910,
+    "unit": "family; all domain/wording/ending rows travel together",
+    "interval": "split 2.5–97.5 percentiles describe partition sensitivity, not independent sampling CI; family-bootstrap refits yield pointwise 95% intervals",
+    "cross_split": "math A vs biology B and math B vs biology A averaged; same disjoint family halves as same-domain comparisons"
+  },
+  "umap": {
+    "metric": "cosine",
+    "n_neighbors": 15,
+    "min_dist": 0.1,
+    "random_states": [
+      42,
+      17,
+      73
+    ],
+    "transform_seed": 42,
+    "n_components": 2,
+    "n_epochs": 500,
+    "n_jobs": 1,
+    "fit": "discovery only; development and exposed heldout transformed separately",
+    "zero": "exclude only nonfinite or zero-norm vectors, retain index and reason"
+  },
+  "inference": "same existing local resource and padded1x256 as R07; native A22 normalized 14-layer inputs padded to encoder batch1024, learned threshold unchanged; no new tasks/resources/training",
+  "ending_controls": [
+    "all",
+    "E0",
+    "E1"
+  ],
+  "decision": "continuous exploratory estimates, no invented universal overlap threshold or formal significance tests. Large same-domain variability prevents a confident different-space claim. Report full-sample and matched-half results separately; no equivalence claim from overlap of intervals.",
+  "authorization": "Explicit current user task authorizes new PCA/UMAP fits and necessary fixed-text forward supplementation. No LM/dictionary/classifier/router training or feature clustering.",
+  "input_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/forward/target_vectors.npz": "37965371e88ce554b5b1fe9fce27721cca11ee693e00734cd0e80234172e6b19",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R08_within_mixed_subspaces_20261029/data/panel.jsonl": "9322ceaf811ba08cde00179ba461af7505720c618489c1652a0980cdec73ac83",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628"
+  }
+}

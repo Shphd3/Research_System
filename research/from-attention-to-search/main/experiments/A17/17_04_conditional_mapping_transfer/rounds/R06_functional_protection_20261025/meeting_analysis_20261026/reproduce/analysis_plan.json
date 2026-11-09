@@ -1,0 +1,30 @@
+{
+  "prepared_utc": "2026-10-26T01:01:42.040798+00:00",
+  "analysis_deadline_utc": "2026-10-26T01:40:00+00:00",
+  "delivery_target_utc": "2026-10-26T02:00:00+00:00",
+  "new_training": false,
+  "TEST_opened": false,
+  "main_conditions": [
+    [
+      "U",
+      0
+    ],
+    [
+      "F",
+      0
+    ],
+    [
+      "U",
+      4
+    ],
+    [
+      "F",
+      4
+    ]
+  ],
+  "rule_counterfactual": "paired old/reversed label targets, independently validated against first/middle/last IDs and generator; never inferred from predictions",
+  "denominators": "800old questions perrun;400perpanel; command200perpanel; modepair is same list+command; same-target excluded from confusion only and counted separately",
+  "numeric_audit": "tau_ideal=max(1e-10,abs(g_dot_candidate)*1e-5), inherited recorded ideal-displacement audit tolerance. tau_round=sqrt(probe_g2)*filter_roundoff_norm by Cauchy-Schwarz; tau_final=tau_ideal+tau_round+fp64 dot-reduction rounding bound. Descriptive posthoc measurement tolerance, not a new preregistered gate. Record exact raw signs too. Loss sign has no empirical repeat/no-op noise calibration; do not call tiny positivechanges statistically significant.",
+  "representation_decision": "only if stable behavioral pattern and actual available resource before09:40; no requirement to run; saved logits are target CE+argmax only, endpoint margins may require new forward",
+  "sources": "36completed trajectories, fixed eval points, raw step JSON; retain frozen scientific protocol and primary endpoint"
+}

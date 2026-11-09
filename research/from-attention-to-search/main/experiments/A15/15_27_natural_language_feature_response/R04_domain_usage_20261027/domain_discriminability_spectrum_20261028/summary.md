@@ -1,0 +1,11 @@
+# R04 completed supplement: domain-discriminating features in frequency and common spectra
+
+Both native true-hook PCAs, complete16-band projections, reused-holdout checks and estimable matched spectral comparisons are complete. The authorized amendment used120same-document forwards+4checks=124/124; all native latent replays exactly match original R04. Original456forwards remain unchanged, cumulative580for these two stages. No LM/dictionary training, clustering, interventions, new task/resource or TEST.
+
+Retain original shared32/math16/bio16; expand discovery-only directional ranking to64per domain per dictionary and freeze global top16. This differs from original rate-ratio>=2selection. All new analyses reuse previously discussed data and are exploratory. AUROC is the probability of correctly ordering a cross-domain document pair in discovery-fixed direction, with half credit for ties; it is not classification accuracy.
+
+Two recognition updates:
+1. Discriminating members span frequencies; shared members can carry usage differences. SAE f391(.0488%DCLM)and original-shared f16240(48.39%)have heldout AUROC.8625/.8500. The latter appears in all40documents, with math/bio hit fractions72.44%/33.00%, active-document conditional contribution11.89/6.62 and zero-inclusive mean9.58/2.62. Their separate contribution to original combined classifier performance remains unmeasured.
+2. Displayed directions are enriched in the first64PCs versus matched backgrounds, but spectral position alone does not establish discrimination. Top16 mean unit-direction head projections are51.21%SAE/22.43%CC versus matched medians40.11%/9.29%(central95%32.71-46.25%/7.42-12.14%). Reused-holdout domain mean-difference squared length is96.45%/92.16%in those directions while real variance is69.39%/45.29%. These objects differ. Counterexample shared SAE f29506 has96.75%head direction but AUROC.4975; CC f11710 has10.56%head direction yet AUROC.995.
+
+Lexical/source/genre alternatives remain; no causal/function/semantic-level claim. Inadequate matching groups stayNA, including original high-frequency shared cohorts. One next suggestion, not run: independent source/terminology-controlled domain validation with frozen candidates/directions. v1missing-data report/package are historical, not current measurement status.

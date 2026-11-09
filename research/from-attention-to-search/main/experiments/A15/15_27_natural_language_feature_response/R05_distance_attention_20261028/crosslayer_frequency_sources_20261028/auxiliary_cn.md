@@ -1,0 +1,44 @@
+# 辅助图与边界
+
+下面的图与主图使用同样固定成员和文档权重。它们分别回答尺度、一般Attention距离变化或支持敏感性，不新增主检验。
+
+## 原模型空间高关注大小：训练尺度还原
+
+![原模型空间高关注大小：训练尺度还原](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_model_member_contribution.png)
+
+## 中等Attention的高低频成员大小
+
+![中等Attention的高低频成员大小](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_middle_member_contribution.png)
+
+## 原模型空间中等Attention
+
+![原模型空间中等Attention](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_model_middle_member_contribution.png)
+
+## 中频和参考低支持：高Attention
+
+![中频和参考低支持：高Attention](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_other_frequency_members.png)
+
+## 中频和参考低支持：中等Attention
+
+![中频和参考低支持：中等Attention](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_other_frequency_members_middle.png)
+
+## 来源32:192窗口内的高低频大小
+
+![来源32:192窗口内的高低频大小](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_window_member_contribution.png)
+
+## 每位置活跃成员平均贡献：无激活NA
+
+![每位置活跃成员平均贡献：无激活NA](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_active_conditional_norm.png)
+
+## 窗口内五档低频份额
+
+![窗口内五档低频份额](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_window_low_frequency_share.png)
+
+## 窗口内同型主对比：只作敏感性
+
+![窗口内同型主对比：只作敏感性](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_window_primary_type_contrasts.png)
+
+## 原共享z出现率：不随decoder层变化
+
+![原共享z出现率：不随decoder层变化](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/crosslayer_frequency_sources_20261028/figures/aux_shared_z_occurrence.png)
+

@@ -1,0 +1,230 @@
+{
+  "claim_boundary": "Graph-level post-hoc label-specificity and edge-orientation trends only; no registered-teacher verdict change, causal composition, Transformer-layer placement, Router, expert-utility, or task-gain claim.",
+  "edge_population": [
+    {
+      "breadth_positive_edges": 11,
+      "breadth_positive_exact_binomial_p_descriptive": 0.00048828125,
+      "breadth_positive_fraction": 1.0,
+      "breadth_positive_label_permutation_p": 0.9040959040959041,
+      "composite_joint_positive_fraction": 0.75,
+      "composite_positive_breadth_fraction": 1.0,
+      "composite_positive_fine_fraction": 0.75,
+      "eligible_edges": 11,
+      "fine_positive_edges": 9,
+      "fine_positive_exact_binomial_p_descriptive": 0.03271484375,
+      "fine_positive_fraction": 0.8181818181818182,
+      "fine_positive_label_permutation_p": 0.11588411588411589,
+      "graph": "DCLM",
+      "joint_positive_edges": 9,
+      "joint_positive_fraction": 0.8181818181818182,
+      "joint_positive_label_permutation_p": 0.10989010989010989,
+      "median_delta_breadth": 0.17421366688101114,
+      "median_delta_breadth_random_pair_p": 0.7162837162837162,
+      "median_delta_fine_purity": 0.26333257275612454,
+      "median_delta_fine_random_pair_p": 1.0,
+      "unique_composites": 4
+    },
+    {
+      "breadth_positive_edges": 51,
+      "breadth_positive_exact_binomial_p_descriptive": 1.4593881658697683e-12,
+      "breadth_positive_fraction": 0.9444444444444444,
+      "breadth_positive_label_permutation_p": 0.8381618381618382,
+      "composite_joint_positive_fraction": 0.6875,
+      "composite_positive_breadth_fraction": 0.9375,
+      "composite_positive_fine_fraction": 0.6875,
+      "eligible_edges": 54,
+      "fine_positive_edges": 33,
+      "fine_positive_exact_binomial_p_descriptive": 0.06683711768205261,
+      "fine_positive_fraction": 0.6111111111111112,
+      "fine_positive_label_permutation_p": 0.2037962037962038,
+      "graph": "Task proxy",
+      "joint_positive_edges": 33,
+      "joint_positive_fraction": 0.6111111111111112,
+      "joint_positive_label_permutation_p": 0.16183816183816183,
+      "median_delta_breadth": 0.13289902280130295,
+      "median_delta_breadth_random_pair_p": 0.6013986013986014,
+      "median_delta_fine_purity": 0.028342531245008018,
+      "median_delta_fine_random_pair_p": 0.17082917082917082,
+      "unique_composites": 16
+    },
+    {
+      "breadth_positive_edges": 96,
+      "breadth_positive_exact_binomial_p_descriptive": 1.262177448353619e-29,
+      "breadth_positive_fraction": 1.0,
+      "breadth_positive_label_permutation_p": 0.14885114885114886,
+      "composite_joint_positive_fraction": 0.9545454545454546,
+      "composite_positive_breadth_fraction": 1.0,
+      "composite_positive_fine_fraction": 0.9545454545454546,
+      "eligible_edges": 96,
+      "fine_positive_edges": 94,
+      "fine_positive_exact_binomial_p_descriptive": 5.877960376982803e-26,
+      "fine_positive_fraction": 0.9791666666666666,
+      "fine_positive_label_permutation_p": 0.000999000999000999,
+      "graph": "M2D2",
+      "joint_positive_edges": 94,
+      "joint_positive_fraction": 0.9791666666666666,
+      "joint_positive_label_permutation_p": 0.000999000999000999,
+      "median_delta_breadth": 0.11833013406612058,
+      "median_delta_breadth_random_pair_p": 0.26873126873126874,
+      "median_delta_fine_purity": 0.1459153543307087,
+      "median_delta_fine_random_pair_p": 0.22377622377622378,
+      "unique_composites": 22
+    }
+  ],
+  "eligibility": "POST_HOC_DIAGNOSTIC",
+  "iterations": 1000,
+  "minimum_support_both_splits": 30,
+  "node_counts": {
+    "DCLM": {
+      "all": 53,
+      "eligible": 32,
+      "eligible_by_depth": {
+        "0": 27,
+        "1": 5,
+        "2": 0
+      }
+    },
+    "M2D2": {
+      "all": 75,
+      "eligible": 72,
+      "eligible_by_depth": {
+        "0": 38,
+        "1": 29,
+        "2": 5
+      }
+    },
+    "Task proxy": {
+      "all": 113,
+      "eligible": 78,
+      "eligible_by_depth": {
+        "0": 49,
+        "1": 29
+      }
+    }
+  },
+  "seed": 2604,
+  "source_run": "runs/full-20260904T042013Z",
+  "spearman": [
+    {
+      "graph": "DCLM",
+      "metric": "coarse_purity",
+      "null_rho_median": -0.02343513107457428,
+      "null_rho_q025": -0.5138951685736041,
+      "null_rho_q975": 0.44805727716875027,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.02197802197802198,
+      "rho": 0.483976281227105
+    },
+    {
+      "graph": "DCLM",
+      "metric": "fine_purity",
+      "null_rho_median": 0.014380689589781857,
+      "null_rho_q025": -0.4331675017104569,
+      "null_rho_q975": 0.45859327814796697,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.06493506493506493,
+      "rho": 0.35912951944477506
+    },
+    {
+      "graph": "DCLM",
+      "metric": "coarse_role",
+      "null_rho_median": 0.15555863527497038,
+      "null_rho_q025": -0.24516603633310463,
+      "null_rho_q975": 0.5331338189718652,
+      "one_sided_direction": "less",
+      "permutation_p": 0.961038961038961,
+      "rho": 0.4902261388716254
+    },
+    {
+      "graph": "DCLM",
+      "metric": "fine_role",
+      "null_rho_median": 0.12164856011914117,
+      "null_rho_q025": -0.18433375453644366,
+      "null_rho_q975": 0.553001263609331,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.0696969696969697,
+      "rho": 0.4625488246655321
+    },
+    {
+      "graph": "Task proxy",
+      "metric": "coarse_purity",
+      "null_rho_median": 0.0002951059642270019,
+      "null_rho_q025": -0.2759919632245038,
+      "null_rho_q975": 0.26782960508651926,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.000999000999000999,
+      "rho": 0.4473948530320834
+    },
+    {
+      "graph": "Task proxy",
+      "metric": "fine_purity",
+      "null_rho_median": 0.0014776301146155486,
+      "null_rho_q025": -0.26496092308870883,
+      "null_rho_q975": 0.2532468404539909,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.03796203796203796,
+      "rho": 0.23869873086575297
+    },
+    {
+      "graph": "Task proxy",
+      "metric": "coarse_role",
+      "null_rho_median": 0.15101336493348505,
+      "null_rho_q025": -0.09460906389847921,
+      "null_rho_q975": 0.3756411118766122,
+      "one_sided_direction": "less",
+      "permutation_p": 0.999000999000999,
+      "rho": 0.47659459718928754
+    },
+    {
+      "graph": "Task proxy",
+      "metric": "fine_role",
+      "null_rho_median": 0.09449731393398939,
+      "null_rho_q025": -0.13837607825299306,
+      "null_rho_q975": 0.32117642338456565,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.026973026973026972,
+      "rho": 0.31703573157117176
+    },
+    {
+      "graph": "M2D2",
+      "metric": "coarse_purity",
+      "null_rho_median": -0.0017611327051173403,
+      "null_rho_q025": -0.3435511811393883,
+      "null_rho_q975": 0.35035145865225387,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.000999000999000999,
+      "rho": 0.5114341788081872
+    },
+    {
+      "graph": "M2D2",
+      "metric": "fine_purity",
+      "null_rho_median": -0.006838298436970276,
+      "null_rho_q025": -0.30363889450741677,
+      "null_rho_q975": 0.30220613202846275,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.002997002997002997,
+      "rho": 0.42041752857092707
+    },
+    {
+      "graph": "M2D2",
+      "metric": "coarse_role",
+      "null_rho_median": 0.1867003841551585,
+      "null_rho_q025": -0.13305570403564645,
+      "null_rho_q975": 0.43218792434250347,
+      "one_sided_direction": "less",
+      "permutation_p": 0.9920079920079921,
+      "rho": 0.5033380033005204
+    },
+    {
+      "graph": "M2D2",
+      "metric": "fine_role",
+      "null_rho_median": 0.12626895545058492,
+      "null_rho_q025": -0.12760230326685154,
+      "null_rho_q975": 0.3666474567031918,
+      "one_sided_direction": "greater",
+      "permutation_p": 0.000999000999000999,
+      "rho": 0.4745895563952157
+    }
+  ],
+  "status": "COMPLETE"
+}

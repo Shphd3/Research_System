@@ -1,0 +1,5 @@
+# 复现入口
+
+local_dynamics_20261026.py复用原source/engine.py与retention_r05_v1.py的模型、Adam、梯度与投影。plan.json锁定六权重路径、下一批记录与独立旧DEV64条；freeze.json封存运行前源码/配置/协议。原资产SHA前后见original_asset_immutability.json；source_step121_replay_6.csv复放原下一步提案作数值检查。
+
+当前结果已完成，不自动重复运行。完整逐题loss与2880逐步日志仍在执行侧analysis/local_dynamics_20261026/tables，轻量CSV与源码回执在本目录。没有新训练终点权重。实际前向11424序列，剩余576不继续使用。

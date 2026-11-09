@@ -1,0 +1,34 @@
+{
+  "UTC": "2026-11-04T07:21:58.891223+00:00",
+  "audits": [
+    {
+      "kind": "scientific_identification",
+      "status": "PASS",
+      "question": "distance-associated combination change, no presumed degradation",
+      "rival": "gain/truncation/filler/position",
+      "limits": "p-e-ddependent; no pure causal distance claim",
+      "human_scope": "Current complete-study request; mechanism acceptanceUnknown"
+    },
+    {
+      "kind": "data_statistics",
+      "status": "PASS",
+      "families": 24,
+      "primary12": true,
+      "exposure": "oldheldoutalreadyexposed",
+      "unit": "wholefamily",
+      "multiplicity": 6,
+      "frequency": "fixedindependentreference;discoveryonlytaskopportunity"
+    },
+    {
+      "kind": "implementation_numerics",
+      "status": "PASS_BEFORE_SMOKE",
+      "parameters_trainable": 0,
+      "optimizer": false,
+      "hashes": "sourceweights/currentstrictchecks",
+      "smoke": "exactnativecode,no-op,lanes,oldreplay",
+      "resume": "per-rowatomicrecords",
+      "runtime": "samecurrentCPUcontainer;2threads,1800s/stage"
+    }
+  ],
+  "scientific_acceptance": "Unknown"
+}

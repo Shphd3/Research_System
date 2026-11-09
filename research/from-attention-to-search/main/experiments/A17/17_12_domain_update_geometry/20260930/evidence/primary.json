@@ -1,0 +1,59 @@
+{
+  "Q": -0.0057154420108822546,
+  "baseline_mse": 107.37035030978491,
+  "domain_mse": 107.98401932066861,
+  "Q_CI95": [
+    -0.014057783966064368,
+    -0.00969384476051849
+  ],
+  "permutation_p": 0.022,
+  "permutation_quantiles": [
+    -0.006542981077396481,
+    -0.006045093355256714,
+    -0.00578232316779046,
+    -0.005536228123794951
+  ],
+  "status": "NON_SUPPORT",
+  "inference_scope": "conditional stratified-record replication; unknown paper dependence and historical exposure",
+  "zero_norm_records": 0,
+  "primary_object": "last raw gradient",
+  "secondary": {
+    "last_unit": {
+      "Q": -0.005532754531126338,
+      "baseline_mse": 0.9999599009850816,
+      "domain_mse": 1.0054924336582014,
+      "Q_CI95": [
+        -0.012362117593704203,
+        -0.010249182949255371
+      ],
+      "status": "NON_SUPPORT",
+      "inference_scope": "conditional stratified-record replication; unknown paper dependence and historical exposure",
+      "zero_norm_records": 0
+    },
+    "mean16": {
+      "Q": -0.005060451870288363,
+      "baseline_mse": 6.4273364634424945,
+      "domain_mse": 6.459861690269895,
+      "Q_CI95": [
+        -0.011920241466763976,
+        -0.009531938792772683
+      ],
+      "status": "NON_SUPPORT",
+      "inference_scope": "conditional stratified-record replication; unknown paper dependence and historical exposure",
+      "zero_norm_records": 0
+    },
+    "mean16_unit": {
+      "Q": -0.005181628608456501,
+      "baseline_mse": 1.0007667028330085,
+      "domain_mse": 1.0059523042107987,
+      "Q_CI95": [
+        -0.011956042603020033,
+        -0.00998500068792027
+      ],
+      "status": "NON_SUPPORT",
+      "inference_scope": "conditional stratified-record replication; unknown paper dependence and historical exposure",
+      "zero_norm_records": 0
+    }
+  },
+  "scientific_human_judgment": "Unknown"
+}

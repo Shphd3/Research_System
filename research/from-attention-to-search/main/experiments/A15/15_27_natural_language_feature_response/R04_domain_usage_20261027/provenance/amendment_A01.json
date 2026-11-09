@@ -1,0 +1,20 @@
+{
+  "amendment_id": "R04_A01_NATIVE_SAE_AND_JOINT_CC",
+  "time_utc": "2026-10-27T15:32:14.674864+00:00",
+  "processing_agent": "/root",
+  "approval": "User explicitly selected E16 last-block local SAE as primary and native joint A22 z plus last-layer decoder contribution as second analysis; same texts, independent discovery selection and validation; no third readout; aggregate512 forwards",
+  "before": "A22 last-layer-only trained encoder required; dependent experiments stopped at0/512",
+  "after": {
+    "SAE_primary": "E16 block27 MLP input after post_attention_layernorm; native FP32 ReLUTop32; a=z*||native decoder column||",
+    "CrossCoder_secondary": "A22 block1,3,...27 residual-post joint input; TRAIN normalization; native BF16 GEMM and saved threshold; shared z activation; a27=z*TRAIN_RMS27*||decoder27||",
+    "separate_coordinates": true,
+    "no_branch_only_encoding": true
+  },
+  "before_any_R04_model_output": true,
+  "data_and_statistics": "original120documents+72controlled sequences, source/split/selection/validation rules retained;512 aggregate calls, one Base forward may supply both native hooks",
+  "counters_at_amendment": {
+    "new_sequence_forwards": 0,
+    "remaining": 512
+  },
+  "boundary": "Two readouts differ in hook, dictionary and training; their differences cannot isolate architecture quality or demonstrate layer-independent CC activation."
+}

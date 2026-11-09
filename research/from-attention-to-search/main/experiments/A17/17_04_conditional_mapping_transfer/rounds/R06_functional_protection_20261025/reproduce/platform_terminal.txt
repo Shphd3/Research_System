@@ -1,0 +1,102 @@
+{
+    "async_checkpoint": {
+        "max_ckpt_rounds": 0
+    },
+    "complete_time": "2026-10-25T18:15:33Z",
+    "create_time": "2026-10-25T17:49:24Z",
+    "display_name": "a17-r06-functional-20261025",
+    "env": [],
+    "fault_tolerance": {
+        "backoff_limit": 0,
+        "rules": []
+    },
+    "fine_tuning_specs": "",
+    "framework": "PYTORCH",
+    "id": "/subscriptions/0197ee17-b6eb-7846-b2b4-a77c5f509b92/resourceGroups/default/zones/cn-sh-01z/workspaces/share-space/trainingJobs/pt-f2wnbino",
+    "lme": {
+        "current_retries": 0,
+        "enable_checker": false,
+        "enable_health_monitor": false,
+        "enable_warmingup": false,
+        "max_retries": 0
+    },
+    "metadata": null,
+    "mount": [
+        {
+            "access_mode": "VOLUME_ACCESS_MODE_UNSPECIFIED",
+            "endpoint": "",
+            "id": "01995892-d478-76d8-aec7-13fd8284477e",
+            "metadata": null,
+            "mount_options": "",
+            "mount_path": "/data",
+            "name": "",
+            "region": "",
+            "subdir": "",
+            "type": "PV_AFS",
+            "zone": "cn-sh-01g"
+        }
+    ],
+    "name": "pt-f2wnbino",
+    "ownership": {
+        "requestor_id": "",
+        "tenant_id": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+        "user_id": "019952d2-3447-7608-a4a9-a943eb912b73",
+        "user_name": "250010109"
+    },
+    "resource_group_name": "default",
+    "resource_pool": {
+        "display_name": "computing_cluster",
+        "name": "share-cluster",
+        "vpc_id": "0198a254-1d71-7211-9a41-d5783abfe9aa",
+        "zone": "cn-sh-01g"
+    },
+    "roles": [
+        {
+            "image_path": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+            "name": "Worker",
+            "resource_spec": [
+                {
+                    "description": "1XN6lS-80GB",
+                    "limits": {
+                        "cpu": "22",
+                        "device": "1",
+                        "memory": "240",
+                        "nvidia.com/gpu": "1"
+                    },
+                    "name": "n6ls.iu.i40.1",
+                    "replicas": 1,
+                    "requests": {
+                        "cpu": "22",
+                        "device": "1",
+                        "memory": "240",
+                        "nvidia.com/gpu": "1"
+                    }
+                }
+            ],
+            "startup_script": "set -euo pipefail; cd /data/250010109/MoE_Router/experiments/20261025_a17_functional_protection; export RESOURCE_PROFILE=h100-1-reserved; export IMAGE_ID=shphd-lite-0911; export IMAGE_URL=registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423; mkdir -p /data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/acp_receipts/pod; POD_LOG=/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/acp_receipts/pod/a17-r06-functional-20261025-$(date -u +%Y%m%dT%H%M%SZ).log; echo \"[env] profile=h100-1-reserved image=shphd-lite-0911 host=$(hostname)\" | tee \"$POD_LOG\"; { bash ops/run.sh ; } 2\u003e\u00261 | tee -a \"$POD_LOG\"; echo \"[pod] full output: $POD_LOG\"",
+            "total_replicas": 1
+        }
+    ],
+    "root_mapping": false,
+    "scheduling": {
+        "priority": "NORMAL",
+        "quota_type": "RESERVED",
+        "scoring_strategy": {
+            "type": "LEAST_ALLOCATED"
+        }
+    },
+    "ssh": {
+        "auto_key_setup": false,
+        "config_mount_path": ""
+    },
+    "start_time": "2026-10-25T17:49:34Z",
+    "state": "SUCCEEDED",
+    "subscription_name": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+    "tensorboard": {
+        "log_path": ""
+    },
+    "uid": "8403c5affbf741d0865e22ed5a12c40a",
+    "update_time": "2026-10-25T18:16:44.224237Z",
+    "workspace_name": "share-space",
+    "zone": "cn-sh-01z"
+}

@@ -1,0 +1,135 @@
+{
+  "created_at_utc": "2026-10-19T05:26:59.650463+00:00",
+  "renderer": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/code/plot.py",
+  "renderer_sha256": "3f397b0031221cd873c8c176fd53914de6c9b57ad440dab01554002e37522a6e",
+  "source_tables": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/layer_metrics.csv",
+      "bytes": 12950,
+      "sha256": "fa4a6b699178cd995071c007606ed22856ff948bf93a1a8aa19578b053a21207"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/block_stability.csv",
+      "bytes": 11350,
+      "sha256": "f241a87571087fc8916c233265e3c77b8ae7022df46b9457335f99cfcc4a16c5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/groups.csv",
+      "bytes": 116074,
+      "sha256": "265b043becee3ed9ecacd39d1da5a6f49d2342b4c320f6b21ec2f1ef038b96f9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/binary_metrics.csv",
+      "bytes": 699,
+      "sha256": "ce47ab2ba318691671b02f616fea0d5ad9e244df3f6f8be416989a83546f9e9b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/feature_token_correspondence.csv",
+      "bytes": 1727763,
+      "sha256": "456cfbc24d7efd74128a1ec5958997fe248434d1d0f44a1a43a3530adb7e94d6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/feature_correspondence_summary.csv",
+      "bytes": 246,
+      "sha256": "45e6d2fb224896274353df008a54ce6c772b28cc22a27b596220c13772c114e7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/tables/members.csv",
+      "bytes": 553,
+      "sha256": "fe930bb2a4f3f7c637b8b0aa03bca6765e8b29ff3ae6c76c435a19dabc3b53aa"
+    }
+  ],
+  "primary_pool": "local",
+  "other_pools": "retained in source tables; not included in primary figures",
+  "formats": [
+    "png",
+    "pdf",
+    "svg"
+  ],
+  "outputs": [
+    {
+      "figure": "figure3_binary_contribution",
+      "paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure3_binary_contribution.png",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure3_binary_contribution.pdf",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure3_binary_contribution.svg"
+      ]
+    },
+    {
+      "figure": "figure4_feature_level_correspondence",
+      "paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure4_feature_level_correspondence.png",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure4_feature_level_correspondence.pdf",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure4_feature_level_correspondence.svg"
+      ]
+    }
+  ],
+  "all_available_outputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure1_layer_correlations.pdf",
+      "bytes": 20929,
+      "sha256": "49620a8653aa863720862bb0b6b27c8efe8efb3e9ac59ae5f4e81ff1816f83e4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure1_layer_correlations.png",
+      "bytes": 149546,
+      "sha256": "eace6ec6f36cd12cd6b4de9b55b12c54c9415c5fa920df1497b24453625fe351"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure1_layer_correlations.svg",
+      "bytes": 58110,
+      "sha256": "3937747ebc02f5b323a4e0b020e5339ee25d0bedfb7d8a9cc05571e7088fea89"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure2_r28_token_band.pdf",
+      "bytes": 21354,
+      "sha256": "3585e0a3cf1160516d800e4da4bfd439b08545a3c3151463f61d1b81fbce5e64"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure2_r28_token_band.png",
+      "bytes": 147427,
+      "sha256": "0a4631cd81766509a96cba6d7512759fff8a46ef63ffe5b176abea90c11fab57"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure2_r28_token_band.svg",
+      "bytes": 35877,
+      "sha256": "455ab63f43f1291ba380740a4c102a529f619c5b731a4ea23e6bd21e2be165f8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure3_binary_contribution.pdf",
+      "bytes": 21889,
+      "sha256": "c057656a79f36f686a3bfdd4377f6a999c1165d87f80086bce0ccdea4a86f626"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure3_binary_contribution.png",
+      "bytes": 199516,
+      "sha256": "7ee971a16c50886982b2cbfee9eb3d372b2b995fa4416fffad9c004c0658fd8f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure3_binary_contribution.svg",
+      "bytes": 50346,
+      "sha256": "5b997afe93ec2a6ebe2da9d9c0a09a7d5c34191cb9b6ae6cd85ffa8764c71b41"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure4_feature_level_correspondence.pdf",
+      "bytes": 200686,
+      "sha256": "cf5363352e61c552f310d0d209186c9348c473d360c21559555a3ab5a3b223c1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure4_feature_level_correspondence.png",
+      "bytes": 551277,
+      "sha256": "879b6492a95a6d1b16ee3301cd67391e1feb7d08b6535df8fe15a4fd825c6803"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/token_feature_layer_validation/20261019T_validation/figures/figure4_feature_level_correspondence.svg",
+      "bytes": 387047,
+      "sha256": "6aa9368875a709473f0bcf740a0aa7a8665c3dc00a98ade8be2b6254d1b89cfa"
+    }
+  ],
+  "missing_values": "NaN shown as NA/gray or line gaps; no zero imputation",
+  "computation_scope": "render existing table values only; no model inference or statistical estimation",
+  "group_binary_selection": "layer=28, band=1 rows; owner confirmed these fields repeat across layer/band",
+  "correlation_predictor": "token rarity = -log10(current-token discovery/TRAIN frequency)",
+  "feature_figure": "all features with positive reference frequency and at least20 known-frequency eval hits; supplied equal-feature rho",
+  "render_selection": "figure3and4"
+}

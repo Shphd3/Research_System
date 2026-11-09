@@ -1,0 +1,29 @@
+{
+  "status": "REGISTERED_ACCESS_PASS",
+  "time_utc": "2026-10-20T02:05:52.452242+00:00",
+  "asset_ids": [
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_f_seed11",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_f_seed22",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_h_seed11",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_h_seed22",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_r_f_seed11",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_r_f_seed22",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_r_h_seed11",
+    "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_r_h_seed22",
+    "checkpoint_crosscoder_frequency_composition_smoke_20261019t164834z",
+    "analysis_crosscoder_frequency_composition_common_path_20261019t164834z"
+  ],
+  "checkpoint_families": 8,
+  "engineering_smoke_states": 1,
+  "analyses": 1,
+  "catalog_before_sha256": "f6a7afab4211ef872bf74899fbfb5c9745556ea1d7cd3529d607924f069744aa",
+  "catalog_after_sha256": "644f62f35a5c6d9333bf1da90c6985d57d9bf3d3a3466c35e067230e2d9bd8d9",
+  "all_previous_entries_preserved": true,
+  "access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-20_020552_frequency_composition_outputs.json",
+  "strict_exit_code": 0,
+  "stdout": "Checked: 2026-10-20T02:05:52.338548+00:00 ; context UID: 0\nfrom-attention-to-search\tACCESSIBLE\tPROJECT_ENTRYPOINTS\ncheckpoint_family_crosscoder_frequency_composition_20261019t164834z_t_f_seed11\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_crosscoder_frequency_composition_20261019t164834z_t_f_seed22\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_crosscoder_frequency_composition_20261019t164834z_t_h_seed11\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_crosscoder_frequency_composition_20261019t164834z_t_h_seed22\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_crosscoder_frequency_composition_20261019t164834z_r_f_seed11\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_crosscoder_frequency_composition_20261019t164834z_r_f_seed22\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_crosscoder_frequency_composition_20261019t164834z_r_h_seed11\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_family_crosscoder_frequency_composition_20261019t164834z_r_h_seed22\tACCESSIBLE\tMODEL_STATE_PRESENT\ncheckpoint_crosscoder_frequency_composition_smoke_20261019t164834z\tACCESSIBLE\tMODEL_STATE_PRESENT\nanalysis_crosscoder_frequency_composition_common_path_20261019t164834z\tACCESSIBLE\tARRAY_FILES_PRESENT\nRead access does not certify loadability, identity or scientific eligibility.\n",
+  "stderr": "",
+  "final_receipt_sha256": "7fc945ac2ecaca971c9097fa13e1fe8fd4b5ffe53fb977be177bfc56e6ffff31",
+  "formal_resume": "SAVED_NOT_REPLAYED; shared smoke next-update exact",
+  "current_check": "lightweight physical access only; no new tensor loads, GPU, training, GB hashing or science approval"
+}

@@ -1,0 +1,197 @@
+{
+  "flow": {
+    "universe": 16384,
+    "positive_any_discovery": 13997,
+    "support_qualified": 10076,
+    "rejected_no_discovery_activation": 2387,
+    "rejected_positive_but_under5_each": 3921,
+    "eligible_auc_ties": 17
+  },
+  "main_sizes": {
+    "math": 433,
+    "biology": 527
+  },
+  "heldout_interval_supported": {
+    "math": 357,
+    "biology": 431
+  },
+  "reference_positions": 65536,
+  "zero_norm_all": 0,
+  "new_forwards": 0,
+  "training_updates": 0,
+  "geometry": {
+    "rank": 1024,
+    "reuse_R04_R07_identical_basis": true,
+    "independent_reference_status": "MISSING: R07 is same corpus, R08 target-only PCA is ineligible as replacement",
+    "overlap_pc": 0.9492561166458326,
+    "overlap_band": 0.9685873816075694,
+    "overlap_pc_bg95": [
+      0.9466314237307063,
+      0.9576353077743067
+    ],
+    "overlap_band_bg95": [
+      0.9624143493233667,
+      0.983450071706496
+    ],
+    "PC2_64_overlap_renormalized": 0.9191716343951716,
+    "PC2_64_bg95": [
+      0.9311350059562863,
+      0.9563736566034827
+    ],
+    "groups": {
+      "math": {
+        "n": 433,
+        "head_mean": 0.100294906267459,
+        "head_median": 0.06838536241395693,
+        "PC1_mean": 0.0005292197045611474,
+        "PC2_64_mean": 0.09976568656289786,
+        "head_background95": [
+          0.0910936002787134,
+          0.10212728609643333
+        ],
+        "PC1_background95": [
+          0.0006290642193510036,
+          0.0027875000193003613
+        ],
+        "PC2_64_background95": [
+          0.08992819172365622,
+          0.10059069307799338
+        ],
+        "background_selected_inclusion_mean": 0.3996581986143187
+      },
+      "biology": {
+        "n": 527,
+        "head_mean": 0.11523838613285109,
+        "head_median": 0.08785890424406698,
+        "PC1_mean": 0.001202638579420491,
+        "PC2_64_mean": 0.1140357475534306,
+        "head_background95": [
+          0.10593956855992388,
+          0.11758107415327056
+        ],
+        "PC1_background95": [
+          0.0009130738624925124,
+          0.0019381762496626558
+        ],
+        "PC2_64_background95": [
+          0.10471538802610397,
+          0.1162265491160852
+        ],
+        "background_selected_inclusion_mean": 0.4053263757115749
+      }
+    },
+    "actual_subspace": {
+      "math_rank": 433,
+      "biology_rank": 527,
+      "trace_overlap": 230.11586789554076,
+      "trace_over_min_rank": 0.5314454223915491,
+      "pair_abs_cosine_mean": 0.025141040653722083,
+      "pair_abs_cosine_max": 0.995651857506628,
+      "interpretation": "dimension-dependent subspace overlap; not spectral-distribution overlap or semantic equivalence"
+    },
+    "background_method": "A01 finer occurrence/support matching; v1 coarse reference preserved separately"
+  },
+  "tokens": {
+    "panel_positions": 19200,
+    "panel_documents": 120,
+    "frequency_count_cuts": [
+      1,
+      2
+    ],
+    "type_counts": [
+      2782,
+      888,
+      1203
+    ],
+    "position_counts": [
+      2782,
+      1776,
+      14642
+    ],
+    "baseline": [
+      0.14489583333333333,
+      0.0925,
+      0.7626041666666666
+    ],
+    "special_positions": 0,
+    "groups": {
+      "math": {
+        "main_members": 433,
+        "usable": 371,
+        "excluded_insufficient": 62,
+        "member_mean_token_bins": [
+          0.1123680156536452,
+          0.08131566260742634,
+          0.8063163217389289
+        ],
+        "member_median_token_bins": [
+          0.09090909090909091,
+          0.06060606060606061,
+          0.8378378378378378
+        ],
+        "spearman_feature_rate_vs_panel_token_count": -0.052164398389848175,
+        "scatter_nonzero_reference_members": 371
+      },
+      "biology": {
+        "main_members": 527,
+        "usable": 472,
+        "excluded_insufficient": 55,
+        "member_mean_token_bins": [
+          0.27077413352367957,
+          0.1363879522168202,
+          0.5928379142595007
+        ],
+        "member_median_token_bins": [
+          0.25,
+          0.13043478260869565,
+          0.6
+        ],
+        "spearman_feature_rate_vs_panel_token_count": -0.38806733236257934,
+        "scatter_nonzero_reference_members": 472
+      }
+    }
+  },
+  "context": {
+    "target_ids": {
+      "0": [
+        3110
+      ],
+      "1": [
+        16148
+      ]
+    },
+    "ending_core_same_all": true,
+    "pure_identity_test": "MISSING / NOT RUN",
+    "groups": {
+      "math": {
+        "context_any": 33,
+        "context_both": 11,
+        "target_suffix_recurrent": 59,
+        "interaction_recurrent": 26,
+        "all_fixed_target_zero": 318,
+        "categories": {
+          "both_or_interaction": 33,
+          "insufficient": 373,
+          "target_suffix_sensitive": 26,
+          "context_response": 1
+        },
+        "main_members": 433
+      },
+      "biology": {
+        "context_any": 21,
+        "context_both": 2,
+        "target_suffix_recurrent": 35,
+        "interaction_recurrent": 19,
+        "all_fixed_target_zero": 471,
+        "categories": {
+          "insufficient": 490,
+          "both_or_interaction": 20,
+          "target_suffix_sensitive": 16,
+          "context_response": 1
+        },
+        "main_members": 527
+      }
+    }
+  },
+  "scientific_acceptance": "Unknown"
+}

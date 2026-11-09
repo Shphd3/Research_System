@@ -1,0 +1,100 @@
+{
+  "status": "EXPLORATORY",
+  "rows": "originalfixed8biasedfeaturesperdictionary",
+  "columns": "actualtokens,mathM1thenbioB1;2blankseparatorcolumns",
+  "metric": "nativecontribution/discoverytokenRMS",
+  "color_range": [
+    0,
+    4
+  ],
+  "target": "orangefinalcolumnoutline",
+  "clue": "yellowdomain-sentencebar",
+  "clipping": {
+    "SAE_F08": {
+      "values_above4": 0,
+      "fixed_features": [
+        8296,
+        9730,
+        26486,
+        13047,
+        12478,
+        28864,
+        13566,
+        11399
+      ],
+      "zero_columns_are_actual_zero": true
+    },
+    "SAE_F09": {
+      "values_above4": 0,
+      "fixed_features": [
+        8296,
+        9730,
+        26486,
+        13047,
+        12478,
+        28864,
+        13566,
+        11399
+      ],
+      "zero_columns_are_actual_zero": true
+    },
+    "SAE_F11": {
+      "values_above4": 4,
+      "fixed_features": [
+        8296,
+        9730,
+        26486,
+        13047,
+        12478,
+        28864,
+        13566,
+        11399
+      ],
+      "zero_columns_are_actual_zero": true
+    },
+    "CC_F08": {
+      "values_above4": 0,
+      "fixed_features": [
+        16195,
+        12030,
+        12960,
+        4797,
+        15457,
+        12630,
+        12314,
+        10013
+      ],
+      "zero_columns_are_actual_zero": true
+    },
+    "CC_F09": {
+      "values_above4": 10,
+      "fixed_features": [
+        16195,
+        12030,
+        12960,
+        4797,
+        15457,
+        12630,
+        12314,
+        10013
+      ],
+      "zero_columns_are_actual_zero": true
+    },
+    "CC_F11": {
+      "values_above4": 1,
+      "fixed_features": [
+        16195,
+        12030,
+        12960,
+        4797,
+        15457,
+        12630,
+        12314,
+        10013
+      ],
+      "zero_columns_are_actual_zero": true
+    }
+  },
+  "source": "display_values.json",
+  "cannot_infer": "semanticpurity,causality,functionalimportance,featureinformationtransfer or newconfirmation"
+}

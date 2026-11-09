@@ -1,0 +1,282 @@
+{
+  "schema": "R03_text_qualification_v1",
+  "status": "PASS",
+  "processing_agent": "/root/r03_panel",
+  "model_calls": 0,
+  "SAE_calls": 0,
+  "n_cases": 12,
+  "n_sequences": 72,
+  "errors": [],
+  "details": [
+    {
+      "case_id": "S01",
+      "relation_type": "word_sense",
+      "token_counts": [
+        85
+      ],
+      "target_positions": [
+        84
+      ],
+      "target_token_ids": [
+        72947
+      ],
+      "near_gaps": [
+        6
+      ],
+      "far_gaps": [
+        50
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N01"
+    },
+    {
+      "case_id": "S02",
+      "relation_type": "word_sense",
+      "token_counts": [
+        85
+      ],
+      "target_positions": [
+        84
+      ],
+      "target_token_ids": [
+        15743
+      ],
+      "near_gaps": [
+        6
+      ],
+      "far_gaps": [
+        52
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N02"
+    },
+    {
+      "case_id": "S03",
+      "relation_type": "word_sense",
+      "token_counts": [
+        86
+      ],
+      "target_positions": [
+        85
+      ],
+      "target_token_ids": [
+        10464
+      ],
+      "near_gaps": [
+        6
+      ],
+      "far_gaps": [
+        54
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N03"
+    },
+    {
+      "case_id": "S04",
+      "relation_type": "word_sense",
+      "token_counts": [
+        84
+      ],
+      "target_positions": [
+        83
+      ],
+      "target_token_ids": [
+        25349
+      ],
+      "near_gaps": [
+        6
+      ],
+      "far_gaps": [
+        52
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N04"
+    },
+    {
+      "case_id": "S05",
+      "relation_type": "word_sense",
+      "token_counts": [
+        84
+      ],
+      "target_positions": [
+        83
+      ],
+      "target_token_ids": [
+        53742
+      ],
+      "near_gaps": [
+        6
+      ],
+      "far_gaps": [
+        52
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N05"
+    },
+    {
+      "case_id": "S06",
+      "relation_type": "word_sense",
+      "token_counts": [
+        87
+      ],
+      "target_positions": [
+        86
+      ],
+      "target_token_ids": [
+        8644
+      ],
+      "near_gaps": [
+        6
+      ],
+      "far_gaps": [
+        54
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N06"
+    },
+    {
+      "case_id": "R01",
+      "relation_type": "person_role",
+      "token_counts": [
+        83
+      ],
+      "target_positions": [
+        82
+      ],
+      "target_token_ids": [
+        572
+      ],
+      "near_gaps": [
+        7
+      ],
+      "far_gaps": [
+        51
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N01"
+    },
+    {
+      "case_id": "R02",
+      "relation_type": "person_role",
+      "token_counts": [
+        87
+      ],
+      "target_positions": [
+        86
+      ],
+      "target_token_ids": [
+        572
+      ],
+      "near_gaps": [
+        7
+      ],
+      "far_gaps": [
+        53
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N02"
+    },
+    {
+      "case_id": "R03",
+      "relation_type": "person_role",
+      "token_counts": [
+        87
+      ],
+      "target_positions": [
+        86
+      ],
+      "target_token_ids": [
+        572
+      ],
+      "near_gaps": [
+        7
+      ],
+      "far_gaps": [
+        55
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N03"
+    },
+    {
+      "case_id": "R04",
+      "relation_type": "person_role",
+      "token_counts": [
+        85
+      ],
+      "target_positions": [
+        84
+      ],
+      "target_token_ids": [
+        572
+      ],
+      "near_gaps": [
+        7
+      ],
+      "far_gaps": [
+        53
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N04"
+    },
+    {
+      "case_id": "R05",
+      "relation_type": "person_role",
+      "token_counts": [
+        86
+      ],
+      "target_positions": [
+        85
+      ],
+      "target_token_ids": [
+        572
+      ],
+      "near_gaps": [
+        7
+      ],
+      "far_gaps": [
+        53
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N05"
+    },
+    {
+      "case_id": "R06",
+      "relation_type": "person_role",
+      "token_counts": [
+        89
+      ],
+      "target_positions": [
+        88
+      ],
+      "target_token_ids": [
+        572
+      ],
+      "near_gaps": [
+        7
+      ],
+      "far_gaps": [
+        55
+      ],
+      "same_last5_all_versions": true,
+      "filler_id": "N06"
+    }
+  ],
+  "text_sha256": "57c1d0358b5128a116128f73514d6d855454bdb689e706c941ed76f6a27e01b9",
+  "cases_sha256": "214c0e38d391738562380127c7d08d914bacc1f4ec9ef3be02ffe1448ac3ca95",
+  "tokenizer_path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "source_status": "controlled constructed text; not unmodified natural corpus",
+  "numerical_prefix_qualification": "NOT_RUN; must pass separate model gate",
+  "budget_boundary": "72planned texts; parent has48remaining model calls; root freezes measured case blocks before forward",
+  "R01_R02_identity_overlap": {
+    "template_family": [],
+    "source_group": [],
+    "entity_group": [],
+    "entities": []
+  },
+  "semantic_novelty_boundary": "The tested relation families are intentionally reused; some target words overlap R01. Source/template/entity metadata and full text are distinct, but this is not proof of independence of all linguistic constructions.",
+  "same_last5_tokens_all_versions": true,
+  "maximum_token_count": 89,
+  "minimum_token_count": 83,
+  "fixed_input_padding_for_model": "right padding to256; padding is not part of visible prefix or distance; actual model qualification belongs to root"
+}

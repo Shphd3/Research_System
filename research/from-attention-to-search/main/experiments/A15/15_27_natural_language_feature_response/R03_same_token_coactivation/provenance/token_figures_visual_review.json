@@ -1,0 +1,63 @@
+{
+  "processing_agent": "/root/r03_names_finish",
+  "actual_pngs_viewed": true,
+  "scientific_records_changed": false,
+  "new_model_calls": 0,
+  "findings": [
+    "Original pooled-max display rule is dominated by first-token contribution peaks; all12 selected feature targets are zero in both cases. This is a limitation of the display ranking,not evidence of absent context response.",
+    "Original O snapshots contain2228–6052edges and are visually dense; arbitrary dictionary-ID circle is labeled.",
+    "Person R01 gives a concrete auxiliary-output counterexample: coordinate cosine0.99655 and B planned-candidate margin-0.875.",
+    "Two A/B heatmaps use identical native-contribution scales; frequency and community indicators are separate."
+  ],
+  "status": "INSPECTED_WITH_NAMED_DISPLAY_LIMITATIONS",
+  "figures": [
+    {
+      "case_id": "S01",
+      "display_feature_ids": [
+        11551,
+        12728,
+        9023,
+        16211,
+        12713,
+        2392,
+        3855,
+        2520,
+        486,
+        10137,
+        10892,
+        4790
+      ],
+      "changed_display_target_features": 0,
+      "full_target_contribution_cosine": 0.921619419947947,
+      "planned_candidate_margins": [
+        5.1875,
+        0.5625
+      ],
+      "png_sha256": "1bf2097e9f87a2396d578e1afc6cea578b24599c37584c186efef88a306ca133"
+    },
+    {
+      "case_id": "R01",
+      "display_feature_ids": [
+        11551,
+        12728,
+        9023,
+        16211,
+        12713,
+        2392,
+        3855,
+        2520,
+        486,
+        10137,
+        10892,
+        4790
+      ],
+      "changed_display_target_features": 0,
+      "full_target_contribution_cosine": 0.996552505491861,
+      "planned_candidate_margins": [
+        0.875,
+        -0.875
+      ],
+      "png_sha256": "8ef75f5ebf7feb9c9beba3c1e7936a20b30671a46267ed9e96c4b51584bdcb13"
+    }
+  ]
+}

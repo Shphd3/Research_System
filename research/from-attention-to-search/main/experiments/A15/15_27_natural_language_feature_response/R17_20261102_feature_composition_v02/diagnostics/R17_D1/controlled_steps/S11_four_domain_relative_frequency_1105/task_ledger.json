@@ -1,0 +1,67 @@
+{
+  "execution_authorized": true,
+  "scientific_acceptance": "Unknown",
+  "closure": "Unknown",
+  "tasks": [
+    {
+      "task": "current assets and budget",
+      "state": "DONE",
+      "evidence": "evidence/input_access.json;frozen_plan.json;evidence/budget_calibration.json"
+    },
+    {
+      "task": "comparable common sets, denominators, reverse policy",
+      "state": "DONE",
+      "evidence": "protocol.md;protocol_cn.md;evidence/protocol_freeze.json"
+    },
+    {
+      "task": "new texts and independent references",
+      "state": "DONE",
+      "evidence": "data/controlled_panel.jsonl;data/families.json;data/source_availability.csv"
+    },
+    {
+      "task": "1536 development native inference and selection lock",
+      "state": "DONE",
+      "evidence": "evidence/development_complete.json;evidence/development_lock.json"
+    },
+    {
+      "task": "12000 independent reference forwards",
+      "state": "DONE",
+      "evidence": "evidence/inference.log"
+    },
+    {
+      "task": "3072 confirmation forwards after lock",
+      "state": "DONE",
+      "evidence": "evidence/inference.log"
+    },
+    {
+      "task": "frozen statistics, controls, cases and figures",
+      "state": "DONE",
+      "evidence": "evidence/analysis_implementation_freeze.json"
+    },
+    {
+      "task": "independent replay, reports and packet",
+      "state": "DONE",
+      "evidence": "code/verify.py;code/portable_replay.py"
+    },
+    {
+      "task": "training, functional interventions, router",
+      "state": "NOT AUTHORIZED / NOT RUN",
+      "evidence": "current user scope"
+    },
+    {
+      "task": "96prospective position/phrase controls on samefamilies",
+      "state": "DONE",
+      "evidence": "evidence/SC1_complete.json;results/position_supplement_summary.csv"
+    },
+    {
+      "task": "quartile contrast follow-up after inspection",
+      "state": "POSTHOC_EXPLORATION_DONE",
+      "evidence": "evidence/posthoc_quartile_analysis.json"
+    },
+    {
+      "task": "portable packet validation",
+      "state": "DONE",
+      "evidence": "evidence/package_verification.json;192model-free condition replays"
+    }
+  ]
+}

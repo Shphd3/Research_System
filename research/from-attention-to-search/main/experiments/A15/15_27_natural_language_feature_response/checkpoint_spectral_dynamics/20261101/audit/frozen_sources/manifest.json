@@ -1,0 +1,1111 @@
+{
+  "schema_version": 1,
+  "anchor_id": "15_27_05_01",
+  "date": "2026-11-01",
+  "trajectory": "native_dense_seed17_281431040_parameters",
+  "checkpoints": [
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000500000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000500000000/state.pt",
+      "tokens": 500000000,
+      "step": 1908,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "a1cccdefbaffa1bfb33291a7c26cd68fc82d72bafb01d1af8b10e87044b5bfd9",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "a89c56edf80a8c22f752d1613389908992dafcb20e1266392528d7d929f2ad03",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/resolved_config.json",
+      "config_sha256": "c635f1361a09dea136bb9eb4841a48a336b2ad86b9e5e98233d2fce429b6bb80",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "ca9af3ba06ac420389532fbf3abdadc99cf6159a42009427c4bc68508b134645"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_001000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_001000000000/state.pt",
+      "tokens": 1000000000,
+      "step": 3816,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "92943fd775a95be35caa9ea8b18744d08af25bfe6507d18b198f53e8811ed169",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "3ddd139b3326ba5d362e3868a85bef9edc2df88fcd1a7dccd7c43ddd1c507f4d",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/resolved_config.json",
+      "config_sha256": "c635f1361a09dea136bb9eb4841a48a336b2ad86b9e5e98233d2fce429b6bb80",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "ca9af3ba06ac420389532fbf3abdadc99cf6159a42009427c4bc68508b134645"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_003000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_003000000000/state.pt",
+      "tokens": 3000000000,
+      "step": 11446,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "a2ae7f02bf3f8eabf217cc9f780b0c87b0ce0f103d7ecc7f4652f191c3e6ff1b",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "3c32f13f9380776ee232834e3a6171b864b5ef80581851e4124f3fb32ac42cda",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/resolved_config.json",
+      "config_sha256": "c635f1361a09dea136bb9eb4841a48a336b2ad86b9e5e98233d2fce429b6bb80",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "ca9af3ba06ac420389532fbf3abdadc99cf6159a42009427c4bc68508b134645"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_005000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_005000000000/state.pt",
+      "tokens": 5000000000,
+      "step": 19076,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "740792483041d21672451c4ccf7d2a982c6ce117e3323ffdeef47f1b50c7bf75",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "20c97a36456fcb57f4314e84d9860345325f1e83204c86ddd9cc30c5d861154d",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/resolved_config.json",
+      "config_sha256": "c635f1361a09dea136bb9eb4841a48a336b2ad86b9e5e98233d2fce429b6bb80",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "ca9af3ba06ac420389532fbf3abdadc99cf6159a42009427c4bc68508b134645"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_010000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_010000000000/state.pt",
+      "tokens": 10000000000,
+      "step": 38150,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "afa294d5fada38600708c1449a1c62330d421a72b38be91c6e3c950224b3e936",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "9bfcc6678d0a6510da965529154b9200daac837707baa77f37c3484c49df4840",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/resolved_config.json",
+      "config_sha256": "c635f1361a09dea136bb9eb4841a48a336b2ad86b9e5e98233d2fce429b6bb80",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "ca9af3ba06ac420389532fbf3abdadc99cf6159a42009427c4bc68508b134645"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_015000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_015000000000/state.pt",
+      "tokens": 15000000000,
+      "step": 57224,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "1956120a63a6cd555bd90eca7883413367611117f0f3574079d1d1159bdc2c4f",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "eaf9e50e21ca1783092da6ff90cc261fd57849a5227d462fcbb05aa0d8980f9b",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/resolved_config.json",
+      "config_sha256": "a56963e710749f402d57db1dccd50daa3830a9c36dd8df667987ba32e1b0e8e3",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "1ba2b21c100a49988d7c77c0653a706645b52d0bea779dda8c6f19b3be7a3f33"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_017000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_017000000000/state.pt",
+      "tokens": 17000000000,
+      "step": 64854,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "890925657c576192f07c18d14c03a539ca7e8d6a15e29fb56c41ca48cabb6cb3",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "2bec5d30d63511e969b61c6d1450f436b254a8b66b2196e553bcf273b8a4eff9",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/resolved_config.json",
+      "config_sha256": "a56963e710749f402d57db1dccd50daa3830a9c36dd8df667987ba32e1b0e8e3",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "1ba2b21c100a49988d7c77c0653a706645b52d0bea779dda8c6f19b3be7a3f33"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/continuation_checkpoints/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/target_019000000000_actual_019000000000_step_00072484",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/continuation_checkpoints/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/target_019000000000_actual_019000000000_step_00072484/state.pt",
+      "tokens": 19000000000,
+      "step": 72484,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "c9175ccea2a818a7d05462869cf3b18eb0a9244c84971e35083ed19d0b23434a",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "92d4cf15a28a7578b718afb98a2cc37a34e9f84a4a844c989110bea932d4f451",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/resolved_config.json",
+      "config_sha256": "a56963e710749f402d57db1dccd50daa3830a9c36dd8df667987ba32e1b0e8e3",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "1ba2b21c100a49988d7c77c0653a706645b52d0bea779dda8c6f19b3be7a3f33",
+      "original_checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_019000000000"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_021000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_021000000000/state.pt",
+      "tokens": 21000000000,
+      "step": 80114,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "12e5645c3944ba43af83122f95ab22a9166c438ef5f26067990d6555c603edd7",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "af5e812ee6585a2a697f2972a6af9f1e3751fd4d20b8b9692341b6c9416d3fc9",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/resolved_config.json",
+      "config_sha256": "a56963e710749f402d57db1dccd50daa3830a9c36dd8df667987ba32e1b0e8e3",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "1ba2b21c100a49988d7c77c0653a706645b52d0bea779dda8c6f19b3be7a3f33"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/checkpoints/step_00084000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/checkpoints/step_00084000/state.pt",
+      "tokens": 22018691584,
+      "step": 84000,
+      "kind": "recovery",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "6157e6ccd31afe4b811d85a210a4a10552c0696a601e6ba1b4fe494a6b0b8d2e",
+      "state_bytes": 3377283567,
+      "manifest_sha256": "9caa7299acc3afe01fee6c7181de9d61d5d3b5c5cc490bd2092dfb1b48dd9584",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/resolved_config.json",
+      "config_sha256": "a56963e710749f402d57db1dccd50daa3830a9c36dd8df667987ba32e1b0e8e3",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "1ba2b21c100a49988d7c77c0653a706645b52d0bea779dda8c6f19b3be7a3f33"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_031000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_031000000000/state.pt",
+      "tokens": 31000000000,
+      "step": 118264,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "0679e4fd93a233dc8b5fe2d4a84d76920e9d1c5585991537e941f3a91a587424",
+      "state_bytes": 3377283823,
+      "manifest_sha256": "5d1cb498b17861f0bb7d5debec44637230ef3cb2fdff36e9757b161613591841",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/resolved_config.json",
+      "config_sha256": "28d924816d2e2bd6a5521f449c32a02a7c1329014ee6dc3e42b482d8f2418bed",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "66c5c1261e766a38a6f994078e7464ff2212a020aac1cf7418f5fee019547ee6"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_033000000000",
+      "state_path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_033000000000/state.pt",
+      "tokens": 33000000000,
+      "step": 125894,
+      "kind": "milestone",
+      "schema_version": 2,
+      "complete": true,
+      "state_sha256": "a0b21cb3b8c5217aa5638101ed60c28747edf474bd33ae62f91cda57952586cd",
+      "state_bytes": 3377283823,
+      "manifest_sha256": "9db05dbd0487d43a1936bc2a823a897f9064d22e9345927a79d6df2901e8143a",
+      "config_path": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/resolved_config.json",
+      "config_sha256": "28d924816d2e2bd6a5521f449c32a02a7c1329014ee6dc3e42b482d8f2418bed",
+      "architecture": {
+        "bottleneck_alpha": 0.0,
+        "ce_chunk_tokens": 128,
+        "checkpoint_ce": true,
+        "gradient_checkpointing": false,
+        "head_dim": 128,
+        "hidden_size": 1024,
+        "initializer_range": 0.02,
+        "intermediate_size": 3072,
+        "max_position_embeddings": 2048,
+        "num_attention_heads": 16,
+        "num_hidden_layers": 8,
+        "num_key_value_heads": 8,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 1000000.0,
+        "sae_k": 32,
+        "sae_loss_weight": 1.0,
+        "sae_mode": "none",
+        "sae_width": 30000,
+        "tie_word_embeddings": true,
+        "vocab_size": 151936
+      },
+      "tokenizer": {
+        "candidate_names": [
+          "added_tokens.json",
+          "chat_template.jinja",
+          "config.json",
+          "merges.txt",
+          "sentencepiece.bpe.model",
+          "special_tokens_map.json",
+          "spiece.model",
+          "tokenizer.json",
+          "tokenizer.model",
+          "tokenizer_config.json",
+          "vocab.json",
+          "vocab.model",
+          "vocab.txt"
+        ],
+        "files": [
+          {
+            "path": "config.json",
+            "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+            "size_bytes": 727
+          },
+          {
+            "path": "merges.txt",
+            "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+            "size_bytes": 1671853
+          },
+          {
+            "path": "tokenizer.json",
+            "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+            "size_bytes": 7031645
+          },
+          {
+            "path": "tokenizer_config.json",
+            "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+            "size_bytes": 9678
+          },
+          {
+            "path": "vocab.json",
+            "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+            "size_bytes": 2776833
+          }
+        ],
+        "files_sha256": "3b602daf74810b313b8e1eca542d50b639a4e3f9de9b7185a309e09289306eda",
+        "kind": "local_directory",
+        "path": "/data/share/Qwen3-0.6B-Base",
+        "schema_version": 1
+      },
+      "training_contract_sha256": "66c5c1261e766a38a6f994078e7464ff2212a020aac1cf7418f5fee019547ee6"
+    }
+  ],
+  "excluded": [
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/checkpoints/step_00037000",
+      "tokens": 9698669056,
+      "reason": "PAYLOAD_MISSING; manifest remains; searched original runs and continuation archives"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/checkpoints/step_00038000",
+      "tokens": 9960813056,
+      "reason": "PAYLOAD_MISSING; manifest remains; searched original runs and continuation archives"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000000000000",
+      "tokens": 0,
+      "reason": "outside_requested_window"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/checkpoints/step_00083000",
+      "tokens": 21756547584,
+      "reason": "PAYLOAD_MISSING; manifest remains; searched original runs and continuation archives"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_50b_continue_from_10b_8x5090_r2_20260915T131706Z/milestones/token_013000000000",
+      "tokens": 13000238080,
+      "reason": "PAYLOAD_MISSING; manifest remains; searched original runs and continuation archives"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/checkpoints/step_00129000",
+      "tokens": 33814219264,
+      "reason": "outside_requested_window"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/checkpoints/step_00130000",
+      "tokens": 34076363264,
+      "reason": "outside_requested_window"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_023000000000",
+      "tokens": 23000000000,
+      "reason": "PAYLOAD_MISSING; manifest remains; searched original runs and continuation archives"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_025000000000",
+      "tokens": 25000000000,
+      "reason": "PAYLOAD_MISSING; manifest remains; searched original runs and continuation archives"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_027000000000",
+      "tokens": 27000000000,
+      "reason": "PAYLOAD_MISSING; manifest remains; searched original runs and continuation archives"
+    },
+    {
+      "checkpoint": "/data/250010109/MoE_Router/experiments/20260928_dense_sall_8x5090_continue/runs/dense_baseline_continue_from_22p018691584b_8x5090/milestones/token_029000000000",
+      "tokens": 29000000000,
+      "reason": "PAYLOAD_MISSING; manifest remains; searched original runs and continuation archives"
+    }
+  ],
+  "missing_milestones": [
+    {
+      "tokens": 7000000000.0,
+      "reason": "not saved in inspected requested trajectory"
+    },
+    {
+      "tokens": 9000000000.0,
+      "reason": "not saved in inspected requested trajectory"
+    },
+    {
+      "tokens": 11000000000.0,
+      "reason": "not saved in inspected requested trajectory"
+    }
+  ],
+  "inventory_scope": "all saved milestone/recovery states in the three inspected lineage runs; duplicate continuation archive aliases excluded by original identity",
+  "state_counter_verification": "PENDING_AT_RUNTIME",
+  "architecture_compatibility": "PASS",
+  "tokenizer_compatibility": "PASS",
+  "main_interface": "final_raw_h: blocks[7] residual-post before model.norm",
+  "source_code_root": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining",
+  "smoke_and_semantic_tokens": [
+    500000000,
+    17000000000,
+    33000000000
+  ]
+}

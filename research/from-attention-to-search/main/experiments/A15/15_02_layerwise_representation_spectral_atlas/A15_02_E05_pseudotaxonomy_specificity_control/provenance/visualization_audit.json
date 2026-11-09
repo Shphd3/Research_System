@@ -1,0 +1,24 @@
+{
+  "audited": true,
+  "audited_on": "2026-08-07",
+  "figures": {
+    "figure1_primary_null_distributions.png": {
+      "pass": true,
+      "notes": "All four split-role panels show the true statistic, pseudo-null distribution, q95 threshold, units, and pass/fail label without clipping."
+    },
+    "figure2_layerwise_q_curves.png": {
+      "pass": true,
+      "notes": "All four panels distinguish true taxonomy, pseudo median, q05-q95 interval, decoder block, and median log10 q; the block-24/25 boundary is visible."
+    },
+    "figure3_true_minus_pseudo_heatmaps.png": {
+      "pass": true,
+      "notes": "All split-role panels use one symmetric color scale and define red/blue through the colorbar as true minus pseudo-median log10 q."
+    }
+  },
+  "limitations_checked": [
+    "Figure 1 decides only the registered late-minus-early specificity rule.",
+    "Figure 2 shows non-monotonic layerwise trajectories and does not imply a shared cross-layer direction.",
+    "Figure 3 shows absolute taxonomy excess, not the primary late-minus-early contrast."
+  ],
+  "pass": true
+}

@@ -1,0 +1,26 @@
+{
+  "split": "holdout",
+  "pass": true,
+  "time_utc": "2026-10-26T11:00:00.349897+00:00",
+  "target_nmse_mean": 0.06678460375405848,
+  "target_nmse_p90": 0.09355711787939072,
+  "target_nmse_max": 0.12278725206851959,
+  "n_sequences": 144,
+  "decoder_formula_max_relative_error": 1.246757648232233e-07,
+  "replay": [],
+  "input_hashes_unchanged": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": true,
+    "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt": true
+  },
+  "model_dtype": "bfloat16",
+  "sae_dtype": "float32",
+  "parameter_updates": 0,
+  "gradients_present": false,
+  "elapsed_seconds": 19.664059162139893,
+  "peak_cuda_bytes": 1687291392,
+  "test_read": false,
+  "torch": "2.5.1+cu121",
+  "transformers": "4.53.3",
+  "python": "/root/anaconda3/envs/spectral-hier/bin/python",
+  "npz_sha256": "c9331111ba0cf318f488500b47ee68ab26556be3c5cd025eddc6e754cfe7b8e2"
+}

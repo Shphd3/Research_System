@@ -1,0 +1,260 @@
+{
+  "experiment_id": "A11_10_finite_step_semantic_efficiency",
+  "experiment": "general_k_readout_margin",
+  "run_name": "a11_10_finite_step_semantic_efficiency_4gpu_20260709_full",
+  "output_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full",
+  "num_shards": 4,
+  "config": {
+    "experiment_id": "A11_10_finite_step_semantic_efficiency",
+    "experiment": "general_k_readout_margin",
+    "run_name": "a11_10_finite_step_semantic_efficiency",
+    "output_dir": "active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency",
+    "objective_scopes": [
+      "decision_only",
+      "all_positions_lm_control"
+    ],
+    "head_variants": [
+      "frozen_heads",
+      "trainable_heads"
+    ],
+    "num_branches": 4,
+    "filler_length": 16,
+    "shared_context_length": 4,
+    "train_samples_per_branch": 16,
+    "eval_samples_per_branch": 64,
+    "noise_vocab_size": 16,
+    "max_horizon": 4,
+    "seeds": [
+      971,
+      972,
+      973,
+      974,
+      975
+    ],
+    "data_regimes": [
+      "shared_only_k4",
+      "single_h3",
+      "aligned_h3_h4",
+      "low_conflict_h3_h4"
+    ],
+    "init_modes": [
+      "identical_branch"
+    ],
+    "conditions": [
+      {
+        "name": "K2_active",
+        "max_heads": 4,
+        "active_horizons": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "K3_active",
+        "max_heads": 4,
+        "active_horizons": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "K4_active",
+        "max_heads": 4,
+        "active_horizons": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "K3_mask_decision_prefix_L3",
+        "max_heads": 4,
+        "active_horizons": [
+          1,
+          2,
+          3
+        ],
+        "mask_decision_horizons": [
+          3
+        ]
+      },
+      {
+        "name": "K2_plus_decision_prefix_L3",
+        "max_heads": 4,
+        "active_horizons": [
+          1,
+          2
+        ],
+        "extra_decision_horizons": [
+          3
+        ]
+      }
+    ],
+    "task_list": [
+      {
+        "data_regime": "shared_only_k4",
+        "condition": "K4_active",
+        "init_mode": "identical_branch",
+        "objective_scope": "decision_only",
+        "head_variant": "frozen_heads"
+      },
+      {
+        "data_regime": "single_h3",
+        "condition": "K3_active",
+        "init_mode": "identical_branch",
+        "objective_scope": "decision_only",
+        "head_variant": "frozen_heads"
+      },
+      {
+        "data_regime": "aligned_h3_h4",
+        "condition": "K4_active",
+        "init_mode": "identical_branch",
+        "objective_scope": "decision_only",
+        "head_variant": "frozen_heads"
+      },
+      {
+        "data_regime": "low_conflict_h3_h4",
+        "condition": "K4_active",
+        "init_mode": "identical_branch",
+        "objective_scope": "decision_only",
+        "head_variant": "frozen_heads"
+      },
+      {
+        "data_regime": "single_h3",
+        "condition": "K3_active",
+        "init_mode": "identical_branch",
+        "objective_scope": "decision_only",
+        "head_variant": "trainable_heads"
+      },
+      {
+        "data_regime": "low_conflict_h3_h4",
+        "condition": "K4_active",
+        "init_mode": "identical_branch",
+        "objective_scope": "decision_only",
+        "head_variant": "trainable_heads"
+      },
+      {
+        "data_regime": "single_h3",
+        "condition": "K3_active",
+        "init_mode": "identical_branch",
+        "objective_scope": "all_positions_lm_control",
+        "head_variant": "trainable_heads"
+      },
+      {
+        "data_regime": "single_h3",
+        "condition": "K3_mask_decision_prefix_L3",
+        "init_mode": "identical_branch",
+        "objective_scope": "all_positions_lm_control",
+        "head_variant": "trainable_heads"
+      },
+      {
+        "data_regime": "single_h3",
+        "condition": "K2_plus_decision_prefix_L3",
+        "init_mode": "identical_branch",
+        "objective_scope": "all_positions_lm_control",
+        "head_variant": "trainable_heads"
+      },
+      {
+        "data_regime": "single_h3",
+        "condition": "K2_active",
+        "init_mode": "identical_branch",
+        "objective_scope": "all_positions_lm_control",
+        "head_variant": "trainable_heads"
+      }
+    ],
+    "model": {
+      "d_model": 64,
+      "n_layers": 1,
+      "n_heads": 1,
+      "dropout": 0.0
+    },
+    "one_step": {
+      "enabled": true,
+      "samples_per_branch": 16,
+      "etas": [
+        0.0001,
+        0.0003,
+        0.001
+      ]
+    },
+    "curve": {
+      "enabled": true
+    },
+    "dynamics_audit": {
+      "enabled": true
+    },
+    "finite_step_audit": {
+      "enabled": true,
+      "direct_horizon": 3,
+      "margin_threshold": 1.0,
+      "recovery_threshold": 0.9,
+      "velocity_window_steps": 1000,
+      "no_leakage_q0_max": 0.35,
+      "no_leakage_native0_max": 0.35,
+      "no_leakage_m0_abs_max": 0.05,
+      "no_leakage_e0_max": 0.01,
+      "zero_velocity_abs_max": 1e-06,
+      "head_alignment_min": 0.25,
+      "head_drift_frozen_max": 1e-08
+    },
+    "training": {
+      "steps": 2000,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0,
+      "lambdas": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0
+      },
+      "eval_every": 100,
+      "log_every": 500
+    },
+    "gradient_profile": {
+      "enabled": false,
+      "profile_every": 500,
+      "profile_until_step": 2000,
+      "horizons": [
+        3,
+        4
+      ],
+      "future_deltas": [
+        200,
+        500,
+        1000
+      ]
+    },
+    "eval_decoder": {
+      "steps": 200,
+      "learning_rate": 0.05,
+      "weight_decay": 0.001
+    },
+    "probe": {
+      "steps": 200,
+      "learning_rate": 0.05,
+      "weight_decay": 0.001
+    },
+    "decision": {
+      "threshold": 0.9,
+      "consecutive_evals": 3,
+      "early_auc_window": 1000
+    }
+  },
+  "tables": {
+    "curve_metrics": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/curve_metrics.csv",
+    "efficiency_by_seed": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/efficiency_by_seed.csv",
+    "efficiency_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/efficiency_summary.csv",
+    "condition_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/condition_summary.csv",
+    "decision_contrasts": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/decision_contrasts.csv",
+    "local_loss_guard_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/local_loss_guard_summary.csv",
+    "seed_level_hitting_time_bound": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/seed_level_hitting_time_bound.csv",
+    "finite_step_assumption_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/finite_step_assumption_summary.csv",
+    "one_step_metrics": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/one_step_metrics.csv",
+    "one_step_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/one_step_summary.csv",
+    "output_geometry": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/output_geometry.csv",
+    "general_k_falsifier_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/general_k_falsifier_summary.csv",
+    "sample_table": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_finite_step_semantic_efficiency/a11_10_finite_step_semantic_efficiency_4gpu_20260709_full/tables/sample_table.csv"
+  }
+}

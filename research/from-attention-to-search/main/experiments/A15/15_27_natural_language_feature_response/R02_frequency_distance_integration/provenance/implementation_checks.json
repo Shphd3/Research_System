@@ -1,0 +1,48 @@
+{
+  "processing_agent": "/root/stats_r02",
+  "checks": [
+    {
+      "review": "known_numerics_and_missingness",
+      "PASS": true,
+      "one_sided_exact6": 0.015625,
+      "two_sided_exact6": 0.03125,
+      "zero_cosine": "NA"
+    },
+    {
+      "review": "marginal_and_target_support_preservation",
+      "PASS": true,
+      "features": 30000,
+      "tuple_versions": 4,
+      "target_strata": 6
+    },
+    {
+      "review": "complete_recluster_runtime_benchmark",
+      "PASS": true,
+      "N": 36,
+      "F": 30000,
+      "candidate_count": 64,
+      "baseline_seconds": 0.13022708892822266,
+      "nulls_measured": 5,
+      "cluster_bootstrap_per_null": 200,
+      "null_seconds": 0.3487129211425781,
+      "projected500_seconds": 34.87129211425781,
+      "under60min": true
+    },
+    {
+      "review": "synthetic_end_to_end_interfaces",
+      "PASS": true,
+      "all_response_tensors_synthetic": true,
+      "scenarios": 12,
+      "sequences": 120,
+      "first_checkpoint_interaction_zero": true,
+      "future_unique_labels_never_used_at_first_checkpoint": true,
+      "figures_generated": true,
+      "model_calls": 0
+    }
+  ],
+  "all_PASS": true,
+  "actual_new_panel_or_reference_response_files_read": false,
+  "model_forwards": 0,
+  "last_rerun_by": "/root",
+  "statistics_code_sha256": "f44f63826bde54768d74104c191266fc63d040ca0e8d4ef7160ba6a6215b2971"
+}

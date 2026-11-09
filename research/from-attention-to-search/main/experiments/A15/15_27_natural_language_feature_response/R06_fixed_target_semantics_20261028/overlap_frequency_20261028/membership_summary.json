@@ -1,0 +1,74 @@
+{
+  "A": 52,
+  "B": 51,
+  "C": 10,
+  "C_subset_B": true,
+  "B_subset_A": true,
+  "regions": {
+    "far_no_confirmed_drop": 41,
+    "far_insufficient_no_confirmed_drop": 1,
+    "far_and_drop": 10
+  },
+  "unique_coordinates": {
+    "SAE": 25,
+    "CC": 26
+  },
+  "low_reference_support": 4,
+  "zero_reference_hits": [
+    {
+      "dictionary": "SAE",
+      "concept": "organ",
+      "feature": 23473,
+      "DCLM_hits": 0
+    }
+  ],
+  "difference_candidate_concepts": {
+    "bass": 8,
+    "bank": 1,
+    "organ": 1
+  },
+  "descriptive_frequency_summary": {
+    "SAE": {
+      "far_no_confirmed_drop": {
+        "n": 23,
+        "min_percent": 0.0,
+        "median_percent": 0.0946044921875,
+        "max_percent": 37.3260498046875,
+        "low_reference_support": 1
+      },
+      "far_and_drop": {
+        "n": 2,
+        "min_percent": 0.01068115234375,
+        "median_percent": 0.012969970703125,
+        "max_percent": 0.0152587890625,
+        "low_reference_support": 2
+      },
+      "far_insufficient_no_confirmed_drop": {
+        "n": 1,
+        "min_percent": 0.146484375,
+        "median_percent": 0.146484375,
+        "max_percent": 0.146484375,
+        "low_reference_support": 0
+      }
+    },
+    "CC": {
+      "far_no_confirmed_drop": {
+        "n": 18,
+        "min_percent": 0.23651123046875,
+        "median_percent": 2.81982421875,
+        "max_percent": 34.08966064453125,
+        "low_reference_support": 0
+      },
+      "far_and_drop": {
+        "n": 8,
+        "min_percent": 0.02899169921875,
+        "median_percent": 1.157379150390625,
+        "max_percent": 7.70263671875,
+        "low_reference_support": 1
+      }
+    }
+  },
+  "new_forward": 0,
+  "new_hypothesis_tests": 0,
+  "reselection": false
+}

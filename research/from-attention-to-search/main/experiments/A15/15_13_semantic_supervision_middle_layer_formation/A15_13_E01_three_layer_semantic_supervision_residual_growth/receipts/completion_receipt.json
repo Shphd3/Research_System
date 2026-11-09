@@ -1,0 +1,58 @@
+{
+  "artifact_manifest_sha256": "02b4cf18d74eb512591d3e272630f3b0dc89c486f776ab7d1d571f4bf36a97be",
+  "checks": {
+    "artifacts": {
+      "passed": true
+    },
+    "code_receipt": {
+      "passed": true,
+      "source_file_count": 26
+    },
+    "job_receipts": {
+      "passed": true
+    },
+    "seed_registry": {
+      "passed": true,
+      "seeds": [
+        1701,
+        2903
+      ]
+    }
+  },
+  "counts": {
+    "condition_receipts": 24,
+    "teacher_receipts": 2
+  },
+  "job_receipt_sha256": {
+    "conditions/1701/B0/receipt.json": "453745ef710de1cb1c0bfbac2dffceace5071cd24ef435e7f076d1eea606384c",
+    "conditions/1701/B1/receipt.json": "62495f73f30b15b6f6d40f008902b759b1e98ea38860c92551727d4d8d5d7432",
+    "conditions/1701/L1-JOINT/receipt.json": "eae3abe784f4118e1dfcfec6c3341fd5b836466f51b155d00ef3395f49e88c38",
+    "conditions/1701/L1-SEQ/receipt.json": "87a089205fb9c83e7e1e9920b5f7a20773dd7a3acd2e8c7a85914fe306e74468",
+    "conditions/1701/O-F/receipt.json": "0213573e96161e4fa33dac41e0659c9eec7fb3b547b15f9828b3d4a72f958953",
+    "conditions/1701/O-HF/receipt.json": "8219bbe855787591a3dbdde9dbfc18413781d527875cb41d441b13a3c6dd3f74",
+    "conditions/1701/O-HR/receipt.json": "e6226405f07a222598d4b5be68c51a168471bfd326eed8386902fa9dba718e97",
+    "conditions/1701/O-S/receipt.json": "fc28e7ac8672b520c0128a3c1f531d0cf7e926503d8fe61a0246169318d6fff3",
+    "conditions/1701/S-F/receipt.json": "d0fd0d56318213c5c9b35e1f35f4c404f74ef4565e6f96f3bfb5b75dec74a475",
+    "conditions/1701/S-HF/receipt.json": "dbbeec90e35829d73195fb024344b31aecef5f1773cc3cf9c5cdea0f2e493e63",
+    "conditions/1701/S-HR/receipt.json": "a9f2191659081e9850d5fa14c124ffdd8063a3234bfb627842ca35310cac992f",
+    "conditions/1701/S-S/receipt.json": "1f14001ffd3de34e0cb4028b129bab70b0906fad9a721767f296ebb9aa727b7e",
+    "conditions/2903/B0/receipt.json": "328fe8b9017c6cf687141681825b5802318bc2f552c0b6c4684807d1e3226030",
+    "conditions/2903/B1/receipt.json": "0e212f01835764d5a9a90386071c25fe1e3d3353980aee1dc6c89e983f038bd1",
+    "conditions/2903/L1-JOINT/receipt.json": "1f92edec320fd1c3629985bdc4bbf2d2d4a8418602470c1f2113477c50a54583",
+    "conditions/2903/L1-SEQ/receipt.json": "2773d4a48d9f830382d0170803af86a0ce300316c3fd2c9c70db7941132bfc25",
+    "conditions/2903/O-F/receipt.json": "3cdc4f1adacab7b5839db926c6c180bb4dc3841ed15c66e1fe7a19dd11c4c0b1",
+    "conditions/2903/O-HF/receipt.json": "c4f1a0927c9c46694ed0a24d1ff4f68c7e3521df31641189251cb65523d31693",
+    "conditions/2903/O-HR/receipt.json": "4f35950283649cd520a1521c69dd91288711f92994ea9c0acf41fee96eff4e12",
+    "conditions/2903/O-S/receipt.json": "9e0e096572386d40cdac79c8b003287dc50db5cfb4392e1e37fafb249ca733ce",
+    "conditions/2903/S-F/receipt.json": "39e54f9a2413906fca86d9cdc9e25ba03685b6c499003dc872a6c5ea574e87b9",
+    "conditions/2903/S-HF/receipt.json": "4d7bd17bd0d6087fa40ce325321a976ffa3a39c7db89849a599b0dcfa915ae05",
+    "conditions/2903/S-HR/receipt.json": "e247352ab697ce6d8ecebfadcc945aa1790901a4b9ddfa3c2fb07e00074a4ce9",
+    "conditions/2903/S-S/receipt.json": "6396877403526c860f6e53706ee190dd32eb77a8340cc716f62d22b3e3214440",
+    "teachers/1701/receipt.json": "b93e48da06e16e66a1a1cdd9ddda1d8238cf7d4f18f789f05cedd13e222c5884",
+    "teachers/2903/receipt.json": "acd1fb638273a7307a621838a1c2987fb80e98d09f2015621c715ff3223fdb7f"
+  },
+  "passed": true,
+  "schema_version": "a15_13_completion_audit_v1",
+  "scientific_result_may_be_negative": true,
+  "written_at_utc": "2026-08-30T18:34:06.783010+00:00"
+}

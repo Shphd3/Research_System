@@ -1,0 +1,32 @@
+{
+  "01_cumulative_native_metrics": {
+    "question": "Does cumulative projection recover native fidelity and true successor probability, and how does entropy change?",
+    "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/summary_metrics.csv",
+    "source_sha256": "f99519bb27cf74fe020e157b83b31dc14a8f33fc7840f0bbfa3dc631dedabfae",
+    "unit": "nats,probability,membership agreement as labeled",
+    "independence_unit": "document",
+    "maximum_claim": "bounded prediction/frequency observations,not semantic hierarchy",
+    "PNG": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/figures/01_cumulative_native_metrics.png",
+    "visual_review": "PASS after fixed layout and tie-policy corrections"
+  },
+  "02_frequency_and_equal_rank_controls": {
+    "question": "Do reference-common/type predictions recover earlier, and are equal-rank middle/tail increments special?",
+    "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/summary_metrics.csv",
+    "source_sha256": "f99519bb27cf74fe020e157b83b31dc14a8f33fc7840f0bbfa3dc631dedabfae",
+    "unit": "nats,probability,membership agreement as labeled",
+    "independence_unit": "document",
+    "maximum_claim": "bounded prediction/frequency observations,not semantic hierarchy",
+    "PNG": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/figures/02_frequency_and_equal_rank_controls.png",
+    "visual_review": "PASS after fixed layout and tie-policy corrections"
+  },
+  "03_fixed_text_output_distributions": {
+    "question": "What exact ID/fragments/probabilities occur in all5 prespecified old-error texts?",
+    "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/raw_outputs.jsonl",
+    "source_sha256": "b6f3af602d52553124b7f6325dfc6e038aa71962e4cb76bce6aed73401d4c187",
+    "unit": "nats,probability,membership agreement as labeled",
+    "independence_unit": "document",
+    "maximum_claim": "bounded prediction/frequency observations,not semantic hierarchy",
+    "PNG": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/figures/03_fixed_text_output_distributions.png",
+    "visual_review": "PASS after fixed layout and tie-policy corrections"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "source": "Verified filesystem snapshot after planning updates; not immutable historical submission source",
+  "files": [
+    {
+      "role": "execution_memory",
+      "path": "/data/250010109/Research_System/.research/memory/conversations/0914-training-excution/memory.md",
+      "exists": true,
+      "sha256": "ac7d3e8545f553935367c4c596ed499fb77f9c8aa908238c5d7062a7f38e75a6"
+    },
+    {
+      "role": "old_formal_protocol",
+      "path": "/data/250010109/Research_System/daily_research_reports/0914/sae_mediated_pretraining/protocol.md",
+      "exists": true,
+      "sha256": "d10dcf68c47c85b5912fd163b269bf0b1ae47a6015ce9df0a44f293e3e4df986"
+    },
+    {
+      "role": "formal_config",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/configs/formal_4h100_sae_mediated_50b.json",
+      "exists": true,
+      "sha256": "df365e189acbfb00c4f7cc5af5ea641d6c6112c0057e7a58b2c0be522fbdddcf"
+    },
+    {
+      "role": "formal_launcher_REFERENCE_ONLY",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/scripts/run_formal_4h100_sae_mediated_50b.sh",
+      "exists": true,
+      "sha256": "89e7c1df7bc172e68a757cbd14a207c9f849897662766fefe9c6d584a9f7e2cb"
+    },
+    {
+      "role": "distributed_trainer",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/train.py",
+      "exists": true,
+      "sha256": "b3b4d63cc58e1fed299ecf0749b44fcddcd7875f3c8e946bd1ce2550d90b4033"
+    },
+    {
+      "role": "engine",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/engine.py",
+      "exists": true,
+      "sha256": "3b8bef3c83e7504aa9c29d411aa335753a1228de352cc93753bbe490b5239a94"
+    },
+    {
+      "role": "model_serial_REFERENCE_ONLY",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/model/modeling_qwen3_sae.py",
+      "exists": true,
+      "sha256": "b9ba377955b4761dbca9cde281a109090b30de5ebbeb4639572ff1c78d91e855"
+    },
+    {
+      "role": "sae",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/model/sae.py",
+      "exists": true,
+      "sha256": "a318f0bd899ecf9fd327644b998f79a3000972af2ac268245ea377aa3a17591f"
+    },
+    {
+      "role": "checkpoint",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/checkpoint.py",
+      "exists": true,
+      "sha256": "ea3610126caabe8896bee8d4e52380b5fd8ba65a5b96088657da05edaf18468a"
+    },
+    {
+      "role": "train_launcher",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/scripts/run_train.sh",
+      "exists": true,
+      "sha256": "887bda0dc00a4b900d26b280e0e3d346a55ed3d4d322271010ef4180cc25ebc7"
+    },
+    {
+      "role": "gradient_qualification",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/scripts/qualify_gradient_contract.py",
+      "exists": true,
+      "sha256": "40a7e29d480efcd4208b04e874fa05b785f7d428b21d67411eb3a865b8d285da"
+    },
+    {
+      "role": "resume_qualification",
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/scripts/qualify_resume_replay.py",
+      "exists": true,
+      "sha256": "24a2dd5a1bf23e107feac21b137ce9d9179ca29b44dd31097bff76e8dd400f9f"
+    },
+    {
+      "role": "sidecar_model_and_smoke",
+      "path": "/data/250010109/MoE_Router/experiments/20260915_sae_sidecar_small/sidecar_smoke.py",
+      "exists": true,
+      "sha256": "f1fa43460a4b2f8a89b2f2ad35d6a4f6390ad1eca0130b743158976460ff43ba"
+    },
+    {
+      "role": "sidecar_C_smoke_config",
+      "path": "/data/250010109/MoE_Router/experiments/20260915_sae_sidecar_small/configs/smoke_C.json",
+      "exists": true,
+      "sha256": "59553cebcadb42ca397ee90363a55b1832f6a9319e244c61a193d21fd9720e8d"
+    },
+    {
+      "role": "sidecar_T_smoke_config",
+      "path": "/data/250010109/MoE_Router/experiments/20260915_sae_sidecar_small/configs/smoke_T.json",
+      "exists": true,
+      "sha256": "e42061da4a1f5e568199739129265fbe1cbbf34867f340b352cbfa88f6a1a1ce"
+    },
+    {
+      "role": "sidecar_smoke_evidence",
+      "path": "/data/250010109/MoE_Router/experiments/20260915_sae_sidecar_small/reports/pair_verification.json",
+      "exists": true,
+      "sha256": "4fb2183b75c5f1df7c1c1704cb87d5810e77790d160929a5c8b5063d8e3accd7"
+    },
+    {
+      "role": "blackwell_runtime",
+      "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/scripts/activate_5090_runtime.sh",
+      "exists": true,
+      "sha256": "5346d40b041222c61fb8dcb21098922a496b342e34beb5b8c3dacea5942d3297"
+    },
+    {
+      "role": "blackwell_runtime_manifest",
+      "path": "/data/250010109/dependency_packages/dense_baseline_torch280_cu128_py310/manifest.json",
+      "exists": true,
+      "sha256": "0b7fe48a39238c4bd2cca233be3d5cb977e35e4816ebf4d5870c268b6c6447fe"
+    },
+    {
+      "role": "data_manifest",
+      "path": "/data/250010109/training_data_views/dclm_pair_v1/manifest.json",
+      "exists": true,
+      "sha256": "8a91bdbb0eb537bd80612015b99f178ca1cbb54a2fa7cf8442ab1eae7f0a2f2d"
+    },
+    {
+      "role": "submit_template",
+      "path": "/data/250010109/Research_System/templates/execution/acp_submit_template.sh",
+      "exists": true,
+      "sha256": "0d4d5fc931d21375e00bdabf021752a6f92ff9732b53bcd51e7a46cbe652f13c"
+    },
+    {
+      "role": "envelope",
+      "path": "/data/250010109/Research_System/docs/execution_envelope.md",
+      "exists": true,
+      "sha256": "2b40f44306c633f6c8541addc881d13756142b379f067e9f770545549136a83d"
+    }
+  ]
+}

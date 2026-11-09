@@ -1,9 +1,10 @@
 # Root Sync
 
+> 2026-11-09: research records moved into `research/<project>/`, so the Anchor and research-map reading copies were removed (git history keeps them). Build a reading package only on explicit request with `tools/build_reading_bundle.py`.
+
 Root `sync/` is a compact navigation surface. The 2026-09-03 generated copies
 were retired on 2026-09-24 because they duplicated project records and carried
-stale state. Current scientific state is in `PROJECTS.md`, the owning Focus,
-Anchor, and result records. A reader needs the project checkout for those links.
+stale state. Current scientific state is in `PROJECTS.md` and the records under `research/<project>/`.
 
 Root sync is not:
 

@@ -1,0 +1,223 @@
+id,family,condition,format,gold,candidate_label,candidate_text,candidate_token_ids,candidate_tokens,total_logprob,preferred,correct
+S01_F01_square_only,F01,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-4.104760050773621,False,False
+S01_F01_square_only,F01,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-3.734505534172058,True,False
+S01_F01_square_only,F01,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.450908273458481,False,False
+S01_F01_singular_square,F01,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.7685941457748413,True,True
+S01_F01_singular_square,F01,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-3.9288865327835083,False,True
+S01_F01_singular_square,F01,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.543122307397425,False,True
+S01_F01_invertible_square,F01,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.056310415267944,False,True
+S01_F01_invertible_square,F01,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-3.650421619415283,True,True
+S01_F01_invertible_square,F01,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.445818066596985,False,True
+S01_F02_square_only,F02,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-3.8220601081848145,False,False
+S01_F02_square_only,F02,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-2.753779113292694,True,False
+S01_F02_square_only,F02,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.092614854220301,False,False
+S01_F02_singular_square,F02,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.4379407167434692,False,False
+S01_F02_singular_square,F02,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-2.834659218788147,True,False
+S01_F02_singular_square,F02,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.567708351649344,False,False
+S01_F02_invertible_square,F02,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.098650693893433,False,True
+S01_F02_invertible_square,F02,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-2.5250567197799683,True,True
+S01_F02_invertible_square,F02,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.5836849245242774,False,True
+S01_F03_square_only,F03,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-3.940887212753296,False,False
+S01_F03_square_only,F03,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-3.3303648829460144,True,False
+S01_F03_square_only,F03,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.205064901150763,False,False
+S01_F03_singular_square,F03,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.559140205383301,False,False
+S01_F03_singular_square,F03,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-3.1604926586151123,True,False
+S01_F03_singular_square,F03,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.328664241358638,False,False
+S01_F03_invertible_square,F03,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-3.8542505502700806,False,True
+S01_F03_invertible_square,F03,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-3.119803786277771,True,True
+S01_F03_invertible_square,F03,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.210714945569634,False,True
+S01_F04_square_only,F04,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-4.13675856590271,False,False
+S01_F04_square_only,F04,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-2.7912763953208923,True,False
+S01_F04_square_only,F04,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.92606161814183,False,False
+S01_F04_singular_square,F04,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-4.043788194656372,False,False
+S01_F04_singular_square,F04,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-2.518188178539276,True,False
+S01_F04_singular_square,F04,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.015529698692262,False,False
+S01_F04_invertible_square,F04,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.0542943477630615,False,True
+S01_F04_invertible_square,F04,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-2.6306394934654236,True,True
+S01_F04_invertible_square,F04,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.310295239556581,False,True
+S01_F05_square_only,F05,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-3.9853715896606445,False,False
+S01_F05_square_only,F05,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-2.697425603866577,True,False
+S01_F05_square_only,F05,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.747396202757955,False,False
+S01_F05_singular_square,F05,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.7132046222686768,False,False
+S01_F05_singular_square,F05,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-2.606092393398285,True,False
+S01_F05_singular_square,F05,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.908767486456782,False,False
+S01_F05_invertible_square,F05,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.138958215713501,False,True
+S01_F05_invertible_square,F05,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-2.550686299800873,True,True
+S01_F05_invertible_square,F05,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.179837767966092,False,True
+S01_F06_square_only,F06,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-3.9975507259368896,False,False
+S01_F06_square_only,F06,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-3.0595657229423523,True,False
+S01_F06_square_only,F06,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.775707651861012,False,False
+S01_F06_singular_square,F06,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.5441734790802,False,False
+S01_F06_singular_square,F06,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-2.966208279132843,True,False
+S01_F06_singular_square,F06,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.207981806248426,False,False
+S01_F06_invertible_square,F06,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.0692360401153564,False,True
+S01_F06_invertible_square,F06,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-2.9017606377601624,True,True
+S01_F06_invertible_square,F06,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.051964901853353,False,True
+S01_F07_square_only,F07,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-4.052016019821167,False,False
+S01_F07_square_only,F07,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-3.300154685974121,True,False
+S01_F07_square_only,F07,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.56139571685344,False,False
+S01_F07_singular_square,F07,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.890181303024292,False,False
+S01_F07_singular_square,F07,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-3.10696941614151,True,False
+S01_F07_singular_square,F07,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.546542888507247,False,False
+S01_F07_invertible_square,F07,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.176853179931641,False,True
+S01_F07_invertible_square,F07,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-3.167116343975067,True,True
+S01_F07_invertible_square,F07,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.9009004244580865,False,True
+S01_F08_square_only,F08,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-3.981013059616089,False,False
+S01_F08_square_only,F08,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-2.717294692993164,True,False
+S01_F08_square_only,F08,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.663254350423813,False,False
+S01_F08_singular_square,F08,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.4733136892318726,False,False
+S01_F08_singular_square,F08,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-2.650673270225525,True,False
+S01_F08_singular_square,F08,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.717402896843851,False,False
+S01_F08_invertible_square,F08,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.006025552749634,False,True
+S01_F08_invertible_square,F08,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-2.5401086807250977,True,True
+S01_F08_invertible_square,F08,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.821496255230159,False,True
+S01_F09_square_only,F09,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-4.042687892913818,False,False
+S01_F09_square_only,F09,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-3.286350667476654,True,False
+S01_F09_square_only,F09,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.402116485871375,False,False
+S01_F09_singular_square,F09,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.5996936559677124,False,False
+S01_F09_singular_square,F09,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-3.123219132423401,True,False
+S01_F09_singular_square,F09,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.508870005607605,False,False
+S01_F09_invertible_square,F09,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-3.8525216579437256,False,True
+S01_F09_invertible_square,F09,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-3.2088029384613037,True,True
+S01_F09_invertible_square,F09,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.377885648980737,False,True
+S01_F10_square_only,F10,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-4.189066410064697,False,False
+S01_F10_square_only,F10,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-2.850484848022461,True,False
+S01_F10_square_only,F10,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.720060241408646,False,False
+S01_F10_singular_square,F10,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.850022315979004,False,False
+S01_F10_singular_square,F10,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-2.5889779925346375,True,False
+S01_F10_singular_square,F10,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.117681795731187,False,False
+S01_F10_invertible_square,F10,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.425513029098511,False,True
+S01_F10_invertible_square,F10,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-2.5306206047534943,True,True
+S01_F10_invertible_square,F10,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.337971902452409,False,True
+S01_F11_square_only,F11,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-3.7674782276153564,False,False
+S01_F11_square_only,F11,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-2.9220387935638428,True,False
+S01_F11_square_only,F11,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.041244423016906,False,False
+S01_F11_singular_square,F11,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.5015807151794434,False,False
+S01_F11_singular_square,F11,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-2.872756779193878,True,False
+S01_F11_singular_square,F11,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.150215019471943,False,False
+S01_F11_invertible_square,F11,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-3.7005289793014526,False,True
+S01_F11_invertible_square,F11,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-2.9176374673843384,True,True
+S01_F11_invertible_square,F11,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.185268391855061,False,True
+S01_F12_square_only,F12,square_only,F1,unknown,yes,是。,"[20412, 1773]",2,-4.1131432056427,False,False
+S01_F12_square_only,F12,square_only,F1,unknown,no,否。,"[32376, 1773]",2,-2.7834299206733704,True,False
+S01_F12_square_only,F12,square_only,F1,unknown,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.067974438890815,False,False
+S01_F12_singular_square,F12,singular_square,F1,yes,yes,是。,"[20412, 1773]",2,-3.7380409240722656,False,False
+S01_F12_singular_square,F12,singular_square,F1,yes,no,否。,"[32376, 1773]",2,-2.7113166451454163,True,False
+S01_F12_singular_square,F12,singular_square,F1,yes,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.427638699300587,False,False
+S01_F12_invertible_square,F12,invertible_square,F1,no,yes,是。,"[20412, 1773]",2,-4.1472039222717285,False,True
+S01_F12_invertible_square,F12,invertible_square,F1,no,no,否。,"[32376, 1773]",2,-2.6738483905792236,True,True
+S01_F12_invertible_square,F12,invertible_square,F1,no,unknown,无法确定。,"[101068, 60610, 1773]",3,-5.43123937305063,False,True
+neutral,neutral,neutral,F1,,yes,是。,"[20412, 1773]",2,-4.292038679122925,False,
+neutral,neutral,neutral,F1,,no,否。,"[32376, 1773]",2,-2.9289181232452393,True,
+neutral,neutral,neutral,F1,,unknown,无法确定。,"[101068, 60610, 1773]",3,-4.030334974173456,False,
+S01_F01_square_only,F01,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-8.88063698913902,False,False
+S01_F01_square_only,F01,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.928066816180944,False,False
+S01_F01_square_only,F01,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-4.07630635984242,True,False
+S01_F01_singular_square,F01,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-9.315206358209252,False,True
+S01_F01_singular_square,F01,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.615188231691718,False,True
+S01_F01_singular_square,F01,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-4.006438942626119,True,True
+S01_F01_invertible_square,F01,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-9.035015119239688,False,False
+S01_F01_invertible_square,F01,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.79347924515605,False,False
+S01_F01_invertible_square,F01,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.811599936336279,True,False
+S01_F02_square_only,F02,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.51291845086962,False,False
+S01_F02_square_only,F02,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.25542392488569,False,False
+S01_F02_square_only,F02,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.735720545053482,True,False
+S01_F02_singular_square,F02,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.755724984686822,False,True
+S01_F02_singular_square,F02,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.052801872603595,False,True
+S01_F02_singular_square,F02,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.7358238976448774,True,True
+S01_F02_invertible_square,F02,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.728844605386257,False,False
+S01_F02_invertible_square,F02,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.3427110174670815,False,False
+S01_F02_invertible_square,F02,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.698351456783712,True,False
+S01_F03_square_only,F03,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.567378171719611,False,False
+S01_F03_square_only,F03,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.426527569070458,False,False
+S01_F03_square_only,F03,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.3863692674785852,True,False
+S01_F03_singular_square,F03,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.096702633425593,False,True
+S01_F03_singular_square,F03,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-3.9939071778208017,False,True
+S01_F03_singular_square,F03,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.1590858958661556,True,True
+S01_F03_invertible_square,F03,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.419582314789295,False,False
+S01_F03_invertible_square,F03,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.399146052077413,False,False
+S01_F03_invertible_square,F03,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.224630191922188,True,False
+S01_F04_square_only,F04,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.159395801834762,False,False
+S01_F04_square_only,F04,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.4306002529338,False,False
+S01_F04_square_only,F04,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.2976093031466007,True,False
+S01_F04_singular_square,F04,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.101772440597415,False,True
+S01_F04_singular_square,F04,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.059445533901453,False,True
+S01_F04_singular_square,F04,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.2043860610574484,True,True
+S01_F04_invertible_square,F04,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.200616695918143,False,False
+S01_F04_invertible_square,F04,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.378831511363387,False,False
+S01_F04_invertible_square,F04,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.1760371075943112,True,False
+S01_F05_square_only,F05,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.596047815401107,False,False
+S01_F05_square_only,F05,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.3935350412502885,False,False
+S01_F05_square_only,F05,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.819003609009087,True,False
+S01_F05_singular_square,F05,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.618788308929652,False,True
+S01_F05_singular_square,F05,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.103604149073362,False,True
+S01_F05_singular_square,F05,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.5606241039931774,True,True
+S01_F05_invertible_square,F05,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.6978787472471595,False,False
+S01_F05_invertible_square,F05,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.3349153636954725,False,False
+S01_F05_invertible_square,F05,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.678941979072988,True,False
+S01_F06_square_only,F06,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.420255672652274,False,False
+S01_F06_square_only,F06,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.27956576552242,False,False
+S01_F06_square_only,F06,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.195702765136957,True,False
+S01_F06_singular_square,F06,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.547996980138123,False,True
+S01_F06_singular_square,F06,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.083854421041906,False,True
+S01_F06_singular_square,F06,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.0160586973652244,True,True
+S01_F06_invertible_square,F06,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.503220699261874,False,False
+S01_F06_invertible_square,F06,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.379737053066492,False,False
+S01_F06_invertible_square,F06,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.0668776612728834,True,False
+S01_F07_square_only,F07,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-7.019301421009004,False,False
+S01_F07_square_only,F07,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.512609890662134,False,False
+S01_F07_square_only,F07,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.4015902429819107,True,False
+S01_F07_singular_square,F07,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-7.029011606238782,False,True
+S01_F07_singular_square,F07,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.285210110247135,False,True
+S01_F07_singular_square,F07,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.274345802143216,True,True
+S01_F07_invertible_square,F07,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-7.384298041462898,False,False
+S01_F07_invertible_square,F07,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.604912793263793,False,False
+S01_F07_invertible_square,F07,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.3912779185920954,True,False
+S01_F08_square_only,F08,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.733502580784261,False,False
+S01_F08_square_only,F08,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.159341825172305,False,False
+S01_F08_square_only,F08,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.971114106476307,True,False
+S01_F08_singular_square,F08,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.493924390990287,False,True
+S01_F08_singular_square,F08,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-3.94752705283463,False,True
+S01_F08_singular_square,F08,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.8716523172333837,True,True
+S01_F08_invertible_square,F08,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.652055433485657,False,False
+S01_F08_invertible_square,F08,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.1852596355602145,False,False
+S01_F08_invertible_square,F08,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.833459227345884,True,False
+S01_F09_square_only,F09,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.453977298922837,False,False
+S01_F09_square_only,F09,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.579723124392331,False,False
+S01_F09_square_only,F09,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.1903533712029457,True,False
+S01_F09_singular_square,F09,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.903990953229368,False,True
+S01_F09_singular_square,F09,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.124391091056168,False,True
+S01_F09_singular_square,F09,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.9790754597634077,True,True
+S01_F09_invertible_square,F09,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.86028518807143,False,False
+S01_F09_invertible_square,F09,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.447339336387813,False,False
+S01_F09_invertible_square,F09,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.1271067867055535,True,False
+S01_F10_square_only,F10,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.647668189369142,False,False
+S01_F10_square_only,F10,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.001408716663718,False,False
+S01_F10_square_only,F10,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.7233334043994546,True,False
+S01_F10_singular_square,F10,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.952761210501194,False,True
+S01_F10_singular_square,F10,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-3.6807154398411512,False,True
+S01_F10_singular_square,F10,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.6494123060256243,True,True
+S01_F10_invertible_square,F10,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.904107332229614,False,False
+S01_F10_invertible_square,F10,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.000439186580479,False,False
+S01_F10_invertible_square,F10,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.6762649547308683,True,False
+S01_F11_square_only,F11,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.3900723569095135,False,False
+S01_F11_square_only,F11,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.450682085007429,False,False
+S01_F11_square_only,F11,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.285542417317629,True,False
+S01_F11_singular_square,F11,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.408601033501327,False,True
+S01_F11_singular_square,F11,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.171338712796569,False,True
+S01_F11_singular_square,F11,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.2027621176093817,True,True
+S01_F11_invertible_square,F11,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-6.507228624075651,False,False
+S01_F11_invertible_square,F11,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.416993152350187,False,False
+S01_F11_invertible_square,F11,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-3.1801661606878042,True,False
+S01_F12_square_only,F12,square_only,F2,unknown,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.6036625718697906,False,False
+S01_F12_square_only,F12,square_only,F2,unknown,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.067451691254973,False,False
+S01_F12_square_only,F12,square_only,F2,unknown,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.967841487377882,True,False
+S01_F12_singular_square,F12,singular_square,F2,yes,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.922837067395449,False,True
+S01_F12_singular_square,F12,singular_square,F2,yes,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-3.938164004124701,False,True
+S01_F12_singular_square,F12,singular_square,F2,yes,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.8964242367073894,True,True
+S01_F12_invertible_square,F12,invertible_square,F2,no,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.885341643821448,False,False
+S01_F12_invertible_square,F12,invertible_square,F2,no,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.24742522276938,False,False
+S01_F12_invertible_square,F12,invertible_square,F2,no,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.928342985920608,True,False
+neutral,neutral,neutral,F2,,unknown,无法判断。,"[101068, 104317, 1773]",3,-5.991800788324326,False,
+neutral,neutral,neutral,F2,,no,不是奇异矩阵。,"[99520, 117223, 115000, 1773]",4,-4.29416392557323,False,
+neutral,neutral,neutral,F2,,yes,是奇异矩阵。,"[20412, 117223, 115000, 1773]",4,-2.8978774528950453,True,

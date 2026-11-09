@@ -1,0 +1,113 @@
+{
+  "examples": [
+    {
+      "case_id": "S01",
+      "target_text": "crane",
+      "target_token_id": 72947,
+      "target_index": 84,
+      "gap": 50,
+      "illustrative_feature_selection": "largest semantic-minus-unrelated absolute D-scaled component in fixed C03,within this preselected far case; posthoc illustration,not feature-level confirmation",
+      "feature_id": 12277,
+      "group": "C03",
+      "z_A": 0.019087649881839752,
+      "z_B": 0.011397221125662327,
+      "z_U": 0.018599368631839752,
+      "native_joint_c_A": 10.150069857888411,
+      "native_joint_c_B": 6.060598938444286,
+      "native_joint_c_U": 9.890420879178237,
+      "scaled_delta_BminusA": -2.065819401604055,
+      "unrelated_scaled_delta": -0.13116315249383587,
+      "largest_member_squared_effect_share": 0.8624727865546722,
+      "changed_group_members": 4,
+      "D_scale_z_RMS": 0.0037227013891950123,
+      "feature_reference_nV": 1629,
+      "A_visible_prefix": "A naturalist and an engineer use the same heading in a shared notebook. The entry is dated Tuesday. The subject was a wild bird with long legs and broad wings. An unrelated note records that the meeting began at nine. The printed page has a wide margin and a date in the top corner. The assistant checked the spelling in the heading and placed a small pencil mark beside the number. According to this account, the crane",
+      "B_visible_prefix": "A naturalist and an engineer use the same heading in a shared notebook. The entry is dated Tuesday. The subject was a tall machine with strong ropes and steel hooks. An unrelated note records that the meeting began at nine. The printed page has a wide margin and a date in the top corner. The assistant checked the spelling in the heading and placed a small pencil mark beside the number. According to this account, the crane",
+      "future_replacement_candidate": {
+        "status": "AI_PROPOSAL_NOT_RUN",
+        "feature_id": 12277,
+        "hook": "zero-based block27 residual-post before final global norm",
+        "position": 84,
+        "source": "S01_B_far",
+        "recipient": "S01_A_far",
+        "dose_delta_z": -0.007690428756177425,
+        "native_layer27_contribution_change_norm": 2.2063311572250655,
+        "definition": "replace only this feature contribution by measured B value: add (z_B-z_A)*TRAIN_RMS27*D27f at target; no other hook/token",
+        "falsifiable_prediction": "flies-minus-lifts candidate margin decreases toward B; unchanged/opposite or equally large matched-random-feature effect weakens candidate mediation",
+        "required_controls": "same hook/position; reverse dose; unrelated-edit dose; frequency/intensity-matched random feature; no training",
+        "not_evidence_of_layerwise_independent_feature": true
+      }
+    },
+    {
+      "case_id": "R01",
+      "target_text": "was",
+      "target_token_id": 572,
+      "target_index": 82,
+      "gap": 51,
+      "illustrative_feature_selection": "largest semantic-minus-unrelated absolute D-scaled component in fixed C03,within this preselected far case; posthoc illustration,not feature-level confirmation",
+      "feature_id": 2174,
+      "group": "C03",
+      "z_A": 0.04339543730020523,
+      "z_B": 0.04241887480020523,
+      "z_U": 0.04315129667520523,
+      "native_joint_c_A": 25.46062007998262,
+      "native_joint_c_B": 24.887659226405958,
+      "native_joint_c_U": 25.317379866588453,
+      "scaled_delta_BminusA": -0.2028186520582681,
+      "unrelated_scaled_delta": -0.050704663014567025,
+      "largest_member_squared_effect_share": 0.4664165313491097,
+      "changed_group_members": 4,
+      "D_scale_z_RMS": 0.004814954098597607,
+      "feature_reference_nV": 2540,
+      "A_visible_prefix": "A delivery log records one parcel and two people waiting in a hallway. The entry is dated Tuesday. The courier handed the parcel to Nora instead of Felix. An unrelated note records that the meeting began at nine. The printed page has a wide margin and a date in the top corner. The assistant checked the spelling in the heading and placed a small pencil mark beside the number. According to this account, the recipient was",
+      "B_visible_prefix": "A delivery log records one parcel and two people waiting in a hallway. The entry is dated Tuesday. The courier handed the parcel to Felix instead of Nora. An unrelated note records that the meeting began at nine. The printed page has a wide margin and a date in the top corner. The assistant checked the spelling in the heading and placed a small pencil mark beside the number. According to this account, the recipient was"
+    }
+  ],
+  "all_token_diagnostics": [
+    {
+      "case": "S01",
+      "variant": "A",
+      "token_l0_first": 93,
+      "token_l0_target": 384,
+      "token_l0_mean": 268.4823529411765,
+      "all_token_NMSE_mean": 0.08671604096889496,
+      "all_token_NMSE_p90": 0.1471157178282738,
+      "first_token_NMSE_mean": 0.007425234653055668,
+      "target_NMSE_mean": 0.09004807472229004
+    },
+    {
+      "case": "S01",
+      "variant": "B",
+      "token_l0_first": 93,
+      "token_l0_target": 399,
+      "token_l0_mean": 267.70588235294116,
+      "all_token_NMSE_mean": 0.0854906514286995,
+      "all_token_NMSE_p90": 0.14688585549592972,
+      "first_token_NMSE_mean": 0.007425234653055668,
+      "target_NMSE_mean": 0.08670312911272049
+    },
+    {
+      "case": "R01",
+      "variant": "A",
+      "token_l0_first": 93,
+      "token_l0_target": 282,
+      "token_l0_mean": 270.87951807228916,
+      "all_token_NMSE_mean": 0.0875793993473053,
+      "all_token_NMSE_p90": 0.15003343224525453,
+      "first_token_NMSE_mean": 0.007425234653055668,
+      "target_NMSE_mean": 0.08410085737705231
+    },
+    {
+      "case": "R01",
+      "variant": "B",
+      "token_l0_first": 93,
+      "token_l0_target": 285,
+      "token_l0_mean": 271.43373493975906,
+      "all_token_NMSE_mean": 0.08737809956073761,
+      "all_token_NMSE_p90": 0.14962708652019502,
+      "first_token_NMSE_mean": 0.007425234653055668,
+      "target_NMSE_mean": 0.08270086348056793
+    }
+  ],
+  "proposal_not_executed": true
+}

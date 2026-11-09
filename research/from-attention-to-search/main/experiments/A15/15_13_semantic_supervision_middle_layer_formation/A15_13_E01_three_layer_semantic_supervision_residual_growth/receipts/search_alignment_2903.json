@@ -1,0 +1,106 @@
+{
+  "alignment": {
+    "DEV-ID": {
+      "coarse": {
+        "adjusted_mutual_information": 8.368446571819478e-05,
+        "hungarian_accuracy": 0.50775,
+        "hungarian_mapping": {
+          "0": 1,
+          "1": 0
+        }
+      },
+      "leaf": {
+        "adjusted_mutual_information": 0.0037575728510021336,
+        "hungarian_accuracy": 0.275125,
+        "hungarian_mapping": {
+          "0": 0,
+          "1": 3,
+          "2": 1,
+          "3": 2
+        }
+      }
+    },
+    "DEV-OOD": {
+      "coarse": {
+        "adjusted_mutual_information": 0.0006279232795478551,
+        "hungarian_accuracy": 0.51575,
+        "hungarian_mapping": {
+          "0": 0,
+          "1": 1
+        }
+      },
+      "leaf": {
+        "adjusted_mutual_information": 0.0008633926958827272,
+        "hungarian_accuracy": 0.267375,
+        "hungarian_mapping": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3
+        }
+      }
+    },
+    "TEST-ID": {
+      "coarse": {
+        "adjusted_mutual_information": 0.00043398984932087613,
+        "hungarian_accuracy": 0.5130833333333333,
+        "hungarian_mapping": {
+          "0": 1,
+          "1": 0
+        }
+      },
+      "leaf": {
+        "adjusted_mutual_information": 0.003781042957491717,
+        "hungarian_accuracy": 0.275,
+        "hungarian_mapping": {
+          "0": 3,
+          "1": 2,
+          "2": 1,
+          "3": 0
+        }
+      }
+    },
+    "TEST-OOD": {
+      "coarse": {
+        "adjusted_mutual_information": 0.00012025173965306217,
+        "hungarian_accuracy": 0.5071666666666667,
+        "hungarian_mapping": {
+          "0": 0,
+          "1": 1
+        }
+      },
+      "leaf": {
+        "adjusted_mutual_information": 0.0005174621261687974,
+        "hungarian_accuracy": 0.261125,
+        "hungarian_mapping": {
+          "0": 0,
+          "1": 2,
+          "2": 3,
+          "3": 1
+        }
+      }
+    },
+    "TRAIN": {
+      "coarse": {
+        "adjusted_mutual_information": 0.00027560903302542876,
+        "hungarian_accuracy": 0.5099,
+        "hungarian_mapping": {
+          "0": 1,
+          "1": 0
+        }
+      },
+      "leaf": {
+        "adjusted_mutual_information": 0.00454877388128175,
+        "hungarian_accuracy": 0.2785,
+        "hungarian_mapping": {
+          "0": 0,
+          "1": 3,
+          "2": 1,
+          "3": 2
+        }
+      }
+    }
+  },
+  "frozen_receipt_exists": true,
+  "schema": "a15_13_post_freeze_alignment_v1"
+}

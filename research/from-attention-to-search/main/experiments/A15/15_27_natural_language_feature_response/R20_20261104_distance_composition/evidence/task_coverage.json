@@ -1,0 +1,72 @@
+{
+  "UTC": "2026-11-04T08:02:55.941015+00:00",
+  "entries": [
+    {
+      "task": "R19input/token/frequency/scoreaudit",
+      "status": "DONE_VALID",
+      "evidence": "evidence/R19_replay.json;evidence/frequency_validation.json",
+      "missing_dependency": null
+    },
+    {
+      "task": "membership/strength/threepairedgaps",
+      "status": "DONE_VALID",
+      "evidence": "tables/baseline_pair_metrics.csv;tables/baseline_member_values.csv",
+      "missing_dependency": null
+    },
+    {
+      "task": "full/Six/raw/relativefactcontrasts",
+      "status": "DONE_VALID",
+      "evidence": "tables/baseline_fact_contrasts.csv;results/primary_hypotheses.json",
+      "missing_dependency": null
+    },
+    {
+      "task": "behaviorandperiodsensitivity",
+      "status": "DONE_VALID",
+      "evidence": "tables/*behavior*;supplement_failures.md",
+      "missing_dependency": null
+    },
+    {
+      "task": "frequencycounts/proportions/opportunities/IDs",
+      "status": "DONE_VALID",
+      "evidence": "tables/*frequency*;tables/feature_turnover_atlas.csv",
+      "missing_dependency": null
+    },
+    {
+      "task": "fourrulechosencasesandcounterexamples",
+      "status": "DONE_VALID",
+      "evidence": "results/case_selection.json;cases/",
+      "missing_dependency": null
+    },
+    {
+      "task": "228boundednewforwardcontrols",
+      "status": "DONE_VALID",
+      "evidence": "evidence/full_complete.json;tables/control_family_differences.csv",
+      "missing_dependency": null
+    },
+    {
+      "task": "template/multiplicity/reconstruction/thresholdchecks",
+      "status": "DONE_VALID",
+      "evidence": "evidence/final_three_audits.json;tables/reconstruction_quality.csv;tables/threshold_summaries.csv",
+      "missing_dependency": null
+    },
+    {
+      "task": "discoverysideobservations",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "tables/*split=discovery",
+      "missing_dependency": null
+    },
+    {
+      "task": "mainfigure/auditfigures/shorttalk/code/config",
+      "status": "DONE_VALID",
+      "evidence": "figures/;meetingbrief;code/;effective_config.json",
+      "missing_dependency": null
+    }
+  ],
+  "excluded_by_scope": [
+    "competition-error mechanism",
+    "functional interventions",
+    "training",
+    "universal pure-distance law"
+  ],
+  "resource_gaps": []
+}

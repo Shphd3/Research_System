@@ -1,0 +1,69 @@
+{
+  "UTC": "2026-11-05T09:22:55.366736+00:00",
+  "scope": "user-authorized bounded cache-only exploratory pairwise category relations",
+  "S11": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105",
+  "reuse_status": "32development/64evaluation backgrounds already exposed; not fresh blind validation",
+  "families_development": 32,
+  "families_evaluation": 64,
+  "wordings": [
+    "explicit",
+    "named_rephrase",
+    "attribute",
+    "scenario"
+  ],
+  "domains": {
+    "animal": [
+      "cat",
+      "dog"
+    ],
+    "vehicle": [
+      "car",
+      "bicycle"
+    ],
+    "fruit": [
+      "apple",
+      "banana"
+    ],
+    "furniture": [
+      "chair",
+      "sofa"
+    ]
+  },
+  "sites": [
+    "ATTN_SAE",
+    "MLPIN_SAE"
+  ],
+  "seed": 20262305,
+  "nodes_binary": 16,
+  "edges_binary": 6,
+  "nodes_strength": 12,
+  "edges_strength": 4,
+  "bootstrap": 2000,
+  "null": {
+    "chains": 4,
+    "draws_per_chain": 256,
+    "burn_sweeps": 500,
+    "thin_sweeps": 20,
+    "extended_burn": 2000,
+    "extended_thin": 80,
+    "minimum_ESS": 200,
+    "maximum_Rhat": 1.05
+  },
+  "readouts": {
+    "C": 0.5,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "interaction_count": 6,
+    "development_only_scaling": true,
+    "primary": "paired family mean log loss"
+  },
+  "budget": {
+    "cpu_threads": 4,
+    "max_wall_seconds": 7200,
+    "max_output_GB": 2,
+    "no_model_forward": true,
+    "no_new_cloud": true
+  },
+  "scientific_acceptance": "Unknown",
+  "question_closure": "Unknown"
+}

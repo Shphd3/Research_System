@@ -1,0 +1,18 @@
+{
+  "time_utc": "2026-11-01T14:54:08.960505+00:00",
+  "class_": "EXPRESSION_PROVENANCE_ONLY",
+  "problem": "image correctly used automatic non-clipping color maximum;manifest retained nominal30percent",
+  "before": [
+    0,
+    30
+  ],
+  "after": [
+    0,
+    75.21508849624635
+  ],
+  "source": "all adjacent input-side s1 symmetric relative changes",
+  "effect": "metadata only;pixels,numeric tables,eligibility and conclusions unchanged",
+  "old_manifest": "/data/250010109/MoE_Router/experiments/20261101_dense_weight_spectral_dynamics/audit/plot_manifest_before_metadata_correction.json",
+  "corrected_manifest_sha256": "747c55ec12727eda6f87ec2af1ed75bde9cc19df7e8345e404260bfccac09a7c",
+  "reproduction": "After scripts/plot.py run scripts/fix_figure_metadata.py"
+}

@@ -1,0 +1,47 @@
+{
+  "UTC": "2026-11-04T07:20:28.589702+00:00",
+  "sites": {
+    "ATTN_SAE": {
+      "reference_documents": 300,
+      "reference_positions": 38400,
+      "bins": [
+        35,
+        70
+      ],
+      "groups": {
+        "insufficient": 15579,
+        "low": 4158,
+        "middle": 4585,
+        "high": 4377,
+        "zero": 1301
+      },
+      "copied_csv_sha256": "fef12eb670be23987ff7aff18d7ed69e0444d166b2fb90c6c5c2799ae8fb6044",
+      "source_hashes_current": true,
+      "source_count_and_doc_replay_receipts": [
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/evidence/reference_validation.json",
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/evidence/reference_document_coverage_check.json"
+      ]
+    },
+    "MLPIN_SAE": {
+      "reference_documents": 300,
+      "reference_positions": 38400,
+      "bins": [
+        33,
+        62
+      ],
+      "groups": {
+        "middle": 3503,
+        "high": 3429,
+        "insufficient": 19024,
+        "zero": 745,
+        "low": 3299
+      },
+      "copied_csv_sha256": "fa9ba8506c6d28767744634409e5424cd7c91856e3f0cef37b87f4c39ea42909",
+      "source_hashes_current": true,
+      "source_count_and_doc_replay_receipts": [
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/evidence/reference_validation.json",
+        "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R02_feature_composition/evidence/reference_document_coverage_check.json"
+      ]
+    }
+  }
+}

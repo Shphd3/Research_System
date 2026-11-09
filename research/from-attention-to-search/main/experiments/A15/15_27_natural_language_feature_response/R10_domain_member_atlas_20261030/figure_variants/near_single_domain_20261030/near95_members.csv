@@ -1,0 +1,293 @@
+feature_id,domain_bias,strict_discovery,discovery_preferred_documents,discovery_opposite_documents,discovery_preferred_events,discovery_opposite_events,discovery_preferred_event_share,discovery_preferred_position_rate,discovery_opposite_position_rate,heldout_preferred_documents,heldout_opposite_documents,heldout_preferred_events,heldout_opposite_events,heldout_preferred_event_share,heldout_preferred_position_rate,heldout_opposite_position_rate,heldout_near95,heldout_strict,heldout_opposite_doc_probability_upper95,DCLM_hits,DCLM_positions,DCLM_rate,DCLM_rate_CI_low,DCLM_rate_CI_high,frequency_original,frequency_log,discovery_oriented_auc,heldout_oriented_auc,heldout_AUC_CI_low,heldout_AUC_CI_high,composition_supported,high_event_count,high_token_types,example_token_id,example_token,example_prefix,discovery_preferred_zero_inclusive_mean_z,discovery_opposite_zero_inclusive_mean_z,heldout_preferred_zero_inclusive_mean_z,heldout_opposite_zero_inclusive_mean_z,preferred_discovery_distinct_hosts,max_one_discovery_document_event_share
+16271,math,False,30,1,1220,1,0.9991809991809992,0.25416666666666665,0.00020833333333333335,20,2,639,11,0.9830769230769231,0.1996875,0.0034375,False,False,0.28261852488586087,529,65536,0.0080718994140625,0.004966627706692913,0.012237650953878567,middle,middle,1.0,0.99,0.9598750000000005,1.0000000000000007,True,61,32,476, or,"The Sagacity of Circles: A History of the Isoperimetric Problem - The Work of Jakob Steiner
+
+Jennifer Wiegert
+
+Just as the problem of isoperimetry is associated with the work of Zenodorus and his commentator Pappus in the ancient world, it was the Swiss mathematician Jakob Steiner (1796–1863) who tackled the isoperimetric theorem in the modern world. Indeed, the problem of isoperimetry in the nineteenth century emerged at an important juncture in mathematical thought. Mathematicians working in all fields of inquiry struggled over the use of analytic (i.e. calculus)",0.010853918477271993,4.398980333159367e-06,0.008237495180219412,7.708451943472028e-05,8,0.0959016393442623
+16195,math,True,28,0,1573,0,1.0,0.3277083333333333,0.0,17,0,902,0,1.0,0.281875,0.0,True,True,0.13910834066826516,262,65536,0.003997802734375,0.0004842092824536701,0.008445035679133857,middle,low,0.9666666666666667,0.925,0.8500000000000003,1.0000000000000002,True,52,32,264, a,"It is a Boolean algebra, completed to include countably infinite operations. The pair (X, Σ) is also a field of sets, sometimes called a σ-field or",0.03076775055533896,0.0,0.0206748059252277,0.0,6,0.09408773045136681
+15594,math,False,25,1,500,1,0.998003992015968,0.10416666666666667,0.00020833333333333335,18,2,592,3,0.9949579831932773,0.185,0.0009375,False,False,0.28261852488586087,224,65536,0.00341796875,0.0009235707364341085,0.006813602276368797,middle,low,0.9105555555555556,0.9375,0.8500000000000001,1.0000000000000004,True,86,57,59,\,"In mathematics, root mean square (abbreviated RMS or rms), also known as the quadratic mean, is a statistical measure of the magnitude of a varying quantity. It can be calculated for a series of discrete values or for a continuously varying function. The name comes from the fact that it is the square root of the mean of the squares of the values. It is a power mean with the power t=2.
+
+Calculating the root mean square Edit
+
+The rms for a collection of N values \{x_1,x_2,\dots,x_N\} is:
+
+x_{\mathrm{rms}} = 
+\sqrt {{1 \over N} \sum_{i=1}^{N} x_i^2} =
+",0.003995251270631949,5.704329038659731e-06,0.008170607760548591,2.5211717002093792e-05,6,0.152
+4797,math,True,24,0,647,0,1.0,0.13479166666666667,0.0,15,2,651,2,0.996937212863706,0.2034375,0.000625,False,False,0.28261852488586087,168,65536,0.0025634765625,0.00048828125,0.006363677978515624,low,low,0.9,0.8625,0.7525000000000004,0.9724999999999999,True,42,32,525, are,"Geometric diagram of a Peaucellier linkage
+
+In the geometric diagram of the apparatus, six bars of fixed length can be seen: OA, OC, AB, BC, CD, DA. The length of OA is equal to the length of OC, and the lengths of AB, BC, CD, and DA are all equal forming a rhombus. Also, point O is fixed. Then, if point B is constrained to move along a circle (shown in red) which passes through O, then point D will necessarily have to move along a straight line (shown in blue). On the other hand, if point B were constrained to move along a line (not passing through O), then point D would necessarily have to move along a circle (passing through O).
+
+Mathematical proof of concept[edit]
+
+
+First, it must be proven that points O, B, D are collinear.
+
+Triangles BAD and BCD",0.00893425962732484,0.0,0.014645943166688085,1.0475663002580404e-05,6,0.2009273570324575
+15426,math,True,24,0,586,0,1.0,0.12208333333333334,0.0,14,0,381,0,1.0,0.1190625,0.0,True,True,0.13910834066826516,206,65536,0.003143310546875,0.00027460497479106104,0.008026504516601562,middle,low,0.9,0.85,0.7500000000000003,0.9500000000000001,True,29,20,11,",","Here's an answer somewhat different from those already given.
+
+Associated to any homotopy pullback square, there's a long exact sequence of homotopy groups often called the Mayer-Vietoris sequence. It comes from weaving together the long exact sequences for, say, the two vertical maps in the square, which have homotopy equivalent homotopy fibers. (This weaving is a standard homological algebra exercise, and appears somewhere in Hatcher's book...)
+
+Now, to build the Mayer-Vietoris sequence in cohomology for a CW complex X written as a union of subcomplexes $X = A\cup B$, just note that the homotopy pushout square formed by $A\cap B$, A, B, and X becomes a homotopy pullback square after applying Map(-",0.01172119335581859,0.0,0.011053488748148084,0.0,6,0.15017064846416384
+1097,math,False,24,1,803,1,0.9987562189054726,0.16729166666666667,0.00020833333333333335,18,0,440,0,1.0,0.1375,0.0,True,True,0.13910834066826516,136,65536,0.0020751953125,0.0004119873046875,0.004563140869140624,low,low,0.8944444444444445,0.95,0.8750000000000004,1.0000000000000007,True,43,29,264, a,"Positive definite kernels provide a framework that encompasses some basic Hilbert space constructions.
+
+Reproducing kernel Hilbert space[edit]
+
+The definition and characterization of positive kernels extend verbatim to the case where the integers Z is replaced by an arbitrary set X. One can then give a fairly general procedure for constructing Hilbert spaces that is itself of some interest.
+
+Consider the set F0(X) of complex-valued functions f: XC with finite support. With the natural operations, F0(X) is called the free vector space generated by X. Let δx be the element in F0(X) defined by δx(y) = δxy. The set {δx}xX is a vector space basis of F0(X).
+
+Suppose now K: X × XC is",0.010916057048986355,3.27258991698424e-06,0.008530453788116574,0.0,7,0.136986301369863
+3467,math,False,24,1,516,2,0.9961389961389961,0.1075,0.0004166666666666667,20,2,509,60,0.8945518453427065,0.1590625,0.01875,False,False,0.28261852488586087,508,65536,0.00775146484375,0.0032789786030927043,0.01335276205708661,middle,middle,0.8933333333333333,0.955,0.8550000000000006,1.0000000000000007,True,105,60,53,V,"Solitons are explicit solutions to nonlinear partial differential equations. They are waves that behave in many respects like particles. The founding story of soliton theory, repeated so often it is now almost indistinguishable from myth, tells of John Scott Russell and his observation in 1834 of a peculiar solitary wave in a canal near Edinburgh. He followed this wave on horseback as it kept its speed and shape for a mile or two until he lost it. The response to this amazing discovery was … not much, mostly scoffing, because everyone thought that such a wave would disperse and distort and could not propagate. In 1895 Korteweg and de Vries modeled water waves in a canal, derived the Kd",0.0033733066155885658,5.820204193393389e-06,0.00633277150336653,0.0006935040373355151,8,0.16279069767441862
+6325,math,False,24,1,1149,10,0.99137187230371,0.239375,0.0020833333333333333,15,0,624,0,1.0,0.195,0.0,True,True,0.13910834066826516,560,65536,0.008544921875,0.0023616169774255086,0.01719410813699557,middle,middle,0.89,0.875,0.7750000000000002,0.9749999999999991,True,101,70,304, in,"In computational complexity theory, the Immerman–Szelepcsényi theorem was proven independently by Neil Immerman and Róbert Szelepcsényi in 1987, for which they shared the 1995 Gödel Prize. In its general form the theorem states that NSPACE(s(n)) = co-NSPACE(s(n)) for any function s(n) ≥ log n. The result is equivalently stated as NL = co-NL; although this is the special case when s(n) = log n, it implies the general theorem by a standard padding argument[citation needed]. The result solved the second LBA problem.
+
+In other words, if a nondeterministic machine can solve a problem, it can solve its complement problem (with the yes and no answers reversed)",0.01790567784104496,3.143941673139731e-05,0.015030741798691452,0.0,6,0.13664055700609226
+8693,math,True,23,0,483,0,1.0,0.100625,0.0,14,0,209,0,1.0,0.0653125,0.0,True,True,0.13910834066826516,305,65536,0.0046539306640625,0.0008765994094488189,0.010690139060796692,middle,middle,0.8833333333333333,0.85,0.7500000000000002,0.9500000000000002,True,43,30,576, The,"Positive definite kernels provide a framework that encompasses some basic Hilbert space constructions.
+
+Reproducing kernel Hilbert space[edit]
+
+The definition and characterization of positive kernels extend verbatim to the case where the integers Z is replaced by an arbitrary set X. One can then give a fairly general procedure for constructing Hilbert spaces that is itself of some interest.
+
+Consider the set F0(X) of complex-valued functions f: XC with finite support. With the natural operations, F0(X) is called the free vector space generated by X. Let δx be the element in F0(X) defined by δx(y) = δxy.",0.0041188050123552485,0.0,0.0032599103357642887,0.0,6,0.18840579710144928
+12030,math,True,23,0,1520,0,1.0,0.31666666666666665,0.0,18,0,1105,0,1.0,0.3453125,0.0,True,True,0.13910834066826516,315,65536,0.0048065185546875,0.0008525848388671876,0.010402160991004394,middle,middle,0.8833333333333333,0.95,0.8750000000000004,1.0000000000000007,True,51,42,429, that,"Here's an answer somewhat different from those already given.
+
+Associated to any homotopy pullback square, there's a long exact sequence of homotopy groups often called the Mayer-Vietoris sequence. It comes from weaving together the long exact sequences for, say, the two vertical maps in the square, which have homotopy equivalent homotopy fibers. (This weaving is a standard homological algebra exercise, and appears somewhere in Hatcher's book...)
+
+Now, to build the Mayer-Vietoris sequence in cohomology for a CW complex X written as a union of subcomplexes $X = A\cup B$, just note",0.01910858412583669,0.0,0.017969193514436484,0.0,6,0.09078947368421053
+7383,math,True,22,0,342,0,1.0,0.07125,0.0,17,3,492,3,0.9939393939393939,0.15375,0.0009375,False,False,0.3436638043142818,283,65536,0.0043182373046875,0.000579833984375,0.010608825683593748,middle,low,0.8666666666666667,0.90125,0.8100000000000004,0.9750000000000003,True,73,46,87,x,"Positive definite kernels provide a framework that encompasses some basic Hilbert space constructions.
+
+Reproducing kernel Hilbert space[edit]
+
+The definition and characterization of positive kernels extend verbatim to the case where the integers Z is replaced by an arbitrary set X. One can then give a fairly general procedure for constructing Hilbert spaces that is itself of some interest.
+
+Consider the set F0(X) of complex-valued functions f: XC with finite support. With the natural operations, F0(X) is called the free vector space generated by X. Let δx be the element in F0(X) defined by δx(y) = δxy. The set {δ",0.004138636256878575,0.0,0.011191968065686524,1.8430275376886128e-05,6,0.22807017543859648
+13437,math,False,21,1,410,1,0.9975669099756691,0.08541666666666667,0.00020833333333333335,17,0,524,0,1.0,0.16375,0.0,True,True,0.13910834066826516,270,65536,0.004119873046875,0.001007080078125,0.007981533140648067,middle,low,0.845,0.925,0.8500000000000002,1.0000000000000002,True,49,32,87,x,"Positive definite kernels provide a framework that encompasses some basic Hilbert space constructions.
+
+Reproducing kernel Hilbert space[edit]
+
+The definition and characterization of positive kernels extend verbatim to the case where the integers Z is replaced by an arbitrary set X. One can then give a fairly general procedure for constructing Hilbert spaces that is itself of some interest.
+
+Consider the set F0(X) of complex-valued functions f: XC with finite support. With the natural operations, F0(X) is called the free vector space generated by X. Let δx be the element in F0(X) defined by δx(y) = δxy. The set {δx}",0.005270582102239132,3.2819869617621104e-06,0.010197897367179394,0.0,6,0.16097560975609757
+754,math,False,21,1,581,1,0.9982817869415808,0.12104166666666667,0.00020833333333333335,16,4,331,15,0.9566473988439307,0.1034375,0.0046875,False,False,0.4010281173319745,70,65536,0.001068115234375,0.0002898608067238978,0.0020768367182768016,low,low,0.8438888888888889,0.8425,0.7224375000000002,0.9450312500000001,True,11,8,315, of,"It is a Boolean algebra, completed to include countably infinite operations. The pair (X, Σ) is also a field of sets, sometimes called a σ-field or a measurable space.
+
+Thus, if X = {a, b, c, d}, one possible sigma algebra on X is Σ = { ∅, {a, b}, {c, d}, {a, b, c, d} }.
+
+The main use of σ-algebras is in the definition",0.004786914599438508,3.4814700484275816e-06,0.0031120642833411694,8.138483390212059e-05,6,0.23235800344234078
+12739,math,False,20,1,443,1,0.9977477477477478,0.09229166666666666,0.00020833333333333335,10,0,286,0,1.0,0.089375,0.0,True,True,0.13910834066826516,407,65536,0.0062103271484375,0.002800777346588845,0.010651397705078124,middle,middle,0.8266666666666667,0.75,0.6499999999999998,0.8500000000000003,True,11,10,379, y,"How Computing Science created a new mathematical style
+
+Edsger W. Dijkstra
+University of Texas at Austin
+
+To begin with, I would like to talk to you about equality. I don't know how you were introduced to the notion, I don't even remember how I was introduced to it myself. In our earliest memories, the notion was already there, and all of us must have appealed almost subconsciously to its obvious properties such as symmetry and transitivity. i.e., for all x, y, z
+
+(0) x =",0.004716270410766204,2.5908540313442548e-06,0.003925349656492471,0.0,5,0.27765237020316025
+5234,math,True,19,0,129,0,1.0,0.026875,0.0,16,0,132,0,1.0,0.04125,0.0,True,True,0.13910834066826516,464,65536,0.007080078125,0.0042133871964582315,0.010401776517579198,middle,middle,0.8166666666666667,0.9,0.825,0.9750000000000005,True,19,14,15159,_{,"In mathematics, root mean square (abbreviated RMS or rms), also known as the quadratic mean, is a statistical measure of the magnitude of a varying quantity. It can be calculated for a series of discrete values or for a continuously varying function. The name comes from the fact that it is the square root of the mean of the squares of the values. It is a power mean with the power t=2.
+
+Calculating the root mean square Edit
+
+The rms for a collection of N values \{x_1,x_2,\dots,x_N\} is:
+
+x_{\mathrm{rms}} = 
+\sqrt {{1 \over N} \sum",0.0010178167745471,0.0,0.0016746167000383139,0.0,5,0.13178294573643412
+12960,math,True,19,0,1194,0,1.0,0.24875,0.0,9,0,412,0,1.0,0.12875,0.0,True,True,0.13910834066826516,360,65536,0.0054931640625,0.0005950927734375,0.013469696044921865,middle,middle,0.8166666666666667,0.725,0.6250000000000002,0.8250000000000004,False,97,64,11,",","Here's an answer somewhat different from those already given.
+
+Associated to any homotopy pullback square, there's a long exact sequence of homotopy groups often called the Mayer-Vietoris sequence. It comes from weaving together the long exact sequences for, say",0.023489838627477486,0.0,0.01641188719542697,0.0,5,0.12981574539363483
+418,math,False,19,1,209,1,0.9952380952380953,0.043541666666666666,0.00020833333333333335,12,0,243,0,1.0,0.0759375,0.0,True,True,0.13910834066826516,130,65536,0.001983642578125,0.000599661399060347,0.003982907672261083,low,low,0.8105555555555556,0.8,0.7000000000000001,0.9000000000000006,True,51,27,11,",","Positive definite kernels provide a framework that encompasses some basic Hilbert space constructions.
+
+Reproducing kernel Hilbert space[edit]
+
+The definition and characterization of positive kernels extend verbatim to the case where the integers Z is replaced by an arbitrary set X. One can then give a fairly general procedure for constructing Hilbert spaces that is itself of some interest.
+
+Consider the set F0(X) of complex-valued functions f: XC with finite support. With the natural operations, F0(X) is called the free vector space generated by X. Let δx be the element in F0(X) defined by δx(y) = δxy. The set {δx}xX is a vector space basis of F0(X).
+
+Suppose now K: X × XC is a positive definite kernel, then the Kolmogorov decomposition of K gives a Hilbert space
+
+ ({\mathcal H}, \langle \cdot",0.001846606481509904,2.3255078122019767e-06,0.0042300633061677214,0.0,4,0.22966507177033493
+3463,math,False,19,1,61,1,0.9838709677419355,0.012708333333333334,0.00020833333333333335,10,1,32,1,0.9696969696969697,0.01,0.0003125,True,False,0.2161061642068473,15,65536,0.0002288818359375,7.570251937984496e-05,0.00043061023622047243,insufficient,insufficient,0.81,0.73,0.6149062499999999,0.8500000000000001,True,8,5,35972, mathematical,"The Sagacity of Circles: A History of the Isoperimetric Problem - The Work of Jakob Steiner
+
+Jennifer Wiegert
+
+Just as the problem of isoperimetry is associated with the work of Zenodorus and his commentator Pappus in the ancient world, it was the Swiss mathematician Jakob Steiner (1796–1863) who tackled the isoperimetric theorem in the modern world. Indeed, the problem of isoperimetry in the nineteenth century emerged at an important juncture in",0.0010465705658619603,4.457913649578889e-06,0.0009561673342250288,1.4011089224368333e-05,7,0.16393442622950818
+11316,math,False,19,1,129,1,0.9923076923076923,0.026875,0.00020833333333333335,13,1,168,3,0.9824561403508771,0.0525,0.0009375,True,False,0.2161061642068473,105,65536,0.0016021728515625,0.00010763153316467766,0.0036605714812992123,low,low,0.81,0.81625,0.7112500000000002,0.9212500000000006,True,34,16,20277,Delta,"Using a little linear algebra, one can fairly easily construct approximations, which sample an arbitrary number of points to the left and a (possibly different) number of points to the right of the center point, for any order of derivative. This involves solving a linear system such that the Taylor expansion of the sum of those points, around the center point, well approximates the Taylor expansion of the desired derivative.
+
+
+The details are outlined in these notes.
+
+
+  • For all positive k and n
+\Delta^n_{kh} (f, x) = \sum\limits_{i_1=0}^{k-1} \sum\limits_{i_2=0}^{k-1} ... \sum\limits_{i_n=0}^{k-1} \Delta^n_h (f, x+i_1h+i_2h+...+i_nh).
+\",0.0023401558523376783,3.270717958609263e-06,0.006133058816194534,1.5938933938741683e-05,5,0.32558139534883723
+677,math,False,19,1,76,1,0.987012987012987,0.015833333333333335,0.00020833333333333335,9,2,63,2,0.9692307692307692,0.0196875,0.000625,False,False,0.28261852488586087,36,65536,0.00054931640625,0.00030517578125,0.0008328903553097745,low,low,0.8072222222222222,0.6975,0.5687500000000004,0.8250000000000002,True,5,5,12557, multip,"
+
+A key result of number theory, called the fundamental theorem of arithmetic (see arithmetic: fundamental theory), states that every positive integer greater than 1 can be expressed as the product of prime numbers in a unique fashion. Because of this, primes can be regarded as the",0.0005536945536732674,4.927034800251325e-06,0.0007335491245612502,1.2797461822628975e-05,6,0.3026315789473684
+14841,math,False,19,1,245,2,0.9919028340080972,0.051041666666666666,0.0004166666666666667,17,2,375,7,0.981675392670157,0.1171875,0.0021875,False,False,0.28261852488586087,462,65536,0.007049560546875,0.0025063822588582674,0.013061787762979822,middle,middle,0.8061111111111111,0.91,0.8199687500000002,0.9925000000000002,True,61,30,1147, z,"How Computing Science created a new mathematical style
+
+Edsger W. Dijkstra
+University of Texas at Austin
+
+To begin with, I would like to talk to you about equality. I don't know how you were introduced to the notion, I don't even remember how I was introduced to it myself. In our earliest memories, the notion was already there, and all of us must have appealed almost subconsciously to its obvious properties such as symmetry and transitivity. i.e., for all x, y, z
+
+(0) x = y   ≡   y = x               , and
+
+(1) x = y  ∧  y =",0.001718869674950838,5.757796267668406e-06,0.00448192902840674,2.786331810057163e-05,4,0.24081632653061225
+7946,math,True,18,0,77,0,1.0,0.016041666666666666,0.0,11,3,139,4,0.972027972027972,0.0434375,0.00125,False,False,0.3436638043142818,1999,65536,0.0305023193359375,0.01911466559276384,0.043640518188476564,high,middle,0.8,0.72625,0.5936875000000003,0.8550312500000005,True,44,31,320, (,"
+
+A key result of number theory, called the fundamental theorem of arithmetic (see arithmetic: fundamental theory), states that every positive integer greater than 1 can be expressed as the product of prime numbers in a unique fashion. Because of this, primes can be regarded as the multiplicative “building blocks” for the natural numbers (all whole numbers greater than zero—e.g., 1, 2, 3, …).
+
+Primes have been recognized since antiquity, when they were studied by the Greek mathematicians Euclid (fl. c. 300 bce) and Eratosthenes of Cyrene",0.0002808200366174181,0.0,0.0010451649990864099,2.0387908443808554e-05,5,0.14285714285714285
+9638,math,True,18,0,499,0,1.0,0.10395833333333333,0.0,12,0,275,0,1.0,0.0859375,0.0,True,True,0.13910834066826516,214,65536,0.003265380859375,0.0001999261811023622,0.008735437468280942,middle,low,0.8,0.8,0.6999999999999998,0.9000000000000004,False,2,2,369, for,"(I am a very, very new to mathematics, so I apologise in advance for posing a question so basic, but am out of ideas).
+
+In Idoneal Numbers and some Generalizations, pp. 15, Ernst Kani quotes Euler's criterion",0.009357055329407254,0.0,0.003997434740886092,0.0,4,0.27655310621242485
+12207,math,True,18,0,241,0,1.0,0.050208333333333334,0.0,17,0,361,0,1.0,0.1128125,0.0,True,True,0.13910834066826516,233,65536,0.0035552978515625,0.0004425048828125,0.008089705339566928,middle,low,0.8,0.925,0.8500000000000002,1.0000000000000002,True,61,25,760, |,"First, even though I think this is a fun question, it's not really research mathematics and I'm not sure it belongs on mathoverflow. (You know that some really smart people answer questions on math.stackexchange, right?) As was noted in Robert's answer, one is investigating the sequence $x_{n+1} =",0.0036325498841082056,0.0,0.01060946210520342,0.0,5,0.26556016597510373
+15680,math,True,17,0,241,0,1.0,0.050208333333333334,0.0,10,2,207,9,0.9583333333333334,0.0646875,0.0028125,False,False,0.28261852488586087,600,65536,0.0091552734375,0.001631858405165785,0.01951779343011811,middle,middle,0.7833333333333333,0.7175,0.5774374999999999,0.8412812499999996,False,2,2,4197,with,"In computational complexity theory, the Immerman–Szelepcsényi theorem was proven independently by Neil Immerman and Róbert Szelepcsényi in 1987, for which they shared the 1995 Gödel Prize. In its general form the theorem states that NSPACE(s(n)) = co-NSPACE(s(n)) for any function s(n) ≥ log n. The result is equivalently stated as NL = co-NL; although this is the special case when s(n) = log n, it implies the general theorem by a standard padding argument[citation needed]. The result solved the second LBA problem.
+
+In other words, if a nondeterministic machine can solve a problem, it can solve its complement problem (",0.0018650795798748731,0.0,0.0017381698219105601,5.17357187345624e-05,6,0.3941908713692946
+15221,math,False,18,1,57,1,0.9827586206896551,0.011875,0.00020833333333333335,11,0,14,0,1.0,0.004375,0.0,True,True,0.13910834066826516,310,65536,0.004730224609375,0.0016937255859375,0.0099019431823384,middle,middle,0.7822222222222223,0.775,0.675,0.8750000000000006,False,0,0,,,,0.0003381443675607443,6.499877199530601e-06,7.485191337764264e-05,0.0,4,0.2982456140350877
+10444,math,False,17,1,83,1,0.9880952380952381,0.017291666666666667,0.00020833333333333335,13,0,117,0,1.0,0.0365625,0.0,True,True,0.13910834066826516,127,65536,0.0019378662109375,0.0007015228271484375,0.003445060714612708,low,low,0.775,0.825,0.7250000000000002,0.925,True,16,7,15159,_{,"In mathematics, root mean square (abbreviated RMS or rms), also known as the quadratic mean, is a statistical measure of the magnitude of a varying quantity. It can be calculated for a series of discrete values or for a continuously varying function. The name comes from the fact that it is the square root of the mean of the squares of the values. It is a power mean with the power t=2.
+
+Calculating the root mean square Edit
+
+The rms for a collection of N values \{x_1,x_2,\dots,x_N\} is:
+
+x_{\mathrm{rms}} = 
+\sqrt {{1 \over N} \sum",0.001004044817139705,5.209022201597691e-06,0.0023402698524296285,0.0,5,0.21686746987951808
+5300,math,True,16,0,59,0,1.0,0.012291666666666666,0.0,12,1,63,1,0.984375,0.0196875,0.0003125,True,False,0.2161061642068473,149,65536,0.0022735595703125,0.001388438667838029,0.003357315063476562,low,low,0.7666666666666667,0.7875,0.6700000000000004,0.8999999999999998,True,6,6,145264,∧,"How Computing Science created a new mathematical style
+
+Edsger W. Dijkstra
+University of Texas at Austin
+
+To begin with, I would like to talk to you about equality. I don't know how you were introduced to the notion, I don't even remember how I was introduced to it myself. In our earliest memories, the notion was already there, and all of us must have appealed almost subconsciously to its obvious properties such as symmetry and transitivity. i.e., for all x, y, z
+
+(0) x = y   ≡   y = x               , and
+
+(1) x = y  ",0.00048444333020597697,0.0,0.0007400127779692412,7.304231403395534e-06,5,0.3728813559322034
+6516,math,False,17,1,161,5,0.9698795180722891,0.033541666666666664,0.0010416666666666667,11,2,125,2,0.984251968503937,0.0390625,0.000625,False,False,0.28261852488586087,39,65536,0.0005950927734375,0.0001678466796875,0.0012471008300781248,low,low,0.7661111111111111,0.74125,0.61865625,0.8650625000000006,True,26,15,2855,omb,"Geometric diagram of a Peaucellier linkage
+
+In the geometric diagram of the apparatus, six bars of fixed length can be seen: OA, OC, AB, BC, CD, DA. The length of OA is equal to the length of OC, and the lengths of AB, BC, CD, and DA are all equal forming a rh",0.001506877732463181,3.128150012344122e-05,0.0023250947892665863,1.1719339527189732e-05,6,0.17391304347826086
+9957,math,False,16,1,273,3,0.9891304347826086,0.056875,0.000625,9,0,84,0,1.0,0.02625,0.0,True,True,0.13910834066826516,993,65536,0.0151519775390625,0.006489911417322834,0.026170898797943834,high,middle,0.7533333333333333,0.725,0.6250000000000001,0.8499999999999994,False,4,4,429, that,"Now you are asking about $A=[0,1]$ and $B=[0,1]^2$. It is indeed possible to define a bijective map between these two sets, as sketched in other answers. But these sets have additional structure, e.g., they are topological spaces. Intuitively it is obvious that as topological spaces they are not isomorphic, but an actual proof is difficult, since it would be an ""impossibility proof"" (note that it took mankind 2000 years to prove",0.0014609153475612401,7.698011274139086e-06,0.0005862254090607166,0.0,5,0.25274725274725274
+1604,math,True,15,0,32,0,1.0,0.006666666666666667,0.0,8,2,10,4,0.7142857142857143,0.003125,0.00125,False,False,0.28261852488586087,259,65536,0.0039520263671875,0.003152595654603858,0.004792807271161418,middle,low,0.75,0.6425,0.5137187500000001,0.7750000000000001,False,1,1,7877, closed,"In geometry, a polygon can be either convex or concave (non-convex or reentrant).
+
+Convex polygons[edit]
+
+A convex polygon is a simple polygon whose interior is a convex set.[1]
+
+Properties of convex polygons[edit]
+
+The following properties of a simple polygon are all equivalent to convexity:
+
+  • Every internal angle is less than or equal to 180 degrees.
+  • Every line segment between two vertices remains inside or on the boundary of the polygon.
+  • The polygon is entirely contained in a",0.00010502718389034271,0.0,4.673286573961377e-05,1.2101349420845509e-05,5,0.25
+1391,biology,False,29,1,492,2,0.9959514170040485,0.1025,0.0004166666666666667,18,1,549,2,0.9963702359346642,0.1715625,0.000625,True,False,0.2161061642068473,311,65536,0.0047454833984375,0.0020761564960629923,0.008213037205493354,middle,middle,0.9727777777777777,0.945,0.86625,1.0,True,81,67,22791, nest,"Climate Change Increases Mate-Swapping in Birds
+
+Birds' long history of infidelity is being exacerbated by global warming
+
+
+Apparently, humans aren't the only species whose relationships can suffer from stress. According to new research, birds living in unpredictable climates are more likely to ""cheat"" on their feathered partners.
+
+""Mating with multiple partners improves the chances that at least one chick will have the genes to cope with the variable conditions to come,"" explained Carlos Botero, an evolutionary ecologist and the lead researcher of the study, published yesterday in the journal PLoS ONE.
+
+Birds typically bond to one partner throughout a breeding season and sometimes",0.003070725204112629,1.3299939843515554e-05,0.005819191456539557,9.497639257460833e-06,4,0.11178861788617886
+15165,biology,False,25,1,557,1,0.9982078853046595,0.11604166666666667,0.00020833333333333335,17,1,562,3,0.9946902654867257,0.175625,0.0009375,True,False,0.2161061642068473,74,65536,0.001129150390625,0.00039969738066898615,0.002214951402559055,low,low,0.9138888888888889,0.9137500000000001,0.82,0.9925,True,142,90,315, of,"The portion of undifferentiated intermediate mesoderm in contact with the tips of the branching ureteric bud is known as the metanephrogenic blastema. Signals released from the ureteric bud induce the differentiation of the metanephrogenic blastema into the renal tubules. As the renal tubules grow, they come into contact and join with connecting tubules of the collecting duct system, forming a continuous passage for flow from the renal tubule to the collecting duct. Simultaneously, precursors of vascular endothelial cells begin to take their position at the tips of the renal tubules. These cells differentiate into the cells of the definitive glomerulus.
+
+In humans, all of the branches of the ureteric bud and the nephronic units have been formed by 32 to 36 weeks",0.004386739106848836,2.3127246337632336e-06,0.009062511585652829,1.4679721789434553e-05,4,0.14721723518850988
+2635,biology,True,22,0,103,0,1.0,0.021458333333333333,0.0,14,0,72,0,1.0,0.0225,0.0,True,True,0.13910834066826516,417,65536,0.0063629150390625,0.0027399722177714704,0.011477324532289565,middle,middle,0.8666666666666667,0.85,0.7499999999999999,0.95,True,16,6,13,.,"Marfan syndrome (also called Marfan's syndrome) is a genetic disorder of human connective tissue. It has various expressions ranging from mild to severe: the most serious complications are defects of the heart valves and aorta, which often lead to early death. The syndrome also may affect the lungs, eyes, dural sac surrounding the spinal cord, the skeleton, and the hard palate",0.0007445188565179706,0.0,0.0010180843481794,0.0,4,0.1650485436893204
+3717,biology,True,22,0,382,0,1.0,0.07958333333333334,0.0,8,0,349,0,1.0,0.1090625,0.0,True,True,0.13910834066826516,41,65536,0.0006256103515625,9.227362204724409e-05,0.0014423905019685039,low,low,0.8666666666666667,0.7,0.5999999999999998,0.7999999999999999,True,70,41,279, the,"RAR-related orphan receptor alpha (ROR-alpha), also known as NR1F1 (nuclear receptor subfamily 1, group F, member 1) is a nuclear receptor that in humans is encoded by",0.0043341515252056225,0.0,0.00796823355020024,0.0,3,0.24083769633507854
+6270,biology,True,22,0,248,0,1.0,0.051666666666666666,0.0,15,0,287,0,1.0,0.0896875,0.0,True,True,0.13910834066826516,1008,65536,0.015380859375,0.006665420532226562,0.025806153665377397,high,middle,0.8666666666666667,0.875,0.7749999999999999,0.975,True,67,54,2990, lead,"Marfan syndrome (also called Marfan's syndrome) is a genetic disorder of human connective tissue. It has various expressions ranging from mild to severe: the most serious complications are defects of the heart valves and aorta, which often",0.0014171274627248446,0.0,0.0029860480420757086,0.0,4,0.28225806451612906
+15457,biology,True,22,0,582,0,1.0,0.12125,0.0,16,0,327,0,1.0,0.1021875,0.0,True,True,0.13910834066826516,268,65536,0.00408935546875,0.0015139646308366644,0.0070748745266574495,middle,low,0.8666666666666667,0.9,0.7999999999999999,0.975,True,43,33,5555, weeks,"The portion of undifferentiated intermediate mesoderm in contact with the tips of the branching ureteric bud is known as the metanephrogenic blastema. Signals released from the ureteric bud induce the differentiation of the metanephrogenic blastema into the renal tubules. As the renal tubules grow, they come into contact and join with connecting tubules of the collecting duct system, forming a continuous passage for flow from the renal tubule to the collecting duct. Simultaneously, precursors of vascular endothelial cells begin to take their position at the tips of the renal tubules. These cells differentiate into the cells of the definitive glomerulus.
+
+In humans, all of the branches of the ureteric bud and the nephronic units have been formed by 32 to 36",0.0028985870412240426,0.0,0.002626898803282529,0.0,3,0.20103092783505155
+3591,biology,False,22,1,253,1,0.9960629921259843,0.052708333333333336,0.00020833333333333335,11,2,113,2,0.9826086956521739,0.0353125,0.000625,False,False,0.28261852488586087,36,65536,0.00054931640625,0.0001953125,0.0009848897771317822,low,low,0.8616666666666667,0.745,0.6187187499999998,0.8587499999999999,True,9,3,2779, cell,"Marfan syndrome (also called Marfan's syndrome) is a genetic disorder of human connective tissue. It has various expressions ranging from mild to severe: the most serious complications are defects of the heart valves and aorta, which often lead to early death. The syndrome also may affect the lungs, eyes, dural sac surrounding the spinal cord, the skeleton, and the hard palate. People with Marfan tend to be unusually tall, with long limbs and long, thin fingers.
+
+The syndrome is caused by the misfolding of the protein fibrillin-1. Fibrillin-1 is coded by the gene FBN1.[1][2] Fibrillin-1 protein forms fibers in connective tissue. In addition to providing structural support, the normal fibrillin-1 protein also contributes to",0.002353562197337548,2.0958048601945243e-06,0.0014598226640373468,1.9562561064958572e-05,3,0.17786561264822134
+13691,biology,True,21,0,427,0,1.0,0.08895833333333333,0.0,16,0,129,0,1.0,0.0403125,0.0,True,True,0.13910834066826516,99,65536,0.0015106201171875,0.00022710755813953488,0.0036601870078740158,low,low,0.85,0.9,0.7999999999999999,0.975,True,11,9,307,id,"The fruit is edible, and was used by Native American people as a minor food source. They are also eaten by birds, which disperse the seeds in their droppings after digesting the fruit pulp. Washingtonia species are also used as food plants by the larvae of some Lep",0.005604573629486064,0.0,0.0023135343263857066,0.0,3,0.14988290398126464
+6208,biology,True,20,0,96,0,1.0,0.02,0.0,12,0,86,0,1.0,0.026875,0.0,True,True,0.13910834066826516,740,65536,0.01129150390625,0.006957839605376477,0.017055724737212414,middle,middle,0.8333333333333334,0.8,0.6749999999999998,0.8999999999999999,True,15,15,24262, calories,"latest stories:
+
+Giant Pandas Beat Meat-Eating Heritage with Specialized Microbes
+
+Researchers find the microorganisms that help bears digest bamboo.
+
+By Ewen Callaway of Nature magazine
+
+Giant pandas don't digest bamboo by themselves. Microorganisms in their guts may help the endangered animals to subsist on plants despite a gut that is better suited to eating meat, finds an analysis published this week in the Proceedings of the National Academy of Sciences.
+
+Pandas (Ailuropoda melanoleuca) are among the pickiest eaters in the animal world. In the wild, they eat more than 12 kilograms of bamboo each day--and little else.
+
+They have to eat so much because, although bamboo contains proteins, sugars and fats among other nutrients, most of its",0.000457054873307546,0.0,0.0006726499740034342,0.0,3,0.19791666666666666
+10013,biology,True,20,0,492,0,1.0,0.1025,0.0,14,1,315,1,0.9968354430379747,0.0984375,0.0003125,True,False,0.2161061642068473,103,65536,0.0015716552734375,0.0006558726153035803,0.002673018606085526,low,low,0.8333333333333334,0.8425,0.725,0.9401249999999999,True,30,19,311, to,"RAR-related orphan receptor alpha (ROR-alpha), also known as NR1F1 (nuclear receptor subfamily 1, group F, member 1) is a nuclear receptor that in humans is encoded by the RORA gene.[1]
+
+
+The protein encoded by this gene is a member of the NR1 subfamily of nuclear hormone receptors. It can bind as a monomer or as a homodimer to hormone response elements upstream of several genes to enhance the expression of those genes. The specific functions of this protein are not known, but it has been shown",0.003810714428933958,0.0,0.003664894993416965,3.4505478106439113e-06,4,0.1443089430894309
+10395,biology,True,20,0,47,0,1.0,0.009791666666666667,0.0,12,0,50,0,1.0,0.015625,0.0,True,True,0.13910834066826516,93,65536,0.0014190673828125,0.0006305364173228346,0.00250704006885919,low,low,0.8333333333333334,0.8,0.6999999999999998,0.8999999999999999,True,10,7,41531, respiratory,"It occurs when a beneficial characteristic has been developed over time and it would be harmful to stray from it. In these cases it is not the individuals at the fringe (as you put it the most adapted) who are the best adapted.
+
+I think it may help if I answer with an example that is widely promoted by AQA in their A2 Biology syllabus.
+
+Stabilising Selection in human birth weight
+
+It is harmful for an infant to be born with a very low birth weight. They are much more vulnerable to heat loss due to their high surface area to volume ratio and consequently their",0.00043593470628062883,0.0,0.0008928781934082508,0.0,4,0.19148936170212766
+7238,biology,True,19,0,139,0,1.0,0.028958333333333332,0.0,10,0,55,0,1.0,0.0171875,0.0,True,True,0.13910834066826516,17,65536,0.0002593994140625,9.1552734375e-05,0.0004391603691633357,insufficient,insufficient,0.8166666666666667,0.75,0.6499999999999998,0.8499999999999999,False,3,2,960,ose,"latest stories:
+
+Giant Pandas Beat Meat-Eating Heritage with Specialized Microbes
+
+Researchers find the microorganisms that help bears digest bamboo.
+
+By Ewen Callaway of Nature magazine
+
+Giant pandas don't digest bamboo by themselves. Microorganisms in their guts may help the endangered animals to subsist on plants despite a gut that is better suited to eating meat, finds an analysis published this week in the Proceedings of the National Academy of Sciences.
+
+Pandas (Ailuropoda melanoleuca) are among the pickiest eaters in the animal world. In the wild, they eat more than 12 kilograms of bamboo each day--and little else.
+
+They have to eat so much because, although bamboo contains proteins, sugars and fats among other nutrients, most of its calories are locked in hard-to-digest cellul",0.0014483642174551883,0.0,0.0008079352928325534,0.0,2,0.2014388489208633
+3225,biology,False,19,1,640,1,0.9984399375975039,0.13333333333333333,0.00020833333333333335,12,1,423,1,0.9976415094339622,0.1321875,0.0003125,True,False,0.2161061642068473,36,65536,0.00054931640625,0.0001999261811023622,0.000953494094488189,low,low,0.81,0.79,0.6837499999999999,0.8999999999999999,True,49,29,315, of,The portion of undifferentiated intermediate mesoderm in contact with the tips of the branching ureteric bud is known as the metanephrogenic blastema. Signals released from the ureteric bud induce the differentiation,0.007499541441599528,2.033232400814692e-06,0.008027222799137234,7.017133757472038e-06,2,0.21875
+12630,biology,True,18,0,507,0,1.0,0.105625,0.0,10,0,407,0,1.0,0.1271875,0.0,True,True,0.13910834066826516,22,65536,0.000335693359375,8.9439164425746e-05,0.0006612942913385827,low,low,0.8,0.75,0.6499999999999998,0.85,True,130,73,264, a,"RAR-related orphan receptor alpha (ROR-alpha), also known as NR1F1 (nuclear receptor subfamily 1, group F, member 1) is a nuclear receptor that in humans is encoded by the RORA gene.[1]
+
+
+The protein encoded by this gene is a member of the NR1 subfamily of nuclear hormone receptors. It can bind as a monomer or as",0.005831048944965005,0.0,0.011685023159952835,0.0,3,0.1952662721893491
+10810,biology,False,18,1,243,3,0.9878048780487805,0.050625,0.000625,12,0,217,0,1.0,0.0678125,0.0,True,True,0.13910834066826516,261,65536,0.0039825439453125,0.0016346647677852042,0.00684598878372547,middle,low,0.7866666666666666,0.8,0.6999999999999998,0.9,True,34,24,3602, yet,"The portion of undifferentiated intermediate mesoderm in contact with the tips of the branching ureteric bud is known as the metanephrogenic blastema. Signals released from the ureteric bud induce the differentiation of the metanephrogenic blastema into the renal tubules. As the renal tubules grow, they come into contact and join with connecting tubules of the collecting duct system, forming a continuous passage for flow from the renal tubule to the collecting duct. Simultaneously, precursors of vascular endothelial cells begin to take their position at the tips of the renal tubules. These cells differentiate into the cells of the definitive glomerulus.
+
+In humans, all of the branches of the ureteric bud and the nephronic units have been formed by 32 to 36 weeks of gestation. However, these structures are not",0.0013802342303097248,1.148836687207222e-05,0.0019979831669479607,0.0,3,0.3004115226337449
+3929,biology,True,17,0,163,0,1.0,0.03395833333333333,0.0,11,0,101,0,1.0,0.0315625,0.0,True,True,0.13910834066826516,350,65536,0.005340576171875,0.0011896508885180857,0.011643594456469918,middle,middle,0.7833333333333333,0.775,0.6749999999999998,0.875,False,18,16,374, is,"The fruit is edible, and was used by Native American people as a minor food source. They are also eaten by birds, which disperse the seeds in their droppings after digesting the fruit pulp. Washingtonia species are also used as food plants by the larvae of some Lepidoptera species, including Paysandisia archon.
+
+Both species are cultivated as ornamental trees, widely planted in California in particular, but also in Florida, extreme southwest Utah, Arizona, southern New Mexico, western and southern Texas, the Mediterranean region in southern Europe and north Africa, parts of Australia, and the leeward sides of the Hawaiian Islands. The species is also attempted in cooler climates, such as Vancouver Island, western Oregon and Washington state, the Columbia Basin, and the milder parts of the southern British Isles. W. filifera",0.0010819717248280842,0.0,0.0011450618389062584,0.0,4,0.2392638036809816
+3749,biology,False,17,1,153,1,0.9935064935064936,0.031875,0.00020833333333333335,12,0,77,0,1.0,0.0240625,0.0,True,True,0.13910834066826516,166,65536,0.002532958984375,0.0014684381294634682,0.0038314848907234117,low,low,0.775,0.8,0.6999999999999997,0.8999999999999999,True,12,6,18617, pandas,"latest stories:
+
+Giant Pandas Beat Meat-Eating Heritage with Specialized Microbes
+
+Researchers find the microorganisms that help bears digest bamboo.
+
+By Ewen Callaway of Nature magazine
+
+Giant",0.001673213312557588,3.1989308384557565e-06,0.0012771456071641297,0.0,3,0.16993464052287582
+8681,biology,False,17,1,241,1,0.9958677685950413,0.050208333333333334,0.00020833333333333335,8,0,137,0,1.0,0.0428125,0.0,True,True,0.13910834066826516,220,65536,0.00335693359375,0.000335693359375,0.009170799555740957,middle,low,0.7738888888888888,0.7,0.5999999999999998,0.7999999999999999,False,27,21,279, the,"Ptychopariida is a large, heterogeneous order of trilobite containing some of the most primitive species known. The earliest species occurred in the second half of",0.0024320635913560786,3.395200086136659e-06,0.0029590661101974547,0.0,3,0.4066390041493776
+11516,biology,True,16,0,337,0,1.0,0.07020833333333333,0.0,15,0,182,0,1.0,0.056875,0.0,True,True,0.13910834066826516,187,65536,0.0028533935546875,0.0006917839280809376,0.006074931504580557,middle,low,0.7666666666666666,0.875,0.7749999999999999,0.975,False,2,2,525, are,"latest stories:
+
+Giant Pandas Beat Meat-Eating Heritage with Specialized Microbes
+
+Researchers find the microorganisms that help bears digest bamboo.
+
+By Ewen Callaway of Nature magazine
+
+Giant pandas don't digest bamboo by themselves. Microorganisms in their guts may help the endangered animals to subsist on plants despite a gut that is better suited to eating meat, finds an analysis published this week in the Proceedings of the National Academy of Sciences.
+
+Pandas (Ailuropoda melanoleuca) are among the pickiest eaters in the animal world. In the wild, they eat more than 12 kilograms of bamboo each day--and little else.
+
+They have to eat so much because, although bamboo contains proteins, sugars and fats among other nutrients, most of its calories",0.003128195954486728,0.0,0.0016987460386008024,0.0,3,0.3768545994065282
+12314,biology,True,16,0,318,0,1.0,0.06625,0.0,7,0,62,0,1.0,0.019375,0.0,True,True,0.13910834066826516,138,65536,0.002105712890625,0.00039334851641987644,0.004269693064135174,low,low,0.7666666666666666,0.675,0.5749999999999997,0.7999999999999998,False,0,0,,,,0.002833089946458737,0.0,0.000352524695917964,0.0,2,0.4119496855345912
+15401,biology,True,16,0,56,0,1.0,0.011666666666666667,0.0,9,0,45,0,1.0,0.0140625,0.0,True,True,0.13910834066826516,3,65536,4.57763671875e-05,0.0,0.0001068115234375,insufficient,insufficient,0.7666666666666666,0.725,0.6249999999999998,0.825,True,8,2,7761, cells,"In 1664, Thomas Willis, a physician and professor at Oxford University, coined the term neurology when he published his text Cerebri anatome which is considered the foundation of neuroanatomy.[4] The subsequent three hundred and fifty some years has produced a great deal of documentation and study of the neural systems.
+
+
+At the tissue level, the nervous system is composed of neurons, glial cells, and extracellular matrix. Both neurons and glial cells come in many types (see, for example, the nervous system section of the list of distinct cell types in the adult human body). Neurons are the information-processing cells of the nervous system: they sense our environment, communicate with each other via electrical signals and synapses, and produce our thoughts and movements. Glial",0.0013832814991474151,0.0,0.0019030910707078874,0.0,3,0.25
+12734,biology,False,16,1,330,1,0.9969788519637462,0.06875,0.00020833333333333335,14,3,308,5,0.9840255591054313,0.09625,0.0015625,False,False,0.3436638043142818,187,65536,0.0028533935546875,0.0007843257874015748,0.00624500184547244,middle,low,0.7577777777777778,0.8025,0.6849374999999999,0.92125,True,49,27,11,",","In 1664, Thomas Willis, a physician and professor at Oxford University, coined the term neurology when he published his text Cerebri anatome which is considered the foundation of neuroanatomy.[4] The subsequent three hundred and fifty some years has produced a great deal of documentation and study of the neural systems.
+
+
+At the tissue level, the nervous system is composed of neurons, glial cells",0.002539909058250487,4.177308486153682e-06,0.004437698416877538,2.4997416185215117e-05,3,0.37272727272727274
+7697,biology,False,16,1,168,1,0.9940828402366864,0.035,0.00020833333333333335,11,0,64,0,1.0,0.02,0.0,True,True,0.13910834066826516,60,65536,0.00091552734375,0.00027460497479106104,0.0017547991848731225,low,low,0.7555555555555555,0.775,0.6749999999999998,0.875,False,4,4,82761, larvae,"The fruit is edible, and was used by Native American people as a minor food source. They are also eaten by birds, which disperse the seeds in their droppings after digesting the fruit pulp. Washingtonia species are also used as food plants by the",0.001817224961705506,1.8184025151034197e-05,0.0008560790074989199,0.0,3,0.17857142857142858
+11960,biology,True,15,0,56,0,1.0,0.011666666666666667,0.0,4,0,32,0,1.0,0.01,0.0,False,False,0.13910834066826516,146,65536,0.002227783203125,0.0006920521653543307,0.004613037109375,low,low,0.75,0.6,0.5249999999999997,0.6999999999999997,True,23,21,13041, meat,"latest stories:
+
+Giant Pandas Beat Meat-Eating Heritage with Specialized Microbes
+
+Researchers find the microorganisms that help bears digest bamboo.
+
+By Ewen Callaway of Nature magazine
+
+Giant pandas don't digest bamboo by themselves. Microorganisms in their guts may help the endangered animals to subsist on plants despite a gut that is better suited to eating",0.00025954016794761024,0.0,0.0004648161679506302,0.0,4,0.3392857142857143

@@ -1,0 +1,31 @@
+{
+  "claim": "The extra full-vocabulary H2 CE gradient is not stably useful even for its own seen binary margin.",
+  "curve_reproduction_pass": true,
+  "direct_self_usefulness_pass": false,
+  "finite_all_cell_seed_pass_count": 5,
+  "h1_paraphrase_bottleneck": false,
+  "h2_paraphrase_bottleneck": false,
+  "interface_position_bottleneck": false,
+  "maximum_mean_Q_difference": 0.0,
+  "overall_status": "ce_margin_mismatch",
+  "required_seed_count": 4,
+  "sign_counts": {
+    "h1_eval": {
+      "auc_positive": 1,
+      "step0_positive": 1
+    },
+    "h1_train": {
+      "auc_positive": 0,
+      "step0_positive": 0
+    },
+    "h2_eval": {
+      "auc_positive": 4,
+      "step0_positive": 0
+    },
+    "h2_train": {
+      "auc_positive": 5,
+      "step0_positive": 0
+    }
+  },
+  "validity_all_pass": true
+}

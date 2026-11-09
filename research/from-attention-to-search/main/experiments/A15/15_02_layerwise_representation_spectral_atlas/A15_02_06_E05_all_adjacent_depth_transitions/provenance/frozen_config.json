@@ -1,0 +1,90 @@
+{
+  "basis_file": "/data/250010109/MoE_Router/experiments/20260811_a15_02_06_shared_parameter_basis_attention_projection/runs/a15-02-06-e02-20260811-shared-basis/arrays/shared_bases.pt",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 8120605,
+  "device": "cuda:0",
+  "e04_crosscheck_tolerance": 5e-06,
+  "e04_split_table": "/data/250010109/MoE_Router/experiments/20260812_a15_02_06_layer8_to9_shared_basis_growth/runs/a15-02-06-e04-20260812-layer8-to9/tables/split_guards.csv",
+  "expected_hashes": {
+    "e04_split_guards.csv": "14f69739d8dde52dc22067d0502658a729fc52bdb3f8068b44b368dfafd49ffa",
+    "extraction_manifest.json": "6b9554702020e0aef2e51e6022937015c090414fad1c945afda1374f1da68f62",
+    "model_manifest.json": "a27a04e41a76b84e1d2a515e726a0607bb313032d432615d37172f347ecc214b",
+    "semantic_dataset.json": "c37329fad2e48d759b659483ed6705306eeb5c19f32c0e98a505901ed588ed88",
+    "shared_bases.pt": "11eb40144cafbc12c77c9043efd982d1da9018fe876a063fbb7250914480f532"
+  },
+  "experiment_id": "A15_02_06_E05_all_adjacent_depth_transitions",
+  "hidden_size": 4096,
+  "layers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "n_bands": 16,
+  "projection_energy_relative_tolerance": 0.0005,
+  "representative_transition_starts": [
+    1,
+    5,
+    8,
+    13,
+    18,
+    24,
+    30,
+    35
+  ],
+  "run_id": "a15-02-06-e05-20260812-all-adjacent",
+  "selected_smoothing_width": 129,
+  "semantic_band_ids_zero_based": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "source_run": "/data/250010109/MoE_Router/experiments/20260809_a15_02_05_balanced_taxonomy_attention_write_atlas/runs/a15-02-05-e01-20260809T165500Z",
+  "stage_transition_starts": {
+    "deep": [
+      25,
+      35
+    ],
+    "early": [
+      1,
+      12
+    ],
+    "middle": [
+      13,
+      24
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "time_utc": "2026-11-01T03:04:08.178797+00:00",
+  "error": "AssertionError('all-PC cast differs')",
+  "traceback": "Traceback (most recent call last):\n  File \"/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/scripts/run_gpu.py\", line 83, in <module>\n    try:main()\n  File \"/data/250010109/dependency_packages/dense_baseline_torch280_cu128_py310/site-packages/torch/utils/_contextlib.py\", line 120, in decorate_context\n    return func(*args, **kwargs)\n  File \"/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/scripts/run_gpu.py\", line 41, in main\n    assert torch.equal(torch.tensor(fullpc).bfloat16(),torch.tensor(A).bfloat16()),'all-PC cast differs'\nAssertionError: all-PC cast differs\n"
+}

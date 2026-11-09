@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-24T16:59:59.387292+00:00",
+  "overall_status": "COMPLETE",
+  "note": "Live derived snapshot. Training, science and platform state remain separate.",
+  "protocol_version": "order_moe_v2",
+  "resource_pool": "H100 reserved",
+  "max_concurrent_gpus": 4,
+  "active_runs": [],
+  "stages": [
+    {
+      "id": "S1",
+      "status": "NEGATIVE_RESULT",
+      "claim": "Three fixed final parents evaluated; component qualification [False, False, False]",
+      "limitations": "Validation eligibility is not internal reuse; independent numerical test and enriched boundary strata remain separate.",
+      "reason": null,
+      "run_ids": [
+        "order_seed29_P_P_balanced_replay_v2-expanded",
+        "order_seed43_P_P_balanced_replay_v2-expanded",
+        "order_seed71_P_P_balanced_replay_v2-expanded"
+      ],
+      "evidence": [
+        {
+          "path": "analysis/stage_ledger.json",
+          "sha256": "e214f88c40ca7332ae6dffd64c569bd78ad9ccb0c947a11b406b47d4ff3d51e4"
+        },
+        {
+          "path": "run_status.csv",
+          "sha256": "3eda2829cd82378a0ea33820172ba6c43504a333af5ab403850481b3f6edd0ff"
+        },
+        {
+          "path": "tables/fixed_endpoint_metrics.csv",
+          "sha256": "ef5ba587aea84ec92aab29ad7daa472c3723f7c26523b6abec45adbd41c16dc0"
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "status": "NEGATIVE_RESULT",
+      "claim": "Three fixed final parents evaluated; component qualification [False, False, False]",
+      "limitations": "Validation eligibility is not internal reuse; independent numerical test and enriched boundary strata remain separate.",
+      "reason": null,
+      "run_ids": [
+        "order_seed29_P_P_balanced_replay_v2-expanded",
+        "order_seed43_P_P_balanced_replay_v2-expanded",
+        "order_seed71_P_P_balanced_replay_v2-expanded"
+      ],
+      "evidence": [
+        {
+          "path": "analysis/stage_ledger.json",
+          "sha256": "e214f88c40ca7332ae6dffd64c569bd78ad9ccb0c947a11b406b47d4ff3d51e4"
+        },
+        {
+          "path": "run_status.csv",
+          "sha256": "3eda2829cd82378a0ea33820172ba6c43504a333af5ab403850481b3f6edd0ff"
+        },
+        {
+          "path": "tables/fixed_endpoint_metrics.csv",
+          "sha256": "ef5ba587aea84ec92aab29ad7daa472c3723f7c26523b6abec45adbd41c16dc0"
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "status": "NOT_APPLICABLE",
+      "claim": "Post-revision component premise failed; all-seed P-J feasibility measured.",
+      "limitations": "This does not refute all composition/reuse or establish router failure.",
+      "reason": "All final P gates failed; revised P and direct J tests exist.",
+      "run_ids": [
+        "order_seed29_P_J_balanced_replay_v2-expanded",
+        "order_seed43_P_J_balanced_replay_v2-expanded",
+        "order_seed71_P_J_balanced_replay_v2-expanded"
+      ],
+      "evidence": [
+        {
+          "path": "analysis/stage_ledger.json",
+          "sha256": "e214f88c40ca7332ae6dffd64c569bd78ad9ccb0c947a11b406b47d4ff3d51e4"
+        },
+        {
+          "path": "run_status.csv",
+          "sha256": "3eda2829cd82378a0ea33820172ba6c43504a333af5ab403850481b3f6edd0ff"
+        },
+        {
+          "path": "tables/fixed_endpoint_metrics.csv",
+          "sha256": "ef5ba587aea84ec92aab29ad7daa472c3723f7c26523b6abec45adbd41c16dc0"
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "status": "NOT_APPLICABLE",
+      "claim": "Post-revision component premise failed; all-seed P-J feasibility measured.",
+      "limitations": "This does not refute all composition/reuse or establish router failure.",
+      "reason": "All final P gates failed; revised P and direct J tests exist.",
+      "run_ids": [
+        "order_seed29_P_J_balanced_replay_v2-expanded",
+        "order_seed43_P_J_balanced_replay_v2-expanded",
+        "order_seed71_P_J_balanced_replay_v2-expanded"
+      ],
+      "evidence": [
+        {
+          "path": "analysis/stage_ledger.json",
+          "sha256": "e214f88c40ca7332ae6dffd64c569bd78ad9ccb0c947a11b406b47d4ff3d51e4"
+        },
+        {
+          "path": "run_status.csv",
+          "sha256": "3eda2829cd82378a0ea33820172ba6c43504a333af5ab403850481b3f6edd0ff"
+        },
+        {
+          "path": "tables/fixed_endpoint_metrics.csv",
+          "sha256": "ef5ba587aea84ec92aab29ad7daa472c3723f7c26523b6abec45adbd41c16dc0"
+        }
+      ]
+    },
+    {
+      "id": "S5",
+      "status": "NOT_APPLICABLE",
+      "claim": "Post-revision component premise failed; all-seed P-J feasibility measured.",
+      "limitations": "This does not refute all composition/reuse or establish router failure.",
+      "reason": "All final P gates failed; revised P and direct J tests exist.",
+      "run_ids": [
+        "order_seed29_P_J_balanced_replay_v2-expanded",
+        "order_seed43_P_J_balanced_replay_v2-expanded",
+        "order_seed71_P_J_balanced_replay_v2-expanded"
+      ],
+      "evidence": [
+        {
+          "path": "analysis/stage_ledger.json",
+          "sha256": "e214f88c40ca7332ae6dffd64c569bd78ad9ccb0c947a11b406b47d4ff3d51e4"
+        },
+        {
+          "path": "run_status.csv",
+          "sha256": "3eda2829cd82378a0ea33820172ba6c43504a333af5ab403850481b3f6edd0ff"
+        },
+        {
+          "path": "tables/fixed_endpoint_metrics.csv",
+          "sha256": "ef5ba587aea84ec92aab29ad7daa472c3723f7c26523b6abec45adbd41c16dc0"
+        }
+      ]
+    },
+    {
+      "id": "S6",
+      "status": "NOT_APPLICABLE",
+      "claim": "Post-revision component premise failed; all-seed P-J feasibility measured.",
+      "limitations": "This does not refute all composition/reuse or establish router failure.",
+      "reason": "All final P gates failed; revised P and direct J tests exist.",
+      "run_ids": [
+        "order_seed29_P_J_balanced_replay_v2-expanded",
+        "order_seed43_P_J_balanced_replay_v2-expanded",
+        "order_seed71_P_J_balanced_replay_v2-expanded"
+      ],
+      "evidence": [
+        {
+          "path": "analysis/stage_ledger.json",
+          "sha256": "e214f88c40ca7332ae6dffd64c569bd78ad9ccb0c947a11b406b47d4ff3d51e4"
+        },
+        {
+          "path": "run_status.csv",
+          "sha256": "3eda2829cd82378a0ea33820172ba6c43504a333af5ab403850481b3f6edd0ff"
+        },
+        {
+          "path": "tables/fixed_endpoint_metrics.csv",
+          "sha256": "ef5ba587aea84ec92aab29ad7daa472c3723f7c26523b6abec45adbd41c16dc0"
+        }
+      ]
+    },
+    {
+      "id": "SYMBOLIC",
+      "status": "NOT_APPLICABLE",
+      "claim": "Symbolic mastered-operation premise fails with complete per-seed qualification evidence.",
+      "limitations": "Separate task/C-control; no pooling or natural-language claim.",
+      "reason": "Post-revision single-operation premise failed.",
+      "run_ids": [],
+      "evidence": [
+        {
+          "path": "analysis/stage_ledger.json",
+          "sha256": "e214f88c40ca7332ae6dffd64c569bd78ad9ccb0c947a11b406b47d4ff3d51e4"
+        },
+        {
+          "path": "run_status.csv",
+          "sha256": "3eda2829cd82378a0ea33820172ba6c43504a333af5ab403850481b3f6edd0ff"
+        },
+        {
+          "path": "tables/fixed_endpoint_metrics.csv",
+          "sha256": "ef5ba587aea84ec92aab29ad7daa472c3723f7c26523b6abec45adbd41c16dc0"
+        }
+      ]
+    },
+    {
+      "id": "AUDIT",
+      "status": "COMPLETE",
+      "claim": "Three result audits, reloads and actual output registration verified.",
+      "limitations": "Structure is not mechanism acceptance or closure.",
+      "reason": null,
+      "run_ids": [],
+      "evidence": [
+        {
+          "path": "analysis/stage_ledger.json",
+          "sha256": "e214f88c40ca7332ae6dffd64c569bd78ad9ccb0c947a11b406b47d4ff3d51e4"
+        },
+        {
+          "path": "run_status.csv",
+          "sha256": "3eda2829cd82378a0ea33820172ba6c43504a333af5ab403850481b3f6edd0ff"
+        },
+        {
+          "path": "tables/fixed_endpoint_metrics.csv",
+          "sha256": "ef5ba587aea84ec92aab29ad7daa472c3723f7c26523b6abec45adbd41c16dc0"
+        }
+      ]
+    }
+  ]
+}

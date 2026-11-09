@@ -1,0 +1,39 @@
+{
+  "time_utc": "2026-10-27T15:45:03.631858+00:00",
+  "processing_agent": "/root",
+  "stage": "PRE_FORWARD_FIXED_DATA_AND_STATISTICS",
+  "approval": "User originalrevision+native dual amendmentA01+continueexecute;no newtask/resources",
+  "sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/context_manifest.json": "b8a83147fbc23fdb781a18467f1a0f4f3ce32f1d0e84380e2d75d972a608a359",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/context_panel.jsonl": "9f6c9deebf7071d9d4bbaa45f07a7a4f5d55aee87ba5aae9abc8800d90cc3d4e",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/documents.jsonl": "32e1e8a2e661808bf34a0b3df6636dd30aea784375adebe225c47a392db4a943",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/reference.jsonl": "11c3d538a588983e9565ab003ed78a7369498e9e0838b6f090bbad4e337d95f3",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/source_manifest.json": "06bfa7533da913339a70a298dd677e7725e4a9f7692c5ff35c5e36547ae8f960",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/analysis_config.json": "d373193166132b54cc3e8dd1ac5a8e9a625a8b177515792de152918a101c53fc",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/run_dual_forward.py": "4c7a84cd3e5b1a2b4cd161297d1e30cd5e987ad699d43ea8c4b6672d3455e1dd",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/amendment_A01.json": "3a9cf23f2c9780336c2ca05741ee5d50061192ca04fc18c68ea4c75ce92ffacd",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R04_domain_usage_20261027/protocol.md": "1ebd786924d9ac7aafeb6f85f13066c628271ffa7cab5e692f6f75df27985bbc",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R04_domain_usage_20261027/protocol_cn.md": "f7a1af417df814676a3d0d5ff4ab93ce3ba76b37b312279bfb00b9bb0f9b1648",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/build_documents.py": "2d372d885ebdf9522339b943bb6307f2ec019b49131eb1ede7bd4f1227856bbc",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/build_context_panel.py": "3ea5f54ac30d6716e30b34a23679e877e5e50784825dc9f510beb9cfcd3ddcae",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/dual_parent_identity.json": "f06ecf06045bc45055da96bc46a1abd814bed93382d8525245ec7483e2e84832"
+  },
+  "assets": [
+    "model_qwen3_0p6b_base",
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "sae_qwen3_0p6b_e16_layer27_final_1b",
+    "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+    "dclm_raw_holdout_global02"
+  ],
+  "counters": {
+    "newforwards": 0,
+    "cap": 512
+  },
+  "audits": {
+    "identification": "PASS bounded context/domainassociation,no mechanism/causality claim",
+    "data_statistics": "PASS protocol counts/splits/duplicate audit;source/style/preamble limitations recorded",
+    "implementation": "fixed native dictionaries;new extraction adapted from inspected R02/R03;8qualification pending;no parameter updates"
+  },
+  "notes": "offline analysis code may be implemented after freeze only to exactly these fixed rules;candidate freeze before heldoutstats;contextdirection freeze before heldoutstats"
+}

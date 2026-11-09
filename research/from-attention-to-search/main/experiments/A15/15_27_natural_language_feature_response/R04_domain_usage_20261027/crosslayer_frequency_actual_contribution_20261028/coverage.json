@@ -1,0 +1,62 @@
+[
+  {
+    "item": "旧跨层结果与单位复核",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "objects_and_reuse_cn.md"
+  },
+  {
+    "item": "全部固定频率组/实际支持",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/frequency_group_members_and_support.csv"
+  },
+  {
+    "item": "训练空间每成员含零主量",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/group_layer_statistics.csv"
+  },
+  {
+    "item": "每feature出现率/条件强度/NA",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/per_feature_domain_factors.csv"
+  },
+  {
+    "item": "每位置范数和份额",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "analysis/position_group_norm_sums.npz"
+  },
+  {
+    "item": "全部14层3类比较/BH42",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/primary42_comparisons.csv"
+  },
+  {
+    "item": "原模型空间独立敏感性",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "auxiliary_cn.md"
+  },
+  {
+    "item": "同文档层间配对/域间独立抽样",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "analysis/resampling_indices.npz"
+  },
+  {
+    "item": "三主图与辅助图",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "figures_cn.md"
+  },
+  {
+    "item": "458752行全量表和可恢复因子",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "data_index_cn.md"
+  },
+  {
+    "item": "公式/身份/统计核验",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "analysis/audit.json"
+  },
+  {
+    "item": "新前向/训练/字典/Attention分组/候选筛选",
+    "status": "NOT_RUN_BY_SCOPE",
+    "evidence": "0"
+  }
+]

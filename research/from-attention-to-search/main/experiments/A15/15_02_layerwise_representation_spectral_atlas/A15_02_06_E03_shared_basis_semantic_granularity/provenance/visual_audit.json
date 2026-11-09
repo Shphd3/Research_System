@@ -1,0 +1,26 @@
+{
+  "audit_status": "PASS",
+  "audited_at_utc": "2026-08-12T01:01:00Z",
+  "figures": {
+    "figure1_mean_response_common_basis_reference.png": {
+      "dimensions": [2464, 1430],
+      "full_resolution_inspected": true,
+      "legibility": "PASS",
+      "content": "single mean-response panel; selected blocks; log normalized density; display-only smoothing disclosed"
+    },
+    "figure2_semantic_granularity_spectral_location.png": {
+      "dimensions": [3740, 2244],
+      "full_resolution_inspected": true,
+      "legibility": "PASS",
+      "content": "fine-minus-coarse heatmap; centroid contrasts; fixed middle-late share contrasts; 95% intervals; block 36 boundary"
+    }
+  },
+  "checks": [
+    "exactly two final figures",
+    "axes and units match the frozen figure contracts",
+    "heatmap color scale is symmetric around zero",
+    "confidence intervals and zero lines are visible",
+    "medium specificity outcome is disclosed in the title",
+    "no clipping, overlap, unreadable legend, or missing panel label"
+  ]
+}

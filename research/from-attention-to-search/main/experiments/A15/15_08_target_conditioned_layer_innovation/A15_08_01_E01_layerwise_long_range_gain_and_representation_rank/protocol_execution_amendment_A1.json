@@ -1,0 +1,37 @@
+{
+  "experiment_id": "A15_08_01_E01_layerwise_long_range_gain_and_representation_rank",
+  "amendment_id": "A1_reserved_quota_replacement",
+  "approved_at": "2026-08-11T12:46:40Z",
+  "human_instruction": "Use reserved nodes; do not use spot.",
+  "scientific_body_sha256": "7197183c95b4cbfefeaf431f13da0d06313100c7c10649ea3272ac053430a08a",
+  "before": {
+    "resource_profile": "h100-4-spot",
+    "quota_type": "spot",
+    "job_id": "pt-3qikirn4",
+    "terminal_state_after_stop": "SUSPENDED",
+    "allocated_replicas": 0,
+    "raw_root_existed": false,
+    "produced_evidence": false
+  },
+  "after": {
+    "resource_profile": "h100-4-reserved",
+    "quota_type": "reserved",
+    "workspace": "share-space",
+    "aec2_cluster": "share-cluster",
+    "worker_spec": "n6ls.iu.i40.4",
+    "worker_nodes": 1,
+    "gpu_processes": 4,
+    "aggregate_gpu_hour_ceiling": 16,
+    "raw_storage_gib_ceiling": 150,
+    "replacement_job_id": "pt-luxlf19m",
+    "replacement_job_created_at": "2026-08-11T12:47:12Z",
+    "replacement_job_initial_state": "STARTING",
+    "replacement_job_verified_quota_type": "RESERVED",
+    "replacement_job_terminal_state": "FAILED",
+    "replacement_job_completed_at": "2026-08-11T12:48:36Z",
+    "replacement_job_produced_scientific_evidence": false
+  },
+  "affected_protocol_block": "G execution resource only",
+  "scientific_design_changed": false,
+  "eligibility": "Only the single replacement Reserved job is eligible to produce experiment evidence."
+}

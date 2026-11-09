@@ -1,0 +1,17 @@
+{
+  "producer": "render_figures.py",
+  "sources": [
+    "analysis/results.json",
+    "analysis/*feature_statistics.json",
+    "analysis/*candidate_document_usage.npz",
+    "analysis/*context_feature_effects.npz"
+  ],
+  "clustering": false,
+  "selection": "discovery fixed;illustrations posthoc and not evidence selection",
+  "figures": [
+    "figure1_usage.png",
+    "figure2_readability_frequency.png",
+    "figure3_fixed_target.png"
+  ],
+  "CC_contribution": "native final-layer contribution from sharedz;not independentlayer activation"
+}

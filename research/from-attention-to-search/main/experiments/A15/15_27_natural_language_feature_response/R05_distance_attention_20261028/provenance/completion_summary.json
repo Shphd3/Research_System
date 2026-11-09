@@ -1,0 +1,40 @@
+{
+  "time_utc": "2026-10-27T18:12:06.245804+00:00",
+  "checks": 1937,
+  "all_pass": true,
+  "ledger": 1096,
+  "check_forwards": 16,
+  "B_forwards": 960,
+  "A_forwards": 120,
+  "B": {
+    "SAE": {
+      "candidates": 20,
+      "far": 0,
+      "near_attenuation": 0,
+      "insufficient": 20
+    },
+    "CC": {
+      "candidates": 25,
+      "far": 0,
+      "near_attenuation": 0,
+      "insufficient": 25
+    }
+  },
+  "attention_output_max_relative_error": 0.0021355559583753347,
+  "attention_output_max_absolute_error": 0.125,
+  "A_reconstruction": {
+    "SAE": {
+      "mean": 0.09774206739073432,
+      "p90": 0.19256673306226732
+    },
+    "CC": {
+      "mean": 0.1164784962157812,
+      "p90": 0.20919909030199058
+    }
+  },
+  "no_model_training": true,
+  "no_new_resources": true,
+  "no_sealed_TEST": true,
+  "source_freezes_preserved": true,
+  "engineering_failures_preserved": true
+}

@@ -1,0 +1,21 @@
+# Final Slot-Level Heatmaps: Train-Time Common-Cancel
+
+Rows are slots. Columns are experts. Cell values are P(expert | slot) at final checkpoint step 400.
+
+## P5B Final Only
+
+- [p5b_final_slot_expert_heatmap_distributed_complex_seed20260521.png](p5b_final_slot_expert_heatmap_distributed_complex_seed20260521.png)
+- [p5b_final_slot_expert_heatmap_distributed_complex_seed20260522.png](p5b_final_slot_expert_heatmap_distributed_complex_seed20260522.png)
+- [p5b_final_slot_expert_heatmap_distributed_complex_seed20260523.png](p5b_final_slot_expert_heatmap_distributed_complex_seed20260523.png)
+- [p5b_final_slot_expert_heatmap_repeated_seed20260521.png](p5b_final_slot_expert_heatmap_repeated_seed20260521.png)
+- [p5b_final_slot_expert_heatmap_repeated_seed20260522.png](p5b_final_slot_expert_heatmap_repeated_seed20260522.png)
+- [p5b_final_slot_expert_heatmap_repeated_seed20260523.png](p5b_final_slot_expert_heatmap_repeated_seed20260523.png)
+
+## Baseline vs P5B
+
+- [baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260521.png](baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260521.png)
+- [baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260522.png](baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260522.png)
+- [baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260523.png](baseline_vs_p5b_final_slot_expert_distributed_complex_seed20260523.png)
+- [baseline_vs_p5b_final_slot_expert_repeated_seed20260521.png](baseline_vs_p5b_final_slot_expert_repeated_seed20260521.png)
+- [baseline_vs_p5b_final_slot_expert_repeated_seed20260522.png](baseline_vs_p5b_final_slot_expert_repeated_seed20260522.png)
+- [baseline_vs_p5b_final_slot_expert_repeated_seed20260523.png](baseline_vs_p5b_final_slot_expert_repeated_seed20260523.png)

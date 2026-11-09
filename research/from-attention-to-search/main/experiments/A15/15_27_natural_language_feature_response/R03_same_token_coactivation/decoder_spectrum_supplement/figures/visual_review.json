@@ -1,0 +1,30 @@
+{
+  "producer": "/root/supplement_figures",
+  "time_utc": "2026-10-27T06:56:47.631078+00:00",
+  "actual_view_image": true,
+  "files": [
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure1_fixed_groups_decoder_cosine.png",
+      "sha256": "13517c91d7130ea8c51702f3696e108e1757f895ae72c417e37138a17dd751cb",
+      "review": "PASS readable axes, comparison labels and boundaries"
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure2_decoder_spectral_locations.png",
+      "sha256": "ef61fb12ba947e303aa08b3bb5d4140331120b7b9a5f2eeb9c9e72f8242bbbd3",
+      "review": "PASS readable axes, comparison labels and boundaries"
+    },
+    {
+      "file": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/decoder_spectrum_supplement/figures/figure3_same_panel_spectral_edits.png",
+      "sha256": "e491d4b6310be2dadcb10833aa807f0c889d4bc97a311d4f2c5ab0c3b4600f70",
+      "review": "PASS readable axes, comparison labels and boundaries"
+    }
+  ],
+  "fixes": [
+    "Figure1 negative label moved inside bar; shortest minimum-pair label; legend/footer separated",
+    "Figure2 y-limit expanded to keep legend clear of bar-value annotations",
+    "Figure3 m explicitly refers to semantic edits on both panels"
+  ],
+  "unchanged_data_sources": true,
+  "new_model_calls": 0,
+  "new_clustering": 0
+}

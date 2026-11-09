@@ -1,0 +1,69 @@
+{
+  "UTC": "2026-11-04T01:07:11.248159+00:00",
+  "authorization": "Current user directly authorizes fast existing-data H1 member-overlap analysis, extraction if needed, all feasible datasets independently; no model training or interventions.",
+  "primary_anchor": "15_27_06",
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "input_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "sites": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "loader": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/e16_sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.self_attn.o_proj output before residual addition"
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "loader": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.mlp forward_pre_hook actual input after residual addition and post_attention_layernorm"
+    }
+  },
+  "datasets": [
+    "Magicoder",
+    "GSM8K",
+    "MMLU"
+  ],
+  "missing_datasets": [
+    "Numina"
+  ],
+  "N_per_dataset": 257,
+  "documents": 771,
+  "positions_per_document": 8,
+  "max_input_tokens": 128,
+  "auxiliary_fixed_position": 31,
+  "minimum_tokens": 16,
+  "seed": 20261104,
+  "device": "CPU",
+  "threads": 2,
+  "shape": [
+    8,
+    128
+  ],
+  "main_metric": "Per document pair, average8aligned-quantile token-position Jaccards; activation z>0 native Top32; no amplitude in Jaccard.",
+  "pairing": "Each dataset ordered by SHA256(S08+id). Within all unordered i<j: N(N-1)/2. Cross cyclic offsets1..(N-1)/2 moduloN: same N(N-1)/2 distinct pairs, each document degree(N-1)/2. N odd, no within self or duplicate unordered pair. All positions/repeated document incidences stay one cluster.",
+  "bootstrap": "1999 independent multinomial document-count resamples in each dataset, original pair graph reweighted by count_i*count_j, full document including all positions moves together. Weighted pair mean,95%percentile intervals; no independent token/pair bootstrap.",
+  "permutation": "999 whole-document label permutations plus-one p; fixed random-order pairing rule reapplied after relabeling, N unchanged. Main null requires exchangeability of entire document representations under labels, not randomized topic intervention. Length-matched permutes within full-token-length strata preserving both counts. Same-token control descriptive bootstrap only.",
+  "primary_tests": "2SAEs x3datasetpairs=6 one-sided pooled-within-minus-cross tests, Holm.05. A-minus-cross and B-minus-cross each reported with document CIs; claim both higher only if both lower bounds>0 and pooled Holm passes. Controls exploratory with raw p, no rescue. Interval spanning0 means inconclusive, not absence.",
+  "controls": "Pair-specific matched full-token-length histograms, same question-only field rule and8sampling; fixed absolute31position (same32token visible prefix); preselected up to3 literal token IDs each occurring in>=20docs of each dataset, compare equal token at any of8sampled positions, document-pair mean, no conditional permutation p.",
+  "amplitude": "Supplement only: at aligned positions compute RMS raw-z difference on intersection coordinates, average document pairs with shared-member coverage. Also whole-z L2 by dataset. Do not fold it into binary overlap.",
+  "freeze_data_sha256": "5f76553c673670666cb27eeff170e92c5017ccbd4e10f8c9a71b7493b304dd2d",
+  "control_selection_sha256": "84b4d1e4d16ad5ea84d1b9c2d67bcb9228cd74446d2d591c62a08431a4678a0f",
+  "lexical_sha256": "9c6e3569e34ff7cee36a0efd25984676feaf31e408d6ec08af24fe731e477a1f",
+  "training": false,
+  "intervention": false,
+  "scientific_acceptance": "Unknown"
+}

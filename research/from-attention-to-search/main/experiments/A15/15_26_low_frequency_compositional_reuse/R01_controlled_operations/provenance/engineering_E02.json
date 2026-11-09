@@ -1,0 +1,21 @@
+{
+  "id": "ENGINEERING_E02",
+  "at_utc": "2026-10-24T16:15:56.728047+00:00",
+  "changes": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_a15_26_compositional_reuse/source/engine.py",
+      "before": "4f557bc3a25decc203c7663c4a152cf403aeb6383bfe6b4219bf5f36a64f6c60",
+      "after": "258b22257694b0ee063c17fb8f408fd0d4202f90e7afca84c4248fd22d3ad1ca"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261024_a15_26_compositional_reuse/source/register_assets.py",
+      "before": "624c9e3b8256bbf9f80290450a90df27db4476ab9318f92dd6b6bc20e3a675b0",
+      "after": "603375d371378eef8b737bbe08b7d02ac45692273907262b4814dc150f0bc29b"
+    }
+  ],
+  "reason": "register and strict-check each newly produced checkpoint before subsequent stage consumes it, rather than defer all registration to final family handoff",
+  "scientific_settings_changed": false,
+  "training_results_visible": false,
+  "formal_pod_log_exists": true,
+  "operational_boundary": "asset bookkeeping only; no tensor/optimizer/data/randomness rules changed"
+}

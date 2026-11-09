@@ -1,0 +1,104 @@
+{
+  "old_candidate_reproduced": true,
+  "old_groups_reproduced": true,
+  "groups": [
+    {
+      "group_id": "G02",
+      "members": [
+        28673,
+        23609,
+        19601
+      ],
+      "reproduced_R01_D": true,
+      "R01_H_observed_correlation": 0.8356196340741043,
+      "R01_original_verdict": "SUPPORT",
+      "matching_pool_by_member": [
+        {
+          "feature_id": 28673,
+          "match_feature_ids": [
+            1818,
+            1205
+          ],
+          "match_count": 2
+        },
+        {
+          "feature_id": 23609,
+          "match_feature_ids": [
+            1818,
+            1205
+          ],
+          "match_count": 2
+        },
+        {
+          "feature_id": 19601,
+          "match_feature_ids": [
+            1818
+          ],
+          "match_count": 1
+        }
+      ],
+      "valid_draws": 0,
+      "unique_unordered_groups": 0,
+      "matching_qualified": false,
+      "matched_random_mean": null,
+      "matched_random_p95": null,
+      "p": null,
+      "verdict": "INSUFFICIENT_MATCHES",
+      "boundary": "R01 H is exposed; this is a conditional-support reanalysis,not new confirmation.",
+      "BH_q": 1.0
+    },
+    {
+      "group_id": "G04",
+      "members": [
+        1818,
+        1205,
+        29829,
+        27173
+      ],
+      "reproduced_R01_D": true,
+      "R01_H_observed_correlation": 0.6562993677044093,
+      "R01_original_verdict": "SUPPORT",
+      "matching_pool_by_member": [
+        {
+          "feature_id": 1818,
+          "match_feature_ids": [
+            28673,
+            23609,
+            19601
+          ],
+          "match_count": 3
+        },
+        {
+          "feature_id": 1205,
+          "match_feature_ids": [
+            23609,
+            28673
+          ],
+          "match_count": 2
+        },
+        {
+          "feature_id": 29829,
+          "match_feature_ids": [],
+          "match_count": 0
+        },
+        {
+          "feature_id": 27173,
+          "match_feature_ids": [],
+          "match_count": 0
+        }
+      ],
+      "valid_draws": 0,
+      "unique_unordered_groups": 0,
+      "matching_qualified": false,
+      "matched_random_mean": null,
+      "matched_random_p95": null,
+      "p": null,
+      "verdict": "INSUFFICIENT_MATCHES",
+      "boundary": "R01 H is exposed; this is a conditional-support reanalysis,not new confirmation.",
+      "BH_q": 1.0
+    }
+  ],
+  "no_new_confirmation": true,
+  "old_discovery_sha256": "51793c0bb38b05517a21f2a961ff4471e0c5edaf5c5085198b7f7613959fb2f5",
+  "old_H_sha256": "c9331111ba0cf318f488500b47ee68ab26556be3c5cd025eddc6e754cfe7b8e2"
+}

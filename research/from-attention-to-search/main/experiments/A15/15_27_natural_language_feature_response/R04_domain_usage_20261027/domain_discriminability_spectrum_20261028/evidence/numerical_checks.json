@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "constant_auc": true,
+    "separated_auc": true,
+    "reversed_auc": true,
+    "SAE_zero_conditional_is_NA": true,
+    "SAE_positive_document_identity": true,
+    "SAE_seq_ids_match": true,
+    "SAE_old_probe_input_exact": true,
+    "SAE_DOC_math_02237_count_replay": true,
+    "SAE_DOC_math_02237_sum_replay": true,
+    "SAE_DOC_math_06566_count_replay": true,
+    "SAE_DOC_math_06566_sum_replay": true,
+    "CC_zero_conditional_is_NA": true,
+    "CC_positive_document_identity": true,
+    "CC_seq_ids_match": true,
+    "CC_old_probe_input_exact": true,
+    "CC_DOC_math_02237_count_replay": true,
+    "CC_DOC_math_02237_sum_replay": true,
+    "CC_DOC_math_06566_count_replay": true,
+    "CC_DOC_math_06566_sum_replay": true,
+    "SAE_f1004_sklearn_scalar_auc": true,
+    "SAE_f11667_sklearn_scalar_auc": true,
+    "SAE_f693_sklearn_scalar_auc": true,
+    "CC_f11710_sklearn_scalar_auc": true,
+    "CC_f8963_sklearn_scalar_auc": true,
+    "CC_f14394_sklearn_scalar_auc": true
+  },
+  "passed": true,
+  "count": 25
+}

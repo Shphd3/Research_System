@@ -1,0 +1,39 @@
+{
+  "recorded_at_utc": "2026-10-26T16:33:54.872744+00:00",
+  "processing_agent": "/root",
+  "new_scientific_object": false,
+  "frozen_panel_qualification": false,
+  "failed_checks": [
+    {
+      "seq_id": "B01_00_long",
+      "purpose": "causal_prefix",
+      "stage": 0,
+      "max_abs_z_difference": 2.7817845344543457,
+      "z_tolerance": 0.4267088851928711,
+      "relative_h_error": 0.015606313943862915,
+      "h_relative_tolerance": 0.01,
+      "pass": false,
+      "scope": "numeric prefix consistency under causal SDPA; later suffix excluded in check"
+    },
+    {
+      "seq_id": "B01_00_long",
+      "purpose": "causal_prefix",
+      "stage": 1,
+      "max_abs_z_difference": 0.32170963287353516,
+      "z_tolerance": 0.583479362487793,
+      "relative_h_error": 0.010799000971019268,
+      "h_relative_tolerance": 0.01,
+      "pass": false,
+      "scope": "numeric prefix consistency under causal SDPA; later suffix excluded in check"
+    }
+  ],
+  "reference_qualified": true,
+  "Q1": "INSUFFICIENTvalidnull392of500,required400",
+  "Q2_Q3": "Confirmatoryinterpretationstopped; frozenstatisticsmaybecalculatedonlyasconditionaldiagnosticdescriptions,notacceptedhypothesisdecisions",
+  "no_tolerance_relaxation": true,
+  "no_group_text_selection_change": true,
+  "extra_modelcalls_for_fixed_diagnostic": 8,
+  "actual_budget_after_diagnostic_R02": 1160,
+  "R01_plus_R02": 1452,
+  "maximum": 1500
+}

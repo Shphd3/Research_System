@@ -1,0 +1,64 @@
+{
+  "basis_statistics": {
+    "mean_response": {
+      "basis": "mean_response",
+      "bootstrap_ci95_high": 0.04432791197624325,
+      "bootstrap_ci95_low": 0.02057547754352341,
+      "bootstrap_positive_fraction": 1.0,
+      "coordinate_screen_passed": true,
+      "early_median_centroid": 0.44549235701560974,
+      "expression_A_contrast": 0.03303976356983185,
+      "expression_B_contrast": 0.03319542109966278,
+      "expression_sign_reversal": false,
+      "late_median_centroid": 0.4772060215473175,
+      "late_minus_early_centroid": 0.031713664531707764,
+      "registered_positive_shift": true,
+      "validity_layers_above_haar": 36,
+      "validity_median_ratio_to_haar": 1.0776637196540833
+    },
+    "rank_consensus": {
+      "basis": "rank_consensus",
+      "bootstrap_ci95_high": 0.0012083699960949157,
+      "bootstrap_ci95_low": -0.018687578739510824,
+      "bootstrap_positive_fraction": 0.0505,
+      "coordinate_screen_passed": true,
+      "early_median_centroid": 0.4881627559661865,
+      "expression_A_contrast": -0.007485821843147278,
+      "expression_B_contrast": -0.005261719226837158,
+      "expression_sign_reversal": false,
+      "late_median_centroid": 0.4806106984615326,
+      "late_minus_early_centroid": -0.007552057504653931,
+      "registered_positive_shift": false,
+      "validity_layers_above_haar": 36,
+      "validity_median_ratio_to_haar": 1.0526769161224365
+    }
+  },
+  "cannot_claim": [
+    "Attention write is information absent from the residual stream",
+    "the write is low rank",
+    "later shared-basis rank is finer semantics",
+    "individual shared directions have semantic identity",
+    "a Router using this coordinate improves training or inference"
+  ],
+  "coordinate_screen": {
+    "mean_response": {
+      "finite": true,
+      "layers_above_haar": 36,
+      "maximum_ratio_to_haar": 1.9150810241699219,
+      "median_ratio_to_haar": 1.0776637196540833,
+      "minimum_ratio_to_haar": 1.037264347076416,
+      "passed": true
+    },
+    "rank_consensus": {
+      "finite": true,
+      "layers_above_haar": 36,
+      "maximum_ratio_to_haar": 1.0895092487335205,
+      "median_ratio_to_haar": 1.0526769161224365,
+      "minimum_ratio_to_haar": 1.0105080604553223,
+      "passed": true
+    }
+  },
+  "experiment_id": "A15_02_06_E02_shared_parameter_basis_attention_projection",
+  "status": "RESULT_COMPLETE_AI_DRAFT_AWAITING_HUMAN_CONFIRMATION",
+  "typed_outcome": "basis_sensitive_shift"
+}

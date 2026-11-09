@@ -1,0 +1,337 @@
+{
+  "token_summary": {
+    "num_sequences": 8192,
+    "total_tokens": 2097152,
+    "unique_token_ids": 50785,
+    "top_tokens": [
+      [
+        11,
+        72342
+      ],
+      [
+        279,
+        70808
+      ],
+      [
+        13,
+        53315
+      ],
+      [
+        311,
+        40967
+      ],
+      [
+        264,
+        34515
+      ],
+      [
+        323,
+        34115
+      ],
+      [
+        315,
+        33133
+      ],
+      [
+        220,
+        28702
+      ],
+      [
+        304,
+        21849
+      ],
+      [
+        16,
+        20910
+      ],
+      [
+        15,
+        18788
+      ],
+      [
+        429,
+        18440
+      ],
+      [
+        374,
+        17848
+      ],
+      [
+        382,
+        17151
+      ],
+      [
+        17,
+        15980
+      ],
+      [
+        432,
+        14648
+      ],
+      [
+        358,
+        14409
+      ],
+      [
+        498,
+        13505
+      ],
+      [
+        594,
+        12964
+      ],
+      [
+        369,
+        12904
+      ],
+      [
+        25,
+        11804
+      ],
+      [
+        389,
+        10767
+      ],
+      [
+        448,
+        9688
+      ],
+      [
+        271,
+        9538
+      ],
+      [
+        198,
+        9470
+      ],
+      [
+        438,
+        8658
+      ],
+      [
+        18,
+        8593
+      ],
+      [
+        387,
+        8576
+      ],
+      [
+        572,
+        8561
+      ],
+      [
+        525,
+        7850
+      ]
+    ],
+    "top10_fraction": 0.1958160400390625,
+    "top50_fraction": 0.37483644485473633,
+    "top200_fraction": 0.5272183418273926
+  },
+  "by_group_topk": {
+    "all": {
+      "1": {
+        "token_fraction_mean": 1.0,
+        "max_selection_share_mean": 0.2781190607282851,
+        "max_selection_share_max": 0.4307994842529297,
+        "top2_selection_share_mean": 0.4467146661546495,
+        "top4_selection_share_mean": 0.7150233851538764,
+        "effective_experts_mean": 6.785461844029583,
+        "gini_load_mean": 0.3026619619793362
+      },
+      "2": {
+        "token_fraction_mean": 1.0,
+        "max_selection_share_mean": 0.23026059733496773,
+        "max_selection_share_max": 0.31571459770202637,
+        "top2_selection_share_mean": 0.39670783943600124,
+        "top4_selection_share_mean": 0.6719280878702799,
+        "effective_experts_mean": 7.2267477819272266,
+        "gini_load_mean": 0.2384605904420217
+      },
+      "4": {
+        "token_fraction_mean": 1.0,
+        "max_selection_share_mean": 0.17940997415118748,
+        "max_selection_share_max": 0.21123886108398438,
+        "top2_selection_share_mean": 0.3334489067395528,
+        "top4_selection_share_mean": 0.6094606651200188,
+        "effective_experts_mean": 7.666326366625725,
+        "gini_load_mean": 0.15104071382019255
+      }
+    },
+    "top10_ids": {
+      "1": {
+        "token_fraction_mean": 0.1958160400390625,
+        "max_selection_share_mean": 0.29130234320958454,
+        "max_selection_share_max": 0.5036794543266296,
+        "top2_selection_share_mean": 0.46489790081977844,
+        "top4_selection_share_mean": 0.729763001203537,
+        "effective_experts_mean": 6.612667505270854,
+        "gini_load_mean": 0.32338593616067945
+      },
+      "2": {
+        "token_fraction_mean": 0.1958160400390625,
+        "max_selection_share_mean": 0.23717343558867773,
+        "max_selection_share_max": 0.34345412254333496,
+        "top2_selection_share_mean": 0.40845899615022874,
+        "top4_selection_share_mean": 0.6839381489488814,
+        "effective_experts_mean": 7.119812761820851,
+        "gini_load_mean": 0.25370171614306003
+      },
+      "4": {
+        "token_fraction_mean": 0.1958160400390625,
+        "max_selection_share_mean": 0.18237821261088052,
+        "max_selection_share_max": 0.21590393781661987,
+        "top2_selection_share_mean": 0.3392934766080644,
+        "top4_selection_share_mean": 0.6163817048072815,
+        "effective_experts_mean": 7.627512142559864,
+        "gini_load_mean": 0.1599096256288042
+      }
+    },
+    "top50_ids": {
+      "1": {
+        "token_fraction_mean": 0.37483644485473633,
+        "max_selection_share_mean": 0.28314704613553154,
+        "max_selection_share_max": 0.431916743516922,
+        "top2_selection_share_mean": 0.4540587796105279,
+        "top4_selection_share_mean": 0.7212891843583848,
+        "effective_experts_mean": 6.716961844640925,
+        "gini_load_mean": 0.31119108509200477
+      },
+      "2": {
+        "token_fraction_mean": 0.37483644485473633,
+        "max_selection_share_mean": 0.2325961548421118,
+        "max_selection_share_max": 0.3160507380962372,
+        "top2_selection_share_mean": 0.4004945887459649,
+        "top4_selection_share_mean": 0.6768249372641245,
+        "effective_experts_mean": 7.190091248899149,
+        "gini_load_mean": 0.24389518164539192
+      },
+      "4": {
+        "token_fraction_mean": 0.37483644485473633,
+        "max_selection_share_mean": 0.17996781898869407,
+        "max_selection_share_max": 0.21148018538951874,
+        "top2_selection_share_mean": 0.334971825281779,
+        "top4_selection_share_mean": 0.6120093597306145,
+        "effective_experts_mean": 7.656337936018839,
+        "gini_load_mean": 0.15376760243857038
+      }
+    },
+    "top200_ids": {
+      "1": {
+        "token_fraction_mean": 0.5272183418273926,
+        "max_selection_share_mean": 0.2819373963607682,
+        "max_selection_share_max": 0.43648797273635864,
+        "top2_selection_share_mean": 0.451609311832322,
+        "top4_selection_share_mean": 0.7191193401813507,
+        "effective_experts_mean": 6.740904541172961,
+        "gini_load_mean": 0.3081229330414204
+      },
+      "2": {
+        "token_fraction_mean": 0.5272183418273926,
+        "max_selection_share_mean": 0.23223519573609033,
+        "max_selection_share_max": 0.31835415959358215,
+        "top2_selection_share_mean": 0.39923447039392257,
+        "top4_selection_share_mean": 0.6753786868519254,
+        "effective_experts_mean": 7.203169568534601,
+        "gini_load_mean": 0.2421024897413936
+      },
+      "4": {
+        "token_fraction_mean": 0.5272183418273926,
+        "max_selection_share_mean": 0.18004841688606474,
+        "max_selection_share_max": 0.21211664378643036,
+        "top2_selection_share_mean": 0.3346169922086928,
+        "top4_selection_share_mean": 0.6111910310056474,
+        "effective_experts_mean": 7.659915312609458,
+        "gini_load_mean": 0.1529421722408788
+      }
+    },
+    "not_top10": {
+      "1": {
+        "token_fraction_mean": 0.8041839599609375,
+        "max_selection_share_mean": 0.27490896814399296,
+        "max_selection_share_max": 0.4320182204246521,
+        "top2_selection_share_mean": 0.4432572258843316,
+        "top4_selection_share_mean": 0.7118408481280009,
+        "effective_experts_mean": 6.815575795083686,
+        "gini_load_mean": 0.2984414299101675
+      },
+      "2": {
+        "token_fraction_mean": 0.8041839599609375,
+        "max_selection_share_mean": 0.22857733815908432,
+        "max_selection_share_max": 0.3164098858833313,
+        "top2_selection_share_mean": 0.3939598782194985,
+        "top4_selection_share_mean": 0.6690995362069871,
+        "effective_experts_mean": 7.243753785813565,
+        "gini_load_mean": 0.2353058995297548
+      },
+      "4": {
+        "token_fraction_mean": 0.8041839599609375,
+        "max_selection_share_mean": 0.17891670763492584,
+        "max_selection_share_max": 0.21136589348316193,
+        "top2_selection_share_mean": 0.33215537005000645,
+        "top4_selection_share_mean": 0.607949028412501,
+        "effective_experts_mean": 7.6715378447204285,
+        "gini_load_mean": 0.14956542621835778
+      }
+    },
+    "not_top50": {
+      "1": {
+        "token_fraction_mean": 0.6251635551452637,
+        "max_selection_share_mean": 0.2751043654150433,
+        "max_selection_share_max": 0.4301295876502991,
+        "top2_selection_share_mean": 0.4428570436106788,
+        "top4_selection_share_mean": 0.7116670674747891,
+        "effective_experts_mean": 6.819146845732721,
+        "gini_load_mean": 0.29834924239169114
+      },
+      "2": {
+        "token_fraction_mean": 0.6251635551452637,
+        "max_selection_share_mean": 0.22886023504866493,
+        "max_selection_share_max": 0.3155130445957184,
+        "top2_selection_share_mean": 0.3945044245984819,
+        "top4_selection_share_mean": 0.6692448291513655,
+        "effective_experts_mean": 7.243348910131177,
+        "gini_load_mean": 0.23571243652415383
+      },
+      "4": {
+        "token_fraction_mean": 0.6251635551452637,
+        "max_selection_share_mean": 0.17907549523644978,
+        "max_selection_share_max": 0.21109415590763092,
+        "top2_selection_share_mean": 0.3325689733028412,
+        "top4_selection_share_mean": 0.6080927782588534,
+        "effective_experts_mean": 7.6698180252299615,
+        "gini_load_mean": 0.1498695116312319
+      }
+    },
+    "not_top200": {
+      "1": {
+        "token_fraction_mean": 0.4727816581726074,
+        "max_selection_share_mean": 0.2738610936535729,
+        "max_selection_share_max": 0.42445603013038635,
+        "top2_selection_share_mean": 0.4420567784044478,
+        "top4_selection_share_mean": 0.7105372150739034,
+        "effective_experts_mean": 6.828822695800673,
+        "gini_load_mean": 0.29717346027967867
+      },
+      "2": {
+        "token_fraction_mean": 0.4727816581726074,
+        "max_selection_share_mean": 0.22805865026182598,
+        "max_selection_share_max": 0.31277114152908325,
+        "top2_selection_share_mean": 0.39389030635356903,
+        "top4_selection_share_mean": 0.6685916781425476,
+        "effective_experts_mean": 7.24874518201146,
+        "gini_load_mean": 0.23486227447776675
+      },
+      "4": {
+        "token_fraction_mean": 0.4727816581726074,
+        "max_selection_share_mean": 0.17869803143872154,
+        "max_selection_share_max": 0.21026001870632172,
+        "top2_selection_share_mean": 0.33223092059294385,
+        "top4_selection_share_mean": 0.6077417996194627,
+        "effective_experts_mean": 7.671559510327163,
+        "gini_load_mean": 0.14942196576326097
+      }
+    }
+  }
+}

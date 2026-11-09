@@ -1,0 +1,54 @@
+{
+  "far_examples": [
+    {
+      "dictionary": "SAE",
+      "concept": "plant",
+      "feature": 3077,
+      "direction": -1
+    },
+    {
+      "dictionary": "CC",
+      "concept": "plant",
+      "feature": 557,
+      "direction": 1
+    },
+    {
+      "dictionary": "SAE",
+      "concept": "bank",
+      "feature": 47,
+      "direction": -1
+    },
+    {
+      "dictionary": "CC",
+      "concept": "bank",
+      "feature": 2191,
+      "direction": 1
+    },
+    {
+      "dictionary": "SAE",
+      "concept": "organ",
+      "feature": 1205,
+      "direction": -1
+    },
+    {
+      "dictionary": "CC",
+      "concept": "organ",
+      "feature": 770,
+      "direction": -1
+    },
+    {
+      "dictionary": "SAE",
+      "concept": "bass",
+      "feature": 1205,
+      "direction": -1
+    },
+    {
+      "dictionary": "CC",
+      "concept": "bass",
+      "feature": 3641,
+      "direction": 1
+    }
+  ],
+  "rule": "smallest near-qualified feature ID per concept/dictionary;uses no far outcomes;all52curves in companion PDF",
+  "far_results_exist_at_display_rule": false
+}

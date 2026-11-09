@@ -1,0 +1,54 @@
+{
+  "UTC": "2026-11-04T07:26:35.079350+00:00",
+  "status": "PASS",
+  "checks": [
+    {
+      "site": "ATTN_SAE",
+      "pair": "16_64",
+      "shared": 25.75,
+      "R19": 25.75
+    },
+    {
+      "site": "ATTN_SAE",
+      "pair": "64_128",
+      "shared": 28.833333333333332,
+      "R19": 28.83333333333333
+    },
+    {
+      "site": "ATTN_SAE",
+      "pair": "16_128",
+      "shared": 24.791666666666668,
+      "R19": 24.791666666666668
+    },
+    {
+      "site": "ATTN_SAE",
+      "strict_six_N": 6,
+      "strict_six_cos": 0.9677965633263464
+    },
+    {
+      "site": "MLPIN_SAE",
+      "pair": "16_64",
+      "shared": 28.458333333333332,
+      "R19": 28.45833333333333
+    },
+    {
+      "site": "MLPIN_SAE",
+      "pair": "64_128",
+      "shared": 30.166666666666668,
+      "R19": 30.166666666666668
+    },
+    {
+      "site": "MLPIN_SAE",
+      "pair": "16_128",
+      "shared": 27.916666666666668,
+      "R19": 27.916666666666668
+    },
+    {
+      "site": "MLPIN_SAE",
+      "strict_six_N": 11,
+      "strict_six_cos": 0.9713389691131933
+    }
+  ],
+  "all_three_full_candidate_paired_12_of_12": true,
+  "old_heldout_exposed": true
+}

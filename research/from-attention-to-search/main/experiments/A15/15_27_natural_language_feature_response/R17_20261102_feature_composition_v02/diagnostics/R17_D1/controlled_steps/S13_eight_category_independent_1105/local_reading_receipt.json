@@ -1,0 +1,113 @@
+{
+  "UTC": "2026-11-05T16:05:39.622337+00:00",
+  "processing_agent": "/root/history_frequency_audit",
+  "task_state": "LOCAL_CURATED_READING_COPY_COMPLETE",
+  "source_execution": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105",
+  "destination": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105",
+  "copied_file_count": 88,
+  "copied_bytes": 8639480,
+  "manifest": {
+    "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105/payload_manifest.json",
+    "bytes": 53449,
+    "sha256": "9479815f84f59800ffcae338ccba4e42a31b3d7d58070d93aa0c78bd6ea7c547"
+  },
+  "meeting_brief": {
+    "path": "/data/250010109/Research_System/daily_research_reports/1105/meeting_report/sae_s13_eight_category_cn.md",
+    "bytes": 11189,
+    "sha256": "a6daa83991700fcdbdee15c8821aa2841ce5e6a309eea71c5994fbf75f24b871"
+  },
+  "day_index": {
+    "path": "/data/250010109/Research_System/daily_research_reports/1105/README_cn.md",
+    "bytes": 1471,
+    "sha256": "e2b4ab576de8579b8567d3b191778be2003292f7ed008a40a1bc94dcb8d54eb2"
+  },
+  "checks": {
+    "copied_source_hashes": {
+      "status": "PASS",
+      "files": 88
+    },
+    "copied_payload_hashes": {
+      "status": "PASS",
+      "files": 88,
+      "byte_identical": 87,
+      "presentation_only_changed_files": 1
+    },
+    "presentation_transform_reversal": {
+      "status": "PASS",
+      "formula_bodies_unchanged": true,
+      "transformations": 3
+    },
+    "markdown_links": {
+      "status": "PASS",
+      "checked": 55
+    },
+    "figures": {
+      "status": "PASS",
+      "PNG": 18,
+      "SVG": 18
+    },
+    "excluded_payloads": {
+      "status": "PASS",
+      "code_CSR_raw_caches_fonts_checkpoints_absent": true
+    },
+    "day_index": {
+      "status": "PASS",
+      "new_brief_links": 1
+    },
+    "math_source": {
+      "status": "PASS",
+      "files": 19,
+      "issues": 0,
+      "rendering_checked": false,
+      "mathematical_truth_checked": false
+    },
+    "anchor_organization": {
+      "status": "PASS",
+      "lines": 13,
+      "registered_Anchors": 170,
+      "current_Anchor_files": 284,
+      "experiment_records": 1623,
+      "issues": 0,
+      "scientific_state_evaluated": false
+    },
+    "current_entrypoints": {
+      "status": "PREEXISTING_UNTRACKED_WARNINGS",
+      "checked": 167,
+      "issues": 4,
+      "in_scope_regressions": 0,
+      "paths": [
+        "Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md",
+        "Projects/from-attention-to-search/main/focus/focus_checkpoint_evidence_use.md",
+        "Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_30_checkpoint_evidence_use/15_30_checkpoint_evidence_use_anchor.md",
+        "Projects/from-attention-to-search/main/experiments/A15/15_30_checkpoint_evidence_use/R01_behavior/protocol.md"
+      ]
+    },
+    "result_bundle": {
+      "status": "PASS",
+      "bytes": 18502887,
+      "sha256": "bcc757efa85a139f0e54d233268ebb47f6e4fcf72125fb42cea97fe72de0e7a5",
+      "hash_checked_locally": true,
+      "fresh_unpack_checks_reported_by_root": 67472
+    }
+  },
+  "scientific_acceptance": "Unknown",
+  "mechanism_judgment": "Unknown",
+  "question_closure": "Unknown",
+  "publication": "NOT_COMMITTED_NOT_PUSHED",
+  "result_bundle": {
+    "path": "/data/250010109/Research_System/daily_research_reports/1105/20261105_S13_eight_category_independent.zip",
+    "bytes": 18502887,
+    "sha256": "bcc757efa85a139f0e54d233268ebb47f6e4fcf72125fb42cea97fe72de0e7a5",
+    "relative_link_from_brief": "../20261105_S13_eight_category_independent.zip",
+    "member_count": 287,
+    "fresh_unpack_checks_reported_PASS": 67472,
+    "fresh_unpack_evidence_owner": "root final package receipt",
+    "sha256_verified_in_this_agent": true
+  },
+  "source_refreshes": [
+    "summary.md",
+    "summary_cn.md",
+    "detailed.md",
+    "detailed_cn.md"
+  ]
+}

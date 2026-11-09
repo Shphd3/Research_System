@@ -1,0 +1,55 @@
+{
+  "seed": 20260521,
+  "seeds": [20260521, 20260522, 20260523, 20260524],
+  "base_h0521b": {
+    "config_path": "active/synthetic_data_understanding/configs/h0521b_seq32_contiguous_ab.json",
+    "run_dir": "active/synthetic_data_understanding/results/h0521b_seq32_contiguous_ab/h0521b_seq32_contiguous_ab_4gpu_20260521"
+  },
+  "audit": {
+    "max_eval_samples_per_class": 1600,
+    "factors": [
+      "token_identity",
+      "token_id",
+      "source_position",
+      "left_token_identity",
+      "source_role",
+      "sample_class",
+      "rule_label",
+      "target_id",
+      "background_vs_signal"
+    ]
+  },
+  "stage4_stress": {
+    "enabled": true,
+    "residual_scales": [0.0],
+    "train_samples_per_class": 6000,
+    "eval_samples_per_class": 1600,
+    "steps": 1200,
+    "smoke_steps": 60,
+    "batch_size": 384,
+    "lr": 0.0008,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "log_every": 100
+  },
+  "stage5_disentangled": {
+    "enabled": true,
+    "vocab_size": 160,
+    "seq_len": 32,
+    "train_samples_per_rule": 5000,
+    "eval_samples_per_rule": 1600,
+    "smoke_samples_per_rule": 256,
+    "num_identity_pairs": 4,
+    "steps": 1400,
+    "smoke_steps": 80,
+    "batch_size": 384,
+    "lr": 0.0008,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "log_every": 100
+  },
+  "output": {
+    "result_dir": "active/synthetic_data_understanding/results/h0522_router_factor_audit_seq32",
+    "figure_dir": "active/synthetic_data_understanding/figures/h0522_router_factor_audit_seq32"
+  }
+}

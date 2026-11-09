@@ -1,0 +1,98 @@
+{
+  "at": "2026-09-29T20:28:44.366380+00:00",
+  "status": "ALL_APPROVED_STAGES_COMPLETE",
+  "approval_source": "Current user explicitly requested approval, execution, longer polling for slow tasks, and supervision until all tasks finish.",
+  "approval_scope": "Existing domain_update_geometry final audited scope and completion supervision; scientific question closure is not inferred.",
+  "protocol_sha256": "b8b08172ebc4c044fe7206c8008d4667b6077363c4e53ea124e1ef5c4ccc54e4",
+  "protocol_cn_sha256": "f56042c6225696e1bdc65dd7093d741049534ba12d3b19b25805d4baf66c4966",
+  "result_text_revision": "FINAL_TEXT_R2",
+  "job_id": "pt-t33awf9u",
+  "job_state": "SUCCEEDED",
+  "job_completed_before_this_request": true,
+  "new_submission": false,
+  "uncompleted_registered_stages": [],
+  "active_jobs_in_this_registered_attempt": [],
+  "monitoring": "Completion supervision authorized; all stages and the sole allocation are already terminal, so no waiting or repeated polling is needed.",
+  "checks": {
+    "registered_source_hashes": 20,
+    "R2_document_hashes": 12,
+    "result_source_hashes": 6,
+    "curated_copies": 10,
+    "transformed_spectral_subset": "PASS",
+    "checkpoint_hash": "PASS",
+    "mandatory_artifacts": 15,
+    "workers": "4 PASS",
+    "counts": "PASS",
+    "failure_artifact_absent": true
+  },
+  "records": 1024,
+  "valid_targets": 16384,
+  "activation_positions": 261120,
+  "sae_atoms": 30000,
+  "stages": {
+    "collection": {
+      "status": "COMPLETE",
+      "records": 1024,
+      "valid_targets": 16384,
+      "activation_positions": 261120,
+      "all_indices_unique": true,
+      "last_tail_ce_max": 1.6302650198696256e-05,
+      "optimizer_updates": 0
+    },
+    "analysis": {
+      "status": "COMPLETE",
+      "elapsed_seconds": 139.50758123397827,
+      "primary_status": "NON_SUPPORT",
+      "mandatory_stages": [
+        "primary",
+        "spectral",
+        "activation",
+        "projection",
+        "scale",
+        "nuisance"
+      ],
+      "human_judgment": "Unknown"
+    },
+    "activation": {
+      "status": "COMPLETE",
+      "all_atoms": 30000,
+      "table_rows": 300000,
+      "coactivation": "all observed positive pairs, separate domain/split and pooled",
+      "records": 1024,
+      "positions": 261120,
+      "empty_sets": [],
+      "seconds": 54.66678023338318
+    },
+    "projection": {
+      "status": "COMPLETE",
+      "rows": 54,
+      "all_atom_rows": 240000,
+      "same_rank_random_seeds": [
+        31,
+        43,
+        59
+      ],
+      "overlapping_sets_not_additive": true
+    }
+  },
+  "model_updates": 0,
+  "sae_updates": 0,
+  "program_primary_status": "NON_SUPPORT",
+  "population_directional_inference": "INSUFFICIENT_UNCALIBRATED_BOOTSTRAP",
+  "human_scientific_judgment": "Unknown",
+  "followup_target_conditioned_question": "AI_PROPOSAL_NOT_AUTOMATICALLY_EXECUTED",
+  "preserved_scientific_sources": {
+    "/data/250010109/Research_System/daily_research_reports/0930/docs/domain_update_geometry/anchor.md": "25793fb31b9bdb20d0b60986bfd44e11d13b35b35fb30945b7ffba7ee23e3915",
+    "/data/250010109/Research_System/daily_research_reports/0930/docs/domain_update_geometry/anchor_cn.md": "515e401574218b3cb1c849546cbf8db1795edeb91107524b9bc871f961920ed4",
+    "/data/250010109/Research_System/daily_research_reports/0930/docs/domain_update_geometry/detailed.md": "c21b9c6b98e2bda8525f7175e9bc315e521d85b82cc33618770099fa8bbc4921",
+    "/data/250010109/Research_System/daily_research_reports/0930/docs/domain_update_geometry/detailed_cn.md": "2145c507a5af4698271008dc76d0d9a07c4455306636df8c82fefc5e96e89732",
+    "/data/250010109/Research_System/daily_research_reports/0930/docs/domain_update_geometry/protocol.md": "b8b08172ebc4c044fe7206c8008d4667b6077363c4e53ea124e1ef5c4ccc54e4",
+    "/data/250010109/Research_System/daily_research_reports/0930/docs/domain_update_geometry/protocol_cn.md": "f56042c6225696e1bdc65dd7093d741049534ba12d3b19b25805d4baf66c4966",
+    "/data/250010109/Research_System/daily_research_reports/0930/docs/domain_update_geometry/summary.md": "f53314d95fab8c57e81ac11d584d9be4cea7bc6a10bf57ae452480705ff649ae",
+    "/data/250010109/Research_System/daily_research_reports/0930/docs/domain_update_geometry/summary_cn.md": "ad0907176bf997074d4abed6020d28f39a870d1345737e744a71827b890086b1",
+    "/data/250010109/Research_System/daily_research_reports/0930/focus_domain_update_geometry.md": "d07d1645cc8b6a5c6344a012cfc11a0fec5b953eac2b7ab1f57e8e08bfbe2061",
+    "/data/250010109/Research_System/daily_research_reports/0930/focus_domain_update_geometry_cn.md": "c7845bf7fb680d65cdd76b42d1243e21e8c30d59ba8c5d7d14e4e55c688d6863"
+  },
+  "validation_note": "An initial checker treated a documented CSV subset as a byte copy; the corrected check verifies both its own hash and exact selected source rows. No source discrepancy was found.",
+  "verification_script_sha256": "daf32b95c0aae4da17e337f22dcfb4a22005d1499ff2079f0556109b2e3008ca"
+}

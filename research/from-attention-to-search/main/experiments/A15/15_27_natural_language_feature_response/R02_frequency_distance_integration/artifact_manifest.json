@@ -1,0 +1,282 @@
+{
+  "schema": "R02_selected_artifact_index_v1",
+  "verdicts": {
+    "Q1": "INSUFFICIENT",
+    "Q2": "INSUFFICIENT",
+    "Q3": "INSUFFICIENT"
+  },
+  "items": [
+    {
+      "object": "Frozen contract",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/protocol.md",
+      "purpose_and_eligibility": "Original pre-forward design; immutable",
+      "sha256": "09436ceed2428ef87a35b03b9f6b77bbd85b5591b09eb16cea8249ad2da9e99c",
+      "bytes": 18828,
+      "complete": true
+    },
+    {
+      "object": "Freeze identities",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/pre_forward_freeze.json",
+      "purpose_and_eligibility": "48 exact pre-forward source identities",
+      "sha256": "b0fcc131acb75067ed399a930f5b75d6ec32f17cba360923e879bc9476d9ba34",
+      "bytes": 11131,
+      "complete": true
+    },
+    {
+      "object": "Text and pairs",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/text_manifest.md",
+      "purpose_and_eligibility": "12case/120sequence index; raw text linked",
+      "sha256": "26293a739c64b962880939522350e6559d80836e35e307991de559012754799f",
+      "bytes": 3371,
+      "complete": true
+    },
+    {
+      "object": "Candidates/scales",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/candidate_freeze.json",
+      "purpose_and_eligibility": "R01 fixed64candidates and7groups; no new selection",
+      "sha256": "a54c37ab0854c4a2e9c535c87d9720cdc8a03c719d19856ae148ad3ea66b5838",
+      "bytes": 15282,
+      "complete": true
+    },
+    {
+      "object": "Configuration",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/analysis_config.json",
+      "purpose_and_eligibility": "Fixed scales,support,clustering,null and multiplicity choices",
+      "sha256": "90df73f8571d8870a0fc40a7766c273d6f9014f01aeed76211a0f2b5e99fbd8d",
+      "bytes": 5258,
+      "complete": true
+    },
+    {
+      "object": "Statistical plan",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/statistical_plan.json",
+      "purpose_and_eligibility": "Pre-forward Q1/Q2/Q3 estimators and guards",
+      "sha256": "17c0365e172ce066fc1434983ee928a156eead809ec2f8f6a35abfb772974c9e",
+      "bytes": 14876,
+      "complete": true
+    },
+    {
+      "object": "Native runner",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/run_forward.py",
+      "purpose_and_eligibility": "Read-only BF16 model/native FP32 SAE",
+      "sha256": "9eb467ffcdc15005c92787c558b011639fc3c28ef01f6f993e9a431a9bf2fee3",
+      "bytes": 11849,
+      "complete": true
+    },
+    {
+      "object": "Frozen analysis",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/offline/analyze.py",
+      "purpose_and_eligibility": "No refit after new responses",
+      "sha256": "f44f63826bde54768d74104c191266fc63d040ca0e8d4ef7160ba6a6215b2971",
+      "bytes": 54779,
+      "complete": true
+    },
+    {
+      "object": "Reference inputs",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/reference/manifest.json",
+      "purpose_and_eligibility": "1024 fixed TRAIN windows",
+      "sha256": "c7406c822d370a7fea4e8013f386ee720feb5f2cf7e9c7c0f9c236a70d97e3ea",
+      "bytes": 1223,
+      "complete": true
+    },
+    {
+      "object": "Reference counts",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/reference/frequency.npz",
+      "purpose_and_eligibility": "245760 positions; all30000features and per-window counts",
+      "sha256": "0c85b8ae880f1a92324ccd5dd8db60fbc46c0d3a4bcc36e10bf321cd089e6dcc",
+      "bytes": 4098291,
+      "complete": true
+    },
+    {
+      "object": "Reference intervals",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/tables/reference_frequency_counts_CI.csv",
+      "purpose_and_eligibility": "Fixed candidate counts and block intervals; low-support NA",
+      "sha256": "86e3bc18bc804c327ca962726937b7c9c88107a2a089593cef1f4d17ec8d549f",
+      "bytes": 11808,
+      "complete": true
+    },
+    {
+      "object": "Panel targets",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/forward/panel.npz",
+      "purpose_and_eligibility": "Raw/normalized feature contributions and logits; NOT confirmatory",
+      "sha256": "d6b1cf709bd6a4c813872b939f874fb32ed41f8b2922dab0c420e25ec3c101f5",
+      "bytes": 1874444,
+      "complete": true
+    },
+    {
+      "object": "Panel sequence alignment",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/forward/panel_sequences.jsonl",
+      "purpose_and_eligibility": "Concrete visible prefix/readout alignment",
+      "sha256": "a172212a9f7840ca63a8e84324a5ba01dde129083e80b8ddaae196713eb3e203",
+      "bytes": 800361,
+      "complete": true
+    },
+    {
+      "object": "Original failed qualification",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/panel_qualification.json",
+      "purpose_and_eligibility": "Failure retained; no tolerance override",
+      "sha256": "6348a0091c07d4a47ccf0c61d9d8a5f1074d8421d16d303ff65e9cdf5a70db67",
+      "bytes": 2903,
+      "complete": true
+    },
+    {
+      "object": "Eligibility",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/analysis_eligibility.json",
+      "purpose_and_eligibility": "New panel is diagnostic description only",
+      "sha256": "d446740a8e45b3f29722dd80bb7180a9ddb235e281d792db50c4dcba3d038549",
+      "bytes": 1408,
+      "complete": true
+    },
+    {
+      "object": "Extra diagnostic",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/prefix_shape_diagnostic.json",
+      "purpose_and_eligibility": "Eight fixed calls; inconsistency unresolved",
+      "sha256": "a8531be56692b38471bf06beb270914abb2e53dd6af46473f26b857812cbe4d9",
+      "bytes": 3403,
+      "complete": true
+    },
+    {
+      "object": "Old conditional-support audit",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/old_group_audit.json",
+      "purpose_and_eligibility": "G02/G04:0valid matched random groups",
+      "sha256": "a327a6474708fa22a969e9afb9982d61f99e87b8766b542d1337a6f80fe3c7ca",
+      "bytes": 2593,
+      "complete": true
+    },
+    {
+      "object": "Q1",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/Q1_results.json",
+      "purpose_and_eligibility": "All-five primary statistic NA;392/500valid nulls",
+      "sha256": "1809ecc102492867f655bf33f083eb808ee0a520070e36ad9cc3f716f80e8c0a",
+      "bytes": 4139,
+      "complete": true
+    },
+    {
+      "object": "Q1 complete null draws",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/offline/Q1_recluster_null.csv",
+      "purpose_and_eligibility": "All500full-pipeline draws,including failures",
+      "sha256": "83d8584350d08d69f0f9da4dc7481df5309f8b9923d25f6af436c4cea2be1feb",
+      "bytes": 26022,
+      "complete": true
+    },
+    {
+      "object": "Q2/Q3",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/panel_results.json",
+      "purpose_and_eligibility": "All INSUFFICIENT; conditional descriptions",
+      "sha256": "de28c44a8c0b281ca4481f3c419d1ede35c04184d4c2b124d3d31af976a4b52e",
+      "bytes": 2851,
+      "complete": true
+    },
+    {
+      "object": "Group case values",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/offline/panel_group_case_values.csv",
+      "purpose_and_eligibility": "Basic-case block values; variants not independent",
+      "sha256": "bd1cad8544ac5d3b699b93cdc6b60c83e2779dacb6d1a11637a6bc859735ed73",
+      "bytes": 8966,
+      "complete": true
+    },
+    {
+      "object": "All feature stage components",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/offline/stagewise_feature_response_components.csv",
+      "purpose_and_eligibility": "Raw fourcells,single/joint,interaction and controls",
+      "sha256": "a6755393b8b3c13e441e0d58c8621f9317f4c93d63a2031fd1732990591d6d3e",
+      "bytes": 552503,
+      "complete": true
+    },
+    {
+      "object": "All group stage components",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/offline/stagewise_group_response_components.csv",
+      "purpose_and_eligibility": "Fixed group stage aggregation",
+      "sha256": "7c305df54ed542f8973456d8d90e5b89730fabee8e91308f805ff51b40987358",
+      "bytes": 79296,
+      "complete": true
+    },
+    {
+      "object": "Visible-prefix candidates",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/offline/visible_information_candidate_readouts.csv",
+      "purpose_and_eligibility": "No future semantic label at earlier stages",
+      "sha256": "88b47bf8a729d82b662a0433696e70a6042bd981709de689f636614d2d088a1d",
+      "bytes": 40765,
+      "complete": true
+    },
+    {
+      "object": "CrossCoder descriptive rows",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/real_corpus/crosscoder_first8_positions.jsonl",
+      "purpose_and_eligibility": "One sharedz,8positions of one context; not8documents",
+      "sha256": "c5fd0f88a4cec2adbad3199557e1f0d5be0cd39f1ac33dfa9079970f99381a9d",
+      "bytes": 100159,
+      "complete": true
+    },
+    {
+      "object": "CrossCoder layer contributions",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/real_corpus/crosscoder_first8_layer_contributions.csv",
+      "purpose_and_eligibility": "z×rms×decoder norm; not independent layer activations",
+      "sha256": "38a4cc1c14fa3a5a6bdcfbf66acb574792b653bcb7008b2a14fcef46170d3208",
+      "bytes": 109774,
+      "complete": true
+    },
+    {
+      "object": "SAE real-text description",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/real_corpus/sae_reference_fixed8.jsonl",
+      "purpose_and_eligibility": "8fixed windows,constant position127; descriptive only",
+      "sha256": "8eb236ede7fd6a2f0a9b1c626c70f2b42113a4bdab29db9a85ea2b2ccc1e329e",
+      "bytes": 30295,
+      "complete": true
+    },
+    {
+      "object": "Examples",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/examples.md",
+      "purpose_and_eligibility": "Old discovery positive,new local consistency and new counterexamples",
+      "sha256": "043637e25b3e063891d7c287454611088bf30503820f7196c15fd202c054992e",
+      "bytes": 1922,
+      "complete": true
+    },
+    {
+      "object": "Three figures",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/figures/README.md",
+      "purpose_and_eligibility": "Question/object/observation/interpretation/boundary per figure",
+      "sha256": "3bee66cdbcb258215dc66022d95b7b085b1e3668c3e19964acc281f9580d2056",
+      "bytes": 1229,
+      "complete": true
+    },
+    {
+      "object": "Plot provenance",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/plot_revision.json",
+      "purpose_and_eligibility": "Separate layout renderer,no statistical refit",
+      "sha256": "acb7a13e6731d8e565a2dd6a9a93ae499fef2c53b752e13fc4f2390fe510028e",
+      "bytes": 2158,
+      "complete": true
+    },
+    {
+      "object": "Execution certificate",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/execution_certificate.json",
+      "purpose_and_eligibility": "1160new,1452combined,cap1500; no updates/interventions",
+      "sha256": "70de46d3b853c8888ecf32411d6a3b52df5485798d61c12dd0c3d53cdc40c5bf",
+      "bytes": 1717,
+      "complete": true
+    },
+    {
+      "object": "Actual ledger",
+      "source": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R02_frequency_distance_integration/provenance/forward_ledger.jsonl",
+      "purpose_and_eligibility": "All1160forward calls by purpose",
+      "sha256": "6671e48339a44c17b3165cb215da77ae659a1987258130202780c7d7c522d502",
+      "bytes": 154155,
+      "complete": true
+    },
+    {
+      "object": "Output asset access",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/provenance/output_asset_access.json",
+      "purpose_and_eligibility": "Strict current access PASS; not scientific acceptance",
+      "sha256": "4eb08f54c380d67cf3804a9b71fd7587e3cf0a87f81e03dc6aabf6df9b089042",
+      "bytes": 8483,
+      "complete": true
+    },
+    {
+      "object": "Selected evidence provenance",
+      "source": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R02_frequency_distance_integration/selected_evidence_payload_manifest.json",
+      "purpose_and_eligibility": "Exact source/destination hashes of curated payload",
+      "sha256": "cfa5c8a29134a61bf50a2f3d2d5b09840b1fb0498754b13538658bbf8ad1aca2",
+      "bytes": 17892,
+      "complete": true
+    }
+  ]
+}

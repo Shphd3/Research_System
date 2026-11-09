@@ -1,0 +1,37 @@
+{
+  "basis_orthogonality_relative": 2.6580826215649722e-06,
+  "boundary_layer_excluded": 36,
+  "elapsed_seconds": 8.341390609741211,
+  "endpoints": {
+    "F-C": {
+      "ci_high": 0.012619733810424805,
+      "ci_low": 0.0019637987017631533,
+      "half_A": 0.00956830382347107,
+      "half_B": 0.006794393062591553,
+      "point": 0.008175015449523926
+    },
+    "F-M": {
+      "ci_high": 0.00528678223490715,
+      "ci_low": 0.0009577549993991852,
+      "half_A": 0.0037369728088378906,
+      "half_B": 0.0035696327686309814,
+      "point": 0.004088997840881348
+    },
+    "M-C": {
+      "ci_high": 0.009696158021688455,
+      "ci_low": 0.001451314240694046,
+      "half_A": 0.007817775011062622,
+      "half_B": 0.0027971267700195312,
+      "point": 0.005181401968002319
+    }
+  },
+  "maximum_projection_energy_relative_error": 3.7912966992970934e-07,
+  "medium_pairing_control": {
+    "passes": true,
+    "random_pairing_q95": 0.0015395209193229675,
+    "real_ordered_score": 0.004088997840881348,
+    "replicates": 256
+  },
+  "medium_verdict": "ordered_three_level_support",
+  "primary_verdict": "fine_later_than_coarse"
+}

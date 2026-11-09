@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "test": "CSR versus independent row sums",
+      "N": 3,
+      "passed": true
+    },
+    {
+      "test": "reproduce original SFT R1 and rho28",
+      "passed": true,
+      "max_abs_R_error": 2.5484113236329264e-08
+    },
+    {
+      "test": "all 16384 V cached marginal counts exactly match original",
+      "passed": true,
+      "scanned_chunks": 339,
+      "sha256_checked": true
+    }
+  ]
+}

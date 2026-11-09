@@ -1,0 +1,77 @@
+[
+  {
+    "task": "名单与同字典交集",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "全部冻结成员单位方向谱",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "Top16方向子集匹配背景",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "同query/head逐成员三种使用统计",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "文档级差值/差中差/影响诊断",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "全部活跃坐标四频段组成",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "全部合格近远来源token与上下文导出",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "规则词形标签与语义候选分列",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "四主图和辅助图",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "原数据哈希/独立数值核验",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/; analysis/audit.json; figures/"
+  },
+  {
+    "task": "独立人工验证语义角色/可靠照应判定",
+    "status": "BLOCKED",
+    "evidence": "没有合格标签；规则不替代真值"
+  },
+  {
+    "task": "同tokenID近远共同支持",
+    "status": "BLOCKED",
+    "evidence": "沿用原配对0文档，不补跑"
+  },
+  {
+    "task": "全部集合频率/支持匹配",
+    "status": "DONE_EXPLORATORY_WITH_NA",
+    "evidence": "tables/set_spectrum_and_background.csv;原匹配失败保留NA"
+  },
+  {
+    "task": "缓存或query边界外完整句子",
+    "status": "BLOCKED_WHERE_TRUNCATED",
+    "evidence": "事件表sentence_right_truncated/left_at_window_edge"
+  },
+  {
+    "task": "新前向/训练/干预/新聚类",
+    "status": "NOT_RUN_BY_SCOPE",
+    "evidence": "0"
+  }
+]

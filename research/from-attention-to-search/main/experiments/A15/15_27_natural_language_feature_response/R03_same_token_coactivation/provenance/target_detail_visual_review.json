@@ -1,0 +1,26 @@
+{
+  "processing_agent": "/root/r03_names_finish",
+  "actual_PNGs_viewed": true,
+  "measurement_data_changed": false,
+  "statistics_or_groups_changed": false,
+  "model_forward_calls": 0,
+  "originals_preserved": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_tokens.png",
+      "sha256": "1bf2097e9f87a2396d578e1afc6cea578b24599c37584c186efef88a306ca133",
+      "unchanged": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_tokens.png",
+      "sha256": "8ef75f5ebf7feb9c9beba3c1e7936a20b30671a46267ed9e96c4b51584bdcb13",
+      "unchanged": true
+    }
+  ],
+  "findings": [
+    "Target-selected features show target activation patterns under a shared A/B log1p color scale; target color range is not controlled by the first token.",
+    "Direct native target-value bars are shown without transformation; saturated heatmap cells are explicitly counted.",
+    "Original O snapshots draw first300 sorted(A,u) edges and annotate actual totals; no full source relation is deleted.",
+    "Posthoc selection and illustration-only limits are printed at top and bottom.",
+    "All displayed target features are outside the selected512 C communities; this is candidate-coverage scope,not proof that calibration removed them."
+  ]
+}

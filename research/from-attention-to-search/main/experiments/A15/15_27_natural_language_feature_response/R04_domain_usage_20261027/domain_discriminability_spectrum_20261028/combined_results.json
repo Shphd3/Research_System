@@ -1,0 +1,26 @@
+{
+  "current_status": "COMPLETE_ALL_ESTIMABLE_STATISTICS",
+  "cache_only_phase": {
+    "results": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/analysis/results.json",
+    "candidate_freeze_sha256": "0bf533bedfa06dd2f755e06a0faa831af1b7908fdc37bd392b42bf41e844161a",
+    "new_forwards": 0
+  },
+  "A01_true_h_and_spectrum": {
+    "raw_manifest": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/raw_representation_manifest.json",
+    "results": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/analysis/spectral_results.json",
+    "new_forwards": 124,
+    "PCA_fits": 2,
+    "checks": 34
+  },
+  "original_R04_forwards": 456,
+  "R04_plus_supplement_forwards": 580,
+  "remaining_matching_gaps": "originalwholecohortbinpoolinsufficiency,notmissingrawh",
+  "main_figures": [
+    "figure1_domain_usage_and_discrimination.png",
+    "figure2_discrimination_vs_DCLM_frequency.png",
+    "figure3_true_common_spectrum.png"
+  ],
+  "historical_gap_card": "figure3_spectrum_NOT_MEASURED.png",
+  "old_results_unchanged": true,
+  "scientific_acceptance": "Unknown"
+}

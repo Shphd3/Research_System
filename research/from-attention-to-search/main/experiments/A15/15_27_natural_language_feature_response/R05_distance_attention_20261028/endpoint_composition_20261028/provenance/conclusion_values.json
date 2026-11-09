@@ -1,0 +1,92 @@
+{
+  "primary_tests": 96,
+  "q_below05": 2,
+  "DID_tests": 32,
+  "DID_q_below05": 0,
+  "support": [
+    {
+      "domain": "math",
+      "mode": "paired_ends",
+      "documents": 20,
+      "queries": 160,
+      "cells": 2399,
+      "potential": 2560,
+      "union_lost": 160
+    },
+    {
+      "domain": "math",
+      "mode": "five_trend",
+      "documents": 20,
+      "queries": 160,
+      "cells": 2230,
+      "potential": 2560,
+      "union_lost": 330
+    },
+    {
+      "domain": "biology",
+      "mode": "paired_ends",
+      "documents": 20,
+      "queries": 160,
+      "cells": 2443,
+      "potential": 2560,
+      "union_lost": 116
+    },
+    {
+      "domain": "biology",
+      "mode": "five_trend",
+      "documents": 20,
+      "queries": 160,
+      "cells": 2405,
+      "potential": 2560,
+      "union_lost": 155
+    }
+  ],
+  "main_scope": "exploratorysourceendpointcomposition",
+  "old_role_reselection": false,
+  "new_forwards": 0,
+  "low_frequency_SAE_bio_farhigh": {
+    "dictionary": "SAE",
+    "domain": "biology",
+    "stratum": "different_tokenID_nonpunctuation",
+    "metric": "frequency_share_low",
+    "contrast": "far_high-minus-near_high",
+    "n": 20,
+    "mean": -0.01484876422315387,
+    "CI_low": -0.021745739394588882,
+    "CI_high": -0.008498858683566334,
+    "p": 0.0001,
+    "q": 0.0048000000000000004,
+    "primary": true,
+    "scope": "exploratory_doclevel_association"
+  },
+  "low_frequency_SAE_bio_DID": {
+    "dictionary": "SAE",
+    "domain": "biology",
+    "stratum": "different_tokenID_nonpunctuation",
+    "metric": "frequency_share_low",
+    "contrast": "difference_in_differences",
+    "n": 20,
+    "mean": -0.006716076327282376,
+    "CI_low": -0.012410123707853193,
+    "CI_high": -0.0009168444126177139,
+    "p": 0.03625,
+    "q": 0.348,
+    "primary": true,
+    "scope": "exploratory_doclevel_association"
+  },
+  "shared_SAE_math_middle": {
+    "dictionary": "SAE",
+    "domain": "math",
+    "stratum": "different_tokenID_nonpunctuation",
+    "metric": "role_member_hit_shared",
+    "contrast": "far_middle-minus-near_middle",
+    "n": 20,
+    "mean": 0.017184828856581798,
+    "CI_low": 0.012309150324027652,
+    "CI_high": 0.02230676101513506,
+    "p": 5e-05,
+    "q": 0.0048000000000000004,
+    "primary": true,
+    "scope": "exploratory_doclevel_association"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "reviewer": "/root/frequency_recovery_review",
+  "time_utc": "2026-10-20T02:02:03.326672+00:00",
+  "status": "PASS_RECOVERY_IMPLEMENTATION",
+  "scope": "read-only source/artifact audit; no GPU, training, submission, or scientific approval",
+  "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z",
+  "code_sha": "5bbbad26e2f3bdb65166bdbbbfb3a7b7cb3b6d97f699f3a5fd177fd4502d89e5",
+  "config_sha": "dc8a3a886d97caf64d2ac97279056edc89818c7cbf727a1adfb662e47725d14e",
+  "condition_status": {
+    "T_F:11": {
+      "steps_log_rows": 168,
+      "complete": true,
+      "latest": true
+    },
+    "T_F:22": {
+      "steps_log_rows": 168,
+      "complete": true,
+      "latest": true
+    },
+    "T_H:11": {
+      "steps_log_rows": 0,
+      "complete": false,
+      "latest": false
+    },
+    "T_H:22": {
+      "steps_log_rows": 0,
+      "complete": false,
+      "latest": false
+    },
+    "R_F:11": {
+      "steps_log_rows": 0,
+      "complete": false,
+      "latest": false
+    },
+    "R_F:22": {
+      "steps_log_rows": 0,
+      "complete": false,
+      "latest": false
+    },
+    "R_H:11": {
+      "steps_log_rows": 0,
+      "complete": false,
+      "latest": false
+    },
+    "R_H:22": {
+      "steps_log_rows": 0,
+      "complete": false,
+      "latest": false
+    }
+  },
+  "previous_pipeline_seconds": 109.452869893983,
+  "remaining_active_seconds": 1990.547130106017,
+  "findings": [],
+  "required_wrapper_properties": [
+    "Reviewed and met; see wrapper_synthetic_CPU_checks, frozen trainer SHA, supervisor completion gate, prior terminal receipt and preserved old records."
+  ],
+  "caveats": [
+    "Training identity binds source path, code and route hashes but not complete cache content hashes; existing validated caches must remain unchanged.",
+    "Previous small64-row fit dramatically worsened auxiliary validation as expected of intentional overfit diagnostic; not an implementation error and not evidence that formal one-pass conditions failed.",
+    "Engineering recovery does not support frequency-routing learning hypothesis; final bounded comparison remains required."
+  ],
+  "wrapper_sha": "864869774ab47aca045eab31f772315802067bba8b86f4f2ac67435c5b9736a7",
+  "recovery_pipeline_sha": "b6bed1b5b273cc1c4263391e26ae4bdf0944368ef342533823d463f904285104",
+  "wrapper_synthetic_CPU_checks": {
+    "transient_LOCK_EX_retry": true,
+    "LOCK_NB_fail_fast": true,
+    "LOCK_UN_unchanged": true,
+    "bounded_monotonic_timeout": true,
+    "imports_trainer_or_GPU": false
+  },
+  "finalize_completion_gate": "receipt status COMPLETE + frozen config/code SHA required before supervisor COMPLETE",
+  "old_failure_and_deadline_preserved": true,
+  "old_job_terminal": "FAILED",
+  "remaining_findings": []
+}

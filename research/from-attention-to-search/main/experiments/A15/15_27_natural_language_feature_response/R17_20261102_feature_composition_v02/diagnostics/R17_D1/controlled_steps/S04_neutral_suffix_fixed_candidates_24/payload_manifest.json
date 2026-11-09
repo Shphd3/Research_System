@@ -1,0 +1,391 @@
+{
+  "UTC": "2026-11-03T14:52:33.870668+00:00",
+  "execution_owner": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24",
+  "asset_id": "analysis_r17_d1_s04_neutral_suffix_fixed24_20261103",
+  "exception": "User requests24full prefixes, raw data, per-candidate tables, figures and Chinese conclusions in existing research line; exact small generated copies, no weights/checkpoints.",
+  "files": [
+    {
+      "path": "data/S02_original_behavior_scores.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/data/S02_original_behavior_scores.jsonl",
+      "bytes": 12806,
+      "sha256": "f7ac273167f6fdcafc8e01116189dd6a24716658da4891406f368dfff0901a26",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "data/S03_frozen_selection.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/data/S03_frozen_selection.json",
+      "bytes": 3672,
+      "sha256": "eddcfe0940247c03250cc1e4dd777fb728d86f19c122647dcb2a7ee1402a4d2a",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "data/S03_original_panel.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/data/S03_original_panel.jsonl",
+      "bytes": 23034,
+      "sha256": "1e5d55aebef00aa6daad00aad3a935d33c0ed2637ac84c0a37ff108e6840391f",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "data/panel.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/data/panel.jsonl",
+      "bytes": 39998,
+      "sha256": "ffd50d95ba8f0d94e29e01add1c4d8da51bb9df5d025e20ef9a41d4895e6286b",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/new.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/cache/new.npz",
+      "bytes": 5400392,
+      "sha256": "c73fffcc9a5e4fac9f700f3c034a531c6cdf05c5a25493022256e0a93d293e9d",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/ATTN_SAE/H1_patterns.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/ATTN_SAE/H1_patterns.csv",
+      "bytes": 31267,
+      "sha256": "2408c504607fbe59e5f94b43a78f08b9444b4587e9cbb1260fef94faa1bcd084",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/ATTN_SAE/H2_old_new_pairs.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/ATTN_SAE/H2_old_new_pairs.csv",
+      "bytes": 20479,
+      "sha256": "e2b38224faf3c3a5d0c4171cb86327a3729d65cfbfd7a68bdc5acf7417091c7a",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/ATTN_SAE/candidate_values.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/ATTN_SAE/candidate_values.csv",
+      "bytes": 206570,
+      "sha256": "74d481295b9079a0793cc18a509430a689d7f30a51ab265a86d8d3db5e72ee44",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/ATTN_SAE/pair_support_controls.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/ATTN_SAE/pair_support_controls.csv",
+      "bytes": 427,
+      "sha256": "52e893637ebb650a30c544740fe6ea4c6f55b5fecd6b0406541a2a1dc1c93d55",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/ATTN_SAE/support_transitions.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/ATTN_SAE/support_transitions.csv",
+      "bytes": 35626,
+      "sha256": "f9e8ccc3300fcff9b4927b7f43fcf0d6933915f3b800423fb04f61e0f0685996",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/H1_pattern_coverage.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/H1_pattern_coverage.csv",
+      "bytes": 7144,
+      "sha256": "8d81d04f26813162048550566e5b5b5e374147856b75bf74a31bfeac25a1deca",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/H2_direction_counts.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/H2_direction_counts.csv",
+      "bytes": 6513,
+      "sha256": "90ce3bc389459bc6ab07a86550f83619429c05be1593b6395715cedf0245da74",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/MLPIN_SAE/H1_patterns.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/MLPIN_SAE/H1_patterns.csv",
+      "bytes": 32454,
+      "sha256": "71f413877234c30686de7c1497afb977b8671032e0d230a9757eafc2e7ee4d94",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/MLPIN_SAE/H2_old_new_pairs.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/MLPIN_SAE/H2_old_new_pairs.csv",
+      "bytes": 21224,
+      "sha256": "5cd06d4a8d195ea03660cf0666d835f117a59ca51aedde0afcfbb0f27ebe7394",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/MLPIN_SAE/candidate_values.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/MLPIN_SAE/candidate_values.csv",
+      "bytes": 211562,
+      "sha256": "109b720d387df554afb6a6a517b889c6a06198255f25376b91941246c875a393",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/MLPIN_SAE/pair_support_controls.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/MLPIN_SAE/pair_support_controls.csv",
+      "bytes": 427,
+      "sha256": "a8642f7b8ec55291788e35d5b774000ef3512fc5261821bde00bdd59039635b8",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/MLPIN_SAE/support_transitions.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/MLPIN_SAE/support_transitions.csv",
+      "bytes": 32987,
+      "sha256": "21e055e931ec63548e6ebad2a45153612e09941c54ad42d479d1c2f62e5cf7b6",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/actual_intersections.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/actual_intersections.csv",
+      "bytes": 5538,
+      "sha256": "16d3ca221ae6557078c2153f46f2bea500a54a5207d87aef02f1d58776fde0aa",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/all_H2_old_new_pairs.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/all_H2_old_new_pairs.csv",
+      "bytes": 40924,
+      "sha256": "7d559a0f7cc1c329c6d460889a0df217c864d26fa980aef2f660839c4eaf58d8",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/all_active_members.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/all_active_members.jsonl",
+      "bytes": 463096,
+      "sha256": "470ea51608a5a7524079ff97de456e11a781cbe8d6454baefb01e78ae495a0ff",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/all_support_transitions.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/all_support_transitions.csv",
+      "bytes": 68372,
+      "sha256": "e8103dfa9d452983e34b8fcdd40af187019458d798d5d6948433f693899a5b4c",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/behavior.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/behavior.csv",
+      "bytes": 2479,
+      "sha256": "c90bf6d40f88f7b07cb5b87e22859216a0f7498a44b4668aeb672349e8340097",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/behavior_candidates.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/behavior_candidates.csv",
+      "bytes": 5222,
+      "sha256": "ef0b695f6a999599b92bd531a31faaae11978155899a604e2d3ec6f7406aa72b",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/behavior_errors.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/behavior_errors.csv",
+      "bytes": 73,
+      "sha256": "bbed2b8598f194a18287b1ebad5c97bf3fba1497ff97dc0e7c18b9397ff6a99d",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/behavior_pairs.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/behavior_pairs.csv",
+      "bytes": 991,
+      "sha256": "49ca8a17c7038acbcf58f735d82719e289775c3fb3ef92b217f537242d41f39b",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/behavior_raw.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/behavior_raw.jsonl",
+      "bytes": 22039,
+      "sha256": "6c4d87afb4c4c7f6061e787ce3762f4e3c8901596c7dac2b3e6610172ab8b92f",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/summary.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/results/summary.json",
+      "bytes": 6950,
+      "sha256": "225a9967f1a626f1f2f53ee01b9a16ec5033837d441552b211b2db235657bb16",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/analyze.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/code/analyze.py",
+      "bytes": 15675,
+      "sha256": "8ebbdcf94fa26962b6e51dff2cc67a1b1ad4a4bf98484c10a686d930d87b997d",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/common.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/code/common.py",
+      "bytes": 1201,
+      "sha256": "db8d626d2358a9484672b3c6884b993273e504d4df5e87a2f158159c560ae38b",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/deliver.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/code/deliver.py",
+      "bytes": 7747,
+      "sha256": "81d63266a8f43ce2bac794ac3db064048ce9ef923f306404464c8e159381bb92",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/prepare.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/code/prepare.py",
+      "bytes": 6362,
+      "sha256": "190a1b57f82cee44fabe33066493b637a817497277063ff22f38cf7c8509bd28",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/report.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/code/report.py",
+      "bytes": 33635,
+      "sha256": "b8fa343e85e55bbb4d2de098d4e149a6e16ac46d9b36768af289e020cdc00db8",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/run.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/code/run.py",
+      "bytes": 7366,
+      "sha256": "6b1932afeb01a84da25bdecebbcb57b8232faaf80b5e5105660b945571494618",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/support_intersections.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/code/support_intersections.py",
+      "bytes": 1818,
+      "sha256": "2a3453e91084d24108206898c89183453102069798d24262461db9998a06adcc",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/verify.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/code/verify.py",
+      "bytes": 7000,
+      "sha256": "4939001bd819ebcdebc0e4a4710beee8cd8f966600bfb721d1301af0a57fe14d",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/ATTN_SAE_H2_old_new_differences.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/figures/ATTN_SAE_H2_old_new_differences.png",
+      "bytes": 235491,
+      "sha256": "9d95701288ec5833b83c0ad5e8b9f0c15348160a8807606601a72c4d5c3d8d8a",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/ATTN_SAE_fixed_candidates.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/figures/ATTN_SAE_fixed_candidates.png",
+      "bytes": 287329,
+      "sha256": "8199bc9afcc4dff2e161e9b41e0dc7112f28916981c46b64c42f70e2a9eb7b70",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/MLPIN_SAE_H2_old_new_differences.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/figures/MLPIN_SAE_H2_old_new_differences.png",
+      "bytes": 243798,
+      "sha256": "9d7fe178e2b396b3de6b03d67c576a8fdd681bc5f7a3b51b11c9cb37727eb99c",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/MLPIN_SAE_fixed_candidates.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/figures/MLPIN_SAE_fixed_candidates.png",
+      "bytes": 346521,
+      "sha256": "be09793e416c1a8fd7ad7a1abd2adc7e5cfa57b3d8fec97a96237efaa863d56c",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/MLPIN_render_left_detail.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/MLPIN_render_left_detail.png",
+      "bytes": 81755,
+      "sha256": "d52c9e497040102127ac8161f93f9d5008f9cc66153e8c5816e23745c118fa6c",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/analysis_complete.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/analysis_complete.json",
+      "bytes": 352,
+      "sha256": "c67797a39e850aa927b96e55cce862c718ab8f6001ad5ec751bacd6aab6a5e93",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/audit_data.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/audit_data.md",
+      "bytes": 157,
+      "sha256": "3031a5faf11fc0b31e7ffbc8e8d6fa724c2b48ff126b055e9d825ef9fb10e35e",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/audit_identification.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/audit_identification.md",
+      "bytes": 187,
+      "sha256": "acd61eb6520dc9a686cb7a9dbd2a6519993f1d45588ede1942b09855e3461921",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/audit_implementation.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/audit_implementation.md",
+      "bytes": 208,
+      "sha256": "1080a8f193515d9eafcd054ac0136d15828445e59f0cd968501f0511bbe3d5db",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/completed.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/completed.json",
+      "bytes": 751,
+      "sha256": "28e951e46a1a424cbd7b945d77b6a648ed9d882df2d930d96056767326220dc3",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/data_audit.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/data_audit.json",
+      "bytes": 12559,
+      "sha256": "469308fadd2dc67ae42d5da6b355c5e4e0d8417a1b081ba54a93ac30720e394e",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/figure_review.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/figure_review.json",
+      "bytes": 894,
+      "sha256": "118944df669988b79500471bbd25d6ea6bae55580d04829ac291fd91ef3fdc1c",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/input_access.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/input_access.json",
+      "bytes": 16881,
+      "sha256": "7f5bee2e6852b68b90118d11c748ea18fa80f3c8f507e2980e7473d46bfc7460",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/old_immutable_before.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/old_immutable_before.json",
+      "bytes": 58493,
+      "sha256": "616e0ee9eabb6b7c78a14dc4f65e1f872dbe9ad7b938ddb7f498176a670a9d7e",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/protocol_freeze.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/protocol_freeze.json",
+      "bytes": 717,
+      "sha256": "4eed8c0dcc06020ba437baf6c5a9cc8752ec8645f9a11ad6fca0f31fc2638b4e",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/run_complete.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/run_complete.json",
+      "bytes": 3391,
+      "sha256": "7e5305d5f1e0fcb50fd207c6e618fbb0fd64fa1935a56c197daec767a4717427",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/started.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/started.json",
+      "bytes": 376,
+      "sha256": "a0f7cb188435284f3d5a7a6b90c4cfc8977e9c6126e0396dcb232738b515c862",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/verification.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/verification.json",
+      "bytes": 1679,
+      "sha256": "8468f0475af571ce83c2155194e48fa7caeab236d321c6f894eca1c87e0df03a",
+      "role": "requested local generated reading copy; execution owns payload"
+    },
+    {
+      "path": "frozen_plan.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/frozen_plan.json",
+      "bytes": 5648,
+      "sha256": "3156232f850023cc5c93d8834ca71869018bf7f498a9a3f36a175ff4cc32d6c0"
+    },
+    {
+      "path": "evidence/output_access.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S04_neutral_suffix_fixed_candidates_24/evidence/output_access.json",
+      "bytes": 7097,
+      "sha256": "026bcfed8f3c9e18689696999cb22164d738f111a272559edd641b2fb33cb0c3"
+    }
+  ]
+}

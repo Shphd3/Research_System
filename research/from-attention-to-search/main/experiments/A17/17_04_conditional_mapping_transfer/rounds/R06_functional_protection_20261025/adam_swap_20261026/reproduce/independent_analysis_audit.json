@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "aggregate_rows": 72,
+  "per_item_rows": 4608,
+  "candidates": 36,
+  "contexts": 9,
+  "independent_continuation_seeds": 3,
+  "shared_old_checkpoint": true,
+  "max_per_item_aggregation_error": 0.0,
+  "all_correctness_denominators": 64,
+  "same_theta_batch_gradient_hash_equal_across_moment_donors": true,
+  "all_native_replay_checks": 24,
+  "native_replay_max_CE_error": 0.0,
+  "max_noop_CE_span": 0.0,
+  "max_noise_tau": 7.270136848092079e-08,
+  "all90_contrasts_resolved_above_precision": true,
+  "precision_is_not_statistical_uncertainty": true,
+  "sequence_forwards_count_independent_sum": 10320,
+  "no_extra_forward_in_analysis": true,
+  "raw_gradient_norm_range": [
+    1.5352866876943547,
+    3.627797865957347
+  ],
+  "clip_coefficient_range": [
+    0.275649241742853,
+    0.6513437336997366
+  ],
+  "actual_displacement_norm_range": [
+    0.0420761969436206,
+    0.08525748740316855
+  ]
+}

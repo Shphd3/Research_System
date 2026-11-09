@@ -1,0 +1,67 @@
+{
+  "hook": "registered forward hook on zero-index block27, capture module output before model final norm",
+  "true_h": "raw CC_h[...,1024] model residual-post units, no additional normalization",
+  "encoder": "14 odd blocks1..27 jointly normalized by frozen TRAIN mean/RMS; one shared z; original gate",
+  "decoder": "saved A22 trained block27 decoder times TRAIN_RMS27; model coordinate units",
+  "unit_geometry": "normalize decoder after scale restoration, scalar cancels",
+  "contribution": "native cached z, FP64 linear sum of model-scale trained decoders, no group bias",
+  "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+  "source_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R07_fixed_target_domain_spectrum_20261029/config.json",
+      "sha256": "93836ddf92fcf1b98d16c87cf4644c7414b40ff19cb34d065e577ca0565d3b77"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/reference.jsonl",
+      "sha256": "11c3d538a588983e9565ab003ed78a7369498e9e0838b6f090bbad4e337d95f3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/dual_parent_identity.json",
+      "sha256": "f06ecf06045bc45055da96bc46a1abd814bed93382d8525245ec7483e2e84832"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/interface_audit.json",
+      "sha256": "734cdee5d48629b90e7cd4d6e9ec1dc1fe3d09e71a055f4f3439c29a9a9caa3c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/run_dual_forward.py",
+      "sha256": "4c7a84cd3e5b1a2b4cd161297d1e30cd5e987ad699d43ea8c4b6672d3455e1dd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/forward/runtime.json",
+      "sha256": "96b60b9cd0885827d15467f38341197c2a1ab9282762be89346e030690aff788"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/amendment.json",
+      "sha256": "0ae340f16bad8282305767357c271b364d532a168c3c20105c3b9db4351e80d4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/acquire_true_h.py",
+      "sha256": "f170a1b9825d63e2b18c6ef4e2d786670227728c9dd279207da9a083ee9dabbb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/spectrum.py",
+      "sha256": "b8b39b609565404c5347e4aaa3e778bb6ea85ed6e34482468587ce5d9110f788"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028/real_spectrum_A01/forward/decoder_scales.npz",
+      "sha256": "a542aa53411623d767693f1099537668a89665e493f4ecfc278abcdbcc7fd0eb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R08_within_mixed_subspaces_20261029/forward/normalization.npz",
+      "sha256": "3e0dc9e0f4b5fd924d2088bdcf9f72047c31af4d63abea4f3b220e697be4f113"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/main/analyze.py",
+      "sha256": "64f9531b0fbda3d7de1d648d6311866a6b7df6d8247390b54f3c3e28eed53942"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R09_domain_difference_decomposition_20261029/frequency_family/config.json",
+      "sha256": "6632e2ff7a67578bfd66ea9bd4c6eb42747568627ee124f1c8290e8df942e2d3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/analysis/CC_frequency_bins.json",
+      "sha256": "1609d89bd253eb2b5de143be13841a1f09be40b539f564d2420b219b77a06381"
+    }
+  ]
+}

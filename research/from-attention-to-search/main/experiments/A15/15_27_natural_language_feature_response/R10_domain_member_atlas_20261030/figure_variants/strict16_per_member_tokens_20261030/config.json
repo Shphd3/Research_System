@@ -1,0 +1,32 @@
+{
+  "revision": "strict16-per-member-native-token-v1",
+  "member_freeze_sha256": "4023c7f41f59909153b3f6f5cd696fd1b51748590887610aba11a0ea4953d577",
+  "member_ids": [
+    16195,
+    15426,
+    8693,
+    12030,
+    5234,
+    12960,
+    9638,
+    2635,
+    6270,
+    13691,
+    10395,
+    7238,
+    12630,
+    11516,
+    15401,
+    11960
+  ],
+  "members_fixed": 16,
+  "readout": "native shared z>0; no p90 threshold, no intensity weighting",
+  "positions": "unchanged oldheldout40documents(20math/20biology)*160positions,tokenindices32..191;6400positions",
+  "categories": "unchanged pooled-simple full120-document coverage: shared>=5docs EACH domain;observed single-domain>=5docs one and0other;remaining other/insufficient",
+  "denominators": "within each feature: native-positive positions; documents count distinct source documents containing that feature/token positive event; exact token IDs deduplicated for types",
+  "ranking": "descending native-positive position count,ascending tokenID for ties;top3chat,top10appendix,alltokenscsv;no manual substitution",
+  "posthoc_spellings": "full observed word aid only, may include future subword characters; never causal activation explanation",
+  "exploratory": "member subset and token coverage inspect allcached data;oldheldout is not independent generalization",
+  "new_model_forwards": 0,
+  "new_training": 0
+}

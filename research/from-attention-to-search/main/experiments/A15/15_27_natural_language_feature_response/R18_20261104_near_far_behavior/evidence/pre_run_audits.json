@@ -1,0 +1,31 @@
+{
+  "UTC": "2026-11-04T03:03:05.616821+00:00",
+  "scientific": {
+    "status": "SELF_REVIEW_PASS",
+    "question": "paired answer use, not feature sensitivity",
+    "rival": "prior/nearest copying",
+    "confound": "distance+absolute position+filler order"
+  },
+  "data_statistics": {
+    "status": "PASS",
+    "families": 28,
+    "heldout_families": 24,
+    "template_strata": 6,
+    "split_by_template": true,
+    "exclusions": 0,
+    "all_scores_unseen": true
+  },
+  "implementation": {
+    "status": "PENDING_SMOKE",
+    "model_weights_hashed": true,
+    "trainable_parameters": 0,
+    "SAE_loaded": false
+  },
+  "correction": {
+    "old_problem": "cord substring in According",
+    "change": "whole-word regex before tokenizer offsets",
+    "stage": "pre-freeze/pre-forward",
+    "affected_rows": "all construction rechecked",
+    "response_seen": false
+  }
+}

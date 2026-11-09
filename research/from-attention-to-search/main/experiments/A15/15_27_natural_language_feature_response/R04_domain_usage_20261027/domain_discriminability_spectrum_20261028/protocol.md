@@ -1,0 +1,9 @@
+# R04 domain discriminability and common-spectrum cache-only supplement
+
+Approved by the current user request for offline analysis only. Existing R04 results, cohorts and packages are immutable; no R05 rerun, new task/resource, model forward, training, clustering, intervention or sealed TEST. All newly reported holdout results are exploratory reuse of previously examined documents.
+
+Frozen model-native E16 block27 MLP-input coordinates and A22 native joint14 shared-z/block27 residual-post contributions remain separate. New ranking requires >=5 discovery documents active in EACH domain. Rank single-feature mean native contribution by abs(discovery AUROC-.5), feature ID ascending for ties; fix discovery direction. Expand to up to64 features per direction per dictionary; display global top16, preserving all original R04 shared and biased cohorts. This is not the original rate-ratio definition.
+
+Per-document hit fraction, conditional contribution (NA for zero hits) and zero-inclusive mean use positions32:192. Stratified document bootstrap2000, seed2026102804, yields exploratory pointwise intervals, including math-minus-bio mean differences and direction-fixed holdout AUROC minus.5. No new classifier fitting or significance claims. Random backgrounds1000, seed2026102805, exactly match joint log2(reference hits+.5)/5-document-support bins; exclude the entire current cohort; insufficient match pools stay NA with no fallback.
+
+Two distinct true-h PCA bases would use pooled discovery centering, equal domains/documents, no extra featurewise scaling, full1024direction bases and16equal rank bands. Real R04 hook h is missing: no reconstruction surrogate or old-corpus spectrum is substituted. Spectral fitting/projections/variance/mean-difference/matched spectral tests are BLOCKED. See config.json and representation_cache_audit.json.

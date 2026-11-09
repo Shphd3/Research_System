@@ -1,0 +1,133 @@
+{
+  "schema": "paired_target_feature_statistical_plan_v1",
+  "status": "FROZEN_BEFORE_MODEL_RESPONSES",
+  "processing_agent": "/root/offline_analysis",
+  "seed": 20261026,
+  "object": "feature; paired target-position response changes in a native single-layer SAE",
+  "observation_unit": "base case containing <=4 controlled prefix variants",
+  "independence_unit": "source_group; average response rows within any shared source_group before primary relation statistics; resample source_group blocks, never variant sequences",
+  "raw_contribution": "a_f=z_f*L2(actual decoder column f), in native hook units; magnitude is not additive explained variance",
+  "normalized_readout": "a_f/L2(h), stored separately; ratio changes cannot replace absolute changes",
+  "main_contrast": "changed-base for A/B; near_changed-near_base for C",
+  "neutral_signed_contrast": "((neutral_base-base)+(neutral_changed-changed))/2",
+  "neutral_absolute_control": "(|neutral_base-base|+|neutral_changed-changed|)/2; no signed cancellation",
+  "discovery_scale": "feature RMS raw contribution over all discovery cases/versions, floor1e-8; fixed on holdout",
+  "candidate_eligibility": {
+    "minimum_activation_case_support": 6,
+    "minimum_nonzero_main_response_case_support": 6,
+    "minimum_activation_independent_source_groups": 6,
+    "minimum_response_independent_source_groups": 6,
+    "response_nonzero_epsilon": 1e-08,
+    "cap": 64,
+    "ranking": "mean absolute main delta across independent source groups / discovery scale; descending; feature ID ascending ties",
+    "zero_controlled_response_variance": "ineligible for relation clustering",
+    "holdout_minimum_activation_support": 6,
+    "holdout_minimum_response_support": 6,
+    "holdout_minimum_independent_support": 6
+  },
+  "stable_pool": "all features with discovery activation case and independent-group support>=6, regardless of response support; freeze before holdout",
+  "global_amplitude_control": "discovery OLS of per-feature main delta/discovery scale on intercept, delta log total raw contribution across all features, delta log hook norm; fit on source_group means; freeze coefficients and apply unchanged to holdout",
+  "main_relation": "Pearson correlation between source_group mean controlled main-response vectors",
+  "clustering": {
+    "method": "hierarchical average linkage",
+    "distance": "1-Pearson correlation",
+    "cut_distance": 0.5,
+    "minimum_group_size": 3,
+    "degenerate_or_missing_correlation": "NA; never zero; variance-ineligible discovery features excluded before clustering",
+    "discovery_stability_bootstraps": 200,
+    "bootstrap_procedure": "resample independent source-group response rows; fixed candidate features, scales, coefficients, average linkage and cut; zero-variance sampled features assigned singleton",
+    "group_stability": "mean bootstrap coassignment proportion across original within-group feature pairs",
+    "minimum_group_stability_for_support": 0.7
+  },
+  "H1": {
+    "direction": "sign of discovery mean raw semantic delta within each panel(A/B) x target-token stratum; no holdout fitting",
+    "test_data": "holdout A/B only",
+    "effect": "mean(direction*raw semantic delta - absolute neutral control)/discovery scale; average within source_group first",
+    "p": "9999 one-sided independent source-group sign flips on semantic delta only; neutral control fixed; signflip p tests directionality and bootstrap CI separately requires benefit above neutral edits",
+    "multiplicity": "BH FDR0.05 across all frozen candidates",
+    "support": "activation support>=6 independent holdout groups; >=3 holdout template families; direction agreement>=2/3; BH q<=.05; two-sided95%bootstrap lower bound of excess>0; every leave-one-template-family-out excess positive; largest case absolute-excess share<.35",
+    "weakened": "estimable excess95%CI upper<=0",
+    "otherwise": "INSUFFICIENT; no failure-to-reject interpretation as invariance",
+    "direction_agreement_denominator": "independent holdout source groups with nonzero semantic response and nonzero frozen discovery direction; at least6; total-group denominator separately reported"
+  },
+  "H2": {
+    "effect": "mean pairwise holdout controlled response correlation in each frozen discovery group",
+    "eligibility": "each member>=6 holdout independent activation-support groups; group response in>=6 independent groups; each feature pair has any nonzero raw response in>=4 independent groups; finite nonzero variance for every member",
+    "random_groups": {
+      "draws": 1000,
+      "pool": "all discovery-eligible features except current group members",
+      "matching_dimensions": [
+        "log1p(discovery independent activation support)",
+        "log(reference frequency+1e-9)",
+        "log(discovery feature contribution RMS)"
+      ],
+      "standardization": "one SD per dimension across discovery eligible pool; floor1e-8",
+      "fixed_caliper": "absolute standardized difference<=1 in every dimension",
+      "candidate_pool_per_member": "nearest20 by squared standardized distance; no caliper relaxation",
+      "sampling": "one match per member without replacement within group; random choice among available nearest20",
+      "minimum_valid_draws": 800,
+      "otherwise": "matching INSUFFICIENT"
+    },
+    "marginal_null": "1000 independent feature-wise permutations of source_group response rows; exact marginal values and nonzero support retained",
+    "multiplicity": "separate BH FDR0.05 across frozen groups for random-group and marginal-permutation p-values",
+    "support": "discovery stability>=.70; eligible; matching qualified; both BH q<=.05; mean holdout correlation>0;95%case-group bootstrap CI lower>0; every leave-one-template-family-out holdout group correlation>0",
+    "weakened": "eligible and matching-qualified but frozen support criteria fail",
+    "otherwise": "INSUFFICIENT",
+    "frequency_boundary": "existing independent E17 DCLM TRAIN discovery frequencies; historical backbone weight digest absent; frequency-matched interpretation conditional on original parent identity; E17 SAE inference used BF16 autocast versus current FP32; near-tie TopK supports may differ, adding a conditional precision boundary"
+  },
+  "H3": {
+    "effect": "(far_changed-far_base)-(near_changed-near_base), raw contribution; report pure base near/far separately",
+    "direction": "sign of discovery mean interaction per frozen candidate",
+    "eligibility": "same target token, total token length and target position; same clue content retained on relocation; >=6 independent C holdout support groups and >=6 nonzero interaction groups",
+    "test": "9999 one-sided source-group sign flips; BH0.05 across frozen candidates;95%bootstrap lower bound>0; direction agreement>=2/3",
+    "support_wording": "distance/order sensitivity under this specific neutral-content relocation",
+    "failure_to_reject": "INSUFFICIENT, not no distance effect",
+    "boundary": "word order and clue distance vary jointly; no exclusive long-range feature, layer generation chain or causal information propagation claim",
+    "direction_agreement_denominator": "independent C holdout source groups with nonzero interaction and nonzero frozen discovery direction; at least6; total-group denominator separately reported"
+  },
+  "equivalence": {
+    "pool": "frozen stable_pool",
+    "holdout_support": ">=6 independent source groups with nonzero activation",
+    "mean_raw_delta_CI": "90%source-group bootstrap CI entirely within +/-0.2 discovery RMS",
+    "absolute_raw_delta": "one-sided95%upper bound(mean absolute main delta/discovery RMS)<=0.2; retain within-group mean absolute deltas before block average",
+    "scope": "operationally stable for the registered contrasts; not universally context invariant"
+  },
+  "resampling": {
+    "bootstrap_draws": 2000,
+    "unit": "independent source_group",
+    "all_variants_kept_together": true
+  },
+  "figures": {
+    "figure1": {
+      "cases_versions": {
+        "A01": [
+          "base",
+          "changed"
+        ],
+        "B01": [
+          "base",
+          "changed"
+        ],
+        "C01": [
+          "near_base",
+          "far_base"
+        ]
+      },
+      "feature_ids": "first8 variance-eligible discovery candidates in frozen rank order",
+      "color_scale": "same raw z scale for every before/after panel",
+      "role": "instance explanation, not stability evidence"
+    },
+    "figure2": {
+      "data": "discovery and holdout controlled response correlation; frozen discovery tree order",
+      "annotations": "feature IDs, independent reference frequency, case/source support, response description, holdout group replication",
+      "2D_projection": "not used"
+    },
+    "figure3": {
+      "condition": "model-independent C token-position/length and semantic-clue qualification passes",
+      "data": "near/far paired raw semantic contrasts; first8 frozen candidates"
+    }
+  },
+  "selection_and_unsealing": "discovery command never opens holdout response files; write hashes, candidate IDs, stable pool, scales, coefficients, tree, groups and plot list before evaluate opens holdout",
+  "authority": "user authorized implementation choices and direct bounded execution; algorithmic SUPPORT/WEAKENED/INSUFFICIENT is AI interpretation under these fixed criteria, not researcher scientific acceptance",
+  "counterexample_selection": "first candidate in frozen discovery ranking failing H1; illustrate its maximum-absolute-discovery-delta case; single case cannot prove population stability"
+}

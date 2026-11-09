@@ -1,0 +1,111 @@
+{
+  "status": "COMPLETE_EXPLORATORY",
+  "created_at": "2026-10-22T10:57:03.905492+00:00",
+  "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z",
+  "protocol_owner": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/shared_common_expert_20261022/protocol.md",
+  "asset_ids": [
+    "checkpoint_shared_common_smoke_20261022t103833z_moe",
+    "checkpoint_family_shared_common_20261022t103833z_moe_baseline_seed11",
+    "checkpoint_family_shared_common_20261022t103833z_moe_baseline_seed22",
+    "checkpoint_family_shared_common_20261022t103833z_moe_plus_common_seed11",
+    "checkpoint_family_shared_common_20261022t103833z_moe_plus_common_seed22",
+    "analysis_shared_common_20261022t103833z_moe",
+    "checkpoint_shared_common_smoke_20261022t103833z_t_f",
+    "checkpoint_family_shared_common_20261022t103833z_t_f_baseline_seed11",
+    "checkpoint_family_shared_common_20261022t103833z_t_f_baseline_seed22",
+    "checkpoint_family_shared_common_20261022t103833z_t_f_plus_common_seed11",
+    "checkpoint_family_shared_common_20261022t103833z_t_f_plus_common_seed22",
+    "analysis_shared_common_20261022t103833z_t_f",
+    "analysis_hierarchy_expert_mixture_20261022t103957z"
+  ],
+  "access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-22_shared_common_hierarchy_1053.json",
+  "files": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/shared_common_expert_20261022/protocol.md",
+      "bytes": 10770,
+      "sha256": "219e886f77044c40768c448b394ba3c49d7101f713d6ed1c8d4f81112f6ae654"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/shared_common_expert_20261022/protocol_cn.md",
+      "bytes": 3984,
+      "sha256": "a4ebda3ba507bac86a8b5d5259a74b95913edb10de60938fcfd38aca1069a0d1"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/shared_common_expert_20261022/summary.md",
+      "bytes": 15498,
+      "sha256": "4191195e12b5301576d17c4c1b48fc3ffe01aa6187a153dd7429046195bd8f78"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_24_frequency_composition_common_path/20261020_20261019T164834Z/shared_common_expert_20261022/summary_cn.md",
+      "bytes": 14188,
+      "sha256": "ddf1982f3113f60844524e9e11413430b68c803ae3636d5ed1b7d75650ce3967"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/protocol_freeze.json",
+      "bytes": 988,
+      "sha256": "01458bac246e4b02af8f42f7332ba73c84f92f8f8ffa9bbc81a8659bac0d90c6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/final_checkpoint_audit.json",
+      "bytes": 13438,
+      "sha256": "c4190d16dc3efa4faa20970d20bd29f8e67a3e533b11de87847cbebd67c2d437"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/registration/catalog_registration.json",
+      "bytes": 1821,
+      "sha256": "4d692539a9b7ceee988e64a0cb0120e449b15f8815a85c6a06c4395f1ddf6bbd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/analysis/MoE/summary.json",
+      "bytes": 17639,
+      "sha256": "dad8ac312de648fd396a57dd502bc68647b8b0307cf37b6e5faf8957c0bb840d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/analysis/T_F/summary.json",
+      "bytes": 17598,
+      "sha256": "eef869420228574962a8b1b371601fe3297fdbd78371888956e290285c481386"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/analysis/telemetry.json",
+      "bytes": 14702,
+      "sha256": "c312fc1eb3da00eb9bb032de8c5dc25546c0627572b3fb2ca92584b0ab2051f7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/MoE/execution_certificate.json",
+      "bytes": 5774,
+      "sha256": "a18ae88799958c8c54e93b7d47ce1fdf23ee5610d536546af88a75f51c7d58fa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/MoE/pipeline_complete.json",
+      "bytes": 331,
+      "sha256": "9e725fe0be49150298905e96bab60fa9465f76833d72a3c7b2aa0143f4afa957"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/MoE/platform_terminal.json",
+      "bytes": 3991,
+      "sha256": "2cde641853392b934709352fd6ff5df6e765af961cab7f793b8c9d4f9934edb0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/T_F/execution_certificate.json",
+      "bytes": 5773,
+      "sha256": "af9dd07382d42194863f9c4edd0230f32a7f30cdcb70810dbdbbaa88ee00d802"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/T_F/pipeline_complete.json",
+      "bytes": 331,
+      "sha256": "1d637bf99ccb6dccd503dd0fc4b4f99a2dbf965457289dab5db93b0aefd454cf"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/shared_common_expert/20261022T103833Z/provenance/T_F/platform_terminal.json",
+      "bytes": 3989,
+      "sha256": "6700c0229778fe7b5b00ed32c33abfc97da404610b783b11827c35b7dee74dc9"
+    }
+  ],
+  "hierarchy_run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/hierarchy_expert_mixture/20261022T103957Z",
+  "task_state": "COMPLETE",
+  "result_state": "NO_STABLE_TWO_SEED_PRIMARY_GAIN",
+  "next_question": "AI proposal: shared computation and learnable residual within reproducible natural-text combinations",
+  "no_commit_push_or_external_sync": true,
+  "scientific_mechanism_judgment": "Unknown",
+  "rank_one_implementation": "NOT_RUN"
+}

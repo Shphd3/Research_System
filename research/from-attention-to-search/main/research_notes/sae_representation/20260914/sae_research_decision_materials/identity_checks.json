@@ -1,0 +1,51 @@
+{
+  "scope": "Synthetic mathematical / automatic-differentiation checks only; not LM experimental results.",
+  "seed": 17,
+  "dtype": "float64",
+  "permutation": {
+    "maximum_reconstruction_difference": 8.881784197001252e-16,
+    "maximum_sample_gram_difference": 1.4210854715202004e-14,
+    "reconstruction_mse_before": 7.872137463350826,
+    "reconstruction_mse_after": 7.8721374633508265,
+    "activation_count_unchanged": true,
+    "original_slot_0_response_on_A_B": [
+      1.0,
+      0.0
+    ],
+    "permuted_slot_0_response_on_A_B": [
+      0.0,
+      1.0
+    ]
+  },
+  "continuous_slot": {
+    "responses_on_A_B_along_path": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.9238795325112867,
+        0.3826834323650898
+      ],
+      [
+        0.7071067811865476,
+        0.7071067811865475
+      ],
+      [
+        0.38268343236508984,
+        0.9238795325112867
+      ],
+      [
+        6.123233995736766e-17,
+        1.0
+      ]
+    ]
+  },
+  "gradient": {
+    "observer_auxiliary_backbone_gradient_norm": 0.0,
+    "live_encoder_detached_target_gradient_norm": 0.3306567277819879,
+    "live_encoder_live_target_gradient_norm": 0.7210494108301008,
+    "detaching_target_changes_the_objective_gradient": true
+  },
+  "all_checks_passed": true
+}

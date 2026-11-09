@@ -1,0 +1,151 @@
+{
+  "schema": "a17_mapping_delivery_v1",
+  "created_at_utc": "2026-10-11T12:19:28.920356+00:00",
+  "processing_agent": "/root",
+  "scope": "bounded consistent/reversed conditional mapping run and derived meeting account",
+  "task_state": "EXECUTION_AND_FACTUAL_DELIVERY_COMPLETE",
+  "result_state": "INSUFFICIENT_OLD_MAPPING_NOT_ACQUIRED",
+  "scientific_mechanism_judgment": "Unknown",
+  "question_closure": "Unknown",
+  "jobs": {
+    "pt-jw3bhrzi": "SUCCEEDED",
+    "pt-qs6ndgat": "SUCCEEDED"
+  },
+  "run_root": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/runs/mapping_20261011T095038Z",
+  "source_freeze": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/runs/mapping_20261011T095038Z/freeze.json",
+  "full_updates": 2880,
+  "full_valid_answer_targets": 57600,
+  "smoke_updates": 48,
+  "smoke_valid_answer_targets": 960,
+  "external_resume_targets_separate_from_training": 80,
+  "full_one_step_diagnostic_targets_separate_from_training": 120,
+  "actual_saved_states": 120,
+  "registered_checkpoint_families": 28,
+  "native_readout_families": 2,
+  "derived_analysis_asset": "analysis_a17_04_mapping_20261011t095038z",
+  "asset_ids": [
+    "adapter_a17_04_mapping_smoke_20261011t095038z_repeat_seed_29_rank3_old",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_repeat_seed_29_rank3_consistent",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_repeat_seed_29_rank3_reversed",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_repeat_seed_29_rank3_joint_reversed",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_29_old",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_29_consistent",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_29_reversed",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_29_joint_reversed",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_43_old",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_43_consistent",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_43_reversed",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_43_joint_reversed",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_71_old",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_71_consistent",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_71_reversed",
+    "adapter_a17_04_mapping_smoke_20261011t095038z_seed_71_joint_reversed",
+    "representation_a17_04_mapping_smoke_20261011t095038z",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_29_old",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_29_consistent",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_29_reversed",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_29_joint_reversed",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_43_old",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_43_consistent",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_43_reversed",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_43_joint_reversed",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_71_old",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_71_consistent",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_71_reversed",
+    "adapter_a17_04_mapping_full_20261011t095038z_seed_71_joint_reversed",
+    "representation_a17_04_mapping_full_20261011t095038z",
+    "analysis_a17_04_mapping_20261011t095038z",
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "data_a17_conditional_mapping_v1"
+  ],
+  "selected_access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-11_a17_mapping_delivery_access.json",
+  "deviations": [
+    "Initial checkpoint registry enum was invalid; strict access failed.",
+    "Provisional analysis mistakenly preceded the corrected strict gate.",
+    "Metadata corrected; all strict checks then passed and deterministic reanalysis matched three retained provisional outputs byte-for-byte."
+  ],
+  "supplementary_math": {
+    "source": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/runs/mapping_20261011T095038Z/analysis/paired_loss_identity.json",
+    "status": "PASS",
+    "scope": "post-run exact algebra implementation check; no empirical gradient-component mechanism claim",
+    "gradient_component_norms_and_finite_interventions": "NOT_MEASURED"
+  },
+  "canonical_and_derived_documents": [
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/detailed.md",
+      "sha256": "afdd416293b2091960dc3d23f9f95764e24b7503c7c7553135998ac31ca60880",
+      "bytes": 28035
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/detailed_cn.md",
+      "sha256": "d5da9ab7c930193f08905947fa7437e43e7ab6390ad51f309fd7f00107505253",
+      "bytes": 24054
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/protocol.md",
+      "sha256": "c42d14748ec6e9eebdccb7713c3f3af8d2b1e38b9184b576e452718c7b6222c8",
+      "bytes": 26274
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/protocol_cn.md",
+      "sha256": "e9e49ad8c4dd227f6c0e9c504a9b024bf0bd4e9c5bb7063492507ea0c79499f0",
+      "bytes": 21759
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/summary.md",
+      "sha256": "95964f47180e4b84ae34e431f6144a7e7ec077de89aa6ab30efec220e9cf204a",
+      "bytes": 8178
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/A17_04_E01_consistent_reversed_mapping/summary_cn.md",
+      "sha256": "24bbc26707d549cae9e90a83851ec53ae84ee0510ae76aaea58960b2bb98b630",
+      "bytes": 7056
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/17_04_conditional_mapping_transfer_anchor.md",
+      "sha256": "adef5212510b5e3bb5f5673b39d85e0c47a50229ff5e83a99ac45869a4b0206f",
+      "bytes": 9083
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/17_04_conditional_mapping_transfer_anchor_cn.md",
+      "sha256": "1deb126aa8cfa7e071707f0ff8e2d0d25fb08857c5b585587f5d39b650e928e9",
+      "bytes": 7747
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer.md",
+      "sha256": "9c85ffaa894f883b2cf2a016795c38319c3054b93f345243c87502b85bf20a4b",
+      "bytes": 3876
+    },
+    {
+      "path": "Projects/from-attention-to-search/main/focus/focus_conditional_mapping_transfer_cn.md",
+      "sha256": "595feb99542e18c90d9c580d7ed2c559ce94c4eee1dd34e1fb99d9185f3a51bf",
+      "bytes": 3579
+    },
+    {
+      "path": "daily_research_reports/1012/README.md",
+      "sha256": "28d67d2bc9780983cc89df0fc66a3eebeb0ffbbe3a06b32d379df1f3ed8e59f1",
+      "bytes": 533
+    },
+    {
+      "path": "daily_research_reports/1012/README_cn.md",
+      "sha256": "9052b1458e3145326414221e4ba946e7442511aa9d6958e6721dc7ae1cd2231b",
+      "bytes": 450
+    },
+    {
+      "path": "daily_research_reports/1012/meeting_report/meeting_brief_conditional_mapping.md",
+      "sha256": "0e902230e459d6b774a37d921f1528012366eb5a28636ffa4e3b91ac72e95ae3",
+      "bytes": 9549
+    },
+    {
+      "path": "daily_research_reports/1012/meeting_report/meeting_brief_conditional_mapping_cn.md",
+      "sha256": "b53d01669a998be18ec4cb46e6db248c4fcc9d41af4c95dd4734b3e4950b6d91",
+      "bytes": 13529
+    }
+  ],
+  "payload_provenance": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/runs/mapping_20261011T095038Z/payload_manifest.json",
+  "registration": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/runs/mapping_20261011T095038Z/registration/receipt.json",
+  "analysis_registration_manifest": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/runs/mapping_20261011T095038Z/registration/independent_analysis_manifest.json",
+  "analysis_lineage": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/runs/mapping_20261011T095038Z/analysis/analysis_manifest.json",
+  "boundary": "Old mapping failed acquisition criterion. Small relative margin difference does not establish mean net harm, acquired-rule interference, capacity impossibility or expert benefit."
+}

@@ -1,0 +1,9 @@
+# R16 execution and eligibility record
+
+Status: engineering measurements completed, scientific acceptance Unknown. Completed 2026-11-02T06:23:37.383806+00:00.
+Purpose: final-output sensitivity to single-layer own-reference head64 retention.
+Protocol freezes all conditions/scopes/reference/positions before new outputs. Sources and checkpoint are hashed in manifest/freeze; ordinary prestart integrity/cast guard repair is recorded without changing scientific conditions.
+Stage1 native reference:60fixedTRAINdocuments,9600same positions independently per28layers; native BF16 capture, FP64 cov/eigh. Stage2 smoke: all28fullPC reconstruction and no-op suffix; full-model hook vs suffix at1/14/28; causal prefix, oldcache replay, frozen parameters. See audit/03_numerics_smoke.json.
+Stage3 two5090 independent document shards, atomic complete document chunks and saved untouched target states. Scopes use separate sequence copies; all-prefix can include future valid teacher-forcing tokens only because causal masks protect earlier targets. Stage4 CPU equal-document group aggregation,2000pointwise bootstrap, full target PCAidentity and oldbasis replay, figures and fixed input examples. No optimizer/model/classifier/lens training, H100, new data download or question expansion.
+Numerical validation PASS;28layerfullPC target guards;rawrecords249843;baseline differences0;legacy maxNLLdiff0.000201225. Complete evidence:audit/validation.json.
+Actual perrank runtime/device/memory in terminal_rank0/1.json; platform receipts/logs separate. Outputs and exceptions remain execution-side. Full round setup, controls, data/exposed split, result and boundary are preserved in Protocol, Summary, evidence and casebook; no source result overwritten. Navigation checker reported preexisting unrelated organization/untracked entries; it does not validate science.

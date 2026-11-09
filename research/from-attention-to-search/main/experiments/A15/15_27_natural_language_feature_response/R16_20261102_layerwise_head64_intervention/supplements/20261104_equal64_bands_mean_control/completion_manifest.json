@@ -1,0 +1,73 @@
+{
+  "task_state": "MEASUREMENTS_AND_VERIFIED_DELIVERY_COMPLETE",
+  "question_state": "USER_ACTIVATED_BOUNDED",
+  "design_state": "USER_AUTHORIZED_SCOPE_EXECUTED_WITH_NUMERICAL_AMENDMENTS_E1_E2",
+  "result_state": "EXPLORATORY_HEAD_STRONGEST_EQUAL_RANK_BAND_AND_MEAN_DEPENDENT_RETENTION",
+  "scientific_acceptance": "Unknown",
+  "question_closure": "Unknown",
+  "completed_utc": "2026-11-04T03:03:15.572293+00:00",
+  "unique_new_position_condition_records": 1403985,
+  "original_main_job_records": 1403985,
+  "additional_versioned_repair_records": 9525,
+  "physical_new_saved_records": 1413510,
+  "unique_positions": 737,
+  "main_documents": 175,
+  "main_positions": 700,
+  "aux_positions": 37,
+  "physical_documents": 180,
+  "original_chunks": 180,
+  "replacement_aux_chunks": 5,
+  "PCA_refits": 0,
+  "training_updates": 0,
+  "jobs": {
+    "initial_failed_smoke": "pt-xlcw32lz",
+    "complete_matrix": "pt-pi9i0qnx",
+    "singleton_arithmetic_repair": "pt-7o9atlt9"
+  },
+  "resource_profile": "5090-2-spot",
+  "image_id": "shphd-lite-0911",
+  "max_concurrent_GPU": 2,
+  "main_shards": [
+    {
+      "complete": true,
+      "rank": 0,
+      "documents": 90,
+      "seconds": 738.0301616191864,
+      "peak_GPU_bytes": 1589698048,
+      "training_updates": 0,
+      "PCA_refits": 0
+    },
+    {
+      "complete": true,
+      "rank": 1,
+      "documents": 90,
+      "seconds": 754.3006873130798,
+      "peak_GPU_bytes": 1588850688,
+      "training_updates": 0,
+      "PCA_refits": 0
+    }
+  ],
+  "repair_shards": [
+    {
+      "complete": true,
+      "rank": 0,
+      "documents": 3,
+      "seconds": 44.97283363342285,
+      "peak_GPU_bytes": 1384408064,
+      "training_updates": 0,
+      "PCA_refits": 0
+    },
+    {
+      "complete": true,
+      "rank": 1,
+      "documents": 2,
+      "seconds": 31.550950288772583,
+      "peak_GPU_bytes": 1384408064,
+      "training_updates": 0,
+      "PCA_refits": 0
+    }
+  ],
+  "main_summary_repair_difference": 3.637978807091713e-12,
+  "validation": "audit/validation.json",
+  "asset_id": "analysis_a15_27_05_equal64_bands_mean_control_20261104"
+}

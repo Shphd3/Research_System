@@ -1,0 +1,60 @@
+{
+  "experiment_id": "A06_02_01_E08_noise_free_full_slot",
+  "run_name": "a06_30_full_20260709_090858",
+  "run_stage": "full",
+  "verdict": "supports_background_noise_hypothesis",
+  "key_metrics": {
+    "completed_seeds": 8,
+    "completed_training_rows": 160,
+    "final_step": 2000,
+    "oracle_allpos_step0_nmi": 0.9999999999942291,
+    "oracle_allpos_step0_margin_p05": 11.515148282051086,
+    "oracle_allpos_final_nmi": 0.9999999999942291,
+    "oracle_allpos_final_margin_p05": 4.566493585705757,
+    "oracle_predpos_final_nmi": 0.9999999999942291,
+    "oracle_predpos_final_margin_p05": 4.566494211554527,
+    "oracle_lastpred_final_nmi": 0.9999999999942291,
+    "oracle_lastpred_final_margin_p05": 4.566493809223175,
+    "random_final_nmi": 0.7888787249758797,
+    "random_final_margin_p05": -2.963729113340378
+  },
+  "config": {
+    "run_stage": "full",
+    "run_name": "a06_30_full_20260709_090858",
+    "output_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot",
+    "seeds": "0 1 2 3 4 5 6 7",
+    "expected_seeds": 8,
+    "seq_len": 32,
+    "num_features": 4,
+    "num_experts": 4,
+    "num_neutral_tokens": 32,
+    "d_model": 64,
+    "num_heads": 4,
+    "d_ff": 128,
+    "calib_samples": 2048,
+    "eval_samples": 2048,
+    "train_batch_size": 256,
+    "eval_batch_size": 512,
+    "train_steps": 2000,
+    "checkpoints": "160 500 1000 2000",
+    "lr": 0.002,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "router_init_scale": 1.5
+  },
+  "generated_at_unix": 1783588405.8704965,
+  "tables": {
+    "data_audit": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/tables/data_audit.csv",
+    "training_trajectory": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/tables/training_trajectory.csv",
+    "condition_trajectory_aggregate": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/tables/condition_trajectory_aggregate.csv",
+    "condition_aggregate_reinit": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/tables/condition_aggregate_reinit.csv",
+    "condition_aggregate_final": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/tables/condition_aggregate_final.csv"
+  },
+  "figures": {
+    "allpos_feature_nmi_trajectory": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/figures/allpos_feature_nmi_trajectory.png",
+    "margin_p05_trajectory": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/figures/margin_p05_trajectory.png",
+    "next_token_accuracy_trajectory": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/figures/next_token_accuracy_trajectory.png",
+    "final_allpos_feature_nmi": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/figures/final_allpos_feature_nmi.png",
+    "final_margin_p05": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A06/06_02_partition_preservation_dynamics/A06_02_01_E08_noise_free_full_slot/figures/final_margin_p05.png"
+  }
+}

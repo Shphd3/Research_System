@@ -1,0 +1,14 @@
+{
+  "id": "ENGINEERING_E03",
+  "at_utc": "2026-10-24T16:21:03.044018+00:00",
+  "failed_job": "pt-r2c46vhp",
+  "error": "TypeError: unsupported operand type(s) for +: PosixPath and str",
+  "source_location": "pipeline.py positive-control output path",
+  "before_sha256": "89f8525d5314205159db35d4a43366712bb81e4eece8c2e35a63ca2c314de954",
+  "after_sha256": "afe4a4ac46e7c2ce50620a9036143789f45d472afbb57c31cff12ddc4f55bf20",
+  "change": "parenthesize filename concatenation before Path join",
+  "scientific_settings_changed": false,
+  "visible_results": "R1 pilot and seed29 repaired P/C acquisition endpoints only; no formal combination TEST results",
+  "recovery": "reuse completed acquisition checkpoints and their existing completion receipts; do not repeat optimizer updates",
+  "authorization": "explicit full completion and necessary failure repair"
+}

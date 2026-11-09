@@ -1,0 +1,127 @@
+{
+  "UTC": "2026-11-03T17:13:25.243295+00:00",
+  "purpose": "Selected primary text/token/sparse activation evidence and small tables/figures; full dense preactivation/h remains execution-side",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104",
+  "files": [
+    {
+      "path": "results/behavior_summary.csv",
+      "bytes": 3537,
+      "sha256": "3e236d9a1c4b580bb3e624d1100e51f9b4d31dad3cdbe1750654f500a5cf9655"
+    },
+    {
+      "path": "results/coverage_summary.csv",
+      "bytes": 2039,
+      "sha256": "b2b152a6c8ed8c66f05d123b41be4d6336fc18ea32853e98667536491e055205"
+    },
+    {
+      "path": "results/family_effects.csv",
+      "bytes": 33945,
+      "sha256": "664b96263149ef70e1e3a9c7be127454e495a299c2b6f854c7a45d05984b0ed4"
+    },
+    {
+      "path": "results/hypothesis_statistics.csv",
+      "bytes": 7426,
+      "sha256": "97777855e2b0630397fbc19087ae307f2078646f550d8910675adf8b69c7df57"
+    },
+    {
+      "path": "results/pooled_energy_shares.csv",
+      "bytes": 1375,
+      "sha256": "240c47296b4dd8607ba39e6f5c2bb2411b5d55cdc532f9260f12126046877ed4"
+    },
+    {
+      "path": "results/scale_sensitivity.json",
+      "bytes": 477,
+      "sha256": "ea668aa8b1a44189a6e93139fa788139a2c981dc761294f41589667a52ad1d83"
+    },
+    {
+      "path": "results/verdict.csv",
+      "bytes": 753,
+      "sha256": "82af2c0debf1e95d46afe91eb811a76ecb087b77c236aadd2226c47d9232a73e"
+    },
+    {
+      "path": "figures/case_animal_ATTN_SAE.png",
+      "bytes": 262698,
+      "sha256": "0da05c3eee992720e41f891606dc0f042e2fd88a83766c12bf637d1434431fb9"
+    },
+    {
+      "path": "figures/case_animal_MLPIN_SAE.png",
+      "bytes": 286886,
+      "sha256": "9d88f6e505534bbd9fe856535db855decca6a9ecc53c5df7203b4f7031f75774"
+    },
+    {
+      "path": "figures/case_vehicle_ATTN_SAE.png",
+      "bytes": 251451,
+      "sha256": "5fdaf976a0df137a96c24c412fcbaf749a2280086936e1bcff302e850852058b"
+    },
+    {
+      "path": "figures/case_vehicle_MLPIN_SAE.png",
+      "bytes": 298453,
+      "sha256": "682a1627120b2538c2b353b7a4c44f61c22c6054584126e5f3f04966d6fa03fb"
+    },
+    {
+      "path": "figures/relations_and_joint_patterns.png",
+      "bytes": 234441,
+      "sha256": "d190decfbc1cee8aba812767740091b2951a229a0b775068674c3fec6912ae42"
+    },
+    {
+      "path": "figures/wording_control_joint.png",
+      "bytes": 180317,
+      "sha256": "83291b6855dc98f5e51268741049fe166022f79d98174985375222b3c1b4359d"
+    },
+    {
+      "path": "figures/wording_control_support.png",
+      "bytes": 75340,
+      "sha256": "cd4143e54fc045df3737f7e54be142471a791278cb6122a1df0133915c844f0b"
+    },
+    {
+      "path": "data/ATTN_SAE_all_z_csr.npz",
+      "bytes": 57814,
+      "sha256": "0f483320f9b801a947b1bf84235bdab46422bc4842ff221395d3c7a113bd0fc2"
+    },
+    {
+      "path": "data/ATTN_SAE_animal_selected_pre.npz",
+      "bytes": 26270,
+      "sha256": "856b4ef9019e43bdc3e8b996ae0a34ec4d48ef486920d70f1b40907b86773813"
+    },
+    {
+      "path": "data/ATTN_SAE_vehicle_selected_pre.npz",
+      "bytes": 20019,
+      "sha256": "fac7a7bcd56a8c92b7b25355e037cf9274382e3fdbed01d5a45f45256312b47a"
+    },
+    {
+      "path": "data/MLPIN_SAE_all_z_csr.npz",
+      "bytes": 54522,
+      "sha256": "4cbbabf6e241f0c45f57e86764fdc84864556162ad6a72a55c99a8a909b6060d"
+    },
+    {
+      "path": "data/MLPIN_SAE_animal_selected_pre.npz",
+      "bytes": 38339,
+      "sha256": "559dccb3ab3a10bec3e7f2080dea8206b84a2bd0f56533c4992a542a3cc9273d"
+    },
+    {
+      "path": "data/MLPIN_SAE_vehicle_selected_pre.npz",
+      "bytes": 40786,
+      "sha256": "a40a94a88c7c16a30d561d21a84077c14d7f95031dbfcc6b0767aee8500db67f"
+    },
+    {
+      "path": "data/S03_frozen_selection.json",
+      "bytes": 3672,
+      "sha256": "eddcfe0940247c03250cc1e4dd777fb728d86f19c122647dcb2a7ee1402a4d2a"
+    },
+    {
+      "path": "data/behavior_all.jsonl",
+      "bytes": 417619,
+      "sha256": "77520d327efa418ebb058715397162970b653089b42b987d49fe69884423d741"
+    },
+    {
+      "path": "data/panel.jsonl",
+      "bytes": 1001136,
+      "sha256": "b48fe96a493266f678f18d57a196be3fd85fcd81e4df90e9ae7fc0e9d8e9a98a"
+    },
+    {
+      "path": "data/templates.json",
+      "bytes": 2997,
+      "sha256": "25330509e8ab173f493bfd8bd652ca0ebeb11f80749a0849122e504a8538473c"
+    }
+  ]
+}

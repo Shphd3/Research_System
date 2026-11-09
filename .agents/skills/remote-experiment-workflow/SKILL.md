@@ -12,7 +12,7 @@ are Research_System-root-relative unless linked. Read only the selected mode.
 |---|---|---|
 | Existing-run status | Job ID or execution record; Status below | Verified progress, source/time and failure/unknown |
 | Startup / requested monitoring | Submission receipt; [startup.md](references/startup.md) | Bounded startup report or requested monitoring outcome |
-| Implementation / Smoke / submit / resume | Owning Anchor/Protocol; [execution.md](references/execution.md) | Authorized stage receipt, then startup boundary |
+| Implementation / Smoke / submit / resume | Owning explore log (exploration lane) or Protocol (formal lane); [execution.md](references/execution.md) | Authorized stage receipt, then startup boundary |
 | Completed outputs / recovery | Named run/result records; [artifacts.md](references/artifacts.md) | Verified requested artifacts and evidence links |
 
 Use `PROJECTS.md` only to resolve unknown ownership; no Graph/roadmap preamble.
@@ -43,7 +43,7 @@ not execution approval. Full/expensive runs, changed scope and confirmation
 access follow existing authorization and frozen gates; never relax a failed
 gate. Small in-scope local checks follow root AGENTS without added gates.
 
-Completion cannot update scientific judgment. Code/raw outputs/checkpoints/logs
+Append job ID, status and result paths to the owning explore log. Completion cannot update scientific judgment. Code/raw outputs/checkpoints/logs
 stay execution-side; research records stay here. Preserve concurrent work.
 Commit/push/publication, Graph edits and collaborator sync are explicit actions
 outside this skill.

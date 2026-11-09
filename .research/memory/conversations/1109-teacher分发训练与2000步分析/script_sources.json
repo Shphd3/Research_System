@@ -1,0 +1,430 @@
+{
+  "snapshot_manifest": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/manifest.json",
+  "manifest_sha256": "d78f5a7aa5820440266d91f81d1b68fc90724d7eeafdf3bfc9e53fa75d10c149",
+  "recorded_UTC": "2026-11-09T02:40:17.280114+00:00",
+  "files": [
+    {
+      "path": "analysis_urgent.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/analysis_urgent.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/analysis_urgent.py",
+      "sha256": "88d3e18c38d8c1535eba6d9cad648ca42c47ab1d3b33f815ab7a75aeadc6d310",
+      "bytes": 7161,
+      "role": "严格同一步数五臂表2、A1−A2、图3、A0实测Mbar与来源哈希",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "analyze_morning.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/analyze_morning.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/analyze_morning.py",
+      "sha256": "5c99f5f60a35855c5789a1325fdc03a62a53183872df7860f728dc980c8cc0ce",
+      "bytes": 5228,
+      "role": "显式--step的分析入口；未带--step的历史默认不得用于本次统一比较",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "arms/A0-hi.yaml",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A0-hi.yaml",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/arms/A0-hi.yaml",
+      "sha256": "8c4684530caa20f724be5e1049688967bc52dc7cea038131d14dcff27c78ced3",
+      "bytes": 3127,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "arms/A0.yaml",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A0.yaml",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/arms/A0.yaml",
+      "sha256": "f3d9f13beda01aa51f981abbbcf29e959f7920a8a56800fc8832ff6ce3c2ec4d",
+      "bytes": 2909,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "arms/A1-deep.yaml",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A1-deep.yaml",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/arms/A1-deep.yaml",
+      "sha256": "abe831505df7c500dbf192bcc06ba3d040c6163d7fbb047ce138033ee19b8559",
+      "bytes": 2930,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "arms/A1-hi.yaml",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A1-hi.yaml",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/arms/A1-hi.yaml",
+      "sha256": "cdfaf86836534156111642200e656cbd6fbd449ac282b0ef0a35e1e7ae058d38",
+      "bytes": 3146,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "arms/A1.yaml",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A1.yaml",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/arms/A1.yaml",
+      "sha256": "82ac81271faf3277a1ddc662bad4889b5c24c8307961da192205d74387d9ff43",
+      "bytes": 3143,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "arms/A2.yaml",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A2.yaml",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/arms/A2.yaml",
+      "sha256": "9488b8ae6e026d763d6934257b942c160ebfb5c933ecd19308eaecfb2be3c939",
+      "bytes": 3134,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "arms/A3.yaml",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A3.yaml",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/arms/A3.yaml",
+      "sha256": "bbb11ee420cedf57b3f4541d71b08f85aff20f6d67c9d637b1c8d1f00d6e2621",
+      "bytes": 3137,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "arms/A4.yaml",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A4.yaml",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/arms/A4.yaml",
+      "sha256": "70cd266428c70ca634e2aba87276d0d03cd2719f4d9929d57e5b691df87d1af8",
+      "bytes": 2928,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "async_checkpoint.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/async_checkpoint.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/async_checkpoint.py",
+      "sha256": "8f6c6a6c34f35c2b365b903d31c93af6131af9aa14e7e9e58d990974e21ec017",
+      "bytes": 2990,
+      "role": "当前执行同步不可变快照保存；名称保留，实际不并发NCCL写盘；保留RNG/数据游标/优化器",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "build_2000_bundle.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/build_2000_bundle.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/build_2000_bundle.py",
+      "sha256": "8d55be85b799fb154969bbed570f84256dbbd032bfbe914c542334a346411ae9",
+      "bytes": 13032,
+      "role": "只读取≤2000前缀、生成统一CSV与五臂loss/频段曲线，不训练不监督",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "evaluation.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evaluation.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/evaluation.py",
+      "sha256": "f626134a13d76b5039425477b8c9acfb5e9a8b1cd90824735dc25a05feb311b4",
+      "bytes": 6432,
+      "role": "固定EVAL总体NLL、feature/bin统计与各层实际集中度；不更新load bias",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "finalize_2000_bundle.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/finalize_2000_bundle.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/finalize_2000_bundle.py",
+      "sha256": "aa75ee3f3cd655df5ede5f8935f5283a6c016be3b1c5af1b8873d0f914181d0e",
+      "bytes": 6874,
+      "role": "逐行复查来源、portable链接、SHA256清单、ZIP CRC与解压后全文件哈希",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "moe_baseline/__init__.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/moe_baseline/__init__.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/moe_baseline/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "moe_baseline/data_stream.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/moe_baseline/data_stream.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/moe_baseline/data_stream.py",
+      "sha256": "2527624b890f94ed3c3852f4e3ed9e8e25a7bf35890d8b3456635b9511701b79",
+      "bytes": 2794,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "moe_baseline/model.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/moe_baseline/model.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/moe_baseline/model.py",
+      "sha256": "4abc965fbafd0fd700a5f88e02c0afdd646130058759e517a7336bdc97d8afe7",
+      "bytes": 19659,
+      "role": "原生、teacher固定、随机固定、deep及router蒸馏路径；保持固定分支无router梯度回流",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "moe_baseline/token_policy.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/moe_baseline/token_policy.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/moe_baseline/token_policy.py",
+      "sha256": "53acd94a9298fb11334b62dcff80f0908a7104c0739fef6b0de69c2d13ce8509",
+      "bytes": 1634,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "moe_baseline/train.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/moe_baseline/train.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/moe_baseline/train.py",
+      "sha256": "7fd0a90330bb1c59d774d28a584b855d4fe7e3f30b5189038e05c1fb48a17c86",
+      "bytes": 32425,
+      "role": "原MoE训练器的本轮改版；数据/计数/数值/恢复守卫、评估与保存barrier、关闭梯度噪声hook",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "phase_to_formal.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/phase_to_formal.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/phase_to_formal.py",
+      "sha256": "58e0d35636e1925749219eef1dc0e9b8d680389042d23fcf6a6aaae4c1081f1e",
+      "bytes": 2222,
+      "role": "历史Smoke到正式控制器交接",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "precompute_scores.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/precompute_scores.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/precompute_scores.py",
+      "sha256": "dc899500df762deb73873941e1f2ff213ed35788919e89e62c7aed0676608f44",
+      "bytes": 8441,
+      "role": "冻结DEV/EVAL编码、8簇与tau，teacher训练分数预计算；只补缺片、原子发布",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "record_2000_scripts.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/record_2000_scripts.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/record_2000_scripts.py",
+      "sha256": "45391fb79060154b816095238611a8256b7d043b7531ff7568945039fd141b3c",
+      "bytes": 14363,
+      "role": "本次用户要求的源码快照、memory脚本清单与完成日志",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "register_actual_assets.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/register_actual_assets.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/register_actual_assets.py",
+      "sha256": "c53029ea344e06074a634652da42dbe782a1ed0013c0e0f2ae39e392f2614a33",
+      "bytes": 8107,
+      "role": "仅登记实际完整保存的checkpoint家族/已核验分数前缀；不登记未来状态",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "routing.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/routing.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/routing.py",
+      "sha256": "4409e69986a7b83c43ee326448415a2f2e2942f1dbfd28ac9bd9b69b394e25d0",
+      "bytes": 3939,
+      "role": "teacher分数加载/逐micro输入哈希与可重放随机路由；可选teacher诊断同步限制",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "run_chain.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/run_chain.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/run_chain.py",
+      "sha256": "da04017e35e9ea5a1bfbd6b81cbf37c1950641a4ab6b5a4f6b4e2eee02363dff",
+      "bytes": 4518,
+      "role": "旧3815步控制器；已对urgent_jobs存在加保护，当前不能用它恢复旧链",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/gpu_preflight.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/gpu_preflight.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/gpu_preflight.py",
+      "sha256": "6c0ae5678cd43c3761fb63491fd30479db020874b075d7bf942ea01dfe6243e8",
+      "bytes": 8354,
+      "role": "GPU/存储/数值路径的资源资格检查",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/original_formal.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/original_formal.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/original_formal.sh",
+      "sha256": "eff1465dd9dcdb623a1db8d8b9d85efc6bcc4c3ed142b6c8af3e7caaf5d768f4",
+      "bytes": 1330,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/original_runtime.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/original_runtime.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/original_runtime.sh",
+      "sha256": "ae5fc3919ec8c8230266f51bada560846bd3ef83fc1c6d706ca5d11e6156c022",
+      "bytes": 601,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/run_chain.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/run_chain.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/run_chain.sh",
+      "sha256": "6f9a8d588f4e6ccaf9d1aaa1da963fe53f40c034a04178d66bb294724969c0eb",
+      "bytes": 249,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/runtime.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/runtime.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/runtime.sh",
+      "sha256": "a00ae8b408d45d698da34d94b7384b7cc2933870310fc40b424573362d2b90d0",
+      "bytes": 519,
+      "role": "运行环境、离线依赖与PYTHONPATH；不安装新依赖",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/secondary_wait_full.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/secondary_wait_full.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/secondary_wait_full.sh",
+      "sha256": "82752bda30b5ab1eb9a1e90ef98d5c511d29d7e980a57718fa569e538c9052a8",
+      "bytes": 371,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/smoke.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/smoke.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/smoke.sh",
+      "sha256": "6fbbde0bcda7602bafd4475cf722fb581d84e10d68766a4f08331509e9c4cbb0",
+      "bytes": 447,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/smoke_suite.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/smoke_suite.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/smoke_suite.sh",
+      "sha256": "e58a686c58af7dd33b2fdf22e62cabf2608bbd04b370057ec5c7ba17852e6650",
+      "bytes": 290,
+      "role": "配置与原训练器配套实现；以源码/Protocol为准",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/submit_low_host.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/submit_low_host.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/submit_low_host.sh",
+      "sha256": "6ff471fae692125daab389e44d1ab50d0bf267a04b823be5af7b5e37a78946ff",
+      "bytes": 856,
+      "role": "研究者授权16核/256GiB、4H100 Reserved规格的提交入口；工作区显式选择",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "scripts/urgent.sh",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/scripts/urgent.sh",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/scripts/urgent.sh",
+      "sha256": "7d63b1240cff5cbe139d1795d5272bed17190964c218960beb91488f05d16e93",
+      "bytes": 394,
+      "role": "当前ACP入口；设置NCCL错误处理与退出清理，调用urgent_runner",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "smoke_suite.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke_suite.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/smoke_suite.py",
+      "sha256": "549be4232ce78451df75d5ca59234884ed985fe726c7e544e8eef3a6a123e4d6",
+      "bytes": 6005,
+      "role": "历史四卡、模式与恢复资格检查",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "smoke_tree_guard.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/smoke_tree_guard.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/smoke_tree_guard.py",
+      "sha256": "d867ba4f58ce0b34e30bd9f0a8357622c7bc1b6d0b5815d9bb1fc9006b571795",
+      "bytes": 2046,
+      "role": "历史完整torchrun进程树打断检查",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "supervise.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/supervise.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/supervise.py",
+      "sha256": "a4313f3ffbddce6280883126ef9b482c08f4714975386b3a809e59c1a9ab4213",
+      "bytes": 9460,
+      "role": "历史Smoke/正式交接监督，不是当前续训守护进程",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "supplement_rank_correlations.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/supplement_rank_correlations.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/supplement_rank_correlations.py",
+      "sha256": "f4661b64bbc66c3ef5bd819b3c65baf0acf31e334316d441734cb3b074b20ab8",
+      "bytes": 2061,
+      "role": "由已经导出的图3点补全预登记Spearman点估计；不制造CI/p值",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "teacher.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/teacher.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/teacher.py",
+      "sha256": "5ca42c29f41f9714e3447789878535496be9a82f6c15dc1b3e8d1191f425861f",
+      "bytes": 2605,
+      "role": "冻结teacher/SAE装载、特征提取、打分和数据/源文件身份",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "urgent_runner.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/urgent_runner.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/urgent_runner.py",
+      "sha256": "f13c5cc30a08801e4938eea239f5383dfa719d4384d4134f9636d30ec6839ddb",
+      "bytes": 4638,
+      "role": "A1/A2独立锁、50步Smoke、从零至2000、auto恢复与任务内接续；每阶段最多三次异常重试",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "urgent_status.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/urgent_status.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/urgent_status.py",
+      "sha256": "454a12f5e3295960047a83378d60850a19f5b10d1402920aede9bf16035037de",
+      "bytes": 2370,
+      "role": "按需读平台/持久日志、步数/吞吐/ETA；此次已停止继续查询",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "urgent_watch.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/urgent_watch.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/urgent_watch.py",
+      "sha256": "dbfa5e5a7abf76c3e1e557046405932c1273e6ec054a72e64451819569f514f9",
+      "bytes": 5671,
+      "role": "原前台监督/异常重新提交观察器；研究者要求后已停止，不代表ACP任务停止",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "validate_scores_urgent.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/validate_scores_urgent.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/validate_scores_urgent.py",
+      "sha256": "0a2343fb4dc7c881ffcb265cc58c57e5124f8719730a2bbc8408c8bf8e737707",
+      "bytes": 2380,
+      "role": "逐分片、逐rank、逐micro验证输入身份/shape/有限性/冻结身份；发现不一致即失败",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "verify_gates.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/verify_gates.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/verify_gates.py",
+      "sha256": "f7df6589343eb55eb70b7ce02ece64af44ce1d077b2853f3f19169cdd0c99cf6",
+      "bytes": 1011,
+      "role": "历史启动放行证据核对",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "verify_precision.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/verify_precision.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/verify_precision.py",
+      "sha256": "d67f9a865ee8500e46262b2711d7467d48cd6cad38a931e9e4b09a9273d11717",
+      "bytes": 1134,
+      "role": "冻结DEV bf16/fp32路由一致率检查",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    },
+    {
+      "path": "write_2000_report.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/write_2000_report.py",
+      "snapshot": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/evidence/script_record_20261109T024017Z/source/write_2000_report.py",
+      "sha256": "4ecc2894ee7b1a5333e640de550f832a82b6e1c5964b304eae5a81ac3da344e1",
+      "bytes": 18682,
+      "role": "从统一表格生成中文趋势/假设对照、可携带阅读入口及R03 Summary",
+      "version_scope": "Current on-disk recording snapshot; not proof that all historical processes loaded this version"
+    }
+  ]
+}

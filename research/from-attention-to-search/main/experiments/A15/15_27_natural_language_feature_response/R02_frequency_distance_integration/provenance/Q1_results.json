@@ -1,0 +1,134 @@
+{
+  "question": "Q1_frequency_and_response_organization",
+  "observed_fixed_group_ids": [
+    "G01",
+    "G02",
+    "G04",
+    "G06",
+    "G07"
+  ],
+  "all_five_reference_qualified": false,
+  "observed_equal_group_dispersion": null,
+  "null_draws": 500,
+  "valid_nulls": 392,
+  "null_mean": 1.4924338260758532,
+  "null_CI95": [
+    0.8876128531431418,
+    2.189103942042937
+  ],
+  "primary_p": null,
+  "verdict": "INSUFFICIENT",
+  "groups": [
+    {
+      "group_id": "G01",
+      "feature_ids": [
+        2453,
+        24001,
+        7555,
+        6238,
+        16497,
+        19838
+      ],
+      "size": 6,
+      "D_coassignment": 0.9146666666666667,
+      "all_member_frequency_qualified": true,
+      "minimum_hit_count": 146,
+      "minimum_reference_windows_hit": 31,
+      "mean_pairwise_log_frequency_difference": 0.4525570691859468,
+      "reference_window_CI95_low": 0.3016705910702439,
+      "reference_window_CI95_high": 0.8149871134312,
+      "size_matched_valid_nulls": 315,
+      "size_matched_null_mean": 0.4525570691859468,
+      "secondary_p": null,
+      "secondary_BH_q": 1.0
+    },
+    {
+      "group_id": "G02",
+      "feature_ids": [
+        28673,
+        23609,
+        19601
+      ],
+      "size": 3,
+      "D_coassignment": 1.0,
+      "all_member_frequency_qualified": true,
+      "minimum_hit_count": 53,
+      "minimum_reference_windows_hit": 11,
+      "mean_pairwise_log_frequency_difference": 1.2110703118763901,
+      "reference_window_CI95_low": 0.8153681750954066,
+      "reference_window_CI95_high": 1.9900973469792809,
+      "size_matched_valid_nulls": 198,
+      "size_matched_null_mean": 1.0764228232720552,
+      "secondary_p": null,
+      "secondary_BH_q": 1.0
+    },
+    {
+      "group_id": "G04",
+      "feature_ids": [
+        1818,
+        1205,
+        29829,
+        27173
+      ],
+      "size": 4,
+      "D_coassignment": 0.845,
+      "all_member_frequency_qualified": true,
+      "minimum_hit_count": 45,
+      "minimum_reference_windows_hit": 13,
+      "mean_pairwise_log_frequency_difference": 2.9493423315783835,
+      "reference_window_CI95_low": 2.669964029193266,
+      "reference_window_CI95_high": 3.3935190492395746,
+      "size_matched_valid_nulls": 385,
+      "size_matched_null_mean": 2.1686687839076297,
+      "secondary_p": null,
+      "secondary_BH_q": 1.0
+    },
+    {
+      "group_id": "G06",
+      "feature_ids": [
+        14396,
+        27822,
+        17719,
+        19935,
+        20019
+      ],
+      "size": 5,
+      "D_coassignment": 0.7155,
+      "all_member_frequency_qualified": true,
+      "minimum_hit_count": 274,
+      "minimum_reference_windows_hit": 110,
+      "mean_pairwise_log_frequency_difference": 0.6871331377703104,
+      "reference_window_CI95_low": 0.5781301498371559,
+      "reference_window_CI95_high": 0.8492007253348666,
+      "size_matched_valid_nulls": 183,
+      "size_matched_null_mean": 1.0515398960355302,
+      "secondary_p": null,
+      "secondary_BH_q": 1.0
+    },
+    {
+      "group_id": "G07",
+      "feature_ids": [
+        18711,
+        16295,
+        5596
+      ],
+      "size": 3,
+      "D_coassignment": 0.7266666666666666,
+      "all_member_frequency_qualified": false,
+      "minimum_hit_count": 18,
+      "minimum_reference_windows_hit": 16,
+      "mean_pairwise_log_frequency_difference": null,
+      "reference_window_CI95_low": null,
+      "reference_window_CI95_high": null,
+      "size_matched_valid_nulls": 198,
+      "size_matched_null_mean": 1.0764228232720552,
+      "secondary_p": null,
+      "secondary_BH_q": 1.0
+    }
+  ],
+  "frequency_reference_sha256": "0c85b8ae880f1a92324ccd5dd8db60fbc46c0d3a4bcc36e10bf321cd089e6dcc",
+  "old_discovery_sha256": "51793c0bb38b05517a21f2a961ff4471e0c5edaf5c5085198b7f7613959fb2f5",
+  "runtime_seconds": 71.42088985443115,
+  "permutation_scope": "Entire4-version feature tuples,independent perfeature,target-stratified;raw marginals preserved,full selection/amplitude/clustering/stability rerun.",
+  "claim_boundary": "This measures organization/frequency association on this fixed TRAIN reference. It cannot show frequency causes grouping or that the frequency is universal."
+}

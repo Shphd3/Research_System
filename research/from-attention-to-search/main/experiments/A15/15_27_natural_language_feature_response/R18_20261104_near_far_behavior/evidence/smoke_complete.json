@@ -1,0 +1,25 @@
+{
+  "UTC": "2026-11-04T03:05:34.902512+00:00",
+  "implementation_status": "PASS",
+  "rows": 36,
+  "seconds": 129.4544460773468,
+  "checks": [
+    {
+      "direct_forward_token_error": 8.821487426757812e-06,
+      "prefix_only_hidden_error": 0.0,
+      "candidate_lane_prefix_error": 0.0
+    },
+    {
+      "direct_forward_token_error": 4.76837158203125e-06,
+      "prefix_only_hidden_error": 0.0,
+      "candidate_lane_prefix_error": 0.0
+    }
+  ],
+  "output_sha256": "ffdaad109ca41bf326c788c8a582a470129af8451f7769e2f4041710ea3043c8",
+  "trainable_parameters": 0,
+  "training_updates": 0,
+  "SAE_loaded": false,
+  "intervention": false,
+  "weights_unchanged": true,
+  "model_context_max": 32768
+}

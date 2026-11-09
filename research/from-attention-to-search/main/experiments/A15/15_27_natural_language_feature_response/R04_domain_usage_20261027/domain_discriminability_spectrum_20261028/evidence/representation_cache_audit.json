@@ -1,0 +1,6391 @@
+{
+  "status": "R04_REAL_H_MISSING",
+  "scope": "all455R04npz metadata and all R04 non-npz tensor extension names; R05 related same-document file schema inspected; registry entries and old R03 supplement checked",
+  "R04_npz_count": 455,
+  "all_array_fields": {
+    "counts.npy": 6,
+    "sum_z.npy": 6,
+    "sum_z2.npy": 6,
+    "decoder_norm.npy": 6,
+    "seq_id.npy": 6,
+    "n_positions.npy": 6,
+    "SAE.npy": 1,
+    "CC_last.npy": 1,
+    "CC_all_native.npy": 1,
+    "CC_train_rms.npy": 1,
+    "CC_train_mean.npy": 1,
+    "token_ids.npy": 448,
+    "SAE_nmse.npy": 448,
+    "CC_nmse.npy": 448,
+    "SAE_ptr.npy": 448,
+    "SAE_ids.npy": 448,
+    "SAE_z.npy": 448,
+    "CC_ptr.npy": 448,
+    "CC_ids.npy": 448,
+    "CC_z.npy": 448
+  },
+  "files": [
+    {
+      "path": "forward/context_CC.npz",
+      "keys": [
+        "counts.npy",
+        "sum_z.npy",
+        "sum_z2.npy",
+        "decoder_norm.npy",
+        "seq_id.npy",
+        "n_positions.npy"
+      ]
+    },
+    {
+      "path": "forward/context_SAE.npz",
+      "keys": [
+        "counts.npy",
+        "sum_z.npy",
+        "sum_z2.npy",
+        "decoder_norm.npy",
+        "seq_id.npy",
+        "n_positions.npy"
+      ]
+    },
+    {
+      "path": "forward/decoder_scales.npz",
+      "keys": [
+        "SAE.npy",
+        "CC_last.npy",
+        "CC_all_native.npy",
+        "CC_train_rms.npy",
+        "CC_train_mean.npy"
+      ]
+    },
+    {
+      "path": "forward/documents_CC.npz",
+      "keys": [
+        "counts.npy",
+        "sum_z.npy",
+        "sum_z2.npy",
+        "decoder_norm.npy",
+        "seq_id.npy",
+        "n_positions.npy"
+      ]
+    },
+    {
+      "path": "forward/documents_SAE.npz",
+      "keys": [
+        "counts.npy",
+        "sum_z.npy",
+        "sum_z2.npy",
+        "decoder_norm.npy",
+        "seq_id.npy",
+        "n_positions.npy"
+      ]
+    },
+    {
+      "path": "forward/reference_CC.npz",
+      "keys": [
+        "counts.npy",
+        "sum_z.npy",
+        "sum_z2.npy",
+        "decoder_norm.npy",
+        "seq_id.npy",
+        "n_positions.npy"
+      ]
+    },
+    {
+      "path": "forward/reference_SAE.npz",
+      "keys": [
+        "counts.npy",
+        "sum_z.npy",
+        "sum_z2.npy",
+        "decoder_norm.npy",
+        "seq_id.npy",
+        "n_positions.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_01_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_01_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_01_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_01_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_01_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_01_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_02_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_02_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_02_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_02_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_02_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_02_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_03_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_03_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_03_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_03_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_03_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_03_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_04_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_04_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_04_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_04_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_04_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_04_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_05_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_05_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_05_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_05_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_05_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_05_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_06_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_06_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_06_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_06_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_06_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_06_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_07_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_07_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_07_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_07_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_07_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_07_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_08_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_08_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_08_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_08_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_08_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_08_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_09_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_09_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_09_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_09_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_09_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_09_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_10_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_10_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_10_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_10_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_10_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_10_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_11_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_11_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_11_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_11_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_11_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_11_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_12_B1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_12_B2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_12_BU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_12_M1.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_12_M2.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/context/CTX_12_MU.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_00938.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_01506.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_01511.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_02109.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_02231.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_02692.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_03118.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_04457.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_05151.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_05981.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_06307.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_06414.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_06704.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_06931.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_07322.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_07890.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_08818.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_10159.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_10652.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_11061.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_11397.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_11578.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_12377.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_12675.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_12685.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_13056.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_14362.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_15328.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_15333.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_15743.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_15747.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_15749.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_16081.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_16359.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_16728.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_16735.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_17741.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_17826.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_17931.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_17932.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_18110.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_18119.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_18483.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_18794.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_19642.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_20186.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_20507.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_20924.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_22058.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_24483.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_29157.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_31730.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_32445.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_37485.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_42253.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_50953.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_54702.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_55499.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_56158.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_biology_59448.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_00879.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_01537.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_01538.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_02237.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_02292.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_04432.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_06455.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_06566.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_06624.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_07356.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_07649.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_07931.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_07933.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_08104.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_08596.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_09429.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_09430.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_11720.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_11798.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_11964.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_13906.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_14603.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_14751.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_15055.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_16543.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_16989.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_19623.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_19685.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_20499.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_20925.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_21305.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_23393.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_23768.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_24153.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_24496.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_28473.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_28475.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_29560.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_30823.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_32394.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_34829.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_35867.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_38548.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_40751.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_40866.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_41032.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_41528.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_43664.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_43665.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_43807.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_44619.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_45758.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_47462.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_48095.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_48467.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_48580.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_49929.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_50447.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_50977.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/documents/DOC_math_52754.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_000.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_001.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_002.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_003.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_004.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_005.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_006.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_007.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_008.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_009.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_010.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_011.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_012.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_013.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_014.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_015.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_016.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_017.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_018.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_019.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_020.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_021.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_022.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_023.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_024.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_025.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_026.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_027.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_028.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_029.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_030.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_031.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_032.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_033.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_034.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_035.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_036.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_037.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_038.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_039.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_040.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_041.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_042.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_043.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_044.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_045.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_046.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_047.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_048.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_049.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_050.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_051.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_052.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_053.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_054.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_055.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_056.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_057.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_058.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_059.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_060.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_061.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_062.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_063.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_064.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_065.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_066.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_067.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_068.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_069.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_070.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_071.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_072.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_073.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_074.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_075.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_076.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_077.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_078.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_079.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_080.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_081.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_082.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_083.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_084.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_085.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_086.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_087.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_088.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_089.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_090.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_091.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_092.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_093.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_094.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_095.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_096.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_097.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_098.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_099.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_100.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_101.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_102.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_103.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_104.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_105.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_106.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_107.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_108.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_109.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_110.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_111.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_112.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_113.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_114.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_115.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_116.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_117.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_118.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_119.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_120.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_121.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_122.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_123.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_124.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_125.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_126.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_127.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_128.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_129.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_130.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_131.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_132.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_133.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_134.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_135.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_136.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_137.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_138.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_139.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_140.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_141.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_142.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_143.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_144.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_145.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_146.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_147.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_148.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_149.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_150.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_151.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_152.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_153.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_154.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_155.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_156.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_157.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_158.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_159.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_160.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_161.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_162.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_163.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_164.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_165.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_166.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_167.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_168.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_169.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_170.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_171.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_172.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_173.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_174.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_175.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_176.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_177.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_178.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_179.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_180.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_181.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_182.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_183.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_184.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_185.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_186.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_187.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_188.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_189.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_190.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_191.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_192.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_193.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_194.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_195.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_196.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_197.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_198.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_199.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_200.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_201.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_202.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_203.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_204.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_205.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_206.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_207.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_208.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_209.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_210.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_211.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_212.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_213.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_214.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_215.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_216.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_217.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_218.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_219.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_220.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_221.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_222.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_223.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_224.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_225.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_226.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_227.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_228.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_229.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_230.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_231.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_232.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_233.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_234.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_235.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_236.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_237.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_238.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_239.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_240.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_241.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_242.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_243.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_244.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_245.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_246.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_247.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_248.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_249.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_250.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_251.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_252.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_253.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_254.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    },
+    {
+      "path": "forward/reference/DCLM_255.npz",
+      "keys": [
+        "token_ids.npy",
+        "SAE_nmse.npy",
+        "CC_nmse.npy",
+        "SAE_ptr.npy",
+        "SAE_ids.npy",
+        "SAE_z.npy",
+        "CC_ptr.npy",
+        "CC_ids.npy",
+        "CC_z.npy"
+      ]
+    }
+  ],
+  "source_code": "run_dual_forward.py returns SAE_h/CC_h transiently, sparse_save omits both; docs aggregates store latent moments only",
+  "related_R05": "A caches contain sparse latents, attention and layer_norm2_sum/count, not per-token real h or full covariance; no new R05 analysis",
+  "old_R03": "old independent corpus PCA/decoder supplement not R04 pooled math/bio; not substituted",
+  "missing_arrays": [
+    "120 x160 x1024 SAE native MLP-input h",
+    "120 x160 x1024 residual-post h"
+  ],
+  "minimum_refit_only_forwards": 60,
+  "full_requested_reproduction_forwards": 120,
+  "proposed_optional_replay_forwards": 4,
+  "proposal_cap_if_authorized": 124,
+  "FP32_two_hooks_bytes_160tokens": 157286400,
+  "FP32_two_hooks_bytes_full192tokens": 188743680,
+  "not_run": true
+}

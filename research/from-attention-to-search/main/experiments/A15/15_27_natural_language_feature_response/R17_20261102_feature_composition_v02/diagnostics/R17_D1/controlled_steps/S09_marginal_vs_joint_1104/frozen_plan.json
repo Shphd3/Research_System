@@ -1,0 +1,59 @@
+{
+  "UTC": "2026-11-04T01:57:58.570259+00:00",
+  "owner_anchor": "15_27_06",
+  "authorization": "Current direct user requests cache-only A-marginals/B-joint distinction; execute, preserve S08, stop for review after delivery",
+  "seed": 2026110409,
+  "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S08_dataset_support_overlap_1104",
+  "source_panel_sha256": "5f76553c673670666cb27eeff170e92c5017ccbd4e10f8c9a71b7493b304dd2d",
+  "source_cache_sha256": "f9e1fd866a42fc8f364259900baa4c493093396e6a4df9b6f18861b2fc0c2d8e",
+  "datasets": [
+    "Magicoder",
+    "GSM8K",
+    "MMLU"
+  ],
+  "missing": [
+    "Numina"
+  ],
+  "SAEs": [
+    "ATTN_SAE",
+    "MLPIN_SAE"
+  ],
+  "discovery_N": 128,
+  "heldout_N": 129,
+  "positions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "features": 30000,
+  "k": 32,
+  "selected_features": 24,
+  "selected_features_rule": "Discovery pooled position count >=32 and active in>=12 discovery documents, <=80% of3072position rows; highest pooled counts, tie featureID. Full276pairs define score; no holdout feature selection.",
+  "pair_rule": "Within all i<j. Cross same S08 cyclic-offset rule with newly fixed split/hash order: offsets1..(N-1)/2 for odd heldout129,8256distinct pairs/group. Discovery overlap is descriptive; main heldout.",
+  "null_chains": 4,
+  "null_draws_per_chain": 64,
+  "burn_sweeps": 100,
+  "thin_sweeps": 10,
+  "sweep": "ceil(number_of_rows/2) unordered-row pair proposals per stratum; include failed and unchanged trades",
+  "null_modes": [
+    "position",
+    "position_token3"
+  ],
+  "null_strata": "dataset x split x quantile; exploratory adds current token class: three discovery-pooled most frequent literal token IDs vs OTHER, fixed across datasets",
+  "A": "Discovery p(feature|dataset,quantile), independent Bernoulli rows, rowcount random with expected32;256whole heldout-size simulated datasets; compute actual per-pair Jaccard, no ratio-of-expectations substitution. Also exact-heldout-marginal+k32 conditional null: descriptive, not discovery forecast. Report gap reproduction ratio without clipping/causal interpretation.",
+  "A_bias": "Plugin sum(p^2) for within has finite discovery estimation bias; report unbiased intersection sum c(c-1)/(128*127) as separate audit, not an exact Jaccard. Discovery probability uncertainty not included in conditional heldout CIs; MCSE separately.",
+  "B": "Curveball with uniform allocation of row-exclusive union, common unchanged; exact binary row and column counts. Failed trades retained. Candidate pair vectors averaged8positions/document. Discovery own-null residual direction v_d and contrast v_AB frozen before heldout.",
+  "B_primary": "6own and6dataset-differential signed projections, two explicitly separate Holm6families, one-sided conditional-null p. Heldout whole-document999bootstrap CI conditional on discovery directions and estimated null center. Require lowerCI>0, Holm<.05, null mixing adequate. Opposite sign not-support; intervals spanning0insufficient. Near-zero calibrated result no detected excess for these statistics, not absence of all possible joint structure.",
+  "B_secondary": "24member-count histogram, discovery-top8 exact binary patterns+OTHER,12illustrative pairs selected only on discovery among276 (6pooled-positive,6max-dataset-residual-range, min4coactivating discovery docs in any source); report all selected heldout values, failures and raw coactivation-minus-p_i*p_j. No classifier.",
+  "mixing": "Four-chain split-Rhat<=1.10 and conservative autocorrelation ESS>=100 for decision-bearing scalar traces; original-edge retention within .05of margin-constrained expectation on average, all counts exact. If fails, one preallowed burn500/thin50rerun same statistic; preserve first. If still fails flag insufficient, continue independent conditions. Report locked columns, low-n token strata and changed-trade rates.",
+  "controls": "S08 metadata length/format/source/token differences retained. No independent format matching in S08 or here. Token-stratified conditional null exploratory, directions frozen from base discovery; no rescue of failed primary. Complete question/position sampling unchanged. No new texts, forwards, weights, training, interventions or router.",
+  "CPU_threads": 2,
+  "GPU": 0,
+  "scientific_acceptance": "Unknown",
+  "question_closure": "Unknown"
+}

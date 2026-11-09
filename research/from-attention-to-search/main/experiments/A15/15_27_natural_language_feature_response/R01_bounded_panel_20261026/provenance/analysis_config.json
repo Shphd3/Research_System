@@ -1,0 +1,55 @@
+{
+  "experiment_id": "A15_27_R01",
+  "processing_agent": "/root",
+  "name_cn": "1026-自然语言Feature：上下文响应与关系组",
+  "object": "E16 native single layer SAE on official Qwen3-0.6B",
+  "sequence_budget": {
+    "panel_maximum": 288,
+    "replay_planned": 4,
+    "all_model_forwards_maximum": 1000,
+    "max_tokens_per_sequence": 256
+  },
+  "execution": {
+    "surface": "current_container",
+    "resource_profile": "USER_AUTHORIZED_EXISTING_RESOURCE",
+    "basis": "User explicitly requires existing available resources and prohibits new resource allocation; this overrides default submission profile for this task only",
+    "python": "/root/anaconda3/envs/spectral-hier/bin/python",
+    "pythonpath": "/data/250010109/dependency_packages/hf_transformers_qwen3",
+    "model_dtype": "bfloat16",
+    "sae_dtype": "float32",
+    "batch_sequences": 1,
+    "use_cache": false,
+    "no_grad": true,
+    "training_updates": 0,
+    "intervention": false,
+    "TEST_read": false
+  },
+  "measurement_qualification": {
+    "discovery_and_holdout_mean_target_nmse_max": 0.15,
+    "discovery_and_holdout_p90_target_nmse_max": 0.3,
+    "finite_activations_required": true,
+    "decoder_formula_relative_error_max": 1e-05,
+    "replay_sequences": 4,
+    "replay_z_absolute_tolerance": 1e-05,
+    "replay_z_relative_tolerance": 0.0001,
+    "failure": "Stop dependent interpretation, preserve measurements, do not replace assets/retrain/retune thresholds"
+  },
+  "text_authority": [
+    "panel/qualified_cases.jsonl",
+    "panel/tokenized_sequences.jsonl"
+  ],
+  "statistics": "offline/statistical_plan.json",
+  "forward_script": "run_forward.py",
+  "phase_order": [
+    "pre_forward_freeze",
+    "discovery_forward_and_replay",
+    "discovery_local_qualification",
+    "discover_candidates_scales_regression_clusters",
+    "candidate_freeze",
+    "holdout_forward",
+    "holdout_local_qualification",
+    "evaluate_without_refitting",
+    "static_figures_and_audit"
+  ],
+  "auxiliary_readout": "Prespecified semantically compatible next-token candidate log probabilities for B/C only; no unique correct next token or functional success label. A NA. Top5 predictions diagnostic only."
+}

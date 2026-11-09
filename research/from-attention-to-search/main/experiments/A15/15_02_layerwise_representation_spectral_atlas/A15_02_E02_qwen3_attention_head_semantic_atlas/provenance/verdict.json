@@ -1,0 +1,94 @@
+{
+  "T_attention": {
+    "ci_high": 1.209640922199171,
+    "ci_low": 0.6039342904344014,
+    "estimate": 0.6106198000661935
+  },
+  "attention_depth_clause_pass": true,
+  "calibration_counts": [
+    32768,
+    32768
+  ],
+  "capability_pass_at_layers_35_36": true,
+  "elapsed_seconds": 99.82913374900818,
+  "figures": [
+    "figure1_layer_head_discriminability_atlas.png",
+    "figure2_head_localization_and_global_null.png",
+    "figure3_selected_head_16band_atlas.png",
+    "figure4_selected_head_covariance_spectra.png"
+  ],
+  "global_late_head_permutation_q95": 1.7460427820682525,
+  "individual_head_localization_pass": true,
+  "leave_parent_T_attention": [
+    0.5097805748456079,
+    0.7156650415873378,
+    0.5830130313810945,
+    0.6297679397702082,
+    0.7785240961364464,
+    0.6613757155009541,
+    0.4651479640807905,
+    0.6510957400129873
+  ],
+  "maximum_energy_conservation_relative_error": 5.4057789384387434e-05,
+  "numeric": {
+    "maximum_basis_orthogonality_error": 2.080114868000437e-15,
+    "minimum_eigenvalue_over_head_eigenvalue": 0.0
+  },
+  "passing_spectral_band_count": 0,
+  "qualified_head_count": 9,
+  "qualified_heads": [
+    {
+      "R": 2.424561023712158,
+      "head": 27,
+      "layer": 30
+    },
+    {
+      "R": 2.0880126953125,
+      "head": 5,
+      "layer": 30
+    },
+    {
+      "R": 1.983502984046936,
+      "head": 15,
+      "layer": 32
+    },
+    {
+      "R": 1.9570194482803345,
+      "head": 8,
+      "layer": 31
+    },
+    {
+      "R": 1.9567352533340454,
+      "head": 25,
+      "layer": 30
+    },
+    {
+      "R": 1.9173007011413574,
+      "head": 10,
+      "layer": 33
+    },
+    {
+      "R": 1.8859589099884033,
+      "head": 20,
+      "layer": 32
+    },
+    {
+      "R": 1.7798041105270386,
+      "head": 11,
+      "layer": 31
+    },
+    {
+      "R": 1.7795299291610718,
+      "head": 14,
+      "layer": 34
+    }
+  ],
+  "template_T_attention": [
+    0.5803257962008534,
+    0.21131233877696864,
+    0.3385902733086625,
+    0.6349421932102868
+  ],
+  "typed_verdict": "attention_depth_pass_head_localization_pass_spectral_fail",
+  "within_head_spectral_specificity_pass": false
+}

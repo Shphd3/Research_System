@@ -1,0 +1,116 @@
+{
+  "status": "COMPLETE",
+  "config_sha": "dc8a3a886d97caf64d2ac97279056edc89818c7cbf727a1adfb662e47725d14e",
+  "code_sha": "5bbbad26e2f3bdb65166bdbbbfb3a7b7cb3b6d97f699f3a5fd177fd4502d89e5",
+  "all_8_training_models_complete_before_DEV_loss": true,
+  "no_DEV_model_selection": true,
+  "DEV_primary": {
+    "Delta_T": {
+      "metrics": {
+        "N": 10340,
+        "overall": 0.0010013558362337882,
+        "low_union": 0.0008712727888447374,
+        "low_union_N": 1701,
+        "low_pool_N": 1694,
+        "low_estimable_N": 838,
+        "low_unestimable_N": 856,
+        "low_macro": 0.0009894483801958039,
+        "low_support20_N": 0,
+        "low_support_median": 0.0,
+        "high_union": 0.0010013558362337882,
+        "high_union_N": 10340,
+        "high_pool_N": 1097,
+        "high_estimable_N": 1097,
+        "high_unestimable_N": 0,
+        "high_macro": 0.0010453271502255637,
+        "high_support20_N": 1097,
+        "high_support_median": 1135.0
+      },
+      "bootstrap": {
+        "replicates": 1000,
+        "seed": 20261020,
+        "unit": "whole DEV dialogue",
+        "interval95": [
+          -0.003038631487187877,
+          0.004786134236440427
+        ],
+        "dialogues": 128,
+        "feature_missing_in_resample": "NA then macro over estimable TRAIN-fixed B1 IDs",
+        "seed_uncertainty": "Two paired seeds remain descriptive; resampling is conditional on these seeds"
+      }
+    },
+    "Delta_R": {
+      "metrics": {
+        "N": 10340,
+        "overall": -0.00021536445137540372,
+        "low_union": -0.0017844571846688535,
+        "low_union_N": 1701,
+        "low_pool_N": 1694,
+        "low_estimable_N": 838,
+        "low_unestimable_N": 856,
+        "low_macro": -0.0014719116667608941,
+        "low_support20_N": 0,
+        "low_support_median": 0.0,
+        "high_union": -0.00021536445137540372,
+        "high_union_N": 10340,
+        "high_pool_N": 1097,
+        "high_estimable_N": 1097,
+        "high_unestimable_N": 0,
+        "high_macro": -0.0004943847970479773,
+        "high_support20_N": 1097,
+        "high_support_median": 1135.0
+      },
+      "bootstrap": {
+        "replicates": 1000,
+        "seed": 20261020,
+        "unit": "whole DEV dialogue",
+        "interval95": [
+          -0.007367361955163933,
+          0.003529811673577647
+        ],
+        "dialogues": 128,
+        "feature_missing_in_resample": "NA then macro over estimable TRAIN-fixed B1 IDs",
+        "seed_uncertainty": "Two paired seeds remain descriptive; resampling is conditional on these seeds"
+      }
+    },
+    "interaction": {
+      "metrics": {
+        "N": 10340,
+        "overall": 0.001216720289056665,
+        "low_union": 0.0026557299860104546,
+        "low_union_N": 1701,
+        "low_pool_N": 1694,
+        "low_estimable_N": 838,
+        "low_unestimable_N": 856,
+        "low_macro": 0.0024613600333099643,
+        "low_support20_N": 0,
+        "low_support_median": 0.0,
+        "high_union": 0.001216720289056665,
+        "high_union_N": 10340,
+        "high_pool_N": 1097,
+        "high_estimable_N": 1097,
+        "high_unestimable_N": 0,
+        "high_macro": 0.001539711949464778,
+        "high_support20_N": 1097,
+        "high_support_median": 1135.0
+      },
+      "bootstrap": {
+        "replicates": 1000,
+        "seed": 20261020,
+        "unit": "whole DEV dialogue",
+        "interval95": [
+          -0.00388754357992656,
+          0.009839267160791521
+        ],
+        "dialogues": 128,
+        "feature_missing_in_resample": "NA then macro over estimable TRAIN-fixed B1 IDs",
+        "seed_uncertainty": "Two paired seeds remain descriptive; resampling is conditional on these seeds"
+      }
+    }
+  },
+  "primary_decision_rule": "Delta_T<0 and interaction<0; inspect both whole-dialogue intervals; two paired seeds remain exploratory",
+  "seconds": 18.25494334474206,
+  "rss_peak_bytes": 1912193024,
+  "gpu_peak_allocated_bytes": 601494016,
+  "gpu_allocated_bytes": 344721408
+}

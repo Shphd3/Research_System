@@ -1,0 +1,951 @@
+{
+  "analyzed_layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "calibration_batches": 16,
+  "calibration_shape": [
+    128,
+    512
+  ],
+  "device": "cuda:0",
+  "elapsed_seconds": 311.3062424659729,
+  "hidden_width": 4096,
+  "hooked_layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "inference_dtype": "bfloat16",
+  "mode": "full",
+  "model_path": "/data/share/Qwen3-8B",
+  "moments": {
+    "0": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "cc2736e128619e173e00b2b749bc80f7d4c9605b40a575b48d15fab142de0a7d",
+        "7093e17b072f0d6452d5f6ec6d439711d58f21d03dd48a28d66ea8d1f39622bf"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_00.pt",
+      "sum_hashes": [
+        "57da77acca015eeb5b502fcc4295d622652fa7f6c96849aab35f656ccf9940a8",
+        "f7783a833d3bc92d7afce5480d2d769c9b55c8e377ac36e9034244f17f1cb32a"
+      ]
+    },
+    "1": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "31dfa7a7deb97763bf5a3dd7ebc3f9322d31d3570e5feafa30e09f07cd969268",
+        "5382c5cafa9de1b0f0bd249a095e24edf330f9132eccda3b8412f7995b48e1f3"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_01.pt",
+      "sum_hashes": [
+        "980bc98dac3290824bec946dc3daf67d5e2b877ce593ba5111809dc380046239",
+        "25fc268d51131aaf0404df9180cca73821f9fada20f7034e96c65ae62558c8be"
+      ]
+    },
+    "10": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "fd51e3f6e6caa371daef3e291bd222919b8ad0fb1be0e584e8cfd54ba2d90a39",
+        "af85263d198029097a7b87dbb54ddd235517993be9f54d3197c9e58ccebf84db"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_10.pt",
+      "sum_hashes": [
+        "aba9fc4ed13cf9d80e1bba37b6d3c318f42f0a77dfdca4250c883d377550c7ca",
+        "5a5173ecd8e62ec086b461a8ab4ce70e5bd6fb9a8cf46c26773f7b4846f2d84d"
+      ]
+    },
+    "11": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "59fdea4ac20eabfe38320875347fc7a911799edf1c21a29c80bde9d013eab97d",
+        "d4741b79e0d0c413d9d85427aad7f3bbd37119263ee3ae6580b2959c345356cb"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_11.pt",
+      "sum_hashes": [
+        "30c006d1f941d4445fed1305c4fb0162923b77d79ab7901d71f2b53987a37ade",
+        "3c16321516e5b5e5e5925790fee16f4ec48327d0d214869457c892653e994aa9"
+      ]
+    },
+    "12": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "0d777ecf2b6e8fb616d04fd5a6a81a236bbefbd0acd33c865f4f45957d4c453f",
+        "d03fd1f014e891f3c96b0d3c983ce000f2f30ca7460c36f3270aa88de8ff92c2"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_12.pt",
+      "sum_hashes": [
+        "764eec578c5df6caa51864c2f3e9d59db99c27404277f52d713e8e1109efe477",
+        "e7985796f8cef0b49c0f8970dc7da9eb8e64e9bea1a26047911959181cad6258"
+      ]
+    },
+    "13": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "1d2cd957e3b714aab4434a21fc88c8f84366327753c479fa3fcfdbc526f594dc",
+        "0cf69bfaf0de13b914251b5d249d63dc211a0d7a92442393066645c3b7168736"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_13.pt",
+      "sum_hashes": [
+        "0d4ec98545e8de58f41f4b7d25d6951782630ba7b1e51e8a7702371ed055a880",
+        "3b47ff1c3255716b22e90f5c521f85ad71bdd8e169ee815769587921fdf8adb8"
+      ]
+    },
+    "14": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "68a2d84e0ce9203a8031a8120f2474c08d80ba7d6abad011d5e7bcaed3bdb0f1",
+        "0ebb7bfacd6a552789bc83daa4892b6848dcfde46aca9c9103e023101709749d"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_14.pt",
+      "sum_hashes": [
+        "9981cf70662e33128b62a4c1032dd033a75dce466f19fa3aff9a3dc8060adc57",
+        "4e491e6c2d15c1e312fe145ea24f687be1c2cd21a00aa96b630645501353ea44"
+      ]
+    },
+    "15": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "6eefa672acd9745951b297a4664daedd6f280eb3e99764698922fa022d9e5d50",
+        "b4469b383e4afc7b8508f9389d6b5d8a953733130c46a9a851ec0fc7f30fbaa1"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_15.pt",
+      "sum_hashes": [
+        "9651b364fc3288e72bd701e8d96ec0acacde0561f0c85d1480d64d390744e645",
+        "235e09eecaa48233bbd05e61b59be828c5adb79aaa152decb63cb92b1c716477"
+      ]
+    },
+    "16": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "2337c5cea504d6cd88e9c94c12ac602274c87ac373a494fe433b566b76218cc7",
+        "9561452fdccbd310cf5b63030b764324075021a1b167c4d8c714aa38ac784596"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_16.pt",
+      "sum_hashes": [
+        "218817199c1d17c3dff5d88edd8ec1ca9e38afa71dcbe7d96c7414faff8d6c68",
+        "4950d47cef468ae8778e83c3906f200d5783ffba0f2197bf9dc44c838fc28941"
+      ]
+    },
+    "17": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "23d1ea02687bf8085d3f60b6f5fc92250c8f7387fae0b4ad2c98f937fff51b7c",
+        "1acd36d509bebb4613da7bd653cef3053c67af17bf600022350d2b54a0c8fe7c"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_17.pt",
+      "sum_hashes": [
+        "4dfc876a5c8e76243bbceba743778ca2f8524123c6cb4e5f560d1628fc5fa1f1",
+        "1fb3ad2bcdfc19e541135c9fecf24ab9f8f47212da3a88a735a8d370cc0fcc2c"
+      ]
+    },
+    "18": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "a4fd2fb11736bfb9ecfd5a9deb9a1c3fdba0cfdf634a470c81893aa299c71aa1",
+        "c0badf1029335ca16d4af076ef9a942680895508c9f17e7981060bf7ed0da92c"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_18.pt",
+      "sum_hashes": [
+        "1eed6b0dd4bdd1f33f013c767fdbbae6e88a412704a59805b719c5ac449606af",
+        "e37b636d1af3888c049d57cf4106b331794daa551097a2c4171320170db7908d"
+      ]
+    },
+    "19": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "8355713cd46f6bba3c6a59e9974f269b00b4f9e7ef292712b883e605c982d8f4",
+        "bbb554c78f8767a50eb75a4bd84534cbc33de90477eacd2ae92c94bc59652ba5"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_19.pt",
+      "sum_hashes": [
+        "b9ce3414bc0f70bca9062859c45ab18227e0cdaafddee69404a2d24ddabfe752",
+        "5a231bd7017c5e8c3235185bd5f9783ee0204c6bda847efa1b3e49c02ef8de51"
+      ]
+    },
+    "2": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "eafb643269f5ccc2ef9321b5e6836ed210b34c72b985c004dd410aa03be18ff8",
+        "81b104a4d1ad090f34df875f30ba565b3f5a9eda84999687179ce5063b1e8e61"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_02.pt",
+      "sum_hashes": [
+        "8c7487d09bb22994a20e465f467dab6ac7c7de1bc7d47261444d5aeac9ebc1ba",
+        "01b34f935d18fcd11a8bde2354d2c80a339582783b928fd5172d01daaa074b2a"
+      ]
+    },
+    "20": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "3fe456bfca3f816ee14ded7164e76919af31366e793136f44e0ba9fd869cf75f",
+        "c1f7a0a579d1a98561847c09ef67448cbfd980228e769fcd7f1406e9d0d3c415"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_20.pt",
+      "sum_hashes": [
+        "8c8b5ef3575f2b664c99df7ab43c0e55d750738d69217fd11f54abff0eb5ae0c",
+        "8761829ec99fb7b459863998a3d2e8b205a276eeae8f741656cb35568be34c22"
+      ]
+    },
+    "21": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "49ad18adffbc13dab700b0ff2c50031ac3246e118df828b35fe27ae7c4a18fb7",
+        "9ffef9896c88da0b00aaf81060e3fb5dfa7d07c8aec9ccf183e8540a7b0ea4d3"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_21.pt",
+      "sum_hashes": [
+        "3801274ece64a7b290a92d535f3c3986b8985a04d7cbadd5c2d3aa0115cadcb2",
+        "2c68c0a4811feb9f044d49154a512a05d4c972137db187569b1d838bcd05f1f5"
+      ]
+    },
+    "22": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "07274228cbb1c0b0eb5b98e25a52e5fe7f5c6f788753fd5b118b91a33fc33044",
+        "4b1a7ce1554c3f8ec12d255e46753a6cfcf752b085de9d85a05e8df33aaa3669"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_22.pt",
+      "sum_hashes": [
+        "d1a6196720ec111ffb0d80b321aaa4802cd2873788ce83596f09d3092b0c12f8",
+        "e666fa1ba18dc78ed3292e94bb8d7bc069f3c7a907df88fefea8f2ea272da75f"
+      ]
+    },
+    "23": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "230554e5f09669fc425ce6dd488023041513c2a3e8ca2d94433ca00eb283c1ee",
+        "9b938b1bb6ace83f097b885235e92c660fb47928209aca78164db348333060e2"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_23.pt",
+      "sum_hashes": [
+        "4106294215c9d035eb6e5f8b3e13ae6fd4eee9c08b73b7f8ce1f0802e206759e",
+        "d64c5fd50150041e8e39c270337348bdd8effa35c8c2f4bc002780862f6a10ba"
+      ]
+    },
+    "24": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "76cc42fd52bb98128f2359624da94fbba5b34697bfd046de5f55d071273775cf",
+        "add21ac48166972483267025d5b80eed657395e09342e8f9fc4151d89cb8e313"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_24.pt",
+      "sum_hashes": [
+        "b3c8655a5486eb8a3761f1c5a98c5df0a2b49161b947a3b347cb0484ba8e1463",
+        "7b0aa56a11005e181a2057f4e11b1842e7e67d5924fa11411b15808b8d0a0cfc"
+      ]
+    },
+    "25": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "ef9457960c7dcf4dd9969ee7f0e2b22cb6100a22a6bb871d099387f00ca9f71a",
+        "6b8a01a32b80882da53147cc4e67393e08078041978db77775d5613751e35e5e"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_25.pt",
+      "sum_hashes": [
+        "8182402f87e393a84fd67c2b9ea5180e13df6d54049e98f15e17354759737722",
+        "2df0b80f09379efb14947ad83433b9eff309d49e216977bf6ad7e4308b956ef9"
+      ]
+    },
+    "26": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "6c649b78bc76167199ab49269cd45eee7daa9128ac0d62346dd9b13d075569c6",
+        "62327cebd99b3ab06f49e1f09b10b86b94adebfc39d6003da70d6ec6d9479967"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_26.pt",
+      "sum_hashes": [
+        "2e87b9db0c21c1ce583e5b6582c9d124f51323bf2e93e9750b7259bba9ea445a",
+        "8896ac7d734c27f6d2e87adc83bf396e22bd1fdb43db7cbe6f0fb9e929cda655"
+      ]
+    },
+    "27": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "3f4af49b38e09ddfe8b054cb7517e9dc10ec4e337aac5b97b570fc4f7967b0ce",
+        "8bd062f019fed964c1248ce8950a0855eae5c2811930275fb2220f1bd3a8cb0d"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_27.pt",
+      "sum_hashes": [
+        "8a3fd3db4756576899574b439fd4e191d18285cc2bb31c98fc9bed30e2b1c0ff",
+        "43d35aab86ae273a10fb6746e88024a518ea1a89c115763ef78f73c29b3cfee8"
+      ]
+    },
+    "28": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "01146ffb42fb1df9e5c8928df1225c2f207707685c05a47a3132459c332f0be7",
+        "a2d30cc4f9fee6db1877c6024ba33992806386a08156ed6f3304b8b7afe76069"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_28.pt",
+      "sum_hashes": [
+        "9063287ecc89dfa09be0581d835a923c3e6fd76ef33e613ac5facc27727707e4",
+        "a5ac3037697af90ef858d5917d59dc6b9c2588b1afbcdd49efb7e8e77948e026"
+      ]
+    },
+    "29": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "00ea6fcf24eda607e062d8fa234130fbc33c2f8322dca7c1f5aaa9ea59d8335d",
+        "c8fbddc8a86aa109d2bcc3047580b05f5dd47018c7a4bbb4db33d120f7744155"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_29.pt",
+      "sum_hashes": [
+        "6a58eefd71c92695babcb4fb45d8b745f7fdfe2c992ce92504f0b1638c4cb4d1",
+        "48810e1d3871e251d3caf994423d54c5fea95fa1f1472f962df13176d5e0d773"
+      ]
+    },
+    "3": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "4cc37e1f5e3e175e963d163426349f8ec7fcf1925cb24a6953588a74a74ed712",
+        "360084d80a29e8b1115f03c249c5b983e783252622d972fa72204904a17986fe"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_03.pt",
+      "sum_hashes": [
+        "02a904993b4db0b0ac07a006c8df38e508cceecccb9fdbd2a2b9cfc063285ecc",
+        "729519d8d2244e9ca15c45431776461e4eea7c1c80aa781e9ee578a0d7ea6142"
+      ]
+    },
+    "30": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "c0728f252bbfeef660c3c604787a69fabcdcf23307bd655e0213440311ae7d86",
+        "9b3fd80ce560eeb69c54ebbe8aac57f98d94ecd9b12e756455eb18f42bb8e1c8"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_30.pt",
+      "sum_hashes": [
+        "b16964d7852ed9fb11ee0768bb88bf279684c8e0d6a82049cfbe758b022f6782",
+        "3e5868bba4d1d06367ad88c7bb452d7e913ec04d66b392fdb8786302b3cc0acb"
+      ]
+    },
+    "31": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "b6b2811da6c5f9873475548bb250994a5e0a271e2fe9cd4cc15a9c6d9fbd61ba",
+        "888cac94f35d47d5a2d1b3c088484e58a98aef9b65d649ba0fd8fe0bf36fd5db"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_31.pt",
+      "sum_hashes": [
+        "b3c37ccf5df99050e8db7b44a99bfcc3377e56580a7720baaf082777f42bc0da",
+        "9c53f29e9d6e7132e344e32f5abd2cdaffa6ee8726c5146d3f20cb936ad48004"
+      ]
+    },
+    "32": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "0f5d3e400887f3c03eec7bd8f0e84ea508064416328e3e24f4a223694ea2e859",
+        "575e3f76db58b315db76a448dbb8b9693c68c3ef3178159f70e5001f31b2c798"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_32.pt",
+      "sum_hashes": [
+        "8c0918c0180b701e5ae6e41a0fe1678256bfb8285003e27941212e426644e9af",
+        "bb5f61fc2c3509aba41879206f62473aaaf8a25e6705195d9612f64765912b25"
+      ]
+    },
+    "33": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "82f2cfb3134f828aa817d9fb59ea13569014324294dc60b645308b65b1aae98c",
+        "8c4061f24c29efed2d204ff1849293dcacf6e563cedf8df7497b63304e297056"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_33.pt",
+      "sum_hashes": [
+        "8b634dae05cf97c4df23eb0784003234beb6324dc4d2803dc4da5beb89c328cd",
+        "4a6eedd7bfcaa16ba5102cc44482f59bac2cd817e77f21cd96ef5a8c1be87c84"
+      ]
+    },
+    "34": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "db49e036999cbff3674a36816fe1fd9171e047fc404af1ed51c020e221381766",
+        "0c78832d3ea7e09e640f4844c4c3e59bfdc2c273d44bebb828f76dd30033d622"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_34.pt",
+      "sum_hashes": [
+        "403fbf8369bf9247531a742c4e9eece07cae9111218bae7a94b5cb3c0f4a5d34",
+        "3b5e898dcdd290a4c60e42b11e7347a6a146f38fb1ec2b83a46d4d7bd311640b"
+      ]
+    },
+    "35": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "556be5b3ea0c355f131107f6027b84d4a0ce3738d60eb819e22eb3d6a6024111",
+        "737fbd89ecfeb5e8c789083162878170f3db450899468717c2c9d9bf8c4a9d6b"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_35.pt",
+      "sum_hashes": [
+        "65222d96553671474181b3eac19304112fc5cd765e02a6c29c152db554d7511e",
+        "cf2a835eddab11db03519733ef10d0a2af91adbff937b557aea0cccc401f192c"
+      ]
+    },
+    "36": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "89c919e189a0e051ff212dc934838ee3568cf4e884ef2a1efc29d8f95962027a",
+        "8c63c85d0d417e59c69fab5c1da8843a1dbdad084271c93cdf33403e6d776d79"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_36.pt",
+      "sum_hashes": [
+        "810bd9261d71d23c5f170c407fcc406b6ddf62fc0dac95a7bc1a0a5ee2bb171a",
+        "5505d05670f636d130f15d450843223f47dd0d0798fe768bf110c86edcac083b"
+      ]
+    },
+    "4": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "d71513b7736099a968ba3c375ff1a207018812f16ddc82891a9c59348658499a",
+        "c9b1ee90cf68b5400ed38759cc26355125cfe94a92893c1e0d1a31fbc20942e3"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_04.pt",
+      "sum_hashes": [
+        "a306a34375d75d953c98cacf9dc687e5c2ec2c8437251d27bd9e1ece65b3c94e",
+        "8a6f46b1e75576da5949e617bcdb8ef4d0b79b0f6de1d7c5ebdcdf57e06e2963"
+      ]
+    },
+    "5": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "dfb32d3058c289d40dddfe6c8aa7dc19378971da602541f0609ea1a08b2f0f25",
+        "e68a81c7cc9985d3cef9221175ee45c9de14a3e487ec76fb642f903e5785c0f4"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_05.pt",
+      "sum_hashes": [
+        "7cb80574a320878675b93172661f99d4e8e45055ee12af6d8730946bc1ef5505",
+        "7da3771875259b501bbdc481e6106c794c72afeed2bbf17ff712be1c36151298"
+      ]
+    },
+    "6": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "5ae3237a42e9514c1858f67eb9db19513cf029c3245cc777f8323946fff5369c",
+        "3a85bc119cc58148e27bbc54c128fcab2a16da3266e53da27b561ae5767b0985"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_06.pt",
+      "sum_hashes": [
+        "40ffa38f95fac0c47c358563912a4449d58ef72a70b22d7565145c5965fcf13d",
+        "4a569d7a6f6f0ad9daab3f7c3788fa8282837a8f62ccfa3cc9c78271628309b7"
+      ]
+    },
+    "7": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "68cde8f60f09f6c5778747c6deea2964c7864915a525e6b7809063894aee55a0",
+        "94496f1d838866c4fc7ad6b59222c16b0d89b517d335727e9368116877262188"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_07.pt",
+      "sum_hashes": [
+        "0d71392cec418e358b7c4de520917dc3185e35c2c023ca58e7de407e2397a60f",
+        "55eca79f506712ded010c7b1d24f49a611d9299e5ef642453f77ce71717cfc53"
+      ]
+    },
+    "8": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "6471bae99bf7a7e0e40db6e2ba21fbc539280635ca20417f2064a5749983c68d",
+        "8c9aa7d3418fd210fe7ecaf24002f3f9fe7ba02381bf23b18bdf7fbdb8561c9c"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_08.pt",
+      "sum_hashes": [
+        "86cde26026a2a4c20cf71cf32cba0b581a71c4395c7b5131e45a76cb085fa4f1",
+        "f7d886d6fd7d84474487a47130106e359fd8922eb7d74c1498ada4d2b91e365f"
+      ]
+    },
+    "9": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "gram_hashes": [
+        "cff36737625bec063489d4d0dc1d460ba2adeb206ac546090a9ebfac1a0ac2c1",
+        "fa86dca7e04ae3f32e22450fecff183cff3f0802962e04498dbd3a5e9551b418"
+      ],
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/moments/layer_09.pt",
+      "sum_hashes": [
+        "181f7955e2a1ef8e4996ab669382caa7b1a87dd3d91ddad7d87036d7f620612b",
+        "47cd2a280935a16f58a7d20befbbe1447f762a58087b98297ae6ca5731108acb"
+      ]
+    }
+  },
+  "replay_max_abs_error": 0.0,
+  "representation": "embedding output (layer 0) and raw decoder-block output residual states (layers 1--36)",
+  "semantic_batches": 16,
+  "semantic_records": 256,
+  "semantic_state_rows": 464,
+  "states": {
+    "0": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_00.pt",
+      "sha256": "0a32f0441a6f8a0f637b994c341b25c3bc0932d941ecfaefb9176df4ac031b25",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "1": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_01.pt",
+      "sha256": "ce2bc5649585bcdf6e5b6a7c291e81b128c89478e5d1fb67927e7a27e9bfb845",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "10": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_10.pt",
+      "sha256": "a375d470cd1d795c285b35049828d88bb4722bae511b4d56844eb84f5c5fec95",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "11": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_11.pt",
+      "sha256": "feab247639a76b92d8d9fe48d579b0477a961326933cec767174c2dbc464c2cc",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "12": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_12.pt",
+      "sha256": "59ef6e8bfd3998a4a1df88ffda15061874f547f0e70bf6ff98ea3cc22ca3acdc",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "13": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_13.pt",
+      "sha256": "4ef78d9f58464949d8199d61e629df3934c8bf6d8d162d19c08fe5bafa373511",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "14": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_14.pt",
+      "sha256": "cc663937159937a0ee6f216e7921c3f4a541d338bd30bb7656367b9e0a92bd17",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "15": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_15.pt",
+      "sha256": "fba5bc82a0b4d46ea1fab67374e30cfc6d11ac84de646e0d5c34ad24a5032e4b",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "16": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_16.pt",
+      "sha256": "1fca51ff04cd3215da4912c73eef71254e30ac981278bc6e0cf3d3bf4e6e4fde",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "17": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_17.pt",
+      "sha256": "37bd2bccb09f75c792b9314597faa71798afccfd40f2799d58b75b61416165e1",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "18": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_18.pt",
+      "sha256": "ee575f2f1a16e7176df387abaa6a71415c29d3107c420b2b88012b2fbf0f5a1a",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "19": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_19.pt",
+      "sha256": "e4254423a0532491bc7b8c7a5b3c42bf5869af7464c4d56dd85d7e947119cb2d",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "2": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_02.pt",
+      "sha256": "991e84b38df8572df9adf5f6f2e9e70232fe44ff8f0340e763c08f3be212f03c",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "20": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_20.pt",
+      "sha256": "a1d9a6658488135afd85f0f6c66367c29d317f910bcc3b3a3bb09b358050518a",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "21": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_21.pt",
+      "sha256": "b035c4bf891365784e89169268c3950ffc539923fe2ec6a31786393cb01ecb29",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "22": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_22.pt",
+      "sha256": "c3a95edfeaeda7b759dbca81db31c94ba40a563de028d86a06d88f2082d975bc",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "23": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_23.pt",
+      "sha256": "40340efca3fb94e597dc53938358e70a4cec39d0c107e652e22468711993a0a0",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "24": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_24.pt",
+      "sha256": "5d4177e9e33270ee82db4e83f8435ff67cfcfe1f66bcf952024af998c47d785e",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "25": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_25.pt",
+      "sha256": "2bcf3f3d3561a347ec0d7b652c9b6a4ef6fd8eed1a4393a9e6207942dbdd053c",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "26": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_26.pt",
+      "sha256": "12e332796dfb99192d6fc6ceb651f69db5aa23da15a7e55eead54beae0c375d8",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "27": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_27.pt",
+      "sha256": "dae2b0c0bfa90b462c43985dd54f72f0aaa4624b4b1375d95f7e68d0e5f4f570",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "28": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_28.pt",
+      "sha256": "13d1971bf6cbd61080c6e2726ec247da24a587d2913b0b69774f28786fc16fc9",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "29": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_29.pt",
+      "sha256": "c5065cf0701e75c0381b81329191e7a3bafd618281bbaebdd7c30341909c0d9a",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "3": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_03.pt",
+      "sha256": "e93e2e89e55e464dc0cc0261da57ea3f75db463055ebd3a3687a5da4db9154cb",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "30": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_30.pt",
+      "sha256": "b58e4143c88c1ffe41597337f336838a6c9e418a98427f2b198caa6faf5db0b4",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "31": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_31.pt",
+      "sha256": "598cafad587934431cccaf2a39e67b7e08db65b93476ff31cef7d9ae420e4b98",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "32": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_32.pt",
+      "sha256": "acf7e906473bca640fb8b71c00e84b9925de8dfaede6fc23c53a23f0f2b7e4c2",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "33": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_33.pt",
+      "sha256": "e4cbc11a1d5209abd0cc5265ccaddd6d67b003d9d1344372ce2dceddd01e0eea",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "34": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_34.pt",
+      "sha256": "61d9c692bed1f350364d51d50edd39a9f706dd1765e6016d4a32fcea17e83cbe",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "35": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_35.pt",
+      "sha256": "fec2a3cdc16a563fa835488510b0d4a8235b6652d3f91ce147c01ddbb39e65e4",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "36": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_36.pt",
+      "sha256": "9f4344eb67e9411f51cfb84c4aa3d67f24957e0e7d6cd8934b7a7d24def2b6b5",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "4": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_04.pt",
+      "sha256": "b4cdde555a241a6480fe7dc1a1225ae792e759641c452946ebb8b7a3ad70f7bf",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "5": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_05.pt",
+      "sha256": "bdf1503a50f4cc8b24c351f80f5102aaa23337c116d00d4b0f775446f01f8ed1",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "6": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_06.pt",
+      "sha256": "640f18da42b456c661c2c2bea8f432a77eb5691f4b1688a0fd45744e9cde10c2",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "7": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_07.pt",
+      "sha256": "1d63228ba7227a57837d5e54f8b2c5deac8cddcd0d2c25532ce2999b35205348",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "8": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_08.pt",
+      "sha256": "38e489ce5ba7998cf616cec6240309d65c226f699ab2bf91e852beb803909ac7",
+      "shape": [
+        464,
+        4096
+      ]
+    },
+    "9": {
+      "path": "XingyuD/MoE_Routing_Experiments/active/a15_01_03_e02_qwen3_independent_covariance_role_atlas/runs/full/semantic_states/layer_09.pt",
+      "sha256": "5e6eaab20b32ff4c7addb12b7af05cd90283d3e57f2c0d5c17c19a2e7714ca08",
+      "shape": [
+        464,
+        4096
+      ]
+    }
+  }
+}

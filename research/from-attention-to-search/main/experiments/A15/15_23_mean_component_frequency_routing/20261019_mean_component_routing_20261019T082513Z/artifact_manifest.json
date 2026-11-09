@@ -1,0 +1,46 @@
+{
+  "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/mean_component_frequency_routing/20261019T082513Z",
+  "protocol_sha256": "c889f4189bd9fe0189dcace05689f0f9a9d869ac28b17c76e66e362da6d0a20b",
+  "anchor_sha256": "4706691bae10c6bdf0c1499394da9172a3d0c02e4c97b48023146e186d97715f",
+  "input_hashes": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/cache/groups.npz",
+      "bytes": 157471,
+      "sha256": "d9752a60d661aa7ae69a42e7d6319012db21b47237b15638c2828a7ce3ec677a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/cache/train_definition.npz",
+      "bytes": 427578,
+      "sha256": "e36d79fb504747153c0d73ab19fce3f19c6c5b7cf04d13bc147543c14f2fdfb7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/train.jsonl",
+      "bytes": 2322046,
+      "sha256": "5530f9676c3d7941150e404c045ad62815a11310d8b1ec4904c209121ddb8ad5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/data/eval.jsonl",
+      "bytes": 577180,
+      "sha256": "63a31b625a8b55c709c777d50f12db44fa8ca05d6b611f8a1d2998485d320962"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/train.pt",
+      "bytes": 388181399,
+      "sha256": "530f911094210693bf4a7687f56fa8640163cafeb73d4c1d457f916586a04e12"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/eval.pt",
+      "bytes": 101373256,
+      "sha256": "ea77d4c29a9807b1d48acd8cf54c8c0bdd4dd74ee3c83d13f6c85660f388a268"
+    }
+  ],
+  "output_manifest": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/mean_component_frequency_routing/20261019T082513Z/provenance/output_manifest.json",
+  "selected_evidence": "selected_evidence_manifest.json",
+  "completion_receipt": "completion_receipt.json",
+  "source_code": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/mean_component_frequency_routing/20261019T082513Z/code",
+  "data_not_copied": true,
+  "old_results_not_overwritten": true,
+  "qualification": "frozen descriptive routing; C mechanism bounded by reconstruction degradation and BF16 drift",
+  "output_asset_id": "analysis_crosscoder_mean_component_frequency_routing_20261019t082513z",
+  "output_access": "provenance/output_access.json"
+}

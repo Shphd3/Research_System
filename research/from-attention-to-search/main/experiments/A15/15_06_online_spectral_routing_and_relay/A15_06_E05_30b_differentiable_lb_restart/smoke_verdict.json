@@ -1,0 +1,53 @@
+{
+  "status": "pass_with_posthoc_analyzer_repair",
+  "scope": "engineering_validity_only",
+  "seed": 17,
+  "arms": [
+    "vanilla_full",
+    "local_hmt",
+    "local_random_matched",
+    "relay_hmt",
+    "relay_random"
+  ],
+  "frozen_source": "/data/250010109/MoE_Router/experiments/20260809_online_spectral_router_30b_differentiable_lb_frozen_v5",
+  "source_manifest_sha256": "55728cbe1be8fe69aac0634fec5d86530ce14584e3b9e4bf5cdbb969354b2904",
+  "tests_passed": 23,
+  "model": {
+    "trainable_parameters": 251199232,
+    "active_parameters_per_token": 152108800,
+    "router_parameters": 24576
+  },
+  "lb": {
+    "lambda": 0.01,
+    "mode": "always_on_microbatch_switch_auxiliary",
+    "activation_checkpointing": "reentrant",
+    "all_layer_terms_require_grad": true,
+    "distributed_per_layer_upstream_receipt_bf16": 0.010009765625,
+    "all_rank_layer_receipts_nonzero": true,
+    "all_rank_total_gate_hooks_nonzero": true,
+    "all_single_gpu_lb_only_gate_gradients_nonzero": true,
+    "all_shadow_lm_plus_lb_update_deltas_nonzero": true
+  },
+  "pairing": {
+    "step0_parameter_sha256": "dd25272ba2e8c61917f7178adb0844de8892d4eef1bdcdf140a4e6cfe33eb7fe",
+    "rank0_batch_sha256_by_step": [
+      "0fdb47361553d7dc60f41377802346b16682305157613bb03909a57c154480fc",
+      "2965c5d74d5d5338253eefcfc01a6810d4cd7cb20594625c9440e2f1b4439cc9",
+      "a2962c3f895574b74ce90f912ad94b59989f5b57cf09eefebf386f30214f7bd5"
+    ]
+  },
+  "resume": {
+    "fresh_steps": [1, 2],
+    "resumed_steps": [3],
+    "checkpoints": [0, 2, 3],
+    "model_optimizer_scheduler_rng_data_and_online_state_restored": true
+  },
+  "smoke_job_ids": {
+    "vanilla_full": "pt-q3fv96zv",
+    "local_hmt": "pt-l0cinft9",
+    "local_random_matched": "pt-g3252aqj",
+    "relay_hmt": "pt-r61i50cr",
+    "relay_random": "pt-40e8rq0c"
+  },
+  "posthoc_repair": "The five jobs completed fresh and resumed training, then their frozen-v4 validator rejected valid bf16_zero optimizer filenames. Frozen-v5 changed only the filename glob and reconstructed all five pass verdicts from the saved evidence."
+}

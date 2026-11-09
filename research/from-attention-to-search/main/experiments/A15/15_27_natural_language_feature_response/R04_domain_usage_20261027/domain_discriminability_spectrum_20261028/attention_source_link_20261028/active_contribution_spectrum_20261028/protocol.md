@@ -1,0 +1,3 @@
+# Frozen offline supplement
+
+All-active source features, original matched attention pairs and frozen full PCA bases. Per-feature squared contributions are summed before normalization, keeping actual native amplitudes and excluding cross terms. Equal-active-member, synthesized-feature-vector and centered true-h distributions are separate checks. Eight primary mean-rank contrasts with document resampling and BH; original-pair32:192 sensitivity never rematches sources. No model forward, training, dictionary change, candidate reselection or PCA fit. Machine-readable config owns exact frozen settings.

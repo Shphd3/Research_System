@@ -1,0 +1,17 @@
+{
+  "actual_full_block_external_process_1_to_2": {
+    "data_cursor": true,
+    "optimizer": true,
+    "optimizer_step": true,
+    "order_sha256": true,
+    "rng": true,
+    "scheduler": true,
+    "tokens_seen": true,
+    "weights": true
+  },
+  "original_checkpoint": "/data/250010109/MoE_Router/experiments/20261024_a15_26_compositional_reuse/recovery/failed_71_G_613_sham_20261024T174419Z/checkpoints/step_000002.pt",
+  "probe_asset": "checkpoint_a15_26_20261024_recovery_block_probe",
+  "probe_checkpoint": "/data/250010109/MoE_Router/experiments/20261024_a15_26_compositional_reuse/audit/recovery_probe/checkpoints/step_000002.pt",
+  "qualified_before_resume32": true,
+  "status": "PASS"
+}

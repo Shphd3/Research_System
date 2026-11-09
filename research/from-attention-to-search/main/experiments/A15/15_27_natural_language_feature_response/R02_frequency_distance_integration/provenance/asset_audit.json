@@ -1,0 +1,124 @@
+{
+  "checked_at_utc": "2026-10-26T15:57:05.099031+00:00",
+  "processing_agent": "/root",
+  "main_interface": "native single-layer E16 MLP-input SAE",
+  "model": {
+    "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+    "architecture": "Qwen3ForCausalLM",
+    "num_layers": 28,
+    "hidden_size": 1024,
+    "weights": "model.safetensors",
+    "tokenizer_path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+    "model_pretraining_language": "119 languages per local model README; dictionary source is DCLM; English panel is the conservative choice",
+    "source_readme": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/README.md",
+    "forward_load_reuse": "transformers.AutoModelForCausalLM.from_pretrained(path,local_files_only=True,trust_remote_code=False,torch_dtype=torch.bfloat16,attn_implementation=\"sdpa\").eval().requires_grad_(False)",
+    "required_forward": "use_cache=False; attention_mask for padding; no gradients or edits"
+  },
+  "sae": {
+    "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+    "loader_path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+    "loader": "TopKSAE.from_pretrained(path,map_location=device).eval().requires_grad_(False)",
+    "checkpoint_payload_keys": [
+      "format",
+      "config",
+      "state_dict",
+      "metadata"
+    ],
+    "format": "a15_topk_sae_v1",
+    "config": {
+      "d_model": 1024,
+      "n_latents": 30000,
+      "k": 32,
+      "postact_fn": "relu_topk"
+    },
+    "state_fields": {
+      "encoder.weight": {
+        "shape": [
+          30000,
+          1024
+        ],
+        "dtype": "float32"
+      },
+      "encoder.bias": {
+        "shape": [
+          30000
+        ],
+        "dtype": "float32"
+      },
+      "decoder.weight": {
+        "shape": [
+          1024,
+          30000
+        ],
+        "dtype": "float32"
+      },
+      "decoder.bias": {
+        "shape": [
+          1024
+        ],
+        "dtype": "float32"
+      }
+    },
+    "checkpoint_cpu_load": "PASS; torch.load(map_location=cpu,weights_only=False), no model load or GPU",
+    "hook": "model.model.layers[27].mlp.register_forward_pre_hook; args[0]",
+    "hook_source": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/train_sae.py:65",
+    "input": "actual MLP input after layer27 post_attention_layernorm; token h in R^1024",
+    "normalization": "none before encoder; no input unit norm or decoder bias subtraction",
+    "encoding": "u=ReLU(W_enc h+b_enc); z=TopK_32(u), ties follow torch.topk; no frozen scalar threshold",
+    "reconstruction": "h_hat=W_dec z+b_dec",
+    "feature_contribution_vector_raw": "v_f=z_f*W_dec[:,f] in hook coordinates",
+    "feature_contribution_magnitude_raw": "c_f=abs(z_f)*L2(W_dec[:,f]); nonnegative magnitude; cancellation and decoder bias mean this is not additive explained variance",
+    "feature_contribution_normalized": "report c_f/L2(h) separately if desired; freeze any discovery-based scale before holdout",
+    "decoder_training_constraint": "decoder weight columns normalized after each optimizer step; use actual saved norms",
+    "training_raw_tokens": 1000001536,
+    "training_source": "dclm_pair_v1, train root /data/250010109/training_data_views/dclm_pair_v1/train",
+    "training_data_manifest_sha256": "a82ee6a3f6dd5b56259a6bc384481ddf6522c48307f57cb8569752f82886bbe4",
+    "training_outlier_filter": "per-batch token h norm > quantile0.999 removed during training; do not silently filter designed target cases at inference"
+  },
+  "runtime": {
+    "preferred_command_prefix": "PYTHONPATH=/data/250010109/dependency_packages/hf_transformers_qwen3 /usr/bin/python",
+    "preferred_versions_import_verified": {
+      "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+      "transformers": "4.53.3",
+      "tokenizers": "0.21.2",
+      "safetensors": "0.5.3"
+    },
+    "alternate_command_prefix": "PYTHONPATH=/data/250010109/dependency_packages/hf_transformers_qwen3 /root/anaconda3/envs/spectral-hier/bin/python",
+    "alternate_torch": "2.5.1+cu121",
+    "bare_spectral_hier_transformers": "5.6.0.dev0; prefer original4.53.3 via existing dependency path",
+    "AutoModelForCausalLM_AutoTokenizer_import": "PASS in both prefixes",
+    "packages_installed": false,
+    "GPU_runtime_load": "NOT_CHECKED"
+  },
+  "sha256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": {
+      "sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "bytes": 1192135096
+    },
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": {
+      "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+      "bytes": 727
+    },
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": {
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "bytes": 7031645
+    },
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer_config.json": {
+      "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+      "bytes": 9678
+    },
+    "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt": {
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "bytes": 245887459
+    },
+    "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py": {
+      "sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "bytes": 10419
+    }
+  },
+  "reuse": "Reuse native TopKSAE loader,model/hook and exact precision fromR01; adapt bounded forward ledger for reference and three aligned within-prefix positions; new offline controlledfactor analysis only",
+  "reference_frequency": "fresh fixedDCLM TRAIN reference,FP32 SAE,1024windows×256,burn16; no historical-parent/precision gap carried into primary frequency",
+  "CrossCoder": "separate existingshared-z14layer cache descriptive audit only,not independentlayer activation or E16 feature alignment",
+  "model_parameter_updates": 0,
+  "sealed_TEST_read": false
+}

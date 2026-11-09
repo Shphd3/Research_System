@@ -1,0 +1,65 @@
+{
+  "UTC": "2026-11-03T12:08:59.935083+00:00",
+  "status": "COMPLETED_BOUNDED_CAPTURE",
+  "stage": "heldout_check",
+  "rows": 12,
+  "physical_shape": [
+    4,
+    192
+  ],
+  "sampling": "last visible prefix token, not any answer token",
+  "device": "cpu",
+  "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "threads": 2,
+  "model_trainable_parameters": 0,
+  "SAE_trainable_parameters": 0,
+  "GPU_jobs": 0,
+  "training": 0,
+  "CC_loaded": false,
+  "extra_native_noop_calls": 1,
+  "native_encoding_equivalence": true,
+  "hook_noop_checks": [
+    {
+      "noop_native_state_max_difference": 0.0
+    }
+  ],
+  "elapsed_seconds": 27.907657623291016,
+  "cache_sha256": "4abc8dc429969d2392d2b7357365d11a3e421073a4c3de46cd0acd53345bc4a6",
+  "plan_sha256": "e997551578c171f002595389f126c1519c1eca97f1a9d9c9142ccce4c6445e02",
+  "input_model_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "SAE_identity": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "loader": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/e16_sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.self_attn.o_proj output before residual addition",
+      "decoder_norm_min": 0.9999990463256836,
+      "decoder_norm_max": 1.0000008344650269,
+      "native_loader_used": true
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "loader": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.mlp forward_pre_hook actual input after residual addition and post_attention_layernorm",
+      "decoder_norm_min": 0.999998927116394,
+      "decoder_norm_max": 1.000001072883606,
+      "native_loader_used": true
+    }
+  },
+  "selection_sha256": "eddcfe0940247c03250cc1e4dd777fb728d86f19c122647dcb2a7ee1402a4d2a"
+}

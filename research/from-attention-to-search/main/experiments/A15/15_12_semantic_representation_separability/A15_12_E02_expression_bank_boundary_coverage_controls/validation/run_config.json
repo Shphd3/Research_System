@@ -1,0 +1,79 @@
+{
+  "E01_reference_run": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/MoE_Routing_Experiments/active/a15_12_e01_qwen3_30b_fixed_fact_expression_separability/runs/full-20260830T172302Z",
+  "bootstrap_root_seed": 151203,
+  "c_grid": [
+    1e-06,
+    1e-05,
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "experiment_id": "A15_12_E02_expression_bank_boundary_coverage_controls",
+  "extraction_dir": "/data/250010109/MoE_Router/experiments/20260827_a15_09_e01_qwen3_30b_cross_depth_coarse_fine_reuse/runs/full-20260827T163900Z/extraction",
+  "fixed_c_values": [
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "jobs": 6,
+  "layers": [
+    4,
+    12,
+    20,
+    28,
+    36,
+    44
+  ],
+  "n_bootstrap": 10000,
+  "numpy": "1.24.4",
+  "pandas": "1.5.3",
+  "platform": "Linux-5.14.0-284.25.1.el9_2.x86_64-x86_64-with-glibc2.35",
+  "preflight_only": false,
+  "python": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]",
+  "regimes": [
+    "C4A",
+    "C5A",
+    "POOLED_MATCHED_A",
+    "POOLED_FULL_A"
+  ],
+  "scipy": "1.12.0",
+  "sklearn": "1.2.0",
+  "source_bundle_algorithm": "sorted logical path UTF-8 + NUL + lowercase hex SHA-256 UTF-8 + LF",
+  "source_bundle_sha256": "e10b0231047ec529f7d2cf4e2381665e014a3f62defdbdf24327a861cafd59d4",
+  "source_files_sha256": {
+    "E01/data_contract.py": "88965e0d1ef66d5d0f7ea88b4e2491109b517e90b3e335469283a25a229b3aed",
+    "E01/metrics.py": "e01a3bcee18e666c7068edf7b6850a9e8e328c0239cddea518038b6583d76116",
+    "E01/preflight.py": "a144cfc0722c594dddf5be9546c7dbae494705680ee9b2b7e171621f2daf4ee8",
+    "E01/probe.py": "eb85b71d16554d8e595718412868633fbc56861de602f431ff31ee1a8e2ef343",
+    "E02/balanced_probe.py": "e9fb87ec20b964743311a5eed1a025bd74ddbcd0327ee8b23972cdd4d67712b3",
+    "E02/bootstrap.py": "3855ba95bd7258a89d7a356371e7fa49d04c3943e3a65a5f647e8a376ae5d3d9",
+    "E02/control.py": "bde2a173b65f3d73c4c745b271ad0a57ac93533bdb7cd451fae85daf2e00f72b",
+    "E02/preflight_control.py": "19b9ba06bf910c80191dc5cb2c841788a6ff82e9a0a1d44058d687cc99123a64",
+    "E02/reference.py": "55532c90ec1cf74aa457d4cb5867d013db338896393ff95499cb1a569813d4f1",
+    "E02/render.py": "27ca78757541dda7f6f15381883ebec5df53f971c0494376e50ee1112efe44b0",
+    "E02/run_audit.py": "756d8cd82a32dcd4cc7d6d4c50b645d9c93918805a17d1ca636c227782a5dc33",
+    "E02/sensitivity.py": "7d1f6e713d8e37eb20b4f605ec137679ef8b81833c0cf4498080d041bda38f2b",
+    "E02/splits.py": "931953cc870e5c2970664444abe6002e534f09a647cf605e671b9e41db70c382"
+  },
+  "tasks": [
+    "P",
+    "J",
+    "F_0",
+    "F_1",
+    "F_2",
+    "F_3",
+    "F_4",
+    "F_5",
+    "F_6",
+    "F_7"
+  ],
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

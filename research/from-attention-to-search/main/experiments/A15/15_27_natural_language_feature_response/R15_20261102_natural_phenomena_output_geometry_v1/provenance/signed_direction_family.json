@@ -1,0 +1,30 @@
+{
+  "tests": 512,
+  "candidate_PC_indices0": [
+    0,
+    1,
+    2,
+    3,
+    7,
+    15,
+    31,
+    63,
+    95,
+    127,
+    191,
+    255,
+    383,
+    511,
+    767,
+    1023
+  ],
+  "metrics": [
+    "signed_trainSD",
+    "signed_cosine"
+  ],
+  "bootstrap": 2000,
+  "max_stat_critical": 4.006078933156092,
+  "status": "EXPLORATORY_A6_NOT_RETROACTIVE_CONFIRMATION",
+  "basis_sign_convention": "largestloadingpositive;signnotintrinsicsemantic",
+  "allfixedPCsandallfrozenpropertiesincluded": true
+}

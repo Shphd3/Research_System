@@ -1,0 +1,11 @@
+# Evidence ledger: binary occurrence
+
+The [Chinese detailed record](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/activation_occurrence_by_position_20261028/detailed_cn.md) provides all tables and exact provenance. The model and dictionary remain frozen. Native A22 jointly encodes fourteen residual-post interfaces into one shared z. Occurrence is the original native event z > 0, not a decoder contribution threshold.
+
+Counts are summed within the fixed frequency group; group activation rate divides by the fixed group size; composition divides by all active members at the same position; the probability of at least one active group member is a fourth, distinct quantity. Zero-total compositions remain undefined. All 7,680 token positions and all 16,384 coordinates are preserved.
+
+Source events retain the original matched pairs and common query/head support. Positions are averaged within heads, heads within queries, queries within documents, and documents within domains. Attention selects positions but is not multiplied into occurrence. Near/far and five-bin common support are separate. Window restrictions and unsupported token-ID/punctuation strata are preserved without relaxing matching.
+
+Independent numerical checks reproduce all old group counts and compositions, every exact-position coordinate count, weighted per-feature source rates, and the previous copied activation-rate field at all fourteen decoder interfaces. The last identity follows from the shared object and is not independent cross-layer evidence. Compact document matrices and complete per-coordinate means are retained. Per-coordinate counts and document support are reported; intervals are provided for group statistics, not for every coordinate.
+
+For portable replay, `load_saved.feature_document_rates()` reconstructs the omitted redundant document-by-feature matrix as W times binary hits. `expand_feature_source_table()` exports the complete redundant source summary CSV. The original full matrices and tables remain execution-side. Input hashes, access receipts, repair records and audit results are saved. No model was instantiated, and no scientific state or old result was overwritten. This is exploratory evidence; human mechanism judgment remains unknown.

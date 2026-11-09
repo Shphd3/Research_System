@@ -1,0 +1,1 @@
+/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/subanchors/15_27_11_remote_target_near_competitor_composition_anchor_cn.md

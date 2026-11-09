@@ -1,0 +1,18 @@
+{
+  "status": "REUSE_APPLIED_WHERE_COMPATIBLE",
+  "reused": [
+    "N8exact2048tokenizedrecords",
+    "R12exact96thetokenpositionsandexternalfit/labelmetadata",
+    "nativeDensemodelsource",
+    "mountedSM120runtime",
+    "threeactualsmokeactivationcachesrereadwithoutforwards"
+  ],
+  "rejected": [
+    "QwenR12activations:wrongparentmodel",
+    "oldDenseinitial/final16-recordpanels:wrongtexts/positions",
+    "pre_mlp_input:wrongtensorinterface"
+  ],
+  "bounded_search": "NTPowner up to depth3 had no matching npy/npz cache;originalDense analysis caches inspected. No claim of exhaustive workspace cache absence.",
+  "new_collection": "Only required12Densefixedpositionstatesandthreebridge/supplementpoints",
+  "resume": "Checkpoint/layer/panel content-addressed completion;partial files do not qualify"
+}

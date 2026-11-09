@@ -1,0 +1,54 @@
+[
+  {
+    "item": "1 feature occurrence",
+    "status": "DONE_EXPLORATORY",
+    "members_math": 433,
+    "members_biology": 527,
+    "evidence": "tables/frequency_counts.csv",
+    "boundary": "low-support1/2 outside plotted denominator"
+  },
+  {
+    "item": "2 unit decoder spectrum",
+    "status": "DONE_EXPLORATORY",
+    "members_math": 433,
+    "members_biology": 527,
+    "evidence": "tables/member_spectrum.csv",
+    "boundary": "raw-h basis audit; no independent reference"
+  },
+  {
+    "item": "3 overlap and actual use",
+    "status": "DONE_EXPLORATORY",
+    "members_math": 433,
+    "members_biology": 527,
+    "evidence": "analysis/geometry.json;tables/group_reconstruction_energy.csv",
+    "boundary": "same geometry; four contribution inputs; no functional overlap"
+  },
+  {
+    "item": "4 actual token response",
+    "status": "DONE_EXPLORATORY",
+    "members_math": 433,
+    "members_biology": 527,
+    "evidence": "tables/token_member_summary.csv",
+    "boundary": "usable371/472; panel counts; high thresholds frozen"
+  },
+  {
+    "item": "5 context / target-plus-suffix",
+    "status": "DONE_EXPLORATORY",
+    "members_math": 433,
+    "members_biology": 527,
+    "evidence": "tables/context_categories.csv",
+    "boundary": "pointwise exposed-family checks; pure-B missing"
+  },
+  {
+    "item": "pure target-only B",
+    "status": "BLOCKED_NOT_RUN",
+    "evidence": "proposed_B_NOT_RUN.jsonl",
+    "missing": "48 new forwards need separate confirmation"
+  },
+  {
+    "item": "independent natural-reference PCA",
+    "status": "BLOCKED",
+    "evidence": "analysis/common_spectrum.npz",
+    "missing": "R07 is same discovery spectrum"
+  }
+]

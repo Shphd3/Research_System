@@ -1,0 +1,33 @@
+{
+  "scientific_identification": {
+    "status": "PASS_BOUNDED",
+    "question": "which coordinates discriminate domains by use and where frequency/spectrum locate them",
+    "rival": "lexical/source/genre; frequency or spectrum association not causal",
+    "limits": "old holdout exploratory; spectrum blocked"
+  },
+  "data_statistics": {
+    "status": "PASS",
+    "discovery_only_selection": true,
+    "retained_all_old_candidates": true,
+    "bootstrap_unit": "document",
+    "AUROC_ties": 0.5,
+    "pointwise_not_simultaneous_CIs": true,
+    "zero_conditional": "NA",
+    "no_success_selection_on_holdout": true
+  },
+  "implementation_numerics": {
+    "status": "PREFLIGHT_REQUIRED",
+    "parameters_updated": 0,
+    "PCA_fitting": "NOT_RUN_MISSING_RAW_H",
+    "optimizer": "N/A",
+    "fixed_seeds": true,
+    "calibration_cases": [
+      "identical constant scores auc.5",
+      "separated examples auc1",
+      "reversed examples auc0",
+      "mean = fraction x conditional mean per positive document",
+      "aggregate counts/sums replay native CSR"
+    ]
+  },
+  "human_scientific_acceptance": "Unknown"
+}

@@ -2,15 +2,15 @@
 
 **第一轮已完成项目入口和规则重构；导师原始讨论是当前路线的主要依据。编号映射仍是检索方案，实体 Anchor 路径、科研状态和待确认删除项保持各自原有身份。**
 
-本轮把 PROJECTS 压缩为项目归属、工作流和证据入口；两层 AGENTS 合并重复规则并按任务引用已有合同；长篇项目历史移入[注明日期的快照](archive/project_map_20260926_before_refactor.md)。实施范围、读取量对比和检查结果见[重构验收](research_system_astra_review_20260926_cn.md)。上一阶段完成的四组 Anchor 措辞修订保留，候选科学解释仍标 AI_PROPOSAL。
+本轮把 PROJECTS 压缩为项目归属、工作流和证据入口；两层 AGENTS 合并重复规则并按任务引用已有合同；长篇项目历史移入[注明日期的快照](archive/project_map_20260926_before_refactor.md)。实施范围、读取量对比和检查结果见[重构验收](archive/process_records/research_system_astra_review_20260926_cn.md)。上一阶段完成的四组 Anchor 措辞修订保留，候选科学解释仍标 AI_PROPOSAL。
 
 ## 当前默认推进：以导师原文和已有证据为依据
 
 2026-09-26 已完整读取研究者补充的《0924-指导.md》；本轮以其中导师的直接要求为准，未以学长建议设定推进顺序。导师要求先弄清可检验的相互影响，展示实际表征结构和能量，再研究参数更新与表征、预测后果的关系。低秩、相关或语义远近导致伤害是待检验猜想；“99%能量在300维”是示意数字。稀疏自编码器（SAE）是分析工具。
 
-[最新结果](../Projects/from-attention-to-search/main/experiments/shared_updates/structure_update/20260926/summary_cn.md)中的结构图与局部更新后果已完成。尚缺的是对受影响的下游表征在更新前后的变化及其解释作用的测量，不能把已有梯度关系和损失变化称为完整机制解释。当前均值帮助也必须保留；不以找到伤害作为推进成功。
+[最新结果](../research/from-attention-to-search/main/experiments/shared_updates/structure_update/20260926/summary_cn.md)中的结构图与局部更新后果已完成。尚缺的是对受影响的下游表征在更新前后的变化及其解释作用的测量，不能把已有梯度关系和损失变化称为完整机制解释。当前均值帮助也必须保留；不以找到伤害作为推进成功。
 
-具体阅读与推理依赖见[当前 roadmap](../Projects/from-attention-to-search/main/roadmap.md)。它不是新的实验顺序或执行合同。正在继续的“0926-共享参数冲突整理分析”对话负责该分析的结果、图稿、Focus及科学讨论；这轮没有改写这些文件，也未创建并行科学设计。
+具体阅读与推理依赖见[当前 roadmap](../research/from-attention-to-search/main/roadmap.md)。它不是新的实验顺序或执行合同。正在继续的“0926-共享参数冲突整理分析”对话负责该分析的结果、图稿、Focus及科学讨论；这轮没有改写这些文件，也未创建并行科学设计。
 
 下面的十类编号、L1–L7审计和D01/D02删除候选保留其原有边界。它们不自动开启十项任务，也不把未确认的科学收束或删除变成已批准操作。
 
@@ -46,13 +46,13 @@
 
 ## 2. 可以明确指出的逻辑/设计问题
 
-以下保存审计发现和处理状态。L1–L4 所述旧句已经修订；“依据”中的行号指修订前审计位置，原判断见[上一版推理审计](reasoning_audit_20260926_research_logic_cn.md)，前后哈希见[修订清单](../daily_research_reports/0926/report_assets/reasoning_anchor_revisions_20260926.json)。L5 是问题过载，L6 是对照设计实质失效，L7 是执行与证据资格失败；这些边界不因改写而成为支持证据。
+以下保存审计发现和处理状态。L1–L4 所述旧句已经修订；“依据”中的行号指修订前审计位置，原判断见[上一版推理审计](archive/process_records/reasoning_audit_20260926_research_logic_cn.md)，前后哈希见[修订清单](../daily_research_reports/0926/report_assets/reasoning_anchor_revisions_20260926.json)。L5 是问题过载，L6 是对照设计实质失效，L7 是执行与证据资格失败；这些边界不因改写而成为支持证据。
 
 ### L1：逻辑命题过强；不是整条线无效
 
 **处理状态：**文字已修订；科学候选待研究者确认。
 
-**来源：**[A07_04](../Projects/from-attention-to-search/main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md)。
+**来源：**[A07_04](../research/from-attention-to-search/main/problem_anchors/07_features_overlap/07_04_common_rare_gradient_conflict_splitting_anchor.md)。
 
 **审计发现：**把“共享有害”限定为必须存在负梯度夹角；同时用冲突降低与损失改善共同发生来支持因果中介。
 
@@ -68,7 +68,7 @@
 
 **处理状态：**文字已修订；科学候选待研究者确认。
 
-**来源：**[A13_00](../Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/13_00_task_properties_to_standard_head_utility_anchor.md)、[A13_00_05](../Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_05_task_relevant_relay_target_anchor.md)。
+**来源：**[A13_00](../research/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/13_00_task_properties_to_standard_head_utility_anchor.md)、[A13_00_05](../research/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_05_task_relevant_relay_target_anchor.md)。
 
 **审计发现：**父 Anchor 说辅助监督仅在中继为必要路径时才有效；当前结果建立的是受控条件下更大的相对收益。
 
@@ -84,7 +84,7 @@
 
 **处理状态：**文字已修订；科学候选待研究者确认。
 
-**来源：**[A15_05_03](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor.md)。
+**来源：**[A15_05_03](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor.md)。
 
 **审计发现：**用浅层接力与深层本地坐标的胜负区分“稳定性”与“新增信息”；两者在这组比较中一起变化。
 
@@ -100,7 +100,7 @@
 
 **处理状态：**文字已修订；科学候选待研究者确认。
 
-**来源：**[A15_06](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor.md)。
+**来源：**[A15_06](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor.md)。
 
 **审计发现：**把接力方法最终损失不胜出写成全部物理先验为假；把胜出预先归因于跨层漂移减少。
 
@@ -116,7 +116,7 @@
 
 **处理状态：**保留审计边界；未更改实验或科学状态。
 
-**来源：**[A15_08_03](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_03_function_admitted_update_representation_rank_anchor.md)。
+**来源：**[A15_08_03](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/subanchors/15_08_03_function_admitted_update_representation_rank_anchor.md)。
 
 **审计发现：**声称只有一个条件问题，却同时要求回答新增信息、参数谱位置、秩、层深和 token 几何。
 
@@ -132,7 +132,7 @@
 
 **处理状态：**保留审计边界；未更改实验或科学状态。
 
-**来源：**[A15_08](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md)；[A15_08_E01_layer25_conditional_innovation_matrix Summary](../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E01_layer25_conditional_innovation_matrix/summary.md)、[A15_08_E04_strict_conformance_repair Summary](../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md)。
+**来源：**[A15_08](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md)；[A15_08_E01_layer25_conditional_innovation_matrix Summary](../research/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E01_layer25_conditional_innovation_matrix/summary.md)、[A15_08_E04_strict_conformance_repair Summary](../research/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md)。
 
 **审计发现：**A15_08_E01 的循环标签替换仍保留全局可学习的一一映射，未构造出目标无关对照。
 
@@ -148,7 +148,7 @@
 
 **处理状态：**保留审计边界；未更改实验或科学状态。
 
-**来源：**[A15_08](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md)；[A15_08_E02_fresh_balanced_mismatch_repair Summary](../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E02_fresh_balanced_mismatch_repair/summary.md)、[A15_08_E03_fresh_confirmation_freeze_repair Summary](../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E03_fresh_confirmation_freeze_repair/summary.md)、[A15_08_E04_strict_conformance_repair Summary](../Projects/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md)。
+**来源：**[A15_08](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md)；[A15_08_E02_fresh_balanced_mismatch_repair Summary](../research/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E02_fresh_balanced_mismatch_repair/summary.md)、[A15_08_E03_fresh_confirmation_freeze_repair Summary](../research/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E03_fresh_confirmation_freeze_repair/summary.md)、[A15_08_E04_strict_conformance_repair Summary](../research/from-attention-to-search/main/experiments/A15/15_08_target_conditioned_layer_innovation/A15_08_E04_strict_conformance_repair/summary.md)。
 
 **审计发现：**E02 在冻结前使用了协议不允许的确认标签；E03 未满足注册的身份标识、提取收据及清单要求。
 
@@ -170,11 +170,11 @@ L1 的一个可复核反例：令 \(L_A(x)=(x-1)^2/2\)，\(L_B(x)=(x-0.1)^2/2\)�
 
 | 编号 | 范围与直接来源 | 为何应收束 | 执行后保留什么 / 何时可重开 |
 |---|---|---|---|
-| P1 | 固定谱带及头—中—尾排程作为默认方法路线：[A15_05_03](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor.md)、[A15_05_05](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_05_matched_fixed_band_dispatch_anchor.md) | 已有固定带比较和排程结果未建立可重复的整体功能收益；不能从层/谱外观继续推出方法必然有效。 | 从默认待做中移除该原方案；保留其方法比较和停止边界。 重开条件：新的独立功能证据显示坐标相对等维随机或错误层控制有额外价值。 |
-| P2 | 在线接力必然因谱身份改善质量的原方法主张：[A15_06](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor.md)、[A15_06_01](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_01_local_random_identity_control_anchor.md)、[A15_06_02](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_02_router_expert_specialization_anchor.md) | 接力收益不支持，运动匹配随机对照后谱身份优势不跨种子稳定；平滑追踪成功单独成立。 | 不再默认扩大原接力训练；将方法结果与可复用工程组件分开记录。 重开条件：新问题明确改变了哪个已失败前提，并提供可分离对照；不能只增加预算。 |
-| P3 | A15_08 E01–E03 修复链作为多个并行项目或确认性支持：[A15_08](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md) | E01 对照失效、E02/E03 资格失效，已有 E04 合格修复。 | 当前入口只保留 E04 及一条修复历史索引；旧协议和结果不删除。 重开条件：只在复核资格或复现来源时展开，不自动重新执行。 |
-| P4 | 未合格或饱和载体上继续作训练目标优劣比较：[A12_01](../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/12_01_compositional_workload_capability_gate_anchor.md)、[A12_01_01](../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/subanchors/12_01_01_workload_validity_and_learner_guard_anchor.md)、[A12_0](../Projects/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor.md)、[A13_00_01](../Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_01_query_conditioned_relay_carrier_anchor.md)、[A13_00_02](../Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_02_single_value_relay_carrier_anchor.md)、[A13_00_06](../Projects/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_06_soft_relay_mtp_ntp_audit_anchor.md) | A12 的可学性/捷径问题与 A13 的旧查询载体、软中继天花板会阻断目标裁决；合格单值载体与后续有效结果应保留。 | 把载体资格及修复收回第 4 线的支持证据，不作为一串当前独立项目。此建议不是宣布整个 MTP 方向停止。 重开条件：先有可学、无绕过、未饱和的对照载体，再决定目标比较。 |
-| P5 | 已归档的三个历史 Anchor：[A14_02_01〔旧版归档〕](../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/archive/e02_v1_component_recombination_capability/14_02_01_component_recombination_capability_anchor.md)、[A14_02_02〔旧版归档〕](../Projects/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/archive/e03_v0_low_frequency_common_mapping_rank/14_02_02_low_frequency_common_mapping_rank_anchor.md)、[A15_03〔归档〕](../Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/archive/15_03_middle_band_information/15_03_middle_band_information_anchor.md) | 它们分别是已关闭反例、执行前停止草案和执行前归档提案；科学含义不同。 | 维持历史身份，从新编号的当前目录中分离；不重复归档，不把未运行改成负结果。 重开条件：保留各自原有条件；本方案不主动重新激活。 |
+| P1 | 固定谱带及头—中—尾排程作为默认方法路线：[A15_05_03](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_03_progressive_band_source_routing_anchor.md)、[A15_05_05](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_05_functional_coordinate_admission/subanchors/15_05_05_matched_fixed_band_dispatch_anchor.md) | 已有固定带比较和排程结果未建立可重复的整体功能收益；不能从层/谱外观继续推出方法必然有效。 | 从默认待做中移除该原方案；保留其方法比较和停止边界。 重开条件：新的独立功能证据显示坐标相对等维随机或错误层控制有额外价值。 |
+| P2 | 在线接力必然因谱身份改善质量的原方法主张：[A15_06](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/15_06_online_spectral_routing_and_relay_anchor.md)、[A15_06_01](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_01_local_random_identity_control_anchor.md)、[A15_06_02](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_06_online_spectral_routing_and_relay/subanchors/15_06_02_router_expert_specialization_anchor.md) | 接力收益不支持，运动匹配随机对照后谱身份优势不跨种子稳定；平滑追踪成功单独成立。 | 不再默认扩大原接力训练；将方法结果与可复用工程组件分开记录。 重开条件：新问题明确改变了哪个已失败前提，并提供可分离对照；不能只增加预算。 |
+| P3 | A15_08 E01–E03 修复链作为多个并行项目或确认性支持：[A15_08](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_08_target_conditioned_layer_innovation/15_08_target_conditioned_layer_innovation_anchor.md) | E01 对照失效、E02/E03 资格失效，已有 E04 合格修复。 | 当前入口只保留 E04 及一条修复历史索引；旧协议和结果不删除。 重开条件：只在复核资格或复现来源时展开，不自动重新执行。 |
+| P4 | 未合格或饱和载体上继续作训练目标优劣比较：[A12_01](../research/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/12_01_compositional_workload_capability_gate_anchor.md)、[A12_01_01](../research/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_01_compositional_workload_capability_gate/subanchors/12_01_01_workload_validity_and_learner_guard_anchor.md)、[A12_0](../research/from-attention-to-search/main/problem_anchors/12_structured_compositional_mtp_workload/12_0_short_range_single_vs_two_step_composition/12_0_short_range_single_vs_two_step_composition_anchor.md)、[A13_00_01](../research/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_01_query_conditioned_relay_carrier_anchor.md)、[A13_00_02](../research/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_02_single_value_relay_carrier_anchor.md)、[A13_00_06](../research/from-attention-to-search/main/problem_anchors/13_mtp_task_property_decomposition/13_00_task_properties_to_standard_head_utility/subanchors/13_00_06_soft_relay_mtp_ntp_audit_anchor.md) | A12 的可学性/捷径问题与 A13 的旧查询载体、软中继天花板会阻断目标裁决；合格单值载体与后续有效结果应保留。 | 把载体资格及修复收回第 4 线的支持证据，不作为一串当前独立项目。此建议不是宣布整个 MTP 方向停止。 重开条件：先有可学、无绕过、未饱和的对照载体，再决定目标比较。 |
+| P5 | 已归档的三个历史 Anchor：[A14_02_01〔旧版归档〕](../research/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/archive/e02_v1_component_recombination_capability/14_02_01_component_recombination_capability_anchor.md)、[A14_02_02〔旧版归档〕](../research/from-attention-to-search/main/problem_anchors/14_tree_low_rank_language_structure/14_02_relation_reuse_root_effective_rank/archive/e03_v0_low_frequency_common_mapping_rank/14_02_02_low_frequency_common_mapping_rank_anchor.md)、[A15_03〔归档〕](../research/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/archive/15_03_middle_band_information/15_03_middle_band_information_anchor.md) | 它们分别是已关闭反例、执行前停止草案和执行前归档提案；科学含义不同。 | 维持历史身份，从新编号的当前目录中分离；不重复归档，不把未运行改成负结果。 重开条件：保留各自原有条件；本方案不主动重新激活。 |
 
 **A15_13 的额外整理要求：**第 10 线可以容纳语义监督、教师资格、结构路由、增量学习，但这些不能在同一 Focus 被当成一个已经获准自动展开的大计划。已完成的教师、层级图、静态读出及失败控制归回各自证据；研究者选定下一决定之前，不把每项技术产物都升级为新的当前项目。本表保留现有来源的父子关系，正式拆并需确认具体问题。
 
@@ -207,5 +207,5 @@ L1 的一个可复核反例：令 \(L_A(x)=(x-1)^2/2\)，\(L_B(x)=(x-0.1)^2/2\)�
 
 按研究者先前“我认可以后需要删除”的要求，未实施实体删除。当前改写请求已用于修订默认入口与逻辑措辞，不推定为批准编号迁移或新的实验。编号提案没有替代 PROJECTS/Focus；本轮不声称已完成全仓迁移验收。
 
-当前入口检查覆盖47项，文件均存在；8项尚未版本化，包括原有A15_17_02的5项以及本轮新纳入检查的3项0926文档。保留这些提示，未做git add/commit。完整验收见[第一轮记录](research_system_refactor_20260926_checks.json)。
+当前入口检查覆盖47项，文件均存在；8项尚未版本化，包括原有A15_17_02的5项以及本轮新纳入检查的3项0926文档。保留这些提示，未做git add/commit。完整验收见[第一轮记录](archive/process_records/research_system_refactor_20260926_checks.json)。
 

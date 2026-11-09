@@ -1,0 +1,561 @@
+{
+  "selected_evidence_exception": true,
+  "execution_owner": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control",
+  "canonical_owner": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control",
+  "files": [
+    {
+      "path": "amendments.md",
+      "bytes": 1474,
+      "sha256": "ace2c5f7ebbca7af67d0b787274a839632c28f4de6b4c24a2eaea26dd7c8ce35",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/amendments.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "anchor.md",
+      "bytes": 3309,
+      "sha256": "ad5926a3033f0cca159fea4f3296d28d84a09610cbca130a61f496598d8362d0",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/anchor.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "anchor_cn.md",
+      "bytes": 1943,
+      "sha256": "5f803a3ae26467115310d18414d56145c3f5e3b48baa84b31059fd68da11e82f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/anchor_cn.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "assets_and_data.md",
+      "bytes": 1691,
+      "sha256": "7ad216af5e0df7c3669a0dfe214a40ddf6d9dd2b32e5ab3fc7c4e9585df8a971",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/assets_and_data.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "assets_and_data_cn.md",
+      "bytes": 3103,
+      "sha256": "3030b1324ecaee72b562f83ffcb6cefb7757741f0750c3a8e8d6fe31e22544d7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/assets_and_data_cn.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/03_numerics_smoke.json",
+      "bytes": 15813,
+      "sha256": "3f01ca9ff6187cadc296ca481d6d3840299723df46655d166822f9a49ce00944",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/03_numerics_smoke.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/CPU_analysis_repair.json",
+      "bytes": 294,
+      "sha256": "b0fc7de4c0073837d8b9fae6181db7111514f7ee6659bf8c73fe3d3798460ff6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/CPU_analysis_repair.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/CPU_basis_audit.json",
+      "bytes": 37302,
+      "sha256": "104fc009be17442db32b7b939098efb442822eb60776de2c56a40a2669ac5515",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/CPU_basis_audit.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/analysis_validation.json",
+      "bytes": 513,
+      "sha256": "34ef53343de744f6df47c797581c59e42054134bf5e5d27fcc0fcac444886b21",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/analysis_validation.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/batch_shape_affected_documents.json",
+      "bytes": 805,
+      "sha256": "f42109aea092062bbd268c6bab973ff3c747ecb2007e2f49af3ac9026c6ccaec",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/batch_shape_affected_documents.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/coverage.json",
+      "bytes": 1070,
+      "sha256": "e398294ab2a31ffe28229222cd5a4a87d3012e1ca8bd4372a93b962330a31c00",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/coverage.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/input_access.json",
+      "bytes": 10660,
+      "sha256": "bcded2d957d8dceec3823d759077493b4d57fc13835b8f1956d30b31bb06beb1",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/input_access.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/output_access.json",
+      "bytes": 15414,
+      "sha256": "2d3de301e1d77e1a131540ca1b54962e4b2c2d5f4a4a427e344dfe487bac69fa",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/output_access.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/repair_freeze.json",
+      "bytes": 851,
+      "sha256": "f5df90ac3caa5aa71ab76bcad6481cf59f29b414bbe0693179b87635e49ba12f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/repair_freeze.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/validation.json",
+      "bytes": 1279,
+      "sha256": "fea6fc8e95fb5c35e93817610ea9175d64838428ea0d090b68b4365520ba5de3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/validation.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "audit/visual_review.json",
+      "bytes": 547,
+      "sha256": "0b8f63466f0efc90e532c6dc98ab28eb4b839ffcd6a6e9a00ba9518c6a7917fc",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/audit/visual_review.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "casebook_cn.md",
+      "bytes": 119483,
+      "sha256": "24b8deaa0d3cb38640b728f4101f7ba3b930fae6369bbe094d89a76a4a57da3a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/casebook_cn.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "completion_manifest.json",
+      "bytes": 2088,
+      "sha256": "6047ead3bb8cd9c4072c44120db0dd53e9b3d4556a7deb3659870957f6ec0962",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/completion_manifest.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "detailed.md",
+      "bytes": 3543,
+      "sha256": "34edbc9e5e159df4f79997305c149ad09e5735df1c7ac360e413823153aec742",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/detailed.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "detailed_cn.md",
+      "bytes": 7785,
+      "sha256": "3c3bec9c0493b71455fa97e44638c4510b9d02288c726ce6cdf1cfc338883196",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/detailed_cn.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/CPU_geometry.csv",
+      "bytes": 54043,
+      "sha256": "4939595b8a64c58b780aa13790437345a04823ee00146235c81b544e9292c796",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/CPU_geometry.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/CPU_rounding_diagnostic.csv",
+      "bytes": 53888,
+      "sha256": "b94d6b75cb9ea7222dee7015a50a83342dd6d389c26226361aa8b71ae45e0637",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/CPU_rounding_diagnostic.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/chunk_index.csv",
+      "bytes": 103374,
+      "sha256": "2b3b8609c47418c3b1b08f75abc9f2841efb4e3d2ff07cccbf426cd23236e339",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/chunk_index.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/group_coverage.csv",
+      "bytes": 187,
+      "sha256": "6b3fff33aed2c91fc2c3849849d2f630ad79fadf7722adacd118e492296106a8",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/group_coverage.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/native_replay.csv",
+      "bytes": 3644,
+      "sha256": "8442192579769c0c7c385d9b5baa6d11f7598b0a3fd1f004d6ab4832a3589ae9",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/native_replay.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/natural_equal64_matrix.csv",
+      "bytes": 832712,
+      "sha256": "84109c8fde34fdf318f11ff4ac0edb6781944d55467b019eb655f9e689d92688",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/natural_equal64_matrix.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/paired_band_vs_baseline.csv",
+      "bytes": 983085,
+      "sha256": "9807765e6448ab09cb1fb0e5c04b9359acfa1f30154aa62282e8a43bbcfab0dc",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/paired_band_vs_baseline.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/paired_head_vs_band.csv",
+      "bytes": 1042656,
+      "sha256": "8dd98bd3a8149b9a12e4d008fb0c3f72accb4b45e18fe2145963e14911f18bd2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/paired_head_vs_band.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/paired_mean_effect.csv",
+      "bytes": 490400,
+      "sha256": "3ea6953e0395bd195163a5c72cd7bbdaf356928224cf9c98b841e94e05fffc2a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/paired_mean_effect.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "evidence/summary_metrics.csv",
+      "bytes": 7153736,
+      "sha256": "49276b04a57dd7d522faf68446de33b833cb396089711c573ce27daab743e9e5",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/analysis/summary_metrics.csv",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "execution_certificate.md",
+      "bytes": 1703,
+      "sha256": "d87063cf2aa03beacf93b97fbf912a439b56ecd58e06300dfc81a38db4425c94",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/execution_certificate.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/01_equal64_mean_heatmaps.pdf",
+      "bytes": 77746,
+      "sha256": "0dd9ccfdbba9b3d567725dc4b434e678fcfdb37b278907de1f743f042b69cc75",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/01_equal64_mean_heatmaps.pdf",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/01_equal64_mean_heatmaps.png",
+      "bytes": 285829,
+      "sha256": "210b65604b95750d9a785bd0ed6626a44eea4c45974900db092f82e4cc9a168a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/01_equal64_mean_heatmaps.png",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/02_selected_band_curves.pdf",
+      "bytes": 47935,
+      "sha256": "cbb05cb76981d86033e9b77492af9c9029f4668cbbe5d802f6830e2d5adf0384",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/02_selected_band_curves.pdf",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/02_selected_band_curves.png",
+      "bytes": 426264,
+      "sha256": "388973fb26c9b532aed47d51395f8608be6b76110b6bb483e335ebb989706b2a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/02_selected_band_curves.png",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/03_energy_norm.pdf",
+      "bytes": 62523,
+      "sha256": "456492359dd23f4f252196f09f9ce7c20f20c37fca718ecca4b2fb0e5b77db2f",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/03_energy_norm.pdf",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/03_energy_norm.png",
+      "bytes": 181247,
+      "sha256": "ade48fee977081e95bc39a0e1208ea32ecc834fc993222c8272b0b84330a8d4e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/03_energy_norm.png",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/04_mean_controls.pdf",
+      "bytes": 44615,
+      "sha256": "07982a6482b31c5582b1853a34d56c2259c4dd537333219866987381728f79ee",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/04_mean_controls.pdf",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/04_mean_controls.png",
+      "bytes": 446618,
+      "sha256": "7ac769e0ac4f11b102d3bc8d32aa14bbaa2cb1d8cbca2177bd32137f1917aa35",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/04_mean_controls.png",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/05_case_058.pdf",
+      "bytes": 64388,
+      "sha256": "212322d9f621c0b4a042f86b08611305872c571ba1301b385d9fd8bccbedb302",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/05_case_058.pdf",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/05_case_058.png",
+      "bytes": 453671,
+      "sha256": "adbedbfc7abad75c6c53a504b694bc4d9b3458fde43494712f7c222470786bc2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/05_case_058.png",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/05_case_211.pdf",
+      "bytes": 62339,
+      "sha256": "022ee17e7773e15052be5ca51e5c781c4047f7677e4dd3f448b44b80cb7e8a74",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/05_case_211.pdf",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/05_case_211.png",
+      "bytes": 505962,
+      "sha256": "7914c76a4ab11d6b5b69265b1ad90f870257505184ff50987d9ac1d5a88a0c44",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/05_case_211.png",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/05_case_676.pdf",
+      "bytes": 62116,
+      "sha256": "6be2f9a7c0528eb8f059598a845c8000e9c07d7c2f9efd9260618cd9fe542395",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/05_case_676.pdf",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "figures/05_case_676.png",
+      "bytes": 443303,
+      "sha256": "e27b5844c3f6e80d6e329c7d49f4a390f528c8f81ce38b9f77ef1b6c39147139",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/figures/05_case_676.png",
+      "role": "selected scientific evidence",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "freeze.json",
+      "bytes": 2520,
+      "sha256": "32197ad8101c216a95236e9f1627bea01fda96c51fd9b101524166b7825cf292",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/freeze.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 14490,
+      "sha256": "e812f31b6441742391e68eb4d7d689898f14a2366bd6c56f399dc9ee458d6970",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/manifest.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "matrix_cn.md",
+      "bytes": 2457,
+      "sha256": "597792481d76e515e317a6620c4ee6b07163db1f8f9b58a0747e7c933df1a117",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/matrix_cn.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "protocol.md",
+      "bytes": 8422,
+      "sha256": "55328e9dc925f0fb66e5e2e67069bd4a17ef98ef36f6654b62e812a971760bd5",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/protocol.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "protocol_cn.md",
+      "bytes": 1708,
+      "sha256": "a82437d84c08580a020f3768c67d318765b027a9891222e95f82074825ad7cfc",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/protocol_cn.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "provenance/freeze_attempt1.json",
+      "bytes": 2469,
+      "sha256": "06711acd615ff193e74530f35f9b5b3fcef6e61aa9f364200319a490c6178505",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/provenance/freeze_attempt1.json",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "provenance/run_gpu_attempt1.py",
+      "bytes": 11316,
+      "sha256": "04e38f05316b80b5391367dd32c47a4c6abf1f53f21ea78ff9e8a3f3862492c5",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/provenance/run_gpu_attempt1.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "reproduce.md",
+      "bytes": 2215,
+      "sha256": "06bb3800d5f414ec7beb5d2cb2abd3e32d16c74ac6d72d3c1ba6bae73befbbdc",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/reproduce.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/acp_workspace_compat_proxy.py",
+      "bytes": 5035,
+      "sha256": "f09b9164977e100bf5bbd3dfb0160fa64fe73701bee0aeb781a02e70e014c4a2",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/acp_workspace_compat_proxy.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/analyze.py",
+      "bytes": 8779,
+      "sha256": "712155e4815c3e1083a287e46c900eb9714dbea280f296bd69d55a8136e0ce80",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/analyze.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/casebook.py",
+      "bytes": 4386,
+      "sha256": "989093e9c70f7676df84ff2c423cac61504b253b9a719745b51ca5b47ef98c3a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/casebook.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/launch.sh",
+      "bytes": 308,
+      "sha256": "a96fe10c67e55c9091585bd7c978fc51c2edd45a9ae9368a99a9ee567198b96a",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/launch.sh",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/launch_repair.sh",
+      "bytes": 276,
+      "sha256": "d80ef5b0bd5dc7529d271928831b1ce837056dda5c1f226452aa04d69f2fb447",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/launch_repair.sh",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/native_support.py",
+      "bytes": 5379,
+      "sha256": "c11173d6104d9872e9f6dd3c84f7b04298ee3027456ef03f65db0d54b5b3b663",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/native_support.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/postprocess_when_ready.py",
+      "bytes": 855,
+      "sha256": "0c69b9d3e9611ed3de96297294d0385fc3531e1dc472d40c44c9bd5bd3939476",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/postprocess_when_ready.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/render.py",
+      "bytes": 7674,
+      "sha256": "302a20ce1bcbe44d471dc7fc58d87239e9cd80810b63314d679fef581fafefb3",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/render.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/repair_gpu.py",
+      "bytes": 12644,
+      "sha256": "b5ec52a27e4690077f6f84298cc4618fb5c26b3f25fba6d49c40ba4599442e6c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/repair_gpu.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/rounding_diagnostic.py",
+      "bytes": 1600,
+      "sha256": "35ef31dda41273483b5ab30efb2078ffe6647e2b9a6433a50f2068d89a243235",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/rounding_diagnostic.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/run_gpu.py",
+      "bytes": 12461,
+      "sha256": "0bf6885173c4fd092f0f352dafad57421d55a3effa6acca2434c58303bba4dc6",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/run_gpu.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/runtime.sh",
+      "bytes": 628,
+      "sha256": "768aa577f1356b45cd575cf140e776905990b48a3f3556ae4ac28db5ec2be8b7",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/runtime.sh",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/sco_acp_compat.sh",
+      "bytes": 2044,
+      "sha256": "d8eaec1772e24035e4c23a6c212b3311af3a0def37d5b79043bff5e5cafd383c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/sco_acp_compat.sh",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "scripts/validate.py",
+      "bytes": 3763,
+      "sha256": "73795ea534fb8714a606dc6ddd8556dd3e2a109e1a5f002555ee23281fb1db40",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/scripts/validate.py",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "summary.md",
+      "bytes": 6769,
+      "sha256": "5502e75bf2178fba1f64b35d4d0158fb1c5aa6dd67d27aa407460f3c8ac52b9e",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/summary.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    },
+    {
+      "path": "summary_cn.md",
+      "bytes": 10937,
+      "sha256": "df97d1820537f6861956aed6398b7ef2875a0b2af66a5294cb944bcec721d58c",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/supplements/20261104_equal64_bands_mean_control/summary_cn.md",
+      "role": "protocol/result/provenance audit text",
+      "raw_payload_in_git": false
+    }
+  ],
+  "raw_NPZ_position_document_payloads": "execution only",
+  "scientific_acceptance": "Unknown"
+}

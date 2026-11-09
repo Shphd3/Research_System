@@ -1,0 +1,23 @@
+{
+  "acp_job_id": "pt-exbyxhne",
+  "cluster": "share-cluster",
+  "complete_time_utc": "2026-08-30T18:34:10Z",
+  "create_time_utc": "2026-08-30T18:11:08Z",
+  "display_name": "a15-13-semantic-hierarchy-20260830T181100Z",
+  "gpu_count": 4,
+  "gpu_inventory": [
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "image": "registry.cn-sh-01.sensecore.cn/lepton-trainingjob/ngc-pytorch:25.06-cu12.9-py3.12-ubuntu24.04",
+  "priority": "NORMAL",
+  "quota_type": "RESERVED",
+  "resource_spec": "n6ls.iu.i40.4",
+  "run_stamp": "20260830T181100Z",
+  "start_time_utc": "2026-08-30T18:11:48Z",
+  "state": "SUCCEEDED",
+  "wall_time_seconds": 1342,
+  "workspace": "share-space"
+}

@@ -1,0 +1,7 @@
+# Ordinary top-2 MoE control execution
+
+**Training and saved evaluations are complete.** The actual producer is `pt-0hi8ldns`. Runtime evidence confirms `h100-4-reserved`, with four H100 80GB GPUs. MoE and MoE_LB each completed seeds 11 and 22 at 168 updates and 85,548 valid answer targets, saving endpoints, position-level results and resumable state.
+
+The 2026-10-22 saved-artifact audit passed: frozen source/config identity, target alignment, paired initialization, training counts, load-balancing calculations, endpoint tensor digests and saved per-position/per-feature metrics agree. This audit performed no new forward or training. The separate frozen diagnostic's replay failure remains separate. These checks found no reason to rerun the four models. See [Detailed](detailed.md) and the [audit receipt](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_rankone_progress/20261022_review/controls_audit.json).
+
+Submission history: `pt-50sa30mo` was canceled before starting under the user's priority instruction; the unchanged configuration was resubmitted as `pt-0hi8ldns`. The former is no longer listed as a producer. The [artifact manifest](artifact_manifest.json) preserves submission history and correction evidence. Scope remains [amendment 02](execution_amendment_02.md), with no additional task or continuation. This page reports completion from saved artifacts, not a live platform query. Scientific mechanism judgment remains `Unknown`.

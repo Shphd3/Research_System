@@ -1,0 +1,65 @@
+[
+  {
+    "id": "I1",
+    "grade": "实现错误，既有修复已核实",
+    "evidence": "scripts/analyze.py:14-24;provenance/topk_tie_fix.json",
+    "issue": "原始GPUchunk的top1/top10字段使用不同topk并列排序，不能直接复用",
+    "impact": "旧chunk一致率字段；NLL/KL/概率不受影响，当前更正CSV和主图有效",
+    "minimum_fix": "保留原chunk；必须经当前CPU canonical tie reader计算，本审计已从原概率重建核对",
+    "recompute": "无需GPU；CPU更正已完成"
+  },
+  {
+    "id": "G1",
+    "grade": "证据缺口",
+    "evidence": "protocol.md:56-57;scripts/recovery_groups.py:1-19",
+    "issue": "恢复类型分层为输出后描述性分析；没有外部粗细语义标注与语义最小对照",
+    "impact": "主图1只能支持本面板内频率相关恢复差异，不能裁决粗细语义",
+    "minimum_fix": "显式标探索性并收窄文字；语义确认另列协议由研究者决定",
+    "recompute": "文字不需；新语义检验需另议"
+  },
+  {
+    "id": "G2",
+    "grade": "证据缺口",
+    "evidence": "data/bases.npz;analysis/summary_metrics.csv;analysis/addition_control_contrasts.csv",
+    "issue": "等维控制完整，逐位置保留能量未匹配",
+    "impact": "主图2不能将额外收益直接命名为独有细语义信息",
+    "minimum_fix": "保留能量解释；若要裁决，先制定等能量敏感性协议",
+    "recompute": "收窄不需；新条件需先讨论"
+  },
+  {
+    "id": "E1",
+    "grade": "表达问题，读图版已修复",
+    "evidence": "scripts/recovery_groups.py:16-19;figure1_raw_counts_k64.csv",
+    "issue": "恢复率是组内文档均值，不是简单命中位置数/全部位置数",
+    "impact": "百分数与原始计数可能被误读，但原统计没有算错",
+    "minimum_fix": "新图标明分母并附全部原始计数；不替换旧结果",
+    "recompute": "仅已有表重绘，已完成"
+  },
+  {
+    "id": "G3",
+    "grade": "证据缺口／基准精度边界",
+    "evidence": "scripts/run_gpu.py:67-74,83;provenance/03_implementation_numerics.json",
+    "issue": "p_full是相同batch16的未投影原生头重解码，三篇与整模型返回logits存在0.0625最大BF16差；未全量验证两者首选完全相同",
+    "impact": "不影响相同解码参照下的投影对比，不能声称逐位复现整模型分布",
+    "minimum_fix": "图中明确称未投影原生头参照；全量整模型首选一致性若必需再议",
+    "recompute": "当前文字不需；全量额外对照未运行"
+  },
+  {
+    "id": "P1",
+    "grade": "解释过度，已限制",
+    "evidence": "analysis/recovery_group_members.csv;data/frequency.npz",
+    "issue": "常见/其余token ID不等于粗/细语义；平均原模型置信度相近不等于已匹配置信度",
+    "impact": "主图1的语义层级和因果词频解释不可用",
+    "minimum_fix": "只保留频率相关预测恢复这一观察；不因一个局部缺口否定全部输出",
+    "recompute": "无需重算"
+  },
+  {
+    "id": "G4",
+    "grade": "证据缺口：谱系未核实",
+    "evidence": "scripts/prepare.py:70-79;manifest.json frequency_reference.raw_tokenizer_provenance",
+    "issue": "参考bin原始生成revision和tokenizer完整谱系未追溯；未发现实际不匹配，亦不能推测已核实",
+    "impact": "图1只支持此既有ID参考频率分组；若发现ID映射不一致，需重算分组",
+    "minimum_fix": "优先补原始生成元数据；必要时另议确知tokenizer重建参考",
+    "recompute": "收窄不需；若映射有误再重算，额外数据可用性未核实"
+  }
+]

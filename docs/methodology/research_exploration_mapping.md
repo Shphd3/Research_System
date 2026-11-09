@@ -62,8 +62,8 @@ migration is authorized by this integration.
 
 ## Compression Basis And Limits
 
-Follow the [Astra refactor](../research_system_astra_review_20260926_cn.md) and
-[Astra/Sol compatibility record](../ai_workflow_compatibility_20260926_cn.md):
+Follow the [Astra refactor](../archive/process_records/research_system_astra_review_20260926_cn.md) and
+[Astra/Sol compatibility record](../archive/process_records/ai_workflow_compatibility_20260926_cn.md):
 one source per rule, task-conditioned references, same authority across models,
 no duplicate approval, factual completion with unknown judgment, and separate
 entrypoint byte counts from actual read-path cost. Those records are historical

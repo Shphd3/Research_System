@@ -1,0 +1,158 @@
+{
+  "experiment_id": "A11_10_all_position_indirect_transfer_dynamics",
+  "experiment": "k3_first_informative",
+  "run_name": "a11_10_all_position_indirect_transfer_full_20260709_164227",
+  "output_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227",
+  "num_shards": 4,
+  "config": {
+    "experiment_id": "A11_10_all_position_indirect_transfer_dynamics",
+    "experiment": "k3_first_informative",
+    "run_name": "a11_10_all_position_indirect_transfer_dynamics",
+    "output_dir": "active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics",
+    "objective_scopes": [
+      "all_positions_lm_control"
+    ],
+    "head_variants": [
+      "trainable_heads"
+    ],
+    "num_branches": 4,
+    "filler_length": 16,
+    "shared_context_length": 4,
+    "train_samples_per_branch": 16,
+    "eval_samples_per_branch": 64,
+    "noise_vocab_size": 16,
+    "max_horizon": 3,
+    "seeds": [
+      971,
+      972,
+      973,
+      974,
+      975
+    ],
+    "data_regimes": [
+      "clean_tau3"
+    ],
+    "init_modes": [
+      "identical_branch"
+    ],
+    "conditions": [
+      {
+        "name": "K2_active",
+        "max_heads": 3,
+        "active_horizons": [
+          1,
+          2
+        ]
+      },
+      {
+        "name": "K3_active",
+        "max_heads": 3,
+        "active_horizons": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "K3_mask_decision_prefix_L3",
+        "max_heads": 3,
+        "active_horizons": [
+          1,
+          2,
+          3
+        ],
+        "mask_decision_horizons": [
+          3
+        ]
+      },
+      {
+        "name": "K2_plus_decision_prefix_L3",
+        "max_heads": 3,
+        "active_horizons": [
+          1,
+          2
+        ],
+        "extra_decision_horizons": [
+          3
+        ]
+      }
+    ],
+    "model": {
+      "d_model": 64,
+      "n_layers": 1,
+      "n_heads": 1,
+      "dropout": 0.0
+    },
+    "one_step": {
+      "enabled": true,
+      "samples_per_branch": 16,
+      "etas": [
+        0.0001,
+        0.0003,
+        0.001
+      ]
+    },
+    "curve": {
+      "enabled": true
+    },
+    "dynamics_audit": {
+      "enabled": true
+    },
+    "training": {
+      "steps": 15000,
+      "learning_rate": 0.003,
+      "weight_decay": 0.0,
+      "lambdas": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "eval_every": 250,
+      "log_every": 500
+    },
+    "gradient_profile": {
+      "enabled": true,
+      "profile_every": 500,
+      "profile_until_step": 2000,
+      "horizons": [
+        2,
+        3
+      ],
+      "future_deltas": [
+        500,
+        1000,
+        2000
+      ]
+    },
+    "eval_decoder": {
+      "steps": 200,
+      "learning_rate": 0.05,
+      "weight_decay": 0.001
+    },
+    "probe": {
+      "steps": 200,
+      "learning_rate": 0.05,
+      "weight_decay": 0.001
+    },
+    "decision": {
+      "threshold": 0.9,
+      "consecutive_evals": 3,
+      "early_auc_window": 3000
+    }
+  },
+  "tables": {
+    "curve_metrics": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/curve_metrics.csv",
+    "efficiency_by_seed": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/efficiency_by_seed.csv",
+    "efficiency_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/efficiency_summary.csv",
+    "condition_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/condition_summary.csv",
+    "decision_contrasts": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/decision_contrasts.csv",
+    "local_loss_guard_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/local_loss_guard_summary.csv",
+    "one_step_metrics": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/one_step_metrics.csv",
+    "one_step_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/one_step_summary.csv",
+    "output_geometry": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/output_geometry.csv",
+    "general_k_falsifier_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/general_k_falsifier_summary.csv",
+    "sample_table": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/sample_table.csv",
+    "gradient_profile_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/gradient_profile_summary.csv",
+    "gradient_usefulness_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_10_all_position_indirect_transfer_dynamics/a11_10_all_position_indirect_transfer_full_20260709_164227/tables/gradient_usefulness_summary.csv"
+  }
+}

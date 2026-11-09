@@ -1,0 +1,115 @@
+{
+  "draws": 199,
+  "timed_out": false,
+  "chains": [
+    {
+      "chain": 0,
+      "burn": {
+        "D": {
+          "proposals": 4760240,
+          "accepted": 3420772,
+          "acceptance": 0.7186133472261903,
+          "seconds": 0.20406095683574677,
+          "original_edge_overlap": 0.15574004672033342
+        },
+        "V": {
+          "proposals": 4713720,
+          "accepted": 3438593,
+          "acceptance": 0.7294860534779325,
+          "seconds": 0.19884700514376163,
+          "original_edge_overlap": 0.14913274441417818
+        }
+      },
+      "draws": 50
+    },
+    {
+      "chain": 1,
+      "burn": {
+        "D": {
+          "proposals": 4760240,
+          "accepted": 3418755,
+          "acceptance": 0.7181896290943314,
+          "seconds": 0.2082418780773878,
+          "original_edge_overlap": 0.156828227148211
+        },
+        "V": {
+          "proposals": 4713720,
+          "accepted": 3440950,
+          "acceptance": 0.7299860831784662,
+          "seconds": 0.20554533042013645,
+          "original_edge_overlap": 0.14962704615462946
+        }
+      },
+      "draws": 50
+    },
+    {
+      "chain": 2,
+      "burn": {
+        "D": {
+          "proposals": 4760240,
+          "accepted": 3422082,
+          "acceptance": 0.7188885434347848,
+          "seconds": 0.20442889630794525,
+          "original_edge_overlap": 0.15602364586659495
+        },
+        "V": {
+          "proposals": 4713720,
+          "accepted": 3439837,
+          "acceptance": 0.7297499639350662,
+          "seconds": 0.1961043532937765,
+          "original_edge_overlap": 0.14916456641463643
+        }
+      },
+      "draws": 50
+    },
+    {
+      "chain": 3,
+      "burn": {
+        "D": {
+          "proposals": 4760240,
+          "accepted": 3420535,
+          "acceptance": 0.7185635598205132,
+          "seconds": 0.20082471705973148,
+          "original_edge_overlap": 0.15673369409945717
+        },
+        "V": {
+          "proposals": 4713720,
+          "accepted": 3436943,
+          "acceptance": 0.7291360114728919,
+          "seconds": 0.197078974917531,
+          "original_edge_overlap": 0.14942126388499954
+        }
+      },
+      "draws": 49
+    }
+  ],
+  "split_rhat": {
+    "C_square_D": 1.022027068541191,
+    "C_square_V": 0.9913250331261831,
+    "overlap_D": 1.0122487815093255,
+    "overlap_V": 1.0162492312196967
+  },
+  "margins_exact_each_draw": true,
+  "mixing_qualified": true,
+  "reference_unit": "packed context; not independent original documents",
+  "graphs": {
+    "R": {
+      "frequency_dispersion_observed": null,
+      "valid_frequency_nulls": 0,
+      "frequency_p_conditional": null,
+      "frequency_verdict": "INSUFFICIENT",
+      "reason": "No document/sentence CI; frozen subgraph; no causal frequency claim",
+      "null_dispersion_quantiles": null,
+      "frequency_q_BH_two_graphs": null
+    },
+    "C": {
+      "frequency_dispersion_observed": 1.0820672586955562,
+      "valid_frequency_nulls": 0,
+      "frequency_p_conditional": null,
+      "frequency_verdict": "INSUFFICIENT",
+      "reason": "No document/sentence CI; frozen subgraph; no causal frequency claim",
+      "null_dispersion_quantiles": null,
+      "frequency_q_BH_two_graphs": null
+    }
+  }
+}

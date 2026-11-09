@@ -1,0 +1,44 @@
+{
+  "DEV": 1600,
+  "TEST_opened": false,
+  "TRAIN": 4800,
+  "checked_utc": "2026-10-25T17:49:57.682147+00:00",
+  "checks": "one current full hash per required endpoint/data/cache/basis",
+  "files": {
+    "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/dev.jsonl": {
+      "bytes": 1677480,
+      "mtime_ns": 1791712111148794594,
+      "sha256": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471"
+    },
+    "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/manifest.json": {
+      "bytes": 4728,
+      "mtime_ns": 1791712111531325099,
+      "sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b"
+    },
+    "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1/train.jsonl": {
+      "bytes": 5010240,
+      "mtime_ns": 1791712110843017125,
+      "sha256": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03"
+    },
+    "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full/attn1_adam/main/checkpoints/update_01200/state.pt": {
+      "bytes": 75726646,
+      "mtime_ns": 1791731678699991847,
+      "sha256": "48595673c24579164e271cfeb1b86be6a234e2dfc06218b74d8ca07e16411b75"
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/cache/dev.pt": {
+      "bytes": 139037330,
+      "mtime_ns": 1792685906278959089,
+      "sha256": "b502ee8f5e27bf39fd396aa80c49e4929f5d7d62a8068c63653f01de73221469"
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/cache/train.pt": {
+      "bytes": 417093854,
+      "mtime_ns": 1792685901194410800,
+      "sha256": "65cc7708b26fe02ca0b5f5e130b47e78fd33e26984bd034ee8e252283f40b9a9"
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/basis_initial.pt": {
+      "bytes": 658604,
+      "mtime_ns": 1792686416202413501,
+      "sha256": "e46b876ba49ea2107899dbad57df456b56f5e9a4d4418305d1016cc62d6631be"
+    }
+  }
+}

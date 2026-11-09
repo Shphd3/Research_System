@@ -1,0 +1,474 @@
+{
+  "snapshot_scope": "stable execution outputs before output-asset registration; manifest excludes itself and downstream access records",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023",
+  "producer_job": "pt-j1zvgh90",
+  "producer_state": "SUCCEEDED",
+  "new_training_updates": 0,
+  "n_condition_json": 40,
+  "n_baseline_json": 1,
+  "n_answers_per_forward": 1600,
+  "input_access": {
+    "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/input_access.json",
+    "bytes": 17413,
+    "sha256": "c52a72129941c4576b11ad5142da2199441f4a3ca302947883dd045facccb31e"
+  },
+  "saved_process_sources": {
+    "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_sources.json",
+    "bytes": 16209,
+    "sha256": "f3cf7af4dfb91794605335d449960ef5439da59118737d8678c05096960d3120"
+  },
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/acp_receipts/pod/retention-A-localization-20261023-20261023T025126Z.log",
+      "bytes": 6770,
+      "sha256": "6c1d1cd7086e86e15aab4addc5822ec1c3f6cd5282fa8b25bfe99a8af636fe67"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/C_coordinate_stability_48.csv",
+      "bytes": 18740,
+      "sha256": "21285352596ec6630e20cda12ced9c0da639c18cb519cb756024a172ec004b9b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/acp_receipts/submit-retention-A-localization-20261023-20261023T025034Z.json",
+      "bytes": 1275,
+      "sha256": "bdc848a573c22979ecc98e05260d78ee635b8cbceaf891e7b990cf4eca2a74c8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/acp_receipts/submit-retention-A-localization-20261023-20261023T025034Z.txt",
+      "bytes": 68,
+      "sha256": "06ea70b11e33fd5e3f2cda9cb00cf3246a4369af1f48f95fc5ac6928c22a6a8c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/analysis_freeze.json",
+      "bytes": 642,
+      "sha256": "6309513bab4d4c67d124550d6114dac81ca85d7cd88332af8fe1bb2160f2b98a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/analyze_probe.py",
+      "bytes": 6829,
+      "sha256": "31078ca1fbc680af9f0dbadaaa1fa3881e45ebaccfda61c61ba501f1ae686fdb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/concentration.py",
+      "bytes": 2042,
+      "sha256": "ceefaeafbf8482da5874347f4c2b6d4d647235fb19730c03d5a52c21334c127b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/config.json",
+      "bytes": 2050,
+      "sha256": "79ae790bc3bd681fc2873db7c3412e30065860353ced3df98f63694c5f774c0b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/dryrun.txt",
+      "bytes": 1835,
+      "sha256": "46da0eadc88cedd883ee7314ae8523931d9a5dc482b366ddd0892b6f0e3c2e39"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/figures_manifest.json",
+      "bytes": 995,
+      "sha256": "78b3829ba345a02355bb9aa9cb58685fd3612976f6b4f64bdba9df4605664781"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/finish_manifest.py",
+      "bytes": 4435,
+      "sha256": "743213ebdb7e2b11d03a729baf2318b5ff484275055ee238d275116913d0f440"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/input_access.json",
+      "bytes": 17413,
+      "sha256": "c52a72129941c4576b11ad5142da2199441f4a3ca302947883dd045facccb31e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/input_access_stdout.txt",
+      "bytes": 711,
+      "sha256": "e3db15a44497f511a710a60bbf8d8c7c9b8dafbf6dcc5b67f24ad9be5caf4396"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/job_status.json",
+      "bytes": 235,
+      "sha256": "f364954e9b936d9e7a88b031e992be02397ae3798252413e7200ff30a0b63b73"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/plot.py",
+      "bytes": 3918,
+      "sha256": "e6a1a378704040eb535fc0699fc671792fdfc1c4a057e4f81228d723070cd000"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/preflight.json",
+      "bytes": 460,
+      "sha256": "562370b815b9965ab207c1158041702d860c687bea980d107601e7b28b83c87b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/prior_evaluation_job_state.json",
+      "bytes": 99,
+      "sha256": "f17b6ac65b0a5c2c138fd3b8e102402229d571762ea1b5bf4928e5a318fa09e4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/baseline.json",
+      "bytes": 1238436,
+      "sha256": "c8912b050faca211e0f67ea8245a3e31c6b330f12360c36e57c565486badacd6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/calibration.json",
+      "bytes": 702,
+      "sha256": "300c04a458d916aea466ae440b13fc6306b34beccfcd1c55e1455c64d2a7d4ff"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/completion.json",
+      "bytes": 514,
+      "sha256": "2d56cb37578ecae65644e767a2a153aec9020b4f14c45338640e9cd9e60675a1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/conditions.json",
+      "bytes": 41314,
+      "sha256": "4448224c6762128a3947a35ae938a1619d84a5c835b771272df0380635009cbc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/directions.pt",
+      "bytes": 3952866,
+      "sha256": "b08a057b9396def28bbc3f5a060d3ec2bba4657530cab27b348933a0dcbbfa84"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/freeze_before_forward.json",
+      "bytes": 657,
+      "sha256": "b68426cd01da77c89f942d23a24aead29968a9cdf37e2523c48890972e01b781"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1701_rho0.001_sign+1.json",
+      "bytes": 1239864,
+      "sha256": "f1731cc2a6718d376fc75f16d0122289c2b9ce665884131727fc2b5854a56b0a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1701_rho0.001_sign-1.json",
+      "bytes": 1239575,
+      "sha256": "72471794d521e60c5e2658d81b76150d69a5cd5870090433dcd99bc53046c0b7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1701_rho0.003_sign+1.json",
+      "bytes": 1239492,
+      "sha256": "2a7e2120503b15fba80160deed217a2b667a986189e8c5bac5ae3be9a9d922db"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1701_rho0.003_sign-1.json",
+      "bytes": 1239677,
+      "sha256": "4d01fae8f21ac3b60ed805e1f6e8055e5466c6ab66938210e216b7ebfe9e4f60"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1702_rho0.001_sign+1.json",
+      "bytes": 1239528,
+      "sha256": "828ee95118fee13c3efe9a3d3f379f4c1e22f0ada709d11047482331bcc1c0ca"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1702_rho0.001_sign-1.json",
+      "bytes": 1239703,
+      "sha256": "dca340947d861dbadd5ca786a57708a1043d834801b826334911993b20db9e7e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1702_rho0.003_sign+1.json",
+      "bytes": 1239973,
+      "sha256": "f23bdb2637dfbc03d67d64aadcf07b7285b7ed692a3b16fb651b076becdc1b64"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1702_rho0.003_sign-1.json",
+      "bytes": 1239713,
+      "sha256": "35964ff4208d1353d52c28f421be1e9a80db9462890b5338e93ae271797a6353"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1703_rho0.001_sign+1.json",
+      "bytes": 1239575,
+      "sha256": "6a399768de88c1b275bf637f3dd4461d87a274742c249a2d0bec80ecd7abe5da"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1703_rho0.001_sign-1.json",
+      "bytes": 1239676,
+      "sha256": "6fea06be4fe092826fc157eea941e6b4fa5aaa01713b56212b96c90f59e327ce"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1703_rho0.003_sign+1.json",
+      "bytes": 1239833,
+      "sha256": "2d71c4ecd0fdd6a1443db11c59b81c005dd6cf33dff42049af40b9573fcd1445"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1703_rho0.003_sign-1.json",
+      "bytes": 1239988,
+      "sha256": "224bfafc4c715a296c367afdb9205eef822bdb044750091996bd6511a71bb414"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1704_rho0.001_sign+1.json",
+      "bytes": 1239557,
+      "sha256": "ec08e7ca0c25de1790429b20dac88121f24b6ad0a40af4552f331c03f08b3a2e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1704_rho0.001_sign-1.json",
+      "bytes": 1239885,
+      "sha256": "df7e21b8f21ed52336e90aa4a8ee2c4851d73aedbcac7b27e4e5ad8c450aa336"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1704_rho0.003_sign+1.json",
+      "bytes": 1239677,
+      "sha256": "c2e04bff150a7cc423352426500055bbffcbf8266674295245cd6cf2ccd2f08d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1704_rho0.003_sign-1.json",
+      "bytes": 1239660,
+      "sha256": "339a2ac34ca306c81ce3c4bad6428c543e97be22927983c4dd756f7cf26d1595"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1705_rho0.001_sign+1.json",
+      "bytes": 1239840,
+      "sha256": "ea652fd44f9a67094c553eef9af3b8f3a770c1fb22439475f928e6a425bc9c75"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1705_rho0.001_sign-1.json",
+      "bytes": 1239441,
+      "sha256": "5b3243dba278edfa26c803b3c3cb94995ad0d347bd9cad52c41405370ea5ea02"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1705_rho0.003_sign+1.json",
+      "bytes": 1239678,
+      "sha256": "44cfac3c2fd70f5ad1b5e5f5f8b55b0462ba28c0c62b6a5327eb9157e9c240a4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/random_rank_one_seed1705_rho0.003_sign-1.json",
+      "bytes": 1239677,
+      "sha256": "9cda875920b16b13e4dc125e305ff7efb619667742c68a1256ee4f93cdab2b90"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1701_rho0.001_sign+1.json",
+      "bytes": 1239489,
+      "sha256": "7b85fa1503919f89d0dc440f6b63b92da5eba7d7dc607e0635bd6dd35a84a04a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1701_rho0.001_sign-1.json",
+      "bytes": 1239637,
+      "sha256": "476934aaec2de1cba8a6a9ad25439c40dfb70ffe61937ef95c2445ba3abdf260"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1701_rho0.003_sign+1.json",
+      "bytes": 1239536,
+      "sha256": "c5269fd35c4ae3e36c2739cd1b9b34cb19d541232dd9c7c1c79c07730d387297"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1701_rho0.003_sign-1.json",
+      "bytes": 1239641,
+      "sha256": "c22e716a19a956ccacb6b3d0fad0539c9f478f474dae25f55ccc91a13666689d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1702_rho0.001_sign+1.json",
+      "bytes": 1239491,
+      "sha256": "4e02225c667613f2503181e67460b5da113d285d0b373b9a9e51e2d930627448"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1702_rho0.001_sign-1.json",
+      "bytes": 1239469,
+      "sha256": "5bf071be1c423211d9e93756e54ed906b21b03d69ac4d8becef7f1ab144042bd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1702_rho0.003_sign+1.json",
+      "bytes": 1239951,
+      "sha256": "93a198723c2f6cb081a7bf2787520881766291aac64d2098c0295a9d13c0316d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1702_rho0.003_sign-1.json",
+      "bytes": 1239712,
+      "sha256": "afda0472cef031e50870561c959c66589b672d36332176f5d7ff6375a19cf1e1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1703_rho0.001_sign+1.json",
+      "bytes": 1240022,
+      "sha256": "890d2af9640b81e89046318bacf4752eae58406a13df4d19b62dec2191250d2d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1703_rho0.001_sign-1.json",
+      "bytes": 1239817,
+      "sha256": "8e950e7f7bdbd1ac021a26fe667a744fba31c6130d5f3f64d04a6e101fc638e3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1703_rho0.003_sign+1.json",
+      "bytes": 1240044,
+      "sha256": "3a3e0b5ab1ebdc4394c227921f1ddfe128e2c2758a8dbb6b45131e2bdedcccff"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1703_rho0.003_sign-1.json",
+      "bytes": 1239496,
+      "sha256": "2325f181e9b6931ddec4ab542f0deb99678921b5d30f85f97aa3349f7e552b50"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1704_rho0.001_sign+1.json",
+      "bytes": 1239605,
+      "sha256": "6fc2ae415ddb8a8d0b88b4c267f72b05ba42ab43fd050cd629e7df8c756f1a7e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1704_rho0.001_sign-1.json",
+      "bytes": 1239639,
+      "sha256": "372109c034e9bba9b63cc626b6fa2e7401927301af83afe6522c4e6bac592445"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1704_rho0.003_sign+1.json",
+      "bytes": 1239714,
+      "sha256": "824ecc91d10138cc1173a94dae24fde0a1ccb88a7d720c208eb17f617bca7515"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1704_rho0.003_sign-1.json",
+      "bytes": 1239437,
+      "sha256": "3558ad327f44c2be07755823102b5a17dcf0eee5a23f2ed8dc5a662cc09ae2f3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1705_rho0.001_sign+1.json",
+      "bytes": 1239715,
+      "sha256": "8e3c0acb8faed7592f55d351b5018880e9b3d9a0a7842ce00424065e472d9810"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1705_rho0.001_sign-1.json",
+      "bytes": 1239698,
+      "sha256": "3e3ab10dd52341c14c4a06bef40e87fec767b0bcb452e117031e8bef25d5cbb8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1705_rho0.003_sign+1.json",
+      "bytes": 1239953,
+      "sha256": "9270616c63b8582c62ec02ae13ccf8b6c0d68d96baaccb41e77e48cabdaf7967"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe/top_seed1705_rho0.003_sign-1.json",
+      "bytes": 1240061,
+      "sha256": "4c8d43a70e3ed1e3613a9ca6442f06968559027315c4f042b0b8269ce5c92706"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe.py",
+      "bytes": 6626,
+      "sha256": "564ffbf739817502c170ec0522699a05968c8e2bf9aa402783c66feee9a78bcf"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_analysis_receipt.json",
+      "bytes": 545,
+      "sha256": "430670cedd07d11e43cd940744dd3a4973f045d10c6418d746ae65e0f4737160"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_conditions_40.csv",
+      "bytes": 9135,
+      "sha256": "1922f361a0bfaa95b47b181d7e3eadb0e0ffea9a0fdec13db55a80084e4ed5dd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_contrasts_10.csv",
+      "bytes": 1036,
+      "sha256": "0362970d65ebdae9acd6f25845a24138e49eb44330fab683a8797fdd406bf77e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_pooled_2.csv",
+      "bytes": 718,
+      "sha256": "b222b9564263e736fb72262642fc29f0fa741eb7f93e912301f32aaa4ec55dbf"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_real_probability_examples.json",
+      "bytes": 13626,
+      "sha256": "e8c861238c04e3814b215938d1d17f7eb4f13337e9d4193880101ac219dee21a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_sensitivity.png",
+      "bytes": 116756,
+      "sha256": "f15b60177306542335bc84042d0a6a5ff7c8ba9d2804fe0beab1adeb96ccac07"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/probe_sensitivity_20.csv",
+      "bytes": 2082,
+      "sha256": "86bb53209c8b54e23a39c1a294a47614e92b642ba0404b3808b96d2b826aae86"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process.py",
+      "bytes": 7079,
+      "sha256": "fe7807c8d8e7413f48cbe4725cf6ec81f044f83fde3236bf97dfbc702596838e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_54.csv",
+      "bytes": 4448,
+      "sha256": "1b280a7e77fc0e75125b81b87e98f23e9c2838d7907c7ba4fd810606ee444bef"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_contrasts_27.csv",
+      "bytes": 1262,
+      "sha256": "a32e23bda65ea19f9b18009f65e7ce2b87038c883af707a467a10a0fa1750d7d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_coverage.png",
+      "bytes": 129405,
+      "sha256": "171d35323b87af674a74f6853ebbbb98f6b7605664b6c4aa4432b49e35a32dee"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_first_points_6.csv",
+      "bytes": 325,
+      "sha256": "216fac7f9d2b4e54a7279ff224df71835aa05c329e199c88b4bd45604e9925aa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_pairs_43200.csv",
+      "bytes": 6458373,
+      "sha256": "e0518fc3d91f205b0e1e4708367b81ff76d71a9b9afc38d20618548b4d8659d0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_real_examples.json",
+      "bytes": 35409,
+      "sha256": "c017942e38324c6d8a573150a7f9cc846538a424ee646aafa6a87491b4d993af"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_receipt.json",
+      "bytes": 501,
+      "sha256": "cd8d0dda40a6b05f00d2c496a506a2bfaf529d844300873c8518a7012f5408b4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/process_sources.json",
+      "bytes": 16209,
+      "sha256": "f3cf7af4dfb91794605335d449960ef5439da59118737d8678c05096960d3120"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/review_receipt.json",
+      "bytes": 3515,
+      "sha256": "40db3a2f8e9705edb6765f599ec8d7fdc0ccd46a835b5fe9e0a249d2fb7f314d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/sensitivity_concentration_posthoc.json",
+      "bytes": 1424,
+      "sha256": "bb29966a5eed96dc11007d29856e65c199f1ed731b2e9bf2d69eabb36491d7ef"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/submission.txt",
+      "bytes": 2105,
+      "sha256": "e0674c7de9aea41e5556c06ebcd9752db1a9e1c3fbb6f33fb6c1c97cd2fdb174"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/verification.json",
+      "bytes": 12332,
+      "sha256": "f627a3a7c2e1555a0798ed1bd04c23fc402af4030d4a33c2ef483bca8ebc2008"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/verify.py",
+      "bytes": 6137,
+      "sha256": "6d47e77ab250b2dc03a6e49420d49761ae24db789dcba1d57fcf14539c52ece8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_localization_20261023/write_deliverables.py",
+      "bytes": 42814,
+      "sha256": "008cdd94ad7ec6855578a81f9a43badfb4b03227eb802972dcf91776afd2ae98"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/configs/frozen_v1.json",
+      "bytes": 4388,
+      "sha256": "89b72bc43a63126a176d6dbd1f88a0a1e2cf105655797cb7b623bbf8c3b1d68c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/source/retention.py",
+      "bytes": 52831,
+      "sha256": "60c8ca1e9780ef5e92d885898ea5c953210a7c9239aa02e471e2f63c7906a6b0"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/protocol.md",
+      "bytes": 6646,
+      "sha256": "1fdbd189065364bd51dc91fce0c7df5e65da3b4974ed88758dfe4d66c3366664"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R05_autonomous_retention_20261023/A_localization_20261023/protocol_cn.md",
+      "bytes": 4891,
+      "sha256": "2d65ba78a2635327122b1dac45d8cd6c6ff8ebee35666e06ee9d2708c7e6ab71"
+    }
+  ],
+  "directions_pt": "perturbation bases andcoefficients, nottrainedmodelweights",
+  "original_archive_unchanged": true
+}

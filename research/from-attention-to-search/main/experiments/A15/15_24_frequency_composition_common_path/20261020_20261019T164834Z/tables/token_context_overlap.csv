@@ -1,0 +1,13 @@
+split_a,split_b,object,distinct_a,distinct_b,overlap_distinct,rows_a_in_overlap,rows_b_in_overlap,near_duplicate_status
+train,dev,normalized_first_user_prompt,1024,128,0,0,0,UNKNOWN
+train,dev,exact_assistant,1024,128,0,0,0,UNKNOWN
+train,dev,normalized_assistant,1024,128,0,0,0,UNKNOWN
+train,dev,exact_user_assistant_pair,1024,128,0,0,0,UNKNOWN
+train,eval,normalized_first_user_prompt,1024,256,0,0,0,UNKNOWN
+train,eval,exact_assistant,1024,256,0,0,0,UNKNOWN
+train,eval,normalized_assistant,1024,256,0,0,0,UNKNOWN
+train,eval,exact_user_assistant_pair,1024,256,0,0,0,UNKNOWN
+dev,eval,normalized_first_user_prompt,128,256,0,0,0,UNKNOWN
+dev,eval,exact_assistant,128,256,0,0,0,UNKNOWN
+dev,eval,normalized_assistant,128,256,0,0,0,UNKNOWN
+dev,eval,exact_user_assistant_pair,128,256,0,0,0,UNKNOWN

@@ -4,11 +4,11 @@
 
 ## 先讲抽屉里的 magnet
 
-F23远处说`The drawer was packed with the magnet.`，最后问抽屉装了什么。保持完整320token、远物品e190、答案前冒号p319不动，只把近处另一个容器的object换成battery（近词末token309）。完整全文和候选逐token分数见[原文](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/casebook_cn.md)。
+F23远处说`The drawer was packed with the magnet.`，最后问抽屉装了什么。保持完整320token、远物品e190、答案前冒号p319不动，只把近处另一个容器的object换成battery（近词末token309）。完整全文和候选逐token分数见[原文](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/casebook_cn.md)。
 
 MLP输入#17390从7.418升到9.967，低频#25508从3.941降到3.272，#16240从15.728升到18.058，#27076从13.515降到11.247；同一组同时激活但搭配改变。battery/magnet完整候选分数由−14.919/−10.371变成−8.837/−9.626，模型由正确转为错误。固定近处词后单独改变远目标仍影响这些成员，目标分量没有全部消失。所选坐标中目标投影0.600、近词投影0.663，相反差−0.063；作差等式是定义，不是机制证明。
 
-![真实成员与候选偏好](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/figures/MLPIN_SAE_F23_case.png)
+![真实成员与候选偏好](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/figures/MLPIN_SAE_F23_case.png)
 
 图的下六行是严格匹配矩阵；上六行是旧主距离任务，中间黑线表示文本框架改变，不能跨线当作单因素竞争效果。颜色只用于观察每个成员的相对变化，格内是真实激活。
 
@@ -20,7 +20,7 @@ MLP六共同成员的事实差异H1cos0.745（12族）、近远H2cos0.971（11�
 
 反例F11：组合相反差−0.023仍成对答对；F27：差仍+0.531却有误判。F28中性已错，不能把所有失败起点都归给竞争。二元共同出现超边际证据未保持；幅值重排两侧p0.0156，但家族区间跨0，稳定组合的主要判定证据不足。高/中/低频共同参与已见，参考低频不等于在本任务少见。
 
-![跨家族总体](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/figures/MLPIN_SAE_membership_geometry.png)
+![跨家族总体](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/figures/MLPIN_SAE_membership_geometry.png)
 
 左上展示成员复用和更换，右上展示事实差异方向；下方保留每个家族，红色为相反条件成对失败。可见表征指标与行为不一一对应，不能靠成功例宣布统一机制。
 
@@ -30,4 +30,4 @@ MLP六共同成员的事实差异H1cos0.745（12族）、近远H2cos0.971（11�
 
 为什么还不能说这几个feature导致错误？我们只比较配对前缀在同一答案位置的稀疏表征；反例、候选先验、其他成员、后续句号评分和字典重建损失仍存在。没有激活干预，也没有跨任务验证。
 
-[完整认识更新](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary_cn.md) · [每家族与频率数据](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/numeric_evidence.md) · [执行与原始文件](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/artifacts_cn.md)。本轮停止。待共同审阅后再决定是否设计功能实验；科学接受Unknown。
+[完整认识更新](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/summary_cn.md) · [每家族与频率数据](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/numeric_evidence.md) · [执行与原始文件](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R19_20261104_remote_target_near_competitor_composition/artifacts_cn.md)。本轮停止。待共同审阅后再决定是否设计功能实验；科学接受Unknown。

@@ -1,0 +1,8 @@
+{
+  "reason": "BF16 logit ties; K-dependent torch.topk order",
+  "max_tied_top1_members": 3,
+  "all_top10_cutoffs_covered_by_saved20": true,
+  "policy": "probability descending then ID ascending",
+  "new_GPU_computation": 0,
+  "NLL_KL_entropy_probabilities_unchanged": true
+}

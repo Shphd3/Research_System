@@ -1,0 +1,127 @@
+{
+  "verified_utc": "2026-10-26T02:41:25.895979+00:00",
+  "all_original_inputs_unchanged": {
+    "candidate_checkpoint_exports": 0,
+    "frozen_diagnostic_source_plan_contracts_unchanged": true,
+    "frozen_model_bytes_unchanged": true,
+    "states": [
+      {
+        "bytes": 75517562,
+        "optimizer_sha256": "26e0078d1b937f01466913456079d1c896eeb39938454fda2165a6275738fcb9",
+        "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_29/old_04/U/checkpoints/step_000120.pt",
+        "recoverable_Adam": true,
+        "sha256_after": "d87139cf38855f78f4bb358b7397ab113db2923aad4564ecaffb38ed7d7cbff6",
+        "sha256_before": "d87139cf38855f78f4bb358b7397ab113db2923aad4564ecaffb38ed7d7cbff6",
+        "unchanged": true
+      },
+      {
+        "bytes": 75517562,
+        "optimizer_sha256": "5febacb8aef48f099fa61aae520163e492d4163c3c83dd09ca59e06e01c069d7",
+        "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_29/old_04/F/checkpoints/step_000120.pt",
+        "recoverable_Adam": true,
+        "sha256_after": "e17f4f3639bcc9a01696f8ffebee923be0239ef5b146841c80eec882286a4cb9",
+        "sha256_before": "e17f4f3639bcc9a01696f8ffebee923be0239ef5b146841c80eec882286a4cb9",
+        "unchanged": true
+      },
+      {
+        "bytes": 75517498,
+        "optimizer_sha256": "286d4855d32a04c587fd2a8820665abfb19137fe1074ccc0003bb1ea66d78a2e",
+        "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_43/old_04/U/checkpoints/step_000120.pt",
+        "recoverable_Adam": true,
+        "sha256_after": "f5e16762a8fc03770fc80182eeeec78431cb7410d3767a51e00ce5cabca6bf75",
+        "sha256_before": "f5e16762a8fc03770fc80182eeeec78431cb7410d3767a51e00ce5cabca6bf75",
+        "unchanged": true
+      },
+      {
+        "bytes": 75517498,
+        "optimizer_sha256": "80e529e9c9c2c832f960b834910b9df18d6adc61b671d2a5a7df3eef8681c6b7",
+        "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_43/old_04/F/checkpoints/step_000120.pt",
+        "recoverable_Adam": true,
+        "sha256_after": "d32164b291418193c4a839933e88bfc90fb8895f90e8378f758dd2972fa3639e",
+        "sha256_before": "d32164b291418193c4a839933e88bfc90fb8895f90e8378f758dd2972fa3639e",
+        "unchanged": true
+      },
+      {
+        "bytes": 75517498,
+        "optimizer_sha256": "d473a90ac7b21bd8cc11f279085d4ed6965f9e0ca07448294e27eeb0fd896c5d",
+        "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_71/old_04/U/checkpoints/step_000120.pt",
+        "recoverable_Adam": true,
+        "sha256_after": "f3ef9a9c0bf094bef23ef29b747f5c2dfbf379592ab3f39ea1b4b082e59aa9ec",
+        "sha256_before": "f3ef9a9c0bf094bef23ef29b747f5c2dfbf379592ab3f39ea1b4b082e59aa9ec",
+        "unchanged": true
+      },
+      {
+        "bytes": 75517498,
+        "optimizer_sha256": "472bcab871d1d03749260fefb8c41823f6ebbeb09818617e4007dc8c6e696159",
+        "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_71/old_04/F/checkpoints/step_000120.pt",
+        "recoverable_Adam": true,
+        "sha256_after": "c17dcd4c996ffede86f03d01c32980575b1e814d9d370aa145528dfc5b6b574e",
+        "sha256_before": "c17dcd4c996ffede86f03d01c32980575b1e814d9d370aa145528dfc5b6b574e",
+        "unchanged": true
+      }
+    ],
+    "status": "PASS"
+  },
+  "same_state_branches_all_independent": true,
+  "sequences": 11424,
+  "rows": {
+    "loss": 138,
+    "direction": 54,
+    "noise": 18
+  },
+  "F4_vs_d4_independent_old": {
+    "better": 2,
+    "worse": 0,
+    "noise_or_equal": 4
+  },
+  "F4_vs_d4_new": {
+    "better": 0,
+    "worse": 2,
+    "noise_or_equal": 4
+  },
+  "baseline_noop_spans_all_zero": true,
+  "max_noise_tau": 4.7730281949043274e-08,
+  "gradient_cosines": [
+    {
+      "seed": 29,
+      "origin": "U",
+      "cosine": 0.23989482204175067
+    },
+    {
+      "seed": 29,
+      "origin": "F",
+      "cosine": 0.7500263623523513
+    },
+    {
+      "seed": 43,
+      "origin": "U",
+      "cosine": 0.39414619430767034
+    },
+    {
+      "seed": 43,
+      "origin": "F",
+      "cosine": 0.7719235804204974
+    },
+    {
+      "seed": 71,
+      "origin": "U",
+      "cosine": 0.1652634005538453
+    },
+    {
+      "seed": 71,
+      "origin": "F",
+      "cosine": 0.4060025638772658
+    }
+  ],
+  "all_scaling_abs_remainders_decrease": true,
+  "historical_source_step121_candidate_norm_errors": [
+    2.614266264577836e-08,
+    4.870648350613349e-08,
+    2.2410654929028162e-08,
+    1.950924943122656e-08,
+    1.5065536776437405e-08,
+    3.247542312151408e-08
+  ],
+  "full_trajectory_causation_established": false,
+  "parameter_and_moment_causes_separated": false
+}

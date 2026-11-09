@@ -1,0 +1,35 @@
+{
+  "arms": {
+    "relay_hmt": {
+      "event_files": 2,
+      "relay_branch_grad_norms": [
+        0.0005493171629495919,
+        0.000501151429489255,
+        0.0005151709192432463
+      ],
+      "relay_center_replica_max_abs": 0.0,
+      "run": "/data/250010109/MoE_Router/outputs/online_spectral_router_training/osrt-8gpu-smoke-v9-final-relay-hmt-s17",
+      "step_2_gamma": 0.5
+    },
+    "relay_random": {
+      "event_files": 2,
+      "relay_branch_grad_norms": [
+        0.0005451298202387989,
+        0.000518870132509619,
+        0.0005178054561838508
+      ],
+      "relay_center_replica_max_abs": 0.0,
+      "run": "/data/250010109/MoE_Router/outputs/online_spectral_router_training/osrt-8gpu-smoke-v9-final-relay-random-s17",
+      "step_2_gamma": 0.0
+    }
+  },
+  "expert_function": "/data/250010109/MoE_Router/outputs/online_spectral_router_training/osrt-8gpu-smoke-v9-final-relay-hmt-s17/evaluation/step_3/expert_function/expert_function.json",
+  "rank0_batch_sha256_by_step": [
+    "0fdb47361553d7dc60f41377802346b16682305157613bb03909a57c154480fc",
+    "2965c5d74d5d5338253eefcfc01a6810d4cd7cb20594625c9440e2f1b4439cc9",
+    "a2962c3f895574b74ce90f912ad94b59989f5b57cf09eefebf386f30214f7bd5"
+  ],
+  "scope": "final Relay implementation, exact resume, refresh, shared center, TensorBoard, and milestone reconstruction",
+  "status": "pass",
+  "step0_parameter_sha256": "dd25272ba2e8c61917f7178adb0844de8892d4eef1bdcdf140a4e6cfe33eb7fe"
+}

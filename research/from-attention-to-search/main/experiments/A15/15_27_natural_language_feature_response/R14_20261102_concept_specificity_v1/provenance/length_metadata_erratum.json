@@ -1,0 +1,9 @@
+{
+  "frozen_input": "data/prefixes.jsonl",
+  "legacy_field": "AB_prefix_token_length_difference",
+  "error": "initial clue-only diagnostic and not refreshed after text repair;not used for model inputs,primary metrics or answer-length sensitivity",
+  "corrected_view": "data/prefixes_effective_metadata.jsonl",
+  "corrected_full_prefix_lengths": "audit/input_length_matching.csv",
+  "model_inputs_identical": true,
+  "recomputation": "metadata only;zero model forward,zero changed scores"
+}

@@ -28,4 +28,4 @@
 训练进度解释：33B是本轮使用的中间检查点。“更多训练后模式会更稳定”可作为假设，当前跨架构/跨SAE比较尚不能将差异归因于未训完。
 
 
-[完整中文报告](/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/summary_cn.md) · [原始统计表](/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/results/primary.csv) · [结果包](/data/250010109/Research_System/daily_research_reports/1108/20261108_MoE_feature_hierarchy_cross_model.zip)
+[完整中文报告](/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/summary_cn.md) · [原始统计表](/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/results/primary.csv) · [结果包](/data/250010109/Research_System/daily_research_reports/1108/20261108_MoE_feature_hierarchy_cross_model.zip)

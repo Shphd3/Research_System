@@ -1,0 +1,527 @@
+{
+  "status": "PASS_EXISTING_OUTPUT_COMPLETENESS_AND_EXPORT",
+  "reviewer": "/root/frequency_recovery_review",
+  "time_utc": "2026-10-20T02:08:26.906070+00:00",
+  "source_code_sha": "5bbbad26e2f3bdb65166bdbbbfb3a7b7cb3b6d97f699f3a5fd177fd4502d89e5",
+  "config_sha": "dc8a3a886d97caf64d2ac97279056edc89818c7cbf727a1adfb662e47725d14e",
+  "models": [
+    {
+      "condition": "T_F",
+      "seed": 11,
+      "steps": 168,
+      "valid_answer_targets": 85548,
+      "exposure_total": 171096,
+      "paired_initial_tensor_sha": "8fa58ef0a71639e30ccce68f36a6ad91ab6fec9707e91c6cce4699650b6da3da",
+      "paired_order_sha": "cbebbaae4ce9e787cff18c529e52f3177c5a689a2bfc2ce1733f5d48868ec059",
+      "milestones": [
+        0,
+        42,
+        84,
+        126,
+        168
+      ],
+      "all_TRAIN_EVAL_milestones_full_finite": true,
+      "initial_NLL_arrays_equal_shared_Base": true,
+      "tensorboard_required_tags_PASS": true,
+      "tensorboard_actual_updates": 168,
+      "tensorboard_final_valid_targets": 85548,
+      "expert_positions": [
+        4312,
+        4679,
+        20529,
+        19344,
+        27856,
+        27160,
+        44731,
+        22485
+      ],
+      "expert_nonzero_gradient_steps": [
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168
+      ]
+    },
+    {
+      "condition": "T_F",
+      "seed": 22,
+      "steps": 168,
+      "valid_answer_targets": 85548,
+      "exposure_total": 171096,
+      "paired_initial_tensor_sha": "4c5966639491767e75b216c76b9d53452ec6eb112b8e923517f685e84d90cc4e",
+      "paired_order_sha": "a472a14eceab28cc84f8c137d3440a874a7d825aea96dd9fa21aa1bae1ba6701",
+      "milestones": [
+        0,
+        42,
+        84,
+        126,
+        168
+      ],
+      "all_TRAIN_EVAL_milestones_full_finite": true,
+      "initial_NLL_arrays_equal_shared_Base": true,
+      "tensorboard_required_tags_PASS": true,
+      "tensorboard_actual_updates": 168,
+      "tensorboard_final_valid_targets": 85548,
+      "expert_positions": [
+        4312,
+        4679,
+        20529,
+        19344,
+        27856,
+        27160,
+        44731,
+        22485
+      ],
+      "expert_nonzero_gradient_steps": [
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168
+      ]
+    },
+    {
+      "condition": "T_H",
+      "seed": 11,
+      "steps": 168,
+      "valid_answer_targets": 85548,
+      "exposure_total": 171096,
+      "paired_initial_tensor_sha": "8fa58ef0a71639e30ccce68f36a6ad91ab6fec9707e91c6cce4699650b6da3da",
+      "paired_order_sha": "cbebbaae4ce9e787cff18c529e52f3177c5a689a2bfc2ce1733f5d48868ec059",
+      "milestones": [
+        0,
+        42,
+        84,
+        126,
+        168
+      ],
+      "all_TRAIN_EVAL_milestones_full_finite": true,
+      "initial_NLL_arrays_equal_shared_Base": true,
+      "tensorboard_required_tags_PASS": true,
+      "tensorboard_actual_updates": 168,
+      "tensorboard_final_valid_targets": 85548,
+      "expert_positions": [
+        3909,
+        4270,
+        16978,
+        16128,
+        23027,
+        21236,
+        56627,
+        28921
+      ],
+      "expert_nonzero_gradient_steps": [
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168
+      ]
+    },
+    {
+      "condition": "T_H",
+      "seed": 22,
+      "steps": 168,
+      "valid_answer_targets": 85548,
+      "exposure_total": 171096,
+      "paired_initial_tensor_sha": "4c5966639491767e75b216c76b9d53452ec6eb112b8e923517f685e84d90cc4e",
+      "paired_order_sha": "a472a14eceab28cc84f8c137d3440a874a7d825aea96dd9fa21aa1bae1ba6701",
+      "milestones": [
+        0,
+        42,
+        84,
+        126,
+        168
+      ],
+      "all_TRAIN_EVAL_milestones_full_finite": true,
+      "initial_NLL_arrays_equal_shared_Base": true,
+      "tensorboard_required_tags_PASS": true,
+      "tensorboard_actual_updates": 168,
+      "tensorboard_final_valid_targets": 85548,
+      "expert_positions": [
+        3909,
+        4270,
+        16978,
+        16128,
+        23027,
+        21236,
+        56627,
+        28921
+      ],
+      "expert_nonzero_gradient_steps": [
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168
+      ]
+    },
+    {
+      "condition": "R_F",
+      "seed": 11,
+      "steps": 168,
+      "valid_answer_targets": 85548,
+      "exposure_total": 171096,
+      "paired_initial_tensor_sha": "8fa58ef0a71639e30ccce68f36a6ad91ab6fec9707e91c6cce4699650b6da3da",
+      "paired_order_sha": "cbebbaae4ce9e787cff18c529e52f3177c5a689a2bfc2ce1733f5d48868ec059",
+      "milestones": [
+        0,
+        42,
+        84,
+        126,
+        168
+      ],
+      "all_TRAIN_EVAL_milestones_full_finite": true,
+      "initial_NLL_arrays_equal_shared_Base": true,
+      "tensorboard_required_tags_PASS": true,
+      "tensorboard_actual_updates": 168,
+      "tensorboard_final_valid_targets": 85548,
+      "expert_positions": [
+        37947,
+        4827,
+        26924,
+        16418,
+        10469,
+        32808,
+        26708,
+        14995
+      ],
+      "expert_nonzero_gradient_steps": [
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168
+      ]
+    },
+    {
+      "condition": "R_F",
+      "seed": 22,
+      "steps": 168,
+      "valid_answer_targets": 85548,
+      "exposure_total": 171096,
+      "paired_initial_tensor_sha": "4c5966639491767e75b216c76b9d53452ec6eb112b8e923517f685e84d90cc4e",
+      "paired_order_sha": "a472a14eceab28cc84f8c137d3440a874a7d825aea96dd9fa21aa1bae1ba6701",
+      "milestones": [
+        0,
+        42,
+        84,
+        126,
+        168
+      ],
+      "all_TRAIN_EVAL_milestones_full_finite": true,
+      "initial_NLL_arrays_equal_shared_Base": true,
+      "tensorboard_required_tags_PASS": true,
+      "tensorboard_actual_updates": 168,
+      "tensorboard_final_valid_targets": 85548,
+      "expert_positions": [
+        37947,
+        4827,
+        26924,
+        16418,
+        10469,
+        32808,
+        26708,
+        14995
+      ],
+      "expert_nonzero_gradient_steps": [
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168
+      ]
+    },
+    {
+      "condition": "R_H",
+      "seed": 11,
+      "steps": 168,
+      "valid_answer_targets": 85548,
+      "exposure_total": 171096,
+      "paired_initial_tensor_sha": "8fa58ef0a71639e30ccce68f36a6ad91ab6fec9707e91c6cce4699650b6da3da",
+      "paired_order_sha": "cbebbaae4ce9e787cff18c529e52f3177c5a689a2bfc2ce1733f5d48868ec059",
+      "milestones": [
+        0,
+        42,
+        84,
+        126,
+        168
+      ],
+      "all_TRAIN_EVAL_milestones_full_finite": true,
+      "initial_NLL_arrays_equal_shared_Base": true,
+      "tensorboard_required_tags_PASS": true,
+      "tensorboard_actual_updates": 168,
+      "tensorboard_final_valid_targets": 85548,
+      "expert_positions": [
+        29202,
+        3752,
+        16596,
+        10699,
+        5599,
+        19700,
+        54992,
+        30556
+      ],
+      "expert_nonzero_gradient_steps": [
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168
+      ]
+    },
+    {
+      "condition": "R_H",
+      "seed": 22,
+      "steps": 168,
+      "valid_answer_targets": 85548,
+      "exposure_total": 171096,
+      "paired_initial_tensor_sha": "4c5966639491767e75b216c76b9d53452ec6eb112b8e923517f685e84d90cc4e",
+      "paired_order_sha": "a472a14eceab28cc84f8c137d3440a874a7d825aea96dd9fa21aa1bae1ba6701",
+      "milestones": [
+        0,
+        42,
+        84,
+        126,
+        168
+      ],
+      "all_TRAIN_EVAL_milestones_full_finite": true,
+      "initial_NLL_arrays_equal_shared_Base": true,
+      "tensorboard_required_tags_PASS": true,
+      "tensorboard_actual_updates": 168,
+      "tensorboard_final_valid_targets": 85548,
+      "expert_positions": [
+        29202,
+        3752,
+        16596,
+        10699,
+        5599,
+        19700,
+        54992,
+        30556
+      ],
+      "expert_nonzero_gradient_steps": [
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168,
+        168
+      ]
+    }
+  ],
+  "total_models": 8,
+  "formal_optimizer_steps": 1344,
+  "formal_valid_answer_targets": 684384,
+  "paired_initialization_and_order": true,
+  "smoke_initial_logits_max_abs": 0.0,
+  "initial_equivalence_evidence": "smoke actual logits exactly equal; each original formal entry asserted first64 logits equality; step0 complete NLL arrays intentionally reuse shared Base and are not8 new full forward measurements",
+  "tensorboard": "existing events read only, required tags and exact168updates/85548valid targets verified",
+  "primary_feature_pool": {
+    "TRAIN_B1_fixed": 1694,
+    "DEV_estimable": 838,
+    "DEV_zero_support": 856,
+    "DEV_support_ge20": 0,
+    "legacy964_used": false,
+    "source": "train_bands()->routes/groups.npz band==0; metric_bundle/finalize use fixed T-B1 for all four arms"
+  },
+  "curve_export": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/training_curve_table.csv",
+    "rows": 40,
+    "bytes": 11941,
+    "sha256": "5303fdbe2e3d383bbc808bf30eb5b38229cf5db1d2a8d8ee775b92ce0fdc1ec2",
+    "source": "40 existing metrics_step*.json records; no new fits/tests"
+  },
+  "per_feature_exports": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/learning_final_per_feature_train.csv",
+      "rows": 147456,
+      "bytes": 9633975,
+      "sha256": "dfbf830509e1f090a35c822c5777e41774720a521800997c180eaef46e05ca68",
+      "units": "copied per-feature NLL in nats; original TRAIN bands fixed for all conditions; support0 retains NLL=NA",
+      "source_files": [
+        {
+          "condition": "BASE",
+          "seed": "",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/baseline/train.npz"
+        },
+        {
+          "condition": "T_F",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed11/train_step168.npz"
+        },
+        {
+          "condition": "T_F",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed22/train_step168.npz"
+        },
+        {
+          "condition": "T_H",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed11/train_step168.npz"
+        },
+        {
+          "condition": "T_H",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed22/train_step168.npz"
+        },
+        {
+          "condition": "R_F",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed11/train_step168.npz"
+        },
+        {
+          "condition": "R_F",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed22/train_step168.npz"
+        },
+        {
+          "condition": "R_H",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed11/train_step168.npz"
+        },
+        {
+          "condition": "R_H",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed22/train_step168.npz"
+        }
+      ]
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/learning_final_per_feature_eval.csv",
+      "rows": 147456,
+      "bytes": 9294229,
+      "sha256": "6a732ac5ab8f8e2bca5a0a08e83ffbccc3b2dc00a7e5a8e62048fc37e5c85634",
+      "units": "copied per-feature NLL in nats; original TRAIN bands fixed for all conditions; support0 retains NLL=NA",
+      "source_files": [
+        {
+          "condition": "BASE",
+          "seed": "",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/baseline/eval.npz"
+        },
+        {
+          "condition": "T_F",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed11/eval_step168.npz"
+        },
+        {
+          "condition": "T_F",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed22/eval_step168.npz"
+        },
+        {
+          "condition": "T_H",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed11/eval_step168.npz"
+        },
+        {
+          "condition": "T_H",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed22/eval_step168.npz"
+        },
+        {
+          "condition": "R_F",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed11/eval_step168.npz"
+        },
+        {
+          "condition": "R_F",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed22/eval_step168.npz"
+        },
+        {
+          "condition": "R_H",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed11/eval_step168.npz"
+        },
+        {
+          "condition": "R_H",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed22/eval_step168.npz"
+        }
+      ]
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/learning_final_per_feature_dev.csv",
+      "rows": 147456,
+      "bytes": 9033504,
+      "sha256": "d34bcf0fc8b276fdf2627e83b334c2402865750409612b7d8905b9e676c30bc1",
+      "units": "copied per-feature NLL in nats; original TRAIN bands fixed for all conditions; support0 retains NLL=NA",
+      "source_files": [
+        {
+          "condition": "BASE",
+          "seed": "",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/baseline_dev.npz"
+        },
+        {
+          "condition": "T_F",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/T_F_seed11_dev.npz"
+        },
+        {
+          "condition": "T_F",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/T_F_seed22_dev.npz"
+        },
+        {
+          "condition": "T_H",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/T_H_seed11_dev.npz"
+        },
+        {
+          "condition": "T_H",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/T_H_seed22_dev.npz"
+        },
+        {
+          "condition": "R_F",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/R_F_seed11_dev.npz"
+        },
+        {
+          "condition": "R_F",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/R_F_seed22_dev.npz"
+        },
+        {
+          "condition": "R_H",
+          "seed": "11",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/R_H_seed11_dev.npz"
+        },
+        {
+          "condition": "R_H",
+          "seed": "22",
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/R_H_seed22_dev.npz"
+        }
+      ]
+    }
+  ],
+  "compute_boundary": "No trainer/model import, inference, training, GPU, new bootstrap, p-values or selection; only reads, assertions, existing scalar summaries and CSV copies",
+  "full_resume": "actual states saved; formal continuation NOT_RUN; shared smoke exact next-update weight/optimizer/NLL evidence retained",
+  "scientific_boundary": "Engineering completeness does not establish learning support; DEV low feature pool has very limited per-feature support",
+  "export_layout": "Repeated absolute source paths live in per-export source_files keyed by condition/seed; CSV retains original numbers and missing states."
+}

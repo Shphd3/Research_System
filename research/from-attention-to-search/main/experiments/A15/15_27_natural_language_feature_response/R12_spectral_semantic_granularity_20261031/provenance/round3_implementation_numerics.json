@@ -1,0 +1,20 @@
+{
+  "status": "PASS_BOUNDED",
+  "model_forward_calls": 0,
+  "LM_dictionary_training_updates": 0,
+  "GPU_usage": 0,
+  "BLAS_threads": 2,
+  "checkpoint_load": "not needed;registered R09cached model-scale decoder and original R11native z",
+  "prefit_CUDA_decode_fidelity": "FP64 NMSE max difference8.48e-5 on6D;Hmax9.40e-5",
+  "projection_FP32_relative_error": "about3.3e-7",
+  "score_additivity_max_abs": "about1.8e-15",
+  "independent_CSR_and_score_replays": 15,
+  "guard_failures_repaired": [
+    "prefit parse error",
+    "one diagnostic field mapping;primary results unaffected"
+  ],
+  "whole_task_peak_RAM": "Unknown,not continuously sampled",
+  "new_layers": "NOT_RUN_OPTIONAL_NOT_NECESSARY",
+  "figures": "6PNG inspected;PDF exported,not separately raster-verified",
+  "spot_resume": "NOT_APPLICABLE_NO_GPU_JOB;cache/stage products persisted"
+}

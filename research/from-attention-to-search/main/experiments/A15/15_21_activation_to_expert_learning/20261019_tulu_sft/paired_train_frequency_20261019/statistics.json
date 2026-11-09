@@ -1,0 +1,298 @@
+{
+  "purpose": "compare feature hit frequency on DCLM reference TRAIN and current SFT TRAIN answer-prediction positions; describe migration under unchanged original T groups",
+  "F": 16384,
+  "feature_ids": "0..16383, full dictionary; not filtered by reliable or routing pool",
+  "metric": "p_i = count of shared gated z_i>0 / unique valid TRAIN prediction positions",
+  "not_z_amplitude": true,
+  "no_decoder_weighting": true,
+  "no_epoch_multiplication": true,
+  "shared_positive_bin_edges": [
+    1e-06,
+    3.162277660168379e-06,
+    9.999999999999999e-06,
+    3.1622776601683795e-05,
+    9.999999999999999e-05,
+    0.00031622776601683794,
+    0.001,
+    0.0031622776601683794,
+    0.01,
+    0.03162277660168379,
+    0.09999999999999999,
+    0.31622776601683794,
+    1.0
+  ],
+  "zero_category": "p == 0, separate; never floored or discarded",
+  "rank_curves": "each dataset sorted independently; tie by feature ID; log view excludes zero while original view includes all features",
+  "datasets": {
+    "DCLM": {
+      "N": 130712,
+      "zero": 759,
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/normalized_route_learning/20261018T173143Z/cache/train_stats.npz",
+      "sha256": "573eae759a036a278afb01f7446ac7d2da70a686e23de754d9a0c9ec659195dc",
+      "positive": 15625,
+      "median_p": 0.00313666687067752,
+      "max_p": 0.9846838851826917
+    },
+    "SFT": {
+      "N": 85548,
+      "zero": 907,
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/sft_route_learning/20261019T012300Z/cache/train_stats.npz",
+      "sha256": "3e1e4c97e2245ea2d93822b03f3650fb6a222efe38cb5042474364bc10b91177",
+      "positive": 15477,
+      "median_p": 0.0032963950063122456,
+      "max_p": 0.9998831065600599
+    }
+  },
+  "shared_histogram_counts": [
+    {
+      "bin_id": 0,
+      "lower_p": 0,
+      "upper_p": 0,
+      "boundary_rule": "p == 0",
+      "DCLM_feature_count": 759,
+      "SFT_feature_count": 907
+    },
+    {
+      "bin_id": 1,
+      "lower_p": 1e-06,
+      "upper_p": 3.162277660168379e-06,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 0,
+      "SFT_feature_count": 0
+    },
+    {
+      "bin_id": 2,
+      "lower_p": 3.162277660168379e-06,
+      "upper_p": 9.999999999999999e-06,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 104,
+      "SFT_feature_count": 0
+    },
+    {
+      "bin_id": 3,
+      "lower_p": 9.999999999999999e-06,
+      "upper_p": 3.1622776601683795e-05,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 234,
+      "SFT_feature_count": 290
+    },
+    {
+      "bin_id": 4,
+      "lower_p": 3.1622776601683795e-05,
+      "upper_p": 9.999999999999999e-05,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 610,
+      "SFT_feature_count": 623
+    },
+    {
+      "bin_id": 5,
+      "lower_p": 9.999999999999999e-05,
+      "upper_p": 0.00031622776601683794,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 1634,
+      "SFT_feature_count": 1491
+    },
+    {
+      "bin_id": 6,
+      "lower_p": 0.00031622776601683794,
+      "upper_p": 0.001,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 2464,
+      "SFT_feature_count": 2265
+    },
+    {
+      "bin_id": 7,
+      "lower_p": 0.001,
+      "upper_p": 0.0031622776601683794,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 2401,
+      "SFT_feature_count": 2524
+    },
+    {
+      "bin_id": 8,
+      "lower_p": 0.0031622776601683794,
+      "upper_p": 0.01,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 2978,
+      "SFT_feature_count": 2914
+    },
+    {
+      "bin_id": 9,
+      "lower_p": 0.01,
+      "upper_p": 0.03162277660168379,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 3635,
+      "SFT_feature_count": 3121
+    },
+    {
+      "bin_id": 10,
+      "lower_p": 0.03162277660168379,
+      "upper_p": 0.09999999999999999,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 1136,
+      "SFT_feature_count": 1639
+    },
+    {
+      "bin_id": 11,
+      "lower_p": 0.09999999999999999,
+      "upper_p": 0.31622776601683794,
+      "boundary_rule": "[lower,upper)",
+      "DCLM_feature_count": 327,
+      "SFT_feature_count": 492
+    },
+    {
+      "bin_id": 12,
+      "lower_p": 0.31622776601683794,
+      "upper_p": 1.0,
+      "boundary_rule": "[lower,upper]",
+      "DCLM_feature_count": 102,
+      "SFT_feature_count": 118
+    }
+  ],
+  "migration": {
+    "up_common_bin": 4017,
+    "same_common_bin": 9056,
+    "down_common_bin": 3311,
+    "frequency_increases": 8421,
+    "frequency_equal": 668,
+    "frequency_decreases": 7295,
+    "DCLM_zero_to_SFT_positive": 91,
+    "DCLM_positive_to_SFT_zero": 239,
+    "zero_in_both": 668,
+    "spearman_rank_correlation": 0.9237337797498715,
+    "spearman_interpretation": "descriptive, ties retained; no significance or causal inference",
+    "original_T_groups": [
+      {
+        "original_group": 0,
+        "members": 1257,
+        "DCLM_p_q25": 0.0017825448313850297,
+        "DCLM_p_median": 0.0020962115184527817,
+        "DCLM_p_q75": 0.0024404798335271437,
+        "SFT_p_q25": 0.0013442745593117314,
+        "SFT_p_median": 0.0020105671669705897,
+        "SFT_p_q75": 0.003331463038294291,
+        "median_per_feature_frequency_ratio": 0.9642324231987403,
+        "features_at_least2x": 196,
+        "features_at_most_half": 176,
+        "SFT_zero_frequency_features": 0,
+        "summary_unit": "features equally weighted; frequency p only, not z amplitude"
+      },
+      {
+        "original_group": 1,
+        "members": 1347,
+        "DCLM_p_q25": 0.0033508782667237896,
+        "DCLM_p_median": 0.0038634555358345066,
+        "DCLM_p_q75": 0.004452536874961748,
+        "SFT_p_q25": 0.002536587646701267,
+        "SFT_p_median": 0.003775658110066863,
+        "SFT_p_q75": 0.006020012156917754,
+        "median_per_feature_frequency_ratio": 1.0160974159182297,
+        "features_at_least2x": 193,
+        "features_at_most_half": 179,
+        "SFT_zero_frequency_features": 0,
+        "summary_unit": "features equally weighted; frequency p only, not z amplitude"
+      },
+      {
+        "original_group": 2,
+        "members": 1506,
+        "DCLM_p_q25": 0.0059768804700410065,
+        "DCLM_p_median": 0.006908317522492197,
+        "DCLM_p_q75": 0.00796407368872024,
+        "SFT_p_q25": 0.004745873661570112,
+        "SFT_p_median": 0.007048674428391079,
+        "SFT_p_q75": 0.01050579791462103,
+        "median_per_feature_frequency_ratio": 1.0223733714157917,
+        "features_at_least2x": 202,
+        "features_at_most_half": 181,
+        "SFT_zero_frequency_features": 0,
+        "summary_unit": "features equally weighted; frequency p only, not z amplitude"
+      },
+      {
+        "original_group": 3,
+        "members": 1629,
+        "DCLM_p_q25": 0.010351000673235817,
+        "DCLM_p_median": 0.011835179631556399,
+        "DCLM_p_q75": 0.013617724462941428,
+        "SFT_p_q25": 0.008100715387852434,
+        "SFT_p_median": 0.01153738252209286,
+        "SFT_p_q75": 0.01759246271099266,
+        "median_per_feature_frequency_ratio": 0.9763853873679567,
+        "features_at_least2x": 209,
+        "features_at_most_half": 193,
+        "SFT_zero_frequency_features": 0,
+        "summary_unit": "features equally weighted; frequency p only, not z amplitude"
+      },
+      {
+        "original_group": 4,
+        "members": 1824,
+        "DCLM_p_q25": 0.018007145480139545,
+        "DCLM_p_median": 0.020518391578431973,
+        "DCLM_p_q75": 0.0232189852500153,
+        "SFT_p_q25": 0.015099710104268948,
+        "SFT_p_median": 0.022355870388553793,
+        "SFT_p_q75": 0.03125730583999626,
+        "median_per_feature_frequency_ratio": 1.0737306675133256,
+        "features_at_least2x": 164,
+        "features_at_most_half": 189,
+        "SFT_zero_frequency_features": 0,
+        "summary_unit": "features equally weighted; frequency p only, not z amplitude"
+      },
+      {
+        "original_group": 5,
+        "members": 1189,
+        "DCLM_p_q25": 0.029438766142358772,
+        "DCLM_p_median": 0.03330222167819328,
+        "DCLM_p_q75": 0.039866270885611114,
+        "SFT_p_q25": 0.02628933464253986,
+        "SFT_p_median": 0.03772151306868658,
+        "SFT_p_q75": 0.053817739748445316,
+        "median_per_feature_frequency_ratio": 1.1063306249748825,
+        "features_at_least2x": 125,
+        "features_at_most_half": 92,
+        "SFT_zero_frequency_features": 0,
+        "summary_unit": "features equally weighted; frequency p only, not z amplitude"
+      },
+      {
+        "original_group": 6,
+        "members": 523,
+        "DCLM_p_q25": 0.05693050370279699,
+        "DCLM_p_median": 0.06865475243282942,
+        "DCLM_p_q75": 0.08852285941612094,
+        "SFT_p_q25": 0.06291789404778604,
+        "SFT_p_median": 0.0893650348342451,
+        "SFT_p_q75": 0.12734955814279703,
+        "median_per_feature_frequency_ratio": 1.230625122602452,
+        "features_at_least2x": 49,
+        "features_at_most_half": 22,
+        "SFT_zero_frequency_features": 0,
+        "summary_unit": "features equally weighted; frequency p only, not z amplitude"
+      },
+      {
+        "original_group": 7,
+        "members": 330,
+        "DCLM_p_q25": 0.18054578003549787,
+        "DCLM_p_median": 0.24976666258644958,
+        "DCLM_p_q75": 0.32485349470591834,
+        "SFT_p_q25": 0.17842322438864733,
+        "SFT_p_median": 0.24673867302566982,
+        "SFT_p_q75": 0.3387425772665638,
+        "median_per_feature_frequency_ratio": 1.0360753439406394,
+        "features_at_least2x": 11,
+        "features_at_most_half": 17,
+        "SFT_zero_frequency_features": 0,
+        "summary_unit": "features equally weighted; frequency p only, not z amplitude"
+      }
+    ]
+  },
+  "no_amplitude_z_comparison": true,
+  "no_powerlaw_test": true,
+  "no_new_activations": true,
+  "no_training": true,
+  "no_router_changes": true,
+  "CPU_seconds": 3.352935528382659,
+  "code_sha256": "6808e2e780d5a07a1a4ff1f4b00263e9671401ab1cb287651939dea19faac7a2",
+  "source_owners": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/metrics/core/owners.npz",
+    "sha256": "67b53e0919c2626456009b52394c5d2f39d1da050b976d2a8eb07dc1152d52a0"
+  }
+}

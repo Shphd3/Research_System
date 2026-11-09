@@ -1,0 +1,72 @@
+{
+  "attention_shape": [
+    512,
+    4096
+  ],
+  "bases": {
+    "mean_response": {
+      "all_finite": true,
+      "maximum_parent_energy_relative_error": 1.9205303658509365e-07
+    },
+    "rank_consensus": {
+      "all_finite": true,
+      "maximum_parent_energy_relative_error": 2.259386064906721e-07
+    }
+  },
+  "layers": [
+    {
+      "gate_dtype": "torch.bfloat16",
+      "gate_shape": [
+        12288,
+        4096
+      ],
+      "layer": 1,
+      "maximum_eigenvalue": 316.98028564453125,
+      "minimum_eigenvalue": 0.13153381645679474,
+      "symmetry_relative": 0.0,
+      "up_dtype": "torch.bfloat16",
+      "up_shape": [
+        12288,
+        4096
+      ]
+    },
+    {
+      "gate_dtype": "torch.bfloat16",
+      "gate_shape": [
+        12288,
+        4096
+      ],
+      "layer": 18,
+      "maximum_eigenvalue": 257.65350341796875,
+      "minimum_eigenvalue": 0.35561269521713257,
+      "symmetry_relative": 0.0,
+      "up_dtype": "torch.bfloat16",
+      "up_shape": [
+        12288,
+        4096
+      ]
+    },
+    {
+      "gate_dtype": "torch.bfloat16",
+      "gate_shape": [
+        12288,
+        4096
+      ],
+      "layer": 36,
+      "maximum_eigenvalue": 1012.6539916992188,
+      "minimum_eigenvalue": 0.27307674288749695,
+      "symmetry_relative": 0.0,
+      "up_dtype": "torch.bfloat16",
+      "up_shape": [
+        12288,
+        4096
+      ]
+    }
+  ],
+  "semantic_group_shape": [
+    8,
+    8,
+    8
+  ],
+  "status": "PASS"
+}

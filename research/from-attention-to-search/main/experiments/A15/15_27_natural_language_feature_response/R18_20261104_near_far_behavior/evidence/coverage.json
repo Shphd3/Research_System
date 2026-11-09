@@ -1,0 +1,52 @@
+[
+  {
+    "item": "question/source distinction",
+    "status": "DONE_VALID",
+    "evidence": "prior_context.md;source_recovery.json"
+  },
+  {
+    "item": "pre-run design/data freeze",
+    "status": "DONE_VALID",
+    "evidence": "freeze.json"
+  },
+  {
+    "item": "main d16,d64,d128",
+    "status": "DONE_VALID",
+    "evidence": "tables/family_pairs.csv"
+  },
+  {
+    "item": "neutral baseline",
+    "status": "DONE_VALID",
+    "evidence": "tables/baseline.csv"
+  },
+  {
+    "item": "natural paraphrase and foil diagnostics",
+    "status": "DONE_VALID",
+    "evidence": "tables/distance_summary.csv; limitations retained"
+  },
+  {
+    "item": "complete token scoring and replay",
+    "status": "DONE_VALID",
+    "evidence": "4596 checks;metric_replay.json"
+  },
+  {
+    "item": "all families and original cases",
+    "status": "DONE_VALID",
+    "evidence": "families_cn.md;casebook_all_cn.md"
+  },
+  {
+    "item": "static figure",
+    "status": "DONE_VALID",
+    "evidence": "figure_review.json"
+  },
+  {
+    "item": "SAE analysis",
+    "status": "NOT_RUN_BY_PROTOCOL",
+    "evidence": "direct user stop"
+  },
+  {
+    "item": "model/SAE training and activation intervention",
+    "status": "NOT_RUN_BY_PROTOCOL",
+    "evidence": "direct user scope"
+  }
+]

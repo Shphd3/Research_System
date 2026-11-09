@@ -1,0 +1,51 @@
+{
+  "UTC": "2026-11-05T09:42:47.724012+00:00",
+  "task_state": "BOUNDED_CACHE_ANALYSIS_COMPLETE",
+  "question_state": "USER_ACTIVATED",
+  "design_state": "FROZEN_REUSE_ANALYSIS",
+  "result_state": "NO_LOCKED_EDGE_MEETS_FULL_CATEGORY_REPLICATION_RULE",
+  "scientific_acceptance": "Unknown",
+  "closure": "Unknown",
+  "items": [
+    {
+      "task": "S11/cache/split/interface audit",
+      "status": "DONE_VALID",
+      "evidence": "evidence/data_audit.json"
+    },
+    {
+      "task": "Exact supplied Windows paper",
+      "status": "BLOCKED",
+      "evidence": "evidence/paper_access_audit.json"
+    },
+    {
+      "task": "Development selection and frozen IDs/signs",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "evidence/selection_lock.json"
+    },
+    {
+      "task": "Binary graph/fullmargin null/wordings/4categories",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "results/binary_edges.csv"
+    },
+    {
+      "task": "Strength relationships/full raw distributions",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "results/strength_edges.csv"
+    },
+    {
+      "task": "Small additive/interaction statistical readouts",
+      "status": "DONE_EXPLORATORY",
+      "evidence": "results/readout_comparison.csv"
+    },
+    {
+      "task": "Fresh independent-family/category-expression confirmation",
+      "status": "NOT_RUN",
+      "evidence": "summary_cn.md"
+    },
+    {
+      "task": "New training/intervention/router",
+      "status": "NOT_RUN",
+      "evidence": "protocol.md"
+    }
+  ]
+}

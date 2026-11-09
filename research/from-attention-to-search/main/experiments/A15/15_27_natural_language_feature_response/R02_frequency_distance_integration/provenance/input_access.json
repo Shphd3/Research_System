@@ -1,0 +1,447 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-26T15:57:05.246051+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-tlkqx",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7929,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "dclm_pair_v1",
+      "title_cn": "DCLM paired train/validation view",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/training_data_views/dclm_pair_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "paired_training_view",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 754964,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000000_processed.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 299003652,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/validation/validation.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 459952424,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "model_qwen3_0p6b_base_official_a5",
+      "title_cn": "原始 Qwen3-0.6B-Base official 本地副本（A5/A6/E16 lineage）",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "历史实际 parent",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 727,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1192135096,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "tokenizer_qwen3_0p6b_base_official_a5",
+      "title_cn": "Qwen3-0.6B-Base official tokenizer（A5/A6本地副本）",
+      "category": "tokenizer",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "实际tokenizer目录",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7031645,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9678,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/merges.txt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1671853,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/vocab.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2776833,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "title_cn": "原始Qwen3-0.6B 最终独立SAE",
+      "category": "sae_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 245887459,
+          "ok": true,
+          "role": "独立SAE权重",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 10419,
+          "ok": true,
+          "role": "对应加载实现",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/full_summary.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3760,
+          "ok": true,
+          "role": "原训练身份/里程碑收据",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_natural_language_feature_response_20261026",
+      "title_cn": "E16自然语言目标位置激活与重构",
+      "category": "representation_cache",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/discovery.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 890373,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/holdout.npz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 890391,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/discovery_sequences.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 368097,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/holdout_sequences.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 373320,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/forward_ledger.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 38930,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/discovery_qualification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1573,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/holdout_qualification.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 981,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_natural_language_feature_response_20261026",
+      "title_cn": "自然语言feature响应关系留出检验",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/candidate_freeze.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15282,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/results.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 12735,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H1_features.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 15448,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H2_groups.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 4004,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H3_features.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 20343,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/stable_features.csv",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 18664,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/reference_frequency_provenance.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1176,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

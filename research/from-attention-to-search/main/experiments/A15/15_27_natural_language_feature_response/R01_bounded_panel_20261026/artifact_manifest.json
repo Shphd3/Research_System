@@ -1,0 +1,28 @@
+{
+  "schema": "A15_27_R01_delivery_manifest_v1",
+  "execution_owner": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response",
+  "full_manifest": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/artifact_manifest.json",
+  "full_manifest_sha256": "646f9fbf6b492e15c580db2e9d420afaaeae360ee60970ce42ee0a0ef5222fe4",
+  "registered_assets": {
+    "input_ids": [
+      "model_qwen3_0p6b_base_official_a5",
+      "tokenizer_qwen3_0p6b_base_official_a5",
+      "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "representation_qwen3_0p6b_e17_dclm_sparse_activation"
+    ],
+    "output_ids": [
+      "data_natural_language_feature_panel_20261026",
+      "representation_natural_language_feature_response_20261026",
+      "analysis_natural_language_feature_response_20261026"
+    ]
+  },
+  "selected_evidence_manifest": "selected_evidence_payload_manifest.json",
+  "immutable_protocol_sha256": "7b6cf8870290274ff9cf4a97f1f3e97815a9f69093351f115a51166231121b7b",
+  "pre_forward_freeze_sha256": "29f5b17169f5f15c2e9ec61214b2ecf8edbd4574e9eaeebe38848def865594a9",
+  "candidate_freeze_sha256": "a54c37ab0854c4a2e9c535c87d9720cdc8a03c719d19856ae148ad3ea66b5838",
+  "result_sha256": "4b4c69c2b3cac2e261d17eb5dd2bebbfc55d2e16b56e0e01600345dededf4bca",
+  "forward_budget_used": 292,
+  "new_training": false,
+  "sealed_TEST_read": false,
+  "publication": "local files only; no commit/push/external publication"
+}

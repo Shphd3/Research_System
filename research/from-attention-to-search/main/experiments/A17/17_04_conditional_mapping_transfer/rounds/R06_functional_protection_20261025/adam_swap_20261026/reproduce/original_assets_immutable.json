@@ -1,0 +1,344 @@
+{
+  "contract_source_plan_unchanged": true,
+  "non_target_model_bytes_unchanged": true,
+  "original_weights_or_optimizer_files_written": false,
+  "states": [
+    {
+      "named_state_mapping": {
+        "model.layers.27.self_attn.k_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "a282e28da85d202d24eb3f1bd5f1757ea807ecb8a273cd351dc4ace3f6248bc8",
+          "exp_avg_sq_sha256": "3eedf1b23f2e314bf8bf747e12374ea60cc52809c49ddce1f20ac610c7cf3a15",
+          "group": 0,
+          "id": 1,
+          "shape": [
+            1024,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.o_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "fe909d94fb417f320d41d99f53d35fedcdf096a49f714a8e60bf3fb8a8236050",
+          "exp_avg_sq_sha256": "7dcf61f30defaaf1d9d5a354dc1a4cb393b99094b4edf1da64e3822ee744f233",
+          "group": 0,
+          "id": 3,
+          "shape": [
+            1024,
+            2048
+          ]
+        },
+        "model.layers.27.self_attn.q_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "8b9dfeec1efc677444adf184dac2bd2a3e42bdd0de0a5d2d7c656208e958b679",
+          "exp_avg_sq_sha256": "0caa3d1c515c2f5b033bcea61779e1a55576ebc10f78f3b4e75698e21fb5b34c",
+          "group": 0,
+          "id": 0,
+          "shape": [
+            2048,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.v_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "9b6de6e6f9bde40162d0df07b5bd4a4479ffdcb0d2bb2252141b1f2ef357d2b5",
+          "exp_avg_sq_sha256": "91f51687d0eabd0ccee6563263f79409f6b996fea7433965a3658975d1078fc8",
+          "group": 0,
+          "id": 2,
+          "shape": [
+            1024,
+            1024
+          ]
+        }
+      },
+      "optimizer_sha256": "26e0078d1b937f01466913456079d1c896eeb39938454fda2165a6275738fcb9",
+      "origin": "U",
+      "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_29/old_04/U/checkpoints/step_000120.pt",
+      "seed": 29,
+      "sha256_after": "d87139cf38855f78f4bb358b7397ab113db2923aad4564ecaffb38ed7d7cbff6",
+      "sha256_before": "d87139cf38855f78f4bb358b7397ab113db2923aad4564ecaffb38ed7d7cbff6",
+      "source_freeze_verified": true,
+      "unchanged": true
+    },
+    {
+      "named_state_mapping": {
+        "model.layers.27.self_attn.k_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "05897c25bd910c7b19c2a266c7ab58db74ee8a2bcb3e32a9338852ca97d88b10",
+          "exp_avg_sq_sha256": "c85ff1514767ee23809006b2c63eb2ff2eb1bcd80886ed36ca25660300d74d02",
+          "group": 0,
+          "id": 1,
+          "shape": [
+            1024,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.o_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "2673a4c94ddd2c981423cacfb5915298419a0658228560e65d83b06d80c7e482",
+          "exp_avg_sq_sha256": "9a3a40e04afed10abad5ff1055377820795b69079455c27d34c395c78f86c2e2",
+          "group": 0,
+          "id": 3,
+          "shape": [
+            1024,
+            2048
+          ]
+        },
+        "model.layers.27.self_attn.q_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "fdfcd27edad5be92674d419e249483837ee56e49b738624fef5e14b483c468a3",
+          "exp_avg_sq_sha256": "c34c1259271f39f93522ff3d3104bf059f846632388611e704be4206ba35e119",
+          "group": 0,
+          "id": 0,
+          "shape": [
+            2048,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.v_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "cff7020f1c9c7d01096829648dff3daf2a07c03cfdadb1e16b7a085873974c9e",
+          "exp_avg_sq_sha256": "3d63eac54036ac919c37f8a6c6e6442acf56275615627b62b6731824610362fc",
+          "group": 0,
+          "id": 2,
+          "shape": [
+            1024,
+            1024
+          ]
+        }
+      },
+      "optimizer_sha256": "5febacb8aef48f099fa61aae520163e492d4163c3c83dd09ca59e06e01c069d7",
+      "origin": "F",
+      "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_29/old_04/F/checkpoints/step_000120.pt",
+      "seed": 29,
+      "sha256_after": "e17f4f3639bcc9a01696f8ffebee923be0239ef5b146841c80eec882286a4cb9",
+      "sha256_before": "e17f4f3639bcc9a01696f8ffebee923be0239ef5b146841c80eec882286a4cb9",
+      "source_freeze_verified": true,
+      "unchanged": true
+    },
+    {
+      "named_state_mapping": {
+        "model.layers.27.self_attn.k_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "fb94b5036786d3ff59aa20b85f55669b42f84558ff5e72945674ed7f8434bdb7",
+          "exp_avg_sq_sha256": "69a02c58529fc8a78dda9eba55f3ff8cd5e8a8a7e0af9e2d3855db279637b330",
+          "group": 0,
+          "id": 1,
+          "shape": [
+            1024,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.o_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "4d3cdfe53039387e3a376ee240afaab62f3a1e002775550205d9435b860f173a",
+          "exp_avg_sq_sha256": "5fcecb106d0920fc6edd685acdff1c46dd0d9aef5f6f22c37092d53e4af886df",
+          "group": 0,
+          "id": 3,
+          "shape": [
+            1024,
+            2048
+          ]
+        },
+        "model.layers.27.self_attn.q_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "6f5cf68d330757139fc5481a7283111f2cf465042c7e02bb13b99c97e1d0b213",
+          "exp_avg_sq_sha256": "7b25a2b77922091cb093edf870bafb5478db2611e35cd4b8ef5573a95cb14479",
+          "group": 0,
+          "id": 0,
+          "shape": [
+            2048,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.v_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "7fc656bbf4667f3bc8e7519a4eb22b257913d36c7b357fc27c7416f850e0e4c9",
+          "exp_avg_sq_sha256": "4fdd9257d0743206f92a0e69abbe2806822d96a4c3c5bf940b8734581aa0d400",
+          "group": 0,
+          "id": 2,
+          "shape": [
+            1024,
+            1024
+          ]
+        }
+      },
+      "optimizer_sha256": "286d4855d32a04c587fd2a8820665abfb19137fe1074ccc0003bb1ea66d78a2e",
+      "origin": "U",
+      "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_43/old_04/U/checkpoints/step_000120.pt",
+      "seed": 43,
+      "sha256_after": "f5e16762a8fc03770fc80182eeeec78431cb7410d3767a51e00ce5cabca6bf75",
+      "sha256_before": "f5e16762a8fc03770fc80182eeeec78431cb7410d3767a51e00ce5cabca6bf75",
+      "source_freeze_verified": true,
+      "unchanged": true
+    },
+    {
+      "named_state_mapping": {
+        "model.layers.27.self_attn.k_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "03c0a5eb57561e54d5bf91acd647407fa49f72b7fb66171227e8cb28548bc195",
+          "exp_avg_sq_sha256": "242517e4ac3e9c068ffc68cf59935591eb103e7e68b79b7dc05333a905f88f2f",
+          "group": 0,
+          "id": 1,
+          "shape": [
+            1024,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.o_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "fbcc23991f30f9174a5d596642b4852ca8d660c578a72aaaaf9949ed76208b47",
+          "exp_avg_sq_sha256": "25ce280c930198aa646edbe1e7c72ca2a38c4075cbf9ebc867698f0c68287bd8",
+          "group": 0,
+          "id": 3,
+          "shape": [
+            1024,
+            2048
+          ]
+        },
+        "model.layers.27.self_attn.q_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "001a95c81dead3915d6f22ccd77accc66900fcb43fdbe56ef6dbe29bab900a6a",
+          "exp_avg_sq_sha256": "bd4f27610edac9cf53c5dc8aa98058ccfa8b8c6fe406717ff2fa267b659b4cde",
+          "group": 0,
+          "id": 0,
+          "shape": [
+            2048,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.v_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "1f475eb7b7c8699522b9e85fcc51933e8d7140847928e94ebeb4e1d8f8b60528",
+          "exp_avg_sq_sha256": "0374da57e67e42e12d939183947ef169e5a5179cd2fa04d17676c99e2534b4b1",
+          "group": 0,
+          "id": 2,
+          "shape": [
+            1024,
+            1024
+          ]
+        }
+      },
+      "optimizer_sha256": "80e529e9c9c2c832f960b834910b9df18d6adc61b671d2a5a7df3eef8681c6b7",
+      "origin": "F",
+      "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_43/old_04/F/checkpoints/step_000120.pt",
+      "seed": 43,
+      "sha256_after": "d32164b291418193c4a839933e88bfc90fb8895f90e8378f758dd2972fa3639e",
+      "sha256_before": "d32164b291418193c4a839933e88bfc90fb8895f90e8378f758dd2972fa3639e",
+      "source_freeze_verified": true,
+      "unchanged": true
+    },
+    {
+      "named_state_mapping": {
+        "model.layers.27.self_attn.k_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "710639647b75223732afc36d625bf6bf8a86270d596f21827efe678b28950503",
+          "exp_avg_sq_sha256": "3632d8e466b17595097da9b64be9642d00a828a60e2f6d28c7912f2a0ef7e803",
+          "group": 0,
+          "id": 1,
+          "shape": [
+            1024,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.o_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "168f219681b07cba22dd150bc1ca1de0cd65ba37121896955efefd8c25a98f65",
+          "exp_avg_sq_sha256": "023dbf7d84f5ec17d593b970017237cfc40f4879b0fae5b4fe5ee158a9304fb0",
+          "group": 0,
+          "id": 3,
+          "shape": [
+            1024,
+            2048
+          ]
+        },
+        "model.layers.27.self_attn.q_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "dfa3bb37297ed0ccaabaefc2ddb5f1eb521185ec58a1cd90922933e0589517d1",
+          "exp_avg_sq_sha256": "d28ccbc25ed28437cddc4398c4125bbaa7829f8ab7e5ce5140d95e03954e59c3",
+          "group": 0,
+          "id": 0,
+          "shape": [
+            2048,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.v_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "1774ca84997a9294049147ccba32655ac2d7d0f834c65882252743b1e11ba6b2",
+          "exp_avg_sq_sha256": "e67ab15dfd0210823529db285b4623eec21a29932f1d186795619c8b6d7db61b",
+          "group": 0,
+          "id": 2,
+          "shape": [
+            1024,
+            1024
+          ]
+        }
+      },
+      "optimizer_sha256": "d473a90ac7b21bd8cc11f279085d4ed6965f9e0ca07448294e27eeb0fd896c5d",
+      "origin": "U",
+      "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_71/old_04/U/checkpoints/step_000120.pt",
+      "seed": 71,
+      "sha256_after": "f3ef9a9c0bf094bef23ef29b747f5c2dfbf379592ab3f39ea1b4b082e59aa9ec",
+      "sha256_before": "f3ef9a9c0bf094bef23ef29b747f5c2dfbf379592ab3f39ea1b4b082e59aa9ec",
+      "source_freeze_verified": true,
+      "unchanged": true
+    },
+    {
+      "named_state_mapping": {
+        "model.layers.27.self_attn.k_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "9632cc4e274324b70c04fe23c285e32395a44b5475a93dba3bc081bdc05cca04",
+          "exp_avg_sq_sha256": "fe0f84345a5b5fae170cd4c45447438a91a11b39169188235266fdd2640e532e",
+          "group": 0,
+          "id": 1,
+          "shape": [
+            1024,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.o_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "6dcac68d4ae87a76cdeb39fbf157366962d624c240b0742456a5f580ff933546",
+          "exp_avg_sq_sha256": "fb71f9a409cf804fbfa87b949117ed2525b9e726c1f00ea11f2451707a193bbd",
+          "group": 0,
+          "id": 3,
+          "shape": [
+            1024,
+            2048
+          ]
+        },
+        "model.layers.27.self_attn.q_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "ac97c3c1e1a381c62387dee368d39060e30fcb4246a22777905b88157d7f8eba",
+          "exp_avg_sq_sha256": "17c626db0dee2be18507a507cd34ec64cf63cb59011dcab16dd3ca4f8acc5794",
+          "group": 0,
+          "id": 0,
+          "shape": [
+            2048,
+            1024
+          ]
+        },
+        "model.layers.27.self_attn.v_proj.weight": {
+          "dtype": "torch.float32",
+          "exp_avg_sha256": "7e591d8558057849a7ee4120acbdbdc4c5a5c105d1b780a1649c33c122ed7d32",
+          "exp_avg_sq_sha256": "b1ce06f2403d14a9bc311a199bcb2a028b4f4640aab0885742db6dd7f507a254",
+          "group": 0,
+          "id": 2,
+          "shape": [
+            1024,
+            1024
+          ]
+        }
+      },
+      "optimizer_sha256": "472bcab871d1d03749260fefb8c41823f6ebbeb09818617e4007dc8c6e696159",
+      "origin": "F",
+      "path": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/runs/seed_71/old_04/F/checkpoints/step_000120.pt",
+      "seed": 71,
+      "sha256_after": "c17dcd4c996ffede86f03d01c32980575b1e814d9d370aa145528dfc5b6b574e",
+      "sha256_before": "c17dcd4c996ffede86f03d01c32980575b1e814d9d370aa145528dfc5b6b574e",
+      "source_freeze_verified": true,
+      "unchanged": true
+    }
+  ],
+  "status": "PASS"
+}

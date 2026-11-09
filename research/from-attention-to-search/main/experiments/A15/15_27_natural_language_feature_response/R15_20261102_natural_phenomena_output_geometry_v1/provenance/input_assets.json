@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-02T02:25:28.955313+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-8kh22",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7411,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 13695,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "dclm_raw_holdout_global02",
+      "title_cn": "DCLM raw compressed holdout shard（bucket挂载）",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/mnt/bucket/109_cache_dir/hf_data/dclm_eval_holdout/global-shard_02_of_10/local-shard_0_of_10/shard_00000000_processed.jsonl.zst",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 133233035,
+          "ok": true,
+          "role": "raw_text_source",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "m2d2_n8_raw_archives",
+      "title_cn": "M2D2 N8八类别原始archives",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "pinned_raw_archives",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30/cs.CL.tar.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 144417418,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30/cs.CV.tar.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 333409487,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30/math.AG.tar.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 332924617,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30/math.NT.tar.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 187731935,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30/physics.flu-dyn.tar.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 134261274,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30/physics.optics.tar.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 164025158,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30/q-bio.GN.tar.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 18590977,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/data_sources/m2d2_6ae613ba744ee56f645aee9c577d04f7e3d48b30/q-bio.NC.tar.gz",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 58030488,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "model_qwen3_0p6b_base_official_a5",
+      "title_cn": "原始 Qwen3-0.6B-Base official 本地副本（A5/A6/E16 lineage）",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "历史实际 parent",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 727,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1192135096,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "tokenizer_qwen3_0p6b_base_official_a5",
+      "title_cn": "Qwen3-0.6B-Base official tokenizer（A5/A6本地副本）",
+      "category": "tokenizer",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "实际tokenizer目录",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 7031645,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer_config.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 9678,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/merges.txt",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1671853,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/vocab.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 2776833,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+      "title_cn": "冻结Qwen3抽样14层CrossCoder：999997440位置",
+      "category": "sae_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 5637826757,
+          "ok": true,
+          "role": "immutable_saved_state",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "data_a15_27_r04_domain_native_dual_20261027",
+      "title_cn": "R04数学生物真实文档、受控前缀及DCLM参考窗口",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/documents.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 333819,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/context_panel.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 86820,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/reference.jsonl",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 759104,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/source_manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 1744,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

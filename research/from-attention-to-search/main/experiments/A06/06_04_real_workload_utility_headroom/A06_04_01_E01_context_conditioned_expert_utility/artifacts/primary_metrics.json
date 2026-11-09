@@ -1,0 +1,123 @@
+{
+  "verdict": "failed",
+  "reason": "context capability passed but specialization/headroom clauses failed",
+  "expert_a": 49,
+  "expert_b": 53,
+  "context_gain_test": {
+    "estimate": 0.20369936735369265,
+    "ci95": [
+      0.059084651948070575,
+      0.3592875161784108
+    ],
+    "repositories": 83,
+    "samples": 128
+  },
+  "I_ctx_test": {
+    "estimate": 0.011626467807218432,
+    "ci95": [
+      0.0033553483363584426,
+      0.020215699803538437
+    ],
+    "repositories": 83,
+    "samples": 128
+  },
+  "H_a_REL_test": {
+    "estimate": 0.005397022468969226,
+    "ci95": [
+      -0.0010483202478734023,
+      0.012252706033444274
+    ],
+    "repositories": 83,
+    "samples": 128
+  },
+  "calibration_stability": {
+    "expert_a": 49,
+    "expert_b": 53,
+    "halves": {
+      "cal-A": {
+        "top8": [
+          113,
+          109,
+          120,
+          61,
+          98,
+          12,
+          87,
+          49
+        ],
+        "bottom8": [
+          44,
+          17,
+          99,
+          46,
+          36,
+          73,
+          106,
+          53
+        ],
+        "passed": true
+      },
+      "cal-B": {
+        "top8": [
+          16,
+          109,
+          71,
+          74,
+          17,
+          5,
+          125,
+          48
+        ],
+        "bottom8": [
+          58,
+          45,
+          60,
+          53,
+          37,
+          32,
+          39,
+          127
+        ],
+        "passed": false
+      }
+    },
+    "passed": false
+  },
+  "native_mean_nll": {
+    "cal-A": {
+      "LOCAL": 1.7603541943244636,
+      "NUIS": 2.022130161523819,
+      "REL": 1.903564781183377
+    },
+    "cal-B": {
+      "LOCAL": 1.9050671135191806,
+      "NUIS": 2.190667530710016,
+      "REL": 2.0097821117424246
+    },
+    "test": {
+      "LOCAL": 1.9750334126874804,
+      "NUIS": 2.3306655867490917,
+      "REL": 2.126966219395399
+    }
+  },
+  "route_diagnostics_test": {
+    "route_overlap_mean": 0.03173647899529897,
+    "topk_jaccard_mean": 0.7641214899295753,
+    "hidden_l2_mean": 26.12667453289032
+  },
+  "completeness": {
+    "samples": 256,
+    "expected_samples": 256,
+    "complete_sample_indices": true,
+    "three_conditions_each": true,
+    "all_experts_each": true,
+    "all_losses_finite": true,
+    "passed": true
+  },
+  "thresholds": {
+    "I_ctx": 0.01,
+    "H_a_REL": 0.01,
+    "bootstrap_seed": 60402,
+    "bootstrap_replicates": 10000
+  }
+}

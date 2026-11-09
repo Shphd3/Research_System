@@ -1,0 +1,7 @@
+# R04 artifact manifest
+
+[Chinese manifest](artifact_manifest_cn.md). Executionroot:`/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027`. Dataasset:`data_a15_27_r04_domain_native_dual_20261027`;actualanalysisasset:`analysis_a15_27_r04_native_sae_joint_cc_domain_20261027`. [Selectedaccess](provenance/output_access.json);[completion](provenance/completed.json);[scope](provenance/completion_coverage.json).
+
+Purpose/setup/results:summary.md,detailed.md,protocol.md,objects_and_settings.md andcompanions. ThreecentralfiguresPNG/PDF plusreadingguide;workedexamples/counter;fulltexts. Selectedsmalltablesandreceiptsare declaredinselected_provenance_manifest.json. Actual arrays/sources/code/callledger andfullSHAmanifestremainexecution-side;thismanifestdoesnot grantnewexecutionorscientificapproval. No modelcheckpointwasproduced.
+
+All13pre-forwardfrozeninputsareunchanged;8qualificationsand52raw/40statisticschecks pass.456/512calls;56unused. ThefirstprocesslogJSONbugafter8checkswasresumedwithoutrepeatingthem. Last-layerCCreconstructioncontributionisreportedfromnativejointz;no thirdencoderreadout. Oldresultsandoldzipremainunchanged.

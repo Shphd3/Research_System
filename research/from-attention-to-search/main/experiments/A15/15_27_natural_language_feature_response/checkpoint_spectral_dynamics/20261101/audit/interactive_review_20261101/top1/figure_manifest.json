@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-11-01T09:17:41.039125+00:00",
+  "request": "User asks x=training tokens,y=largest singular value; separate direction tracking from magnitude.",
+  "run": "pt-0o94658v",
+  "effective_version": "Frozen run; A01/A02/A03 preserved. Added cache-only plot; no changes to original protocol or results.",
+  "model": "native Dense,281431040 parameters,8 blocks,hidden1024",
+  "tensor": "final_raw_h: final block residual-post,before model.norm",
+  "rows": 12,
+  "N": 32768,
+  "documents": 1024,
+  "positions_per_document": 32,
+  "formula": "X=reference activations minus own checkpoint reference mean; s1=sqrt((N-1)*lambda1)",
+  "source_hashes": {
+    "spectrum.csv": "72139e8c03463a143b00795523ec91928187caf771fec364f11b7f2079c8d7ec",
+    "isolated_vector_diagnostics.csv": "fb03490c8bc8d42285d8b66a1f6868874c95ffc85be907ebe0278a62b6f60ec4",
+    "checkpoint_statistics.csv": "1bc603383506eb5e2bf275da8f5f0d4bb3c76feeacdbb6f4b1579f13cf5b8365"
+  },
+  "code_sha256": "c4be3cc2817158c150d7658c941f42c69585b0db5d392afcd3f808cc6789b3c9",
+  "new_forwards": 0,
+  "new_fits": 0,
+  "error_bars": "none; separately derived half-split direction ranges are descriptive,not population CIs",
+  "checks": "All 12 s1 match stored statistical NPZ and s1^2/(N-1)=lambda1; all first-direction cosines independently match stored bases; no row filtering other than direction index1."
+}

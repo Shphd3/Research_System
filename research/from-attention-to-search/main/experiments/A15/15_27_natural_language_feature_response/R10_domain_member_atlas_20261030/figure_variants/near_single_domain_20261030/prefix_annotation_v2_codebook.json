@@ -1,0 +1,20 @@
+{
+  "revision": "prefix-proposal-v2",
+  "amendment_reason": "Absence of a finite terminology lexicon is not positive evidence of generic context. v1 had zero undetermined cases. Retain v1; downgrade unsupported generic labels without consulting activations.",
+  "input_fields": [
+    "case_id",
+    "already_read_window"
+  ],
+  "generic_rule": "v1 generic label AND an explicit generic-discourse cue; otherwise undetermined",
+  "generic_patterns": [
+    "\\bfor example\\b",
+    "\\bin general\\b",
+    "\\bin other words\\b",
+    "\\bin this (?:article|section|chapter)\\b",
+    "\\bas (?:mentioned|noted|described)\\b",
+    "\\bon the other hand\\b"
+  ],
+  "other_categories": "v1 rule proposals unchanged; domain terms and relation cues still require human verification",
+  "human_review_status": "PENDING",
+  "no_activation_or_future_text_in_annotation": true
+}

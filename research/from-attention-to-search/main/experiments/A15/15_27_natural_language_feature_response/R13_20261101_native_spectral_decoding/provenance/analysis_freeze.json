@@ -1,0 +1,11 @@
+{
+  "time_utc": "2026-11-01T03:08:46.247214+00:00",
+  "stage": "BEFORE_FIRST_GPU_RESULTS",
+  "sha256": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/scripts/analyze.py": "605116903b54545275d63f8cc476b855a66d7b463645c6596b316af83a4009fb",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/scripts/render.py": "f57761324b96f94757aa920f8eca4eb3808bb7e67e0a3cc18fc50250599d4ebb"
+  },
+  "validation_sample_rule": "SHA256 R13-text-validation|position_uid; first4 distinct natural documents/domain, exclude all7 fixed-example documents",
+  "pre_output_amendment": "Add domain/shared-document stratification and top1 diversity, same fixed data; fixed-case raw selected evidence",
+  "presentation_amendment": "Explicitly label after-position source description for full spelling; no metrics/selection changes"
+}

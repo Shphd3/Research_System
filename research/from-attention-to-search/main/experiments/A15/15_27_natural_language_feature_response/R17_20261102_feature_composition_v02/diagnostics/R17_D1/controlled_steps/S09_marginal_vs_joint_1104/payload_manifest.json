@@ -1,0 +1,194 @@
+{
+  "UTC": "2026-11-04T02:16:04.659622+00:00",
+  "reason": "Researcher-requested small auditable selected evidence, no original full corpus/weights",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104",
+  "files": [
+    {
+      "path": "data/ATTN_SAE__discovery_directions.npz",
+      "bytes": 15545,
+      "sha256": "0d57519cbe12b74da22bebc4c2f73ba0f6452bdfe6b779f52445c41f9693fa0f"
+    },
+    {
+      "path": "data/MLPIN_SAE__discovery_directions.npz",
+      "bytes": 18456,
+      "sha256": "26ed7e80ae79ce839161f83188c0ec1ec618bc85bcb0783b854dafe9b1ac6e4e"
+    },
+    {
+      "path": "data/dataset_guide.md",
+      "bytes": 1728,
+      "sha256": "37c5a573050f8d0befb5b9277e78b3d369837fa5e814d12d02c6fdb55b8c5d0c"
+    },
+    {
+      "path": "data/discovery_marginals.npz",
+      "bytes": 222037,
+      "sha256": "480a558da4a3d254fa036205d454467fc5395ddf5727becb900d3ccf9138fcb5"
+    },
+    {
+      "path": "data/document_split.jsonl",
+      "bytes": 259225,
+      "sha256": "6ecb039bcedeb0732903fd91ac83a931188970c009a5081968ff22ccfc1e9fc6"
+    },
+    {
+      "path": "data/feature_universe.json",
+      "bytes": 1931,
+      "sha256": "1c93c33067793a348e62fe4c8afc35eeaa5b28e8e34f6d4939cd4f4cf628f436"
+    },
+    {
+      "path": "data/split_indices.json",
+      "bytes": 7000,
+      "sha256": "e9776de81bc08ac6ec655ce2e075024367827aeb9e115784213bd64364364548"
+    },
+    {
+      "path": "data/token_classes.json",
+      "bytes": 131,
+      "sha256": "e52faeb1a692a3f6dcd0134f7639d3a9fac80406ff7dfe66154ec0a62ef4cb98"
+    },
+    {
+      "path": "tables/ATTN_SAE__discovery__position__burn_trace.csv",
+      "bytes": 13943,
+      "sha256": "8402bc34cdb61de53dc26ec7796646c41c2a6177e89ea1c4162738f99fac1514"
+    },
+    {
+      "path": "tables/ATTN_SAE__discovery_pair_selection.csv",
+      "bytes": 1071,
+      "sha256": "05e6b9ee10824bcec8b190bc7222291c155471fec5b54f3aa812860c1ddd5c3a"
+    },
+    {
+      "path": "tables/ATTN_SAE__heldout__position__burn_trace.csv",
+      "bytes": 16318,
+      "sha256": "ce982e876adb07a40ada2ee34a1cd078c230fb04113ce7a946ee31fb408d8a5f"
+    },
+    {
+      "path": "tables/ATTN_SAE__heldout__position_token3__burn_trace.csv",
+      "bytes": 50487,
+      "sha256": "534b96aa499ee11100331b9a475e053a4a7685973218b82a0e5382d17d419a17"
+    },
+    {
+      "path": "tables/A_intersection_distributions_audit.csv",
+      "bytes": 25070,
+      "sha256": "30683aa2acbc6a3d1af29e5f344041dca5933f4fa6e50b8ebf98bc1f2e5e0e25"
+    },
+    {
+      "path": "tables/A_intersection_identity.csv",
+      "bytes": 2868,
+      "sha256": "ae83c80be1760b9bff304236403f42b6f22046331121e1db849e37460e2c7e54"
+    },
+    {
+      "path": "tables/A_overlap_references.csv",
+      "bytes": 7072,
+      "sha256": "b33fa3e1c7a0d0c83679071aa3ee062a34d185a3bdc7802196dc44a0abdc1e5b"
+    },
+    {
+      "path": "tables/B_all276_components.csv",
+      "bytes": 530544,
+      "sha256": "ea68ff2b68cec70f2f5c0a1ae4c785ad37970355ea75f180556c69c493d67b69"
+    },
+    {
+      "path": "tables/B_dataset_differences.csv",
+      "bytes": 3615,
+      "sha256": "f82c250dadcd2836ce95e5f97de9cea829748d3a0b70bc4e3351098a00045b51"
+    },
+    {
+      "path": "tables/B_exact_pattern_distribution.csv",
+      "bytes": 12061,
+      "sha256": "979139ab6a1662991beedf09d9bf06740b4e06758fefe5586a0c5a924d4fd3b1"
+    },
+    {
+      "path": "tables/B_member_count_distribution.csv",
+      "bytes": 28565,
+      "sha256": "7457d70459624ce3f8c4747ce20405ee760bfe24b4988b61e4b82a3a1f37746d"
+    },
+    {
+      "path": "tables/B_own_structure.csv",
+      "bytes": 4807,
+      "sha256": "31345b21dcb2eb148e30002bc0e180ec7b397cc903b860060686d3c91b1e3dec"
+    },
+    {
+      "path": "tables/B_selected_pairs.csv",
+      "bytes": 30883,
+      "sha256": "30ee12b397f978fe9b25867241c8d4184c217e370a049e774529d6496e2d81d6"
+    },
+    {
+      "path": "tables/MLPIN_SAE__discovery__position__burn_trace.csv",
+      "bytes": 13962,
+      "sha256": "730a5e5b17e895be1aaf2fbf7c393cc2a85a0610e04a080b7899beb4602c2472"
+    },
+    {
+      "path": "tables/MLPIN_SAE__discovery_pair_selection.csv",
+      "bytes": 1064,
+      "sha256": "7da772e942ceec467bf7b4375e6327520aec84757282610e34424ceed3d8f1e7"
+    },
+    {
+      "path": "tables/MLPIN_SAE__heldout__position__burn_trace.csv",
+      "bytes": 16075,
+      "sha256": "9ea06ddbd1b334cce01566cf1ce54091c9394a8a8a02b976109edc431e91a0b5"
+    },
+    {
+      "path": "tables/MLPIN_SAE__heldout__position_token3__burn_trace.csv",
+      "bytes": 50127,
+      "sha256": "223080a6e058233cc6a25cda2e5573af336e273534123140ece24e514b2ea685"
+    },
+    {
+      "path": "tables/concrete_pair_cases.jsonl",
+      "bytes": 1614,
+      "sha256": "5b2ccf9019474c1dfaa313ded9511770c4ea4960a6eb41cc4cbb5d861bbfc569"
+    },
+    {
+      "path": "tables/document_bootstraps.npz",
+      "bytes": 273360,
+      "sha256": "2fefd7d8c39d3d17ebd35ca653afa1249aba842cfbea41d84770f3d162b97f2b"
+    },
+    {
+      "path": "tables/frequency_reference_checks.jsonl",
+      "bytes": 849,
+      "sha256": "e1a63b180f4637cb51574c1511695249c736aa4cadc54070dd7c54a4ca6960bb"
+    },
+    {
+      "path": "tables/heldout_document_scores.jsonl",
+      "bytes": 1203634,
+      "sha256": "a4231820f7bc3d60643cde963f32ab2709571a5f3e73ffd63364aacf08cd5631"
+    },
+    {
+      "path": "tables/null_constraints_summary.csv",
+      "bytes": 730,
+      "sha256": "64be8ac54e3af94c3d087d95690009699428406d258b49c8aed6ec0a9afcf7ed"
+    },
+    {
+      "path": "tables/null_mixing.csv",
+      "bytes": 6187,
+      "sha256": "bd348b688105aac830834ca48da1d3a7196d1cc5cfe969df3f059cbff1694e0a"
+    },
+    {
+      "path": "tables/posthoc_document_counterexamples.jsonl",
+      "bytes": 4857,
+      "sha256": "db747907a9bd1f1cea74b7c434ee0f23e614a707f872f1f8d126380fa09cfd87"
+    },
+    {
+      "path": "figures/01_overlap_vs_frequency.pdf",
+      "bytes": 29698,
+      "sha256": "3866ecc5552805dcdd502672a13189b09e45e111c1eb6971f8c6fe7436746a63"
+    },
+    {
+      "path": "figures/01_overlap_vs_frequency.png",
+      "bytes": 196653,
+      "sha256": "b3c060b8098e472fb22b88071d0e3c304bb109faf5dfdd8a63f21c179331cc96"
+    },
+    {
+      "path": "figures/02_joint_null_and_holdout.pdf",
+      "bytes": 28652,
+      "sha256": "77ae7da2384ddbc8152ab8130659dda9dd7a31f70946f14daa6981349a9b9868"
+    },
+    {
+      "path": "figures/02_joint_null_and_holdout.png",
+      "bytes": 248213,
+      "sha256": "0e30dd83c77312ab92f01466ff2a8b6119cf919a14a0fe1d70ea91c5b7f757a2"
+    },
+    {
+      "path": "figures/03_candidate_member_count_distribution.png",
+      "bytes": 282162,
+      "sha256": "870ccd7f2ce4b5d877172a4e2dbad8e177fe17466a2adce5d2593896b2dd9584"
+    }
+  ],
+  "native_sparse_inputs_in_review_packet": true,
+  "complete_null_audit_states_execution_only": true
+}

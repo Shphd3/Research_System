@@ -1,0 +1,80 @@
+{
+  "time_utc": "2026-10-27T07:04:38.509779+00:00",
+  "processing_agent": "/root",
+  "old_R03_artifacts_checked": 234,
+  "old_R03_artifact_mismatches": [],
+  "old_group_ids_unchanged": true,
+  "old_explanation_before_measurement_unchanged": true,
+  "new_model_forwards": 0,
+  "cumulative_forwards": 1500,
+  "cap": 1500,
+  "model_dictionary_training": 0,
+  "classifier_fits": 0,
+  "new_clustering": 0,
+  "PCA_statistical_fits": 1,
+  "same_layer_native_norm_check": true,
+  "unit_projection_partition_check": true,
+  "geometry_checks": {
+    "artificial_cosine_identity_orthogonal_opposite": true,
+    "artificial_checks_are_not_scientific_evidence": true,
+    "checkpoint_sha256_matches": true,
+    "layer27_native_norm_matches_old_geometry": true,
+    "unit_norm_max_abs_error": 2.220446049250313e-16,
+    "decoder_nonfinite_rows": 0,
+    "decoder_zero_norm_rows": 0,
+    "all_null_size_and_joint_strata_exact": true,
+    "all999nulls_finite": true,
+    "no_source_group_changed": true,
+    "no_frequency_source_changed": true,
+    "new_model_forwards": 0,
+    "new_clustering": 0
+  },
+  "spectrum_checks": {
+    "artificial_covariance_matches_numpy": true,
+    "basis_orthogonality_max_abs": 3.662868619525028e-15,
+    "unit_direction_partition_error": 1.887379141862766e-15,
+    "PCA_rank_positive": 1024,
+    "train_trace": 151222.06872534816,
+    "eigenvalue_sum": 151222.06872534816,
+    "eval_trace": 140365.51031342393,
+    "eval_variance_sum": 140365.51031342393,
+    "train_reconstruction_max_abs": 6.366462912410498e-12,
+    "all_group_member_ids_fixed": true,
+    "new_clustering": 0,
+    "model_forwards": 0,
+    "classifier_fits": 0
+  },
+  "selected_exact_copies": 30,
+  "markdown_documents": 17,
+  "local_links": 103,
+  "missing_links": [],
+  "math_source_issues": [],
+  "tools": {
+    "project_payload": {
+      "exit_code": 0,
+      "stdout": "Selected evidence: 203; prohibited or invalid payload: 0\n",
+      "stderr": ""
+    },
+    "system_payload": {
+      "exit_code": 0,
+      "stdout": "Root generated payload tracked: 0\n",
+      "stderr": ""
+    },
+    "entrypoints": {
+      "exit_code": 1,
+      "stdout": "ORGANIZATION from-attention-to-search: MISSING_MAP_ANCHOR 15_25_03\nPending tracking: 15 present entrypoints (not committed/tracked evidence).\nChecked 104 System/project entrypoints; 1 issue(s).\n",
+      "stderr": ""
+    }
+  },
+  "figure_inspection": "all3PNG inspected by renderer and root; hashes infigure provenance",
+  "science_qualifications": [
+    "geometry finite matched pool/overlap and BH3 limitation",
+    "historical raw-cache Base hash missing; source-chain only",
+    "PCAreference is source-file disjoint from structuralVAL but not independent of dictionarytraining",
+    "separate-feature contribution energies omit cross terms",
+    "no semantic classifier or random-subspace semantic control"
+  ],
+  "mechanism_acceptance": "Unknown",
+  "question_closure": "Unknown",
+  "publication": "LOCAL_ONLY_NO_COMMIT_PUSH"
+}

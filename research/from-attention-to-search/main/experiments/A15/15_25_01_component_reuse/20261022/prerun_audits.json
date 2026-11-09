@@ -1,0 +1,42 @@
+{
+  "scientific_identification": {
+    "status": "PASS_BOUNDED",
+    "question": "local dependence and transfer, no parameter learning",
+    "rival": "format/output coding and nonspecific edit effects",
+    "changed": "specified final-residual feature contributions",
+    "held_fixed": "Base/dictionary weights, other contributions, reconstruction residual, source inputs within pair",
+    "limits": [
+      "reference has no common-composition comparator",
+      "last-layer edits do not locate the computation",
+      "feature semantics unqualified",
+      "frequency-decile matching is coarse; report realized frequency ratios"
+    ],
+    "repair": "A1 prevents constant-majority behavior from passing"
+  },
+  "data_statistics": {
+    "status": "PASS_BOUNDED",
+    "split": "96 generated families,48 discovery/48 confirm,16 examples each; shared templates, two natural motivating sources",
+    "truth": "Python checked all1536",
+    "frequency": "fixed reference:6 A,13 B,0 both among156 code sources; feature reference85548 positions",
+    "selection": "H and C fit on discovery only; C uses same-answer pairs",
+    "uncertainty": "5000 family bootstrap,3 Bonferroni-adjusted primary intervals",
+    "missing": "incomplete controls explicitly retained;90% threshold"
+  },
+  "implementation_numerics": {
+    "status": "SMOKE_PASS",
+    "trainable_parameters": 0,
+    "optimizer_updates": 0,
+    "gradients": "NOT_APPLICABLE",
+    "smoke_positions": 32,
+    "native_cached_max_nll_error": 0,
+    "native_cached_margin_error": 0,
+    "noop_error": 0,
+    "same_context_error": 0,
+    "whole_donor_error": 0,
+    "encoding_batch_cut_mismatches": 0,
+    "algebra_error": 1.430511474609375e-06,
+    "runtime": "existing mounted Transformers layer; no install/download",
+    "smoke_first_attempt": "FAILED before model load: missing default Transformers; retained failure, corrected by existing runtime.sh",
+    "scope": "one4H100reserved fulljob;60min compute; no fallback"
+  }
+}

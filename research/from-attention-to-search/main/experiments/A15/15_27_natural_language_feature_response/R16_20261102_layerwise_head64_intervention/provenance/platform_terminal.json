@@ -1,0 +1,102 @@
+{
+    "async_checkpoint": {
+        "max_ckpt_rounds": 0
+    },
+    "complete_time": "2026-11-02T06:14:37Z",
+    "create_time": "2026-11-02T05:59:10Z",
+    "display_name": "r16-layerwise-head64",
+    "env": [],
+    "fault_tolerance": {
+        "backoff_limit": 0,
+        "rules": []
+    },
+    "fine_tuning_specs": "",
+    "framework": "PYTORCH",
+    "id": "/subscriptions/0197ee17-b6eb-7846-b2b4-a77c5f509b92/resourceGroups/default/zones/cn-sh-01z/workspaces/share-space/trainingJobs/pt-od3opbw5",
+    "lme": {
+        "current_retries": 0,
+        "enable_checker": false,
+        "enable_health_monitor": false,
+        "enable_warmingup": false,
+        "max_retries": 0
+    },
+    "metadata": null,
+    "mount": [
+        {
+            "access_mode": "VOLUME_ACCESS_MODE_UNSPECIFIED",
+            "endpoint": "",
+            "id": "01995892-d478-76d8-aec7-13fd8284477e",
+            "metadata": null,
+            "mount_options": "",
+            "mount_path": "/data",
+            "name": "",
+            "region": "",
+            "subdir": "",
+            "type": "PV_AFS",
+            "zone": "cn-sh-01g"
+        }
+    ],
+    "name": "pt-od3opbw5",
+    "ownership": {
+        "requestor_id": "",
+        "tenant_id": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+        "user_id": "019952d2-3447-7608-a4a9-a943eb912b73",
+        "user_name": "250010109"
+    },
+    "resource_group_name": "default",
+    "resource_pool": {
+        "display_name": "computing_cluster_5090_01g",
+        "name": "computing-cluster-5090-01g",
+        "vpc_id": "0198a254-1d71-7211-9a41-d5783abfe9aa",
+        "zone": "cn-sh-01g"
+    },
+    "roles": [
+        {
+            "image_path": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+            "name": "Worker",
+            "resource_spec": [
+                {
+                    "description": "2Xn12lp-32GB",
+                    "limits": {
+                        "cpu": "28",
+                        "device": "2",
+                        "memory": "120",
+                        "nvidia.com/gpu": "2"
+                    },
+                    "name": "n12lp.nn.i10a.2",
+                    "replicas": 1,
+                    "requests": {
+                        "cpu": "28",
+                        "device": "2",
+                        "memory": "120",
+                        "nvidia.com/gpu": "2"
+                    }
+                }
+            ],
+            "startup_script": "set -euo pipefail; cd /data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention; export RESOURCE_PROFILE=5090-2-spot; export IMAGE_ID=shphd-lite-0911; export IMAGE_URL=registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423; mkdir -p /data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/acp_receipts/pod; POD_LOG=/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R16_20261102_layerwise_head64_intervention/acp_receipts/pod/r16-layerwise-head64-$(date -u +%Y%m%dT%H%M%SZ).log; echo \"[env] profile=5090-2-spot image=shphd-lite-0911 host=$(hostname)\" | tee \"$POD_LOG\"; { bash scripts/launch.sh ; } 2\u003e\u00261 | tee -a \"$POD_LOG\"; echo \"[pod] full output: $POD_LOG\"",
+            "total_replicas": 1
+        }
+    ],
+    "root_mapping": false,
+    "scheduling": {
+        "priority": "NORMAL",
+        "quota_type": "SPOT",
+        "scoring_strategy": {
+            "type": "LEAST_ALLOCATED"
+        }
+    },
+    "ssh": {
+        "auto_key_setup": false,
+        "config_mount_path": ""
+    },
+    "start_time": "2026-11-02T06:06:09Z",
+    "state": "SUCCEEDED",
+    "subscription_name": "0197ee17-b6eb-7846-b2b4-a77c5f509b92",
+    "tensorboard": {
+        "log_path": ""
+    },
+    "uid": "a0962210674946eb92997167c89bdc90",
+    "update_time": "2026-11-02T06:14:37.261604Z",
+    "workspace_name": "share-space",
+    "zone": "cn-sh-01z"
+}

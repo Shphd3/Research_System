@@ -1,0 +1,14 @@
+# 审计证据索引
+
+- [完整成员对照表（1084坐标）](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/完整成员对照表.csv)
+- [R06全部66对象，原判定及已有属性](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/R06_全部66对象及现有属性.csv)
+- [各名单与R06/R01的精确交集](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/各名单精确交集.csv)
+- [R06合格CC成员：既有728行领域×层结果](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/R06合格CC成员_既有14层领域贡献.csv)
+- [1396条逐轮成员证据，含R02旧缓存描述成员](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/逐轮成员证据总索引.csv)
+- [R02旧缓存31坐标描述补表](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/R02_旧CrossCoder描述成员.csv)
+- [全部源哈希](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/source_manifest.json)
+- [实际权重哈希匹配](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/asset_hash_check.json)
+- [最终计数](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/audit_counts.json)
+- [零新增计算范围](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z/final/audit_scope.json)
+
+原始执行目录：/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R06_fixed_target_semantics_20261028/evidence_audit_20261028T120117Z。审计未修改旧Focus/Anchor/Protocol/结果，没有提交、推送或发布。

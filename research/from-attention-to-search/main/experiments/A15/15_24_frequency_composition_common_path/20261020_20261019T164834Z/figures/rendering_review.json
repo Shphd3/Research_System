@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "reviewed_at_utc": "2026-10-20T02:07:06.829012+00:00",
+  "review_method": "Actual rendered PNGs inspected with view_image; source/output SHA256 checked separately",
+  "figures": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure1_token_identity.png",
+      "sha256": "4e299351a02d59664f43e3b11880c9d4e3547d7c8401d806b7e28c2e61c8a60f",
+      "bytes": 208570,
+      "review": "Readable axes, support, units, conditions; no clipping or hidden data; legends outside plotting areas"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure2_signed_geometry.png",
+      "sha256": "82a0f98df0c06c8b84ee3d1e3eaafff023eb2e9f053e6b1971fe7267f9e1c409",
+      "bytes": 181928,
+      "review": "Readable axes, support, units, conditions; no clipping or hidden data; legends outside plotting areas"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure3_static_routing.png",
+      "sha256": "af34bb8429c10dffd3c00350ead4c2caae894e0a9ada34b0bcb07c4855f800bc",
+      "bytes": 268068,
+      "review": "Readable axes, support, units, conditions; no clipping or hidden data; legends outside plotting areas"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure4_learning_curves.png",
+      "sha256": "2757ac970cf3ac4f496ad1e31ae8d4b387672d019c9a7ee58af949962a4eb24d",
+      "bytes": 535101,
+      "review": "Readable axes, support, units, conditions; no clipping or hidden data; legends outside plotting areas"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure5_terminal_dev.png",
+      "sha256": "32ece21d8da28eda579a1963a803c9518d8908cd71453d02f11881cf85a2332e",
+      "bytes": 255579,
+      "review": "Readable axes, support, units, conditions; no clipping or hidden data; legends outside plotting areas"
+    }
+  ],
+  "bounded_repairs": [
+    "Figure1 unseen count labels changed to one line with percentage above bar",
+    "Figure3 legend separated from caption",
+    "Figure5 bootstrap range label explicitly states estimable feature set varies"
+  ],
+  "boundary": "Visual readability/provenance validation does not establish scientific support; no statistics recomputed"
+}

@@ -1,0 +1,487 @@
+{
+  "type": "bounded cached-analysis reading record and curated evidence; no checkpoint/cache payloads",
+  "asset_id": "analysis_crosscoder_frequency_contribution_bridge_20261019t025630z",
+  "canonical_root": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_bridge_dispatch",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z",
+  "claim_scope": "exploratory H1/H2/dispatch; H3 not run",
+  "files": [
+    {
+      "path": "FULL_ASSETS.md",
+      "bytes": 2331,
+      "sha256": "05cc9a1fd8aa0fddf62cf13200f6ad016de359fbf75260651f3c7c383a2db0d9",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "README.md",
+      "bytes": 3517,
+      "sha256": "7e8e7fe4d2350182cdcc6febadff7b6d196f454c735634418ffea0b459d710f1",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "README_cn.md",
+      "bytes": 4462,
+      "sha256": "59c20317e231f863a1d3af7d61f69d160cac36eb0a01fd5ba4d3514fbafb4e39",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "completion_receipt.json",
+      "bytes": 4725,
+      "sha256": "ddc70846b95c1210f95baf48a821f8ab22862d9a3d2da6622cc288bcee7d33f5",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "detailed.md",
+      "bytes": 7002,
+      "sha256": "b986db9c5a9363d955d83ec44e2f60c681b01891c546a63d1736629f137e50a0",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "detailed_cn.md",
+      "bytes": 11544,
+      "sha256": "9e9323a83195e7aec5d5bb31eb9bbffa42aefa0e6db3aad0ddb98317383e34bf",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "execution_amendment_01_cn.md",
+      "bytes": 1709,
+      "sha256": "290490feb6cd25fbcf558a4be6995b90388befb364421c7ab86a33a81cb96d83",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "execution_authorization_20261019.json",
+      "bytes": 4872,
+      "sha256": "c64db92488a7f31a414a4d06319ad3510f808a5e2225c3430ec04aa3b51ec8f8",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "figures/figure1a_existing_frequency_rank.pdf",
+      "bytes": 33565,
+      "sha256": "844ae1f365e632a30edb17cace8555adab4849d1e8ac2c9c78e63b6620b92422",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure1a_existing_frequency_rank.pdf"
+    },
+    {
+      "path": "figures/figure1a_existing_frequency_rank.png",
+      "bytes": 147472,
+      "sha256": "7e40090e421f5c44fb8657dcd7991db0e40c5f45b7da31b5cd99e5a991676787",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure1a_existing_frequency_rank.png"
+    },
+    {
+      "path": "figures/figure1a_existing_frequency_rank.svg",
+      "bytes": 87771,
+      "sha256": "cead14e5d9a7f002b7555d64281300db85752d2afa6db549bc3b6e1972368d08",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure1a_existing_frequency_rank.svg"
+    },
+    {
+      "path": "figures/figure1b_existing_frequency_histogram.pdf",
+      "bytes": 15427,
+      "sha256": "9b4ef94230dcb60642e28d2dc03249ce7f909ff5a8228f844fcce6e148a577df",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure1b_existing_frequency_histogram.pdf"
+    },
+    {
+      "path": "figures/figure1b_existing_frequency_histogram.png",
+      "bytes": 108257,
+      "sha256": "25cfc0de2bea1ffb4f419dc2ef5dcb1082449af7842f65c2d6be95308af3eaf6",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure1b_existing_frequency_histogram.png"
+    },
+    {
+      "path": "figures/figure1b_existing_frequency_histogram.svg",
+      "bytes": 36541,
+      "sha256": "9df2385b6edb08470d7417a52fc9d460973b2be3f36017e01255e4913b809b98",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure1b_existing_frequency_histogram.svg"
+    },
+    {
+      "path": "figures/figure2_token_frequency_bridge.pdf",
+      "bytes": 24956,
+      "sha256": "7ba5ede85122e792e60dde45554936babb21c8ba3defabeab23e4ae80e1e520b",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure2_token_frequency_bridge.pdf"
+    },
+    {
+      "path": "figures/figure2_token_frequency_bridge.png",
+      "bytes": 220338,
+      "sha256": "617e987da452b7bf2409a77c6daa80eaf35c479109a7264fbca7c824538ef2f0",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure2_token_frequency_bridge.png"
+    },
+    {
+      "path": "figures/figure2_token_frequency_bridge.svg",
+      "bytes": 96575,
+      "sha256": "1a6dd2457f17f8c351ec0b57474553b2d9e6db8cea2e38e269b49ff8707da055",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure2_token_frequency_bridge.svg"
+    },
+    {
+      "path": "figures/figure3_relation_review.pdf",
+      "bytes": 21693,
+      "sha256": "3af1b96d517635cdb15a53781011b1d0dff65563a0294924a8c063fab2feac62",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure3_relation_review.pdf"
+    },
+    {
+      "path": "figures/figure3_relation_review.png",
+      "bytes": 162962,
+      "sha256": "fb8348a9122a5fd54b0670cc06e2dfa580ae71cc4bc87e991e53d1c8b3a4d3d0",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure3_relation_review.png"
+    },
+    {
+      "path": "figures/figure3_relation_review.svg",
+      "bytes": 77654,
+      "sha256": "0b3b3f2b128d1b5b0f4cc0c6cdf69b017cb4c2b0e9663fd7d804feb8e74ae465",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure3_relation_review.svg"
+    },
+    {
+      "path": "figures/figure4_actual_dispatch.pdf",
+      "bytes": 24343,
+      "sha256": "33075fdb1c17834ab8dc255efa50285b696e0c32f7295843ab13f157a357b79d",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure4_actual_dispatch.pdf"
+    },
+    {
+      "path": "figures/figure4_actual_dispatch.png",
+      "bytes": 259006,
+      "sha256": "ed3c1badf66d65061a5c203bc61b0a0d41ab3282c9b814ad2d4ee6b212a80311",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure4_actual_dispatch.png"
+    },
+    {
+      "path": "figures/figure4_actual_dispatch.svg",
+      "bytes": 82712,
+      "sha256": "466d0be4ce269783677e977e41b9840c116f90aa2b9e55e6f1dda8e7076d4ae1",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure4_actual_dispatch.svg"
+    },
+    {
+      "path": "figures/figure5_input_composition.pdf",
+      "bytes": 22173,
+      "sha256": "b3c31a45386c4e1adc853e6130abbe552e8f6f8519792782561ac24129135465",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure5_input_composition.pdf"
+    },
+    {
+      "path": "figures/figure5_input_composition.png",
+      "bytes": 209850,
+      "sha256": "3c9c103678f0d2ea75d2be20c57e772f26177f2d434d331c946ef526a77b8167",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure5_input_composition.png"
+    },
+    {
+      "path": "figures/figure5_input_composition.svg",
+      "bytes": 90947,
+      "sha256": "13b6be18c13f8d15148e124be896c68676ad904ae9edf8c4a7b20a3f933f9414",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/figures/figure5_input_composition.svg"
+    },
+    {
+      "path": "figures_cn.md",
+      "bytes": 3142,
+      "sha256": "896c3d3f85b8d5df3019ef1ae7459624812b9f955919e4db90b61926f0c399de",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "intake_record.json",
+      "bytes": 5614,
+      "sha256": "010b7d605332700b6fcd341f52eea712ba25eee8d2718183de5a464c2eadace4",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "one_page_cn.md",
+      "bytes": 1638,
+      "sha256": "660d66a5406e8e3fff0b141b40cde6f26af0e8cf08243edc10c0e9f037fe2be5",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "output_asset_id.json",
+      "bytes": 204,
+      "sha256": "2deb819d0d5fe501437bba31dc0bec11ca6b925fca4624a5c5c1b0e101e6dc5c",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "protocol.md",
+      "bytes": 17595,
+      "sha256": "83c801cd0fb3afb8395feb66c192c2386fc2cc1ed05e1cd4b212d4aedc8b03b7",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "protocol_cn.md",
+      "bytes": 12102,
+      "sha256": "74a652f03be13dfd3d2aac5a34e48f5b60f57a1c90f15e1905c99583d491f9e9",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "reasoning_audit_cn.md",
+      "bytes": 1518,
+      "sha256": "1e8fde0ae97481ddc5faf97cc0436a345ea1db56bfbe2c7ebf242d3a98b896ee",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "summary.md",
+      "bytes": 2622,
+      "sha256": "5264a79ce8460ad1122fb86ebd73e79ad476982e826963f58c14b9721923ecfd",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "summary_cn.md",
+      "bytes": 4758,
+      "sha256": "1fab0815c6280802470390f23c059ee46d771fadc2582d11e9c6103f051e4b6e",
+      "role": "research record",
+      "source": null
+    },
+    {
+      "path": "tables/bridge_strata.csv",
+      "bytes": 845,
+      "sha256": "1a71525b26fe680a24338f07172000393c2fc3b9d2174af8f9376fce068fc566",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/bridge_strata.csv"
+    },
+    {
+      "path": "tables/composition_consistency.csv",
+      "bytes": 30870,
+      "sha256": "62869c336ece350183c96aa9f70dd966045d021caed4d950672f23faddff619d",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/composition_consistency.csv"
+    },
+    {
+      "path": "tables/dispatch_summary.csv",
+      "bytes": 13473,
+      "sha256": "64c171a578c601a30591bdbae0b22eeaf1f0beaa1dcd5909c697e88200b18cec",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/dispatch_summary.csv"
+    },
+    {
+      "path": "tables/evidence_lineage.csv",
+      "bytes": 1714,
+      "sha256": "08b011e3ac2387d9749e676b41cba0fe56770c64c54a30346029be9083be632a",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/evidence_lineage.csv"
+    },
+    {
+      "path": "tables/existing_original_T_group_frequency_migration.csv",
+      "bytes": 1995,
+      "sha256": "f468d9573783055ee8aa44127e821433a7af99d2749ee93044eaf1647c8e5abf",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/existing_original_T_group_frequency_migration.csv"
+    },
+    {
+      "path": "tables/existing_per_feature_frequency_migration.csv",
+      "bytes": 1948226,
+      "sha256": "e5624e1c066ffcc7f8fe0d67ee7a5f231b477f10f275b739c3bdf079df60b5b0",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/existing_per_feature_frequency_migration.csv"
+    },
+    {
+      "path": "tables/existing_rank_frequency_all_features.csv",
+      "bytes": 1735996,
+      "sha256": "506a70596cd82aa284dcd0949cc29e11806901bc8b56a385e163f187aa84aeb7",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/existing_rank_frequency_all_features.csv"
+    },
+    {
+      "path": "tables/existing_shared_bin_transition.csv",
+      "bytes": 1382,
+      "sha256": "92e1069f25a20733b17ac3c55ce6c4a5396c9e58c60e4584dcc1ba27c7d3aae9",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/existing_shared_bin_transition.csv"
+    },
+    {
+      "path": "tables/existing_shared_histogram_counts.csv",
+      "bytes": 850,
+      "sha256": "ec21e1dbb9708924e2be34b541252c6c23233257e64479f1371816453f85686e",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/existing_shared_histogram_counts.csv"
+    },
+    {
+      "path": "tables/expert_loads.csv",
+      "bytes": 60953,
+      "sha256": "da977cf68b06f14149bd2751c7a1ca0b10348434b77c225741ecd4671ba07393",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/expert_loads.csv"
+    },
+    {
+      "path": "tables/frequency_bands.csv",
+      "bytes": 614,
+      "sha256": "b4a3fc347a040390548038fbeeaf29b41df2c9f12228967e39788e7e10b4eac1",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/frequency_bands.csv"
+    },
+    {
+      "path": "tables/group_memberships.csv",
+      "bytes": 1244855,
+      "sha256": "56067acfaf64378ed6f3c24213952f90a9363feb3222beb0b4fff8692d8c30a9",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/group_memberships.csv"
+    },
+    {
+      "path": "tables/half_stability.csv",
+      "bytes": 1026,
+      "sha256": "df7e2ededdbbd1209420eaaf2011cf251f3a642aae45ca5e1661ea0aed9f6564",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/half_stability.csv"
+    },
+    {
+      "path": "tables/random_matching.csv",
+      "bytes": 883,
+      "sha256": "a9bff61a4034a80e26aa8a12d2d9a2a0a4271eb3573d0f156d3529ba36fac7ad",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/random_matching.csv"
+    },
+    {
+      "path": "tables/relation_review.csv",
+      "bytes": 22879,
+      "sha256": "64be1335e03194ad718a7881c0aaafa9db7e3106d73680158a93e3603dd7e2eb",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/relation_review.csv"
+    },
+    {
+      "path": "tables/relation_summary.csv",
+      "bytes": 1201,
+      "sha256": "5513062a10315394ee9cf40f8fe2e8dfc579cc0f48c08df7d4bc1e4c7404001d",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/relation_summary.csv"
+    },
+    {
+      "path": "tables/same_ID_sampling_status.csv",
+      "bytes": 499,
+      "sha256": "a9ebd58e01c50a27bb82e6c0198fe2f324399ae3f5dbf149dc7f73c51f68f017",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/same_ID_sampling_status.csv"
+    },
+    {
+      "path": "tables/selected_token_labels.csv",
+      "bytes": 144,
+      "sha256": "d0d4366ee0f40087c9fcd3d8bb11b67f29d7becc9c70ad49200858f1425a04f1",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/selected_token_labels.csv"
+    },
+    {
+      "path": "tables/text_sampling_coverage.csv",
+      "bytes": 2716,
+      "sha256": "739021def7b254ae42a90b2b3ada2bfc5d88e3a4a2eeecf84fcb0735c8ad4031",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/text_sampling_coverage.csv"
+    },
+    {
+      "path": "tables/token_ID_review.csv",
+      "bytes": 532384,
+      "sha256": "0122158dd744adf8f24773752bf81a0200a7a0967ca0eda5aae703b9bcb5efd4",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/token_ID_review.csv"
+    },
+    {
+      "path": "tables/token_frequency_bridge_groups.csv",
+      "bytes": 729,
+      "sha256": "b55c7f9caf98ba3eb0c184f67319dcbccf25294d5ee692e8cae1fee4fcde00fa",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/token_frequency_bridge_groups.csv"
+    },
+    {
+      "path": "tables/token_prefix_bridge_strata.csv",
+      "bytes": 253,
+      "sha256": "9ac19d7cc77ba3585d8478e22b0ccb5ea30e23746194c52bdcdb137ae1ffcd45",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/token_prefix_bridge_strata.csv"
+    },
+    {
+      "path": "tables/train_feature_members.csv",
+      "bytes": 1092294,
+      "sha256": "1caa0f3ddc499ed0ff16c73c840f682ba07f58e9344a74aa62c392afaee66a39",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables/train_feature_members.csv"
+    },
+    {
+      "path": "texts/all_cases.jsonl",
+      "bytes": 1512881,
+      "sha256": "69198f4bf575822961bf70065db6face562d79d168bf8da09f9594f8cff35da2",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/texts/all_cases.jsonl"
+    },
+    {
+      "path": "texts/all_cases_cn.md",
+      "bytes": 1446027,
+      "sha256": "0c2496152882517147e835af53eea23f13469f5ce40da5304f70a1b75fd4b017",
+      "role": "curated reading evidence",
+      "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/texts/all_cases_cn.md"
+    }
+  ],
+  "full_source_tables": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/tables",
+  "full_count_route_exposure_arrays": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/cache ; /data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_contribution_bridge/20261019T025630Z/metrics",
+  "code_sha256": {
+    "analyze.py": "e06a1dfa979db3ab8dfcfd4f5f6bdf97770261a3010271cdb5242ca1547844a9",
+    "annotate_texts.py": "9a39a130e00c8bddd366774fd4be13a311adbda3050c24e38dd14358711f5e86",
+    "figures.py": "601069a1c0d3c8b4ba60cc72d701ea8828aaff5f325b7f84cea1252ec98b91af",
+    "verify.py": "c8b7674376458a11e49fb85ff87c63f7d3a04f9f14c0eab20df35e8314773156",
+    "write_reports.py": "696113d1bf52bbb1e6c5c0bb161967a82e5e2f251995ab9bb411910b960c971b"
+  },
+  "input_source_hashes": {
+    "train": {
+      "N": 85548,
+      "dialogues": 1024,
+      "zero_total": 0,
+      "unknown_feature_hits": 0,
+      "unknown_hit_feature_N": 0,
+      "mean_R": [
+        0.0007919727224581102,
+        0.02200226548222475,
+        0.3179251910915761,
+        0.659280570703751
+      ],
+      "median_R": [
+        0.0,
+        0.017549353575158133,
+        0.3057695060669702,
+        0.6747178005432523
+      ],
+      "unknown_share_mean": 0.0,
+      "mean_l0": 307.4206644223126,
+      "source_json_sha256": "5530f9676c3d7941150e404c045ad62815a11310d8b1ec4904c209121ddb8ad5",
+      "cache_sha256": "530f911094210693bf4a7687f56fa8640163cafeb73d4c1d457f916586a04e12"
+    },
+    "eval": {
+      "N": 22446,
+      "dialogues": 256,
+      "zero_total": 0,
+      "unknown_feature_hits": 54,
+      "unknown_hit_feature_N": 35,
+      "mean_R": [
+        0.0010793151152082303,
+        0.021975835417191922,
+        0.3127465007719321,
+        0.6641865026660498
+      ],
+      "median_R": [
+        0.0,
+        0.017520980948579158,
+        0.3031122134859848,
+        0.6766515398906696
+      ],
+      "unknown_share_mean": 1.1846029621313528e-05,
+      "mean_l0": 304.68560099795064,
+      "source_json_sha256": "63a31b625a8b55c709c777d50f12db44fa8ca05d6b611f8a1d2998485d320962",
+      "cache_sha256": "ea77d4c29a9807b1d48acd8cf54c8c0bdd4dd74ee3c83d13f6c85660f388a268"
+    }
+  },
+  "no_new_zip": true
+}

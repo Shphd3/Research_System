@@ -1,0 +1,82 @@
+{
+  "experiment": "S06_semantic_hierarchy_1104",
+  "UTC": "2026-11-03T16:51:17.749358+00:00",
+  "authorization": "Current user explicitly authorizes end-to-end H1/H2 hierarchy research, bounded inference, controls, reports and package; no intermediate confirmation.",
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "input_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "sites": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "loader": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/e16_sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.self_attn.o_proj output before residual addition"
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "loader": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.mlp forward_pre_hook actual input after residual addition and post_attention_layernorm"
+    }
+  },
+  "data_sha256": "b48fe96a493266f678f18d57a196be3fd85fcd81e4df90e9ae7fc0e9d8e9a98a",
+  "rows": 384,
+  "families_per_domain": 16,
+  "independence": "16 template clusters, 8 discovery/8 heldout; two domains share frames and are correlated",
+  "discovery_families": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06",
+    "F07",
+    "F08"
+  ],
+  "heldout_families": [
+    "F09",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "F16"
+  ],
+  "suffix": "\nDescription:",
+  "shape": [
+    4,
+    128
+  ],
+  "device": "CPU",
+  "threads": 2,
+  "seed": 20261104,
+  "wall_ceiling_seconds": 3600,
+  "selection": "Only explicit discovery; save selection and directions before any heldout forward or any synonym/property analysis.",
+  "H1_common": "Per domain, P/C/D triple-active frequency >=6/8 in explicit discovery; rank frequency then mean raw z across triples descending; top8.",
+  "H1_events": "For each child, recruit (P=0,child>0) and loss (P>0,child=0): frequency>=4/8, rank frequency then mean absolute delta; top6 per event.",
+  "H2_members": "Per domain, triple-active in ALL8 explicit discovery families, rank mean raw z descending; top8; selection independent of sibling contrast.",
+  "H2_primary": "Sibling difference of fixed-list L2-normalized z projected on explicit-discovery mean sibling difference, unit-normalized direction; only same fixed-list support and >=2 positive members. >=6/8 eligible families needed. Parent-child descriptive secondary.",
+  "H1_primary": "Per domain each family mean Jaccard over P-C/P-D/C-D minus mean Jaccard of its three rows against the other-domain three rows (9 pairs).",
+  "tests": "8 explicit-primary tests: H1/H2 x 2 domains x 2 SAE, Holm p<=.05. H1 six labels permuted within heldout family (4095 random permutations,+1); H2 exact independent sibling sign swaps on eligible heldout families. Four H1 contrasts correlated, not independent.",
+  "uncertainty": "4096 family bootstrap resamples, seed20261104, 95% percentile intervals; 8 clusters only, constructed-stimulus uncertainty, not population semantic inference.",
+  "random": "512 independent support pairs, k=32: uniform30000 and discovery-activation-frequency weighted sampling without replacement (frequency+.5 smoothing). Candidate sets:256 sets matched within +/-2 of discovery active count per feature, excluding own list; report failed matches.",
+  "support": "active iff native Top32 z>0. Pairwise intersection/union/Jaccard/intersection over parent active count, plus triple intersection. Recruit/loss equality structural if both counts32.",
+  "relative": "q=z_C/||z_C||2 on exact frozen list C; zero norm undefined; raw z, full-z L2/L1 and fixed-list L2 also reported. decoder-norm-weighted sensitivity descriptive.",
+  "verdict": "AI operational verdict only. Local explicit support requires positive heldout estimate, lower bootstrap bound>0 and Holm pass, plus sibling behavior>=.75 each label. Cross-wording support additionally requires same positive lower bound on property and synonym, adequate H2 eligibility, and each child behavior>=.75. If valid/adequate but prediction reverses or misses primary criterion: NOT_SUPPORTED at that scope; if behavioral/eligibility/sample-power limits: INSUFFICIENT. Failure of CI to exclude0 alone does not falsify.",
+  "optional": "No classifier, no SVD, no model/dictionary/router training, no interventions. Joint differences/rank orders and pairwise coactivation are analyzed. Shared-parent cosine compared to parent-matched structural label shuffle, never semantic direction named.",
+  "display": "F09 preselected complete heldout animal and vehicle cases, both SAE. First heldout family opposite joint direction or least aligned family if none reverses; all failures retained."
+}

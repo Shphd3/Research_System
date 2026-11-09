@@ -1,0 +1,113 @@
+{
+  "schema": "R03_execution_certificate_v1",
+  "recorded_at_utc": "2026-10-27T02:06:34.428088+00:00",
+  "processing_agent": "/root/r03_stats_run",
+  "execution_surface": "existing current container; no submitted job",
+  "job_id": "NOT_APPLICABLE",
+  "resource_allocation": "NONE_NEW",
+  "container_image": "existing image; not newly selected",
+  "runtime": {
+    "time": "2026-10-27T01:46:35.935156+00:00",
+    "GPU": "NVIDIA H100 80GB HBM3 MIG 3g.40gb",
+    "memory_bytes": 42412802048,
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "model_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "dictionary_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "model_batch": 1,
+    "panel_padded_length": 256,
+    "coder_batch": 1024,
+    "threshold": 0.051281172782182693,
+    "normalization_count": 65536,
+    "training": false,
+    "existing_resource_only": true
+  },
+  "frozen_scientific_files": 37,
+  "frozen_sources_unchanged_before_factual_focus_update": true,
+  "forwards_by_purpose": {
+    "original_cache_replay": 2,
+    "controlled_panel": 36,
+    "identical_replay": 2,
+    "fixed_shape_prefix": 8
+  },
+  "R03_model_forwards": 48,
+  "parent_R01_R02_model_forwards": 1452,
+  "combined_model_forwards": 1500,
+  "combined_cap": 1500,
+  "planned_texts": 72,
+  "measured_main_sequences": 36,
+  "unexecuted_plan_sequences_due_to_budget": 36,
+  "target_layer_NMSE_entries": 504,
+  "target_mean_NMSE": 0.08069918805822021,
+  "target_p90_NMSE": 0.12802545726299286,
+  "reconstruction_limits": {
+    "pooled_mean": 0.3,
+    "pooled_p90": 0.5
+  },
+  "qualification_pass": true,
+  "qualification_summary": {
+    "cache_replay": {
+      "calls": 2,
+      "all_pass": true,
+      "max_relative_z_l2_error": 0.01936035044491291,
+      "min_support_jaccard": 0.9814280398247226,
+      "max_abs_z_error": 0.022265871986746788
+    },
+    "identical_replay": {
+      "calls": 2,
+      "all_pass": true,
+      "max_relative_z_l2_error": 0.0,
+      "min_support_jaccard": 1.0,
+      "max_abs_z_error": 0.0
+    },
+    "fixed_shape_prefix": {
+      "calls": 8,
+      "all_pass": true,
+      "max_relative_z_l2_error": 0.0,
+      "min_support_jaccard": 1.0,
+      "max_abs_z_error": 0.0,
+      "max_relative_h_error": 0.0
+    }
+  },
+  "all_qualification_details": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/panel_qualification.json",
+  "cache_replay_is_exact": false,
+  "cache_shape_boundary": "original base batch16 becomes batch1; same saved coder/gate, z relative error up to1.936035% and support Jaccard down to0.981428; passes frozen2%/.95 tolerances but is not exact",
+  "prefix_scope": "eight fixed positions of two fixed sentences at padded length256; not independent replay at every token or proof of general exactness",
+  "buffers_unchanged": true,
+  "no_parameter_updates_asserted": true,
+  "training_steps": 0,
+  "activation_interventions": 0,
+  "sealed_TEST_payload_read": false,
+  "new_resource_requests": 0,
+  "model_CrossCoder_disk_weight_hashes": [
+    {
+      "path": "/data/share/Qwen3-0.6B-Base/model.safetensors",
+      "bytes": 1192135096,
+      "expected_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "current_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "matches": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+      "bytes": 5637826757,
+      "expected_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+      "current_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+      "matches": true
+    }
+  ],
+  "disk_weight_hash_seconds": 37.235341938212514,
+  "disk_weight_hash_bytes": 6829961853,
+  "GPU_parameter_state_digest_recomputed": false,
+  "R02_prior_failures": "UNCHANGED; current CrossCoder fixed-shape qualification does not repair or rewrite prior E16 results",
+  "offline_graph_model_forwards": 0,
+  "sources": {
+    "freeze": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/pre_analysis_freeze.json",
+    "ledger": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/provenance/forward_ledger.jsonl",
+    "readouts": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/panel_readouts.jsonl",
+    "runtime": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/runtime.json",
+    "offline_completion": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/completed.json",
+    "cycle_facts": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/results/cycle_structure.json"
+  },
+  "mechanism_acceptance": "Unknown",
+  "question_closure": "Unknown"
+}

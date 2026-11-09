@@ -1,0 +1,16 @@
+{
+  "asset_id": "representation_qwen3_0p6b_e17_dclm_sparse_activation",
+  "read_paths": [
+    "/data/250010109/MoE_Router/experiments/20260904_a15_13_e17_sae_hierarchy/runs/full-20260904T023742Z/activation_cache/discovery_indices.npy",
+    "/data/250010109/MoE_Router/experiments/20260904_a15_13_e17_sae_hierarchy/runs/full-20260904T023742Z/activation_cache/discovery_values.npy"
+  ],
+  "frequency_definition": "positive activation hit count / historical kept DCLM TRAIN discovery positions",
+  "rows": 261632,
+  "independent_of_current_panel": true,
+  "historical_parent_hash_gap": "parent path/config and SAE hash recorded; historical cache backbone weights digest not recorded. Current parent/model hash agreement cannot close that historical gap. Frequency matching using this reference remains conditional on historical parent identity.",
+  "not_read": [
+    "replication_indices.npy",
+    "replication_values.npy"
+  ],
+  "precision_boundary": "Historical E17 SAE inference used BF16 autocast; current panel SAE inference is FP32. TopK support can differ at near ties, so frequency matching is conditional on historical inference precision as well as parent identity."
+}

@@ -1,0 +1,151 @@
+{
+  "experiment": "S10_frequency_shared_discriminative_1105",
+  "created_UTC": "2026-11-04T17:29:06.187033+00:00",
+  "seed": 20261105,
+  "authorization": "Current user explicitly authorizes full audit, offline analysis and necessary bounded inference. No training/interventions/router.",
+  "scientific_acceptance": "Unknown",
+  "execution_authorized": true,
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "input_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "sites": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "loader": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/e16_sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.self_attn.o_proj output before residual addition"
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "loader": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.mlp forward_pre_hook actual input after residual addition and post_attention_layernorm"
+    }
+  },
+  "source_plan_sha256": "a183b4cd8e66fce90dd89553f3aab24e89b4fe0587df777691a6e334dc8eb2ed",
+  "source_selection_sha256": "af57d99a26e025a9c630c4d0c312f910a404c32ca3ce2894553d31cf1e8b3cb8",
+  "old_split": "F01-F08 discovery; all F09-F16 newly computed statistics posthoc exploratory, never independent confirmation",
+  "confirmation": "N01-N16,384 prefixes,4 wordings,6 labels. No new-model response may be read before both selection locks exist.",
+  "reference": "384 S09 discovery questions (128/source), original first<=128 IDs then newline Description:, final colon. Independent of controlled panel. Sources limited, not universal corpus frequency.",
+  "frequency_groups": "count>=8/384 supported; tertile thresholds on positive supported counts using np.quantile, equal count never split. count0 unseen, count1-7 insufficient. S09 original3072positions sensitivity count>=8 and>=5documents.",
+  "relations": {
+    "pairs": [
+      [
+        "animal",
+        "vehicle"
+      ],
+      [
+        "cat",
+        "dog"
+      ],
+      [
+        "car",
+        "bicycle"
+      ],
+      [
+        "animal",
+        "cat"
+      ],
+      [
+        "animal",
+        "dog"
+      ],
+      [
+        "vehicle",
+        "car"
+      ],
+      [
+        "vehicle",
+        "bicycle"
+      ],
+      [
+        "cat",
+        "car"
+      ],
+      [
+        "cat",
+        "bicycle"
+      ],
+      [
+        "dog",
+        "car"
+      ],
+      [
+        "dog",
+        "bicycle"
+      ]
+    ],
+    "pooled": "Pooled-child animal=equal mixture of cat,dog; vehicle=equal mixture car,bicycle. Cross pooled overlap averages four cross-parent child pairs. Not direct-parent text."
+  },
+  "bootstrap": 2000,
+  "H1": "Compare high share among common members: each sibling vs direct animal-vehicle separately. Report group-size/opportunity denominators and label-marginal exact expected intersections; J simulated or measured, never ratio of expected intersections.",
+  "H2": "Frequency distribution of discovery-fixed discriminative features and new-family directional effects; compare direct parents and equal pooled children separately to two sibling contrasts. No selected list reselection.",
+  "H3": "Membership replacement, same-support fixed-list normalized-strength direction and exact-degree coactivation null are different statistics.",
+  "common_selection": "For each pair: coactive>=6/8explicit and>=4/8synonym/property. All eligible IDs kept for A; Cmax8 sorted pooled3wording coactivation count,min individual presence,ID. >=2members.",
+  "discriminative_selection": "All30000 features; explicit abs(delta presence)>=.25, synonym/property same sign and abs>=.125; at least2/3 raw and feature-RMS mean strength differences same sign. RMS includes zeros over discovery8x3x6=144rows. Full candidates, no frequency-based selection.",
+  "amplitude_only": "Pair common eligible; explicit abs(delta z/RMS)>=.2; all3wording same sign with >=5/8family sign agreement each. Separate from binary-discriminative candidates.",
+  "matching": "256random feature lists, own-list excluded, p_ref band + discovery pooled presence quartile + RMS-positive amplitude quartile, nearest cells only if registered by exact code before confirmation; unmatched reported, no adaptive threshold relaxation.",
+  "primary_C": "Four sibling xSAE exact paired-sign tests; fixed q=z_list/||z_list||2; identical full selected-list support >=2active, eligible>=12/16new (6/8old descriptive). Whole scale and raw differences reported.",
+  "joint": "4siblings xSAE main. Own label top24 and sibling pooled top24 discovery marginal feature universe, all276pairs; exactrow32/col counts withinlabel/wording Curveball;4chains64draws,100burn10thin. Discovery own/between residual directions locked before confirmation null/statistics.",
+  "null_mixing": "Report no-op trades,forcedcolumns,unique states,retention,Rhat/ESS of nondegenerate statistics. Rhat<=1.05 and ESS>=50; one fixed extension64to128draws allowed, otherwise insufficient; forced zero-variance statistics not evidence.",
+  "inference": "Familybootstrap2000and paired family sign flips; Holm within H1four directional contrasts,H2four contrasts,Cfour,jointfour separately. Feature-wise exact family sign tests on new locked candidates BH perSAE/channel across11pairs. New_paraphrase secondary no rescue. Scientific support is AI operational interpretation, not researcher acceptance.",
+  "runtime": {
+    "device": "CPU",
+    "threads": 4,
+    "reference_batch": 4,
+    "confirmation_candidate_batch": 4,
+    "wall_ceiling_seconds": 3600
+  },
+  "figures": "Main shared versus directional discrimination frequency groups; at least4prespecified-rankcases acrossdomains/frames incl counterexample; fullfamily/control/null audits.",
+  "exclusions": "No behavioral exclusion; parents no gold sibling answer; children4fixed2token candidate sequences sumlogp, denominator bylabel/wording. No training/interventions/classifier.",
+  "frequency_analysis": {
+    "seed": 20261105,
+    "bootstrap": 2000,
+    "matched_references": 256,
+    "match_min_fraction": 0.75,
+    "match_bins": 3,
+    "discovery_families": [
+      "F01",
+      "F02",
+      "F03",
+      "F04",
+      "F05",
+      "F06",
+      "F07",
+      "F08"
+    ],
+    "common": {
+      "explicit": 0.75,
+      "controls": 0.5
+    },
+    "discriminative": {
+      "explicit_delta_p": 0.25,
+      "controls_delta_p": 0.125,
+      "intensity_wordings": 2
+    },
+    "amplitude_only": {
+      "explicit_delta_rms": 0.2,
+      "controls_delta_rms": 0,
+      "min_positive_family_fraction": 0.625
+    }
+  },
+  "data_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105/data/confirmation_panel.jsonl": "5e7642b63e67de68b39c2f7f5279c854dd2bd2f2dc43e06cdc5d8bb046dcb3fe",
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105/data/confirmation_templates.json": "30de67e4e5eab6e2633e49735f4ed28b22c112f618136211625390b37d1597d0",
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105/data/reference_colon_panel.jsonl": "9ef4b0fefdbc57cc5a1b6e6e273f40fbb908488f8e50ed2c27dac8e4749035cd",
+    "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S10_frequency_shared_discriminative_1105/data/relations.json": "e1cf980d53e8fd867f18e823608a5e0f2e58c84bcb5a91e38aaa9c6e92ae3a1a"
+  }
+}

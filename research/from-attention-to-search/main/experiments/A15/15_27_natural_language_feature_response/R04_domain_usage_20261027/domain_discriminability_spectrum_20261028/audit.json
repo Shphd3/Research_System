@@ -1,0 +1,2370 @@
+{
+  "status": "PASS",
+  "checks": {
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/documents.jsonl": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/context_panel.jsonl": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/reference.jsonl": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/run_dual_forward.py": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/analyze_frozen.py": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/execution_manifest.json": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/pre_forward_freeze.json": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/forward/documents_SAE.npz": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/forward/reference_SAE.npz": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/analysis/SAE_candidate_freeze.json": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/forward/documents_CC.npz": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/forward/reference_CC.npz": true,
+    "source:/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/analysis/CC_candidate_freeze.json": true,
+    "original_R04_manifest_all_files_unchanged": true,
+    "original_R04_zip_unchanged": true,
+    "SAE_f1004_independent_MannWhitney": true,
+    "SAE_f1004_bootstrap_independent": true,
+    "SAE_f11667_independent_MannWhitney": true,
+    "SAE_f11667_bootstrap_independent": true,
+    "SAE_CI_in_unit_interval": true,
+    "SAE_old_lists_preserved": true,
+    "SAE_top16_exact_discovery_rule": true,
+    "SAE_expanded_math64_exact64": true,
+    "SAE_expanded_bio64_exact64": true,
+    "SAE_direction_sets_disjoint": true,
+    "SAE_721_math_conditional_NA": true,
+    "SAE_4127_math_conditional_NA": true,
+    "SAE_4452_math_conditional_NA": true,
+    "SAE_7318_math_conditional_NA": true,
+    "SAE_8296_bio_conditional_NA": true,
+    "SAE_8848_bio_conditional_NA": true,
+    "SAE_9730_bio_conditional_NA": true,
+    "SAE_10331_math_conditional_NA": true,
+    "SAE_10916_math_conditional_NA": true,
+    "SAE_11399_math_conditional_NA": true,
+    "SAE_13074_bio_conditional_NA": true,
+    "SAE_13093_math_conditional_NA": true,
+    "SAE_13566_math_conditional_NA": true,
+    "SAE_24633_bio_conditional_NA": true,
+    "SAE_25661_math_conditional_NA": true,
+    "SAE_26129_bio_conditional_NA": true,
+    "SAE_27699_bio_conditional_NA": true,
+    "SAE_28357_math_conditional_NA": true,
+    "SAE_28487_bio_conditional_NA": true,
+    "SAE_28673_math_conditional_NA": true,
+    "SAE_28864_math_conditional_NA": true,
+    "SAE_token_hit_counts_match_aggregate": true,
+    "SAE_new_top16_1000_valid_sets": true,
+    "SAE_new_top16_excludes_candidates": true,
+    "SAE_new_top16_eligible_background": true,
+    "SAE_new_top16_exact_frequency_support_matching": true,
+    "SAE_expanded_math64_NA_not_faked": true,
+    "SAE_expanded_bio64_NA_not_faked": true,
+    "SAE_old_shared32_NA_not_faked": true,
+    "SAE_old_math16_NA_not_faked": true,
+    "SAE_old_bio16_NA_not_faked": true,
+    "SAE_unit_directions": true,
+    "SAE_native_norms": true,
+    "CC_f11710_independent_MannWhitney": true,
+    "CC_f11710_bootstrap_independent": true,
+    "CC_f8963_independent_MannWhitney": true,
+    "CC_f8963_bootstrap_independent": true,
+    "CC_CI_in_unit_interval": true,
+    "CC_old_lists_preserved": true,
+    "CC_top16_exact_discovery_rule": true,
+    "CC_expanded_math64_exact64": true,
+    "CC_expanded_bio64_exact64": true,
+    "CC_direction_sets_disjoint": true,
+    "CC_1097_bio_conditional_NA": true,
+    "CC_2639_math_conditional_NA": true,
+    "CC_3717_math_conditional_NA": true,
+    "CC_3929_math_conditional_NA": true,
+    "CC_5121_math_conditional_NA": true,
+    "CC_6270_math_conditional_NA": true,
+    "CC_8693_bio_conditional_NA": true,
+    "CC_9638_bio_conditional_NA": true,
+    "CC_11516_math_conditional_NA": true,
+    "CC_12030_bio_conditional_NA": true,
+    "CC_12207_bio_conditional_NA": true,
+    "CC_12314_math_conditional_NA": true,
+    "CC_12630_math_conditional_NA": true,
+    "CC_12739_bio_conditional_NA": true,
+    "CC_12960_bio_conditional_NA": true,
+    "CC_13691_math_conditional_NA": true,
+    "CC_15426_bio_conditional_NA": true,
+    "CC_15457_math_conditional_NA": true,
+    "CC_16195_bio_conditional_NA": true,
+    "CC_token_hit_counts_match_aggregate": true,
+    "CC_new_top16_1000_valid_sets": true,
+    "CC_new_top16_excludes_candidates": true,
+    "CC_new_top16_eligible_background": true,
+    "CC_new_top16_exact_frequency_support_matching": true,
+    "CC_expanded_math64_1000_valid_sets": true,
+    "CC_expanded_math64_excludes_candidates": true,
+    "CC_expanded_math64_eligible_background": true,
+    "CC_expanded_math64_exact_frequency_support_matching": true,
+    "CC_expanded_bio64_NA_not_faked": true,
+    "CC_old_shared32_NA_not_faked": true,
+    "CC_old_math16_1000_valid_sets": true,
+    "CC_old_math16_excludes_candidates": true,
+    "CC_old_math16_eligible_background": true,
+    "CC_old_math16_exact_frequency_support_matching": true,
+    "CC_old_bio16_NA_not_faked": true,
+    "CC_unit_directions": true,
+    "CC_native_norms": true,
+    "no_fabricated_spectrum_basis": true
+  },
+  "check_count": 106,
+  "original_manifest_file_count": 563,
+  "original_manifest_checks": [
+    {
+      "path": "adopt_dual_readouts.py",
+      "pass": true
+    },
+    {
+      "path": "amendment_A01.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_all_feature_continuous.csv",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_all_feature_discovery.npz",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_candidate_document_usage.npz",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_candidate_freeze.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_context_direction_freeze.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_context_feature_effects.npz",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_feature_statistics.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_features.csv",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_permutation_BA.npz",
+      "pass": true
+    },
+    {
+      "path": "analysis/CC_results.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_all_feature_continuous.csv",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_all_feature_discovery.npz",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_candidate_document_usage.npz",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_candidate_freeze.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_context_direction_freeze.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_context_feature_effects.npz",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_feature_statistics.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_features.csv",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_permutation_BA.npz",
+      "pass": true
+    },
+    {
+      "path": "analysis/SAE_results.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/audit.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/results.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/statistics_verification.json",
+      "pass": true
+    },
+    {
+      "path": "analysis/token_bag_baseline.json",
+      "pass": true
+    },
+    {
+      "path": "analysis_config.json",
+      "pass": true
+    },
+    {
+      "path": "analysis_console.log",
+      "pass": true
+    },
+    {
+      "path": "analyze_frozen.py",
+      "pass": true
+    },
+    {
+      "path": "attachment_paragraphs.json",
+      "pass": true
+    },
+    {
+      "path": "audit_outputs.py",
+      "pass": true
+    },
+    {
+      "path": "biology_qa_source_pool.jsonl",
+      "pass": true
+    },
+    {
+      "path": "build_context_panel.py",
+      "pass": true
+    },
+    {
+      "path": "build_documents.py",
+      "pass": true
+    },
+    {
+      "path": "check_delivery.py",
+      "pass": true
+    },
+    {
+      "path": "collect_reference_and_qa.py",
+      "pass": true
+    },
+    {
+      "path": "completion_coverage.json",
+      "pass": true
+    },
+    {
+      "path": "data/context_manifest.json",
+      "pass": true
+    },
+    {
+      "path": "data/context_panel.jsonl",
+      "pass": true
+    },
+    {
+      "path": "data/documents.jsonl",
+      "pass": true
+    },
+    {
+      "path": "data/reference.jsonl",
+      "pass": true
+    },
+    {
+      "path": "data/source_manifest.json",
+      "pass": true
+    },
+    {
+      "path": "delivery_checks.json",
+      "pass": true
+    },
+    {
+      "path": "delivery_checks_current.json",
+      "pass": true
+    },
+    {
+      "path": "document_source_candidates.jsonl",
+      "pass": true
+    },
+    {
+      "path": "document_source_scan.json",
+      "pass": true
+    },
+    {
+      "path": "dual_input_access.json",
+      "pass": true
+    },
+    {
+      "path": "dual_parent_identity.json",
+      "pass": true
+    },
+    {
+      "path": "engineering_resume.json",
+      "pass": true
+    },
+    {
+      "path": "factual_focus_update.json",
+      "pass": true
+    },
+    {
+      "path": "figures/figure1_usage.pdf",
+      "pass": true
+    },
+    {
+      "path": "figures/figure1_usage.png",
+      "pass": true
+    },
+    {
+      "path": "figures/figure2_readability_frequency.pdf",
+      "pass": true
+    },
+    {
+      "path": "figures/figure2_readability_frequency.png",
+      "pass": true
+    },
+    {
+      "path": "figures/figure3_fixed_target.pdf",
+      "pass": true
+    },
+    {
+      "path": "figures/figure3_fixed_target.png",
+      "pass": true
+    },
+    {
+      "path": "figures/figure_manifest.json",
+      "pass": true
+    },
+    {
+      "path": "finalize_manifest.py",
+      "pass": true
+    },
+    {
+      "path": "fixed_data_access.json",
+      "pass": true
+    },
+    {
+      "path": "focus_before_R04.txt",
+      "pass": true
+    },
+    {
+      "path": "focus_before_R04_cn.txt",
+      "pass": true
+    },
+    {
+      "path": "forward/CC_qualification.json",
+      "pass": true
+    },
+    {
+      "path": "forward/SAE_qualification.json",
+      "pass": true
+    },
+    {
+      "path": "forward/completed.json",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_01_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_01_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_01_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_01_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_01_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_01_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_02_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_02_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_02_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_02_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_02_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_02_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_03_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_03_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_03_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_03_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_03_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_03_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_04_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_04_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_04_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_04_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_04_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_04_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_05_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_05_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_05_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_05_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_05_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_05_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_06_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_06_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_06_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_06_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_06_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_06_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_07_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_07_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_07_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_07_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_07_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_07_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_08_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_08_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_08_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_08_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_08_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_08_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_09_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_09_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_09_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_09_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_09_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_09_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_10_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_10_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_10_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_10_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_10_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_10_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_11_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_11_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_11_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_11_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_11_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_11_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_12_B1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_12_B2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_12_BU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_12_M1.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_12_M2.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context/CTX_12_MU.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context_CC.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context_CC_reconstruction.json",
+      "pass": true
+    },
+    {
+      "path": "forward/context_SAE.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/context_SAE_reconstruction.json",
+      "pass": true
+    },
+    {
+      "path": "forward/decoder_scales.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_00938.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_01506.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_01511.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_02109.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_02231.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_02692.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_03118.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_04457.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_05151.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_05981.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_06307.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_06414.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_06704.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_06931.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_07322.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_07890.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_08818.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_10159.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_10652.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_11061.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_11397.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_11578.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_12377.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_12675.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_12685.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_13056.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_14362.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_15328.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_15333.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_15743.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_15747.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_15749.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_16081.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_16359.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_16728.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_16735.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_17741.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_17826.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_17931.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_17932.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_18110.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_18119.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_18483.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_18794.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_19642.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_20186.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_20507.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_20924.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_22058.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_24483.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_29157.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_31730.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_32445.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_37485.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_42253.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_50953.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_54702.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_55499.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_56158.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_biology_59448.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_00879.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_01537.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_01538.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_02237.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_02292.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_04432.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_06455.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_06566.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_06624.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_07356.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_07649.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_07931.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_07933.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_08104.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_08596.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_09429.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_09430.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_11720.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_11798.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_11964.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_13906.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_14603.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_14751.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_15055.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_16543.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_16989.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_19623.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_19685.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_20499.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_20925.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_21305.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_23393.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_23768.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_24153.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_24496.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_28473.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_28475.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_29560.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_30823.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_32394.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_34829.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_35867.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_38548.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_40751.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_40866.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_41032.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_41528.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_43664.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_43665.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_43807.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_44619.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_45758.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_47462.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_48095.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_48467.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_48580.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_49929.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_50447.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_50977.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents/DOC_math_52754.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents_CC.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents_CC_reconstruction.json",
+      "pass": true
+    },
+    {
+      "path": "forward/documents_SAE.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/documents_SAE_reconstruction.json",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_000.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_001.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_002.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_003.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_004.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_005.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_006.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_007.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_008.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_009.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_010.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_011.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_012.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_013.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_014.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_015.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_016.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_017.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_018.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_019.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_020.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_021.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_022.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_023.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_024.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_025.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_026.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_027.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_028.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_029.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_030.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_031.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_032.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_033.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_034.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_035.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_036.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_037.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_038.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_039.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_040.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_041.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_042.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_043.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_044.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_045.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_046.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_047.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_048.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_049.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_050.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_051.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_052.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_053.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_054.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_055.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_056.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_057.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_058.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_059.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_060.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_061.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_062.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_063.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_064.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_065.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_066.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_067.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_068.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_069.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_070.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_071.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_072.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_073.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_074.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_075.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_076.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_077.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_078.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_079.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_080.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_081.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_082.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_083.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_084.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_085.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_086.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_087.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_088.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_089.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_090.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_091.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_092.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_093.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_094.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_095.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_096.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_097.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_098.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_099.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_100.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_101.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_102.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_103.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_104.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_105.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_106.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_107.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_108.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_109.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_110.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_111.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_112.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_113.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_114.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_115.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_116.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_117.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_118.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_119.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_120.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_121.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_122.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_123.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_124.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_125.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_126.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_127.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_128.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_129.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_130.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_131.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_132.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_133.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_134.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_135.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_136.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_137.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_138.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_139.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_140.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_141.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_142.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_143.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_144.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_145.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_146.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_147.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_148.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_149.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_150.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_151.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_152.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_153.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_154.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_155.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_156.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_157.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_158.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_159.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_160.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_161.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_162.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_163.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_164.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_165.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_166.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_167.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_168.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_169.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_170.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_171.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_172.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_173.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_174.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_175.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_176.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_177.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_178.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_179.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_180.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_181.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_182.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_183.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_184.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_185.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_186.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_187.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_188.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_189.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_190.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_191.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_192.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_193.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_194.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_195.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_196.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_197.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_198.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_199.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_200.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_201.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_202.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_203.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_204.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_205.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_206.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_207.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_208.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_209.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_210.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_211.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_212.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_213.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_214.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_215.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_216.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_217.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_218.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_219.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_220.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_221.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_222.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_223.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_224.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_225.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_226.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_227.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_228.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_229.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_230.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_231.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_232.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_233.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_234.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_235.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_236.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_237.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_238.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_239.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_240.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_241.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_242.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_243.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_244.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_245.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_246.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_247.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_248.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_249.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_250.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_251.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_252.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_253.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_254.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference/DCLM_255.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference_CC.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference_CC_reconstruction.json",
+      "pass": true
+    },
+    {
+      "path": "forward/reference_SAE.npz",
+      "pass": true
+    },
+    {
+      "path": "forward/reference_SAE_reconstruction.json",
+      "pass": true
+    },
+    {
+      "path": "forward/runtime.json",
+      "pass": true
+    },
+    {
+      "path": "forward/started.json",
+      "pass": true
+    },
+    {
+      "path": "forward_console.log",
+      "pass": true
+    },
+    {
+      "path": "forward_ledger.jsonl",
+      "pass": true
+    },
+    {
+      "path": "forward_resume_console.log",
+      "pass": true
+    },
+    {
+      "path": "freeze_execution.py",
+      "pass": true
+    },
+    {
+      "path": "input_access.json",
+      "pass": true
+    },
+    {
+      "path": "inspect_interface.py",
+      "pass": true
+    },
+    {
+      "path": "interface_audit.json",
+      "pass": true
+    },
+    {
+      "path": "non_mainline_reading_copies/figure1_usage.pdf",
+      "pass": true
+    },
+    {
+      "path": "non_mainline_reading_copies/figure2_readability_frequency.pdf",
+      "pass": true
+    },
+    {
+      "path": "non_mainline_reading_copies/figure3_fixed_target.pdf",
+      "pass": true
+    },
+    {
+      "path": "non_mainline_reading_copies/forward_ledger.jsonl",
+      "pass": true
+    },
+    {
+      "path": "output_access.json",
+      "pass": true
+    },
+    {
+      "path": "package_delivery.py",
+      "pass": true
+    },
+    {
+      "path": "pre_amendment_appendix.md",
+      "pass": true
+    },
+    {
+      "path": "pre_amendment_appendix_cn.md",
+      "pass": true
+    },
+    {
+      "path": "pre_amendment_objects_and_settings.md",
+      "pass": true
+    },
+    {
+      "path": "pre_amendment_objects_and_settings_cn.md",
+      "pass": true
+    },
+    {
+      "path": "pre_amendment_summary.md",
+      "pass": true
+    },
+    {
+      "path": "pre_amendment_summary_cn.md",
+      "pass": true
+    },
+    {
+      "path": "pre_completion_artifact_manifest.json",
+      "pass": true
+    },
+    {
+      "path": "pre_completion_selected_provenance_manifest.json",
+      "pass": true
+    },
+    {
+      "path": "pre_forward_freeze.json",
+      "pass": true
+    },
+    {
+      "path": "prepare_qa_review.py",
+      "pass": true
+    },
+    {
+      "path": "prepare_review_windows.py",
+      "pass": true
+    },
+    {
+      "path": "qa_review_windows.jsonl",
+      "pass": true
+    },
+    {
+      "path": "reading_profile_before_completion.json",
+      "pass": true
+    },
+    {
+      "path": "reading_scope_amendment.json",
+      "pass": true
+    },
+    {
+      "path": "reference_source_pool.jsonl",
+      "pass": true
+    },
+    {
+      "path": "render_figures.py",
+      "pass": true
+    },
+    {
+      "path": "review_windows.jsonl",
+      "pass": true
+    },
+    {
+      "path": "run_dual_forward.py",
+      "pass": true
+    },
+    {
+      "path": "run_dual_forward_resume.py",
+      "pass": true
+    },
+    {
+      "path": "scan_existing_documents.py",
+      "pass": true
+    },
+    {
+      "path": "verify_statistics.py",
+      "pass": true
+    },
+    {
+      "path": "write_final_records.py",
+      "pass": true
+    },
+    {
+      "path": "write_preflight_report.py",
+      "pass": true
+    }
+  ],
+  "model_forwards": 0,
+  "fits": 0,
+  "scientific_acceptance": "Unknown"
+}

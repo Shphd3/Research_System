@@ -1,0 +1,13 @@
+# Frequency-band competition matters before relation refinement
+
+The authorized no-training A–C analysis is complete. Frozen Qwen3-0.6 B Base representations and the joint 14-layer/F16384 CrossCoder were reused at 85,548 TRAIN and 22,446 EVAL answer-prediction positions. All EVAL reuse is exploratory; no model forward, expert training, new GPU allocation or learning-benefit claim occurred.
+
+1. **A descriptive token-frequency bridge survives, with limited scope.** Position-weighted Spearman between current-ID rarity and the lowest-band contribution share is 0.259, dialogue-bootstrap95%CI [0.228,0.285], on19,070 known-ID positions. Equal-ID rho is 0.124. The lowest-band mean share is0.108%, with83.69% zero positions. Context/format can change the profile for the same ID, but four of eight preselected IDs have no variation and two have low review support. [Figure2](figures/figure2_token_frequency_bridge.png).
+2. **Within-band relations retain some coactivation, not a reliable expert decomposition.** EVAL relation-group phi exceeds all20 matched controls in bands1 and3; band 3 means are0.005118 versus0.002401. Bands2/4 split5670/3 and1096/1, while half-sample membership in bands1–3 is unstable. Average coactivation and membership stability are different. [Figure3](figures/figure3_relation_review.png).
+3. **Raw contribution routing gives no allocation to the lowest band.** Both raw relation and raw random routing have0% low-feature receipt. Calibration produces72.22% for relation groups and70.46% for the prespecified random 11 control; the20-control mean/range are70.99%/[70.33%,72.06%]. There are1198 estimable low features,162 zero-receipt items after relation/calibration, and496 unobserved EVAL items retained asNA. Calibration changes band competition much more than the small relation-refinement increment. [Figure4](figures/figure4_actual_dispatch.png).
+
+The full hidden input remains intact: expert 0 under relation/calibration receives an average1.38 lowest-band and195.54 highest-band active features per input. These counts do not measure information or learning interference. [Figure5](figures/figure5_input_composition.png).
+
+H1 receives bounded descriptive support. H2 has partial evidence but no stable general decomposition. H3 remains NOT RUN. AI suggestion for the next researcher decision: whether reception gains under this final-layer definition translate into held-out learning at a common DEV-selected budget. This is not authorization for learning.
+
+[Detailed](detailed.md), [中文](summary_cn.md), [text cases](texts/all_cases_cn.md), [receipt](completion_receipt.json).

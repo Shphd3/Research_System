@@ -1,0 +1,332 @@
+{
+  "created_at_utc": "2026-10-26T15:56:13.738327+00:00",
+  "processing_agent": "/root/definitions_audit_r02",
+  "current_strict_access": "crosscoder_access.json",
+  "asset_ids": [
+    "model_qwen3_0p6b_base",
+    "tokenizer_qwen3_0p6b_base",
+    "dclm_crosscoder_direct_bins_1b_a15_20261013",
+    "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+    "representation_crosscoder_qwen3_final14_f16384_val10485760_phase1_20261013t173130z",
+    "analysis_crosscoder_feature_relation_phase1_20261013t173130z"
+  ],
+  "parent_model": {
+    "asset_id": "model_qwen3_0p6b_base",
+    "path": "/data/share/Qwen3-0.6B-Base",
+    "revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+    "weight_file": "/data/share/Qwen3-0.6B-Base/model.safetensors",
+    "weight_bytes": 1192135096,
+    "weight_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "config_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "config": {
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "attention_bias": false,
+      "attention_dropout": 0.0,
+      "bos_token_id": 151643,
+      "eos_token_id": 151643,
+      "head_dim": 128,
+      "hidden_act": "silu",
+      "hidden_size": 1024,
+      "initializer_range": 0.02,
+      "intermediate_size": 3072,
+      "max_position_embeddings": 32768,
+      "max_window_layers": 28,
+      "model_type": "qwen3",
+      "num_attention_heads": 16,
+      "num_hidden_layers": 28,
+      "num_key_value_heads": 8,
+      "rms_norm_eps": 1e-06,
+      "rope_scaling": null,
+      "rope_theta": 1000000,
+      "sliding_window": null,
+      "tie_word_embeddings": true,
+      "torch_dtype": "bfloat16",
+      "transformers_version": "4.51.0",
+      "use_cache": true,
+      "use_sliding_window": false,
+      "vocab_size": 151936
+    },
+    "tokenizer_sha256": {
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "revision_evidence": {
+      "config.json": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+      "model.safetensors": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+      "tokenizer.json": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+      "tokenizer_config.json": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd"
+    },
+    "identity_verified": true
+  },
+  "checkpoint": {
+    "actual_saved_state": "FP32 BatchTopK CrossCoder and Adam moments; k/threshold/dead counters/completed updates; rank-local RNG/cursors; fixed TRAIN centered vector RMS normalization; no Base copy",
+    "asset_id": "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+    "checkpoint_bytes": 5637826757,
+    "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "contract_sha256": "dc00b1c05d81238680f910acdd43ab498cf7fa26aaf219676cde28a95578b263",
+    "data_manifest_sha256": "874794a8657f8982f7abb12ee517ec551fce840d9f20dfe103f48589a6779849",
+    "interface": {
+      "hidden_size": 1024,
+      "hook": "block residual-post before final global norm",
+      "layers": 14,
+      "parameter_count": 469792768,
+      "selected_block_indices_zero_based": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27
+      ],
+      "shared_features": 16384,
+      "sparsity": "global BatchTopK",
+      "target_mean_l0": 256,
+      "weights_tied": false
+    },
+    "measurement_quality": "UNKNOWN",
+    "parent_asset_ids": [
+      "model_qwen3_0p6b_base",
+      "tokenizer_qwen3_0p6b_base",
+      "dclm_crosscoder_direct_bins_1b_a15_20261013",
+      "crosscoder_qwen3_14layer_16384_bf16_a18_learning_check_a21_4096000_20261013"
+    ],
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+    "position_exposures": 999997440,
+    "producer_job_id": "pt-2639gg8p",
+    "producer_status": "FORMAL_COMPLETE",
+    "scientific_question_answered": false,
+    "source_manifest_sha256": "574c395d93f220d92ba88ceea479cae7020e9e0d74759a747315d630c050de68"
+  },
+  "fresh_sha256": {
+    "/data/share/Qwen3-0.6B-Base/model.safetensors": {
+      "sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "bytes": 1192135096,
+      "expected": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+      "matches": true
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt": {
+      "sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+      "bytes": 5637826757,
+      "expected": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+      "matches": true
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/data_manifest.json": {
+      "sha256": "874794a8657f8982f7abb12ee517ec551fce840d9f20dfe103f48589a6779849",
+      "bytes": 3109,
+      "expected": "874794a8657f8982f7abb12ee517ec551fce840d9f20dfe103f48589a6779849",
+      "matches": true
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/index_val/manifest.json": {
+      "sha256": "4e9b4ba51b3568d694c5cfc423736b20d763488756042befae80dd86d6848919",
+      "bytes": 1145,
+      "expected": "4e9b4ba51b3568d694c5cfc423736b20d763488756042befae80dd86d6848919",
+      "matches": true
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/index_val/prefix.npy": {
+      "sha256": "a10b39f911c8ebf933262fa6027b2d1ef28f965b3021468891fcacb3a0ada630",
+      "bytes": 82128,
+      "expected": "a10b39f911c8ebf933262fa6027b2d1ef28f965b3021468891fcacb3a0ada630",
+      "matches": true
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/data/direct_dclm_bins_a15/index_val/records.npy": {
+      "sha256": "6e15c254fa92c6f2f3d42bc049143d494b1d0bab67e00a112c1022e92dde472e",
+      "bytes": 328096,
+      "expected": "6e15c254fa92c6f2f3d42bc049143d494b1d0bab67e00a112c1022e92dde472e",
+      "matches": true
+    },
+    "/data/share/109_cache_dir/hf_data/dclm_bin/global-shard_01_of_10/local-shard_0_of_10_shard_00000001_processed.bin": {
+      "sha256": "664d07bcb4db743ac9ec62a9c6e4df245f3fd4fde35b8536dece439fcaac9697",
+      "bytes": 459952424,
+      "expected": "664d07bcb4db743ac9ec62a9c6e4df245f3fd4fde35b8536dece439fcaac9697",
+      "matches": true
+    },
+    "/data/share/Qwen3-0.6B-Base/tokenizer.json": {
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "bytes": 7031645,
+      "expected": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "matches": true
+    },
+    "/data/share/Qwen3-0.6B-Base/tokenizer_config.json": {
+      "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+      "bytes": 9678,
+      "expected": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+      "matches": true
+    },
+    "/data/share/Qwen3-0.6B-Base/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833,
+      "expected": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "matches": true
+    },
+    "/data/share/Qwen3-0.6B-Base/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853,
+      "expected": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "matches": true
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_cache/rank0/000000000000_000000016384.npz": {
+      "sha256": "66a0b9589ef35c54cd43d48d96e3f4767b047ba1952db9c8f893ddbc2705edc0",
+      "bytes": 24890404,
+      "expected": "66a0b9589ef35c54cd43d48d96e3f4767b047ba1952db9c8f893ddbc2705edc0",
+      "matches": true
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/decoder_geometry.npz": {
+      "sha256": "b74cc20f563ea535c5b4d05e9f58bb3411f6bd6138d969afe4b25edbe4c28a8e",
+      "bytes": 2868312,
+      "expected": null,
+      "matches": null
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/features.py": {
+      "sha256": "839b475881609057579ddd0205cac8544b2a594e9ed9f9113eeaa123b17c3450",
+      "bytes": 12728,
+      "expected": null,
+      "matches": null
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/model.py": {
+      "sha256": "ab34d7d57c15d3293c6e3b125b5df31c673a4ce252a3e4ac67d01706d0c14e73",
+      "bytes": 8361,
+      "expected": null,
+      "matches": null
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/batchtopk_a18.py": {
+      "sha256": "6c9c7e9c4ad825517e3b910ef2b8253ebc47d68b4d10d213c4e94cfad48f1a8b",
+      "bytes": 18056,
+      "expected": null,
+      "matches": null
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/fast_batchtopk_a21.py": {
+      "sha256": "7f2dc16cfc98f6246b0257fce90a7ee804ce5684c395cffc703ce6e8518ab9ad",
+      "bytes": 4534,
+      "expected": null,
+      "matches": null
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/bin_data_a15.py": {
+      "sha256": "1ad979e94b44b11edc3ad75da0848f9510c2a75175f2073da565b67947ff8501",
+      "bytes": 6548,
+      "expected": null,
+      "matches": null
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/crosscoder/extraction_a16.py": {
+      "sha256": "df2931b3b961153331bfc26ad7b879dcffd41981b9f2aa8a88b975e48c7cef94",
+      "bytes": 13551,
+      "expected": null,
+      "matches": null
+    }
+  },
+  "interface": {
+    "layers_zero_based": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27
+    ],
+    "layers_one_based": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      26,
+      28
+    ],
+    "hook": "block residual-post,before final global norm",
+    "hidden_size": 1024,
+    "shared_features": 16384,
+    "actual_encoder_input_shape": "Npositions,14layers,1024hidden",
+    "normalization": "x_l=(h_l-TRAIN_mean_l)/TRAIN_vector_L2_RMS_l; saved count65536; no refitting",
+    "encoder": "u_f=ReLU(sum_l,h x_lh*encoder_lhf+shared_bias_f); BF16 GEMMs/FP32state and scores",
+    "gating": "z_f=u_f iff u_f*sum_lL2(decoder_lf)>saved_threshold; otherwise0",
+    "saved_threshold_full": 0.051281172782182693,
+    "k_training_mean_budget": 256,
+    "completed_updates": 244140,
+    "inference_is_not": "per-token TopK256 or refitted cutoff",
+    "decoder_normalized": "hhat_normalized_l=sum_fz_fD_lf+decoder_bias_l",
+    "decoder_raw_hook": "hhat_raw_l=TRAIN_mean_l+TRAIN_rms_l*(sum_fz_fD_lf+decoder_bias_l)",
+    "feature_raw_contribution_vector": "TRAIN_rms_l*z_f*D_lf; bias/mean remain separate",
+    "feature_raw_magnitude": "z_f*saved_raw_norm_lf",
+    "feature_normalized_magnitude": "z_f*saved_norm_lf",
+    "decoder_geometry_scale_consistency_max_abs_error": 0.0,
+    "geometry_current_hash_verified": true,
+    "geometry_norms_independently_recomputed_from_checkpoint": false,
+    "geometry_provenance": "producer features.py saved actual decoder norms,rms,TRAIN mean under identical checkpoint-binding; current fresh hash and raw_norm=norm*rms verified",
+    "cross_dictionary_feature_ID_alignment": "NONE; E16F30000 coordinates and CrossCoderF16384 coordinates are not numerically aligned"
+  },
+  "reconstruction_evidence": {
+    "historical_final_block_FVE": 0.864722,
+    "historical_replacement_CE_delta_nat": 0.305962,
+    "measurement_quality": "UNKNOWN for new functional claims; descriptive existing-cache use only",
+    "new_panel_CrossCoder_reconstruction_test": "NOT_RUN; no new CrossCoder forward authorized by this subtask"
+  },
+  "real_corpus": {
+    "selection_global_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "rows_joined": 8,
+    "contexts": [
+      0
+    ],
+    "prefix_token_lengths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source_kind": "existing DCLM pretokenized real-corpus window excerpts,unmodified token IDs,truncated to model-visible prefix",
+    "original_document_and_near_duplicate_independence": "UNKNOWN",
+    "confirmation": "NO; previously exposed VAL and all8from same first context",
+    "all_active_shared_z_preserved": true,
+    "top5_role": "descriptive ranking only,positions fixed before features read",
+    "layer_rows_saved": 560,
+    "suffix_used_for_semantic_explanation": false
+  },
+  "activity": {
+    "model_forwards": 0,
+    "CrossCoder_forwards": 0,
+    "GPU_loads": 0,
+    "checkpoint_tensor_loads": 0,
+    "checkpoint_bytes_hashed": 5637826757,
+    "training_updates": 0,
+    "sealed_TEST_payload_read": false
+  },
+  "claim_boundary": "Shared z depends jointly on same-token states from14layers; per-layer decoder magnitudes are not independent layer activations and cannot identify layerwise information emergence. Prefix-only raw descriptions do not test Q1/Q2/Q3 or experts."
+}

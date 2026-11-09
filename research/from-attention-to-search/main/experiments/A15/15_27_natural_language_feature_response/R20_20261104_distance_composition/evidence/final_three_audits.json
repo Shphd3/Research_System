@@ -1,0 +1,38 @@
+{
+  "UTC": "2026-11-04T07:51:30.301544+00:00",
+  "scientific_acceptance": "Unknown",
+  "audits": [
+    {
+      "kind": "scientific_identification",
+      "status": "PASS",
+      "finding": "Primary native-code observables are distinct from raw strength,direction,hidden information and causal use.",
+      "remaining": "p/e/dnotindependent; oldheldoutexposed; reconstruction of fact differences poor; no general distance mechanism"
+    },
+    {
+      "kind": "data_statistics",
+      "status": "PASS",
+      "primary_families": 12,
+      "exploratory_families": 12,
+      "tests": 6,
+      "correction": "Holm",
+      "family_bootstrap": 8192,
+      "template_strata": 6,
+      "controls_new_conditions": 228,
+      "case_rule_fixed": true,
+      "rare_zero_groups_retained": true
+    },
+    {
+      "kind": "implementation_numerics",
+      "status": "PASS",
+      "old_SAE_reencodings": 288,
+      "old_Top32_exact": true,
+      "new_control_forward_conditions": 228,
+      "old_forward_calibrations": 6,
+      "smoke_no_op_error": 0,
+      "smoke_candidate_lane_error": 0,
+      "weights_unchanged": true,
+      "optimizer": false,
+      "trainable_parameters": 0
+    }
+  ]
+}

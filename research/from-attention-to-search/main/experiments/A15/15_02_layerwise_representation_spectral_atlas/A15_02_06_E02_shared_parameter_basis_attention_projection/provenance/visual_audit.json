@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "audited_at_full_resolution": true,
+  "figures": {
+    "figure1_normalized_log_curves_selected_layers.png": {
+      "status": "PASS",
+      "checks": [
+        "two basis panels present",
+        "selected layer legend is legible",
+        "log scale and normalization are labeled",
+        "shallow-to-deep color progression is visible",
+        "no clipping or overlap"
+      ]
+    },
+    "figure2_normalized_log_curves_all_layers.png": {
+      "status": "PASS",
+      "checks": [
+        "all 36 curves rendered in both panels",
+        "shared colorbar is outside data axes",
+        "log scale and smoothing boundary are labeled",
+        "no missing layer"
+      ]
+    },
+    "figure3_layer_rank_heatmaps.png": {
+      "status": "PASS",
+      "checks": [
+        "identical color limits across bases",
+        "colorbar is outside data axes",
+        "layer 36 boundary is marked",
+        "axes and log-density definition are legible"
+      ]
+    },
+    "figure4_centroid_and_coordinate_audit.png": {
+      "status": "PASS",
+      "checks": [
+        "registered windows and block 36 are marked",
+        "confidence intervals are legible below axes",
+        "Haar threshold is visible",
+        "legend and annotations do not overlap evidence"
+      ]
+    },
+    "figure5_basis_alignment_and_reading_difference.png": {
+      "status": "PASS",
+      "checks": [
+        "16 by 16 overlap matrix is complete",
+        "rank correlation and centroid differences are labeled",
+        "registered windows and block 36 are marked",
+        "no claim-strengthening annotation"
+      ]
+    }
+  }
+}

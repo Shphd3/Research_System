@@ -1,0 +1,30 @@
+{
+  "UTC": "2026-11-04T07:20:29.489104+00:00",
+  "status": "PASS",
+  "rows": 372,
+  "old_main_rows": 144,
+  "new_forward_rows": 228,
+  "counts": {
+    "reverse": 72,
+    "content": 72,
+    "fixed_e": 48,
+    "pos64": 36
+  },
+  "alias_reused_far": 24,
+  "smoke": [
+    "F07_reverse_d16_A",
+    "F07_content_d16_A",
+    "F07_fixed_e_d16_A",
+    "F07_pos64_d16_A"
+  ],
+  "position_shift_families": [
+    "F07",
+    "F11",
+    "F15",
+    "F19",
+    "F23",
+    "F27"
+  ],
+  "all_role_token_checks": true,
+  "old_data_reexposed": true
+}

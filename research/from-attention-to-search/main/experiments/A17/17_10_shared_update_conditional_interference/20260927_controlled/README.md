@@ -1,0 +1,34 @@
+# 共享参数更新：机制、可执行设计与 SAE 预测边界
+
+日期：2026-09-27；结果于2026-09-28取得。研究者指定同一 fresh S7、λ_rec=0.1 轨迹的精确33B里程碑，批准第11.2节第一轮宽松 common 门槛，并允许单节点四H100按方向族并行。[当前Focus](../../../../focus/focus_shared_update_conditional_interference_cn.md)保留研究者的科学判断。四卡 full run、主损失与全部 SAE 诊断已完成；冻结规则得到“调节帮助、没有净伤害”，SAE 任务信号代理资格未通过。完整证据见[中文结果摘要](summary_cn.md)和[Detailed](detailed.md)，研究者的结果解释尚待确认。
+
+## 阅读顺序
+
+| 文件 | 用途 |
+|---|---|
+| [导师汇报稿](../../../../../../../daily_research_reports/backup/2026/09/0927/meeting_report/meeting_brief_controlled_cn.md) | 目的、一句话假设、三句分析方法、当前结论；不塞入推导 |
+| [中文结果摘要](summary_cn.md) / [English Summary](summary.md) | 四段式首要读数、裁决、SAE 边界和下一决策 |
+| [完整证据 Detailed](detailed.md) | 执行符合性、前两次工程失败、完整结果谱系与图件来源 |
+| [机制推导与原论文审计](documents/01_机制推导与原论文审计.md) | 定义、局部展开、可实现的机制样例、空间对应、SAE 分解及来源边界 |
+| [研究 Anchor](../../../../problem_anchors/17_shared_and_interference_learning/17_10_shared_update_conditional_interference/17_10_shared_update_conditional_interference_anchor.md) | 固定一个问题、主要比较、证伪条件、证据边界 |
+| [实验 Protocol](protocol.md) | 数据生成、固定模型、变量、样本数、统计、接口、停机及复现；唯一执行设计所有者 |
+| [后续分析与预测目标](documents/04_支持以后分析什么.md) | 回答“所以呢”；区分结构预测、带目标预测、诊断与隔离收益 |
+| [给执行 Agent 的指令](documents/05_Agent执行指令.md) | 直接转交；禁止临场换任务、挑伤害、把校准当模型结果 |
+| [代码使用说明](../../../../../XingyuD/research_sources/imported_20261002/0927/docs/shared_update_research_pack/scripts/README.md) | 数据构造、解析校验、通用数值内核；S7 接口需要在原环境核验 |
+| [来源清单](sources/SOURCES.md) | 用户论文、实际读取的项目文件、外部原始文献和实现文档 |
+
+**本次关键设计：**为了调节任务方向的联合重合关系，在固定 S7 模型的一层输入端构造受控向量，再经过原有输出映射和下游网络。它是固定真实模型内的受控表征任务，不是自然领域文本实验。相似激活的第11.2节数值门槛已由研究者在确认集读出前批准；门槛通过并不保证 SAE 的任务信号代理有效。
+
+两种规则分别是把输入的二元信号保持或翻转。类别使用原模型词表输出矩阵的两个固定行，不把这两个词元声称为自然语言中的“0/1”。主任务损失是两类别条件交叉熵，不是全词表自然文本损失。
+
+## 已做与未做
+
+- 已完整阅读 `03_mini_paper_cn.md`，并核对项目里原子实验的参数位置、修订形状与已有加载入口。
+- 包内 `checks` 仅为先期工程校验，不属于新 S7 科学证据；四卡 Smoke 与 full 执行另有[记录](full_execution_record.md)。
+- 精确33B里程碑、原生接口、冻结 SAE、四卡测量和全部确认族已审计。主数据与日志在执行工作区；本包只保留规范结果与日期图件。未推送仓库。
+
+## 状态与使用
+
+`protocol.md` 是这次运行的冻结执行合同；[registration.json](/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled/runs/full_h100_20260928T010310Z/registration.json)保存其SHA256。Summary/Detailed是事实结果记录，不代替研究者对 Focus 的最终判断。[导师汇报稿](../../../../../../../daily_research_reports/backup/2026/09/0927/meeting_report/meeting_brief_controlled_cn.md)已依据结果审核并保留原结构；最终科学判断仍由研究者确认。
+
+不要把原环境绝对路径当成此对话的可下载附件；本包内来源副本和本地检查才是本次实际生成的文件。

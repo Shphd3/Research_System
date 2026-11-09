@@ -1,0 +1,318 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "name": "frozen:context_manifest.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:context_panel.jsonl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:documents.jsonl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:reference.jsonl",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:source_manifest.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:analysis_config.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:run_dual_forward.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:amendment_A01.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:protocol.md",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:protocol_cn.md",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:build_documents.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:build_context_panel.py",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "frozen:dual_parent_identity.json",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "sequence_forward_count",
+      "pass": true,
+      "detail": {
+        "qualification_baseline": 4,
+        "qualification_replay": 2,
+        "qualification_visible_prefix": 2,
+        "documents": 120,
+        "reference": 256,
+        "context": 72
+      }
+    },
+    {
+      "name": "documents_cache_count",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "documents_SAE_finite",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "documents_SAE_raw_sparse_reduction_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "documents_SAE_raw_sparse_reduction_119",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "documents_SAE_reconstruction",
+      "pass": true,
+      "detail": {
+        "mean_nmse": 0.09774206739073432,
+        "p90_nmse": 0.19256673306226732,
+        "positions_or_layer_positions": 23040,
+        "pass_existing_scale": true
+      }
+    },
+    {
+      "name": "documents_CC_finite",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "documents_CC_raw_sparse_reduction_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "documents_CC_raw_sparse_reduction_119",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "documents_CC_reconstruction",
+      "pass": true,
+      "detail": {
+        "mean_nmse": 0.1164784962157812,
+        "p90_nmse": 0.20919909030199058,
+        "positions_or_layer_positions": 322560,
+        "pass_existing_scale": true
+      }
+    },
+    {
+      "name": "reference_cache_count",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_SAE_finite",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_SAE_raw_sparse_reduction_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_SAE_raw_sparse_reduction_255",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_SAE_reconstruction",
+      "pass": true,
+      "detail": {
+        "mean_nmse": 0.06813854777176331,
+        "p90_nmse": 0.12769172340631485,
+        "positions_or_layer_positions": 65536,
+        "pass_existing_scale": true
+      }
+    },
+    {
+      "name": "reference_CC_finite",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_CC_raw_sparse_reduction_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_CC_raw_sparse_reduction_255",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_CC_reconstruction",
+      "pass": true,
+      "detail": {
+        "mean_nmse": 0.09431506960118619,
+        "p90_nmse": 0.1655998155474664,
+        "positions_or_layer_positions": 917504,
+        "pass_existing_scale": true
+      }
+    },
+    {
+      "name": "context_cache_count",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "context_SAE_finite",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "context_SAE_raw_sparse_reduction_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "context_SAE_raw_sparse_reduction_71",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "context_SAE_reconstruction",
+      "pass": true,
+      "detail": {
+        "mean_nmse": 0.04830652242526412,
+        "p90_nmse": 0.07951484397053718,
+        "positions_or_layer_positions": 2208,
+        "pass_existing_scale": true
+      }
+    },
+    {
+      "name": "context_CC_finite",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "context_CC_raw_sparse_reduction_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "context_CC_raw_sparse_reduction_71",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "context_CC_reconstruction",
+      "pass": true,
+      "detail": {
+        "mean_nmse": 0.08288335539588391,
+        "p90_nmse": 0.14927659928798676,
+        "positions_or_layer_positions": 30912,
+        "pass_existing_scale": true
+      }
+    },
+    {
+      "name": "CC_last_native_decoder_scale",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SAE_equal_dimensions",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SAE_disjoint_roles",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SAE_usage_native_nonnegative",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "SAE_selection_recomputed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_source_grouping_count",
+      "pass": true,
+      "detail": {
+        "windows": 256,
+        "canonical_document_groups": 254,
+        "repeated_group_sizes": [
+          3
+        ],
+        "bootstrap": "canonicaldocumentresampling,variabletotalwindows;pointestimateall65536positions"
+      }
+    },
+    {
+      "name": "CC_equal_dimensions",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CC_disjoint_roles",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CC_usage_native_nonnegative",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "CC_selection_recomputed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reference_source_grouping_count",
+      "pass": true,
+      "detail": {
+        "windows": 256,
+        "canonical_document_groups": 254,
+        "repeated_group_sizes": [
+          3
+        ],
+        "bootstrap": "canonicaldocumentresampling,variabletotalwindows;pointestimateall65536positions"
+      }
+    }
+  ],
+  "scientific_result_acceptance": "Unknown",
+  "no_extra_model_forward": true
+}

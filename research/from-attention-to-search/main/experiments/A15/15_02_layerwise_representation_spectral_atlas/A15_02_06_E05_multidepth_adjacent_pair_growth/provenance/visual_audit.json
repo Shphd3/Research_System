@@ -1,0 +1,19 @@
+{
+  "audited_at": "2026-08-12",
+  "auditor": "Codex",
+  "figures": {
+    "figure1_four_pair_same_direction_curves.png": {
+      "sha256": "ec85da4e382c7b63af0e22b5f6029865ad7b7fc5b140aa5916e357f3ac943525",
+      "resolution": [3318, 3465],
+      "status": "PASS",
+      "notes": "All four pairs use the same rank axis and frozen region; source/target labels and registered D values are explicit. Signed symlog difference panels preserve terminal spikes while making middle-rank sign structure visible. Smoothing is labeled display-only."
+    },
+    "figure2_cross_depth_significance.png": {
+      "sha256": "33a09a4d2c9c9cc23b4d2377c66a402877048775bbc588ba308878563c320309",
+      "resolution": [3630, 2530],
+      "status": "PASS",
+      "notes": "Fixed-band heatmap, four-pair simultaneous intervals, absolute growth, all six corrected contrasts, negative selected-depth slope, and the 17-to-18 A/B sign mismatch are legible and visually separated."
+    }
+  },
+  "overall_status": "PASS"
+}

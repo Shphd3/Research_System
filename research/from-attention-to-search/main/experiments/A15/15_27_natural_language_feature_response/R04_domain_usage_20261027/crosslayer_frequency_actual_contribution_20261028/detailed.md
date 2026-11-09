@@ -1,0 +1,9 @@
+# Detailed computation and boundaries
+
+Native A22 joint14layer shared z, all16384coordinates, original40R04heldout real documents,160positions/document. Training-normalized L2norm contribution is primary; TRAIN_RMS-restored native space is separate. No squares, last-layer division, independent per-layer encoding or new Attention grouping. Global DCLM group IDs and support thresholds are unchanged.
+
+Per-feature zero-inclusive document means use fixed group-member/equal-document weighting. Positive-conditional means remainNAwhen no activation and average eligible members per document; event-weighted conditional means are explicitly separate. Compositions are per-position ratios of summed member norms, not reconstructed-vector norms or explained variance. Full factorized40x16384x14 values and458752feature/domain/layer summary rows are preserved.
+
+Math/biology bootstrap indices are independent; within-document groups/layers remain paired.42training-space primary tests useBH, with documented signflip/permutation assumptions.28within-domain differences favor high-frequency and11domain interactions survive; last3domain differences remain insufficient. Native-space results are sensitivity only. All adjacent-layer pairs are retained descriptively. Scale differences, rare stronger conditional responses, fixed decoder profiles, source/style confounds and exploratory reuse remain explicit.
+
+364compute checks and66independent audit checks pass. Decoder cache identity was verified with checkpoint SHA/norms. No forward, training, dictionary, PCA, candidate selection, resource or task creation occurred. [Chinese Detailed](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/crosslayer_frequency_actual_contribution_20261028/detailed_cn.md) contains all numerical evidence, examples, contrasts and limitations.

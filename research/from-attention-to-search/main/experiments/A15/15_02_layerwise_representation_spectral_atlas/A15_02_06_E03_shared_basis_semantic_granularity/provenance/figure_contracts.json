@@ -1,0 +1,16 @@
+{
+  "figure1": {
+    "allowed_claim": "layer-dependent fine-only profiles in mean-response basis",
+    "normalization": "within-layer fine variance",
+    "smoothing": "centered 129-rank arithmetic moving average, display only",
+    "source": "/data/250010109/MoE_Router/experiments/20260811_a15_02_06_shared_parameter_basis_attention_projection/runs/a15-02-06-e02-20260811-shared-basis/arrays/analysis_arrays.npz"
+  },
+  "figure2": {
+    "allowed_claim": "relative semantic-granularity location in the frozen basis",
+    "limitation": "medium constructed; normalized shares omit absolute strength",
+    "panel_A": "4096*(fine-coarse) normalized density, 128 equal rank bins",
+    "panel_B": "centroid contrasts with parent-bootstrap 95% intervals",
+    "panel_C": "[0.50,0.75) share contrasts with parent-bootstrap 95% intervals",
+    "source": "arrays/analysis_arrays.npz"
+  }
+}

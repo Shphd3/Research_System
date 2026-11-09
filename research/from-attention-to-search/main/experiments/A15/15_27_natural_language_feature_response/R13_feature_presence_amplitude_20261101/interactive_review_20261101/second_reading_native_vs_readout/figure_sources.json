@@ -1,0 +1,26 @@
+{
+  "case": "the:R11_A02_292:140",
+  "selection": "previously fixed known R12 case, illustrative counterexample, not new independent sample",
+  "source_sha256": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/evidence/fixed_case_raw_outputs.jsonl": "5098c1833418772d9a28705124eb62a2e25f01a31816a485763f68f565925d65",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/position_metrics.csv": "55a7182e7fdaa806f41dd2de1067fa8307c4b2428414cde385e46d3558b63dca"
+  },
+  "data": {
+    "k64": {
+      "target_probability": 0.007837981916964054,
+      "KL_full": 2.3729121685028076,
+      "NLL": 4.848773956298828,
+      "target_rank": 12
+    },
+    "head_middle": {
+      "target_probability": 0.0036830136086791754,
+      "KL_full": 2.1708030700683594,
+      "NLL": 5.6040239334106445,
+      "target_rank": 24
+    }
+  },
+  "axes": "x intervention; left KL(full||projected) nats lower=closer, right targetID8654 probability higher=more original-word preference; bars native projections; one position, no uncertainty bars",
+  "interface": "officialQwen3-0.6B-Base block27 residualpost -> native finalnorm -> tied frozen outputhead",
+  "no_new_forwards_or_fits": true,
+  "cross_round_caveat": "R12 readout used legacy h; native projection refreshed h after replay failure. Same text/position/PCA, not an exact tensor-matched numerical contrast."
+}

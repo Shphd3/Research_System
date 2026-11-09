@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-10-12T06:01:31.055891+00:00",
+  "job_id": "pt-1rb3s2t0",
+  "scope": "five-arm Smoke + single-seed acquisition only",
+  "engineering_result": "PASS",
+  "acquisition_result": "NOT_PASSED_ALL_FIVE",
+  "formal_experiment": "NOT_RUN_NOT_SUBMITTED",
+  "researcher_mechanism_judgment": "Unknown",
+  "run": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/runs/qualification_20261012T053102Z",
+  "data_asset_ids": [
+    "data_a17_shared_routed_joint_v1",
+    "data_a17_shared_routed_mode_partition_v1"
+  ],
+  "output_asset_ids": [
+    "adapter_a17_04_e04_qualification_20261012t053102z_smoke_s16",
+    "adapter_a17_04_e04_qualification_20261012t053102z_smoke_u8",
+    "adapter_a17_04_e04_qualification_20261012t053102z_smoke_h8",
+    "adapter_a17_04_e04_qualification_20261012t053102z_smoke_s8",
+    "adapter_a17_04_e04_qualification_20261012t053102z_smoke_s12",
+    "adapter_a17_04_e04_qualification_20261012t053102z_pilot_s16",
+    "adapter_a17_04_e04_qualification_20261012t053102z_pilot_u8",
+    "adapter_a17_04_e04_qualification_20261012t053102z_pilot_h8",
+    "adapter_a17_04_e04_qualification_20261012t053102z_pilot_s8",
+    "adapter_a17_04_e04_qualification_20261012t053102z_pilot_s12"
+  ],
+  "actual_saved_states": 55,
+  "strict_output_access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-12_a17_e04_actual_checkpoints.json",
+  "frozen_protocol_sha256": "ecdc6ef8fc04c7332198569ac58204f178bf2da86858594f7546ba696da9810b",
+  "config_sha256": "bf061533c58fc9efc266139a131a242017d348e7e4060ad271da39a3a6fe31f1",
+  "source_manifest_sha256": "e2faa423ddc64292488d56963398cc39d9fd2ac4814a168a06c38f0ea90b912d",
+  "evidence": {
+    "freeze.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/runs/qualification_20261012T053102Z/freeze.json",
+      "sha256": "409226c158f35a80e76731061d5a2bde3e878714541d33a71da38e679fb54e42"
+    },
+    "smoke_verdict.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/runs/qualification_20261012T053102Z/smoke_verdict.json",
+      "sha256": "07fdc68aa95f721df8317e9fd84c2018318dd280e717e67f73d6bc49fbfa7829"
+    },
+    "qualification_complete.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/runs/qualification_20261012T053102Z/qualification_complete.json",
+      "sha256": "b1b3e0c1497141fedda7ed774ee574831696c2bbc460651aa2543606399494c4"
+    },
+    "independent_results.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/runs/qualification_20261012T053102Z/independent_results.json",
+      "sha256": "a3c176321a5eaee29f58914873efc548611a5231bf24854afb37104bf8fee973"
+    },
+    "independent_tensor_audit.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/runs/qualification_20261012T053102Z/independent_tensor_audit.json",
+      "sha256": "bd02789745f9a9b84bb02a6e8150a27e736bff94888f39a1290f3fa31bd175b9"
+    },
+    "additional_mixed_gpu_checks.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/runs/qualification_20261012T053102Z/additional_mixed_gpu_checks.json",
+      "sha256": "230b880f98261de824565cf4acfc1f491189e74ffaa9328b00523c1b836fa18f"
+    },
+    "output_registration.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_shared_routed_budget/runs/qualification_20261012T053102Z/output_registration.json",
+      "sha256": "dea2de2636663b38e0145ccc86a27e2778caefa8169e977593057d8d2e978ce6"
+    }
+  },
+  "next_decision": "which bounded qualification repair to adopt; formal held"
+}

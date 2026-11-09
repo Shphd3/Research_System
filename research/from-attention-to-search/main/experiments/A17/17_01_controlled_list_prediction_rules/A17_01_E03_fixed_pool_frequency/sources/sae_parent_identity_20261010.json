@@ -1,0 +1,75 @@
+{
+  "scope": "READ_ONLY_BYTE_IDENTITY_CHECK_NO_MODEL_LOAD",
+  "started_at_utc": "2026-10-09T16:34:14.988240+00:00",
+  "models": {
+    "share_base": {
+      "path": "/data/share/Qwen3-0.6B-Base",
+      "realpath": "/data/share/Qwen3-0.6B-Base",
+      "files": {
+        "config.json": {
+          "path": "/data/share/Qwen3-0.6B-Base/config.json",
+          "realpath": "/data/share/Qwen3-0.6B-Base/config.json",
+          "bytes": 727,
+          "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+          "elapsed_seconds": 0.001461915671825409,
+          "device": 1048596,
+          "inode": 494850779,
+          "unchanged_during_read": true
+        },
+        "model.safetensors": {
+          "path": "/data/share/Qwen3-0.6B-Base/model.safetensors",
+          "realpath": "/data/share/Qwen3-0.6B-Base/model.safetensors",
+          "bytes": 1192135096,
+          "sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+          "elapsed_seconds": 4.783461255952716,
+          "device": 1048596,
+          "inode": 388936776,
+          "unchanged_during_read": true
+        }
+      },
+      "missing": [],
+      "indexed_shards": []
+    },
+    "e16_official_parent": {
+      "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+      "realpath": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+      "files": {
+        "config.json": {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json",
+          "realpath": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json",
+          "bytes": 727,
+          "sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+          "elapsed_seconds": 0.002187207341194153,
+          "device": 1048596,
+          "inode": 5783679441,
+          "unchanged_during_read": true
+        },
+        "model.safetensors": {
+          "path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors",
+          "realpath": "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors",
+          "bytes": 1192135096,
+          "sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+          "elapsed_seconds": 5.939369143918157,
+          "device": 1048596,
+          "inode": 4672083313,
+          "unchanged_during_read": true
+        }
+      },
+      "missing": [],
+      "indexed_shards": []
+    }
+  },
+  "comparison": {
+    "config.json": {
+      "state": "EQUAL"
+    },
+    "model.safetensors": {
+      "state": "EQUAL"
+    }
+  },
+  "complete": true,
+  "overall_state": "EQUAL",
+  "finished_at_utc": "2026-10-09T16:34:25.740653+00:00",
+  "elapsed_seconds": 10.752451878041029,
+  "boundary": "Exact byte identity of enumerated config, safetensors and present shard indices in current paths; no runtime load, tokenizer identity, SAE load or scientific qualification was performed."
+}

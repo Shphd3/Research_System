@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "formal_cases": 82,
+  "formal_expected_saves": 780,
+  "actual_family_saves": 788,
+  "revision_readouts": 36,
+  "help_seed_comparisons": 3,
+  "confirmation_conditions": 36,
+  "checks": [
+    "planned milestone coverage against actual family members",
+    "external table target derivations",
+    "revision edit/sham paired answer accuracy",
+    "help paired accuracy and index alignment",
+    "intervention nontrivial expected answers",
+    "intervention no-op and derived accuracy"
+  ],
+  "boundary": "CPU saved-output checks, no native forward or mechanism judgment"
+}

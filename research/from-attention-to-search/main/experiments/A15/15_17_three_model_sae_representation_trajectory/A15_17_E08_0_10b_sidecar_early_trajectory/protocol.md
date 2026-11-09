@@ -1,0 +1,59 @@
+# Protocol: A15_17_E08 Dense–SALL 0–10B Early Native-Write Trajectory
+
+## 0. Approval snapshot
+
+| Field | Frozen value |
+|---|---|
+| Status | `APPROVED_FOR_LOCAL_SMOKE_THEN_PASS_GATED_5090_4_SPOT_FULL`; A–G confirmed within the researcher's 0920 ordered-wave authorization; consistency `PASS` subject to checkpoint and Smoke gates |
+| Role | Secondary frozen-checkpoint trajectory/robustness audit; E06 exact-21B Dense–SALL P test remains the sole primary confirmation |
+| Anchor / Focus | [A15_17 Anchor](../../../../problem_anchors/15_spectral_representation_and_functional_routing/15_17_three_model_sae_representation_trajectory/15_17_three_model_sae_representation_trajectory_anchor.md); [0920 Focus](../../../../focus/legacy/0920_focus_three_model_sae_representation_audit.md) |
+| Question / rival | At which verified early token checkpoints do native attention-write organization and relation accessibility differ between Dense and original SALL? Rival: initialization, scale/common direction, lexical-template signal, or the 9.174B 8→4-rank continuation branch instead of smooth semantic change |
+| Treatment / control | Original SALL versus Dense at each exact 0, 0.5, 1, 3, 5, 10B milestone; 12 frozen checkpoints total; no M2/S7/S37 because their architecture/paths or optional status do not identify the main sidecar contrast |
+| Data / site | Reuse E06 frozen P_rel_v2 and N8_v1 input IDs/splits; each checkpoint saves native `blocks[i].attn.o` after projection/pre-residual at all eight layers, both last/mean pools |
+| Decision quantity | For each timepoint, SALL−Dense P joint-holdout family-equal linear accuracy at layers 4 and 8, both pools (last preferred), with same fit/dev/confirmation and paired-group interval; trajectory is descriptive, not a new 12-test victory contest |
+| Support / non-support / insufficient | A qualified, temporally coherent same-direction pattern may describe early emergence in this lineage; reversal/instability limits persistence; missing exact paired point, source mismatch, interval crossing zero, or failed site/data gate is insufficient for that point |
+| Execution | After E07 local Smoke has completed, sequential local H100-40GB-MIG Smoke of all 12 exact checkpoints; after *both* E07/E08 Smoke PASS, submit this as a distinct single-node 4×RTX5090 Spot read-only full task, without startup polling |
+| Cannot claim | Causal effect across seeds, a continuous 10→15B trajectory through an unmarked branch, actual LM use, global semantic improvement, fair different-K training comparison, capacity or continual-learning gains |
+
+The 0–10B point set is no longer inferred from a filename: it is the intersection of E05's exact verified Dense/SALL task manifest entries, then rechecked against actual complete milestone manifests and loader SHA. The researcher explicitly orders this wave despite v2's earlier preference to wait for four finished endpoints. That scheduling change does not make early points the 21B primary or authorize a post-hoc result rule.
+
+## 1. Meaning, data, and lineage
+
+\(a\) is a backbone attention write after \(W_O\) and before residual addition; \(z\) is selected online SAE coefficients, \(\hat a\) its reconstruction, and \(e=a-\hat a\). The SALL sidecar observes \(a\) but normal inference keeps \(a\) on the residual path. `last` and `mean` use the same valid content mask; last is the final valid content position. Human layers 1–8 correspond to code 0–7. CKA compares centered sample geometry, not semantic quality. Accuracy from a frozen probe measures linear accessibility for its labeled task, not actual model use.
+
+Use the E06 joint data manifest SHA-256 `49345f555d231811f02a2fb38c83a0aea690b2df19943bc93f1f7dc61886a061`, tokenizer JSON SHA-256 `c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539`, without resampling. P_rel_v2 contains four direction families, paired opposite statements with matching word/token bags, 200 entity groups, split 120/40/40 by entity and 4/2/2 by template; untouched joint test is 40 groups × four families × two templates × two directions = 640 sentences. AI-reviewed canonical semantics is not independent human annotation. N8_v1 is eight M2D2 academic categories, 300/100/200 record windows per category; source group is a published record, not confirmed paper family, and category is not token-level semantic truth. PAWS is omitted here by the v2 budget rule: early points test trajectory with P/N8, not natural-sentence pair generality. Its absence cannot be silently filled from E06.
+
+Dense checkpoints come from the exact 0–10B baseline run; SALL 0–5B come from the original eight-rank all-layer run and SALL 10B from its four-rank continuation whose `fork_lineage.json` identifies a source checkpoint at 9,174,381,056 tokens. Plot a branch marker and do not describe 10B as an uninterrupted identical optimization regime. These checkpoint paths, state claims, source roots and hashes are frozen in `manifests/model_manifest_early.json`, generated from E05 `config/task_manifest.json` after checking each actual milestone. The 15B/21B endpoints live in separate E07/E06 records and are joined only with explicit lineage annotations. Each source model is eight-layer, hidden 1024; SALL has width-30,000 Top-K-32 online sidecars at all eight attention writes. Neither a shared backbone initialization nor equal effective auxiliary gradient is assumed from names alone.
+
+## 2. Probe, structure and uncertainty rules
+
+For each checkpoint independently, fit P family-specific binary logistic regression on fit \(a\) only, with fit-only center/global-RMS scaling, L2 \(C\in\{0.01,0.1,1,10,100\}\), `lbfgs`, `max_iter=5000`, `tol=1e-4`, and dev-joint family-equal accuracy choosing a common \(C\) (lower-\(C\) tie-break). This asks whether a simple readout at that checkpoint can access direction; a separately frozen 15B probe applied backward/forward would ask coordinate transport and is *not* inferred from independent refitting. N8 eight-way linear readout uses the same fit-only scaling and dev-selected grid; N8 labels bound domain applicability, not a total semantic score. At human layers 4/8 report both pools, P-last preferred and N8-mean preferred. An eight-layer small fit/dev scan with fixed \(C=1\) locates possible missed layers but selects no early confirmation layer or 21B primary layer.
+
+For each matched point/layer P joint test, aggregate both directions and templates within each of four families then equal-weight families and 40 entity groups. Report SALL−Dense accuracy in percentage points, 2,000 paired entity-group bootstrap draws (seed 20260920), 95% percentile interval, and 20,000 paired group sign-flip draws with Holm correction across layers 4/8 *within each timepoint*. Because six timepoints are shown together, these are pointwise exploratory intervals and not a familywise claim over six opportunities; no timepoint is selected as a confirmed winner after viewing test. If an interval crosses zero, state insufficient, not equivalence; a negative interval excluding zero is adverse. Report raw trajectories for both models and their difference; no interpolated or nearest-token point may masquerade as exact.
+
+On the same fit/dev IDs report eight-layer norm/variance, P/N8 between-class \(B\), within-class \(W\), \(B/W\), fit spectrum, and standard/U-corrected float64 linear CKA at matched sample IDs and input-ID hashes. For CKA use N8 dev equal-category nested 256/512/full panels, fit-only first-PC removal, and 100 global/within-category permutations; ordinary high-dimensional finite-sample CKA is not a winner metric. Report online SALL pre-TopK rank-32/rank-33/tail, positive count, selected combinations, \(a,z,\hat a,e\) fidelity on a fixed small P/N8 subset; a panel's active atoms do not count semantic features and \(e\) alone readable does not establish lost reconstruction information. No offline dictionary fitting, K sweep, PAWS expansion, nonlinear probe, intervention, or model training. Record N8 teacher-forced test NLL on the same 256-token windows as a cost guard; unfavorable results remain visible.
+
+## 3. Ordered stages and refusal rules
+
+| Stage | Operation / rationale | Gate and output |
+|---|---|---|
+| 0 identity | Resolve exactly six shared Dense/SALL token points from E05 task entries, actual manifest complete/token/state/source/config, tokenizer, and continuation lineage; no filenames-as-proof | `model_manifest_early.json`, lineage table; any missing exact pair blocks that point rather than substituting a neighbor |
+| 1 local Smoke | Only after E07 Smoke, sequentially load each of 12 models on visible H100 MIG; check manifest full SHA by source loader, eight-layer valid-token \(x+a\) residual identity, SALL native source identity, both pools and same IDs, right-padding relative RMS ≤0.02, causal prefix difference ≤0.1, finite outputs and unchanged state | Per-case JSON and one `SMOKE_PASS.json` requiring all 12; left padding unsupported, KV-cache API unavailable, neither is falsely called PASS |
+| 2 four-GPU extraction | After both Smoke PASS, one 4×5090 Spot task with independent workers, three checkpoints/GPU sequentially, exact P/N8 hashes, both pools, all layers, no optimizer updates | GPU preflight: 4 RTX5090, >30 GiB each, isolated SM120 layer. Chunk hashes, unique case-panel ownership, `COLLECTION_PASS.json`; failure receipt retained |
+| 3 analysis | Fit-only scans, 4/8 P/N8 readouts, paired timepoint differences, norm/spectrum/CKA, online observer and N8 NLL | Separate timepoint and trajectory JSONs; test results never select points, layers, exclusions or hyperparameters |
+
+Code/data/model/protocol SHA mismatches, insufficient VRAM/runtime, missing Smoke PASS, nonfinite or duplicate/misaligned cache, probe nonconvergence, partial panel, changed model state, or absent analysis output fail closed. Output root: `/data/250010109/MoE_Router/experiments/20260920_sae_representation_15b_early_audit/`; E08 Smoke/full run IDs and receipts are distinct from E07 and E06. Local H100-MIG timing is measured; 4×5090 duration is an extrapolation until target hardware runs. Submission receipt, not startup state, completes this conversation's requested action. Future results and limitations belong to `summary.md`/`summary_cn.md`/`detailed.md`, not this pre-result Protocol.
+
+## 4. Block confirmation, freeze, and claim boundary
+
+| Block | Status | Basis |
+|---|---|---|
+| A question/rival | `CONFIRMED` | Existing A15_17 main question; early temporal localization is secondary |
+| B data | `CONFIRMED` | E06 frozen P/N8 IDs/splits and stated source limitations |
+| C task | `CONFIRMED` | Fixed P direction and N8 category probes; no PAWS truth imported |
+| D models/site | `CONFIRMED`, load gate pending | E05 six real paired points, source-specific loaders; SALL branch annotated |
+| E optimization | `CONFIRMED` | Same fit/dev-only linear task and fixed grid as E06 |
+| F comparison | `CONFIRMED` | Per-point paired difference and descriptive trajectory, no 21B rescue or six-point significance fishing |
+| G execution | `CONFIRMED`, two-Smoke gate pending | Researcher orders 15B Smoke, then early Smoke, then two distinct 4×5090 Spot full submissions without monitoring |
+
+Cross-block audit: the fixed data exposes relation direction and domain category; probes can learn only fit labels; both models read the same site and IDs; group uncertainty matches P's entity-group construction; output statuses distinguish evidence support, non-support and insufficiency. Registered revision is this pre-Smoke scientific body, with code/model/data hashes in separate receipts to avoid self-reference. After first execution, any material change to condition, data, metric, exclusion or verdict requires an append-only amendment recording before/after, reason, visible results, approval and eligibility impact. No early native-write or semantic result existed at registration.

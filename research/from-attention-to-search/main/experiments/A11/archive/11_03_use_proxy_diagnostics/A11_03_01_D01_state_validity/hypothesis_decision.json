@@ -1,0 +1,20 @@
+{
+  "bayes_insufficiency_pass_count": 5,
+  "cannot_claim": [
+    "MTP is more sample efficient than NTP.",
+    "The task covers open-ended assistant quality.",
+    "The result transfers to external long-memory benchmarks."
+  ],
+  "claim": "The paired task is a valid controlled natural-language proxy for distant semantic-state use.",
+  "coverage_all_pass": true,
+  "lexical_shortcut_pass_count": 5,
+  "maximum_lexical_accuracy": 0.5375,
+  "mutual_information_pass_count": 5,
+  "next_decision": "Create A11_14 with matched-budget NTP versus K2-MTP training on the frozen task.",
+  "overall_status": "supported",
+  "pair_intervention_pass_count": 5,
+  "q_task_minimum": 1.0,
+  "q_task_pass_count": 5,
+  "required_seed_count": 5,
+  "seed_count": 5
+}

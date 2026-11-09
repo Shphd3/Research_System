@@ -1,0 +1,64 @@
+{
+  "documents": 120,
+  "domain_counts": {
+    "math": 60,
+    "biology": 60
+  },
+  "split": {
+    "math": {
+      "discovery": 30,
+      "heldout": 20,
+      "development": 10
+    },
+    "biology": {
+      "discovery": 30,
+      "development": 10,
+      "heldout": 20
+    }
+  },
+  "genres_per_domain": {
+    "expository": 45,
+    "question_answer": 15
+  },
+  "source_hosts": {
+    "math": {
+      "en.wikipedia.org": 24,
+      "www.abc.net.au": 1,
+      "www.maa.org": 10,
+      "www.reference.com": 1,
+      "plato.stanford.edu": 1,
+      "ccrma.stanford.edu": 1,
+      "www.ck12.org": 1,
+      "www.theguardian.com": 1,
+      "www.cs.cmu.edu": 2,
+      "www.britannica.com": 1,
+      "www.cs.utexas.edu": 1,
+      "psychology.wikia.com": 1,
+      "mathoverflow.net": 12,
+      "math.stackexchange.com": 3
+    },
+    "biology": {
+      "en.wikipedia.org": 35,
+      "www.abc.net.au": 5,
+      "www.scientificamerican.com": 3,
+      "www.britannica.com": 2,
+      "biology.stackexchange.com": 15
+    }
+  },
+  "duplicate_pairs": [],
+  "reference_windows": 256,
+  "reference_rejected": [
+    {
+      "line": 11798,
+      "reason": "experimental document"
+    },
+    {
+      "line": 1537,
+      "reason": "experimental document"
+    }
+  ],
+  "source_original_doc_ID": "WARC record ID and source line plus exact text hash and URL; grouped canonical page/book when available",
+  "boundary": "sources overlap as platforms but detailed hosts and mathematical/bio subgenres remain imperfectly matched; classification may exploit style/terminology;not source-exclusive generalization",
+  "source_sealed_TEST": "not read; raw independent DCLM source is registered preexisting reference source,not another experiment sealed arrays",
+  "seed": 20261028
+}

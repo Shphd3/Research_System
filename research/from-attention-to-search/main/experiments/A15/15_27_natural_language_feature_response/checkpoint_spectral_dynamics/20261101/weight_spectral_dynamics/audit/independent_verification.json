@@ -1,0 +1,19 @@
+{
+  "status": "PASS_BOUNDED_AUDIT",
+  "checks": {
+    "initial_freeze": "PASS",
+    "comparison_plot_frozen_code": "PASS",
+    "all684_cache_hashes_shapes_and_scalars": "PASS",
+    "396_one_dimensional_gains_excluded": "PASS",
+    "114_late_projection_formula_max_error": 9.43689570931383e-16,
+    "late_real_Q_singular_equation_residuals": [
+      2.6818657429689156e-17,
+      7.057655797785528e-16
+    ],
+    "3078_conditional_onsets_recomputed": "PASS",
+    "basis_payload_bytes": 2085185856,
+    "no_new_gpu_or_forward": true
+  },
+  "scope": "all hashes/shapes/scalars;all late pair overlaps;one real late singular-equation check;all conditional onset rows",
+  "unverified": "Not independent direct SVD for all684;not independent pretraining replicates or future training"
+}

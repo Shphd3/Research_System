@@ -1,0 +1,128 @@
+{
+  "UTC": "2026-11-04T07:47:42.422354+00:00",
+  "local_time": "2026-11-04T15:47:42.422396+08:00",
+  "figures": [
+    {
+      "file": "main_distance.png",
+      "sha256": "06dba4c2d22588235152b40a6deb808b924965f60451ec49dd75009fe2bc6216",
+      "question": "Does turnover imply weaker within-family fact contrast?",
+      "sources": [
+        "tables/baseline_pair_metrics.csv",
+        "tables/baseline_fact_contrasts.csv"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "Distance also changes fact absolute position/filler order; controls reported separately."
+    },
+    {
+      "file": "strength_audit.png",
+      "sha256": "dd8fa8c74a480406074fcd0d026927fa52420b506d6f0641bbb264337f3e52fe",
+      "question": "Separate amplitude changes from common-member relative arrangement.",
+      "sources": [
+        "tables/baseline_pair_metrics.csv"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "High common-vector cosine is dominated by common positive coordinates; it does not imply unchanged A-B contrast."
+    },
+    {
+      "file": "fact_contrast_audit.png",
+      "sha256": "4310482750c38f5df93296f2edd24601998dee4549aa78dc14bc298e582a94ba",
+      "question": "What do normalization, truncation and selected members hide?",
+      "sources": [
+        "tables/baseline_fact_contrasts.csv"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "Rectified preTopK is diagnostic; it is not an alternative trained SAE code or intervention."
+    },
+    {
+      "file": "frequency_turnover.png",
+      "sha256": "69e255df0c194c19a05270b74b7140323b1baddf21dd0e11e1007cdb12c85fb6",
+      "question": "Which fixed reference groups enter or exit at each distance pair?",
+      "sources": [
+        "tables/baseline_frequency_pairs.csv"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "In=out totals follow Top32; category composition and opportunities are the measured objects."
+    },
+    {
+      "file": "frequency_opportunities.png",
+      "sha256": "c2a8a1677fd930a51692de150d9cfd69d64a3abdea890e0ae72d16ee087e8ccd",
+      "question": "Do group counts differ after accounting for opportunities?",
+      "sources": [
+        "tables/baseline_frequency_pairs.csv",
+        "cache/*_opportunity_weights.npz"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "512 conditional draws; whole-family intervals. Reference-zero expectation is uncalibrated, not infinite enrichment. No semantic or causal ranking."
+    },
+    {
+      "file": "threshold_audit.png",
+      "sha256": "88cc608ef974375b6eabccd2389f612b75e7ade6116e5daf208816111b2c7253",
+      "question": "How much turnover sits near truncation, and how does truncation affect direction?",
+      "sources": [
+        "tables/baseline_member_values.csv",
+        "tables/baseline_fact_contrasts.csv"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "BelowTop32 does not imply zero encoder response; preTopK codes are diagnostic, not decoder-trained alternatives."
+    },
+    {
+      "file": "controls.png",
+      "sha256": "7d2957456d400372e55c4cf1d3d416d499fd88458d4f9ce3a7b49dcc0d336f3e",
+      "question": "Does the magnitude pattern survive the declared filler and position controls?",
+      "sources": [
+        "tables/controls_fact_contrasts.csv",
+        "tables/control_effect_differences.csv"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "Fixed-e also changes answer position/length; pos64 changes encoding IDs only, not visible context. Descriptive, no fresh-template confirmation."
+    },
+    {
+      "file": "case_F11.png",
+      "sha256": "9348f9141b9d7d1fcd10b887909dccb2ecd375c4d59d4ef228557a8c52813666",
+      "question": "Literal original case: Largest mean16→128retained fraction across sites/facts; ties family ID",
+      "sources": [
+        "cache/*_old_main.npz",
+        "results/case_selection.json",
+        "results/behavior_old.jsonl"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "These six IDs do not represent the full dictionary; full union and counterexamples are retained."
+    },
+    {
+      "file": "case_F15.png",
+      "sha256": "b4b1e2bd4d5e2968e095bd9bbba8445300ab62712f2d5dc6fbb8cfd034565be1",
+      "question": "Literal original case: Smallest retained fraction among unselected families",
+      "sources": [
+        "cache/*_old_main.npz",
+        "results/case_selection.json",
+        "results/behavior_old.jsonl"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "These six IDs do not represent the full dictionary; full union and counterexamples are retained."
+    },
+    {
+      "file": "case_F27.png",
+      "sha256": "e6a52e16f826b7e5c939bf94202fb2212ee8855193bb9f26d972a98b4936edb0",
+      "question": "Literal original case: Smallest mean log normalized fact-separation ratio among unselected families; may still be positive",
+      "sources": [
+        "cache/*_old_main.npz",
+        "results/case_selection.json",
+        "results/behavior_old.jsonl"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "These six IDs do not represent the full dictionary; full union and counterexamples are retained."
+    },
+    {
+      "file": "case_F19.png",
+      "sha256": "e895f33fc03bf6bbb1b3fb79d5efd0533985c654c0c8af25fadf792340e99675",
+      "question": "Literal original case: No remaining family opposite to pooled median; largest between-site log-ratio disagreement",
+      "sources": [
+        "cache/*_old_main.npz",
+        "results/case_selection.json",
+        "results/behavior_old.jsonl"
+      ],
+      "unit": "whole family; facts averaged inside family",
+      "limit": "These six IDs do not represent the full dictionary; full union and counterexamples are retained."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "seed": 2026110814,
+  "model": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000/state.pt",
+  "sae": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/formal/sae_full_final.pt",
+  "tokenizer": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+  "native_source": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/source",
+  "domains": {
+    "animal": [
+      "cat",
+      "dog"
+    ],
+    "vehicle": [
+      "car",
+      "bicycle"
+    ],
+    "fruit": [
+      "apple",
+      "banana"
+    ],
+    "furniture": [
+      "chair",
+      "sofa"
+    ],
+    "clothing": [
+      "shirt",
+      "trousers"
+    ],
+    "instrument": [
+      "piano",
+      "guitar"
+    ],
+    "flower": [
+      "rose",
+      "tulip"
+    ],
+    "cutlery": [
+      "spoon",
+      "fork"
+    ]
+  },
+  "blocks": [
+    [
+      "animal",
+      "vehicle"
+    ],
+    [
+      "fruit",
+      "furniture"
+    ],
+    [
+      "clothing",
+      "instrument"
+    ],
+    [
+      "flower",
+      "cutlery"
+    ]
+  ],
+  "words": [
+    "explicit",
+    "named_rephrase",
+    "attribute",
+    "scenario"
+  ],
+  "batch": 16,
+  "dtype": "float32",
+  "tf32": false,
+  "max_gpu_gib": 12,
+  "wall_seconds": 7200,
+  "bootstraps": 2000,
+  "sign_draws": 9999,
+  "reference_N": 6000,
+  "question_source_N": 2000,
+  "behavior_threshold": 0.75,
+  "min_valid_frames": 36,
+  "min_valid_clusters": 12,
+  "supported_count": 5,
+  "min_supported_mass": 0.8,
+  "protocol_authorization": "Direct latest user approval to complete experiment supersedes stage-A-only hold in supplied attachment; no new paid allocation, no training/intervention.",
+  "p4": "NOT_RUN_OPTIONAL_NOT_NEEDED_FOR_P0_P3",
+  "new_scene_materials": "NOT_CREATED_NOT_RUN",
+  "source_S13": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S13_eight_category_independent_1105",
+  "source_S11": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S11_four_domain_relative_frequency_1105"
+}

@@ -1,0 +1,46 @@
+{
+  "seed": 2026110817,
+  "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S15_feature_expert_routing_1108",
+  "positions": [
+    "colon",
+    "body"
+  ],
+  "wordings": [
+    "explicit",
+    "named_rephrase",
+    "attribute",
+    "scenario"
+  ],
+  "main": "CONF explicit colon; all24labels",
+  "status": "POSTHOC_EXPLORATORY_OLD_EXPOSED_DATA",
+  "bootstraps": 2000,
+  "route_permutations": 1000,
+  "min_feature_frames": 12,
+  "min_feature_scenes": 8,
+  "min_expert_in_out_frames": 12,
+  "min_expert_in_out_scenes": 8,
+  "near_all": 0.95,
+  "dev_pair_min_active": 24,
+  "dev_pair_min_inactive": 24,
+  "dev_pair_min_scenes": 4,
+  "high_phi_min": 0.5,
+  "low_phi_max": 0,
+  "high_pairs": 5,
+  "low_pairs": 5,
+  "pair_degree_cap": 2,
+  "similarity": "binary activation-profile phi on DEV explicit colon; amplitude cosine auxiliary,not semantic identity",
+  "sharing_range": "DEV per-label active>=12/24families and>=4/8scenes; count stable labels0..24; not a new semantic category",
+  "frequency": "Q/G separate full30000 nativeS14 frequencies;continuousCDF primary;auxbins count0,1-4,>=5supportedterciles from reference only",
+  "null": "S15 scene/family whole-route conditional maps, original collapsed length bins retained;eligible tests only;all main candidate/expert/class-and-pooled tests one Holm family",
+  "input_coactivation_null": {
+    "chains": 4,
+    "draws_per_chain": 250,
+    "burn_sweeps": 20,
+    "thin_sweeps": 5,
+    "method": "curveball trades within same scene AND label (3family rows),exact rowTop32 and block-wise member counts preserved",
+    "main_only": true,
+    "max_Rhat": 1.1
+  },
+  "resource": "CPU only;no new text,position,model forward,training,intervention or GPU submission",
+  "premise": "Treat similar activation should share expert / dissimilar should separate as user-specified evaluation criterion,not established causal utility;report token-atomic feasibility and observed routing alignment"
+}

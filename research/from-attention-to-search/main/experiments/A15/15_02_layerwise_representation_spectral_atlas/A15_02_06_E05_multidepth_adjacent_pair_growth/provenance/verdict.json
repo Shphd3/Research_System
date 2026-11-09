@@ -1,0 +1,113 @@
+{
+  "claim_boundary": "Selected-pair normalized variance redistribution only; no information novelty, all-layer monotonicity, causality, low-rank, or Router-utility claim.",
+  "depth_slope": {
+    "ci95": [
+      -0.001205500797368586,
+      -0.0010070325806736946
+    ],
+    "point": -0.001123253838159144
+  },
+  "e04_crosscheck": {
+    "D_absolute_error": 0.0,
+    "G_absolute_error": 0.0
+  },
+  "experiment_id": "A15_02_06_E05_multidepth_adjacent_pair_growth",
+  "multiplicity": {
+    "D_four_pair_radius": 0.004406186752021313,
+    "G_four_pair_radius": 0.13340145349502563,
+    "band_64_radius": 0.009054325520992279,
+    "contrast_six_radius": 0.006220539566129446
+  },
+  "outcome": "significant_depth_heterogeneity",
+  "pairs": [
+    {
+      "D_half_A": 0.02588949352502823,
+      "D_half_B": 0.01884639263153076,
+      "D_pointwise_ci_high": 0.02307407185435295,
+      "D_pointwise_ci_low": 0.019567396491765976,
+      "D_sem": 0.021452493965625763,
+      "D_simultaneous_ci_high": 0.02585868164896965,
+      "D_simultaneous_ci_low": 0.017046306282281876,
+      "D_verdict": "positive",
+      "G_half_A": 1.7223577499389648,
+      "G_half_B": 1.3976200819015503,
+      "G_pointwise_ci_high": 1.7223381996154785,
+      "G_pointwise_ci_low": 1.5604361295700073,
+      "G_sem_log2": 1.6187509298324585,
+      "G_simultaneous_ci_high": 1.752152442932129,
+      "G_simultaneous_ci_low": 1.485349416732788,
+      "midpoint_depth": 2.5,
+      "pair": "2→3",
+      "total_raw_log2_growth": 1.4599312543869019
+    },
+    {
+      "D_half_A": -0.02170689031481743,
+      "D_half_B": -0.014630869030952454,
+      "D_pointwise_ci_high": -0.01564142107963562,
+      "D_pointwise_ci_low": -0.021603073924779892,
+      "D_sem": -0.018313638865947723,
+      "D_simultaneous_ci_high": -0.01390745211392641,
+      "D_simultaneous_ci_low": -0.02271982654929161,
+      "D_verdict": "negative",
+      "G_half_A": 0.7202094197273254,
+      "G_half_B": 0.7454285621643066,
+      "G_pointwise_ci_high": 0.8612663149833679,
+      "G_pointwise_ci_low": 0.7475103735923767,
+      "G_sem_log2": 0.7899655699729919,
+      "G_simultaneous_ci_high": 0.9233670234680176,
+      "G_simultaneous_ci_low": 0.6565641164779663,
+      "midpoint_depth": 8.5,
+      "pair": "8→9",
+      "total_raw_log2_growth": 0.9130688309669495
+    },
+    {
+      "D_half_A": 0.005126148462295532,
+      "D_half_B": -0.0023920759558677673,
+      "D_pointwise_ci_high": 0.00920932274311781,
+      "D_pointwise_ci_low": 0.0004891928401775658,
+      "D_sem": 0.004798218607902527,
+      "D_simultaneous_ci_high": 0.00920440535992384,
+      "D_simultaneous_ci_low": 0.00039203185588121414,
+      "D_verdict": "positive",
+      "G_half_A": 0.2823985815048218,
+      "G_half_B": 0.15872955322265625,
+      "G_pointwise_ci_high": 0.3004120886325836,
+      "G_pointwise_ci_low": 0.21061649918556213,
+      "G_sem_log2": 0.25475990772247314,
+      "G_simultaneous_ci_high": 0.3881613612174988,
+      "G_simultaneous_ci_low": 0.12135845422744751,
+      "midpoint_depth": 17.5,
+      "pair": "17→18",
+      "total_raw_log2_growth": 0.21897274255752563
+    },
+    {
+      "D_half_A": -0.029131833463907242,
+      "D_half_B": -0.026651598513126373,
+      "D_pointwise_ci_high": -0.024587519466876984,
+      "D_pointwise_ci_low": -0.029405970126390457,
+      "D_sem": -0.02728007733821869,
+      "D_simultaneous_ci_high": -0.0228738896548748,
+      "D_simultaneous_ci_low": -0.031686265021562576,
+      "D_verdict": "negative",
+      "G_half_A": 0.49769327044487,
+      "G_half_B": 0.868220329284668,
+      "G_pointwise_ci_high": 0.7184473276138306,
+      "G_pointwise_ci_low": 0.4805847704410553,
+      "G_sem_log2": 0.6314247846603394,
+      "G_simultaneous_ci_high": 0.764826238155365,
+      "G_simultaneous_ci_low": 0.4980233311653137,
+      "midpoint_depth": 34.5,
+      "pair": "34→35",
+      "total_raw_log2_growth": 0.7920419573783875
+    }
+  ],
+  "run_id": "a15-02-06-e05-20260812-multidepth-pairs",
+  "significant_depth_contrasts": [
+    "8→9−2→3",
+    "17→18−2→3",
+    "34→35−2→3",
+    "17→18−8→9",
+    "34→35−8→9",
+    "34→35−17→18"
+  ]
+}

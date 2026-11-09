@@ -1,0 +1,14 @@
+{
+  "time": "2026-10-28T07:44:37.371655+00:00",
+  "synthetic": true,
+  "N": 7000,
+  "F": 16384,
+  "pairs": 75000,
+  "coverage_seconds": 0.0473332405090332,
+  "measurement_seconds": 0.19804668426513672,
+  "spacing_switch_seconds": 0.04410839080810547,
+  "estimated_full_null_seconds": 2016.0653984069825,
+  "ceiling_seconds": 14400,
+  "peak_engineering_ram_estimate_gib": 5,
+  "reason": "Representative domain-sized warmed benchmark replaces small cold-JIT extrapolation; no draw count, threshold or resource ceiling changed. Conservative 1592 CC-sized evaluations plus SAE/bootstrap/storage allowance."
+}

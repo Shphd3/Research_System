@@ -1,0 +1,323 @@
+{
+  "status": "COMPLETE",
+  "plot_code_sha256": "9be8ab0a29277151669dd4bab829ba80e7371a6fb1b4b1ccd8c7b82a6eb730b5",
+  "config_sha256": "dc8a3a886d97caf64d2ac97279056edc89818c7cbf727a1adfb662e47725d14e",
+  "statistics_recomputed": false,
+  "new_training_or_inference": false,
+  "date_context": "2026-10-20 Asia/Shanghai",
+  "figures": [
+    {
+      "figure": "figure1_token_identity",
+      "question": "How far can TRAIN current-token-ID means predict B1 amplitude share on held-out positions?",
+      "measure": "Position-weighted R² and counts; current ID at t predicts share at t; target token t+1 never enters router.",
+      "maximum_allowed_conclusion": "Current token identity is informative but incomplete for this amplitude proxy; unknown IDs and other confounders remain.",
+      "inputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/token_context_predictor.csv",
+          "sha256": "5178213b1424003f5ff939a8250e5b9762d3b90d70d195e494969d0aedb6a716"
+        }
+      ],
+      "plot_source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure1_token_identity_source.csv",
+        "sha256": "8968991591dd56e2ef1f16fd3e3eaed797972e0ce16e1e942f32f044eb61d170"
+      },
+      "outputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure1_token_identity.png",
+          "sha256": "4e299351a02d59664f43e3b11880c9d4e3547d7c8401d806b7e28c2e61c8a60f",
+          "bytes": 208570
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure1_token_identity.pdf",
+          "sha256": "d73dc4c10624ffb88edc9d36f97999e4748875be898169bf5845be8feeacf493",
+          "bytes": 17393
+        }
+      ]
+    },
+    {
+      "figure": "figure2_signed_geometry",
+      "question": "Which centered frequency-group vectors align with actual h in its leading variation subspace?",
+      "measure": "β_g = E[<P_k centered component_g, P_k centered h>] / E[||P_k centered h||²]; sums to 1 with residual and U, can be negative.",
+      "maximum_allowed_conclusion": "Large B4 alignment within a subspace does not make B4 the mean, a unique semantic component, or a learning mechanism; PC1 covers only 11.61% of total variance.",
+      "inputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/geometry_signed_components.csv",
+          "sha256": "2ffe6fa0a598a8a0829b7a4f666cf975f5ff7e8bdd537ade5453a3b4dcbdf406"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/geometry_pca_spectrum.csv",
+          "sha256": "5aeefcd37d16a5b66c094bec0068404674b79a1eddbab19fd487c85a19fdb6a1"
+        }
+      ],
+      "plot_source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure2_signed_geometry_source.csv",
+        "sha256": "9c79eb3cbeb4222d1926189b2f3a35535d4587deba7a9d5ef23fe4b805f59a71"
+      },
+      "outputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure2_signed_geometry.png",
+          "sha256": "82a0f98df0c06c8b84ee3d1e3eaafff023eb2e9f053e6b1971fe7267f9e1c409",
+          "bytes": 181928
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure2_signed_geometry.pdf",
+          "sha256": "ff2bb71fdff362f086718dc85acd78acf01df9d2aeb4e3d01480f66e378f0ccb",
+          "bytes": 17757
+        }
+      ]
+    },
+    {
+      "figure": "figure3_static_routing",
+      "question": "Does reserving pair4 change fixed low-feature reception and realized calls under matched top2?",
+      "measure": "Feature-equal mean owner-reception, fixed TRAIN-B1 pool; absent test features NA; load is calls per position; reception intervals use whole-dialogue bootstrap.",
+      "maximum_allowed_conclusion": "H changes selection and decreases B1 owner reception here; this alone cannot predict loss benefit or information preservation.",
+      "inputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/routes/route_summary.json",
+          "sha256": "e95d68fd006f3e19b4b19061fe300dc0502d88eb3a39a56e2f5272b7fa66e8b7"
+        }
+      ],
+      "plot_source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure3_static_routing_source.csv",
+        "sha256": "f230308e6a9afb01155983594e9e4effb5474b3e1c4727758e33aaffab2e300e"
+      },
+      "outputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure3_static_routing.png",
+          "sha256": "af34bb8429c10dffd3c00350ead4c2caae894e0a9ada34b0bcb07c4855f800bc",
+          "bytes": 268068
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure3_static_routing.pdf",
+          "sha256": "ca313c7e465ace960df5f2206f70e3639a7b71b82096b85833fcb8e31d2d4eb9",
+          "bytes": 25525
+        }
+      ]
+    },
+    {
+      "figure": "figure4_learning_curves",
+      "question": "Do same-budget policies improve complete TRAIN and exposed-EVAL loss, rather than merely changing reception?",
+      "measure": "NLL in nats, all-target position mean and fixed TRAIN-B1 per-feature macro; x=actual update targets; solid seed11, dashed seed22.",
+      "maximum_allowed_conclusion": "EVAL curves are already exposed auxiliary evidence; final DEV alone is the frozen fresh comparison in this round, not independent new corpus.",
+      "inputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed11/metrics_step0.json",
+          "sha256": "564a4ea87290d87517193a96c967fb8dade832beed93558d2e6a7bceae0b8cc2"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed11/metrics_step42.json",
+          "sha256": "6fd77979bb5fdc432c78d801efa024987e665741c6d8e9042bd23d6db4047a6b"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed11/metrics_step84.json",
+          "sha256": "ee2442c46874461c41f18679e1ae033f7d41852b8f5d337d2a55300ad83ebd16"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed11/metrics_step126.json",
+          "sha256": "9c2e17bdbf05ee0390515c6f37d7512b715683555c013966e258d18a585c5bc6"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed11/metrics_step168.json",
+          "sha256": "be7b9aa65041ce5b696079cf9f6333874c4cf9a7ebcb4b9efc430c04fd889ed6"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed22/metrics_step0.json",
+          "sha256": "564a4ea87290d87517193a96c967fb8dade832beed93558d2e6a7bceae0b8cc2"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed22/metrics_step42.json",
+          "sha256": "618870c8b70be4c9b0e5a1d0817fa879e853f7f97ebad0e61b5880b1a988ebc5"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed22/metrics_step84.json",
+          "sha256": "685e522f3e9e9940cb4561913b5254483b567cadafa93f992bb0f210e3822d66"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed22/metrics_step126.json",
+          "sha256": "d0aacfac013eae7e532e60381671c4bc6a906fc431289d38df4d11cb0316bee7"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_F/seed22/metrics_step168.json",
+          "sha256": "e438b3ff156a481d763f5e41804e50d6fdea2b951183c4261dd062f57e23655f"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed11/metrics_step0.json",
+          "sha256": "564a4ea87290d87517193a96c967fb8dade832beed93558d2e6a7bceae0b8cc2"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed11/metrics_step42.json",
+          "sha256": "1c30d77fd6032573323ba3552c3fae8f27876d176f28725fa523ac9f431e1143"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed11/metrics_step84.json",
+          "sha256": "8cbf1bbf1f70f313fbca651a745d473fc39dbd813e4af181728b70d42fc3acff"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed11/metrics_step126.json",
+          "sha256": "78c73c3fb40dabfd81100339d07d5865c5b269ffa6c7f64e606f1027f22cd3aa"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed11/metrics_step168.json",
+          "sha256": "0b90696e8e56c2ad9533339727e40111484de1dee1410cb50fec59cf3f986c02"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed22/metrics_step0.json",
+          "sha256": "564a4ea87290d87517193a96c967fb8dade832beed93558d2e6a7bceae0b8cc2"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed22/metrics_step42.json",
+          "sha256": "c6ffde14920e700b8e97172209e7c3534e8b31e015ea4dffa0a305ad838322f8"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed22/metrics_step84.json",
+          "sha256": "20ccdc76f632489cc372b7a5cbc0a2d8c088d5608dd5c7bf187ea49adcd4a610"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed22/metrics_step126.json",
+          "sha256": "6b386bf2ad254b0fcb78aeb2e9c382015a0ed4978ecd3dd96fe4d6fa89ee8931"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/T_H/seed22/metrics_step168.json",
+          "sha256": "175e573f9b350ac46dc5481c6a7db8a1a6d3e8bf085ef06c3fe88fad6f342a8b"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed11/metrics_step0.json",
+          "sha256": "564a4ea87290d87517193a96c967fb8dade832beed93558d2e6a7bceae0b8cc2"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed11/metrics_step42.json",
+          "sha256": "14c1045e68116a58230b581f79cfba2c7fe44689c820bf06b20d51bf0780d875"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed11/metrics_step84.json",
+          "sha256": "8994d54ff9b370551f36e0053a1fb7ee3cbe8d14043bde98a89aa7bcd6db86bc"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed11/metrics_step126.json",
+          "sha256": "cd458e38386e6f8e18aef7f10a5a82e566fb66e8c05729da56554dc544d9f2d5"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed11/metrics_step168.json",
+          "sha256": "befa94a85fec1d8c6e537d560f74fd98b2e7bfb41865e4c650851a13dbe9153a"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed22/metrics_step0.json",
+          "sha256": "564a4ea87290d87517193a96c967fb8dade832beed93558d2e6a7bceae0b8cc2"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed22/metrics_step42.json",
+          "sha256": "d456245b70e65e628af9e12c01af4977983f75cf1197ee745f86bfbee0507519"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed22/metrics_step84.json",
+          "sha256": "a67588f3c410d19cd16cc355f089bc9db16932202493c363152678484ad5d1a6"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed22/metrics_step126.json",
+          "sha256": "9336cbb2b73f874ae2f0a00b50aa6b87aab5a0ba67c98120fa13a7ec8da1b839"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_F/seed22/metrics_step168.json",
+          "sha256": "8da0a6a9dac373bb781ee569d4eb0ed75ac72ace654adbf2ff6a6ca4ec7fd586"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed11/metrics_step0.json",
+          "sha256": "564a4ea87290d87517193a96c967fb8dade832beed93558d2e6a7bceae0b8cc2"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed11/metrics_step42.json",
+          "sha256": "21ac7cb08c01816f14a3cd44b31cb8df259f4a7ee3c0703ef15edd64ae886d55"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed11/metrics_step84.json",
+          "sha256": "6b20524094723da2ef0c2f0beeae102fbd5e26a91378bcc17b9cc5192ca38fa7"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed11/metrics_step126.json",
+          "sha256": "0929890e8c9833e59c144e895447407b8fc2469ffda787737d6d2a063fd239b1"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed11/metrics_step168.json",
+          "sha256": "fc2eb8b34a05f09faf6b957344c339a78d8da84e15a2db7df13ed7b58c05d59a"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed22/metrics_step0.json",
+          "sha256": "564a4ea87290d87517193a96c967fb8dade832beed93558d2e6a7bceae0b8cc2"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed22/metrics_step42.json",
+          "sha256": "04aacc331cffafaa259800868fb3519f6d9b1df2155330f5aa61b63491c3fe37"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed22/metrics_step84.json",
+          "sha256": "33f2b174f35907d4c56433a1fe1fd0ebf31d0d4906160853959927a6d3b50d33"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed22/metrics_step126.json",
+          "sha256": "b4a7c2dfce61cb91cdc89091203bac4fd26f59a827946024f21bf50c8a5b9bc1"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/R_H/seed22/metrics_step168.json",
+          "sha256": "ecf17ad0a46512a1997a9440583ce8e92220c6235c5b988392f76f51d8402844"
+        }
+      ],
+      "plot_source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure4_learning_curves_source.csv",
+        "sha256": "896efe09e633d2fa0767b42f31a4328e52406c8c7061a8814f6a9229eb3b6959"
+      },
+      "outputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure4_learning_curves.png",
+          "sha256": "2757ac970cf3ac4f496ad1e31ae8d4b387672d019c9a7ee58af949962a4eb24d",
+          "bytes": 535101
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure4_learning_curves.pdf",
+          "sha256": "ff08608877d03629adbf9f982b52f82c38102ae19c104d66dfbabb4648c19138",
+          "bytes": 30889
+        }
+      ]
+    },
+    {
+      "figure": "figure5_terminal_dev",
+      "question": "Is the H-minus-F DEV loss increment favorable, and more favorable under frequency organization than under matched random organization?",
+      "measure": "Fixed TRAIN-B1 pool, macro DEV NLL over test-hit features; paired two-seed differences and 2.5–97.5 percentile whole-dialogue bootstrap ranges. Estimable feature subset varies in resamples; ranges conditional on seeds.",
+      "maximum_allowed_conclusion": "Pre-set support requires ΔT and interaction both negative with their registered ranges excluding zero; ranges are not fixed-838-feature confidence intervals. Two seeds and sparse support forbid universal capacity or semantic-mechanism inference.",
+      "inputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/condition_results.csv",
+          "sha256": "4e07203916406fc3b3b7140e1a502b0108f0c56ad22d79a160a68d2fb2745630"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/paired_comparisons.csv",
+          "sha256": "11d3322879550a8623db59c51793cb0a94a50fa58adac04e0e1b029c22dfdee8"
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/receipt.json",
+          "sha256": "7fc945ac2ecaca971c9097fa13e1fe8fd4b5ffe53fb977be177bfc56e6ffff31"
+        }
+      ],
+      "plot_source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure5_terminal_dev_source.csv",
+        "sha256": "8f050396d5dc773f445e9d8283c49565d824a3452b325e2101cf429854ac029c"
+      },
+      "outputs": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure5_terminal_dev.png",
+          "sha256": "32ece21d8da28eda579a1963a803c9518d8908cd71453d02f11881cf85a2332e",
+          "bytes": 255579
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/figures/figure5_terminal_dev.pdf",
+          "sha256": "f839af95ba95a57817ce85fe341e91e22673cd4f83038c247dc9b084630050e1",
+          "bytes": 19537
+        }
+      ]
+    }
+  ],
+  "interpretation_audit": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/provenance/primary_uncertainty_audit_cn.md",
+    "sha256": "185d1ae19dfe6138389ca212676fa7799acaedb3f160ff0759ae634c2dc7a601",
+    "use": "Figure5 bootstrap range qualification; no statistic changed"
+  }
+}

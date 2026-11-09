@@ -1,0 +1,670 @@
+{
+  "schema": "R03_original_O_frequency_audit_v1",
+  "recorded_at_utc": "2026-10-27T01:46:13.321412+00:00",
+  "processing_agent": "/root/r03_protocol_finish",
+  "computation": "saved O raw_edges and existing per-edge metrics; no full count matrices read",
+  "new_model_forwards": 0,
+  "new_interventions": 0,
+  "sealed_TEST_payload_read": false,
+  "source_owner": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z",
+  "source_files": {
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/raw_edges.npz": {
+      "sha256": "e017e5d43235f4ed74691e2afc4ca003387e1ac96dee76de1f635ecade5806e1",
+      "bytes": 4510135
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/edge_metrics_D.npz": {
+      "sha256": "adb289bc78601f70e4947513400e44a00153f954057f7225e7c0448bfe9efd5e",
+      "bytes": 13743506
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/edge_metrics_V.npz": {
+      "sha256": "182cee50b1acb524a6f9d3d80512f803f3d2040ccc2b656c63969bb093bac709",
+      "bytes": 13743506
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_frequency.npz": {
+      "sha256": "f345204412633144a7f1af36668cb3e2a98dbcaf03ef66f43ce3ace40c916c7c",
+      "bytes": 21758946
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json": {
+      "sha256": "372cbbb82ed0bd7433b377b637a27c27f0b607224a2eec90549339c76f909c35",
+      "bytes": 21834
+    }
+  },
+  "N_D": 5238097,
+  "N_V": 5247663,
+  "full_dictionary_nodes": 16384,
+  "D_raw_edges": 214711,
+  "V_old_rule_retained_edges": 206136,
+  "formula_and_alignment_checks": {
+    "D": {
+      "marginals_match_saved_feature_frequency": true,
+      "joint_matches_raw_graph": true,
+      "conditional_formula": true,
+      "baseline_formula": true,
+      "delta_formula": true
+    },
+    "V": {
+      "marginals_match_saved_feature_frequency": true,
+      "joint_matches_raw_graph": true,
+      "conditional_formula": true,
+      "baseline_formula": true,
+      "delta_formula": true
+    }
+  },
+  "D_all_satisfy_original_rule": true,
+  "V_rule_exactly_matches_saved_passV": true,
+  "D_original_edges": {
+    "edges": 214711,
+    "fields": {
+      "nA": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          200.0,
+          1819.0,
+          12557.0,
+          58574.0,
+          135204.0,
+          218644.0,
+          986980.0,
+          2563336.0
+        ]
+      },
+      "nu": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          977.0,
+          1664347.0,
+          4789315.0,
+          5078782.0,
+          5154369.0,
+          5201208.0,
+          5201208.0,
+          5201208.0
+        ]
+      },
+      "c": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          160.0,
+          1680.0,
+          11607.0,
+          53887.0,
+          127869.0,
+          205711.0,
+          937952.1999999983,
+          2548850.0
+        ]
+      },
+      "p_u": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.00018651811908026905,
+          0.3177388658514724,
+          0.9143234651821072,
+          0.9695853284122077,
+          0.984015569012945,
+          0.9929575569142763,
+          0.9929575569142763,
+          0.9929575569142763
+        ]
+      },
+      "P_u_given_A": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.8,
+          0.875,
+          0.9464627151051626,
+          0.9792387543252595,
+          0.9933283116324115,
+          0.9968290616541426,
+          0.9997879558948262,
+          1.0
+        ]
+      },
+      "P_A_given_u": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          3.32508922322749e-05,
+          0.00070776899180128,
+          0.003805972252816948,
+          0.017664165738789397,
+          0.04187783463761365,
+          0.06251583171310425,
+          0.24236895211348977,
+          0.49296892956392735
+        ]
+      },
+      "conditional_minus_background": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          -0.17632326132063725,
+          0.0023050479670231883,
+          0.025947893251667242,
+          0.5783972217616731,
+          0.716285613287662,
+          0.7752646227059381,
+          0.8988429383133787,
+          0.9992464820716378
+        ]
+      },
+      "lift": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.8208125289140443,
+          1.002366294592092,
+          1.0276398301046898,
+          2.812581709176759,
+          5.587369227583431,
+          6.364279885513577,
+          56.77555493092783,
+          4888.059270559178
+        ]
+      },
+      "frequency_ratio_B_over_A": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          2.0007900897604816,
+          52.76957245018244,
+          244.43410429849445,
+          1300.9592384788155,
+          3519.224215246637,
+          5783.813576251174,
+          13101.27959697733,
+          26006.04
+        ]
+      }
+    },
+    "delta_below_005": {
+      "count": 123898,
+      "fraction": 0.5770454238488014
+    },
+    "delta_at_least_005": {
+      "count": 90813,
+      "fraction": 0.4229545761511986
+    },
+    "delta_nonpositive": {
+      "count": 45171,
+      "fraction": 0.2103804649039872
+    },
+    "lift_at_most_1_1": {
+      "count": 133687,
+      "fraction": 0.6226369398866383
+    },
+    "endpoint_base_rate_at_least_08": {
+      "count": 141527,
+      "fraction": 0.6591511380413673
+    },
+    "frequency_ratio_at_least_4": {
+      "count": 212361,
+      "fraction": 0.9890550554000493
+    },
+    "small_delta_and_high_endpoint_rate": {
+      "count": 123898,
+      "fraction": 0.5770454238488014
+    }
+  },
+  "V_all_D_discovered_edges": {
+    "edges": 214711,
+    "fields": {
+      "nA": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          63.0,
+          1802.0,
+          12710.0,
+          58231.0,
+          135527.0,
+          220948.0,
+          992481.0,
+          2542034.0
+        ]
+      },
+      "nu": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          864.0,
+          1682037.0,
+          4785161.0,
+          5092703.0,
+          5159492.0,
+          5209019.0,
+          5209019.0,
+          5209019.0
+        ]
+      },
+      "c": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          11.0,
+          1661.0,
+          11720.0,
+          53825.5,
+          127722.0,
+          207387.5,
+          943361.8999999994,
+          2526113.0
+        ]
+      },
+      "p_u": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.00016464471899205419,
+          0.3205306819435623,
+          0.9118651483527048,
+          0.9704706647511473,
+          0.9831980445390643,
+          0.9926359600454526,
+          0.9926359600454526,
+          0.9926359600454526
+        ]
+      },
+      "P_u_given_A": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.04096429218778322,
+          0.8744283809246458,
+          0.9465982028241335,
+          0.979908559669635,
+          0.9933563646027106,
+          0.9968812124366149,
+          0.9998797122661116,
+          1.0
+        ]
+      },
+      "P_A_given_u": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          9.22687974607627e-06,
+          0.000693358630837772,
+          0.003852470132949832,
+          0.01764960563694727,
+          0.04164357383707996,
+          0.06202160928796789,
+          0.2415795097291361,
+          0.5142857142857142
+        ]
+      },
+      "conditional_minus_background": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          -0.36015744972131847,
+          0.0027174484186821557,
+          0.02638094017647319,
+          0.55390685037223,
+          0.7133508247846474,
+          0.7704248768385142,
+          0.8997696094524116,
+          0.9953833249294981
+        ]
+      },
+      "lift": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.13032974907649783,
+          1.0027914282488495,
+          1.028087797094224,
+          2.8088778417988713,
+          5.528552092487763,
+          6.293875788251553,
+          56.35408459065571,
+          5105.002651918976
+        ]
+      },
+      "frequency_ratio_B_over_A": {
+        "finite": 214711,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          1.6916666666666667,
+          52.818041530477146,
+          241.29233833611266,
+          1321.593953609591,
+          3533.09724137931,
+          5895.152961471316,
+          13215.817555894244,
+          82682.84126984127
+        ]
+      }
+    },
+    "delta_below_005": {
+      "count": 123551,
+      "fraction": 0.5754292979865959
+    },
+    "delta_at_least_005": {
+      "count": 91160,
+      "fraction": 0.4245707020134041
+    },
+    "delta_nonpositive": {
+      "count": 43542,
+      "fraction": 0.20279352245576612
+    },
+    "lift_at_most_1_1": {
+      "count": 134090,
+      "fraction": 0.624513881449949
+    },
+    "endpoint_base_rate_at_least_08": {
+      "count": 141527,
+      "fraction": 0.6591511380413673
+    },
+    "frequency_ratio_at_least_4": {
+      "count": 212357,
+      "fraction": 0.9890364257071133
+    },
+    "small_delta_and_high_endpoint_rate": {
+      "count": 123421,
+      "fraction": 0.5748238329661731
+    }
+  },
+  "V_old_rule_retained_edges_summary": {
+    "edges": 206136,
+    "fields": {
+      "nA": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          200.0,
+          2018.0,
+          14181.0,
+          60462.0,
+          138463.0,
+          225515.5,
+          1039142.0,
+          2542034.0
+        ]
+      },
+      "nu": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          864.0,
+          2464628.0,
+          4877055.0,
+          5092703.0,
+          5159492.0,
+          5209019.0,
+          5209019.0,
+          5209019.0
+        ]
+      },
+      "c": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          160.0,
+          1872.0,
+          13240.0,
+          56190.0,
+          130558.5,
+          213459.0,
+          974447.7999999964,
+          2526113.0
+        ]
+      },
+      "p_u": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.00016464471899205419,
+          0.46966201907401445,
+          0.9293765624812417,
+          0.9704706647511473,
+          0.9831980445390643,
+          0.9926359600454526,
+          0.9926359600454526,
+          0.9926359600454526
+        ]
+      },
+      "P_u_given_A": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.8,
+          0.8837209302325582,
+          0.9500433622988984,
+          0.9807565931455735,
+          0.9936030326205212,
+          0.9969988719845675,
+          0.99987374982199,
+          1.0
+        ]
+      },
+      "P_A_given_u": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          3.294898024844306e-05,
+          0.0007256581030059445,
+          0.004128155098467382,
+          0.018206236132334574,
+          0.042363508569317324,
+          0.0628007854048516,
+          0.2445010833086524,
+          0.4915438420325041
+        ]
+      },
+      "conditional_minus_background": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          -0.18350436915110147,
+          0.0023472344167697334,
+          0.023757623155297947,
+          0.40873785344128943,
+          0.7127591448752197,
+          0.7697478415140342,
+          0.8996553195003029,
+          0.9953833249294981
+        ]
+      },
+      "lift": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          0.815134272243473,
+          1.002410105937999,
+          1.0250819487973284,
+          1.8805973318778935,
+          5.482134667907628,
+          6.168705225316183,
+          51.92555202538138,
+          5105.002651918976
+        ]
+      },
+      "frequency_ratio_B_over_A": {
+        "finite": 206136,
+        "quantiles_0_25_50_75_90_95_99_100": [
+          2.0020314880650076,
+          51.417986978915664,
+          226.79746075484712,
+          1272.2202898550725,
+          3419.8871829105474,
+          5710.215990453461,
+          12552.414322250639,
+          26045.095
+        ]
+      }
+    },
+    "delta_below_005": {
+      "count": 122549,
+      "fraction": 0.594505569138821
+    },
+    "delta_at_least_005": {
+      "count": 83587,
+      "fraction": 0.40549443086117903
+    },
+    "delta_nonpositive": {
+      "count": 42797,
+      "fraction": 0.20761536073272013
+    },
+    "lift_at_most_1_1": {
+      "count": 132516,
+      "fraction": 0.6428571428571429
+    },
+    "endpoint_base_rate_at_least_08": {
+      "count": 140620,
+      "fraction": 0.6821709939069353
+    },
+    "frequency_ratio_at_least_4": {
+      "count": 203849,
+      "fraction": 0.9889053828540381
+    },
+    "small_delta_and_high_endpoint_rate": {
+      "count": 122549,
+      "fraction": 0.594505569138821
+    }
+  },
+  "uncertainty": "descriptive edge distribution quantiles only; not document/sentence confidence intervals; all edges selected by historical O rule",
+  "scope": "O unchanged. Delta>=0.05 is the already-frozen R03 correction-size diagnostic, not a retrospective modification of O. Weak delta supports a baseline-rate rival but does not prove no semantic function. O arrows impose frequency doubling and cannot independently establish low-to-high semantic organization.",
+  "edge_csv": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/audit/original_O_frequency_edges.csv",
+  "top20_B_by_original_in_degree_D": [
+    {
+      "B": 8060,
+      "incoming_original_edges": 15471,
+      "p_B_D": 0.9749032902598024,
+      "delta_below_005_edges": 15471,
+      "delta_nonpositive_edges": 6326,
+      "delta_median_D": 0.0028871229177709345
+    },
+    {
+      "B": 13964,
+      "incoming_original_edges": 15469,
+      "p_B_D": 0.9929575569142763,
+      "delta_below_005_edges": 15469,
+      "delta_nonpositive_edges": 3665,
+      "delta_median_D": 0.002733611296900307
+    },
+    {
+      "B": 10807,
+      "incoming_original_edges": 15467,
+      "p_B_D": 0.9695853284122077,
+      "delta_below_005_edges": 15467,
+      "delta_nonpositive_edges": 4672,
+      "delta_median_D": 0.00810182691139194
+    },
+    {
+      "B": 516,
+      "incoming_original_edges": 15444,
+      "p_B_D": 0.984015569012945,
+      "delta_below_005_edges": 15444,
+      "delta_nonpositive_edges": 6950,
+      "delta_median_D": 0.0011996144297000688
+    },
+    {
+      "B": 7388,
+      "incoming_original_edges": 15352,
+      "p_B_D": 0.964567093736523,
+      "delta_below_005_edges": 15352,
+      "delta_nonpositive_edges": 5807,
+      "delta_median_D": 0.006555585472021175
+    },
+    {
+      "B": 7415,
+      "incoming_original_edges": 15210,
+      "p_B_D": 0.9328697043983721,
+      "delta_below_005_edges": 14365,
+      "delta_nonpositive_edges": 7450,
+      "delta_median_D": 0.0008106715364922246
+    },
+    {
+      "B": 5913,
+      "incoming_original_edges": 14846,
+      "p_B_D": 0.9366204940458338,
+      "delta_below_005_edges": 13980,
+      "delta_nonpositive_edges": 3498,
+      "delta_median_D": 0.019738879426970612
+    },
+    {
+      "B": 5147,
+      "incoming_original_edges": 14173,
+      "p_B_D": 0.9143234651821072,
+      "delta_below_005_edges": 11379,
+      "delta_nonpositive_edges": 4579,
+      "delta_median_D": 0.022206459047673488
+    },
+    {
+      "B": 8345,
+      "incoming_original_edges": 11021,
+      "p_B_D": 0.855456857709966,
+      "delta_below_005_edges": 4312,
+      "delta_nonpositive_edges": 1712,
+      "delta_median_D": 0.0656808281336021
+    },
+    {
+      "B": 13830,
+      "incoming_original_edges": 9074,
+      "p_B_D": 0.8150144985860323,
+      "delta_below_005_edges": 2659,
+      "delta_nonpositive_edges": 512,
+      "delta_median_D": 0.08509382104822527
+    },
+    {
+      "B": 10778,
+      "incoming_original_edges": 4815,
+      "p_B_D": 0.7369666884748411,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.1069288257513753
+    },
+    {
+      "B": 14,
+      "incoming_original_edges": 4591,
+      "p_B_D": 0.6716309377241392,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.24521308781553852
+    },
+    {
+      "B": 1712,
+      "incoming_original_edges": 1833,
+      "p_B_D": 0.22552808777691594,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.6641336257861571
+    },
+    {
+      "B": 1257,
+      "incoming_original_edges": 1495,
+      "p_B_D": 0.2336842941243738,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.6391970618078295
+    },
+    {
+      "B": 13524,
+      "incoming_original_edges": 1347,
+      "p_B_D": 0.19449487094263432,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.6881924675586577
+    },
+    {
+      "B": 7540,
+      "incoming_original_edges": 1330,
+      "p_B_D": 0.2164131362973996,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.6528233255202258
+    },
+    {
+      "B": 1053,
+      "incoming_original_edges": 1316,
+      "p_B_D": 0.6414873569542526,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.19744267078448208
+    },
+    {
+      "B": 16231,
+      "incoming_original_edges": 1308,
+      "p_B_D": 0.20694805766292607,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.6756072962239699
+    },
+    {
+      "B": 14256,
+      "incoming_original_edges": 1263,
+      "p_B_D": 0.1941546710570652,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.6791479363557694
+    },
+    {
+      "B": 9998,
+      "incoming_original_edges": 1205,
+      "p_B_D": 0.19739859723865366,
+      "delta_below_005_edges": 0,
+      "delta_nonpositive_edges": 0,
+      "delta_median_D": 0.6746640659467249
+    }
+  ]
+}

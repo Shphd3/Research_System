@@ -1,0 +1,98 @@
+{
+  "run": "R13_feature_presence_amplitude_20261101;primaryseed1101;equalmembers;unchanged fitted models",
+  "model": "officialQwen3-0.6B-Base+A22;14jointresidualpost blocks1,3,...27 sharedz",
+  "measurement": "one nativez position/document,targetID279;not guaranteed full wordthe",
+  "D_V_H_per_task": [
+    [
+      16,
+      8,
+      37
+    ],
+    [
+      16,
+      8,
+      17
+    ],
+    [
+      16,
+      8,
+      18
+    ]
+  ],
+  "members_per_frequency_group": [
+    3,
+    4,
+    10
+  ],
+  "feature_reference": "independentDCLM65536;low20..170,mid171..881,high>=882",
+  "metric": "BA=.5*(class0correct/class0N+class1correct/class1N)",
+  "fig1_axes": "leftx=task,y=balancedaccuracy;blueB,greenBA;rightx=BA_difference inpercentagepoints,y=task,purplepoint,95%class-stratifieddocument-pairedbootstrap5000",
+  "uncertainty": "conditions on saved fitted models;not all training/platform uncertainty;primary15adjusted intervals remain separately in originaltable",
+  "examples": "all5specifiedknown cases retained in originalcases;firstfigure uses allHdocs,notcase selection",
+  "C_B_vs_BA": {
+    "coarse": [
+      10.0,
+      1.0
+    ],
+    "math_fine": [
+      1.0,
+      0.01
+    ],
+    "bio_fine": [
+      0.01,
+      0.01
+    ]
+  },
+  "fig2": "existing byte-identical bilateral graph;99.6667%adjusted primary BAintervals;same3taskcohorts;not shown until feedback",
+  "optional": "10fixedseed amplitude gains;mainseed marked,notselectedbyresult",
+  "new_fits_or_forwards": 0,
+  "sources": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/analysis/metrics_all_conditions.csv": "e636aa4f9f2eaf3ac18b45436d2bbde66785d8efd7433fe4ed9682d4209e2485",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/analysis/paired_contrasts.csv": "94fb9a3eb2d375069f1c9c9c041af0cd8704b52d2d59f4b7a59f9dcd61a88652",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_feature_presence_amplitude_20261101/analysis/predictions_all_seeds.csv": "88f2163a44db5fb7881e63ca17c9c79eec9f1dc3a558fafe65c54bb02de230d6"
+  },
+  "data": [
+    {
+      "task": "coarse",
+      "B": 0.6154970760233918,
+      "BA": 0.5175438596491228,
+      "C_B": 10.0,
+      "C_BA": 1.0,
+      "n": 37,
+      "k": 3,
+      "gain": -0.09795321637426901,
+      "low": -0.2616959064327486,
+      "high": 0.0657894736842104,
+      "corrected": 6,
+      "new_errors": 10
+    },
+    {
+      "task": "math_fine",
+      "B": 0.4861111111111111,
+      "BA": 0.4305555555555556,
+      "C_B": 1.0,
+      "C_BA": 0.01,
+      "n": 17,
+      "k": 4,
+      "gain": -0.055555555555555525,
+      "low": -0.24305555555555558,
+      "high": 0.12500000000000006,
+      "corrected": 1,
+      "new_errors": 2
+    },
+    {
+      "task": "bio_fine",
+      "B": 0.6111111111111112,
+      "BA": 0.6666666666666667,
+      "C_B": 0.01,
+      "C_BA": 0.01,
+      "n": 18,
+      "k": 10,
+      "gain": 0.05555555555555558,
+      "low": -0.11111111111111116,
+      "high": 0.22222222222222232,
+      "corrected": 2,
+      "new_errors": 1
+    }
+  ]
+}

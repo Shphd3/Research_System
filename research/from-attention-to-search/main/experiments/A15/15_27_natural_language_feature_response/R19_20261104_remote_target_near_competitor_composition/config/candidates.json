@@ -1,0 +1,378 @@
+{
+  "UTC": "2026-11-04T04:49:30.368524+00:00",
+  "rule": "Protocol6; discovery only; no heldout response accessed",
+  "sites": {
+    "ATTN_SAE": {
+      "C": [
+        2520,
+        26235,
+        29969,
+        23899,
+        772,
+        2254
+      ],
+      "C3": [
+        2520,
+        26235,
+        29969
+      ],
+      "responsive": [
+        4884,
+        15564,
+        24198,
+        29983,
+        26496,
+        5692
+      ],
+      "U": [
+        2520,
+        26235,
+        29969,
+        23899,
+        772,
+        2254,
+        4884,
+        15564,
+        24198,
+        29983,
+        26496,
+        5692
+      ],
+      "scale": [
+        4.605307792115238,
+        4.7470554932574816,
+        4.148564636647059,
+        31.676338997323935,
+        3.011334939607721,
+        3.6787167068363478,
+        1.1465637544154554,
+        1.2017056789204466,
+        1.4084996365457787,
+        1.3006167329158427,
+        1.4585149236484043,
+        2.3117564807174458
+      ],
+      "selection": [
+        {
+          "site": "ATTN_SAE",
+          "atom": 2520,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 4.605307792115238,
+          "content_response_score": 0.1269999093033436,
+          "reference_group": "high",
+          "reference_frequency": 0.0103125
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 26235,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 4.7470554932574816,
+          "content_response_score": 0.0924030552335236,
+          "reference_group": "high",
+          "reference_frequency": 0.0041145833333333
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 29969,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 4.148564636647059,
+          "content_response_score": 0.09184028727157115,
+          "reference_group": "high",
+          "reference_frequency": 0.0118229166666666
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 23899,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 31.676338997323935,
+          "content_response_score": 0.03290096126670896,
+          "reference_group": "high",
+          "reference_frequency": 0.9930208333333334
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 772,
+          "role": "common",
+          "common_families": 11,
+          "any_main_families": 12,
+          "discovery_RMS": 3.011334939607721,
+          "content_response_score": 0.26726716642938325,
+          "reference_group": "low",
+          "reference_frequency": 0.0005989583333333
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 2254,
+          "role": "common",
+          "common_families": 10,
+          "any_main_families": 11,
+          "discovery_RMS": 3.6787167068363478,
+          "content_response_score": 0.16837632935104233,
+          "reference_group": "high",
+          "reference_frequency": 0.0025260416666666
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 4884,
+          "role": "responsive",
+          "common_families": 0,
+          "any_main_families": 8,
+          "discovery_RMS": 1.1465637544154554,
+          "content_response_score": 1.322678704624124,
+          "reference_group": "insufficient",
+          "reference_frequency": 0.0003125
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 15564,
+          "role": "responsive",
+          "common_families": 0,
+          "any_main_families": 8,
+          "discovery_RMS": 1.2017056789204466,
+          "content_response_score": 1.2839362498312556,
+          "reference_group": "middle",
+          "reference_frequency": 0.001484375
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 24198,
+          "role": "responsive",
+          "common_families": 2,
+          "any_main_families": 6,
+          "discovery_RMS": 1.4084996365457787,
+          "content_response_score": 0.902929860369423,
+          "reference_group": "high",
+          "reference_frequency": 0.002109375
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 29983,
+          "role": "responsive",
+          "common_families": 0,
+          "any_main_families": 6,
+          "discovery_RMS": 1.3006167329158427,
+          "content_response_score": 0.8718954597710276,
+          "reference_group": "middle",
+          "reference_frequency": 0.0016145833333333
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 26496,
+          "role": "responsive",
+          "common_families": 1,
+          "any_main_families": 7,
+          "discovery_RMS": 1.4585149236484043,
+          "content_response_score": 0.8583276296544627,
+          "reference_group": "high",
+          "reference_frequency": 0.00234375
+        },
+        {
+          "site": "ATTN_SAE",
+          "atom": 5692,
+          "role": "responsive",
+          "common_families": 3,
+          "any_main_families": 8,
+          "discovery_RMS": 2.3117564807174458,
+          "content_response_score": 0.8533661137238103,
+          "reference_group": "high",
+          "reference_frequency": 0.003046875
+        }
+      ],
+      "insufficient_common": false
+    },
+    "MLPIN_SAE": {
+      "C": [
+        17390,
+        25508,
+        3011,
+        4700,
+        16240,
+        27076
+      ],
+      "C3": [
+        17390,
+        25508,
+        3011
+      ],
+      "responsive": [
+        11938,
+        11623,
+        124,
+        24506,
+        12429,
+        8066
+      ],
+      "U": [
+        17390,
+        25508,
+        3011,
+        4700,
+        16240,
+        27076,
+        11938,
+        11623,
+        124,
+        24506,
+        12429,
+        8066
+      ],
+      "scale": [
+        10.465547043195379,
+        4.324271893146311,
+        4.899668719927647,
+        6.5735763260263935,
+        14.422828032711843,
+        14.34267911557309,
+        2.169983190147618,
+        1.5199799054836824,
+        1.5931866982911997,
+        2.5335019024465333,
+        2.7641953469318765,
+        4.271463675482496
+      ],
+      "selection": [
+        {
+          "site": "MLPIN_SAE",
+          "atom": 17390,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 10.465547043195379,
+          "content_response_score": 0.15073821101203877,
+          "reference_group": "high",
+          "reference_frequency": 0.3577864583333333
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 25508,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 4.324271893146311,
+          "content_response_score": 0.1269627178182316,
+          "reference_group": "low",
+          "reference_frequency": 0.000703125
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 3011,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 4.899668719927647,
+          "content_response_score": 0.1149176203580833,
+          "reference_group": "high",
+          "reference_frequency": 0.003828125
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 4700,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 6.5735763260263935,
+          "content_response_score": 0.10834635023229161,
+          "reference_group": "middle",
+          "reference_frequency": 0.0014322916666666
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 16240,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 14.422828032711843,
+          "content_response_score": 0.10437760027360432,
+          "reference_group": "high",
+          "reference_frequency": 0.4775260416666667
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 27076,
+          "role": "common",
+          "common_families": 12,
+          "any_main_families": 12,
+          "discovery_RMS": 14.34267911557309,
+          "content_response_score": 0.09136900860418859,
+          "reference_group": "high",
+          "reference_frequency": 0.2469791666666666
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 11938,
+          "role": "responsive",
+          "common_families": 1,
+          "any_main_families": 7,
+          "discovery_RMS": 2.169983190147618,
+          "content_response_score": 1.148569601850588,
+          "reference_group": "middle",
+          "reference_frequency": 0.0014583333333333
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 11623,
+          "role": "responsive",
+          "common_families": 1,
+          "any_main_families": 6,
+          "discovery_RMS": 1.5199799054836824,
+          "content_response_score": 1.12154150215806,
+          "reference_group": "middle",
+          "reference_frequency": 0.0009895833333333
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 124,
+          "role": "responsive",
+          "common_families": 1,
+          "any_main_families": 6,
+          "discovery_RMS": 1.5931866982911997,
+          "content_response_score": 0.8820032821532843,
+          "reference_group": "high",
+          "reference_frequency": 0.001640625
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 24506,
+          "role": "responsive",
+          "common_families": 2,
+          "any_main_families": 8,
+          "discovery_RMS": 2.5335019024465333,
+          "content_response_score": 0.7616635641669165,
+          "reference_group": "zero",
+          "reference_frequency": 0.0
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 12429,
+          "role": "responsive",
+          "common_families": 5,
+          "any_main_families": 10,
+          "discovery_RMS": 2.7641953469318765,
+          "content_response_score": 0.7437063784331128,
+          "reference_group": "insufficient",
+          "reference_frequency": 0.0002083333333333
+        },
+        {
+          "site": "MLPIN_SAE",
+          "atom": 8066,
+          "role": "responsive",
+          "common_families": 5,
+          "any_main_families": 11,
+          "discovery_RMS": 4.271463675482496,
+          "content_response_score": 0.7014640491396132,
+          "reference_group": "high",
+          "reference_frequency": 0.317265625
+        }
+      ],
+      "insufficient_common": false
+    }
+  }
+}

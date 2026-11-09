@@ -1,0 +1,5 @@
+# 分析复现
+
+meeting_analysis_20261026.py只读原36条轨迹、原DEV和生成器源文本，生成统计与图；meeting_plot3_refine.py对固定90F点作一次可读性调整。meeting_mode_readout_20261026.py在sampling_lock.json锁定样本上读取9权重，已执行1152序列；复现需要原登记资产和既有依赖环境，不因交付自动再运行。meeting_deliver_20261026.py将结果整理到现有R06的本分析附录。
+
+analysis_plan.json、source_manifest.json、03_measurement_object_audit.json及representation_receipt.json保留对象、容差与边界。原始逐条大表/输入向量仍在执行侧，不放入Git轻量报告。没有权重、原始TEST或新训练产物。

@@ -1,0 +1,157 @@
+{
+  "task": "bounded_final_meeting_reading_audit",
+  "agent": "/root/mechanism_independent_audit",
+  "created_utc": "2026-10-11T18:08:07.605830+00:00",
+  "verdict": "PASS_WITH_RESEARCH_BOUNDARIES_PRESERVED",
+  "material_issues": [],
+  "required_fixes": [],
+  "scope_cn": "最终中文组会稿的推理、符号、图轴和决定性数值阅读审计。直接查看图3与图5。复用已完成的独立 CPU 数值审计，不重复实验、不访问 TEST、不改报告与冻结资料。",
+  "scientific_approval": "Unknown; researcher-owned",
+  "report": {
+    "path": "/data/250010109/Research_System/daily_research_reports/1012/meeting_report/a17_r02_mechanism_meeting_cn.md",
+    "sha256": "8713ea56ea6afb19a18577e55f3e989fd9a8402bc4e13bd677f206ec2a00fafc"
+  },
+  "figures_inspected": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/analysis/figures/03_matrix_interventions.png",
+      "sha256": "b5ec35112d6443de23a1a64fd5c811661104bb68fae6ca9ad17328f4bc2bc1fa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/analysis/figures/05_representation_bridge.png",
+      "sha256": "d1b68f051c7ada1731076240ebda0b951b9f01582f297c7845dc63ea34271866"
+    }
+  ],
+  "existing_audit_basis": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/independent_audit/comprehensive_audit.json",
+      "sha256": "fdb6f7f11a231849fb2c262ac3617492d6ef0ec7907f82665b707061994aa088"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/independent_audit/finite_outputs_audit.json",
+      "sha256": "cc58c12e3262c89ae954bed05b611d9166ede6aaf78b5b3ef843ed56309a051d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/independent_audit/finite_readouts_equal_seed_means.csv",
+      "sha256": "01904ddf6a8d9832158b0d176665224afb43bb1c56bc71a1914c6ce18f00600d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/independent_audit/representation_signed_response.csv",
+      "sha256": "870d47a9ac7b1f0977e918c107c892f60819fde260da924b18d16a5b772a5069"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/independent_audit/r02_endpoints_compact.csv",
+      "sha256": "32bc70953aeab435000692cd39e9a795d9d475b73ba373ce0c7d0b645e316af2"
+    }
+  ],
+  "checks": [
+    {
+      "id": "figure_3_axes_and_values",
+      "verdict": "PASS",
+      "report_lines": [
+        252,
+        254
+      ],
+      "finding_cn": "已直接查看实际 PNG。横轴为旧／新任务读数，纵轴为实际矩阵替换条件，色条与格内数值均为准确率百分比。240／1200 步两子图与已审计汇总相符。"
+    },
+    {
+      "id": "figure_5_response_sign_and_axes",
+      "verdict": "PASS",
+      "report_lines": [
+        335,
+        339
+      ],
+      "finding_cn": "已直接查看实际 PNG。左图横轴是四种权重组合而非训练时间，蓝线为 a1、红线为 a2；反转新任务的正确优势为 −a2，报告已明确红线变负表示新反转选择增强。右图纵轴为逐样本欧氏范数均值，不是预测贡献。"
+    },
+    {
+      "id": "response_margin_same_evidence",
+      "verdict": "PASS",
+      "report_lines": [
+        178,
+        178
+      ],
+      "finding_cn": "报告明确均衡两口令下旧平均端点优势等于 a1、新反转平均端点优势等于 −a2；未将同一组输出的重组当成独立第二份机制证据。"
+    },
+    {
+      "id": "four_corner_notation_consistency",
+      "verdict": "PASS",
+      "report_lines": [
+        305,
+        329
+      ],
+      "finding_cn": "最终稿采用第一下标 O、第二下标 QKV 读取向量：F00 旧，F10 插入 O，F01 回滚 O，F11 完整反转；与最终 Detailed 约定一致。交互公式和数值在该约定下自洽。"
+    },
+    {
+      "id": "functional_interaction_not_vector_cross_attribution",
+      "verdict": "PASS",
+      "report_lines": [
+        331,
+        339
+      ],
+      "finding_cn": "−8.366／+8.369 nat 是真实四条件函数读数的非加和量。报告保留下游非线性，未全部归因于 ΔWΔc，也未把三项范数解释为功能贡献或比例。"
+    },
+    {
+      "id": "interpolation_discrete_scope",
+      "verdict": "PASS",
+      "report_lines": [
+        267,
+        285
+      ],
+      "finding_cn": "报告限定 3 个续训顺序 × 2 个检查点 × 5 个尺度共 30 个离散点；0/30 八分项达标和最弱分项最高 13.5% 与既有审计一致。未扩张为整个连续区间，更明确未等同于降低学习率重训。"
+    },
+    {
+      "id": "strongest_rival_remains",
+      "verdict": "PASS",
+      "report_lines": [
+        107,
+        113
+      ],
+      "finding_cn": "反转起点能力低、缺旧监督及训练路径的解释仍明确未隔离。当前内部参数后果链被表述为可与该解释同时成立，未声称将其排除。"
+    },
+    {
+      "id": "rollback_insertion_inference_bound",
+      "verdict": "PASS",
+      "report_lines": [
+        221,
+        254
+      ],
+      "finding_cn": "全量单矩阵回滚恢复部分旧选择同时损失新选择，插入不能独立复现完整新规则；报告保留不同权重背景、未测两三矩阵组合及非可加贡献边界，未断言四矩阵均必要。"
+    },
+    {
+      "id": "shared_vs_split_utility_not_measured",
+      "verdict": "PASS",
+      "report_lines": [
+        347,
+        362
+      ],
+      "finding_cn": "联合监督仅作共享表达可行性证据。额外旧标签与新曝光不同已披露；未从遗忘、回滚或联合结果直接跳到分开净收益，后者明确需要参数／答案／计算预算比较。"
+    },
+    {
+      "id": "causal_level_and_audit_provenance",
+      "verdict": "PASS",
+      "report_lines": [
+        362,
+        404
+      ],
+      "finding_cn": "训练观察、权重有限替换、输出关系、未隔离优化路径及未测架构收益分开。独立审计未被写成第二次 GPU 全量执行，未保存逐条件快照的边界已披露。"
+    },
+    {
+      "id": "headline_and_table_number_consistency",
+      "verdict": "PASS",
+      "report_lines": [
+        129,
+        136
+      ],
+      "finding_cn": "R02 主表 100/0/99.25/99.83/99.67%、CE 与优势，D2 Q 回滚 48.54/57.04%、四格优势及 O 背景效应，均与本代理此前独立复算产物一致；本次只阅读核对，没有再次运行实验。"
+    }
+  ],
+  "nonblocking_clarity_notes_cn": [
+    "图5红线 a2 与表格新正确优势 −a2 的相反符号，正文和图注均已解释；口述展示时仍建议指着图再提醒一次，属于讲解注意点，不是数值错误。",
+    "结论中的“显著改变”由 100% 对 0% 的实际幅度支持；不应在口述中转述为独立模型统计显著性，因为三个顺序共用同一旧模型。"
+  ],
+  "remaining_open_bridges_cn": [
+    "新监督缺失旧标签及反转初始难度如何导致优化器选择本次路径，仍未被单独隔离。",
+    "未测两／三矩阵组合、采样点之间的其他插值值及真实小学习率训练。",
+    "尚未以资源匹配实验判断按模式分开模块的净收益。",
+    "共享模块或特定表征方向的独立功能命名尚未确立。"
+  ]
+}

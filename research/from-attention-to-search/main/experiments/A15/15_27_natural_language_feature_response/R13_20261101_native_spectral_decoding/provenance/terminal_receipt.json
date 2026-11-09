@@ -1,0 +1,20 @@
+{
+  "status": "NUMERIC_FORWARD_COMPLETE",
+  "time_utc": "2026-11-01T03:13:43.804302+00:00",
+  "positions": 737,
+  "documents": 180,
+  "conditions": 21,
+  "elapsed_seconds": 85.28764486312866,
+  "peak_GPU_bytes": 1387869184,
+  "reserved_GPU_bytes": 1468006400,
+  "device_used": [
+    0
+  ],
+  "profile": "5090-2-spot",
+  "training_updates": 0,
+  "model_forward_calls_smoke": 6,
+  "fresh_cache_forward_calls_this_attempt": 180,
+  "fresh_cache_documents": 180,
+  "cache_input": "data/fresh_h.npy",
+  "new_training": false
+}

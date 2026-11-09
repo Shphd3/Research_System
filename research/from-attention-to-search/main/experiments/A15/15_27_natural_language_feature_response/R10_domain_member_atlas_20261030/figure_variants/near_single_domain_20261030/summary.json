@@ -1,0 +1,217 @@
+{
+  "scope": "R10 main subset only; no forwards/training/newPCA",
+  "members": {
+    "math": {
+      "parent_main": 433,
+      "strict_discovery": 14,
+      "near95_discovery": 31,
+      "near95_retains_heldout": 19,
+      "strict_discovery_still_strict_heldout": 8,
+      "heldout_opposite_zero": 16,
+      "heldout_preferred_support_under5": 0
+    },
+    "biology": {
+      "parent_main": 527,
+      "strict_discovery": 15,
+      "near95_discovery": 24,
+      "near95_retains_heldout": 21,
+      "strict_discovery_still_strict_heldout": 13,
+      "heldout_opposite_zero": 18,
+      "heldout_preferred_support_under5": 1
+    }
+  },
+  "frequency": {
+    "math": {
+      "classified": 30,
+      "insufficient": 1,
+      "counts": [
+        9,
+        19,
+        2
+      ],
+      "DCLM_rate_median": 0.003997802734375,
+      "DCLM_rate_p10_p90": [
+        0.001068115234375,
+        0.008544921875
+      ]
+    },
+    "biology": {
+      "classified": 22,
+      "insufficient": 2,
+      "counts": [
+        12,
+        9,
+        1
+      ],
+      "DCLM_rate_median": 0.002166748046875,
+      "DCLM_rate_p10_p90": [
+        0.00039978027343750004,
+        0.00605621337890625
+      ]
+    }
+  },
+  "token_summary": {
+    "math": {
+      "frozen_members": 31,
+      "composition_members": 25,
+      "excluded_composition_support": 6,
+      "category_shares": {
+        "biology_associated": 0.002490842490842491,
+        "math_associated": 0.053849712757779125,
+        "other_or_low_support": 0.6118003636890728,
+        "shared_both_domains": 0.3318590810623057
+      },
+      "document_matched_category_shares": {
+        "biology_associated": 0.001125497197891742,
+        "math_associated": 0.05138629110306893,
+        "other_or_low_support": 0.5983108853195659,
+        "shared_both_domains": 0.34917732637947346
+      },
+      "high_events": 1194,
+      "members_with_any_high": 30,
+      "members_with_any_positive": 31,
+      "sensitivity_subsets": {
+        "strict_discovery": {
+          "all_members": 14,
+          "composition_members": 10,
+          "category_shares": {
+            "biology_associated": 0.002380952380952381,
+            "math_associated": 0.07305264258090863,
+            "other_or_low_support": 0.5659543306748267,
+            "shared_both_domains": 0.3586120743633124
+          }
+        },
+        "near95_heldout_check": {
+          "all_members": 19,
+          "composition_members": 15,
+          "category_shares": {
+            "biology_associated": 0.0,
+            "math_associated": 0.07734624135510255,
+            "other_or_low_support": 0.6661016871042871,
+            "shared_both_domains": 0.2565520715406103
+          }
+        },
+        "strict_heldout_check": {
+          "all_members": 8,
+          "composition_members": 6,
+          "category_shares": {
+            "biology_associated": 0.0,
+            "math_associated": 0.11568342049080454,
+            "other_or_low_support": 0.49564508867239926,
+            "shared_both_domains": 0.3886714908367962
+          }
+        }
+      },
+      "same_the_ID279_mean_fraction_high_all_members": {
+        "math": 0.0174723036819811,
+        "biology": 0.0001152073732718894
+      }
+    },
+    "biology": {
+      "frozen_members": 24,
+      "composition_members": 18,
+      "excluded_composition_support": 6,
+      "category_shares": {
+        "biology_associated": 0.10171551921731076,
+        "math_associated": 0.0012919896640826872,
+        "other_or_low_support": 0.5799498120018978,
+        "shared_both_domains": 0.31704267911670875
+      },
+      "document_matched_category_shares": {
+        "biology_associated": 0.023879583035309106,
+        "math_associated": 0.005552210016801811,
+        "other_or_low_support": 0.5884282899395924,
+        "shared_both_domains": 0.3821399170082967
+      },
+      "high_events": 853,
+      "members_with_any_high": 23,
+      "members_with_any_positive": 24,
+      "sensitivity_subsets": {
+        "strict_discovery": {
+          "all_members": 15,
+          "composition_members": 11,
+          "category_shares": {
+            "biology_associated": 0.10641845716472582,
+            "math_associated": 0.0021141649048625794,
+            "other_or_low_support": 0.5609857977265128,
+            "shared_both_domains": 0.3304815802038989
+          }
+        },
+        "near95_heldout_check": {
+          "all_members": 21,
+          "composition_members": 15,
+          "category_shares": {
+            "biology_associated": 0.08502158602373588,
+            "math_associated": 0.0015503875968992248,
+            "other_or_low_support": 0.5778747706229879,
+            "shared_both_domains": 0.33555325575637696
+          }
+        },
+        "strict_heldout_check": {
+          "all_members": 13,
+          "composition_members": 9,
+          "category_shares": {
+            "biology_associated": 0.12265959579392413,
+            "math_associated": 0.0025839793281653744,
+            "other_or_low_support": 0.5449085675916637,
+            "shared_both_domains": 0.3298478572862467
+          }
+        }
+      },
+      "same_the_ID279_mean_fraction_high_all_members": {
+        "math": 0.0,
+        "biology": 0.011116071428571427
+      }
+    }
+  },
+  "geometry": {
+    "strict": {
+      "math": {
+        "members": 14,
+        "head_mean": 0.26398185459304646,
+        "head_median": 0.28633843422322763,
+        "first256_mean": 0.49531400025636707
+      },
+      "biology": {
+        "members": 15,
+        "head_mean": 0.1693623281802881,
+        "head_median": 0.16557622652683168,
+        "first256_mean": 0.4185643134907316
+      },
+      "overlap_pc": 0.7471745045021381,
+      "overlap_band": 0.901275025146827
+    },
+    "near95": {
+      "math": {
+        "members": 31,
+        "head_mean": 0.20359774366720168,
+        "head_median": 0.13363107303169774,
+        "first256_mean": 0.4357024115751879,
+        "head_background95": [
+          0.1250398938304718,
+          0.1735323118817311
+        ]
+      },
+      "biology": {
+        "members": 24,
+        "head_mean": 0.17099573463501874,
+        "head_median": 0.15731994748786857,
+        "first256_mean": 0.4221074536007346,
+        "head_background95": [
+          0.13511298152242207,
+          0.20246795501114084
+        ]
+      },
+      "overlap_pc": 0.8302843989666661,
+      "overlap_band": 0.9562429954413993,
+      "overlap_pc_background95": [
+        0.8202875142421877,
+        0.8459130535245328
+      ]
+    }
+  },
+  "reference_documents": 254,
+  "reference_positions": 65536,
+  "zero_opposite_heldout_20doc_upper95": 0.13910834066826516,
+  "definition_warning": "observed panel selectivity, not global domain-exclusive knowledge; original heldout is exposed"
+}

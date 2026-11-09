@@ -1,0 +1,47 @@
+{
+  "schema": "a15_07_e01_curated_result_manifest_v1",
+  "status": "COMPLETED",
+  "scientific_result_status": "AWAITING_HUMAN_JUDGMENT",
+  "sources": {
+    "controlled_corrected": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e01_dual_track_heldout_spectrum/runs/formal-20260820T0820Z/postprocess_audit_001/controlled_corrected.json",
+      "sha256": "b7efb598bad29234079f590d14e29636c21472f0a0e550f19b0756c4101baf02"
+    },
+    "controlled_spectrum": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e01_dual_track_heldout_spectrum/runs/formal-20260820T0820Z/controlled/controlled_spectrum.csv",
+      "sha256": "cca89ada678a1886ddc4a7129e8383f0481d30051124a330654a23f4e61b8a7e"
+    },
+    "natural_gate_corrected": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e01_dual_track_heldout_spectrum/runs/formal-20260820T0820Z/postprocess_audit_001/natural_corrected.json",
+      "sha256": "a0ab4517621ea3ede7453bd8d5a556500d0d22aec4922e9f20fa24c385614834"
+    },
+    "natural_rank_final": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e01_dual_track_heldout_spectrum/runs/conditional-natural-20260820T1700Z/natural_rank/natural_rank_result.json",
+      "sha256": "62f86cbb81a20ebb6afe7e093bc20fe46488869ba695c975ea7a67a37b324255"
+    }
+  },
+  "figures": [
+    "fig1_controlled_confirmation.png",
+    "fig2_controlled_spectral_localization.png",
+    "fig3_natural_entry_rank_geometry.png",
+    "fig4_natural_spectral_location.png"
+  ],
+  "tables": [
+    "conditional_natural_final_status.json",
+    "controlled_h1_corrected.csv",
+    "controlled_spectrum_block28.csv",
+    "eligible_result_status.json",
+    "formal_run_original_status_superseded.json",
+    "natural_entry_corrected.csv",
+    "natural_rank_curves.csv",
+    "natural_spectral_location.csv",
+    "natural_task_overlap.csv",
+    "remote_job_receipts.json"
+  ],
+  "notes": [
+    "Controlled figures use Amendment 001 corrected simultaneous intervals.",
+    "Natural gate uses the corrected block-24 entry result; block 28 is numerically ineligible.",
+    "Natural rank uses the Amendment 005 final rank-3 truncation and typed INSUFFICIENT_EVIDENCE verdict.",
+    "Natural rank curves display point estimates only because registered 90%-retention LCB crossings do not exist."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "budget": {
+    "checks": 2342,
+    "all_pass": true,
+    "new_forwards": 517,
+    "purposes": {
+      "check_R05_native_cache": 2,
+      "check_new_baseline": 1,
+      "check_new_replay": 1,
+      "check_visible_prefix": 1,
+      "near_discovery": 192,
+      "near_heldout": 192,
+      "far": 128
+    },
+    "maximum": 528,
+    "remaining": 11,
+    "old_results_reclassified": false,
+    "training_updates": 0,
+    "new_Attention": 0,
+    "new_layer_analysis": 0,
+    "resource_requests": 0,
+    "sealed_TEST_reads": 0
+  },
+  "counts": {
+    "SAE": {
+      "new": 32,
+      "tested": 33,
+      "semantic": 26,
+      "lexical": 0,
+      "basic": 28,
+      "unique_new_coordinates": 30
+    },
+    "CC": {
+      "new": 32,
+      "tested": 33,
+      "semantic": 26,
+      "lexical": 0,
+      "basic": 29,
+      "unique_new_coordinates": 32
+    }
+  },
+  "far_counts": {
+    "SAE": {
+      "objects": 26,
+      "retained_E": 25,
+      "near_minus_far": 2
+    },
+    "CC": {
+      "objects": 26,
+      "retained_E": 26,
+      "near_minus_far": 8
+    }
+  },
+  "near_objects": 66,
+  "near_semantic_qualified": 52,
+  "far_status": "ELIGIBLE_CONDITIONAL_EXPLORATORY",
+  "old_results_reclassified": false,
+  "human_mechanism_judgment": "Unknown"
+}

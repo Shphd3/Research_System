@@ -1,0 +1,105 @@
+{
+  "experiment_id": "frequency_composition_common_path_20261020_20261019T164834Z",
+  "at_utc": "2026-10-20T02:17:44.851595+00:00",
+  "task_state": "COMPLETE",
+  "question_state": "AWAIT_RESEARCHER_DISCUSSION",
+  "design_state": "FROZEN_EXECUTION_AUTHORIZED",
+  "result_state": "BOUNDED_REGISTERED_HYPOTHESIS_NOT_SUPPORTED",
+  "researcher_mechanism_judgment": "Unknown",
+  "models_completed": 8,
+  "models_required": 8,
+  "conditions": [
+    "T_F",
+    "T_H",
+    "R_F",
+    "R_H"
+  ],
+  "paired_seeds": [
+    11,
+    22
+  ],
+  "per_model_updates": 168,
+  "per_model_valid_answer_targets": 85548,
+  "common_milestones": [
+    0,
+    42,
+    84,
+    126,
+    168
+  ],
+  "initial_equivalence_and_resume": "actual smoke logits maxdiff0 + next-update byte-exact; formal8 step0 arrays match sharedBase; formal full resume saved but NOT_REPLAYED",
+  "DEV": {
+    "dialogues": 128,
+    "positions": 10340,
+    "B1_fixed": 1694,
+    "B1_estimable": 838,
+    "B1_absent_NA": 856,
+    "B1_support_at_least20": 0,
+    "low_union_positions": 1701,
+    "Delta_T_macro": 0.0009894483801958039,
+    "interaction_macro": 0.0024613600333099643,
+    "range_qualification": "predefined dialogue-percentile ranges; estimable feature set changes; not guaranteed fixed838 coverage"
+  },
+  "actual_cost": {
+    "original_remote_active_seconds": 109.452869893983,
+    "recovery_remote_active_seconds": 119.48069478571415,
+    "cumulative_remote_active_seconds": 228.9335658326745,
+    "remote_active_limit_seconds": 2100,
+    "run_physical_bytes_before_final_document_delivery": 5675228041,
+    "new_disk_limit_bytes": 25769803776,
+    "aggregate_worker_peak_RSS_bytes": 7179644928,
+    "RSS_limit_bytes": 68719476736,
+    "supervisor_RSS_not_in_worker_peak": true,
+    "peak_GPU_allocated_bytes_per_worker": 1075949568,
+    "GPU_allocated_limit_bytes": 17179869184,
+    "calendar_wall_limit": "original continuous120minute window exceeded by user/conversation interruption; disclosed. Cumulative remote compute is measured; complete LLM/edit active-wall timing not exactly instrumented."
+  },
+  "jobs": [
+    {
+      "id": "pt-gzle2ypd",
+      "state": "FAILED",
+      "cause": "AFS blocking flock EAGAIN; TF2 preserved, others no formal updates"
+    },
+    {
+      "id": "pt-4kefocs4",
+      "state": "SUCCEEDED",
+      "cause": null
+    }
+  ],
+  "artifacts": {
+    "figures": 5,
+    "PNG_and_PDF": true,
+    "source_tables": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables",
+    "feature_text_display_slots_available": 50,
+    "feature_text_slots_missing": 14,
+    "unique_text_independence": "not claimed; random/high cases can repeat positions",
+    "checkpoints_registered": 8,
+    "smoke_registered": 1,
+    "analysis_registered": 1,
+    "asset_ids": [
+      "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_f_seed11",
+      "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_f_seed22",
+      "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_h_seed11",
+      "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_t_h_seed22",
+      "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_r_f_seed11",
+      "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_r_f_seed22",
+      "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_r_h_seed11",
+      "checkpoint_family_crosscoder_frequency_composition_20261019t164834z_r_h_seed22",
+      "checkpoint_crosscoder_frequency_composition_smoke_20261019t164834z",
+      "analysis_crosscoder_frequency_composition_common_path_20261019t164834z"
+    ],
+    "asset_access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-20_020552_frequency_composition_outputs.json"
+  },
+  "repairs": [
+    "bounded blocking-lock retry only; unchanged frozen trainer/config",
+    "supervisor verifies final receipt COMPLETE+config/code SHA before COMPLETE"
+  ],
+  "not_run": [
+    "additional parameter/LR scans",
+    "fixed-weight expert functional replacement proposed as next question",
+    "new Base/CrossCoder training",
+    "independent layerwise extraction",
+    "commit/push/external sync"
+  ],
+  "validation": "delivery_validation.json; generated immediately after this receipt"
+}

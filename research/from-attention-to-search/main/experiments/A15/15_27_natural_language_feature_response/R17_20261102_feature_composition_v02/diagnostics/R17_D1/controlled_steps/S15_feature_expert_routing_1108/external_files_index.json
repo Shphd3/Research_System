@@ -1,0 +1,49 @@
+{
+  "UTC": "2026-11-08T06:19:55.125912+00:00",
+  "inputs": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000/state.pt",
+      "bytes": 6096214870,
+      "sha256": "3e392157d5dd9a5cb1f3190dc7ebbd385baaa02d90ed4a9e4f5ac72997e5c795"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/formal/sae_full_final.pt",
+      "bytes": 245890184,
+      "sha256": "36b45cd215eee8af2a800d9d59737010ce06c56dcd4cacec44f590db058d9d05"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/data/panel.jsonl",
+      "bytes": 9548720,
+      "sha256": "02d94efa361aa2592a2ecc74a66854ddf58c385899379d7ea1bf35b8716e20ae"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/results/confirmation_scores.jsonl",
+      "bytes": 2260327,
+      "sha256": "d892e3204c3296e383ce0db5f5e1023ccc50371ffaa4293b5c883d6897890c8d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/data/development_colon_z_csr.npz",
+      "bytes": 307311,
+      "sha256": "a3ec7d7c8f971e25a97c90d816a2cc749042a3cd35c78f24c111a45aaecbf4eb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/data/questions_colon_z_csr.npz",
+      "bytes": 894457,
+      "sha256": "555defcc4418cd51bc7728447d5ad6c419f0f89569233bee0e9274b9a6e5a438"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108/data/general_colon_z_csr.npz",
+      "bytes": 983899,
+      "sha256": "25f18752b910b33e8d81360ab27508a19902de2c1c5681c77a846f873b676c5b"
+    },
+    {
+      "path": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+      "bytes": 7031645,
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    }
+  ],
+  "model_weights_in_delivery": false,
+  "full_hidden_in_delivery": false,
+  "scientific_owner": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S15_feature_expert_routing_1108",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S15_feature_expert_routing_1108"
+}

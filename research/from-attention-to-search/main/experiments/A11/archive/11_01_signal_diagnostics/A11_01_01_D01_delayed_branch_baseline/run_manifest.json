@@ -1,0 +1,26 @@
+{
+  "experiment_id": "A11_01_k2_branch_delayed_next_two",
+  "run_name": "a11_01_k2_branch_delayed_next_two_remote_20260706_1708",
+  "config_path": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/configs/a11_01_k2_branch_delayed_next_two.json",
+  "output_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_01_k2_branch_delayed_next_two/a11_01_k2_branch_delayed_next_two_remote_20260706_1708",
+  "device": "cuda",
+  "torch_version": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "seeds": [
+    971,
+    972,
+    973
+  ],
+  "conditions": [
+    "direct_heads_fixed_next_one",
+    "direct_heads_next_two"
+  ],
+  "primary_metric": "offset2_single_prefix_accuracy",
+  "tables": {
+    "per_seed_metrics": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_01_k2_branch_delayed_next_two/a11_01_k2_branch_delayed_next_two_remote_20260706_1708/tables/per_seed_metrics.csv",
+    "condition_summary": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_01_k2_branch_delayed_next_two/a11_01_k2_branch_delayed_next_two_remote_20260706_1708/tables/condition_summary.csv",
+    "branch_probabilities": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_01_k2_branch_delayed_next_two/a11_01_k2_branch_delayed_next_two_remote_20260706_1708/tables/branch_probabilities.csv",
+    "branch_swap": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_01_k2_branch_delayed_next_two/a11_01_k2_branch_delayed_next_two_remote_20260706_1708/tables/branch_swap.csv",
+    "training_history": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_01_k2_branch_delayed_next_two/a11_01_k2_branch_delayed_next_two_remote_20260706_1708/tables/training_history.csv",
+    "sample_table": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a11_01_k2_branch_delayed_next_two/a11_01_k2_branch_delayed_next_two_remote_20260706_1708/tables/sample_table.csv"
+  }
+}

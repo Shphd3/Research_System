@@ -1,0 +1,75 @@
+{
+  "figure1_weight_top1": {
+    "question": "Dense weights: magnitude and first-direction changes are different",
+    "sources": {
+      "pair_metrics.csv": "1ac819361f1e006490247b6d3def215e25ac494874f6102e17d38c2ea674cca0"
+    },
+    "rows": "all57modules,no selected examples",
+    "columns": "11actual adjacent intervals;right endpoint labels,see token_gap_B",
+    "metrics": [
+      {
+        "column": "s1_relative_change_symmetric",
+        "side": "input",
+        "meaning": "Largest singular-value change (%)",
+        "color_range": [
+          0,
+          30
+        ]
+      },
+      {
+        "column": "pc1_angle_deg",
+        "side": "input",
+        "meaning": "First input direction angle (degrees)",
+        "color_range": [
+          0,
+          90
+        ]
+      },
+      {
+        "column": "pc1_angle_deg",
+        "side": "output",
+        "meaning": "First output direction angle (degrees)",
+        "color_range": [
+          0,
+          90
+        ]
+      }
+    ],
+    "uncertainty": "No text-samplingCI;full saved matrices,numerical guards and single-run boundary"
+  },
+  "figure2_weight_top64": {
+    "question": "Dense weights: leading64 subspace changes in native coordinates",
+    "sources": {
+      "pair_metrics.csv": "1ac819361f1e006490247b6d3def215e25ac494874f6102e17d38c2ea674cca0"
+    },
+    "rows": "all57modules,no selected examples",
+    "columns": "11actual adjacent intervals;right endpoint labels,see token_gap_B",
+    "metrics": [
+      {
+        "column": "top64_projection_distance",
+        "side": "input",
+        "meaning": "Top64 input-space distance",
+        "color_range": [
+          0,
+          1
+        ]
+      },
+      {
+        "column": "top64_projection_distance",
+        "side": "output",
+        "meaning": "Top64 output-space distance",
+        "color_range": [
+          0,
+          1
+        ]
+      }
+    ],
+    "uncertainty": "No text-samplingCI;full saved matrices,numerical guards and single-run boundary"
+  },
+  "figureS_weight_s1_curves": {
+    "source_sha256": "835ceace7c54023145af47b75edbefdf21de2cb0a029c0f1c4405dd646be1262",
+    "scope": "all57modules across8type panels;colors distinguish block,not statistical replicates",
+    "x": "actual cumulative trainingB",
+    "y": "s1 uncentered native weight,each panel independent scale"
+  }
+}

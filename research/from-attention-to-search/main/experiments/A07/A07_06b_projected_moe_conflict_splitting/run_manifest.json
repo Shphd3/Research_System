@@ -1,0 +1,123 @@
+{
+  "run_name": "a07_06_conflict_projected_moe_full_20260628_1",
+  "result_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a07_06_conflict_projected_moe_audit/a07_06_conflict_projected_moe_full_20260628_1",
+  "curated_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07/A07_06b_projected_moe_conflict_splitting",
+  "config": {
+    "seed": 20260628,
+    "seeds": [
+      20260628,
+      20260629,
+      20260630,
+      20260631,
+      20260701,
+      20260702,
+      20260703,
+      20260704
+    ],
+    "conditions": [
+      "dense_shared",
+      "random_top1_moe",
+      "centered_unsup_split_moe",
+      "common_projected_router_moe",
+      "conflict_projected_router_moe",
+      "conflict_projected_router_update_moe",
+      "oracle_split_moe"
+    ],
+    "data": {
+      "input_dim": 24,
+      "train_common": 4096,
+      "train_rare": 512,
+      "eval_common": 1024,
+      "eval_rare": 1024,
+      "smoke_train_common": 768,
+      "smoke_train_rare": 128,
+      "smoke_eval_common": 256,
+      "smoke_eval_rare": 256,
+      "common_strength": 2.6,
+      "shared_axis_strength": 0.7,
+      "rare_marker_strength": 0.55,
+      "nuisance_strength": 0.35,
+      "noise_std": 0.45
+    },
+    "model": {
+      "num_experts": 4,
+      "router_temperature": 1.0
+    },
+    "training": {
+      "steps": 520,
+      "smoke_steps": 90,
+      "batch_size": 256,
+      "lr": 0.03,
+      "weight_decay": 0.0001,
+      "load_balance_weight": 0.015,
+      "eval_batch_size": 2048
+    },
+    "projector": {
+      "warmup_steps": 90,
+      "smoke_warmup_steps": 30,
+      "batch_size": 256,
+      "num_batches": 24,
+      "smoke_num_batches": 8,
+      "energy_threshold": 0.9,
+      "max_rank": 4,
+      "random_control_count": 4
+    },
+    "method": {
+      "kmeans_steps": 40,
+      "kmeans_restarts": 8,
+      "projection_strength": 0.55,
+      "confidence_threshold": 0.9,
+      "common_gate_floor": 0.1,
+      "adam_beta1": 0.9,
+      "adam_beta2": 0.999,
+      "adam_eps": 1e-08
+    },
+    "thresholds": {
+      "conflict_present_min": 0.05,
+      "conflict_reduction_min": 0.02,
+      "rare_loss_improvement_min": 0.02,
+      "common_loss_regression_max": 0.05,
+      "dense_rare_loss_gap_tolerance": 0.02,
+      "rare_conflict_fraction_min": 0.15,
+      "rare_conflict_control_ratio_min": 1.5,
+      "projector_stability_min": 0.45,
+      "load_max_warn": 0.85
+    },
+    "output": {
+      "result_dir": "active/synthetic_data_understanding/results/a07_06_conflict_projected_moe_audit",
+      "research_experiment_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07/A07_06b_projected_moe_conflict_splitting"
+    }
+  },
+  "seeds": [
+    20260628,
+    20260629,
+    20260630,
+    20260631,
+    20260701,
+    20260702,
+    20260703,
+    20260704
+  ],
+  "decision": {
+    "run_name": "a07_06_conflict_projected_moe_full_20260628_1",
+    "method_condition": "conflict_projected_router_update_moe",
+    "rare_conflict_subspace_fraction_raw": 0.7933895289897919,
+    "rare_conflict_subspace_fraction_adam": 0.1690281732007861,
+    "raw_control_ratio": 7.853539455535378,
+    "projector_stability_raw": 0.3308941423892975,
+    "projector_stability_adam": 0.7327465638518333,
+    "delta_conflict_vs_random_top1": 0.0036494839125111866,
+    "delta_conflict_vs_centered": 0.0010038221251065238,
+    "rare_loss_improvement_vs_random_top1": 0.2847524881362915,
+    "rare_loss_improvement_vs_centered": 0.2154942750930786,
+    "rare_loss_margin_vs_dense": -0.1537630409002304,
+    "common_loss_regression_vs_random_top1": 0.029178368858993053,
+    "passes_diagnostic_gate": false,
+    "passes_conflict_reduction": false,
+    "passes_rare_loss": true,
+    "passes_common_guard": true,
+    "passes_dense_boundary": true,
+    "anchor_decision": "weakened_or_insufficient"
+  },
+  "note": "A07_06 conflict-projected MoE audit; controlled surface only."
+}

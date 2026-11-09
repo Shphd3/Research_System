@@ -1,0 +1,295 @@
+{
+  "schema": "R03_posthoc_target_detail_figures_v1",
+  "time_utc": "2026-10-27T01:58:59.696623+00:00",
+  "authorization": "root explicitly requested supplementary illustration; originals preserved; no new experiment",
+  "model_forwards": 0,
+  "scientific_refits": 0,
+  "renderer_sha256": "a1fbc4ff2235726c72a4912a81958745b7b9909aa20618287e0b9c419236ebbd",
+  "helper_renderer_sha256": "eaae35e5abfaeea9601f3fe4bd5efb125af585ac10dc28d852ad2868d2ada12d",
+  "source_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/decoder_geometry.npz": "15727364c71be7786cdb06d0af64d24f16353ae761e320fd160419e1a34ed8b0",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/feature_frequency.npz": "f345204412633144a7f1af36668cb3e2a98dbcaf03ef66f43ce3ace40c916c7c",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/split_manifest.json": "372cbbb82ed0bd7433b377b637a27c27f0b607224a2eec90549339c76f909c35",
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/graphs/raw_edges.npz": "e017e5d43235f4ed74691e2afc4ca003387e1ac96dee76de1f635ecade5806e1"
+  },
+  "figures": [
+    {
+      "case_id": "S01",
+      "posthoc_illustration_only": true,
+      "selection_rule": "top12 pooled maximum native contribution at the fixed A/B far final targets only",
+      "scientific_statistics_or_clusters_changed": false,
+      "original_all_token_pooled_figures_preserved": true,
+      "display_feature_ids": [
+        8060,
+        516,
+        5913,
+        232,
+        1642,
+        13964,
+        2920,
+        14757,
+        7388,
+        2794,
+        12872,
+        4932
+      ],
+      "target_A_native_values": [
+        121.63455227607756,
+        113.33263170627106,
+        79.57091796083841,
+        102.9883254287779,
+        84.44873916981578,
+        95.3498266335555,
+        79.0312367085935,
+        78.05400917309817,
+        73.8966126275418,
+        73.09052494082061,
+        71.1228946945339,
+        70.62341255677711
+      ],
+      "target_B_native_values": [
+        124.5997343420413,
+        99.200302443478,
+        105.42667337937746,
+        104.15122158508893,
+        95.82004246704855,
+        69.61547269262155,
+        74.47170883460058,
+        72.99446460980471,
+        63.569251312052984,
+        73.6881232551059,
+        69.49462359162862,
+        67.15578264726173
+      ],
+      "largest_target_changes": [
+        {
+          "feature_id": 5913,
+          "A_native": 79.57091796083841,
+          "B_native": 105.42667337937746
+        },
+        {
+          "feature_id": 13964,
+          "A_native": 95.3498266335555,
+          "B_native": 69.61547269262155
+        },
+        {
+          "feature_id": 516,
+          "A_native": 113.33263170627106,
+          "B_native": 99.200302443478
+        }
+      ],
+      "changed_target_features": 12,
+      "full_target_contribution_cosine": 0.921619419947947,
+      "planned_candidate_margins": [
+        5.1875,
+        0.5625
+      ],
+      "both_candidates_aligned": true,
+      "target_native_color_max": 124.5997343420413,
+      "log1p_transform": true,
+      "saturated_token_cells_A_B": [
+        99,
+        96
+      ],
+      "same_scale_A_B": true,
+      "snapshots": [
+        {
+          "active_nodes": 235,
+          "original_O_induced_edges": 2228,
+          "drawn_edges": 300,
+          "edge_selection": "lexicographically first(A,u),maximum300; display truncation only",
+          "all_edges_retained_in_original_source": true,
+          "layout": "global circle angle2pi*featureID/16384,not a semantic hierarchy",
+          "variant": "A",
+          "position": 33
+        },
+        {
+          "active_nodes": 384,
+          "original_O_induced_edges": 5699,
+          "drawn_edges": 300,
+          "edge_selection": "lexicographically first(A,u),maximum300; display truncation only",
+          "all_edges_retained_in_original_source": true,
+          "layout": "global circle angle2pi*featureID/16384,not a semantic hierarchy",
+          "variant": "A",
+          "position": 84
+        },
+        {
+          "active_nodes": 241,
+          "original_O_induced_edges": 2270,
+          "drawn_edges": 300,
+          "edge_selection": "lexicographically first(A,u),maximum300; display truncation only",
+          "all_edges_retained_in_original_source": true,
+          "layout": "global circle angle2pi*featureID/16384,not a semantic hierarchy",
+          "variant": "B",
+          "position": 33
+        },
+        {
+          "active_nodes": 399,
+          "original_O_induced_edges": 6052,
+          "drawn_edges": 300,
+          "edge_selection": "lexicographically first(A,u),maximum300; display truncation only",
+          "all_edges_retained_in_original_source": true,
+          "layout": "global circle angle2pi*featureID/16384,not a semantic hierarchy",
+          "variant": "B",
+          "position": 84
+        }
+      ],
+      "files": [
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_target_detail.png",
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_target_detail.pdf"
+      ],
+      "input_hashes": {
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_A_far.npz": "ad09cae2f8a4b141e7047e1d268c42d15152440bdd1e324aefa4cd2745ce84dd",
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_B_far.npz": "1175a7337477ed22d6d7df3f4fb197d04934d7ed04e57af3ca80a3152b210e01"
+      },
+      "png_sha256": "60ca1af5c2d9b21e14bb51fcf843d53c8a52fd919bc301967bb9df9b28fab763",
+      "pdf_sha256": "f9ca0d35ca2318589e07fe1bcd9f25d842e43adc7a7f5fc47941b335b076f727"
+    },
+    {
+      "case_id": "R01",
+      "posthoc_illustration_only": true,
+      "selection_rule": "top12 pooled maximum native contribution at the fixed A/B far final targets only",
+      "scientific_statistics_or_clusters_changed": false,
+      "original_all_token_pooled_figures_preserved": true,
+      "display_feature_ids": [
+        8060,
+        516,
+        13964,
+        7415,
+        359,
+        5913,
+        3389,
+        10985,
+        7388,
+        14198,
+        7636,
+        4176
+      ],
+      "target_A_native_values": [
+        187.98050100201635,
+        154.2584306439494,
+        135.76770766414484,
+        90.50207075885055,
+        78.87972413009265,
+        75.70029589219484,
+        73.40584802088142,
+        71.00487631395663,
+        69.9847333413718,
+        70.7666499454017,
+        54.41182204927827,
+        52.72649190445918
+      ],
+      "target_B_native_values": [
+        189.46309203499823,
+        156.04168985692013,
+        135.76770766414484,
+        92.27855629397527,
+        78.87972413009265,
+        75.39064612670336,
+        73.83174114879967,
+        71.6130662544092,
+        70.9235843700526,
+        70.7666499454017,
+        55.34386822428132,
+        53.566740727625074
+      ],
+      "largest_target_changes": [
+        {
+          "feature_id": 516,
+          "A_native": 154.2584306439494,
+          "B_native": 156.04168985692013
+        },
+        {
+          "feature_id": 7415,
+          "A_native": 90.50207075885055,
+          "B_native": 92.27855629397527
+        },
+        {
+          "feature_id": 8060,
+          "A_native": 187.98050100201635,
+          "B_native": 189.46309203499823
+        }
+      ],
+      "changed_target_features": 9,
+      "full_target_contribution_cosine": 0.996552505491861,
+      "planned_candidate_margins": [
+        0.875,
+        -0.875
+      ],
+      "both_candidates_aligned": false,
+      "target_native_color_max": 189.46309203499823,
+      "log1p_transform": true,
+      "saturated_token_cells_A_B": [
+        14,
+        14
+      ],
+      "same_scale_A_B": true,
+      "snapshots": [
+        {
+          "active_nodes": 250,
+          "original_O_induced_edges": 2353,
+          "drawn_edges": 300,
+          "edge_selection": "lexicographically first(A,u),maximum300; display truncation only",
+          "all_edges_retained_in_original_source": true,
+          "layout": "global circle angle2pi*featureID/16384,not a semantic hierarchy",
+          "variant": "A",
+          "position": 30
+        },
+        {
+          "active_nodes": 282,
+          "original_O_induced_edges": 2749,
+          "drawn_edges": 300,
+          "edge_selection": "lexicographically first(A,u),maximum300; display truncation only",
+          "all_edges_retained_in_original_source": true,
+          "layout": "global circle angle2pi*featureID/16384,not a semantic hierarchy",
+          "variant": "A",
+          "position": 82
+        },
+        {
+          "active_nodes": 252,
+          "original_O_induced_edges": 2365,
+          "drawn_edges": 300,
+          "edge_selection": "lexicographically first(A,u),maximum300; display truncation only",
+          "all_edges_retained_in_original_source": true,
+          "layout": "global circle angle2pi*featureID/16384,not a semantic hierarchy",
+          "variant": "B",
+          "position": 30
+        },
+        {
+          "active_nodes": 285,
+          "original_O_induced_edges": 2785,
+          "drawn_edges": 300,
+          "edge_selection": "lexicographically first(A,u),maximum300; display truncation only",
+          "all_edges_retained_in_original_source": true,
+          "layout": "global circle angle2pi*featureID/16384,not a semantic hierarchy",
+          "variant": "B",
+          "position": 82
+        }
+      ],
+      "files": [
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_target_detail.png",
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_target_detail.pdf"
+      ],
+      "input_hashes": {
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_A_far.npz": "1f18b9d19fb72e70592ff54ed4461332d9d61d130d0bb2dba1924d3b60831b0d",
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_B_far.npz": "f5a8e1f9a5159d67259738027b2be711c1eb1040401cd70cd3137c4b86394561"
+      },
+      "png_sha256": "4462650d4c886bcf6a82f04d90ad22d8e80ad802a3c040862ea15add680263f4",
+      "pdf_sha256": "8ec94b2cec5497e1d10f586390d4d0c1fed04faff951cba76452a0c73242bf43"
+    }
+  ],
+  "visual_inspection": "PASS_ACTUAL_PNGS_VIEWED; target values visible, original pooled-max figures preserved, posthoc scope displayed",
+  "visual_review_time_utc": "2026-10-27T02:00:53.140057+00:00",
+  "original_pooled_max_pngs_unchanged": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2a_sense_tokens.png",
+      "sha256": "1bf2097e9f87a2396d578e1afc6cea578b24599c37584c186efef88a306ca133",
+      "unchanged": true
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/figures/figure2b_person_tokens.png",
+      "sha256": "8ef75f5ebf7feb9c9beba3c1e7936a20b30671a46267ed9e96c4b51584bdcb13",
+      "unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Top32 member-turnover frequency audit (S11/S13 reused data)
+
+Scope: explicitly authorized cache-only audit and exploration, under existing A15_27_06 member-composition owner. Reuse completed shared-layering results unchanged. First verify existing nonshared count identities, then audit S11 original16 explicit incidence-channel verdicts and explain their composition. No new text, forward, model/SAE/router training, statistical readout, joint model, functional intervention or new null run. Scientific acceptance/closure Unknown.
+
+All S11/S13 DEV and CONF outputs are exposed historical data. Reuse original splits; never call this a new blind confirmation. Two dictionaries are independent; both reference axes remain separate. Native Qwen3-0.6B Base/block27/30000/ReLU/Top32/final Description: colon definitions unchanged. S11 DEV32/CONF64 families; S13 DEV24/CONF48 frames in8/16 scene clusters. Four original domains are S11 primary, eight domains are S13 exploration. All four wordings retain original behavior eligibility and no failed text is removed.
+
+## Preserved S11 estimand
+
+For each actual ordered pair A,B and feature j: d_j=mean_DEV(b_Bj-b_Aj), T=sum|d_j|, w_j=|d_j|/T, s_j=sign(d_j), b=1(native z>0). Use saved S11 weights/signs verbatim and independently check against DEV counts. Zero T gives all-zero weights and unavailable weighted profiles, never a replacement list. S13 uses the exact same arithmetic on its original DEV explicit rows; this is a new exploratory application, not its previous graph/readout selection.
+
+For each CONF family f, X_fj=|b_Bfj-b_Afj|, mass M_f=sum w_j X_fj. If M_f>0, alpha_fj=w_j X_fj/M_f and m_f=sum alpha_fj p_ref,j. M_f=0 gives missing m_f, not0. R_f=sum w_j s_j(b_Bfj-b_Afj) separately checks original directional replication. Reversed events remain in X and in weighted frequency, while contributing negatively to R. Mean profiles average families/clusters equally, not by M_f. Thus nonshared frequency is not raw symmetric-difference frequency nor proof every weighted feature is stable.
+
+Original S11 coarse-minus-fine means, joint reference/family intervals, Holm24 corrections, directional Holm16 gates, support/mass/behavior rules and16labels are copied byte-faithfully as historical results. Recompute point values only for implementation audit; tolerance1e-8 because original reference p was float32. No replacement verdict or recreated joint intervals. Original within-family weighted quartiles are inverse weighted empirical CDF with integer DEV net-count weights to avoid float-boundary artifacts.
+
+## New explanatory tables (not replacement tests)
+
+For all42 S11 and164 S13 real pairs, four wordings and two sites: preserve each frame's A_only/B_only IDs and positive-side raw z; aggregate A/B counts, DEV delta/weight/sign, CONF forward/reverse/discordant counts, delta and scene stability. Main pair comparisons use old fixed parent blocks. Other direct parents and all cross-parent child pairs are separate controls; a child-mixture baseline averages four actual cross-child profiles, never a support union.
+
+Export T, number positive weights, DEV effective size1/sum w², CONF M_f distribution/zero families, each frame effective active size1/sum alpha², mean R/negative families, and supported-reference mass. Feature contribution is K_j=mean valid-frame alpha_fj, with each scene equal; mean profile=sum K_j p_j. Export K, K*p, centered K*(p-mean), and direction. Low-frequency members can dominate K while contributing little K*p, so do not rank only numerator contributions. For main pairs compute exact leave-one-feature profile sensitivity (familywise renormalization, zero outcomes retained), fixed DEV top1/top3 removal sensitivity without refitting, and whole-unit deletion sensitivity. These are explanatory, not newly selected tests.
+
+Main new distribution: continuous p/count/6000 and weighted empirical CDF, inverse-CDF quartiles within each frame then equal-unit averages. Auxiliary bins reuse the previous independently defined supported-reference dictionary thirds. count0 is unobserved,1–4 insufficient; never rename them low. Per-wording metrics remain separate. Raw symmetric-difference equal-member profiles are a clearly separate sensitivity.
+
+Stable-bias candidate sensitivity is DEV-fixed: |d|>=.25, discordant support>=ceil(.25*Ndev), forward/discordant>=.8, and positive signed mean in>=half DEV family/scene units. Restrict original w to this fixed mask and renormalize once on DEV. It is not a change to the S11 unthresholded primary. In CONF describe the same IDs: oriented delta>=.25, discordant>=ceil(.25*Nconf), forward fraction>=.8, and whole-unit delta95%CI lower>0 gives descriptive same-direction coverage. No CONF re-selection of distribution weights, no featurewise significance claim. Export failures, reversals and coverage deficits. Old aggregate directional R does not establish each feature's stability.
+
+## Uncertainty, controls and examples
+
+New descriptive intervals:2000 paired whole units, seed2026110617. S11 unit=original family; no verified scene assignment exists, so do not invent independent clusters; record this limitation. S13 unit=16 scene clusters, shared wordings/pairs resampled together. Reference frequencies are fixed for new intervals, unlike original S11 joint intervals. No new p-values/old-state changes. All groups, not only successful ones, retained.
+
+Category coverage: reuse previous S13 feature-label rates/stable coverage where available, with absent label rows=0; S11 derive rates from original12 balanced labels. Each label has equal family count. Report fine-label balanced marginal frequency as a sensitivity; it changes the reference population, does not replace independent Q/G or match away the frequency target. For Q additionally read three already saved source-specific frequencies, equal source weights. Show coverage alongside frequency, not as semantic identity.
+
+Cases fixed before new results: originalS11 first CONF F001 for MLP animal/vehicle and cat/dog (support), MLP animal/vehicle and car/bicycle (opposite), MLP fruit/furniture and chair/sofa (second opposite). Feature examples: DEV weight top3 per actual pair, reference frequency never used to select. Include all top3 even when0 in that frame; full lists and posthoc contribution rankings separately labeled. Reuse original preactivation/Top32cutoff audit and cached family pre-union only for these cases, no fresh forward. Missing preactivation remains missing. Cross-wording sameID rates and original behavior retained.
+
+## Delivery
+
+One-page Chinese meeting summary first: question, definition, all16 original statuses, support/opposite examples, bounded answer. Complete Chinese Summary/Detailed, raw tables and member-event index, code/PNG/SVG, three audits/coverage ledger and compact review packet. Full large derivatives stay execution-side with size/hash index. Existing sources immutable, memory appended without renaming. Independent confirmation is a separate frozen proposed contract, NOT RUN; no new forward approval inferred. At most one next research question.

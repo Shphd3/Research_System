@@ -1,0 +1,24 @@
+{
+  "attempted_prefix_forwards": 1096,
+  "maximum": 1096,
+  "remaining": 0,
+  "purposes": {
+    "check_R04_cache_SDPA": 4,
+    "check_lastblock_eager": 4,
+    "check_visible_prefix": 3,
+    "check_B_baseline": 2,
+    "check_B_replay": 2,
+    "check_native_attention_readout": 1,
+    "B_discovery": 480,
+    "B_heldout": 480,
+    "A": 120
+  },
+  "visible_tokens_attempted": 256611,
+  "padded_positions": 280576,
+  "new_resource_requests": 0,
+  "training_updates": 0,
+  "new_Work_or_Codex_tasks": 0,
+  "sealed_TEST_reads": 0,
+  "single_Base_forward_two_native_dictionaries": true,
+  "forward_status": "COMPLETE_NO_FURTHER_CALLS"
+}

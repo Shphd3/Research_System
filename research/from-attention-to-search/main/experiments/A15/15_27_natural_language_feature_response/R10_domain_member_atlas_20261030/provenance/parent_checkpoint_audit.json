@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-10-30T03:08:57.253866+00:00",
+  "checkpoint_path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+  "checkpoint_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+  "decoder_model_scale_exact_match": true,
+  "decoder_shape": [
+    14,
+    16384,
+    1024
+  ],
+  "native_threshold": 0.051281172782182693,
+  "rms27": 374.3495121024576,
+  "new_model_forwards": 0,
+  "training_updates": 0,
+  "method": "CPU static checkpoint read; no module construction or model forward"
+}

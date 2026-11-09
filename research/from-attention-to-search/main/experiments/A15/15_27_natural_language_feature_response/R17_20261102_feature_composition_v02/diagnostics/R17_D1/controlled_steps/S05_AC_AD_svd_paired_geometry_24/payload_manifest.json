@@ -1,0 +1,503 @@
+{
+  "UTC": "2026-11-03T15:23:40.113707+00:00",
+  "execution_owner": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24",
+  "asset_id": "analysis_r17_d1_s05_ac_ad_svd_geometry24_20261103",
+  "exception": "Current user explicitly requests scripts,raw data,matrices,means and figures in new mainline child. Exact local reading copies; no model/SAE weights.",
+  "files": [
+    {
+      "path": "data/S03_frozen_selection.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/data/S03_frozen_selection.json",
+      "bytes": 3672,
+      "sha256": "eddcfe0940247c03250cc1e4dd777fb728d86f19c122647dcb2a7ee1402a4d2a",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "data/S04_completion.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/data/S04_completion.json",
+      "bytes": 751,
+      "sha256": "28e951e46a1a424cbd7b945d77b6a648ed9d882df2d930d96056767326220dc3",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "data/S04_frozen_activations.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/data/S04_frozen_activations.npz",
+      "bytes": 5400392,
+      "sha256": "c73fffcc9a5e4fac9f700f3c034a531c6cdf05c5a25493022256e0a93d293e9d",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "data/S04_run_identity.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/data/S04_run_identity.json",
+      "bytes": 3391,
+      "sha256": "7e5305d5f1e0fcb50fd207c6e618fbb0fd64fa1935a56c197daec767a4717427",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "data/panel.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/data/panel.jsonl",
+      "bytes": 39998,
+      "sha256": "ffd50d95ba8f0d94e29e01add1c4d8da51bb9df5d025e20ef9a41d4895e6286b",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/ATTN_SAE/decoder_weighted/AC.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/ATTN_SAE/decoder_weighted/AC.npz",
+      "bytes": 23078,
+      "sha256": "19c987942401acc8f668631391bfcf50d933d174d056f085c13cc3571b457e50",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/ATTN_SAE/decoder_weighted/AD.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/ATTN_SAE/decoder_weighted/AD.npz",
+      "bytes": 22363,
+      "sha256": "fd95e2e31e0c2a167edb4ea88a22b548d2ebbb2113771b7dd51b1f63b56f877f",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/ATTN_SAE/decoder_weighted/paired_differences.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/ATTN_SAE/decoder_weighted/paired_differences.npz",
+      "bytes": 30203,
+      "sha256": "5c7c8f0a8834baf63cc13089cbddce6ffd028c96f02837fcb189ef9f28f7fe40",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/ATTN_SAE/raw_z/AC.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/ATTN_SAE/raw_z/AC.npz",
+      "bytes": 21576,
+      "sha256": "1560bbccbe5bd9a359e7cb0ec7995efd0cec4311a125315bb3ee424c25d13d54",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/ATTN_SAE/raw_z/AD.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/ATTN_SAE/raw_z/AD.npz",
+      "bytes": 20870,
+      "sha256": "5a4427bf906502cadc1fe7c0ad9344ef0db7c7328ac8094bbde4376e45e942af",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/ATTN_SAE/raw_z/paired_differences.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/ATTN_SAE/raw_z/paired_differences.npz",
+      "bytes": 26593,
+      "sha256": "481877ae59fc3d220d8a42455f08953bbe6f78df50ee5f931a66402ebe016198",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/MLPIN_SAE/decoder_weighted/AC.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/MLPIN_SAE/decoder_weighted/AC.npz",
+      "bytes": 20661,
+      "sha256": "e28fcae872a0600b75a070a544f33f2a5c7785749b55a9bd1c572cef5997f1b5",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/MLPIN_SAE/decoder_weighted/AD.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/MLPIN_SAE/decoder_weighted/AD.npz",
+      "bytes": 20400,
+      "sha256": "799090e114385cea213154039317630770aa6bebf873cfc3a0a6e988f5b3bf54",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/MLPIN_SAE/decoder_weighted/paired_differences.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/MLPIN_SAE/decoder_weighted/paired_differences.npz",
+      "bytes": 28694,
+      "sha256": "e02f0bf4a1cdc0d74d57d22d29c2d16e92ea2a570bb1264df894de18ec96d6a1",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/MLPIN_SAE/raw_z/AC.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/MLPIN_SAE/raw_z/AC.npz",
+      "bytes": 19100,
+      "sha256": "88cbd0bf81dd3dd0239923772dd7354d7cd6ccae1d48d4f4a7552f14fe5623e1",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/MLPIN_SAE/raw_z/AD.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/MLPIN_SAE/raw_z/AD.npz",
+      "bytes": 18897,
+      "sha256": "172a46c72b309063342ab0f5112131058d2fb90a2b0cecce91d1bbded22c9211",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "cache/MLPIN_SAE/raw_z/paired_differences.npz",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/cache/MLPIN_SAE/raw_z/paired_differences.npz",
+      "bytes": 25083,
+      "sha256": "af79f04f92300ed3356206a1c957ce36d808567dbfa667b1db1399ea3bcb2ba2",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/SVD_between_within_family.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/SVD_between_within_family.csv",
+      "bytes": 2448,
+      "sha256": "020d38e8446b5945f87263a79fa649be0f139fd63cd39c61d7ab415b3d109a72",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/bootstrap_raw.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/bootstrap_raw.jsonl",
+      "bytes": 46249,
+      "sha256": "272f5904db1ef8802dcb795f3914a1d5bd92405598f17ab25d968160cc2cc102",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/bootstrap_summary.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/bootstrap_summary.csv",
+      "bytes": 5979,
+      "sha256": "ab2cc83c173d0ff59b1a3d327078060ca913e2dae939fca6cfae8735be49b28c",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/class_spread_frozen_coordinates.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/class_spread_frozen_coordinates.csv",
+      "bytes": 13388,
+      "sha256": "76ea6d7c52ac2a9539bc972f6825f70ebbc2d8aaffa0172b6b9b0c38c445bf37",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/counterexamples.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/counterexamples.jsonl",
+      "bytes": 907,
+      "sha256": "24ecafbc4f7a454354a62cb72e6cd9b4e7749e022fa9d1592bbd15825be8b6da",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/difference_decomposition.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/difference_decomposition.csv",
+      "bytes": 21151,
+      "sha256": "55903a3c66fc252e33b6b8ac48e839cf2b9d7a415bf17f612ef67a66ea756bae",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/difference_member_events.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/difference_member_events.csv",
+      "bytes": 367044,
+      "sha256": "90be7f58eaac7d745e475524a525d681e72e8ebccaa91893cb990f3787d14b25",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/exploration_means_nonzero_columns.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/exploration_means_nonzero_columns.csv",
+      "bytes": 32252,
+      "sha256": "e5048610199056a50f55fd040b2c99d1f0ee8bf79223124f8e206a12d99f0477",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/fit_summary.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/fit_summary.json",
+      "bytes": 2104,
+      "sha256": "5750e415bac11ae295acc966e6dc5334cf36c44ce1a9fce23ee66595ef5462a4",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/geometry_comparisons.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/geometry_comparisons.jsonl",
+      "bytes": 1725,
+      "sha256": "362eecab73f16f49a0a1fa06b84772e5fa2fe8620d1f8a455c761db71d477166",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/matrix_manifest.jsonl",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/matrix_manifest.jsonl",
+      "bytes": 4198,
+      "sha256": "d4798134d026d7c1136dbc6bfb8e06240174a4bdaeb94e161b205e89ab90f97c",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/mean_difference_component_norms.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/mean_difference_component_norms.csv",
+      "bytes": 2438,
+      "sha256": "326466fcc90cec7c8d39112b639e01b17c14f73779ccd0c2f391c8e21245e833",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/mean_difference_cross_parts.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/mean_difference_cross_parts.csv",
+      "bytes": 3334,
+      "sha256": "e3db43adb1e2b6b1e2d87cfc49f6856fc251b3d53a0229cb4c3d1a6d96eb3740",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/mean_difference_summary.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/mean_difference_summary.csv",
+      "bytes": 898,
+      "sha256": "12825efef75905bb1682f0d8f05e3038cb27812d828461e0bf3572d79cae728c",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/paired_differences_summary.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/paired_differences_summary.csv",
+      "bytes": 4309,
+      "sha256": "3a0bcefc05a085ae269c53d1e6e110ac449c4236a0b3cbc290c730027117eb91",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/paired_projections_both_bases.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/paired_projections_both_bases.csv",
+      "bytes": 20066,
+      "sha256": "0105001717115db1375bddae36f7fd7b23b98cdef5df24ce5019820999721597",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/pooled_component_energy_shares.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/pooled_component_energy_shares.csv",
+      "bytes": 4621,
+      "sha256": "2dd2a5962c42ef632bfed35cd8a175131426bd26dfe9f4960c6f30a4c14e73f8",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/projections_all24.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/projections_all24.csv",
+      "bytes": 24964,
+      "sha256": "0bf8f0bd59046e6e0646806beec82dc81d6acdb6f43cccf75baf54c8d1f5f1cb",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/scale_identity.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/scale_identity.json",
+      "bytes": 939,
+      "sha256": "65b008ea2561a71fe8e3718e1bfdbc8edc3234895872b5b519d815d8b8d06a9f",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/scale_sensitivity.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/scale_sensitivity.csv",
+      "bytes": 1026,
+      "sha256": "55e1ab0ad1e85970967fa6d753b1209ff020f82373a1459fb0cbca246349f68b",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/selected_member_all24_values.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/selected_member_all24_values.csv",
+      "bytes": 141272,
+      "sha256": "2ed25c5ac1d31f361fd57150706250e28010c3a1486f9ebe5bd3658c12cce8db",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/spectrum_and_gaps.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/spectrum_and_gaps.csv",
+      "bytes": 5388,
+      "sha256": "a13dd0d9d2eee0d0f22f4b7bb20fe7caacd2014ac7a179f411784ff9d70c314a",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "results/top_loading_members.csv",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/results/top_loading_members.csv",
+      "bytes": 9967,
+      "sha256": "e5fac1850c24a803beee302e09c0414478d0a0d64ae085d852a98ea31bf4c2a0",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/analyze.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/analyze.py",
+      "bytes": 11227,
+      "sha256": "791a89deccac03b7afd077a84704a75c5ee0b6f8d5ef7382ea7212cf60ad2976",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/common.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/common.py",
+      "bytes": 1311,
+      "sha256": "65c87a394613d688b299a7980297d0c69d6176138b8e1e626a63124d8604c797",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/deliver.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/deliver.py",
+      "bytes": 7343,
+      "sha256": "c0f3032667fbca36cc0fff4dcfa7ded41793da8332d713fbb89be34da4850fb4",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/figures.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/figures.py",
+      "bytes": 6970,
+      "sha256": "6f144ae415b45cd471b18f04e45d121c18a823b2f19ea768b6feaf38cc10d9b6",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/fit.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/fit.py",
+      "bytes": 5920,
+      "sha256": "587837b6cbfaae95674849fd3a3e60a94997a2da56435e2540fc6793cb7f1d39",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/geometry.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/geometry.py",
+      "bytes": 1128,
+      "sha256": "c1733423a85667d92c1e3677e341cd79c3ad16885ec4cdc2f0796f2f23f14672",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/prepare.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/prepare.py",
+      "bytes": 5501,
+      "sha256": "305318052d2d478cd9d2ce8e2ce2df6f29d8354d8a6fe37418e855b1a75aaa73",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/report.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/report.py",
+      "bytes": 30296,
+      "sha256": "e74388268cd6aa45e03759f08efe74d3bcc59ab9bdeb223538dde5a140ba096b",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "code/verify.py",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/code/verify.py",
+      "bytes": 6690,
+      "sha256": "e2c00144ae60e86a071e85dd03740f71dc49fc471d0dab48587416737ffd94f7",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/ATTN_SAE_decoder_weighted_projections.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/figures/ATTN_SAE_decoder_weighted_projections.png",
+      "bytes": 230031,
+      "sha256": "97c1d3476c446781932cc4ede3b5b665b68186b903aa2d2c5aa9ef2cb526689e",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/ATTN_SAE_raw_paired_decomposition.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/figures/ATTN_SAE_raw_paired_decomposition.png",
+      "bytes": 158027,
+      "sha256": "d0652e9d695710634230cb7fbb959107a5ba2cffff2a11a7e30fd1dfa80eb128",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/ATTN_SAE_raw_z_projections.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/figures/ATTN_SAE_raw_z_projections.png",
+      "bytes": 228614,
+      "sha256": "aadd4730b57cb9ad623fdefc6907ba89b51a2b62327c3065007aca94f8a72e27",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/MLPIN_SAE_decoder_weighted_projections.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/figures/MLPIN_SAE_decoder_weighted_projections.png",
+      "bytes": 231499,
+      "sha256": "c41913ca1ea07842b33858db97e581b74946752622d1b71eff6a1a5f9cc003b3",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/MLPIN_SAE_raw_paired_decomposition.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/figures/MLPIN_SAE_raw_paired_decomposition.png",
+      "bytes": 158374,
+      "sha256": "eb12de8607b0723c77c03a34e7772917428fdc3c35bcf706b3d1b16a2568c991",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "figures/MLPIN_SAE_raw_z_projections.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/figures/MLPIN_SAE_raw_z_projections.png",
+      "bytes": 230020,
+      "sha256": "ce7e679c84cc42df6e2516659b8c205098f2281062af0ee0b1c83c9481ef323f",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/analysis_complete.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/analysis_complete.json",
+      "bytes": 472,
+      "sha256": "ac34d0858bfcdaf8960623964a4f78264b2360c41430f21b99f9072578941bdd",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/audit_identification.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/audit_identification.md",
+      "bytes": 226,
+      "sha256": "79eb96d44bfc77888723b04830094bebcf2c5c15b6eecd79ce283b14348f266e",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/audit_implementation.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/audit_implementation.md",
+      "bytes": 244,
+      "sha256": "a8cf01d2da077e38c54ed1cc27c06fcce5ca1b7128377688c870f671d8c9c636",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/audit_statistics.md",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/audit_statistics.md",
+      "bytes": 225,
+      "sha256": "b7accb25fceb40c23ddaa90023fbe32301993d5ca8bcbd34053e1cb4355addf5",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/bases_frozen_before_check.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/bases_frozen_before_check.json",
+      "bytes": 1655,
+      "sha256": "c30ac16a1c7a7803b015e4ea40fba0d45d620bc19ab3c5911f16f5de45bb1c06",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/completed.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/completed.json",
+      "bytes": 889,
+      "sha256": "ffbcbd6d0e625139d2f8e422467a7d0f13b362e51bce2e4f215b9bee070dec47",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/figure_contact_review.png",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/figure_contact_review.png",
+      "bytes": 482422,
+      "sha256": "1bb5fd90b9ebc11ebbf7219b55ddc388d9108bddbeb78e0bb725b14bcd74bd02",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/figures_generated.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/figures_generated.json",
+      "bytes": 1265,
+      "sha256": "9dd34c576e3116bf09629c34aad98e355a68f8bf9ce9eb05d0b823663eec6579",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/input_access.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/input_access.json",
+      "bytes": 11758,
+      "sha256": "18e50537b19aaa1178d6dd0a2014e06a6af156717b3002f1cd5e34e455347b43",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/navigation_before.txt",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/navigation_before.txt",
+      "bytes": 10448,
+      "sha256": "9a64f94837cb8b314af5b83dd39e4ffb38145a8564637829974a4659eb19e9ec",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/old_immutable_before.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/old_immutable_before.json",
+      "bytes": 81888,
+      "sha256": "5595006745ae4116d0eedfa33a06a186e50558087fc16a49d767d0eab42595f9",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/protocol_freeze.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/protocol_freeze.json",
+      "bytes": 476,
+      "sha256": "9bba7c83a0deece3f6a607243cc820a3af29872dd15f661ceea7625b31e44bf2",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/verification.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/verification.json",
+      "bytes": 967,
+      "sha256": "b0a6a9462e7a92b8f28a739c03051ca2317717ec0fae0e36dd8822b6855a6b4c",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "evidence/visual_review.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/visual_review.json",
+      "bytes": 740,
+      "sha256": "6842f1c4163b24a27333d6fd9b825ea371f24f842f33836a6c44ddebe677d353",
+      "role": "user-requested generated reading copy; execution owns payload"
+    },
+    {
+      "path": "frozen_plan.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/frozen_plan.json",
+      "bytes": 4896,
+      "sha256": "f40058c42e830bba9ded95fbccc98f6d0adbd63eb4f63fc357cb1f25ffcb9f56"
+    },
+    {
+      "path": "evidence/output_access.json",
+      "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S05_AC_AD_svd_paired_geometry_24/evidence/output_access.json",
+      "bytes": 8217,
+      "sha256": "c9f019da196ee995e3de406d71f3b7dfe4e0a5dd577b4193738aa2af51d4def7"
+    }
+  ]
+}

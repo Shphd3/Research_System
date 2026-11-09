@@ -1,0 +1,13 @@
+{
+  "original_failed_job": "pt-g61bfavm",
+  "archive": "/data/250010109/MoE_Router/experiments/20261024_a15_26_compositional_reuse/recovery/failed_71_G_613_sham_20261024T174419Z",
+  "canonical_case": "/data/250010109/MoE_Router/experiments/20261024_a15_26_compositional_reuse/runs/revision/71_G_613_sham",
+  "resume_checkpoint": "/data/250010109/MoE_Router/experiments/20261024_a15_26_compositional_reuse/recovery/failed_71_G_613_sham_20261024T174419Z/checkpoints/step_000032.pt",
+  "last_completed_update_before_write_failure": 128,
+  "latest_complete_save": 32,
+  "raw_partial_file": "/data/250010109/MoE_Router/experiments/20261024_a15_26_compositional_reuse/recovery/failed_71_G_613_sham_20261024T174419Z/checkpoints/step_000128.pt.tmp",
+  "storage_failure": "PyTorchStreamWriter file write failed; global /data had134T free; underlying cause Unknown",
+  "completed_cases_reused": 81,
+  "preserved_metrics_before_failure": 128,
+  "plan": "qualify block1\u21922 against actual prior state, restore32, retain original prefix telemetry, replay33..128 consistency and continue to1024; remaining interventions/analysis unchanged"
+}

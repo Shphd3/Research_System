@@ -1,0 +1,22 @@
+# CrossCoder：从关系描述到实际分发的近期结果索引
+
+更新：2026-10-18。本文是项目阅读索引，不是新的 Anchor、实验设计或科学批准。旧结果保留原身份；本轮只诊断“低频 feature 已出现，为什么输入没有到达负责专家”。学习收益仍未知。
+
+长期目的，是为固定预算下的专家分工提供依据。但“找到统计关系”“形成分组名单”“实际输入到达负责专家”“学得更好”是四个不同问题，不能用前一个替代后一个。
+
+|时间／正式入口|问题|已有实测|不能推出什么|与本轮诊断的关系|
+|---|---|---|---|---|
+|10月13–14日：[阶段一联合特征图](../../experiments/A15/15_25_joint_feature_graph/summary_cn.md)|统计关系与候选组成列表能否复核？|206,136条原始边通过复核；交付4对候选。两对高J各有7/8共同项属于Top10高频节点。|高组成列表重叠不等于目标经常共激活、语义相近或适合共同学习；7/8不是全图比例。|提醒我们先检查共同背景和具体输入，不能只凭名单结构判断分工。|
+|10月14日：[统计图层级与跨层解码](../../../../../daily_research_reports/1014/crosscoder_feature_phase1/hierarchy_decoder_protocol_handoff_20261014T012430Z/results_20261014T020014Z/summary_cn.md)|统计图层级 h 高，是否对应更深的解码分布？|15,537个节点的整体描述性相关为−0.278；恢复原始坐标后为−0.158。同级内部存在不同解码轮廓。|h不是模型深度；幅度加权平均层号 L 不能证明整条分布平移，decoder幅度也不是功能贡献。|本轮按激活频率分组，不拿 h 或解码峰值充当负责专家或输入价值。|
+|10月16日：[旧关系学习摘要](../../../../../daily_research_reports/1016/crosscoder_relation_learning/summary_cn.md)／[完整入口](../../../../../daily_research_reports/1016/crosscoder_relation_learning/README_cn.md)|关系分组是否改善低频输入的预测学习？|旧实验使用4个rank32适配专家，R/F/N三条件×3种子，共9个正式run；所有登记非零EVAL节点均劣于原模型。存在TRAIN下降而EVAL上涨的记录。|不能写成“训练loss全部上涨”，也不能把这一配置的失败推广成所有分组无效；该实验不是本轮8个普通FFN。|说明接收、训练拟合和留出表现要分别核查；避免原因未清时直接再堆学习预算。|
+|10月18日：[φ关系组探索](../../../../../daily_research_reports/1018/phi_relations/overview_cn.md)|φ社区实际组织了什么？|G068有21个成员，完整V命中时平均激活5.07个，全员同时出现113次；共同激活与decoder几何也不等同。|社区不是全员始终同时出现的单元，φ不直接决定方向或学习共享。|这是独立的φ结构探索；本轮线性频率组不叫φ组，本轮也不验证φ分组收益。|
+|10月18日：[频率区间残差MoE旁支](../../experiments/A15/15_19_feature_group_to_actual_dispatch/historical_support/frequency_interval_residual_moe/summary_cn.md)|原始概率等宽分8组的固定路由，能否进入学习比较？|新旁支是8个普通非线性FFN；仅完成缓存与smoke。A前三专家零输入，专家7接收91.68% TRAIN位置；两个B保组人数且均通过接收门槛。|正式A/B、C/D学习与训练后谱均NOT RUN；B覆盖较好不等于学习更好，不能与旧9个正式run混计。|本轮直接复用它的名单、评分、缓存与实际去向，解释停止原因。|
+|10月18日：[实际分发Protocol](../../experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/protocol_cn.md)／[推理审计](../../experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/reasoning_audit_cn.md)|低频feature已在输入中，为什么没有到达负责专家？|964个低频feature在TRAIN/EVAL的A负责专家接收率均为0；原赢家相对A0的分数差由高频名单C项压过非C项。12张文本卡可追溯输入去向；有限共现界不能迫使当前零接收。|去C评分把七组机械清零、全部转给A0，不是可用方案；有限冲突检查不证明全局可行，未识别独立语义根因或学习收益。|AI建议优先明确并校准评分比较的对象；分组冲突仍保留为竞争解释。|
+
+读这些材料时保留三个区分：**统计图层级 h 与模型层号不同；跨层解码幅度占比 p 与激活频率 p 不同；负责专家是名单指定，实际接收是完整输入的真实去向。** 专家内频率 q 的分母是该专家收到的位置数；空专家的 q 为 NA，不能画成0。
+
+本轮已完成逐feature的接收／频率核对、评分分解与有限评分反事实、固定案例文本、有限跨组共现界。它没有训练新专家、校准新评分或重分组。C复用原TRAIN前10%高频名单，共962项；它不是新定义的“频率≥50%”，也不是语义标签。
+
+**当前唯一优先下一决策（AI建议）：先明确评分应比较原始平均幅度，还是相对各组自身常态的响应，再冻结一个有其他频段代价检查的校准比较。** 具体公式、接收要求和验证标准尚待讨论；本轮不执行。频率、幅度与组构成的独立作用尚未区分，学习收益和容量提升仍为未知。
+
+本轮证据回执：[核心计数与对齐](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/provenance/core_receipt.json)、[评分路径](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/provenance/score_receipt.json)、[共现与12张文本卡](/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/routing_audit_20261018T143950Z/provenance/cases_receipt.json)。本索引只抽取已保存结果，不新增计算，不修改Focus、旧报告或科学状态。本轮正式结果：[一页概要](../../experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/summary_cn.md)／[English Summary](../../experiments/A15/15_19_feature_group_to_actual_dispatch/20261018_routing_audit/summary.md)。

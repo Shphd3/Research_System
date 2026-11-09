@@ -1,0 +1,29 @@
+{
+  "assignment_guard": true,
+  "draws": 2000,
+  "failed_cells": [
+    {
+      "role": "coarse",
+      "split": "design"
+    },
+    {
+      "role": "coarse",
+      "split": "confirmation"
+    }
+  ],
+  "joint_pass": false,
+  "max_balanced_anova_formula_relative_error": 1.3815372204938142e-07,
+  "max_e04_q_replay_relative_error": 6.83166856156515e-14,
+  "row_guard": {
+    "child_nodes": 64,
+    "complete_parent_child_grid": true,
+    "eight_expressions_per_child": true,
+    "four_expressions_per_split_per_child": true,
+    "pass": true,
+    "records": 512
+  },
+  "seed": 1701,
+  "state_hash_pass": true,
+  "validity_pass": true,
+  "verdict": "generic_or_unresolved_q_depth_shift"
+}

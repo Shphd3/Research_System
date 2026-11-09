@@ -1,0 +1,25 @@
+{
+  "source_experiment_id": "A15_08_01_E01_layerwise_long_range_gain_and_representation_rank",
+  "candidate_successor_id": "A15_08_01_E02",
+  "candidate_id": "A6_structural_constant_null_block1_old_state",
+  "state": "AWAITING_HUMAN_CONFIRMATION",
+  "recorded_at": "2026-08-11T13:29:21Z",
+  "e01_registered_outcome": "H2_LC_INSUFFICIENT_STANDARDIZATION",
+  "observed_train": {"records": 4096, "x1_exact_constant": true, "max_abs_from_first": 0.0},
+  "observed_development": {"records": 2048, "x1_exact_constant": true, "max_abs_from_first": 0.0},
+  "candidate_rule": {
+    "object": "X_1 only",
+    "eligibility": "finite TRAIN exact constant and DEVELOPMENT exact match to frozen TRAIN mean",
+    "standardized_value": "all zeros",
+    "frozen_scale": 0.0,
+    "marker": "constant_null=true",
+    "evaluation_guard": "exact match to frozen mean or stop",
+    "other_objects_and_layers": "strict original standardization"
+  },
+  "primary_estimand_changed": false,
+  "block1_retained_in_early_median": true,
+  "fresh_confirmation_seed_required": true,
+  "model_independent_tests_passed": 39,
+  "remote_execution_authorized": false,
+  "scientific_body_sha256": "7197183c95b4cbfefeaf431f13da0d06313100c7c10649ea3272ac053430a08a"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": {
+    "identity_CKA": 4.440892098500626e-16,
+    "identity_subspace": 1.3323384067579027e-15,
+    "rotation_spectrum": 1.662472820176351e-14,
+    "rotation_CKA": 0.0,
+    "rotation_raw_direction": 0.84896288940353,
+    "rotation_aligned_residual": 1.150451167721635e-15,
+    "scale_trace_ratio": 4.0,
+    "scale_CKA": 4.440892098500626e-16,
+    "permuted_CKA": 0.009301799804722377,
+    "stream_CKA_error": 4.440892098500626e-16,
+    "sv_lambda_error": 1.7763568394002505e-15
+  },
+  "note": "FP64projection distance evaluated by equivalent orthogonal residual to avoid cancellation;all matrix identities1e-8;not a scientific effect tolerance"
+}

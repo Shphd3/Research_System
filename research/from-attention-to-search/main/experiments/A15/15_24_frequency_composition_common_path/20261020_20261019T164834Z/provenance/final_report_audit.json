@@ -1,0 +1,150 @@
+{
+  "status": "PASS_FINAL_REPORT_BOUNDARIES_AND_SOURCE_NUMBERS",
+  "reviewer": "/root/frequency_recovery_review",
+  "time_utc": "2026-10-20T02:13:22.783458+00:00",
+  "scope": "Independent read-only review of Chinese Summary, Detailed and model note against existing frozen code/JSON/CSV. No report edits by reviewer, no training/inference or new statistical test.",
+  "reports": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_composition_common_path/20261020_20261019T164834Z/summary_cn.md",
+      "sha256": "6e65dd569c79ab87c94d3c656863f23a2b2ef21c4b4365e455f418fee3fb0622"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_composition_common_path/20261020_20261019T164834Z/detailed_cn.md",
+      "sha256": "de4a8cd4b66366078e3572d73f4200b7c96583f9a600e3e8478f98faa8fa0619"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_composition_common_path/20261020_20261019T164834Z/model_and_inference_cn.md",
+      "sha256": "421970a0e5146391b86170da55dd2fba128c088cd029a9bc5ac4bbec6103008f"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/receipt.json",
+      "sha256": "7fc945ac2ecaca971c9097fa13e1fe8fd4b5ffe53fb977be177bfc56e6ffff31"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/condition_results.csv",
+      "sha256": "4e07203916406fc3b3b7140e1a502b0108f0c56ad22d79a160a68d2fb2745630"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/final_evaluation/paired_comparisons.csv",
+      "sha256": "11d3322879550a8623db59c51793cb0a94a50fa58adac04e0e1b029c22dfdee8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/routing_summary.csv",
+      "sha256": "267a6939f01233e1654da258d2277ad6b567b7aad89db27f88cdbf77a8bbdb01"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/geometry_signed_components.csv",
+      "sha256": "2ffe6fa0a598a8a0829b7a4f666cf975f5ff7e8bdd537ade5453a3b4dcbdf406"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/geometry_pca_spectrum.csv",
+      "sha256": "5aeefcd37d16a5b66c094bec0068404674b79a1eddbab19fd487c85a19fdb6a1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/token_context_predictor.csv",
+      "sha256": "5178213b1424003f5ff939a8250e5b9762d3b90d70d195e494969d0aedb6a716"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/tables/token_context_variance_decomposition.csv",
+      "sha256": "e3672112c8d20caa857ac7d1afb734f4e66c88a45b5f34133b4ba2c0326d7bec"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/representation/companions/summary.json",
+      "sha256": "45e7347625da42dc2239a7c5a8d5a2bec61ad17f3f21bf6832ed37c405df44fd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/code/geometry_analysis.py",
+      "sha256": "0cb2612a394a14db41df23921ac7eae7fa7237063b12ca23e66719eb41e1280f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/code/train_matched.py",
+      "sha256": "5bbbad26e2f3bdb65166bdbbbfb3a7b7cb3b6d97f699f3a5fd177fd4502d89e5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/provenance/training_recovery1_complete.json",
+      "sha256": "fbdd2ec7719a45c97a3f6362205cd40fb920040e0c56d8369e00a05a8c7b2ffa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/provenance/final_training_audit.json",
+      "sha256": "7aba75c8b31a7e93bb420933a8bf6e9fa9345f4c9e4387171dbf97c451225cd3"
+    }
+  ],
+  "checks": [
+    {
+      "item": "Purpose, single question and allowed conclusion",
+      "status": "PASS",
+      "evidence": "Summary asks whether forcing a prespecified high-frequency path adds held-out low-feature learning benefit under fixed top2, with matched random membership. It separates authorization from scientific support."
+    },
+    {
+      "item": "New lists versus historical phi groups",
+      "status": "PASS",
+      "evidence": "All three reports identify new hash splits within T frequency bands, size-matched globally random R, shared14-layer z, full hidden expert input and the absence of phi-based list training in this round. Old phi/top1 failure is labeled background, not a causal control."
+    },
+    {
+      "item": "Macro versus position NLL and evaluation support",
+      "status": "PASS",
+      "evidence": "Reports distinguish feature-equal macro over838 DEV-estimable members of TRAIN-fixed1694 B1 from1701unique B1 positions and10340overall positions;856 absent features remainNA and support20 count0. Baseline and four paired-condition means agree with existing source rows."
+    },
+    {
+      "item": "Primary differences, seed values and uncertainty",
+      "status": "PASS",
+      "evidence": "Delta_T=+0.0009894483801958039; Delta_R=-0.0014719116667608941; I=+0.0024613600333099643. Reported rounded endpoints match frozen receipt; Delta_T per seeds -0.00015215184129212638/+0.002131048614352574. NA-exclusion changes bootstrap macro support and is explicitly disclosed, including companion TRAIN point outside its percentile range. No intervals are presented as reliable coverage of a fixed838-feature mean."
+    },
+    {
+      "item": "Non-support versus zero effect or universal harm",
+      "status": "PASS",
+      "evidence": "Both principal point estimates fail the negative-direction criterion; conclusions explicitly say this round does not support the hypothesis, do not prove zero effect, universal harm, no value of common computation, or no possible frequency-routing utility."
+    },
+    {
+      "item": "PCA equations and signed coefficients",
+      "status": "PASS",
+      "evidence": "Beta matches E<projected TRAIN-centered band vector, projected TRAIN-centered h>/E||projected TRAIN-centered h||². Nonorthogonal cross terms/residuals retained; beta can be negative and is not exclusive energy/information share. TRAIN PC1/16 variance shares11.61%/32.88% are separated from DEV B4 beta90.13%/68.30%."
+    },
+    {
+      "item": "PCA centering reference clarification",
+      "status": "PASS_AFTER_ROOT_EXPOSITION_FIX",
+      "evidence": "Root amended model note section2 to define every tilde using its frozen TRAIN mean; DEV is not recentered and beta includes possible mean shift relative to TRAIN. This now matches geometry_analysis.py h-mu and v-mz@DP exactly. No statistic or frozen design changed."
+    },
+    {
+      "item": "Exposure and gradient bridges",
+      "status": "PASS",
+      "evidence": "p*r=lambda*q is correctly a joint-count identity for identical positions; top2 load sums2. Fixed-gating gradient formula uses0.5 indicator times an expert Jacobian including common input/output scale and downstream hidden gradient. No claim that reception, coactivation or spectra alone establishes learning utility."
+    },
+    {
+      "item": "Token identity versus contextual semantics",
+      "status": "PASS",
+      "evidence": "DEV all R².433508, TRAIN-known.686793, unseen1636/10340 and same-ID within share.136900 match source tables. Residual unexplained variation is not relabeled causal contextual semantics; sparse low-feature texts do not certify stable meanings."
+    },
+    {
+      "item": "Exploratory companion relation boundaries",
+      "status": "PASS",
+      "evidence": "TRAIN-selected8 companions, frequency-matched controls and DEV>=5support114feature event difference38.06pp are labeled exploratory after some DEV representation reading. Text states token, source and context remain uncontrolled;831 are feature-hit events rather than distinct positions."
+    },
+    {
+      "item": "Training, recovery and practical cost",
+      "status": "PASS",
+      "evidence": "Eight matched168-step/85548target runs, total25165824 expert params/top2active6291456, formal TRAIN endpoint range.94702-.95967, initial/gradient qualification and separate Full-saved versus smoke-replayed resume evidence match source audits. Runtime109.45287+119.48069=228.93357seconds and physical data5.26GiB are stage-scoped; inactive interruption and external schedule boundaries disclosed."
+    },
+    {
+      "item": "Next decision and stop scope",
+      "status": "PASS",
+      "evidence": "Next fixed-model two-expert invocation replacement is an unexecuted AI suggestion, not new authorization. No Base/CC training, scientific-state change, commit/push or extra experiment is claimed."
+    }
+  ],
+  "required_repairs_remaining": [],
+  "resolved_exposition_requests": [
+    "Clarify TRAIN reference means in PCA tildes and DEV mean-shift contribution; root fixed and reviewer re-read."
+  ],
+  "not_claimed": [
+    "Engineering completion is not scientific support.",
+    "Bootstrap percentile ranges do not establish fixed838-feature confidence coverage.",
+    "Small effects and crossing ranges do not prove zero effect.",
+    "Current high-frequency path is not a certified common-function module."
+  ],
+  "review_limitations": [
+    "This review did not re-run numerical analyses, independent bootstrap, model forwards or intervention tests.",
+    "External papers and all English/result figure variants were not independently re-reviewed in this final Chinese-source audit."
+  ]
+}

@@ -1,0 +1,987 @@
+{
+  "schema_version": 1,
+  "analysis_id": "analysis_tulu_epoch1_expert_geometry_20261019t030056z",
+  "producer": "Codex /root",
+  "job_id": "pt-96wch7l2",
+  "run": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z",
+  "primary_raw_payloads": "outputs/*/seed*/spectra_and_directions.npz;expert*.npz;probe_responses.npz;train_nll.npz;expert_training_evidence.csv;complete.json",
+  "raw_payload_owner": "MoE_Router execution; no checkpoint/response arrays copied to Research_System",
+  "selected_evidence_exception": "Requested bounded scientific curves, figures and small source tables are deliberately curated into the canonical result and the local discussion reading copy. Every selected file is bound below. This grants no external publication or sync.",
+  "normalization": "spectral curve q uses all1024 squared singular values; gz table is byte-identical after decompression",
+  "result_boundary": "exposed-EVAL exploratory;130 exposure-qualified,49 descriptive benefit; no guaranteed convergence or semantic/causal specialization",
+  "files": [
+    {
+      "path": "amendment_probe_checks_cn.md",
+      "bytes": 1406,
+      "sha256": "39ce2b80ab98351b5525ccfab4615bbb06a433795cd2c465ba2f4ba75fe095da",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/amendment_probe_checks_cn.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "completion_receipt.json",
+      "bytes": 7639,
+      "sha256": "7b09bf6f97f9dbab7c0f666bcffb6ae7f2b6bca215d553620210c0dea518a40e",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/completion_receipt.json",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "detailed.md",
+      "bytes": 11984,
+      "sha256": "abb65445c47db4a53400256d29c24e2676b34f8440260b3ee2d1d750ba5fe262",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/detailed.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "detailed_cn.md",
+      "bytes": 11929,
+      "sha256": "cddfd0d8e442e57dfd43116cbce015c18543b1a355044d44e4fc59f858b302fc",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/detailed_cn.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/asset_access_final.json",
+      "bytes": 31953,
+      "sha256": "b420c55359868de3bba4f71d13057519b7b901c36ef8ea8ef6c014830301b2bd",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/evidence/asset_access_final.json",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/code_snapshot.json",
+      "bytes": 1043,
+      "sha256": "d0659281cf5c9381b599472363b1c1aa4078e564e4575b6d43a817cd88cf2259",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/code_snapshot.json",
+        "sha256": "d0659281cf5c9381b599472363b1c1aa4078e564e4575b6d43a817cd88cf2259"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/completion.json",
+      "bytes": 2150,
+      "sha256": "49305d421eff217059009d18df23dfad08e749ee97e7d69569599a81e7f131f9",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/completion.json",
+        "sha256": "49305d421eff217059009d18df23dfad08e749ee97e7d69569599a81e7f131f9"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/execution_source_manifest.json",
+      "bytes": 9063,
+      "sha256": "62e427c37a40933af2178be777a0ade017077393083d8218c3f689c08fd77768",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/evidence/execution_source_manifest.json",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/freeze.json",
+      "bytes": 927,
+      "sha256": "1edbd0f1210cd07f717880d3308546a620e2da82b34c8f28301608e9a0bcb59e",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/freeze.json",
+        "sha256": "1edbd0f1210cd07f717880d3308546a620e2da82b34c8f28301608e9a0bcb59e"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/input_checkpoints.json",
+      "bytes": 6547,
+      "sha256": "94a56eeee64c6995b71000f1647fdda60f53e8446b37cc0d8c4d4511da1a1f84",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/input_checkpoints.json",
+        "sha256": "94a56eeee64c6995b71000f1647fdda60f53e8446b37cc0d8c4d4511da1a1f84"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/preflight.json",
+      "bytes": 270,
+      "sha256": "c75e92c520f18d3814e84c3a72f8b105c0c2e75fba3e51ea8a6353ebd2dc4c6a",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/preflight.json",
+        "sha256": "c75e92c520f18d3814e84c3a72f8b105c0c2e75fba3e51ea8a6353ebd2dc4c6a"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/probe_loss_checks.json",
+      "bytes": 6633,
+      "sha256": "757f4123267313916e589f58ecfde5199f91e2d30843cc9046f802ea55b2dbbb",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/probe_loss_checks.json",
+        "sha256": "757f4123267313916e589f58ecfde5199f91e2d30843cc9046f802ea55b2dbbb"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "BOUNDED auxiliary only"
+    },
+    {
+      "path": "evidence/probe_loss_status.json",
+      "bytes": 229,
+      "sha256": "09eecf9e9d0aa006f74e0aacc6bd9287d13bcadcf8820b23bc6e90341a7091b5",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/probe_loss_status.json",
+        "sha256": "09eecf9e9d0aa006f74e0aacc6bd9287d13bcadcf8820b23bc6e90341a7091b5"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "BOUNDED auxiliary only"
+    },
+    {
+      "path": "evidence/queue_initial.json",
+      "bytes": 281,
+      "sha256": "d10517485219e7fe09e70a202f18705403a9333030b627bbc6bbfb35b08efeba",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/queue_initial.json",
+        "sha256": "d10517485219e7fe09e70a202f18705403a9333030b627bbc6bbfb35b08efeba"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/queue_models.json",
+      "bytes": 1829,
+      "sha256": "01c1d723af72d8ed37b9b04bb0527894d2fa0c4559597cc3656b038f365c836f",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/queue_models.json",
+        "sha256": "01c1d723af72d8ed37b9b04bb0527894d2fa0c4559597cc3656b038f365c836f"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/runtime.json",
+      "bytes": 340,
+      "sha256": "20becbef3c3507c337932fe3114bb19678da2434178789d217cc72438ffe3dd0",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/runtime.json",
+        "sha256": "20becbef3c3507c337932fe3114bb19678da2434178789d217cc72438ffe3dd0"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "evidence/summary.json",
+      "bytes": 803,
+      "sha256": "aca33bcd7f7f2756628a6219402551ffc21669bbdb2d62200249895ea4d06106",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/provenance/summary.json",
+        "sha256": "aca33bcd7f7f2756628a6219402551ffc21669bbdb2d62200249895ea4d06106"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure10_benefit_subset_PCA.pdf",
+      "bytes": 29924,
+      "sha256": "72b78b2b185df2acf360b30cbed2997f60883c930d88f837da231702f287a01b",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure10_benefit_subset_PCA.pdf",
+        "sha256": "72b78b2b185df2acf360b30cbed2997f60883c930d88f837da231702f287a01b"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure10_benefit_subset_PCA.png",
+      "bytes": 134629,
+      "sha256": "72cb2f8bbcf56105064cc6343b1b695cdd228f5c3a1f10f70c2e31c48bb36b9c",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure10_benefit_subset_PCA.png",
+        "sha256": "72cb2f8bbcf56105064cc6343b1b695cdd228f5c3a1f10f70c2e31c48bb36b9c"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure10_benefit_subset_PCA.svg",
+      "bytes": 146937,
+      "sha256": "c2221659828a09cdda1475b9f8dcfd133a2b5bcd7559df74b999e83cf5c6de35",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure10_benefit_subset_PCA.svg",
+        "sha256": "c2221659828a09cdda1475b9f8dcfd133a2b5bcd7559df74b999e83cf5c6de35"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure11_benefit_subset_top16_energy.pdf",
+      "bytes": 28041,
+      "sha256": "d7a91b8cfeec9b8a4e2a9b46bb3c2c2efa4aec7e11d249935163486fe1b865c6",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure11_benefit_subset_top16_energy.pdf",
+        "sha256": "d7a91b8cfeec9b8a4e2a9b46bb3c2c2efa4aec7e11d249935163486fe1b865c6"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure11_benefit_subset_top16_energy.png",
+      "bytes": 437516,
+      "sha256": "ed5f42ce8a67fe91c4e55e7d6bf9581ebe31d4d2f31de670f14bda84c97366da",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure11_benefit_subset_top16_energy.png",
+        "sha256": "ed5f42ce8a67fe91c4e55e7d6bf9581ebe31d4d2f31de670f14bda84c97366da"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure11_benefit_subset_top16_energy.svg",
+      "bytes": 164474,
+      "sha256": "f3e4d896fd016807084b3190a9118c542fdb52ed76a4ba6e307ad523d9e5451b",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure11_benefit_subset_top16_energy.svg",
+        "sha256": "f3e4d896fd016807084b3190a9118c542fdb52ed76a4ba6e307ad523d9e5451b"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure1_expert_training_evidence.pdf",
+      "bytes": 18237,
+      "sha256": "f3a847af5a16f2c764bc4860ed87907a0ad1b0f47fe29103d0829b4e52b528ad",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure1_expert_training_evidence.pdf",
+        "sha256": "f3a847af5a16f2c764bc4860ed87907a0ad1b0f47fe29103d0829b4e52b528ad"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure1_expert_training_evidence.png",
+      "bytes": 72968,
+      "sha256": "71e6329346b2c36b28e4eb53e9f0fee89b376cf29a9600fa11345f48ddecbdcd",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure1_expert_training_evidence.png",
+        "sha256": "71e6329346b2c36b28e4eb53e9f0fee89b376cf29a9600fa11345f48ddecbdcd"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure1_expert_training_evidence.svg",
+      "bytes": 49663,
+      "sha256": "2c3d6599c759e735212dfc63207cecc518d6744e2f7879846b8e6f45c270e864",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure1_expert_training_evidence.svg",
+        "sha256": "2c3d6599c759e735212dfc63207cecc518d6744e2f7879846b8e6f45c270e864"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure2a_output_PCA_similarity.pdf",
+      "bytes": 32037,
+      "sha256": "a0d73f8ff2f0a63b5a9b36cb7cb6b0675346dccd0b68903d3ae9bec834678834",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure2a_output_PCA_similarity.pdf",
+        "sha256": "a0d73f8ff2f0a63b5a9b36cb7cb6b0675346dccd0b68903d3ae9bec834678834"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure2a_output_PCA_similarity.png",
+      "bytes": 147928,
+      "sha256": "ae4b288f3869edf20ca66122cd3a4bf822577969d7faa1b016ff1418bbdaca34",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure2a_output_PCA_similarity.png",
+        "sha256": "ae4b288f3869edf20ca66122cd3a4bf822577969d7faa1b016ff1418bbdaca34"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure2a_output_PCA_similarity.svg",
+      "bytes": 154148,
+      "sha256": "d74096b7aa9826e1d7afb675883521dd7ae8764e06e0a9d83ee630c4d6ecce63",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure2a_output_PCA_similarity.svg",
+        "sha256": "d74096b7aa9826e1d7afb675883521dd7ae8764e06e0a9d83ee630c4d6ecce63"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure2b_output_PCA_similarity.pdf",
+      "bytes": 31550,
+      "sha256": "18cc398f7c84bc2f73866f3fb77b999f6f32812a665128442402969a0c0701e8",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure2b_output_PCA_similarity.pdf",
+        "sha256": "18cc398f7c84bc2f73866f3fb77b999f6f32812a665128442402969a0c0701e8"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure2b_output_PCA_similarity.png",
+      "bytes": 138619,
+      "sha256": "44e70633d3e7278014a7aae7e65fc5112d1c671054df4da632c8458956e7102a",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure2b_output_PCA_similarity.png",
+        "sha256": "44e70633d3e7278014a7aae7e65fc5112d1c671054df4da632c8458956e7102a"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure2b_output_PCA_similarity.svg",
+      "bytes": 152317,
+      "sha256": "bcbd0c96a54a44b287fb5c742a8869cf75cc193f9d39afd5c791f3cd489da386",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure2b_output_PCA_similarity.svg",
+        "sha256": "bcbd0c96a54a44b287fb5c742a8869cf75cc193f9d39afd5c791f3cd489da386"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure3_parameter_direction_similarity.pdf",
+      "bytes": 33315,
+      "sha256": "deb64865a375db43517c434cd13cc012d3bd5ac3ebe89be499ac2a4d5006cb3d",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure3_parameter_direction_similarity.pdf",
+        "sha256": "deb64865a375db43517c434cd13cc012d3bd5ac3ebe89be499ac2a4d5006cb3d"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure3_parameter_direction_similarity.png",
+      "bytes": 194650,
+      "sha256": "130b8f57070948071ff5e813ea039d2dadc4e00dd6e13adcc3fb0a4ee04b5b89",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure3_parameter_direction_similarity.png",
+        "sha256": "130b8f57070948071ff5e813ea039d2dadc4e00dd6e13adcc3fb0a4ee04b5b89"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure3_parameter_direction_similarity.svg",
+      "bytes": 181143,
+      "sha256": "edf16a441cd7938e6b015e939ef49b3e3d055d67d08e9d7ff1d7ac36845b4de4",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure3_parameter_direction_similarity.svg",
+        "sha256": "edf16a441cd7938e6b015e939ef49b3e3d055d67d08e9d7ff1d7ac36845b4de4"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure4_absolute_top16_spectra.pdf",
+      "bytes": 28866,
+      "sha256": "a17883e2ec406c6916b23120b671ec700d2e527bbc8f90cc1e1ad3295ec3afa0",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure4_absolute_top16_spectra.pdf",
+        "sha256": "a17883e2ec406c6916b23120b671ec700d2e527bbc8f90cc1e1ad3295ec3afa0"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure4_absolute_top16_spectra.png",
+      "bytes": 540494,
+      "sha256": "30d83b8fb37bea9861fae0501649ce08d3b98fe327936de72e0f768a9c0e4fd0",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure4_absolute_top16_spectra.png",
+        "sha256": "30d83b8fb37bea9861fae0501649ce08d3b98fe327936de72e0f768a9c0e4fd0"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure4_absolute_top16_spectra.svg",
+      "bytes": 163489,
+      "sha256": "2a8eee57a8972da876cf73464fdd9be264b404cf5eb78c687bbaa8909cb09a94",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure4_absolute_top16_spectra.svg",
+        "sha256": "2a8eee57a8972da876cf73464fdd9be264b404cf5eb78c687bbaa8909cb09a94"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure5_full_normalized_energy_spectra.pdf",
+      "bytes": 54360,
+      "sha256": "cb50d42df9019fcc7c92666aab8f3a464def0683e015f057948cf7da72ea4b9a",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure5_full_normalized_energy_spectra.pdf",
+        "sha256": "cb50d42df9019fcc7c92666aab8f3a464def0683e015f057948cf7da72ea4b9a"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure5_full_normalized_energy_spectra.png",
+      "bytes": 342190,
+      "sha256": "d6d12fc4418f9ba8d2c8150da7b09b05cb9506d3490db5e8bc0cc9bd575e22cd",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure5_full_normalized_energy_spectra.png",
+        "sha256": "d6d12fc4418f9ba8d2c8150da7b09b05cb9506d3490db5e8bc0cc9bd575e22cd"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure5_full_normalized_energy_spectra.svg",
+      "bytes": 266691,
+      "sha256": "3c607cf800fc403251fef01e70fc45c45711272283e01ec8cf21ef2f62cd31b2",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure5_full_normalized_energy_spectra.svg",
+        "sha256": "3c607cf800fc403251fef01e70fc45c45711272283e01ec8cf21ef2f62cd31b2"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure6_initialization_changes.pdf",
+      "bytes": 58072,
+      "sha256": "d7e6a8042077a3027219218853543fbaffd8ed6a6b300380006dab8220f9f82b",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure6_initialization_changes.pdf",
+        "sha256": "d7e6a8042077a3027219218853543fbaffd8ed6a6b300380006dab8220f9f82b"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure6_initialization_changes.png",
+      "bytes": 443804,
+      "sha256": "4d256d11b9ad6720422b95b5f6383fa7d0d0292298427d680e70302ee9814c39",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure6_initialization_changes.png",
+        "sha256": "4d256d11b9ad6720422b95b5f6383fa7d0d0292298427d680e70302ee9814c39"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure6_initialization_changes.svg",
+      "bytes": 242277,
+      "sha256": "271ef6019697f5ea3445ec4c9b5274abea87f0722b1433f5a0568d690dead68a",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure6_initialization_changes.svg",
+        "sha256": "271ef6019697f5ea3445ec4c9b5274abea87f0722b1433f5a0568d690dead68a"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure7_seed11_individual_expert_spectra.pdf",
+      "bytes": 56491,
+      "sha256": "5e1596136771cfa48ef6d3a42f8ffa86af03420c89e6927a9a14085431178547",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure7_seed11_individual_expert_spectra.pdf",
+        "sha256": "5e1596136771cfa48ef6d3a42f8ffa86af03420c89e6927a9a14085431178547"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure7_seed11_individual_expert_spectra.png",
+      "bytes": 230662,
+      "sha256": "352f47dd5a12b33b04ace257d0c93408baedf86f24258a0d4f57b945a799bd58",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure7_seed11_individual_expert_spectra.png",
+        "sha256": "352f47dd5a12b33b04ace257d0c93408baedf86f24258a0d4f57b945a799bd58"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure7_seed11_individual_expert_spectra.svg",
+      "bytes": 238568,
+      "sha256": "b81bf392f65c9b43069d76deba7b3bb82cc396a56afdbcbff3d9499d8fe1ebb3",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure7_seed11_individual_expert_spectra.svg",
+        "sha256": "b81bf392f65c9b43069d76deba7b3bb82cc396a56afdbcbff3d9499d8fe1ebb3"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure7_seed22_individual_expert_spectra.pdf",
+      "bytes": 59046,
+      "sha256": "6f5bb3e0b6d87f45e34a618a5a91ff38ad6ba373bcd413fd023e1532beb70015",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure7_seed22_individual_expert_spectra.pdf",
+        "sha256": "6f5bb3e0b6d87f45e34a618a5a91ff38ad6ba373bcd413fd023e1532beb70015"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure7_seed22_individual_expert_spectra.png",
+      "bytes": 236060,
+      "sha256": "a9fdc1705a11265b8e22df9813c52694383651e7cb917197b939d1946583ca88",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure7_seed22_individual_expert_spectra.png",
+        "sha256": "a9fdc1705a11265b8e22df9813c52694383651e7cb917197b939d1946583ca88"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure7_seed22_individual_expert_spectra.svg",
+      "bytes": 246178,
+      "sha256": "78d0698a926df6d82f48a211acaf6070b356519f57ce5e4b44a36eaba92b8042",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure7_seed22_individual_expert_spectra.svg",
+        "sha256": "78d0698a926df6d82f48a211acaf6070b356519f57ce5e4b44a36eaba92b8042"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure8_source_routing.pdf",
+      "bytes": 28298,
+      "sha256": "32242f807114b293905526ca8dc81db3b1826742e0ccdf3ec4cf9caf9ec2932f",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure8_source_routing.pdf",
+        "sha256": "32242f807114b293905526ca8dc81db3b1826742e0ccdf3ec4cf9caf9ec2932f"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure8_source_routing.png",
+      "bytes": 107967,
+      "sha256": "b55b7446676037e6d157f6a0a5f5510089369552f82bcebb312b01d9137e4abd",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure8_source_routing.png",
+        "sha256": "b55b7446676037e6d157f6a0a5f5510089369552f82bcebb312b01d9137e4abd"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure8_source_routing.svg",
+      "bytes": 75104,
+      "sha256": "8a284ff9f58a180d83e50c0616b6f3d7569d57b3a359fe3cb321b3badd701aa3",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure8_source_routing.svg",
+        "sha256": "8a284ff9f58a180d83e50c0616b6f3d7569d57b3a359fe3cb321b3badd701aa3"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure9_benefit_subset_spectra.pdf",
+      "bytes": 54295,
+      "sha256": "69b7ee9e6afdf87ff40075d8ae8ee91bd0dce2762c7ba1e879b591133ca302cf",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure9_benefit_subset_spectra.pdf",
+        "sha256": "69b7ee9e6afdf87ff40075d8ae8ee91bd0dce2762c7ba1e879b591133ca302cf"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure9_benefit_subset_spectra.png",
+      "bytes": 294822,
+      "sha256": "af2330125bd88fb469110c82b02be09fdfb8e3dc1b13ed90ce1d6c45312351da",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure9_benefit_subset_spectra.png",
+        "sha256": "af2330125bd88fb469110c82b02be09fdfb8e3dc1b13ed90ce1d6c45312351da"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures/figure9_benefit_subset_spectra.svg",
+      "bytes": 235918,
+      "sha256": "dd02bae002bb08337b654f02806b893fb52e3fa66d7d60b9bebd6459ea520ea3",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/figures/figure9_benefit_subset_spectra.svg",
+        "sha256": "dd02bae002bb08337b654f02806b893fb52e3fa66d7d60b9bebd6459ea520ea3"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "figures_cn.md",
+      "bytes": 7009,
+      "sha256": "d92a9a03eeff80c55bf9997a57943297a0cef23cbb619a9cebf791b8c5f6f9c1",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/figures_cn.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "one_page_cn.md",
+      "bytes": 1741,
+      "sha256": "90d2df4b8363be859bc3f463fb00041813c59648ff82401d729500063070faf8",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/one_page_cn.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "protocol.md",
+      "bytes": 2256,
+      "sha256": "7d05f247897f5bca2b3786b7f85b416b58c2be29c4555630fc15484cdfc16ded",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/protocol.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "protocol_cn.md",
+      "bytes": 5982,
+      "sha256": "e832d17958f24535322be01abe21ffb584df4fd107f8f001afc1245ff6307aa0",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/protocol_cn.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "summary.md",
+      "bytes": 11161,
+      "sha256": "5eb4b184702b8cd48deefa67517eb34336f58b50dcf52810f00d301927323a0d",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/summary.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "summary_cn.md",
+      "bytes": 10862,
+      "sha256": "f71757e36bbc30aa6e0138df23140c5b6ac38870d854650a2ef9b1c4252a9766",
+      "source": {
+        "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/activation_to_expert_learning/20261019_epoch1_expert_geometry/summary_cn.md",
+        "producer": "Codex /root source-backed report or provenance compilation"
+      },
+      "role": "canonical record or provenance",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/benefit_subset_matrix_summary.csv",
+      "bytes": 40825,
+      "sha256": "c880ff5ed976715c47114a106a0cd5a67121fff21b946e080c6f45003159342e",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/benefit_subset_matrix_summary.csv",
+        "sha256": "c880ff5ed976715c47114a106a0cd5a67121fff21b946e080c6f45003159342e"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/cached_probe_expert_NLL.csv",
+      "bytes": 17303,
+      "sha256": "7b5fa3b39217843a21cae63cc578cb9887e19aec117579c4203260182b46ae55",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/cached_probe_expert_NLL.csv",
+        "sha256": "7b5fa3b39217843a21cae63cc578cb9887e19aec117579c4203260182b46ae55"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "BOUNDED auxiliary only"
+    },
+    {
+      "path": "tables/epoch1_source_dispatch.csv",
+      "bytes": 117726,
+      "sha256": "3eba75309d85301c6b96b3b70335441ae840f163d47a842fc10191acde09d582",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/epoch1_source_dispatch.csv",
+        "sha256": "3eba75309d85301c6b96b3b70335441ae840f163d47a842fc10191acde09d582"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/epoch1_source_learning.csv",
+      "bytes": 19776,
+      "sha256": "8ba223c159f5fb24f3b69dc1b48852e12691510df80f0b5630c39dffd31c6c76",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/epoch1_source_learning.csv",
+        "sha256": "8ba223c159f5fb24f3b69dc1b48852e12691510df80f0b5630c39dffd31c6c76"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/expert_certificate_summary.csv",
+      "bytes": 928,
+      "sha256": "4e7eab84fe417ae0e959cb002c5375130db6e6440fc93252e33776aea814dbe1",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/expert_certificate_summary.csv",
+        "sha256": "4e7eab84fe417ae0e959cb002c5375130db6e6440fc93252e33776aea814dbe1"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/expert_exposure_preflight.csv",
+      "bytes": 37604,
+      "sha256": "352ec081aad2c738e5f3b96a18262a0cec0182ad086040660354a66846ef03ba",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/expert_exposure_preflight.csv",
+        "sha256": "352ec081aad2c738e5f3b96a18262a0cec0182ad086040660354a66846ef03ba"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/expert_training_evidence.csv",
+      "bytes": 43721,
+      "sha256": "77fb20efda26661bd9a4b9b60b283ced2f1520440600a63dd08b10ddd89e49ed",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/expert_training_evidence.csv",
+        "sha256": "77fb20efda26661bd9a4b9b60b283ced2f1520440600a63dd08b10ddd89e49ed"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/fixed_actual_source_exposure.csv",
+      "bytes": 28588,
+      "sha256": "ccfa6d11cebd38ab03212d54cbfdc8c6162fb74a23a64ccc88772e7af38d4831",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/fixed_actual_source_exposure.csv",
+        "sha256": "ccfa6d11cebd38ab03212d54cbfdc8c6162fb74a23a64ccc88772e7af38d4831"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/matrix_summary_by_seed.csv",
+      "bytes": 35523,
+      "sha256": "a050d7b7376bbf5cc8d50a46207f2a53809bea4d326b1456a60b6d71f373a718",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/matrix_summary_by_seed.csv",
+        "sha256": "a050d7b7376bbf5cc8d50a46207f2a53809bea4d326b1456a60b6d71f373a718"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/own_initial_direction_alignment.csv",
+      "bytes": 95971,
+      "sha256": "7ed7876b35eeadccb1f668f3b2d4fe6249c3350b086e5b725faa3bca4d88e4ac",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/own_initial_direction_alignment.csv",
+        "sha256": "7ed7876b35eeadccb1f668f3b2d4fe6249c3350b086e5b725faa3bca4d88e4ac"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/paired_initial_changes.csv",
+      "bytes": 36555,
+      "sha256": "56e1f6484b203bbe0fa782b1bbc8d43f5a22e6b7d6cff63b7b3d8657d5b2c0dc",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/paired_initial_changes.csv",
+        "sha256": "56e1f6484b203bbe0fa782b1bbc8d43f5a22e6b7d6cff63b7b3d8657d5b2c0dc"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/parameter_spectral_metrics.csv",
+      "bytes": 288332,
+      "sha256": "2bd3745547d2b62ad17f41d7afeecd95c4f14f5c8c01561467a5259d829bdc97",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/parameter_spectral_metrics.csv",
+        "sha256": "2bd3745547d2b62ad17f41d7afeecd95c4f14f5c8c01561467a5259d829bdc97"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/response_PCA_metrics.csv",
+      "bytes": 29308,
+      "sha256": "db77b73860bcec37ca23fc617671fad7896ecc913c2a40629f5a6263ee30e97e",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/response_PCA_metrics.csv",
+        "sha256": "db77b73860bcec37ca23fc617671fad7896ecc913c2a40629f5a6263ee30e97e"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/similarity_summary.csv",
+      "bytes": 41080,
+      "sha256": "f783bde33ffa9c81f9b35ec18689d5476c8b190b204f5854b35a2735e2475015",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/similarity_summary.csv",
+        "sha256": "f783bde33ffa9c81f9b35ec18689d5476c8b190b204f5854b35a2735e2475015"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/source_actual_dispatch.csv",
+      "bytes": 117745,
+      "sha256": "cb6d0ea276e2a054751661585d2844c8755123c776ac255c59781d006b3a7d3d",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/source_actual_dispatch.csv",
+        "sha256": "cb6d0ea276e2a054751661585d2844c8755123c776ac255c59781d006b3a7d3d"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "BOUNDED auxiliary only"
+    },
+    {
+      "path": "tables/source_expert_NLL.csv",
+      "bytes": 195017,
+      "sha256": "5accd43f1e6089cc7bbffa216145c8d37a4c77fe601919df729e9fec578f30e1",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/source_expert_NLL.csv",
+        "sha256": "5accd43f1e6089cc7bbffa216145c8d37a4c77fe601919df729e9fec578f30e1"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "BOUNDED auxiliary only"
+    },
+    {
+      "path": "tables/spectral_curve_source.csv.gz",
+      "bytes": 3620785,
+      "sha256": "0bbb4f39e5e732ad30e287d5729152c2d48e608c254626f397ab06462eaa5340",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/spectral_curve_source.csv",
+        "sha256": "cb54038cf10d6a3f27fb3c0e4f2e2ca13334bc1e78ea5e70f666d128f4820ddd"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/top16_singular_values.csv",
+      "bytes": 1109185,
+      "sha256": "96ae75cd4107f7c8280b2777a7eef85e0de4f43f6d35df3eb85a82554ef662c2",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/top16_singular_values.csv",
+        "sha256": "96ae75cd4107f7c8280b2777a7eef85e0de4f43f6d35df3eb85a82554ef662c2"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    },
+    {
+      "path": "tables/within_model_similarity.csv",
+      "bytes": 1538236,
+      "sha256": "33ce0206b6eb67fdaaf060420d460e922442c35bbcf9ebf1ed4488a5b2fe237f",
+      "source": {
+        "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/epoch1_expert_geometry/20261019T030056Z/tables/within_model_similarity.csv",
+        "sha256": "33ce0206b6eb67fdaaf060420d460e922442c35bbcf9ebf1ed4488a5b2fe237f"
+      },
+      "role": "selected evidence",
+      "complete": true,
+      "claim_eligibility": "primary descriptive analysis or supporting record"
+    }
+  ],
+  "manifest_self_hash": "Excluded to avoid self-reference"
+}

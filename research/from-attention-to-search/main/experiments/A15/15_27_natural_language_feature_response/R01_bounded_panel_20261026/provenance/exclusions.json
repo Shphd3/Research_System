@@ -1,0 +1,44 @@
+{
+  "stage": "pre_model_result_construction",
+  "excluded_case_rules": [
+    {
+      "rule": "unresolved_pronoun_antecedent",
+      "decision": "Do not include pronoun cases: a target referent must not depend on an unresolved antecedent."
+    },
+    {
+      "rule": "future_disambiguation",
+      "decision": "Reject any construction whose relation becomes clear only after the target."
+    },
+    {
+      "rule": "bat_as_verb",
+      "decision": "Exclude the verb sense of bat; both conditions use the noun."
+    },
+    {
+      "rule": "bass_pronunciation",
+      "decision": "Do not claim pronunciation understanding: use only visibly disambiguating fish/instrument descriptions."
+    },
+    {
+      "rule": "seal_closure_vs_stamp",
+      "decision": "Use explicit marine-mammal versus stamped-authentication-mark cues; exclude ambiguous closures alone."
+    },
+    {
+      "rule": "port_computer_interface",
+      "decision": "Exclude computer-port cases to avoid a third sense in the two-way relation."
+    },
+    {
+      "rule": "crane_as_verb",
+      "decision": "Exclude the verb sense of crane; both conditions use the noun."
+    },
+    {
+      "rule": "uncontrolled_local_or_stereotype_cues",
+      "decision": "Exclude modifiers such as old, large, black, small that do not settle the intended sense."
+    },
+    {
+      "rule": "tokenizer_or_length_failure",
+      "decision": "Qualify target token identity, sequence length and matched positions before freezing; no feature result may inform removal."
+    }
+  ],
+  "realized_exclusions": [],
+  "selection_uses_feature_results": false,
+  "note": "Rules describe considered construction classes, not unseen corpus observations. No corpus was screened."
+}

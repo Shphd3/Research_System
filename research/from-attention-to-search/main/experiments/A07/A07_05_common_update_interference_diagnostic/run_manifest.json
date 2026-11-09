@@ -1,0 +1,95 @@
+{
+  "run_name": "a07_05_common_update_full_local_2gpu_20260625_1",
+  "result_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/Attention_Search_Experiments/active/synthetic_data_understanding/results/a07_05_common_update_interference_diagnostic/a07_05_common_update_full_local_2gpu_20260625_1",
+  "curated_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07/A07_05_common_update_interference_diagnostic",
+  "config": {
+    "seed": 20260623,
+    "seeds": [
+      20260623,
+      20260624,
+      20260625,
+      20260626,
+      20260627,
+      20260628,
+      20260629,
+      20260630
+    ],
+    "data": {
+      "input_dim": 32,
+      "train_common_per_group": 4096,
+      "train_rare_per_group": 768,
+      "eval_per_group": 1536,
+      "unrelated_train": 4096,
+      "smoke_train_common_per_group": 512,
+      "smoke_train_rare_per_group": 128,
+      "smoke_eval_per_group": 384,
+      "smoke_unrelated_train": 768,
+      "global_common_strength": 1.2,
+      "parent_strength": 2.4,
+      "common_marker_strength": 0.6,
+      "rare_marker_strength": 0.42,
+      "group_marker_strength": 0.35,
+      "nuisance_strength": 0.28,
+      "position_strength": 0.18,
+      "noise_std": 0.38,
+      "unrelated_strength": 1.2,
+      "unrelated_noise_std": 0.55
+    },
+    "model": {
+      "hidden_dim": 64,
+      "dropout": 0.0
+    },
+    "training": {
+      "warmup_steps": 80,
+      "smoke_warmup_steps": 20,
+      "batch_size": 256,
+      "eval_batch_size": 1024,
+      "lr": 0.014,
+      "weight_decay": 0.0001
+    },
+    "projection": {
+      "svd_threshold": 1e-06
+    },
+    "perturbation": {
+      "step_scale": 2.0
+    },
+    "thresholds": {
+      "common_rare_delta_min": 0.005,
+      "effect_margin_min": 0.005,
+      "rare_projection_fraction_min": 0.15,
+      "projector_stability_min": 0.45,
+      "rare_update_sanity_max_delta": 0.0,
+      "rare_underlearning_gap_min": 0.05
+    },
+    "output": {
+      "result_dir": "active/synthetic_data_understanding/results/a07_05_common_update_interference_diagnostic",
+      "research_experiment_dir": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A07/A07_05_common_update_interference_diagnostic"
+    }
+  },
+  "seeds": [
+    20260623,
+    20260624,
+    20260625,
+    20260626,
+    20260627,
+    20260628,
+    20260629,
+    20260630
+  ],
+  "decision": {
+    "run_name": "a07_05_common_update_full_local_2gpu_20260625_1",
+    "n_seeds": 8,
+    "common_to_rare_loss_effect": 0.0016824007034301758,
+    "common_update_rare_loss_delta": 0.0016826391220092773,
+    "rare_update_sanity_rare_loss_delta": -0.004057168960571289,
+    "rare_common_update_fraction": 0.22076142858713865,
+    "projector_stability": 0.8525023683905602,
+    "baseline_rare_common_loss_gap": 13.068801687119503,
+    "passes_common_harm": false,
+    "passes_projection_guard": true,
+    "passes_rare_sanity": true,
+    "passes_underlearning_guard": true,
+    "anchor_decision": "weakened_or_insufficient"
+  },
+  "note": "Controlled common-update perturbation diagnostic; no real-data utility claim."
+}

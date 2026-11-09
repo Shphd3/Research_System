@@ -1,0 +1,52 @@
+{
+  "UTC": "2026-11-08T06:51:09.154874+00:00",
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S15_feature_expert_routing_1108/data/frozen_groups.json",
+      "bytes": 13079,
+      "sha256": "80cab31f5714eaac4ce3f6149043ae4c7e6bcb311db92cce21a03634137ee4c6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S15_feature_expert_routing_1108/results/group_expert_profiles.csv",
+      "bytes": 187520,
+      "sha256": "52b6f05af685d3f0595dfe39aab5704c3ac0b6dcbb392ebc7b3eb7144ab59b1e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S15_feature_expert_routing_1108/results/gate_weighted_resampling.csv",
+      "bytes": 44513,
+      "sha256": "b5775b6475dec5c74df14f2e1d3c6278354d0bc56d0abe52b9f1544fe6a1eb6b"
+    },
+    {
+      "path": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+      "bytes": 7031645,
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/source/moe_model.py",
+      "bytes": 18292,
+      "sha256": "fb9a642d0de9476d0befb616c045248a0908a89fa9bd1c1ab20e030e4fdae230"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/source/e16_sae_core.py",
+      "bytes": 10419,
+      "sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d"
+    }
+  ],
+  "large_weight_identities": {
+    "model": {
+      "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000/state.pt",
+      "sha256": "3e392157d5dd9a5cb1f3190dc7ebbd385baaa02d90ed4a9e4f5ac72997e5c795",
+      "expected": "3e392157d5dd9a5cb1f3190dc7ebbd385baaa02d90ed4a9e4f5ac72997e5c795",
+      "match": true
+    },
+    "sae": {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/formal/sae_full_final.pt",
+      "sha256": "36b45cd215eee8af2a800d9d59737010ce06c56dcd4cacec44f590db058d9d05",
+      "expected": "36b45cd215eee8af2a800d9d59737010ce06c56dcd4cacec44f590db058d9d05",
+      "match": true
+    }
+  },
+  "canonical_owner": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R17_20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S16_cutlery_weight_replication_1108",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S16_cutlery_weight_replication_1108",
+  "payload_in_execution": true
+}

@@ -1,0 +1,81 @@
+{
+  "UTC": "2026-11-04T08:24:19.147863+00:00",
+  "source": "Predeclared Protocol10; supporting sensitivity, never replaces family-primary verdict",
+  "records": [
+    {
+      "site": "ATTN_SAE",
+      "hypothesis": "H1",
+      "templates": 6,
+      "families": 12,
+      "value": 0.7747395833333334,
+      "lo": 0.7408854166666666,
+      "hi": 0.8151041666666666,
+      "p": 1.0,
+      "holm_p": 1.0,
+      "verdict": "NOT_SUPPORTED"
+    },
+    {
+      "site": "ATTN_SAE",
+      "hypothesis": "H2",
+      "templates": 6,
+      "families": 12,
+      "value": 1.080332250730406,
+      "lo": 0.9916144511444629,
+      "hi": 1.178527241234666,
+      "p": 0.03125,
+      "holm_p": 0.1875,
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "site": "ATTN_SAE",
+      "hypothesis": "H3",
+      "templates": 6,
+      "families": 12,
+      "value": 1.080332250730406,
+      "lo": 0.9916144511444629,
+      "hi": 1.178527241234666,
+      "p": 1.0,
+      "holm_p": 1.0,
+      "verdict": "NOT_SUPPORTED"
+    },
+    {
+      "site": "MLPIN_SAE",
+      "hypothesis": "H1",
+      "templates": 6,
+      "families": 12,
+      "value": 0.8723958333333334,
+      "lo": 0.84765625,
+      "hi": 0.8984375,
+      "p": 0.9375,
+      "holm_p": 1.0,
+      "verdict": "NOT_SUPPORTED"
+    },
+    {
+      "site": "MLPIN_SAE",
+      "hypothesis": "H2",
+      "templates": 6,
+      "families": 12,
+      "value": 1.1989292587839409,
+      "lo": 1.0870855224426395,
+      "hi": 1.3567805011470122,
+      "p": 0.265625,
+      "holm_p": 1.0,
+      "verdict": "INSUFFICIENT"
+    },
+    {
+      "site": "MLPIN_SAE",
+      "hypothesis": "H3",
+      "templates": 6,
+      "families": 12,
+      "value": 1.1989292587839409,
+      "lo": 1.0870855224426395,
+      "hi": 1.3567805011470122,
+      "p": 1.0,
+      "holm_p": 1.0,
+      "verdict": "NOT_SUPPORTED"
+    }
+  ],
+  "exact_sign_patterns": 64,
+  "smallest_possible_Holm_for_smallest_p": 0.09375,
+  "primary_unchanged": true
+}

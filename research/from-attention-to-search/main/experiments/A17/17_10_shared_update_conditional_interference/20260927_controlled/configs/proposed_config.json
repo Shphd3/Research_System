@@ -1,0 +1,257 @@
+{
+  "status": "EXECUTION_APPROVED_WITH_STAGE_GATES",
+  "experiment_id": "20260927_common_rule_controlled",
+  "scientific_owner": "documents/protocol.md",
+  "scope": "fixed_S7_internal_controlled_vector_task_NOT_natural_language_task",
+  "source_date": "2026-09-27",
+  "master_seed": 20260927,
+  "model": {
+    "historical_loader_reference_manifest": "/data/250010109/MoE_Router/experiments/20260923_sae_n8_21b_four_model_audit/manifests/resolved_assets.json",
+    "checkpoint": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_033000000000",
+    "checkpoint_manifest": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/runs/S7_lambda0p1_from_scratch_4h100/milestones/token_033000000000/manifest.json",
+    "checkpoint_kind": "milestone",
+    "checkpoint_tokens_seen": 33000000000,
+    "checkpoint_optimizer_step": 125894,
+    "loader_directory": "/data/250010109/MoE_Router/experiments/20260920_sae_representation_21b_audit/scripts",
+    "loader_file": "smoke_sites.py",
+    "weight_name": "model.blocks[7].attn.o.weight",
+    "expected_weight_shape": [
+      1024,
+      2048
+    ],
+    "expected_state_sha256": "c30b78e5bcba8f0a09c5e215389be86778874e87fcbb9fe5211175d370bb0803",
+    "class_output_rows": [
+      100,
+      101
+    ],
+    "tail_precision": "float32",
+    "tf32": false,
+    "trainable": "independent_delta_W_only",
+    "native_adapter_status": "REQUIRES_SOURCE_AND_RUNTIME_VALIDATION",
+    "sae_status": "FROZEN_READONLY_NATIVE_INTERFACE_REQUIRES_VALIDATION",
+    "conditional_loss_precision": "float64_from_two_float32_logits",
+    "native_same_shape_output_absolute_max": 1e-05,
+    "selected_shape_output_relative_rms_max": 1e-05,
+    "native_reference_output_relative_rms_max": 1e-05
+  },
+  "calibration": {
+    "selected_jsonl": "/data/250010109/MoE_Router/experiments/20260925_sae_domain_activation/selected.jsonl",
+    "records": 256,
+    "positions": [
+      14,
+      30,
+      46,
+      62,
+      78,
+      94,
+      110,
+      126,
+      142,
+      158,
+      174,
+      190,
+      206,
+      222,
+      238,
+      254
+    ],
+    "selection": "sha256(str(20260927)+input_ids_sha256), ascending, then input_ids_sha256",
+    "reference": "observed_context_nearest_pooled_mean",
+    "rank": 16,
+    "sigma_multiplier": 0.25,
+    "beta": 0.25,
+    "svd_ddof": 0,
+    "orthogonality_tolerance": 1e-05
+  },
+  "data": {
+    "rho": [
+      0.1,
+      0.8
+    ],
+    "rules": {
+      "same": 1,
+      "flip": -1
+    },
+    "dev_families": [
+      11001,
+      11002,
+      11003,
+      11004
+    ],
+    "confirm_families": [
+      21001,
+      21002,
+      21003,
+      21004,
+      21005,
+      21006,
+      21007,
+      21008,
+      21009,
+      21010,
+      21011,
+      21012
+    ],
+    "source_repeats": 4,
+    "direction_seed_code": 99,
+    "split_codes": {
+      "structure": 10,
+      "source": 20,
+      "source_readout": 30,
+      "target_readout": 40,
+      "development": 50
+    },
+    "logical_pairs": {
+      "structure": 128,
+      "source_per_repeat": 64,
+      "source_readout": 256,
+      "target_readout": 256,
+      "development": 64
+    },
+    "records_per_pair": 2,
+    "noise_dimensions": 13,
+    "nuisance_distribution": "N(0,I_13)/sqrt(13)",
+    "paired_axes": [
+      "rho",
+      "group_geometry",
+      "target_rule",
+      "step"
+    ],
+    "main_source_direction": "A_to_B_only"
+  },
+  "update": {
+    "relative_norm_steps": [
+      0.0001,
+      5e-05
+    ],
+    "formula": "-eps*norm(W0)*G_A/norm(G_A)",
+    "microbatch": 32,
+    "momentum": false,
+    "weight_decay": 0,
+    "loss": "two_class_conditional_cross_entropy",
+    "reduction": "per_record_sum_divided_by_total_source_records"
+  },
+  "witness": {
+    "optimizer": "Adam",
+    "learning_rate": 0.01,
+    "max_steps_per_endpoint": 500,
+    "target_signed_margin": 2.0,
+    "certificate_minimum_margin": 1.99,
+    "scale": "norm(a0), or 1 if zero",
+    "optimize": "temporary_a_only",
+    "never_replaces_main_initial_weight": true
+  },
+  "analysis": {
+    "primary": "(I_high_flip-I_high_same)-(I_low_flip-I_low_same)",
+    "bootstrap_repetitions": 2000,
+    "bootstrap_seed": 20260928,
+    "bootstrap_unit_order": [
+      "direction_family",
+      "source_batch",
+      "logical_target_pair"
+    ],
+    "interval_quantiles": [
+      0.025,
+      0.975
+    ],
+    "threshold_absolute_floor": 1e-07,
+    "logit_identity_absolute_tolerance": 1e-07,
+    "logit_identity_relative_tolerance": 0.0001,
+    "repeat_noise_multiplier": 20,
+    "baseline_rho_relative_difference_max": 0.1,
+    "baseline_source_target_relative_difference_max": 0.2,
+    "first_order_relative_error_90th_percentile_max": 0.1,
+    "first_order_relative_error_eligible_min_tau_multiplier": 5,
+    "require_net_harm": true,
+    "require_source_improvement": true,
+    "no_outlier_or_unfavorable_branch_deletion": true
+  },
+  "sae": {
+    "common_atom_count": 32,
+    "selection": "both_rhos_min_positive_count_8_frequency_ratio_at_least_0p5_and_positive_quantile_25_50_75_ratios_at_least_0p5_then_top32_by_min_pooled_frequency",
+    "pooled_rhos": true,
+    "selection_loss_blind": true,
+    "svd_relative_cutoff": 1e-06,
+    "task_difference_relative_reconstruction_error_median_max": 0.5,
+    "controls": [
+      "same_rank_centered_output_PCA",
+      "same_rank_Haar_17",
+      "same_rank_Haar_29",
+      "same_rank_Haar_43"
+    ],
+    "contributions": "C_S,C_perp,nonlinear_remainder",
+    "coefficients_squared_are_energy": false,
+    "similarity_scope": "per_rho_A_B_activation_distributions; paired_same_t_xi_coactivation_descriptive_only",
+    "positive_count_min_per_group_per_rho": 8,
+    "frequency_ratio_min": 0.5,
+    "positive_quantiles": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "positive_quantile_ratio_min_each": 0.5,
+    "empty_common_status": "SAE_COMMON_NOT_OBSERVED; preserve primary_loss_result; no_zero_rank_signed_decomposition",
+    "threshold_status": "RESEARCHER_CONFIRMED_FIRST_ROUND_LOOSE_2026-09-28"
+  },
+  "resources": {
+    "resource_profile": "h100-4-reserved",
+    "gpu_workers": 4,
+    "worker_kind": "independent_family_process_no_ddp",
+    "calibration_sorted_record_slices": {
+      "0": [
+        0,
+        64
+      ],
+      "1": [
+        64,
+        128
+      ],
+      "2": [
+        128,
+        192
+      ],
+      "3": [
+        192,
+        256
+      ]
+    },
+    "dev_family_assignment": {
+      "0": 11001,
+      "1": 11002,
+      "2": 11003,
+      "3": 11004
+    },
+    "confirm_family_assignment": {
+      "0": [
+        21001,
+        21002,
+        21003
+      ],
+      "1": [
+        21004,
+        21005,
+        21006
+      ],
+      "2": [
+        21007,
+        21008,
+        21009
+      ],
+      "3": [
+        21010,
+        21011,
+        21012
+      ]
+    },
+    "maximum_wall_seconds": 7200,
+    "maximum_allocated_gpu_hours": 8,
+    "maximum_output_bytes": 30000000000,
+    "automatic_resubmit": false
+  },
+  "execution": {
+    "approved_scope": "EXACT_33B_FOUR_H100_FULL_RUN_WITH_STAGE_0_TO_2_GATES",
+    "run_root_proposal": "/data/250010109/MoE_Router/experiments/20260927_common_rule_controlled",
+    "native_model_has_run": "SMOKE_ONLY_4_OF_4_PASS_FULL_NOT_RUN",
+    "protobuf_python_implementation": "python"
+  }
+}

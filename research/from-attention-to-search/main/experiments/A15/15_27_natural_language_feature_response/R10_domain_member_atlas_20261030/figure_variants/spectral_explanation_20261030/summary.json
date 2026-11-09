@@ -1,0 +1,121 @@
+{
+  "new_model_forwards": 0,
+  "training_updates": 0,
+  "new_PCA": false,
+  "new_selection": false,
+  "groups": {
+    "math": {
+      "members": 433,
+      "PC1_64_mean": 0.100294906267459,
+      "PC1_64_median": 0.06838536241395693,
+      "PC1_256_mean": 0.32339500671459054,
+      "PC1_256_median": 0.2925111552448313,
+      "PC1_256_above_dimensional_share_count": 340,
+      "PC1_256_above_dimensional_share_fraction": 0.7852193995381063,
+      "peak_PC1_64_count": 125,
+      "peak_PC1_64_fraction": 0.28868360277136257,
+      "peak_in_first256_count": 247,
+      "largest_quarter_is_first_count": 230,
+      "largest_quarter_is_first_fraction": 0.5311778290993071,
+      "peak_band_counts": [
+        125,
+        54,
+        31,
+        37,
+        27,
+        30,
+        32,
+        16,
+        14,
+        9,
+        26,
+        6,
+        6,
+        10,
+        6,
+        4
+      ]
+    },
+    "biology": {
+      "members": 527,
+      "PC1_64_mean": 0.11523838613285109,
+      "PC1_64_median": 0.08785890424406698,
+      "PC1_256_mean": 0.35070779972710886,
+      "PC1_256_median": 0.32620017772758936,
+      "PC1_256_above_dimensional_share_count": 446,
+      "PC1_256_above_dimensional_share_fraction": 0.8462998102466793,
+      "peak_PC1_64_count": 243,
+      "peak_PC1_64_fraction": 0.46110056925996207,
+      "peak_in_first256_count": 367,
+      "largest_quarter_is_first_count": 363,
+      "largest_quarter_is_first_fraction": 0.6888045540796964,
+      "peak_band_counts": [
+        243,
+        55,
+        36,
+        33,
+        36,
+        28,
+        22,
+        9,
+        9,
+        8,
+        8,
+        4,
+        5,
+        2,
+        8,
+        21
+      ]
+    }
+  },
+  "within_group_unit": "member-equal",
+  "added_descriptions": [
+    "share in first256 PCs vs256/1024 dimensional baseline",
+    "per-member peak64-PC band",
+    "actual group-energy overlap at64-PC-band resolution"
+  ],
+  "geometry_overlap": {
+    "per_PC": 0.9492561166458326,
+    "per_64PC_band": 0.9685873816075694,
+    "per_PC_matched95": [
+      0.9466314237307063,
+      0.9576353077743067
+    ],
+    "per_band_matched95": [
+      0.9624143493233667,
+      0.983450071706496
+    ],
+    "reference": "A01 frequency/support matched dictionary; pool includes selected"
+  },
+  "actual_group_energy": {
+    "math": {
+      "heldout_documents": 20,
+      "positions_per_document": 160,
+      "first64_fraction": {
+        "math": 0.5192742536348083,
+        "biology": 0.2087858296500516
+      },
+      "first256_fraction": {
+        "math": 0.6918631578547065,
+        "biology": 0.4904032539010739
+      },
+      "overlap_64PC_bands": 0.6895115760152435,
+      "operation": "sum z times model-scale decoder first, then project, square, doc-average, normalize"
+    },
+    "biology": {
+      "heldout_documents": 20,
+      "positions_per_document": 160,
+      "first64_fraction": {
+        "math": 0.27265880077741117,
+        "biology": 0.49702869182975423
+      },
+      "first256_fraction": {
+        "math": 0.5100110918286668,
+        "biology": 0.6830088023912906
+      },
+      "overlap_64PC_bands": 0.7756301089476568,
+      "operation": "sum z times model-scale decoder first, then project, square, doc-average, normalize"
+    }
+  }
+}

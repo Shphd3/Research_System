@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "item": "model/tokenizer/hookandoldPCAidentity",
+      "status": "DONE_VALID",
+      "evidence": "forward/completed.json"
+    },
+    {
+      "item": "48families384inputs24/12/12targetmatched",
+      "status": "DONE_VALID",
+      "evidence": "data/data_qa.json"
+    },
+    {
+      "item": "sixinputselectedfamilyexamples",
+      "status": "DONE_VALID",
+      "evidence": "data/six_examples.md"
+    },
+    {
+      "item": "true1024targetvectorsandcausalitychecks",
+      "status": "DONE_VALID",
+      "evidence": "forward/target_vectors.npz"
+    },
+    {
+      "item": "discoverydirectionheldoutfamilyreplication",
+      "status": "DONE_VALID",
+      "evidence": "tables/fixed_direction_statistics.csv"
+    },
+    {
+      "item": "16bandsdirectionenergyandheldoutalignment",
+      "status": "DONE_VALID",
+      "evidence": "tables/domain_direction_spectrum.csv"
+    },
+    {
+      "item": "headtail20random/full5dimensions",
+      "status": "DONE_VALID",
+      "evidence": "tables/heldout_readout_statistics.csv"
+    },
+    {
+      "item": "allreadoutsfrozenbeforeheldout",
+      "status": "DONE_VALID",
+      "evidence": "analysis/readout_freeze.json"
+    },
+    {
+      "item": "threeindependentfigures",
+      "status": "DONE_VALID",
+      "evidence": "figures_cn.md"
+    },
+    {
+      "item": "rawvectorsscriptsprovenanceandaudit",
+      "status": "DONE_VALID",
+      "evidence": "detailed_cn.md"
+    }
+  ],
+  "missing_in_scope": [],
+  "remaining_claim_limits": [
+    "worddistributionandneutralframingnotfullyexcluded",
+    "notpuresemantictruth,functionalimportance,knowledgecoordinatesorrouting"
+  ],
+  "new_LM_training": 0,
+  "new_dictionary_training": 0,
+  "new_PCA": 0,
+  "new_forwards": 392,
+  "scientific_judgment": "Unknown"
+}

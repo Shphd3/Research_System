@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "checks": {
+    "smoke_pass": true,
+    "new_records7700_plus2100references": true,
+    "700positions175docs": true,
+    "11fixedconditions": true,
+    "indices_current_and_successor": true,
+    "no_empty_visible_context": true,
+    "permutation_same_token_different_document": true,
+    "permutation_preserves_eligible_positions": true,
+    "eligible312positions158docs": true,
+    "original_top1_agreement_one": true,
+    "original_KL_zero": true,
+    "new_NLL_probability": true,
+    "nonnegative_KL_with_roundoff": true,
+    "all_primary_metrics_finite": true,
+    "document_weighted_means": true,
+    "all_control_denominators_match": true,
+    "GPU_source_and_inputs_unchanged": true
+  },
+  "user_intervals": "one-basedhalfopen;literalrangesinmanifest",
+  "new_transformer_forwards": 0,
+  "training_updates": 0
+}

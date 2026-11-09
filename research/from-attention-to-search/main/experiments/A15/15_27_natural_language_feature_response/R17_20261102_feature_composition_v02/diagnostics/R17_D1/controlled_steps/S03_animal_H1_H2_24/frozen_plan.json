@@ -1,0 +1,106 @@
+{
+  "experiment": "S03_animal_H1_H2_24",
+  "UTC": "2026-11-03T12:07:02.888684+00:00",
+  "authorization": "Current direct user request authorizes this bounded 24-row frozen two-SAE descriptive analysis and <10MB daily discussion package. Stop for joint review.",
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "input_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "sites": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "loader": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/e16_sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.self_attn.o_proj output before residual addition"
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "loader": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.mlp forward_pre_hook actual input after residual addition and post_attention_layernorm"
+    }
+  },
+  "split": {
+    "exploration": [
+      "F01",
+      "F02",
+      "F03"
+    ],
+    "heldout_check": [
+      "F04",
+      "F05",
+      "F06"
+    ]
+  },
+  "conditions": [
+    "P",
+    "cat",
+    "dog",
+    "N"
+  ],
+  "rows": 24,
+  "selection": {
+    "H1_common": {
+      "min_triple_active_families": 2,
+      "min_triple_min_weighted_gt_N_families": 2,
+      "max_candidates": 6,
+      "ranking": "descending triple_active count, descending positive contrast count, descending mean(min(u_P,u_cat,u_dog)-u_N), ascending atomID"
+    },
+    "H1_added": {
+      "min_zeroP_positiveFine_families": 2,
+      "max_candidates_per_fine": 6,
+      "ranking": "descending zeroP-positiveFine coverage, descending mean fine u among zeroP-positiveFine rows, ascending atomID; cat and dog selected separately; opposite fine response reported, not a selection gate"
+    },
+    "H2": {
+      "min_joint_cat_dog_active_families": 2,
+      "max_candidates": 6,
+      "ranking": "descending joint cat/dog active coverage, descending mean min(u_cat,u_dog), ascending atomID; no fine difference ranking",
+      "direction": "sign(mean exploration(q_cat-q_dog)); abs(mean)<=1e-8 is zero; q uses same fixed list and own L2 norm",
+      "normalizations": [
+        "q_raw=z_C/||z_C||2",
+        "q_weighted=u_C/||u_C||2"
+      ],
+      "zero_norm": "undefined, serialize null and plot gray; no epsilon replacement",
+      "support_subsets": [
+        "entire SAE positive support exactly equal",
+        "selected H2-list positive support exactly equal; not equivalent to full support control"
+      ]
+    }
+  },
+  "precision": "FP32 CPU model and native SAE; FP64 analysis; saved BF16 LM weights promoted to FP32",
+  "physical_shape": [
+    4,
+    192
+  ],
+  "resource": "existing CPU, 2 threads; no GPU job; 24 new prefixes, no new behavior scores",
+  "selection_gate": "extract exploration only; select/freeze exact candidates+directions+code hashes; only then extract heldout_check",
+  "data_SHA256": {
+    "S02_original_behavior_scores.jsonl": "f7ac273167f6fdcafc8e01116189dd6a24716658da4891406f368dfff0901a26",
+    "S02_original_panel.jsonl": "2e433f0436968ea018f46c8785161b39360cf0e9f7ed181874f18d4aacfd4c66",
+    "panel.jsonl": "1e5d55aebef00aa6daad00aad3a935d33c0ed2637ac84c0a37ff108e6840391f",
+    "text_differences.jsonl": "5f041a12da635b1c30d86078494d6e1b1443a638e15e82b1a11d01f7a1affdec"
+  },
+  "scope_exclusions": [
+    "H3",
+    "H4",
+    "CrossCoder",
+    "training",
+    "probe",
+    "ablation",
+    "new prompt/data search",
+    "hypothesis rewrite",
+    "automatic next step"
+  ]
+}

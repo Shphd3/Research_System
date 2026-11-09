@@ -1,0 +1,271 @@
+{
+  "schema": "A15_27_R01_execution_certificate_v1",
+  "processing_agent": "/root/asset_audit",
+  "created_at_utc": "2026-10-26T11:08:16.274156+00:00",
+  "experiment_id": "A15_27_R01",
+  "task_state": "BOUNDED_FORWARD_AND_OFFLINE_ANALYSIS_COMPLETE",
+  "scientific_mechanism_judgment": "Unknown",
+  "question_closure": "Unknown",
+  "authority": "User 2026-10-26 explicit bounded direct execution and delegated analysis choices; no intermediate audit approval gate",
+  "execution_surface": "current_container",
+  "resource_profile": "USER_AUTHORIZED_EXISTING_RESOURCE",
+  "existing_resource": "_CudaDeviceProperties(name='NVIDIA H100 80GB HBM3 MIG 3g.40gb', major=9, minor=0, total_memory=40448MB, multi_processor_count=60, uuid=39c07ab0-f034-4f0e-d199-c529c626aff6, L2_cache_size=25MB)",
+  "new_resource_allocations": 0,
+  "new_resource_purchases": 0,
+  "ACP_job_id": null,
+  "job_id_status": "NOT_APPLICABLE_local_current_container_processes",
+  "phase_pids": {
+    "discovery": 76203,
+    "holdout": 78183
+  },
+  "phase_times_utc": {
+    "source_freeze": "2026-10-26T10:57:10.043841+00:00",
+    "discovery_started": "2026-10-26T10:57:20.343895+00:00",
+    "discovery_completed": "2026-10-26T10:57:40.368927+00:00",
+    "holdout_started": "2026-10-26T10:59:40.686777+00:00",
+    "holdout_completed": "2026-10-26T11:00:00.349897+00:00"
+  },
+  "client_timezone": "Asia/Shanghai",
+  "environment": {
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "python": "/root/anaconda3/envs/spectral-hier/bin/python",
+    "model_dtype": "bfloat16",
+    "sae_dtype": "float32"
+  },
+  "pythonpath": "/data/250010109/dependency_packages/hf_transformers_qwen3",
+  "native_hook": "zero-based block27 actual MLP input after post-attention normalization",
+  "frozen_model": true,
+  "frozen_dictionary": true,
+  "training_updates": 0,
+  "gradients_present": false,
+  "activation_interventions": 0,
+  "new_checkpoint_saves": 0,
+  "sealed_TEST_read": false,
+  "constructed_holdout_read_and_executed": true,
+  "budget": {
+    "panel_sequences": 288,
+    "replay_sequences": 4,
+    "total_sequence_forwards": 292,
+    "panel_limit": 288,
+    "all_forward_limit": 1000,
+    "forwarded_prefix_tokens_including_replay": 11612,
+    "max_sequence_tokens": 77,
+    "sequence_token_limit": 256,
+    "all_actual_attempts_in_ledger": true
+  },
+  "measurement": {
+    "discovery": {
+      "split": "discovery",
+      "pass": true,
+      "time_utc": "2026-10-26T10:57:40.368927+00:00",
+      "target_nmse_mean": 0.07620480434141225,
+      "target_nmse_p90": 0.10599663853645326,
+      "target_nmse_max": 0.20631882548332214,
+      "n_sequences": 144,
+      "decoder_formula_max_relative_error": 1.1457997572961176e-07,
+      "replay": [
+        {
+          "seq_id": "A01_base",
+          "max_absolute_z_difference": 0.0,
+          "tolerance": 0.006518898162841797,
+          "pass": true
+        },
+        {
+          "seq_id": "A01_changed",
+          "max_absolute_z_difference": 0.0,
+          "tolerance": 0.0065464952087402346,
+          "pass": true
+        },
+        {
+          "seq_id": "A01_neutral_base",
+          "max_absolute_z_difference": 0.0,
+          "tolerance": 0.006521256408691406,
+          "pass": true
+        },
+        {
+          "seq_id": "A01_neutral_changed",
+          "max_absolute_z_difference": 0.0,
+          "tolerance": 0.006501236114501953,
+          "pass": true
+        }
+      ],
+      "input_hashes_unchanged": {
+        "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": true,
+        "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt": true
+      },
+      "model_dtype": "bfloat16",
+      "sae_dtype": "float32",
+      "parameter_updates": 0,
+      "gradients_present": false,
+      "elapsed_seconds": 20.025943279266357,
+      "peak_cuda_bytes": 1687291392,
+      "test_read": false,
+      "torch": "2.5.1+cu121",
+      "transformers": "4.53.3",
+      "python": "/root/anaconda3/envs/spectral-hier/bin/python",
+      "npz_sha256": "51793c0bb38b05517a21f2a961ff4471e0c5edaf5c5085198b7f7613959fb2f5"
+    },
+    "holdout": {
+      "split": "holdout",
+      "pass": true,
+      "time_utc": "2026-10-26T11:00:00.349897+00:00",
+      "target_nmse_mean": 0.06678460375405848,
+      "target_nmse_p90": 0.09355711787939072,
+      "target_nmse_max": 0.12278725206851959,
+      "n_sequences": 144,
+      "decoder_formula_max_relative_error": 1.246757648232233e-07,
+      "replay": [],
+      "input_hashes_unchanged": {
+        "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": true,
+        "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt": true
+      },
+      "model_dtype": "bfloat16",
+      "sae_dtype": "float32",
+      "parameter_updates": 0,
+      "gradients_present": false,
+      "elapsed_seconds": 19.664059162139893,
+      "peak_cuda_bytes": 1687291392,
+      "test_read": false,
+      "torch": "2.5.1+cu121",
+      "transformers": "4.53.3",
+      "python": "/root/anaconda3/envs/spectral-hier/bin/python",
+      "npz_sha256": "c9331111ba0cf318f488500b47ee68ab26556be3c5cd025eddc6e754cfe7b8e2"
+    }
+  },
+  "source_identity_current_vs_freeze": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/run_forward.py": true,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/analyze.py": true,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/statistical_plan.json": true,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/analysis_config.json": true,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel/qualified_cases.jsonl": true,
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel/tokenized_sequences.jsonl": true,
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/protocol.md": true,
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/protocol_cn.md": true
+  },
+  "protocol_sha256": "7b6cf8870290274ff9cf4a97f1f3e97815a9f69093351f115a51166231121b7b",
+  "protocol_cn_sha256": "27e358562fc47f920b683b21149cc18fa8b486ae4feae4400fe64e0ca904fcbe",
+  "pre_forward_freeze_sha256": "29f5b17169f5f15c2e9ec61214b2ecf8edbd4574e9eaeebe38848def865594a9",
+  "candidate_freeze_sha256": "a54c37ab0854c4a2e9c535c87d9720cdc8a03c719d19856ae148ad3ea66b5838",
+  "holdout_started_candidate_freeze_matches": true,
+  "input_weight_hashes_unchanged_all_phases": true,
+  "result_counts": {
+    "discovery_eligible_features": 83,
+    "frozen_candidates": 64,
+    "frozen_groups": 7,
+    "H1_estimable": 20,
+    "H1_supporting": 10,
+    "H2_estimable": 3,
+    "H2_supporting": 2,
+    "H3_estimable": 25,
+    "H3_supporting": 2,
+    "stable_equivalence_pool": 97,
+    "stable_equivalence_passed": 1
+  },
+  "algorithmic_verdicts": {
+    "H1": "SUPPORT",
+    "H2": "SUPPORT",
+    "H3": "SUPPORT_DISTANCE_ORDER_SENSITIVITY"
+  },
+  "interpretation_limits": [
+    "H2 matched controls do not match target-word support composition; lexical-stratum overlap remains live",
+    "Historical reference cache parent digest absent and BF16-autocast encoder differs from current FP32 encoding",
+    "H3 distance and sentence order changed jointly",
+    "Constructed panel is not an untouched natural-corpus sample",
+    "Algorithmic criteria do not close researcher scientific judgment"
+  ],
+  "artifacts": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/pre_forward_freeze.json": {
+      "sha256": "29f5b17169f5f15c2e9ec61214b2ecf8edbd4574e9eaeebe38848def865594a9",
+      "bytes": 5716
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/analysis_config.json": {
+      "sha256": "1f57d8d70a865fed205e5531395d70b29af61fe2c5e35be410c4da72874f7bbb",
+      "bytes": 2190
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/asset_audit.json": {
+      "sha256": "f2743c3d64f9cdcb8c852ce97e26ef6b62545ca6a7688d580e57972327884cd0",
+      "bytes": 11120
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel/qualified_cases.jsonl": {
+      "sha256": "33a2f75ae0ea6ed6225e089d4d4ac7ae6230390af6e1ca3ddb06e1f93be4f4ee",
+      "bytes": 680115
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/panel/tokenized_sequences.jsonl": {
+      "sha256": "945914b9007a4a576f6de99b00b791af56e8daf4464de9169959e733b20d2246",
+      "bytes": 741417
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/discovery.npz": {
+      "sha256": "51793c0bb38b05517a21f2a961ff4471e0c5edaf5c5085198b7f7613959fb2f5",
+      "bytes": 890373
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/holdout.npz": {
+      "sha256": "c9331111ba0cf318f488500b47ee68ab26556be3c5cd025eddc6e754cfe7b8e2",
+      "bytes": 890391
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/forward_ledger.jsonl": {
+      "sha256": "85d26d14062a5eafa1359ee29e63e417fcdedddeee225964ccad036438ac8a9f",
+      "bytes": 38930
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/discovery_qualification.json": {
+      "sha256": "b2636fdf593228ba2dc81000dc1536570001b88981a14207431c6b46e1c7c82c",
+      "bytes": 1573
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/forward/holdout_qualification.json": {
+      "sha256": "4d4b9c86682a10b81676c75801f33a125359beb8040e450e41fe70c2c1597b5b",
+      "bytes": 981
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/candidate_freeze.json": {
+      "sha256": "a54c37ab0854c4a2e9c535c87d9720cdc8a03c719d19856ae148ad3ea66b5838",
+      "bytes": 15282
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/discovery_statistics.npz": {
+      "sha256": "927852281b420118a6a27aba34f9dfd779c32d440295d897735a73a10a6e2279",
+      "bytes": 597467
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/holdout_statistics.npz": {
+      "sha256": "1af6339236f348a0c22fe6f160a3e568be426b924f19a7f32b25513f6d380f74",
+      "bytes": 559533
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/statistical_plan.json": {
+      "sha256": "2d316e8fa20d0d0843ea5e8afe995c32c30f4b7e390594331fb2ed497c170f03",
+      "bytes": 9553
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/results.json": {
+      "sha256": "4b4c69c2b3cac2e261d17eb5dd2bebbfc55d2e16b56e0e01600345dededf4bca",
+      "bytes": 12735
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H1_features.csv": {
+      "sha256": "8693b45019abb03e79701faa040517b24056568e46aa129561629c9136c256db",
+      "bytes": 15448
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H2_groups.csv": {
+      "sha256": "f65b409d6024eee20112a4d0ca361b14f75742eb27501983074e43aa6846021c",
+      "bytes": 4004
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H3_features.csv": {
+      "sha256": "c81e8e2d015418aa9eea2c0e7480dca2e8ae3ea357a437437f5db312fe110361",
+      "bytes": 20343
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/stable_features.csv": {
+      "sha256": "cc50e9c089298101e6b2ed6d235c9d6fe31ad8b1806cd11af552fadb77aff51c",
+      "bytes": 18664
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/examples.json": {
+      "sha256": "97092d984abc33db74f27815871cb732a632ea2e1aff91f112a25efea09a8530",
+      "bytes": 98753
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/reference_frequency_provenance.json": {
+      "sha256": "c66039cc69bf6238cf52831d68d9e2720d0f8c856e81d3c8fb64e246f8558fb6",
+      "bytes": 1176
+    },
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/figure_contracts.json": {
+      "sha256": "7eb2a4efac6a0afddf507d0c15e204f6015cb0e837f3bc2841f5a81300f4d377",
+      "bytes": 1672
+    }
+  },
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response",
+  "retries": "NONE in phase ledgers; each phase has one started receipt",
+  "post_start_material_amendments": "NONE observed in frozen source checks",
+  "produced_reusable_representation_assets": "Actual caches are at execution paths; registry handoff is parent-agent scope, not asserted here"
+}

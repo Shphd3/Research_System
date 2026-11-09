@@ -1,0 +1,33 @@
+# A-only localization protocol
+
+Status: APPROVED_FOR_LIMITED_FORWARD_AND_SAVED_ARTIFACT_ANALYSIS. Authority: the current researcher request explicitly selects one bounded diagnostic: initial-state top16 sensitivity, existing-checkpoint rule-choice trajectories, then a candidate decision. Existing single-H100 reserved resource authorization applies. No training, candidate replacement, Focus creation/closure, other-stage work or publication. This is a new post-hoc diagnostic, not an amendment of the original utility criteria. The retained R05 Anchor remains the scientific owner. Operational details below are AI choices within the authorized bounded scope, not invented researcher confirmations.
+
+## Question and alternatives
+
+Does the original top16 matrix-coordinate candidate affect old-task outputs more than equal-sized random-coordinate perturbations at the acquired-old state, and does protecting it alter the replacement of old-rule choices by new-rule choices during the already completed continuation? Large initial singular values can be generic model directions rather than old-specific or shared computation. High old/new prediction agreement can mean either old-rule or new-rule defaults. The tests distinguish these local observations, not unique trajectory mediation.
+
+## Initial-state probe
+
+Reuse exact Qwen3-0.6B Base plus acquired-old four-attention-matrix adapter, original top16 frames and exposed DEV (800 old +800 new answers; four200-answer cells/mode). Freeze every weight except reversible in-memory perturbations to the same four matrices. No gradients, optimizer, training or checkpoints are created. The baseline must reproduce all1600 original update0 predictions; report maximum CE mismatch and stop if above2e-4.
+
+For each matrix j, C0_j=P_j(W0_j). Five coefficient draws use seeds1701–1705. Each draw has16 independent normal coefficients, normalized. For top probes, synthesize in the original paired singular atoms. For the random control, draw independent FP64 orthonormal left/right frames of the same shape/rank and reuse the same coefficients. Per matrix, rescale both directions to exactly the same intended norm rho*||C0_j||, with rho=0.001 and0.003. Evaluate both signs. The actual FP32 displacement norm must agree within0.1% per matrix; top-direction leakage outside P must be below0.1% of actual norm. Report actual norms, not intended norms alone. This is40 perturbations plus one baseline, all joint four-matrix interventions. It does not locate which matrix is responsible. No outcome-dependent dose/rank/seed expansion.
+
+Primary sensitivity for each subspace/draw/dose: average across both signs of the mean over800 old answers of |CE_perturbed-CE_baseline|, in nats/answer. Pair top and random with the same coefficient draw and dose. Report all five paired values, their mean difference and ratios, and a2000-draw paired unordered-group bootstrap stratified by the two panels. Group both commands together. The interval conditions on the five fixed perturbation draws and this single acquired-old model; report draw-to-draw range separately. Secondary: signed mean CE change, old accuracy, absolute old gold-vs-opposite-rule margin change and new-mode readouts. All41 evaluations use the full vocabulary. The unlearned new mode is not qualified evidence of cross-task reuse.
+
+Consistent positive top-minus-random sensitivity across the two doses and five draws supports only greater local old-output sensitivity in the tested directions. Mixed results, intervals crossing zero, or values near numerical resolution remain insufficient. No effect at these two doses does not prove C irrelevant or authorize a candidate swap. Accuracy unchanged with CE changes establishes probability sensitivity, not a necessary old-rule module. Even positive sensitivity does not identify old-specific or common computation.
+
+## Existing-trajectory check
+
+Use U and TS, all three continuation-order seeds29/43/71, and saved steps0/1/2/16/50/120/240/600/1200. Step2 uses the already completed post-hoc evaluation of the original recovery snapshots; no further forward is needed. Pair each old/new answer by command and list. Categories: both mode-specific answers correct; same old-rule answer; same new-rule answer; same middle answer; same outside-list answer; other differing answers. These six categories must exhaust800 pairs/point. Old/new CE and full-vocabulary accuracy remain separate. A preliminary U29 check found799/800 pairs already same-old at0, so agreement alone is explicitly rejected as an onset measure.
+
+Report all54 points, TS-minus-U paired differences with2000 group-bootstrap draws, and the first saved point with nonzero / at least50% / at least95% same-new-rule answers. These are descriptive landmarks, not revised success gates. Unsaved onset and nonmonotonic excursions remain unknown. Retain1200 as the primary utility endpoint; never select a best checkpoint. Read saved C/R net displacements and cumulative path separately; smaller coordinate movement does not establish functional invariance.
+
+## Decision boundary
+
+If local C sensitivity is weak or unresolved, first distinguish dose/measurement limits before considering acquisition-delta or data-sensitive candidates; neither alternative is executed here. If C is locally sensitive, its coordinates move less under TS, and choice replacement persists, focus the next discussion on maintaining the overall function/conditional use; this does not prove a mechanism. An old-important direction may be old-specific or generic; shared reuse is NOT_TESTED. The researcher owns the next scientific decision.
+
+## Execution and evidence
+
+One h100-1-reserved ACP job, shphd-lite-0911 and existing runtime; no other GPU profile, no four-card submission or training. Reuse original numerical/source qualification and calibrate baseline before probes. Save source/config/Protocol hashes before the first new forward outcome, raw per-answer evaluations, actual displacement receipts and random frames. CPU process analysis uses existing JSON only. All payloads remain in the execution folder, with bilingual result records here. Failures remain visible.
+
+A-G audit: A researcher-selected bounded uncertainty/conditional branches; B original verified data and exposed-DEV boundary; C unchanged answer task; D unchanged model and fixed original top16 candidate; E no learning; F norm-matched random comparison, sign pairing, explicit metric limits; G existing authorized one-H100 resource and immutable receipts. Cross-block consistency PASS for this limited diagnostic. No formal Focus state or original frozen contract is rewritten.

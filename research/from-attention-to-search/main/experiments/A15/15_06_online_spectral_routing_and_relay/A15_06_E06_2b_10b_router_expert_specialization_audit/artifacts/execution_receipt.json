@@ -1,0 +1,25 @@
+{
+  "eligible_full": {
+    "job_id": "om-v6p5s9ri",
+    "state": "SUCCEEDED",
+    "start_time": "2026-08-10T13:33:13Z",
+    "terminal_time": "2026-08-10T13:38:01.888235Z",
+    "retries": 0,
+    "tasks_complete": 15,
+    "tasks_expected": 15
+  },
+  "eligible_smoke": {
+    "job_id": "pt-00k83wyi",
+    "state": "SUCCEEDED",
+    "start_time": "2026-08-10T13:29:12Z",
+    "terminal_time": "2026-08-10T13:31:33.824272Z",
+    "retries": 0
+  },
+  "ineligible_attempt": {
+    "job_id": "om-h9f7rog8",
+    "state": "SUSPENDED",
+    "reason": "E06-AM02 no-op reference did not share the candidate replicas' downstream BF16 grouped-GEMM environment",
+    "raw_archive": "/data/250010109/MoE_Router/outputs/online_spectral_router_training_lb_fixed/e06_router_expert_specialization_attempts/om-h9f7rog8"
+  },
+  "source_manifest_sha256": "ce553db0da3c5b0a52f5933ba404bdee9c6e945293845c9c0eb52dbb94922a81"
+}

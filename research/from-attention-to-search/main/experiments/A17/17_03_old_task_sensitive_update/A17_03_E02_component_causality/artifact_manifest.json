@@ -1,0 +1,181 @@
+{
+  "experiment_id": "A17_03_E02_component_causality",
+  "created_at_utc": "2026-10-11T02:34:29.859199+00:00",
+  "completion": "ENGINEERING_COMPLETE",
+  "scientific_judgment": "Unknown",
+  "source_manifest": "freeze.json",
+  "smoke_job": "pt-1gvachp3",
+  "full_job": "pt-majgvu5m",
+  "resource": "h100-4-reserved",
+  "completed_counts": {
+    "smoke_cells": 140,
+    "independent_replays": 4,
+    "full_cells": 630,
+    "source_batches": 18,
+    "new_training_updates": 0
+  },
+  "output_asset_ids": [
+    "representation_a17_03_component_causality_smoke_20261011t020424z",
+    "representation_a17_03_component_causality_full_20261011t020424z"
+  ],
+  "input_asset_ids": [
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "data_a17_list_rules_v1",
+    "representation_a17_03_sequential_20261010t171602z_native_and_subspaces",
+    "adapter_a17_03_full_sequential_20261010t171602z_s29_first_to_last_old",
+    "adapter_a17_03_full_sequential_20261010t171602z_s29_last_to_first_old",
+    "adapter_a17_03_full_sequential_20261010t171602z_s43_first_to_last_old",
+    "adapter_a17_03_full_sequential_20261010t171602z_s43_last_to_first_old",
+    "adapter_a17_03_full_sequential_20261010t171602z_s71_first_to_last_old",
+    "adapter_a17_03_full_sequential_20261010t171602z_s71_last_to_first_old"
+  ],
+  "claim_boundary": "Fixed-state finite causal contrasts on exposed dev; posthoc E01 output/trajectory descriptions separate; no new trajectory, expert utility, or confirmed function partition.",
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/config.json",
+      "sha256": "3bb5337c5dad82beb7d51b9a1dd9c1507d0d8d789474ae8c7ef60d903201d1a5",
+      "bytes": 1440
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/freeze.json",
+      "sha256": "bb779aa473d79e1e3b9d32f222be19ccaebbf690da27cebb8cd5e08a136bf2a3",
+      "bytes": 11675
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/protocol_frozen.md",
+      "sha256": "5a2d33e67b66ab9ce8d8c585309bdd955ef397b71e33c7e3f5d49adb5428f773",
+      "bytes": 22853
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/protocol_frozen_cn.md",
+      "sha256": "636f9969a60f6eee6505463eaf01ba4f8b4a3ddef1727b51ece76e221f6de575",
+      "bytes": 18845
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/anchor_frozen.md",
+      "sha256": "3479702a9a935a60f7da96fd4d39046fcc9eb3c71a0a4aec0bf8831a28aa5c19",
+      "bytes": 5120
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/anchor_frozen_cn.md",
+      "sha256": "9208b7ca4aeda35625a589c11facd72f60cce1c9cb6e8d989f1b1011f65970aa",
+      "bytes": 4820
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/smoke_gate.json",
+      "sha256": "6b8009b883107a999b047029688c7ae203f84091fa95becd59ef328ade6507ac",
+      "bytes": 1181
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/completion.json",
+      "sha256": "3f320fa8620da88ac3e3551d6fab10b90f804786a89a30fe5a33698004602e29",
+      "bytes": 109115
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/analysis_source_frozen.json",
+      "sha256": "b1837d05d7557a1ce04268b550f0180e47011272a4834788b0692da26a639c72",
+      "bytes": 376
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/analysis/full/input_manifest.json",
+      "sha256": "e17c6c75f9872c56e7f55b7560f477daa3c980273e1391db21d0f372cf1e38a8",
+      "bytes": 379457
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/analysis/full/output_manifest.json",
+      "sha256": "6c6f0aa739bbeaf39b777a9242b1480931e57e65dd4ac123ed4dc2ce3161cdd0",
+      "bytes": 3927
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/smoke_engineering_audit.json",
+      "sha256": "c8867be8d9db4c63c3564170a62008c6b844dd1e59f79b004e7eeb1a72dae1c5",
+      "bytes": 39370
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/full_engineering_audit.json",
+      "sha256": "68b43187805d6c709b196da676b85198f5ff76a713e04a5280b3f6295e0d95f9",
+      "bytes": 692093
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/first_step_bridge.json",
+      "sha256": "2c1eba31b4146143e57004119a4cdf15125b8183faaa2b22b3d0e67681420a6e",
+      "bytes": 109229
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/full_platform_terminal.json",
+      "sha256": "e6b06e4f87621c36face09155aecca50bc36bd78f08fb394c3d024138e4d4357",
+      "bytes": 3733
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/offline/input_manifest.json",
+      "sha256": "454c310bc8b053d77047ed12dc28a178f2196e771e6c97bbb89f6f4a30cdef0d",
+      "bytes": 8875
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/offline/output_manifest.json",
+      "sha256": "3ce3d992de66c3686240084838383964ee3dba6f2100cb5e4e172157ecf1b9a7",
+      "bytes": 2169
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/offline/trajectory_recap/input_manifest.json",
+      "sha256": "72f9d332397eff6d64cfba6f1fd2cb1429506be45350d89a719f4eae3bcb7d59",
+      "bytes": 20879
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/offline/trajectory_recap/output_manifest.json",
+      "sha256": "613d7ab528b178220a9cebfe62c3221cccdde909354c4d18d2b12e5b7ab6b6c3",
+      "bytes": 1087
+    },
+    {
+      "path": "/data/250010109/Research_System/assets/checks/2026-10-11_a17_component_causality_outputs_0233.json",
+      "sha256": "fef3afaf6871048e6c3b1cf111685d9055127c10809277f7d1b644c20b192268",
+      "bytes": 6160
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/registration/v2/smoke_20261011t020424z_registration_request.json",
+      "sha256": "e9a8715657eb73ea461bb0ee9d4cc75c409abd30bea8a184a62091a9cbc9a11a",
+      "bytes": 6920
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/registration/v2/smoke_20261011t020424z_payload_manifest.json",
+      "sha256": "1f5189eb9c22d7ac7020efd783e3c57c52b8b2a79ea91979ea616f85cba831e6",
+      "bytes": 103744
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/registration/v2/smoke_20261011t020424z_canonical_provenance.json",
+      "sha256": "d8b73c8de65ca6865f2a5b1d40f70851935b16bd15556b75a6030dab13a8d0d8",
+      "bytes": 3559
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/registration/v2/full_20261011t020424z_registration_request.json",
+      "sha256": "5d2512ec1bd99767971231dec1f80e5e8e0cca925c18dd50006167566bd20f0f",
+      "bytes": 6812
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/registration/v2/full_20261011t020424z_payload_manifest.json",
+      "sha256": "406acca6df555374050188719db845a40d8919fce0f63d3b200ece982e64d414",
+      "bytes": 437054
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/analysis/registration/v2/full_20261011t020424z_canonical_provenance.json",
+      "sha256": "9e588b5808bed4b08af68b9a03be545d5f5d5f08aa0d25cbabbd6bdf37576872",
+      "bytes": 3442
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/acp_receipts/full/submit-a17-component-full-20261011t020424z-20261011T022202Z.json",
+      "sha256": "7482b81e2af9cf2a56fe3493d7cb1b44edfcd911fa8eec41ddad5750aa316e0f",
+      "bytes": 1288
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/acp_receipts/smoke/submit-a17-component-smoke-20261011t020424z-20261011T021153Z.json",
+      "sha256": "56bc39a06f6c571846755fece7bb0675aabf30bfe244439b1ccd3318f7dd2d16",
+      "bytes": 1291
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_component_causality/runs/causal_20261011T020424Z/execution_certificate.md",
+      "sha256": "db3390a72c991682de5296d364b1ca9a2af82e1f72941bd1b043ec177530051d",
+      "bytes": 2156
+    }
+  ]
+}

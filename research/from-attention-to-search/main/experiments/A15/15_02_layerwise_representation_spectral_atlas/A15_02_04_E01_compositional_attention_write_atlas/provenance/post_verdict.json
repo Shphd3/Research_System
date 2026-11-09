@@ -1,0 +1,129 @@
+{
+  "T_D": {
+    "bootstrap_ci": [
+      -0.9330097258090972,
+      -0.2215478122234348
+    ],
+    "estimate": -0.5468498909516324
+  },
+  "T_rank": {
+    "bootstrap_ci": [
+      -0.0026924772188067435,
+      0.012293630652129637
+    ],
+    "condition_swap_q95": 0.007922238111495972,
+    "equivalent_ranks": 11.287384033203125,
+    "estimate": 0.0027557089924812317
+  },
+  "calibration_tensor_sha256": "d88620267dbdc9c2b87ec24c2f51d9e6fb317cb8c051ec96503414ea9bff60b9",
+  "data_manifest_sha256": "73546b7699717157f9f18536c43d3f63801d63fda8c7d22c2565ef347128eab9",
+  "depth_discriminability_pass": false,
+  "design_T_rank": 0.0062246173620224,
+  "finalization_note": "Formal 36-layer GPU statistics were complete; this CPU finalizer repaired only NumPy JSON serialization and skipped a conjunctive negative-control half test after earlier negative-control gates had already failed.",
+  "finalization_seconds": 0.4217643737792969,
+  "half_basis_T_rank": [
+    0.0070785656571388245,
+    0.0046143680810928345
+  ],
+  "internal_node_tests": {
+    "C12": {
+      "ci": [
+        -0.012939867936074734,
+        0.0005506495013832838
+      ],
+      "estimate": -0.009547237306833267
+    },
+    "C34": {
+      "ci": [
+        -0.008503899537026882,
+        0.0037449842318892463
+      ],
+      "estimate": -0.006202574819326401
+    }
+  },
+  "leaf_signs_consistent": 1,
+  "leaf_substitution": {
+    "L1": {
+      "ci": [
+        -0.005307299830019474,
+        0.009198498353362077
+      ],
+      "estimate": -0.0010531246662139893
+    },
+    "L2": {
+      "ci": [
+        -0.005940162390470505,
+        0.00851707924157381
+      ],
+      "estimate": -0.00032076984643936157
+    },
+    "L3": {
+      "ci": [
+        -0.003878212533891201,
+        0.009754482470452784
+      ],
+      "estimate": -0.0010265260934829712
+    },
+    "L4": {
+      "ci": [
+        -0.0039033321663737297,
+        0.01227178443223238
+      ],
+      "estimate": 0.0022506937384605408
+    }
+  },
+  "mandatory_gates": {
+    "basis_gate": true,
+    "capability_gate": false,
+    "covariance_gate": true,
+    "coverage_gate": true,
+    "data_gate": true,
+    "hook_gate": true,
+    "necessity_gate": true,
+    "negative_control_gate": true,
+    "node_position_gate": false,
+    "numerical_gate": true,
+    "reliability_gate": false
+  },
+  "primary_rule_pass": false,
+  "query_binding_reversal": {
+    "T_rank": 0.0035643428564071655,
+    "bootstrap_ci": [
+      -0.00757833868265152,
+      0.011656119115650645
+    ],
+    "condition_swap_q95": 0.00868425816297531,
+    "design_T_rank": 0.007975235581398052,
+    "half_basis_T_rank": "not_needed_after_bootstrap_or_null_failure",
+    "independent_pass": false
+  },
+  "reliability": {
+    "D0_early": {
+      "bootstrap_ci_high": -0.0008445508137810975,
+      "bootstrap_ci_low": -0.001535248485743068,
+      "point_median": -0.0007164330454543233,
+      "positive_blocks": 0
+    },
+    "D0_late": {
+      "bootstrap_ci_high": 6.866580462455747,
+      "bootstrap_ci_low": 1.4932278513908386,
+      "point_median": 3.7574949264526367,
+      "positive_blocks": 11
+    },
+    "D2_early": {
+      "bootstrap_ci_high": -0.000772645058168564,
+      "bootstrap_ci_low": -0.001507588499225676,
+      "point_median": -0.0006169289117679,
+      "positive_blocks": 0
+    },
+    "D2_late": {
+      "bootstrap_ci_high": 1.0974323421716687,
+      "bootstrap_ci_low": 0.17125391848385335,
+      "point_median": 0.19903689622879028,
+      "positive_blocks": 9
+    }
+  },
+  "semantic_data_manifest_sha256": "73546b7699717157f9f18536c43d3f63801d63fda8c7d22c2565ef347128eab9",
+  "site": "post",
+  "typed_verdict": "insufficient_capability"
+}

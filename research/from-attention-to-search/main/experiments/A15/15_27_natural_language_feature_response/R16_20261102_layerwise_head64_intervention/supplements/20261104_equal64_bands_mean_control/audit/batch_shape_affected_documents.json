@@ -1,0 +1,31 @@
+{
+  "criterion": "max oldhead NLL difference >0.05nat OR any top1 change, allconditions in those documents rerun B1",
+  "documents": [
+    {
+      "seq_id": "R11_A02_090",
+      "oldhead_NLL_max_abs": 0.21978187561035156,
+      "oldhead_top1_changes": 4
+    },
+    {
+      "seq_id": "R11_A02_262",
+      "oldhead_NLL_max_abs": 0.17267799377441406,
+      "oldhead_top1_changes": 1
+    },
+    {
+      "seq_id": "R11_A02_282",
+      "oldhead_NLL_max_abs": 0.13648700714111328,
+      "oldhead_top1_changes": 2
+    },
+    {
+      "seq_id": "R11_A02_292",
+      "oldhead_NLL_max_abs": 0.14882946014404297,
+      "oldhead_top1_changes": 1
+    },
+    {
+      "seq_id": "R11_A02_297",
+      "oldhead_NLL_max_abs": 0.14247465133666992,
+      "oldhead_top1_changes": 2
+    }
+  ],
+  "original_rows_immutable": true
+}

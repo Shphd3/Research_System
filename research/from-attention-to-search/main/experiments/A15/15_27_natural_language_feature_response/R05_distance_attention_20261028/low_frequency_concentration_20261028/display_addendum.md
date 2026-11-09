@@ -1,0 +1,3 @@
+# Complete-support display addendum
+
+The frozen twenty-four discovery-selected columns and eight input-selected rows remain unchanged. Because those columns cover only 0–54.2% of the examples' low-frequency mass, a separate post-hoc display shows all 67 native active low-frequency coordinates in the union of the same eight rows, sorted by ID. No column is selected by concentration, domain response or visual neatness. Shallow and deep panels share columns and colors; every row's full mass sums to one. No main statistic, test, candidate, sample or scientific state changes. [Chinese figure guide](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/low_frequency_concentration_20261028/display_addendum_cn.md).

@@ -1,0 +1,8 @@
+# 0923 组会稿归档
+
+当日主稿是 [0923 SAE N8 组会汇报整理稿](../../../../../../../../daily_research_reports/0923/0923_SAE_N8_组会汇报整理稿.md)。以下两份是被该主稿取代的阶段稿，保留用于追溯，不再作为当前 Focus 或组会结论入口。
+
+| 归档文件 | 归档原因 | 重新启用条件 |
+|---|---|---|
+| [17B E01 阶段稿](../../../../../../../../daily_research_reports/0923/meeting_report/history/meeting_brief_sae_n8_separability_e01_17b.md) | 仅覆盖 E01 精确 17B 比较，未纳入 15B/17B 四模型矩阵。 | 只讨论 E01 历史判定时可引用；当前组会仍以当日主稿为准。 |
+| [15B/17B 矩阵草稿](../../../../../../../../daily_research_reports/0923/meeting_report/history/meeting_brief_sae_n8_15b17b_matrix_draft.md) | E02 结果与图表当时尚未补齐。 | 若需核对结果到达前的计划或口径，可作历史材料阅读。 |

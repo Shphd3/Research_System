@@ -1,0 +1,12 @@
+{
+  "id": "E05",
+  "recorded_at": "2026-10-24T18:05:20.946148+00:00",
+  "job": "pt-uin52ssn",
+  "failure": "redundant save after complete1024 milestone hit ENOSPC",
+  "training_completion_evidence": "all1024 unique metrics; all10 milestone evaluations; complete final hash8f6cb5f0fc4a56f12eeb96c7b737945bca0147e59509eebc31347f57d8ac619b",
+  "resume_qualification": "PASS full-block1\u21922 state; PASS exact metrics33..128",
+  "engineering_fix": "do not save a final milestone twice; no numerical update changes",
+  "next": "measurement and registration only; no more training",
+  "partial_copy_preservation": "104857600 incomplete bytes verified as exact prefix of complete final file; reconstructible length/hash/source manifest retained",
+  "scientific_changes": "NONE"
+}

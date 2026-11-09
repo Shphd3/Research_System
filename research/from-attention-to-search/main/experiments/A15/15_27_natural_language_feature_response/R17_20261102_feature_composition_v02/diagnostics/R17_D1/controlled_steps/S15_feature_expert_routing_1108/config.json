@@ -1,0 +1,81 @@
+{
+  "seed": 2026110815,
+  "source": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S14_moe_cross_model_1108",
+  "model": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000/state.pt",
+  "sae": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/runs/formal/sae_full_final.pt",
+  "tokenizer": "/data/share/Qwen3-0.6B-Base/tokenizer.json",
+  "native_source": "/data/250010109/MoE_Router/experiments/20261104_moe_gate_input_sae_33b/source",
+  "domains": {
+    "animal": [
+      "cat",
+      "dog"
+    ],
+    "vehicle": [
+      "car",
+      "bicycle"
+    ],
+    "fruit": [
+      "apple",
+      "banana"
+    ],
+    "furniture": [
+      "chair",
+      "sofa"
+    ],
+    "clothing": [
+      "shirt",
+      "trousers"
+    ],
+    "instrument": [
+      "piano",
+      "guitar"
+    ],
+    "flower": [
+      "rose",
+      "tulip"
+    ],
+    "cutlery": [
+      "spoon",
+      "fork"
+    ]
+  },
+  "words": [
+    "explicit",
+    "named_rephrase",
+    "attribute",
+    "scenario"
+  ],
+  "positions": [
+    "colon",
+    "body"
+  ],
+  "batch": 16,
+  "dtype": "float32",
+  "tf32": false,
+  "resource": "existing local H100 MIG only; no resource submission",
+  "max_gpu_gib": 12,
+  "wall_seconds": 1800,
+  "permutations": 1000,
+  "bootstraps": 2000,
+  "random_group_draws": 1000,
+  "shared_pair_rate": 0.75,
+  "min_development_clusters": 6,
+  "bias_rate_difference": 0.25,
+  "evaluation_min_frames": 12,
+  "evaluation_min_clusters": 8,
+  "behavior_threshold": 0.75,
+  "universal_panel_rate": 0.9,
+  "matching_max_abs_frequency_gap": 0.1,
+  "matching_nearest_max": 32,
+  "practical_TV_display": 0.05,
+  "length_strata_quantiles": [
+    0.5
+  ],
+  "minimum_exchangeable_clusters": 4,
+  "primary": "hard membership mass r_e/2; per-feature Q1 TV against within-label load; Q2 shared-feature mean cross-label TV; Q3 TV of equal-feature-weight biased group profiles",
+  "statistical_unit": "whole scene clusters; retain three family slots and all24 labels/all4 wordings in each permutation block",
+  "primary_scope": "CONF explicit colon; old exposed stimuli, exploratory reuse",
+  "secondary": "named_rephrase; attribute/scenario retained with original behavior eligibility; body position; gate-weighted and amplitude-weighted sensitivity",
+  "scope": "Current direct user approval for complete analysis overrides phase-A-only clause in supplied attachment; no training, intervention, new texts or new independent confirmation",
+  "selection_provenance": "shared .75 inherited S14 DEV common lists; bias .25 and6/8 signed-cluster support are explicit pre-routing technical defaults, not claimed as historical individually approved numbers; all candidates exported; no utility verdict threshold"
+}

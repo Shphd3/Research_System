@@ -1,0 +1,121 @@
+{
+  "config": {
+    "format_version": "a15_13_data_v1",
+    "max_length": 64,
+    "seed": 1701,
+    "split_sizes": {
+      "DEV-ID": 8000,
+      "DEV-OOD": 8000,
+      "TEST-ID": 12000,
+      "TEST-OOD": 24000,
+      "TRAIN": 100000
+    }
+  },
+  "dataset_sha256": "ac035f9e231e534360cfdfe1e66a6612c681c700aeaad6935a4690ce0a6684cf",
+  "format_version": "a15_13_data_v1",
+  "group_size": 4,
+  "preflight": {
+    "checks": {
+      "bag_count_linear_leakage_accuracy": 0.5,
+      "bag_count_linear_leakage_by_label": {
+        "coarse": 0.5,
+        "fine": 0.5,
+        "leaf": 0.25325
+      },
+      "complete_paraphrase_groups": true,
+      "counterfactual_fine_dependence": true,
+      "counterfactual_parent_dependence": true,
+      "exact_leaf_balance": true,
+      "max_length": true,
+      "no_visible_label_tokens": true,
+      "pre_answer_indexing": true,
+      "rule_uniqueness": true,
+      "split_group_isolation": true
+    },
+    "passed": true
+  },
+  "split_group_counts": {
+    "DEV-ID": 2000,
+    "DEV-OOD": 2000,
+    "TEST-ID": 3000,
+    "TEST-OOD": 6000,
+    "TRAIN": 25000
+  },
+  "split_sha256": {
+    "DEV-ID": "6a368a521eeba9ce503da472ed7d5ad8220b63cf430dc08b75a6c4733323cb04",
+    "DEV-OOD": "ef455d861d57ea4fa9d68bf0cd2df837081b4440e38e8daf416354947192e415",
+    "TEST-ID": "be7275c8e12e2b507e88144e91ab6746a32f24bf97ad4fc1f23152ba818efac4",
+    "TEST-OOD": "763c3d2d48452eebf535b816f7dfc4fd7b6eb8dafba55ff09cef58be2b785346",
+    "TRAIN": "aaa5fb3fabd1f7dda0dcfebc8e4a375a3396c32c5c749ee15e9221104990999a"
+  },
+  "template_partitions": {
+    "DEV_OOD": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "TEST_OOD": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "TRAIN_DEV_ID_TEST_ID": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "vocabulary": {
+    "0": 25,
+    "1": 26,
+    "10": 35,
+    "2": 27,
+    "3": 28,
+    "4": 29,
+    "5": 30,
+    "6": 31,
+    "7": 32,
+    "8": 33,
+    "9": 34,
+    "<BOS>": 0,
+    "<EOS>": 1,
+    "ASK": 13,
+    "BECOMES": 22,
+    "BEGIN": 4,
+    "CONSIDER": 6,
+    "DEMO": 2,
+    "EXAMPLE": 12,
+    "FIND": 14,
+    "GIVEN": 10,
+    "GIVES": 24,
+    "IS": 23,
+    "MAPS": 20,
+    "NOTICE": 5,
+    "NOW": 15,
+    "OBSERVE": 11,
+    "PAIR": 9,
+    "PREDICT": 18,
+    "QUERY": 16,
+    "SEE": 8,
+    "SHOW": 7,
+    "SOLVE": 17,
+    "START": 3,
+    "TO": 19,
+    "YIELDS": 21
+  }
+}

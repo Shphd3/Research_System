@@ -1,0 +1,224 @@
+{
+  "schema": "A15_27_R02_execution_config_v1",
+  "processing_agent": "/root",
+  "existing_question": "15_27/natural_language_feature_response",
+  "role": "bounded follow-up frequency/distance/two-cue organization analysis",
+  "execution_surface": "current_container",
+  "resource_profile": "USER_AUTHORIZED_EXISTING_RESOURCE",
+  "resource_basis": "Current user explicitly requires only existing available resources,overriding defaultnewsubmission for this bounded scope",
+  "python": "/root/anaconda3/envs/spectral-hier/bin/python",
+  "pythonpath": "/data/250010109/dependency_packages/hf_transformers_qwen3",
+  "main_assets": [
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "sae_qwen3_0p6b_e16_layer27_final_1b",
+    "dclm_pair_v1",
+    "data_natural_language_feature_panel_r02_20261026",
+    "data_e16_fp32_reference_windows_r02_20261026"
+  ],
+  "model_dtype": "BF16",
+  "SAE_dtype": "FP32",
+  "model_eval": true,
+  "requires_grad": false,
+  "use_cache": false,
+  "hook": "zero-based27 actual MLPinput afterpostattentionnorm",
+  "normalization": "nonebeforeencoder,nodecoderbiassubtraction",
+  "sparsity": "native ReLU Top32;activeiffz>0",
+  "batch_sequences": 1,
+  "panel_sequences": 120,
+  "reference_sequences": 1024,
+  "reference_length": 256,
+  "reference_burn_in": 16,
+  "reference_positions": 245760,
+  "replay_sequences": 4,
+  "causal_prefix_sequences": 4,
+  "planned_R02_forwards": 1152,
+  "previous_R01_forwards": 292,
+  "conversation_forwards_if_all_complete": 1444,
+  "hard_forward_cap": 1500,
+  "phase_order": [
+    "freezeallinputs",
+    "referenceforward",
+    "referencequalification",
+    "panelforward",
+    "panelqualification",
+    "offlineoldgroupandQ1Q2Q3",
+    "threefiguresandboundedreport"
+  ],
+  "new_panel_selection": "newtemplates/entities,noR02responsesobserved; bassfocus selected usingexposedR01 discovery",
+  "candidate_ids": [
+    18711,
+    26149,
+    24995,
+    3743,
+    14922,
+    2499,
+    6401,
+    12986,
+    4718,
+    2453,
+    13230,
+    1671,
+    27042,
+    15524,
+    20058,
+    22464,
+    8194,
+    16240,
+    20289,
+    28673,
+    24001,
+    7555,
+    14396,
+    14042,
+    27822,
+    27076,
+    6238,
+    839,
+    5847,
+    19515,
+    23609,
+    7897,
+    1818,
+    17719,
+    1205,
+    47,
+    18457,
+    19359,
+    16497,
+    19935,
+    8856,
+    20019,
+    16034,
+    19838,
+    16295,
+    25792,
+    8066,
+    5891,
+    5596,
+    10549,
+    4762,
+    6813,
+    29506,
+    29829,
+    20270,
+    9290,
+    5196,
+    27173,
+    26125,
+    24568,
+    14060,
+    19601,
+    2280,
+    1544
+  ],
+  "source_candidate_freeze": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/candidate_freeze.json",
+  "source_candidate_freeze_sha256": "a54c37ab0854c4a2e9c535c87d9720cdc8a03c719d19856ae148ad3ea66b5838",
+  "groups": [
+    {
+      "group_id": "G01",
+      "feature_ids": [
+        2453,
+        24001,
+        7555,
+        6238,
+        16497,
+        19838
+      ],
+      "discovery_bootstrap_coassignment": 0.9146666666666667
+    },
+    {
+      "group_id": "G02",
+      "feature_ids": [
+        28673,
+        23609,
+        19601
+      ],
+      "discovery_bootstrap_coassignment": 1.0
+    },
+    {
+      "group_id": "G03",
+      "feature_ids": [
+        6401,
+        4718,
+        27042,
+        14042
+      ],
+      "discovery_bootstrap_coassignment": 0.48666666666666664
+    },
+    {
+      "group_id": "G04",
+      "feature_ids": [
+        1818,
+        1205,
+        29829,
+        27173
+      ],
+      "discovery_bootstrap_coassignment": 0.845
+    },
+    {
+      "group_id": "G05",
+      "feature_ids": [
+        47,
+        19359,
+        10549,
+        24568,
+        1544
+      ],
+      "discovery_bootstrap_coassignment": 0.5315000000000001
+    },
+    {
+      "group_id": "G06",
+      "feature_ids": [
+        14396,
+        27822,
+        17719,
+        19935,
+        20019
+      ],
+      "discovery_bootstrap_coassignment": 0.7155
+    },
+    {
+      "group_id": "G07",
+      "feature_ids": [
+        18711,
+        16295,
+        5596
+      ],
+      "discovery_bootstrap_coassignment": 0.7266666666666666
+    }
+  ],
+  "statistical_plan": "offline/statistical_plan.json",
+  "distance_bin_reference": "cue2end(lastrelevantcue)->finaltargetstart;cue1distance separatelyrecorded",
+  "distance_bins_tokens": {
+    "short": [
+      1,
+      8
+    ],
+    "long": [
+      48,
+      64
+    ]
+  },
+  "measurement_gates": {
+    "mean_nmse_max": 0.15,
+    "p90_nmse_max": 0.3,
+    "decoder_formula_max_relative_error": 1e-05,
+    "replay_z_atol": 1e-05,
+    "replay_z_rtol_maxabs": 0.0001,
+    "causal_prefix_z_atol": 0.001,
+    "causal_prefix_z_rtol_maxabs": 0.01,
+    "causal_prefix_h_relative_L2_max": 0.01,
+    "nonfinite": "STOP",
+    "failure_policy": "Preservefailedmeasurementandreportblock; noassetreplacement/retraining/thresholdrelaxation"
+  },
+  "CrossCoder": "existingpairedmodel/sharedzand14decodercontributionsfrompre-fixedcache8positionsonly; noindependentlayeractivation,noE16IDalignment,noadditionalforward",
+  "prohibitions": [
+    "model/dictionary/experttraining",
+    "newresourceallocation/purchase",
+    "activationintervention",
+    "sealedTEST",
+    "deletion",
+    "commit/push/publication"
+  ]
+}

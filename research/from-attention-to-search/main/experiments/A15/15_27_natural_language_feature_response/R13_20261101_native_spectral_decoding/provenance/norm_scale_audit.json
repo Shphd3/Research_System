@@ -1,0 +1,128 @@
+[
+  {
+    "condition": "identity",
+    "h_rms_min": 10.830081867160615,
+    "epsilon_over_min_variance": 8.525827095165946e-09,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "mean_only",
+    "h_rms_min": 14.549068536109928,
+    "epsilon_over_min_variance": 4.724214634071702e-09,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k1",
+    "h_rms_min": 5.083979219527368,
+    "epsilon_over_min_variance": 3.868944203555206e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k4",
+    "h_rms_min": 4.401167391338119,
+    "epsilon_over_min_variance": 5.162549476637296e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k16",
+    "h_rms_min": 4.346922779489327,
+    "epsilon_over_min_variance": 5.2921987936013475e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k64",
+    "h_rms_min": 5.150415866039731,
+    "epsilon_over_min_variance": 3.76977478814313e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k128",
+    "h_rms_min": 6.172938239660285,
+    "epsilon_over_min_variance": 2.6243160483769107e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k256",
+    "h_rms_min": 7.23939734340414,
+    "epsilon_over_min_variance": 1.9080738158777662e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k512",
+    "h_rms_min": 8.71837578743133,
+    "epsilon_over_min_variance": 1.3156150444064722e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k768",
+    "h_rms_min": 9.854862273747218,
+    "epsilon_over_min_variance": 1.029671949116295e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "k1024",
+    "h_rms_min": 10.830081867160619,
+    "epsilon_over_min_variance": 8.52582709516594e-09,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "middle",
+    "h_rms_min": 14.600230535348294,
+    "epsilon_over_min_variance": 4.691163541768003e-09,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "tail",
+    "h_rms_min": 14.589101027335568,
+    "epsilon_over_min_variance": 4.69832371659151e-09,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "head_middle",
+    "h_rms_min": 9.502299618267147,
+    "epsilon_over_min_variance": 1.107497003399764e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "head_tail",
+    "h_rms_min": 9.559141056375084,
+    "epsilon_over_min_variance": 1.0943651629213941e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "random1031",
+    "h_rms_min": 14.241493856862064,
+    "epsilon_over_min_variance": 4.930476648574375e-09,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "random1032",
+    "h_rms_min": 14.26428431820716,
+    "epsilon_over_min_variance": 4.914734103306941e-09,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "random1033",
+    "h_rms_min": 14.288571124701928,
+    "epsilon_over_min_variance": 4.898040796172701e-09,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "head_random1034",
+    "h_rms_min": 9.058750509670896,
+    "epsilon_over_min_variance": 1.2186062535635163e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "head_random1035",
+    "h_rms_min": 6.21896558488789,
+    "epsilon_over_min_variance": 2.585614014409873e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  },
+  {
+    "condition": "head_random1036",
+    "h_rms_min": 6.231885030300696,
+    "epsilon_over_min_variance": 2.5749045507465336e-08,
+    "whole_h_norm_scaling_interpretation": "native RMSNorm removes positive global scalar up to epsilon; centered-component rescaling changes angle and is not this control"
+  }
+]

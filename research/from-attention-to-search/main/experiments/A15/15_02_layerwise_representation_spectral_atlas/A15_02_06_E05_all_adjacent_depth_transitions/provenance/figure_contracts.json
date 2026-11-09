@@ -1,0 +1,20 @@
+{
+  "figure1": {
+    "allowed_conclusion": "pair-specific relative distribution",
+    "limitation": "display pairs do not select inference",
+    "metric": "normalized variance density and all-pair simultaneous D_sem interval",
+    "question": "How do eight preselected adjacent pairs differ in the same directions?"
+  },
+  "figure2": {
+    "allowed_conclusion": "fixed-model depth profile and transition significance",
+    "limitation": "variance growth is not added information",
+    "metric": "band delta Q, D_sem, G_sem",
+    "question": "What is the complete 35-transition depth profile?"
+  },
+  "figure3": {
+    "allowed_conclusion": "depth heterogeneity of the proxy",
+    "limitation": "layers are fixed positions, not population replicates",
+    "metric": "stage means, simultaneous contrasts, linear slope",
+    "question": "Do early, middle, and deep transition summaries differ?"
+  }
+}

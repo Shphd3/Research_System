@@ -1,0 +1,711 @@
+{
+  "schema": "R03_existing_intervention_metadata_audit_v1",
+  "recorded_at_utc": "2026-10-27T01:48:38.620802+00:00",
+  "processing_agent": "/root/r03_protocol_finish",
+  "new_model_forwards": 0,
+  "new_interventions": 0,
+  "checkpoint_or_activation_tensor_loads": 0,
+  "sealed_TEST_payload_read": false,
+  "search_scope": [
+    "A15_25_02 canonical Protocol/Summary/Detailed and exact small result/config/code JSON",
+    "A15_25_03 preparation/execution canonical records and authorization/stop metadata",
+    "A22 original whole-layer reconstruction report and phase1 graph-deletion distinction"
+  ],
+  "not_exhaustive_all_machine_search": true,
+  "source_files": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_25_02_learning_history_representation/20261023/protocol.md": {
+      "sha256": "1772547e999dc40c884aa00d83a1ad9a453c621a1232651316fd251e117bbdf8",
+      "bytes": 12140
+    },
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_25_02_learning_history_representation/20261023/summary.md": {
+      "sha256": "44b8bb484e1706e5b197fa1d14a4c6859f48116441bdf2de43017892ac975199",
+      "bytes": 10639
+    },
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_25_02_learning_history_representation/20261023/detailed.md": {
+      "sha256": "0505ae50d329f4f1229c653a0149475b60de3ce8651463b8f6b5c329a9631c8a",
+      "bytes": 15182
+    },
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_25_02_learning_history_representation/20261023/evidence_tables.md": {
+      "sha256": "25a2088228ec8495965501a3d73bf2ec5fab14b28a4bacdcbb26424aa46152bd",
+      "bytes": 37795
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/config/frozen.json": {
+      "sha256": "8065911de53e1c124044133fd0478c88d5bf472b810aec6358efd66bc9c9cf67",
+      "bytes": 3538
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/full/extraction_receipt.json": {
+      "sha256": "1bdd5a4abd66399bd02d1f74d948f40d3e4acc810c99e2f89eadd5ba65aac59b",
+      "bytes": 2485
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/full/complete.json": {
+      "sha256": "036d7ac6f0c9040624cf48e9b86328b17f5e54ce5a8be6dfa707880a97f86401",
+      "bytes": 1441
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/full/primary_results.json": {
+      "sha256": "68c946cb7ed56e2e40f5548013b885e85ac3d0a7a1cc6908ca7ddfc7e3406bcc",
+      "bytes": 1697
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/full/qualification.json": {
+      "sha256": "9a87bf4afb2f684fd779407610d6c5fc2993adab30a75ee1a5098ac3594d3834",
+      "bytes": 6209
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/full/selection_frozen.json": {
+      "sha256": "14a2ec1bb2b302a154ade257c9999c8bd03d3238e7888caf9c6a3caecc12124b",
+      "bytes": 103584
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/full/intervention_summary.json": {
+      "sha256": "ed13039a6d1bd532d9df24320d3f231d8085814d95e69e16d0da193c3a7f8135",
+      "bytes": 251949
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/code/analyze.py": {
+      "sha256": "7f1b7a4ae56dceaf496c62c6a53e26f5810d7bf1164d08b08282f9235d233626",
+      "bytes": 14286
+    },
+    "/data/250010109/MoE_Router/experiments/20261023_learning_history_representation/source_versions/extraction_v1/run.py": {
+      "sha256": "0e2c4e93581c977726d76d13efdb82d3757271cbd68d8f8743da66b1280ebc78",
+      "bytes": 13104
+    },
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_25_03_context_computation_dependency/R01_bounded_execution_20261026/authorization.json": {
+      "sha256": "d752162b8cc0566a6be63569c9475b8e0f5b23a47075fdb5efbc8a1b08d6efc6",
+      "bytes": 2148
+    },
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_25_03_context_computation_dependency/R01_bounded_execution_20261026/execution_status.json": {
+      "sha256": "cd6b0bfe174b4767ef70115bc811383a8a999e0cebaa59ef4b44339d878114ca",
+      "bytes": 408
+    },
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_25_03_context_computation_dependency/R01_bounded_execution_20261026/summary.md": {
+      "sha256": "51bf8f8b245a714a2f87e91c0f6459c49dce7c621833a885269ca11e8e2e3cd0",
+      "bytes": 1717
+    },
+    "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/replacement_fidelity.json": {
+      "sha256": "72acd07e2057a31f6d3d44eb31be8d7979a87d0319b3871ea0baeaf74c4b42ca",
+      "bytes": 503212
+    }
+  },
+  "current_R03_binding": {
+    "model_weight_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "dictionary_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+    "Base_compute_dtype": "BF16",
+    "dictionary": "one shared z F16384",
+    "new_interventions_authorized": false
+  },
+  "A15_25_02": {
+    "authorization": "Canonical Protocol v1 explicitly records researcher-authorized frozen inference and representation edits; no training/TEST/publication/closure",
+    "executed": true,
+    "completion_status": "COMPLETE",
+    "conditions": 253,
+    "job_id_success_from_canonical_record": "pt-mpgpsupe",
+    "source_DEV_exposed": true,
+    "discovery_examples": 784,
+    "evaluation_examples": 816,
+    "evaluation_groups": 204,
+    "model_states": {
+      "base": null,
+      "A": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full/attn1_adam/main/checkpoints/update_01200/state.pt",
+      "sequential": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/U/checkpoints/update_01200/state.pt",
+      "mixed": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/B/seed_29/Full/checkpoints/update_01200/state.pt"
+    },
+    "state_checkpoint_sha256": {
+      "A": "48595673c24579164e271cfeb1b86be6a234e2dfc06218b74d8ca07e16411b75",
+      "sequential": "e3b12604b7f3f205b7e219a85f0c7826e9453caa6663b024ed4228798e7b82b1",
+      "mixed": "97473f54f80a96a16f5758527f010b6eea2d56c2ba6b7b05a25664865642b963"
+    },
+    "same_original_Base_disk_hash": true,
+    "same_dictionary_hash": true,
+    "Base_compute_dtype": "float32",
+    "coder_compute_dtype": "bfloat16",
+    "actual_hook": "only zero-based block27 residual-post, before final global norm; edits evaluated through frozen norm/head",
+    "position": "last visible answer-prefix position for the old/reversed three-word conditional task; not current natural-language target positions",
+    "dose": "alpha0.5 or1.0 set attenuation, h_edit=h-alpha*TRAIN_rms27*sum_f_in_set z_f*D27f; original residual error retained",
+    "set_size": 32,
+    "control": "eight approximate occurrence/decoder-norm matched random32-feature sets; norm equalized per example; no-op and whole-donor controls; actual fallbacks0",
+    "qualification": {
+      "base": {
+        "FVE_last": -1.045196294784546,
+        "whole_dictionary_qualified": false
+      },
+      "A": {
+        "FVE_last": -0.8642040491104126,
+        "whole_dictionary_qualified": false
+      },
+      "sequential": {
+        "FVE_last": -0.8647303581237793,
+        "whole_dictionary_qualified": false
+      },
+      "mixed": {
+        "FVE_last": -0.9710022211074829,
+        "whole_dictionary_qualified": false
+      }
+    },
+    "primary_local_results": {
+      "mixed_old_half_attenuation": {
+        "mean": 1.1299357864202237,
+        "low": 1.0368509916162572,
+        "high": 1.2278469176950797,
+        "level": 0.9833333333333333,
+        "groups": 204,
+        "candidate_damage": {
+          "mean": 2.290830951110989,
+          "low": 2.1995114362122967,
+          "high": 2.385331148142908,
+          "level": 0.95,
+          "groups": 204
+        },
+        "random_damage": {
+          "mean": 1.1608951646907657,
+          "low": 1.1103521444487805,
+          "high": 1.2138869561108887,
+          "level": 0.95,
+          "groups": 204
+        },
+        "verdict": "SUPPORTED_LOCAL"
+      },
+      "mixed_new_half_attenuation": {
+        "mean": 1.427381151447109,
+        "low": 1.2737865975090101,
+        "high": 1.5747079338026204,
+        "level": 0.9833333333333333,
+        "groups": 204,
+        "candidate_damage": {
+          "mean": 1.8850212097167969,
+          "low": 1.774081659200145,
+          "high": 1.993047600400214,
+          "level": 0.95,
+          "groups": 204
+        },
+        "random_damage": {
+          "mean": 0.45764005826968773,
+          "low": 0.4008817660165768,
+          "high": 0.5180754425917184,
+          "level": 0.95,
+          "groups": 204
+        },
+        "verdict": "SUPPORTED_LOCAL"
+      },
+      "raw_rank16_old_transfer": {
+        "mean": 17.807931829901303,
+        "low": 16.7391585493789,
+        "high": 18.896671668746894,
+        "level": 0.9833333333333333,
+        "groups": 204,
+        "candidate_improvement": {
+          "mean": 22.241973016776292,
+          "low": 21.210453649946288,
+          "high": 23.271716780639164,
+          "level": 0.95,
+          "groups": 204
+        },
+        "random_improvement": {
+          "mean": 4.434041209665,
+          "low": 4.271413473726488,
+          "high": 4.5969439115156145,
+          "level": 0.95,
+          "groups": 204
+        },
+        "verdict": "SUPPORTED_LOCAL"
+      }
+    },
+    "selected_coordinate_ids": {
+      "A_old": [
+        10838,
+        13964,
+        6199,
+        5332,
+        13465,
+        2506,
+        14886,
+        2468,
+        15993,
+        2919,
+        11318,
+        5776,
+        15379,
+        1102,
+        12921,
+        14,
+        11546,
+        7415,
+        2393,
+        1741,
+        14794,
+        4300,
+        13944,
+        12179,
+        15493,
+        8060,
+        6706,
+        557,
+        864,
+        2431,
+        7636,
+        3079
+      ],
+      "sequential_new": [
+        10838,
+        6199,
+        13964,
+        13465,
+        2506,
+        5332,
+        14886,
+        2468,
+        15993,
+        2919,
+        11318,
+        8060,
+        557,
+        1102,
+        7415,
+        15379,
+        12921,
+        4300,
+        5776,
+        14,
+        2393,
+        11546,
+        12179,
+        14794,
+        9900,
+        6706,
+        7388,
+        864,
+        2163,
+        13944,
+        1741,
+        2431
+      ],
+      "mixed_old": [
+        10838,
+        13964,
+        6199,
+        13465,
+        2506,
+        5332,
+        14886,
+        2468,
+        2919,
+        8060,
+        15993,
+        12921,
+        1102,
+        5776,
+        7415,
+        11318,
+        14,
+        15379,
+        13944,
+        1741,
+        12179,
+        11546,
+        15493,
+        2393,
+        14794,
+        4300,
+        557,
+        864,
+        6706,
+        7388,
+        9900,
+        12671
+      ],
+      "mixed_new": [
+        10838,
+        13964,
+        6199,
+        5332,
+        2506,
+        13465,
+        14886,
+        2468,
+        15993,
+        2919,
+        1102,
+        8060,
+        11318,
+        557,
+        12921,
+        7415,
+        15379,
+        5776,
+        4300,
+        14,
+        11546,
+        1741,
+        2393,
+        12179,
+        14794,
+        9900,
+        6706,
+        864,
+        13944,
+        7388,
+        2163,
+        2431
+      ],
+      "mixed_frequent": [
+        14,
+        23,
+        864,
+        1265,
+        1819,
+        1982,
+        2138,
+        2145,
+        2174,
+        2252,
+        2286,
+        2408,
+        2468,
+        3097,
+        4080,
+        4226,
+        4299,
+        4380,
+        4764,
+        5332,
+        5646,
+        5913,
+        6356,
+        6432,
+        7134,
+        7303,
+        7304,
+        7310,
+        7388,
+        7415,
+        7798,
+        7880
+      ]
+    },
+    "intersections_with_R03_selected_IDs": {
+      "A_old": [],
+      "sequential_new": [],
+      "mixed_old": [],
+      "mixed_new": [],
+      "mixed_frequent": [
+        2174
+      ]
+    },
+    "specific_saved_conditions": {
+      "ablate_base_mixed_old_0.5": {
+        "kind": "feature_attenuation",
+        "recipient": "base",
+        "by_task": {
+          "old": {
+            "margin": 0.03189515694975853,
+            "nll": 3.9040582180023193,
+            "accuracy": 0.01715686274509804,
+            "forced_accuracy": 0.5049019607843137,
+            "first": 0.021594971418380737,
+            "last": 0.02663414552807808,
+            "middle": 0.01724635437130928,
+            "other": 0.9345245361328125
+          },
+          "new": {
+            "margin": -0.008692868053913116,
+            "nll": 4.126926422119141,
+            "accuracy": 0.0,
+            "forced_accuracy": 0.5,
+            "first": 0.017647918313741684,
+            "last": 0.020993582904338837,
+            "middle": 0.014522491954267025,
+            "other": 0.946835994720459
+          }
+        },
+        "mean_edit_norm": 199.8809356689453,
+        "metadata": {
+          "features": [
+            10838,
+            13964,
+            6199,
+            13465,
+            2506,
+            5332,
+            14886,
+            2468,
+            2919,
+            8060,
+            15993,
+            12921,
+            1102,
+            5776,
+            7415,
+            11318,
+            14,
+            15379,
+            13944,
+            1741,
+            12179,
+            11546,
+            15493,
+            2393,
+            14794,
+            4300,
+            557,
+            864,
+            6706,
+            7388,
+            9900,
+            12671
+          ],
+          "alpha": 0.5
+        }
+      },
+      "ablate_mixed_mixed_old_0.5": {
+        "kind": "feature_attenuation",
+        "recipient": "mixed",
+        "by_task": {
+          "old": {
+            "margin": 14.688508987426758,
+            "nll": 0.06146452948451042,
+            "accuracy": 0.9926470588235294,
+            "forced_accuracy": 0.9975490196078431,
+            "first": 0.4907383918762207,
+            "last": 0.48781055212020874,
+            "middle": 0.003393373917788267,
+            "other": 0.01805766113102436
+          },
+          "new": {
+            "margin": 13.264211654663086,
+            "nll": 0.02610805071890354,
+            "accuracy": 0.9975490196078431,
+            "forced_accuracy": 1.0,
+            "first": 0.4992752969264984,
+            "last": 0.48795244097709656,
+            "middle": 0.00324661354534328,
+            "other": 0.009525656700134277
+          }
+        },
+        "mean_edit_norm": 156.48426818847656,
+        "metadata": {
+          "features": [
+            10838,
+            13964,
+            6199,
+            13465,
+            2506,
+            5332,
+            14886,
+            2468,
+            2919,
+            8060,
+            15993,
+            12921,
+            1102,
+            5776,
+            7415,
+            11318,
+            14,
+            15379,
+            13944,
+            1741,
+            12179,
+            11546,
+            15493,
+            2393,
+            14794,
+            4300,
+            557,
+            864,
+            6706,
+            7388,
+            9900,
+            12671
+          ],
+          "alpha": 0.5
+        }
+      },
+      "ablate_mixed_mixed_new_0.5": {
+        "kind": "feature_attenuation",
+        "recipient": "mixed",
+        "by_task": {
+          "old": {
+            "margin": 14.707610130310059,
+            "nll": 0.0619070939719677,
+            "accuracy": 0.9926470588235294,
+            "forced_accuracy": 0.9975490196078431,
+            "first": 0.49068525433540344,
+            "last": 0.4874226450920105,
+            "middle": 0.003501210128888488,
+            "other": 0.018390914425253868
+          },
+          "new": {
+            "margin": 13.29658031463623,
+            "nll": 0.026830757036805153,
+            "accuracy": 0.9975490196078431,
+            "forced_accuracy": 1.0,
+            "first": 0.49911341071128845,
+            "last": 0.4879522919654846,
+            "middle": 0.003144241636618972,
+            "other": 0.009790080599486828
+          }
+        },
+        "mean_edit_norm": 155.50506591796875,
+        "metadata": {
+          "features": [
+            10838,
+            13964,
+            6199,
+            5332,
+            2506,
+            13465,
+            14886,
+            2468,
+            15993,
+            2919,
+            1102,
+            8060,
+            11318,
+            557,
+            12921,
+            7415,
+            15379,
+            5776,
+            4300,
+            14,
+            11546,
+            1741,
+            2393,
+            12179,
+            14794,
+            9900,
+            6706,
+            864,
+            13944,
+            7388,
+            2163,
+            2431
+          ],
+          "alpha": 0.5
+        }
+      },
+      "patch_sequential_mixed_old": {
+        "kind": "feature_transfer",
+        "recipient": "sequential",
+        "by_task": {
+          "old": {
+            "margin": -11.970114707946777,
+            "nll": 11.971495628356934,
+            "accuracy": 0.0,
+            "forced_accuracy": 0.0,
+            "first": 0.5001920461654663,
+            "last": 0.4995955526828766,
+            "middle": 0.0002032206830335781,
+            "other": 9.172861609840766e-06
+          },
+          "new": {
+            "margin": 15.251633644104004,
+            "nll": 0.0002898011007346213,
+            "accuracy": 1.0,
+            "forced_accuracy": 1.0,
+            "first": 0.49988824129104614,
+            "last": 0.5000230669975281,
+            "middle": 8.209533552872017e-05,
+            "other": 6.592041700059781e-06
+          }
+        },
+        "mean_edit_norm": 26.978822708129883,
+        "metadata": {}
+      },
+      "ablate_mixed_mixed_frequent_0.5": {
+        "kind": "feature_attenuation",
+        "recipient": "mixed",
+        "by_task": {
+          "old": {
+            "margin": 17.17507553100586,
+            "nll": 0.04301094636321068,
+            "accuracy": 0.9950980392156863,
+            "forced_accuracy": 0.9975490196078431,
+            "first": 0.499683141708374,
+            "last": 0.49665582180023193,
+            "middle": 0.002985581522807479,
+            "other": 0.000675464456435293
+          },
+          "new": {
+            "margin": 15.373641967773438,
+            "nll": 0.016575705260038376,
+            "accuracy": 0.9975490196078431,
+            "forced_accuracy": 1.0,
+            "first": 0.5005517601966858,
+            "last": 0.49601873755455017,
+            "middle": 0.0033340982627123594,
+            "other": 9.545101056573913e-05
+          }
+        },
+        "mean_edit_norm": 67.3558578491211,
+        "metadata": {
+          "features": [
+            14,
+            23,
+            864,
+            1265,
+            1819,
+            1982,
+            2138,
+            2145,
+            2174,
+            2252,
+            2286,
+            2408,
+            2468,
+            3097,
+            4080,
+            4226,
+            4299,
+            4380,
+            4764,
+            5332,
+            5646,
+            5913,
+            6356,
+            6432,
+            7134,
+            7303,
+            7304,
+            7310,
+            7388,
+            7415,
+            7798,
+            7880
+          ],
+          "alpha": 0.5
+        }
+      }
+    },
+    "coordinate_crosswalk_is_identity_only": true,
+    "qualified_current_R03_functional_link": false,
+    "link_boundary": "The same dictionary licenses coordinate identity, not transfer of intervention outcomes. Primary half-attenuation effects use an adapted mixed parent; even original-Base arms use FP32 and different positions/task/sets, and whole-dictionary quality failed. No current graph community was intervened on."
+  },
+  "A15_25_03": {
+    "authorization": "用户：继续执行本协议。按已写好的边界完成候选发现、测量资格核验和有界干预，不新增训练或资源；资格不足就如实报告。",
+    "authorization_state": "APPROVED_FOR_BOUNDED_DISCOVERY_QUALIFICATION_AND_INTERVENTION_WITH_STOP_GATES",
+    "actual_status": {
+      "task_state": "COMPLETE_AT_PRESPECIFIED_STOP",
+      "result_state": "INSUFFICIENT_DATA_SUPPORT",
+      "question_state": "FUNCTIONAL_QUESTION_UNANSWERED",
+      "discovery_completed": true,
+      "C_R_feature_selection": "NOT_RUN",
+      "local_measurement_qualification": "NOT_RUN",
+      "intervention": "NOT_RUN",
+      "sequence_forwards": 0,
+      "training": 0,
+      "new_resources": 0,
+      "EVAL_read": false,
+      "TEST_read": false
+    },
+    "data_stop": "maximum minority43<64 before matching; matched common strata at most23/class",
+    "feature_selection_and_measurement": "NOT_RUN",
+    "qualified_current_R03_functional_link": false
+  },
+  "A22_whole_layer_reconstruction": {
+    "actual_scope": "absolute whole reconstruction at a residual layer; not a named single-feature/set attenuation",
+    "historical_final_block_FVE": 0.864722,
+    "historical_final_replacement_CE_delta_nats": 0.305962,
+    "qualified_single_feature_replacement_evidence": false
+  },
+  "phase1_graph_item_deletion": {
+    "scope": "remove a composition-list node and recalculate graph/Jaccard; not change model activations",
+    "qualified_model_intervention_evidence": false
+  },
+  "overall": "Existing executed selective directions are present in25_02, but no result matching current R03 parent precision, target positions, groups/dose and controls qualifies as functional evidence for current nodes/communities.25_03 interventions were explicitly not run. No new intervention is authorized or executed."
+}

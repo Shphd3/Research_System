@@ -1,0 +1,72 @@
+{
+  "id": "dataset_r18_near_far_object_fact_pairs_20261104",
+  "title_cn": "R18近远容器物品事实配对行为文本",
+  "category": "dataset",
+  "kind": "constructed_english_paired_object_fact_panel",
+  "payload_status": "SOURCE_FILES_PRESENT",
+  "locations": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior",
+      "expected": "directory",
+      "required": true,
+      "probes": [
+        {
+          "path": "data/panel.jsonl",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "data/families.json",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "data/templates.json",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "config.json",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "evidence/freeze.json",
+          "expected": "file",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "identity": {
+    "model": "model_qwen3_0p6b_base_official_a5",
+    "tokenizer": "tokenizer_qwen3_0p6b_base_official_a5",
+    "families": 28,
+    "smoke_families": 4,
+    "heldout_families": 24,
+    "heldout_template_groups": 6,
+    "prefixes": 444,
+    "prefix_tokens": 320,
+    "main_gaps": [
+      16,
+      64,
+      128
+    ],
+    "gap": "p-e-1; both endpoints excluded; e last item token",
+    "dataset_sha256": "77594e13a72d16b340c34a21d04328a8dab1e3aa8276fdc9f04713a81ac100da",
+    "seed": 20261104,
+    "training": false,
+    "SAE_analysis": false,
+    "scientific_acceptance": "Unknown"
+  },
+  "projects": [
+    "from-attention-to-search",
+    "moe-router-execution"
+  ],
+  "required_projects": [],
+  "storage_owner": "MoE_Router",
+  "source_paths": [
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/protocol.md",
+    "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior/config.json"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "UTC": "2026-11-04T07:51:30.283482+00:00",
+  "sites": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "metadata": {
+        "config": {
+          "adam_betas": [
+            0.9,
+            0.999
+          ],
+          "adam_eps": 1e-08,
+          "aux_k": 512,
+          "aux_weight": 0.03125,
+          "d_model": 1024,
+          "dead_after_steps": 50,
+          "grad_clip": 1.0,
+          "gradient_accumulation": 1,
+          "gradient_reduction": "fixed_named_parameter_SUM_div_world",
+          "interface": "raw_self_attn_o_proj_output",
+          "k": 32,
+          "layer": 27,
+          "learning_rate": 0.0003,
+          "log_every": 1000,
+          "micro_batch_size": 1,
+          "milestone_steps": [
+            24438,
+            73314,
+            244380
+          ],
+          "model_config_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+          "model_path": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+          "model_weights_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+          "n_latents": 30000,
+          "objective": "E16_rank_mean_of_local_normalized_reconstruction_plus_AuxK",
+          "outlier_quantile": 0.999,
+          "parameter_bootstrap": "rank0_broadcast",
+          "planned_valid_prediction_token_budget": 1000000000,
+          "raw_activation_tokens_per_update": 4096,
+          "recovery_every": 10000,
+          "required_input_ids": [
+            "model_qwen3_0p6b_base_official_a5",
+            "tokenizer_qwen3_0p6b_base_official_a5",
+            "dclm_pair_v1"
+          ],
+          "rounded_valid_prediction_tokens": 1000002960,
+          "seed": 17,
+          "sequence_length": 1024,
+          "steps": 244380,
+          "trace_steps": [],
+          "train_root": "/data/250010109/training_data_views/dclm_pair_v1/train",
+          "valid_prediction_tokens_per_update": 4092,
+          "validation_batches": 4,
+          "validation_bin": "/data/250010109/training_data_views/dclm_pair_v1/validation/validation.bin",
+          "warmup_steps": 10,
+          "weight_decay": 0.0,
+          "world_size": 4
+        },
+        "config_sha256": "f32871af8aee37a22f5a7c7496a43759b1129a287bd0b756e2db6c4acbd38230",
+        "manifest_sha256": "90fe58cea220a33b9668b5aaf5f068af3dec69ca99e132c30ac832c456a71daf",
+        "source_sha256": "82c656e24b0114520ad7bb82c3f234eef7f5ecd7ecf0b466d3cb1ff1d7e75119",
+        "source_dependencies": {
+          "e16_sae_core.py": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+          "runtime.sh": "1cbb00fdb45c72d6542ab451d7da5217b658cb5a53e3923a624ad32f03e9652c"
+        },
+        "reached_step": 244380,
+        "valid_prediction_tokens": 1000002960,
+        "interface": "model.layers.27.self_attn.o_proj output"
+      },
+      "parent_config_matches": true
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "metadata": {
+        "contract": "a15-e16-full-1b-v1",
+        "manifest_sha256": "a82ee6a3f6dd5b56259a6bc384481ddf6522c48307f57cb8569752f82886bbe4",
+        "model_config_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+        "layer": 27,
+        "d_model": 1024,
+        "n_latents": 30000,
+        "k": 32,
+        "sequence_length": 1024,
+        "micro_batch_size": 1,
+        "world_size": 4,
+        "steps": 244141,
+        "milestone_steps": [
+          24415,
+          73243,
+          244141
+        ],
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0,
+        "warmup_steps": 10,
+        "grad_clip": 1.0,
+        "aux_weight": 0.03125,
+        "aux_k": 512,
+        "dead_after_steps": 50,
+        "outlier_quantile": 0.999,
+        "seed": 17
+      },
+      "parent_config_matches": true
+    }
+  },
+  "hooks": "Native metadata/model-config identities verified; capture hook specification is in config/run code",
+  "no_weight_updates": true
+}

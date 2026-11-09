@@ -1,0 +1,45 @@
+{
+  "seed": 20260522,
+  "seeds": [20260521, 20260522, 20260523, 20260524],
+  "data": {
+    "vocab_size": 128,
+    "seq_len": 32,
+    "train_samples_per_class": 5000,
+    "eval_samples_per_class": 1600,
+    "background_token_start": 10,
+    "tokens": {
+      "A": 1,
+      "B": 2,
+      "y_A": 3,
+      "y_B": 4,
+      "y_AB": 5,
+      "C": 6,
+      "y_CB": 7
+    }
+  },
+  "model": {
+    "seq_len": 32,
+    "d_model": 128,
+    "n_heads": 4,
+    "ffn_dim": 256,
+    "num_experts": 4,
+    "dropout": 0.0
+  },
+  "training": {
+    "steps": 1600,
+    "smoke_steps": 80,
+    "batch_size": 384,
+    "lr": 0.0008,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "log_every": 100
+  },
+  "evaluation": {
+    "batch_size": 384,
+    "source_background_positions_per_sample": 2
+  },
+  "output": {
+    "result_dir": "active/synthetic_data_understanding/results/h0522b_cb_context_b_routing_seq32",
+    "figure_dir": "active/synthetic_data_understanding/figures/h0522b_cb_context_b_routing_seq32"
+  }
+}

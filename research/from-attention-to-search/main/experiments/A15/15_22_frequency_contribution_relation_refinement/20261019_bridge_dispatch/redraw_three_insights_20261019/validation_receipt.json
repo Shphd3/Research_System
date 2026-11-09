@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "time": "2026-10-19T12:28:14.301873+08:00",
+  "checks": [
+    "12 plot formats and hashes",
+    "original 6 source files unchanged",
+    "counts and EVAL contribution shares match",
+    "singleton phi remains NA",
+    "16 T_S1 rows and existing intervals match source",
+    "all local reading links resolve"
+  ],
+  "visual_review": "All four PNGs inspected; no clipped labels or overlapping annotation observed",
+  "execution": "Redraw existing evidence only; no inference, training, coactivation count or bootstrap rerun",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1480,
+      "sha256": "dc2217949fcfe75fe04a7ce70fd4638b59a9f6620fa21f1c3b2420b7b2415cf9"
+    },
+    {
+      "path": "README_cn.md",
+      "bytes": 6897,
+      "sha256": "37602a6061aa2b87a6657e5ab8eda563391dfe13ca7587ab07dae20a240b3b53"
+    },
+    {
+      "path": "figures/figure1_members_and_contribution.pdf",
+      "bytes": 15733,
+      "sha256": "41d853d26446bf66c7981a84f64cd65e70fc1184463cbc14c8dc4b15ef2151c7"
+    },
+    {
+      "path": "figures/figure1_members_and_contribution.png",
+      "bytes": 144265,
+      "sha256": "48f2f7741b035e10e8e54d5f26ade1103f2d271438decae5d7a83b4c665f3422"
+    },
+    {
+      "path": "figures/figure1_members_and_contribution.svg",
+      "bytes": 15061,
+      "sha256": "e87af24c630eb7f2b7f3ce10a119159affe13847e58ac8a634bad03fa62a8df2"
+    },
+    {
+      "path": "figures/figure2_heldout_phi.pdf",
+      "bytes": 16545,
+      "sha256": "c3f7139fa93ed3166a1b139045dab5953e533d8b22ca45b8b5498d45e6199271"
+    },
+    {
+      "path": "figures/figure2_heldout_phi.png",
+      "bytes": 111021,
+      "sha256": "31fac85cf197c7ebbebb6b324bfe9a8811ec64b5123062f2e664b7a3e85358f0"
+    },
+    {
+      "path": "figures/figure2_heldout_phi.svg",
+      "bytes": 29592,
+      "sha256": "6cec424f5350a6a90d987a26d7eb3829ff7c53f5f0cd28758a39e3c278bc387a"
+    },
+    {
+      "path": "figures/figure2b_membership_stability.pdf",
+      "bytes": 18547,
+      "sha256": "cf5fb2da201d71e44370c9a89085b0e46b471797c5b6c8e7a75b0e550f9a3a62"
+    },
+    {
+      "path": "figures/figure2b_membership_stability.png",
+      "bytes": 145737,
+      "sha256": "ccce6494c61a5449d71b6e0b703fec3a7a3430efaeb752dbe5cf6e2e4629ef00"
+    },
+    {
+      "path": "figures/figure2b_membership_stability.svg",
+      "bytes": 23028,
+      "sha256": "f73e73a766813e33b3c22b020d509bbee8863f4eb30d99d8cc5006da4af4a5df"
+    },
+    {
+      "path": "figures/figure3_old_T_S1_regional_delta_NLL.pdf",
+      "bytes": 17865,
+      "sha256": "371e0128c8144309a7e75979185946f884bdf38a5cf9d446f716b69ba734f730"
+    },
+    {
+      "path": "figures/figure3_old_T_S1_regional_delta_NLL.png",
+      "bytes": 143384,
+      "sha256": "f2e7d3461a8715bf15dc30d3eecd9ce2bdc993743bf134211065b9790c5df8dd"
+    },
+    {
+      "path": "figures/figure3_old_T_S1_regional_delta_NLL.svg",
+      "bytes": 21953,
+      "sha256": "05faaf012cdbd5597dba986690b04e8eb33affce2bd88c00db8b576b47ae11a3"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 10331,
+      "sha256": "b3b055ef926fc039b3d739bbc4b6dbf325bb069938470450457a725d856bf04c"
+    },
+    {
+      "path": "tables/figure1_members_and_contribution.csv",
+      "bytes": 396,
+      "sha256": "9598c37dc10bf25c16c9e29f88386a9f0cbc46dd7c244bde332b123c72ad1e20"
+    },
+    {
+      "path": "tables/figure2_heldout_phi.csv",
+      "bytes": 1077,
+      "sha256": "98b92d78cf480b608f762150866a7a5ca9c9ab98287fafe4f438903a60fc28c5"
+    },
+    {
+      "path": "tables/figure2b_membership_stability.csv",
+      "bytes": 1019,
+      "sha256": "a2f42514ab2a7e8a054300d9cab77172c79d21e5cd95ad7ab0803d66477a5ed9"
+    },
+    {
+      "path": "tables/figure3_old_T_S1_epoch1_regional_delta_NLL.csv",
+      "bytes": 4961,
+      "sha256": "874d7d66676c52ab08f47e36f252d3a9d0f6d0b6e4ef35aa334efbb9a1a4c393"
+    }
+  ]
+}

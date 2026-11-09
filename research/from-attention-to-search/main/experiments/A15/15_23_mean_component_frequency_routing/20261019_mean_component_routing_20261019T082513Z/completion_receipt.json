@@ -1,0 +1,61 @@
+{
+  "task_state": "COMPLETE_WITH_RECORDED_LIMITATIONS",
+  "question_state": "AWAITING_RESEARCHER_DISCUSSION",
+  "design_state": "EXECUTED_AS_RECEIVED_WITH_NUMERICAL_GUARD_AMENDMENT",
+  "result_state": "FROZEN_DESCRIPTIVE_RESULTS",
+  "processing_agent": "/root",
+  "completed_at_utc": "2026-10-19T08:44:01.988956+00:00",
+  "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/mean_component_frequency_routing/20261019T082513Z",
+  "project": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_contribution_relation_refinement/20261019_mean_component_routing_20261019T082513Z",
+  "job_id": "NO_NEW_EXTERNAL_JOB; existing Codex container",
+  "main_analyses": [
+    "A",
+    "R0",
+    "R1",
+    "R2"
+  ],
+  "supplements": [
+    "R2b",
+    "C"
+  ],
+  "C_status": "COMPLETE_BOUNDED: reconstruction degradation and BF16 gate drift disclosed",
+  "TRAIN_positions": 85548,
+  "review_positions": 22446,
+  "main_figures": 5,
+  "supplement_figures": 1,
+  "source_CSV_files": 37,
+  "case_cards": 16,
+  "fixed_text_positions": 233,
+  "core_stage_seconds": {
+    "AB_complete": 5.354024309664965,
+    "C_complete": 40.07166814431548,
+    "metrics_AB_complete": 19.37551933899522,
+    "metrics_C_complete": 7.141356000676751,
+    "verification": 98.9009298030287,
+    "extra_complete": 3.1630397010594606,
+    "figures_complete": 24.747507095336914,
+    "C_attempt0_blocked": 25.183688202872872
+  },
+  "recorded_stage_seconds_sum": 223.93773259595037,
+  "wall_since_frozen_seconds": 1128.793906,
+  "timing_limit": "stage sum includes setup and failed C, excludes uninstrumented labeling/report work and is not CPU core-seconds or simultaneous wall duration",
+  "peak_process_RSS_GiB": 3.5093765258789062,
+  "peak_GPU_allocated_GiB": 4.277133464813232,
+  "GPU": "existing NVIDIA H100 MIG3g.40GB, no new allocation",
+  "CPU_quota": 8,
+  "aggregate_RSS_peak": "NOT_MEASURED_SIMULTANEOUSLY; logged process peaks and at most two analysis processes",
+  "execution_disk_bytes": 202965046,
+  "optional_not_run": [
+    "TRAIN composition-center similarity"
+  ],
+  "missing_intervals": [
+    "all 16384x8 q-cell intervals; full point matrices and low-owner intervals supplied"
+  ],
+  "no_training": true,
+  "no_new_external_task": true,
+  "no_commit_push": true,
+  "unchanged_scientific_authority": true,
+  "inputs": "provenance/input_access.json; Base/tokenizer dedicated check was post-C and is disclosed",
+  "verification": "provenance/verification.json",
+  "future_training": "requires separate researcher approval"
+}

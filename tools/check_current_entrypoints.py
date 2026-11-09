@@ -26,8 +26,10 @@ def inspect(root: Path = ROOT, working_tree: bool = False) -> tuple[list[str], l
         return ['MISSING PROJECTS.md'], [], 0
     sources, projects = [catalog], set()
     for _, path, _ in local_links(catalog.read_text(), catalog, root):
-        if path.is_relative_to(root / 'Projects'):
-            projects.add(root / 'Projects' / path.relative_to(root / 'Projects').parts[0])
+        for base in ('Projects', 'research'):
+            if path.is_relative_to(root / base):
+                projects.add(root / base / path.relative_to(root / base).parts[0])
+        if path.is_relative_to(root / 'Projects') or path.is_relative_to(root / 'research'):
             if path.name in {'roadmap.md', 'roadmap_cn.md'} and path.is_file():
                 sources.append(path)
                 companion = path.with_name('roadmap.md' if path.name.endswith('_cn.md') else 'roadmap_cn.md')

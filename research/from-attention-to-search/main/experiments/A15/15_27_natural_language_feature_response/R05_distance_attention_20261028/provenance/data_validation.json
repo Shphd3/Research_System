@@ -1,0 +1,33 @@
+{
+  "B_sequences": 960,
+  "B_families": 24,
+  "split_families": [
+    12,
+    12
+  ],
+  "tokens_each": 240,
+  "target_pos": 239,
+  "distances": [
+    16,
+    48,
+    80,
+    112,
+    144
+  ],
+  "all_exact": true,
+  "A_documents": 120,
+  "A_queries": 960,
+  "excluded_cases": [],
+  "semantic_labels": "AI constructed and checked explicit senses/bindings,not independently human adjudicated",
+  "checks": [
+    "same target ID and absolute position",
+    "same length and suffix",
+    "all distances exact and within bins",
+    "two wordings and four versions complete",
+    "no special tokens",
+    "family split intact"
+  ],
+  "source_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/documents.jsonl": "32e1e8a2e661808bf34a0b3df6636dd30aea784375adebe225c47a392db4a943"
+  }
+}

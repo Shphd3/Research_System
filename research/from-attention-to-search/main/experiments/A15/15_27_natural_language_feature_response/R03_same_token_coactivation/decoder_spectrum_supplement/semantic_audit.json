@@ -1,0 +1,202 @@
+{
+  "schema": "R03_decoder_spectrum_semantic_label_audit_v1",
+  "recorded_at_utc": "2026-10-27T06:42:53.247430+00:00",
+  "processing_agent": "/root/semantic_cache_audit",
+  "scope": "read-only bounded audit of existing labeled/cached assets; no new semantic metric, model forward, PCA, classifier fit, clustering or payload mutation",
+  "decision": "Q3_BLOCKED_NO_QUALIFIED_LABEL_RAW_H_HOLDOUT_PAIR",
+  "budget": {
+    "prior_model_forwards": 1500,
+    "model_forward_cap": 1500,
+    "remaining_model_forwards": 0,
+    "model_forwards_this_audit": 0
+  },
+  "required_object": {
+    "model": "Qwen3-0.6B-Base matched to A22 dictionary",
+    "model_weight_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "hook": "zero-based block27 residual-post before final RMSNorm for the prioritized layer; independent semantic labels paired to this raw h",
+    "labels_must_not_be": "cluster ID, routing winner, feature activation class, or next-token identity substituted for independently defined semantic label"
+  },
+  "strict_access_evidence": {
+    "evidence_location": "this JSON: strict_access_evidence; tool stdout was inspected and is embedded here, not saved as a separate access file",
+    "command": "python tools/check_assets.py --strict --asset analysis_crosscoder_feature_relation_phase1_20261013t173130z --asset representation_qwen3_0p6b_e18_semantics_042013 --asset data_qwen3_0p6b_e18_e14_eight_task_proxy --asset data_qwen3_0p6b_e18_m2d2_seq256",
+    "checked_at_utc": "2026-10-27T06:38:54.069131+00:00",
+    "exit_code": 0,
+    "context_uid": 0,
+    "results": {
+      "analysis_crosscoder_feature_relation_phase1_20261013t173130z": "ACCESSIBLE ARRAY_FILES_PRESENT",
+      "representation_qwen3_0p6b_e18_semantics_042013": "ACCESSIBLE ARRAY_FILES_PRESENT",
+      "data_qwen3_0p6b_e18_e14_eight_task_proxy": "ACCESSIBLE PREPARED_DATA_PRESENT",
+      "data_qwen3_0p6b_e18_m2d2_seq256": "ACCESSIBLE PREPARED_DATA_PRESENT"
+    },
+    "boundary": "Access does not certify identity, loadability, semantic eligibility or sealed-split authorization. Relation-learning h asset access is audited separately by the parent/spectrum-cache task; this semantic task inspected its existing manifest only."
+  },
+  "candidates": [
+    {
+      "name": "phase1 activation classes",
+      "asset_ids": [
+        "analysis_crosscoder_feature_relation_phase1_20261013t173130z"
+      ],
+      "paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/class_positions",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/feature_relation_phase1/20261013T173130Z/code_snapshot_v2/inspection.py"
+      ],
+      "definition": "A-only=onA and not onB; B-only=onB and not onA; both=onA and onB; neither=not onA and not onB. NPZ stores context and target_positions_per_context.",
+      "code_lines": "inspection.py:101-115; definition explicitly at103",
+      "raw_h_pair": "not supplied by these class-position files",
+      "semantic_eligibility": "INELIGIBLE: label is derived from analyzed feature activation, not independent semantic truth"
+    },
+    {
+      "name": "A22 raw block27 relation-learning cache",
+      "asset_ids": [
+        "representation_crosscoder_relation_learning_20261015t164000z",
+        "representation_crosscoder_relation_learning_eval512_20261015t164000z"
+      ],
+      "paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data/train.pt",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/eval.pt",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/relation_learning/20261015T164000Z/data_eval512/cache_manifest.json"
+      ],
+      "actual_manifest_counts": {
+        "train_positions": 130712,
+        "train_contexts": 128,
+        "eval_positions": 523136,
+        "eval_contexts": 512
+      },
+      "hook_manifest": "raw final Qwen3 block residual-post before final norm, BF16; prioritized zero-based27 hook matches in definition; full identity independently audited by parent",
+      "targets_manifest": "real next token t+1 with current/target special IDs excluded, plus original R/F/N route assignments; no independently defined semantic labels found in this manifest",
+      "eval_sha256_recorded": "d37dbcd979067b83bc5088b25c1fbb251fac8e1b98cef8c97bc35d4f58d98e83",
+      "split_manifest": "original CrossCoder TRAIN bins; adapter train/eval source files disjoint from structure VAL; dictionary saw these TRAIN texts; original document/near-duplicate independence UNKNOWN",
+      "semantic_eligibility": "RAW_H_CANDIDATE_ONLY: independent semantic labels and qualified label-linked holdout are missing"
+    },
+    {
+      "name": "old report-spectrum group labels/results",
+      "asset_ids": [
+        "analysis_crosscoder_phi_group_input_spectrum_20261016"
+      ],
+      "paths": [
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/frozen_config.json",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_phi_input_spectrum/winning_group_labels.npz",
+        "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/report_spectrum/20261016_raw_hidden/frozen_config.json"
+      ],
+      "definition": "R original phi communities; F frequency-sorted size-matched groups; N frequency-bin randomized group labels. Earlier raw spectra select positions by any member activation or routing-group winner.",
+      "semantic_eligibility": "INELIGIBLE_AS_SEMANTIC_TRUTH: group-derived labels and selected spectra are not external semantic labels or new C03 validation; spectra may be reusable only for their exact historical object"
+    },
+    {
+      "name": "E18 labeled corpora and sparse caches",
+      "asset_ids": [
+        "representation_qwen3_0p6b_e18_semantics_042013",
+        "data_qwen3_0p6b_e18_e14_eight_task_proxy",
+        "data_qwen3_0p6b_e18_m2d2_seq256"
+      ],
+      "paths": [
+        "/data/250010109/MoE_Router/experiments/20260904_a15_13_e18_dataset_conditioned_sae_semantics/runs/full-20260904T042013Z/activation_cache/m2d2_train.npz",
+        "/data/250010109/MoE_Router/experiments/20260904_a15_13_e18_dataset_conditioned_sae_semantics/runs/full-20260904T042013Z/activation_cache/m2d2_development.npz",
+        "/data/250010109/MoE_Router/experiments/20260904_a15_13_e18_dataset_conditioned_sae_semantics/runs/full-20260904T042013Z/activation_cache/task_train.npz",
+        "/data/250010109/MoE_Router/experiments/20260904_a15_13_e18_dataset_conditioned_sae_semantics/runs/full-20260904T042013Z/activation_cache/task_development.npz",
+        "/data/250010109/datasets/a15_e14_benchmark/processed.json",
+        "/data/250010109/datasets/a15_e14_benchmark/processed.pt",
+        "/data/250010109/datasets/m2d2_wikipedia_3x3/processed/m2d2_3x3_seq256.pt"
+      ],
+      "inspected_fields": [
+        "indices",
+        "values",
+        "window_ids"
+      ],
+      "actual_header_shapes": {
+        "m2d2_train": {
+          "indices": [
+            196734,
+            32
+          ],
+          "values": [
+            196734,
+            32
+          ],
+          "window_ids": [
+            196734
+          ]
+        },
+        "m2d2_development": {
+          "indices": [
+            441792,
+            32
+          ],
+          "values": [
+            441792,
+            32
+          ],
+          "window_ids": [
+            441792
+          ]
+        },
+        "task_train": {
+          "indices": [
+            674993,
+            32
+          ],
+          "values": [
+            674993,
+            32
+          ],
+          "window_ids": [
+            674993
+          ]
+        },
+        "task_development": {
+          "indices": [
+            83054,
+            32
+          ],
+          "values": [
+            83054,
+            32
+          ],
+          "window_ids": [
+            83054
+          ]
+        }
+      },
+      "header_dtypes": {
+        "indices": "int32",
+        "values": "float16",
+        "window_ids": "int32"
+      },
+      "label_source": "M2D2 coarse/fine taxonomy (3x3) and eight-task dataset identity are independent of cluster numbering; audited from existing source/code/metadata, not relabeled from responses. This audit did not deserialize their instance-label payloads.",
+      "hook_identity_boundary": "Caches are old E16 SAE sparse activations, not A22 raw residual-post h. Sparse coordinates cannot reconstruct/replace matched raw h without new assumptions.",
+      "semantic_eligibility": "LABEL_SOURCE_CANDIDATE_ONLY: no matching raw h paired with these labels and no qualified raw-h discovery/holdout supplied"
+    },
+    {
+      "name": "two fixed R03 example hook files",
+      "asset_ids": [
+        "representation_crosscoder_context_r03_20261027"
+      ],
+      "paths": [
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/S01_A_far_hooks.npz",
+        "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R03_same_token_coactivation/forward/R01_A_far_hooks.npz"
+      ],
+      "actual_scope": "Only two fixed A-version examples. The complete h schemas were not reloaded in this semantic audit. Other measured sequences have shared-z caches but not a complete matching h panel.",
+      "semantic_eligibility": "INELIGIBLE_FOR_HELDOUT_SEMANTIC_COMPARISON: missing paired A/B h and independent case/template holdout; examples differ in target token/type and cannot supply unconfounded semantic labels"
+    }
+  ],
+  "read_boundary": {
+    "sealed_TEST_payload_read": false,
+    "E18_confirmation_or_evaluation_instance_payload_read": false,
+    "E18_cache_read_mode": "ZIP/NPY headers only for train and development; no numeric payload/statistic",
+    "model_or_dictionary_loaded": false,
+    "new_computation": "metadata/header parsing only",
+    "file_write_scope": "only semantic_audit.json and semantic_audit_cn.md, newly authorized by parent"
+  },
+  "Q3_status": "NOT_RUN; exact missing item is a qualified same-model/same-hook raw-h cache paired to independently defined semantic labels and a case/document-aware discovery/holdout split, not lack of a classifier implementation",
+  "additional_compute_if_authorized": [
+    "Verify a fixed independent semantic-label dataset and discovery/holdout split without using sealed TEST or cluster-derived labels",
+    "Run the matched frozen Base at the exact residual-post hook on those labeled prefixes and save h; these are additional model forwards beyond the exhausted1500 cap",
+    "Fit centered PCA basis and simple classifier only on discovery; compare equal-dimensional head/middle/tail and random subspaces on heldout, reporting variance and uncertainty"
+  ],
+  "additional_forward_count": "NOT_AUTHORIZED_NOT_ESTIMATED: parent must select/verify the bounded data and explicit added budget before any forward; this audit invents no sequence count",
+  "claims_not_made": [
+    "No semantic separability result",
+    "No semantic label inferred from a cluster or next-token class",
+    "No claim that all historical projects lack labeled representations",
+    "No change to old R01/R02/R03 results"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "captured_at_utc": "2026-08-03T05:48:43Z",
+  "scientific_verdict": "not_available_before_10b",
+  "source_root": "/data/250010109/MoE_Router/experiments/20260803_online_spectral_router_training_v9",
+  "source_manifest_file_sha256": "5b1dda74acc5ff7f8bd8cc05c0485c1eeb8694769f91ec6e16658ef3d3e1dd8f",
+  "runs": [
+    {"arm": "vanilla_full", "seed": 17, "job_id": "om-fkmj5yx7", "state": "RUNNING", "retries": 0, "observed_step": 51, "tensorboard_files": 1},
+    {"arm": "vanilla_full", "seed": 29, "job_id": "om-4qbkvqeg", "state": "RUNNING", "retries": 0, "observed_step": 47, "tensorboard_files": 1},
+    {"arm": "centered_full", "seed": 17, "job_id": "om-muevfjyo", "state": "RUNNING", "retries": 0, "observed_step": 48, "tensorboard_files": 1},
+    {"arm": "centered_full", "seed": 29, "job_id": "om-1pjjbjny", "state": "RUNNING", "retries": 0, "observed_step": 50, "tensorboard_files": 1},
+    {"arm": "local_hmt", "seed": 17, "job_id": "om-2lm4lsm4", "state": "RUNNING", "retries": 0, "observed_step": 46, "tensorboard_files": 1},
+    {"arm": "local_hmt", "seed": 29, "job_id": "om-tdavr6ta", "state": "RUNNING", "retries": 0, "observed_step": 48, "tensorboard_files": 1},
+    {"arm": "relay_hmt", "seed": 17, "job_id": "om-tl72cr8v", "state": "RUNNING", "retries": 0, "observed_step": 39, "tensorboard_files": 1},
+    {"arm": "relay_hmt", "seed": 29, "job_id": "om-anfy4nq2", "state": "RUNNING", "retries": 0, "observed_step": 48, "tensorboard_files": 1},
+    {"arm": "relay_random", "seed": 17, "job_id": "om-3x9kpxku", "state": "RUNNING", "retries": 0, "observed_step": 41, "tensorboard_files": 1},
+    {"arm": "relay_random", "seed": 29, "job_id": "om-kjczyqtd", "state": "RUNNING", "retries": 0, "observed_step": 47, "tensorboard_files": 1}
+  ],
+  "guards": {
+    "all_step0_checkpoints_present": true,
+    "all_step0_heldout_evaluations_present": true,
+    "all_tensorboard_streams_present": true,
+    "all_capacity_drop_fraction_zero": true,
+    "all_treatment_step0_refreshes_present": true,
+    "same_seed_public_parameter_hashes_match_across_arms": true,
+    "same_seed_first_batch_hashes_match_across_arms": true
+  }
+}

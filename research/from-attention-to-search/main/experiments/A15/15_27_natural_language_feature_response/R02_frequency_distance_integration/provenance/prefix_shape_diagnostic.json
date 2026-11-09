@@ -1,0 +1,109 @@
+{
+  "plan": {
+    "time_utc": "2026-10-26T16:32:45.644233+00:00",
+    "processing_agent": "/root",
+    "purpose": "diagnose length-dependent numeric consistency after failed prefix gate; preserve original failure",
+    "cases": [
+      "B01_00_short",
+      "B01_00_long"
+    ],
+    "stages": [
+      0,
+      1
+    ],
+    "modes": [
+      "truncated",
+      "same_length_masked"
+    ],
+    "model_calls": 8,
+    "tolerances": "original hrelative<=.01,zmaxabs<=.001+.01maxabs,unchanged",
+    "no_hypothesis_or_threshold_change": true,
+    "original_panel_qualification_remains_failed": true,
+    "code_sha256": "13c3dd9b002dc660bcde43034d3f62126e26867fabf6d2801b4c57149819f387"
+  },
+  "results": [
+    {
+      "seq_id": "B01_00_short",
+      "stage": 0,
+      "mode": "truncated",
+      "relative_h_error": 0.0,
+      "max_abs_z_error": 3.814697265625e-06,
+      "z_tolerance": 0.41826192474365237,
+      "h_relative_tolerance": 0.01,
+      "passes_original_numeric_tolerance": true
+    },
+    {
+      "seq_id": "B01_00_short",
+      "stage": 0,
+      "mode": "same_length_masked",
+      "relative_h_error": 0.013867804780602455,
+      "max_abs_z_error": 2.230147123336792,
+      "z_tolerance": 0.41826192474365237,
+      "h_relative_tolerance": 0.01,
+      "passes_original_numeric_tolerance": false
+    },
+    {
+      "seq_id": "B01_00_short",
+      "stage": 1,
+      "mode": "truncated",
+      "relative_h_error": 0.0,
+      "max_abs_z_error": 5.7220458984375e-06,
+      "z_tolerance": 0.5899599227905273,
+      "h_relative_tolerance": 0.01,
+      "passes_original_numeric_tolerance": true
+    },
+    {
+      "seq_id": "B01_00_short",
+      "stage": 1,
+      "mode": "same_length_masked",
+      "relative_h_error": 0.011951080523431301,
+      "max_abs_z_error": 0.6446018218994141,
+      "z_tolerance": 0.5899599227905273,
+      "h_relative_tolerance": 0.01,
+      "passes_original_numeric_tolerance": false
+    },
+    {
+      "seq_id": "B01_00_long",
+      "stage": 0,
+      "mode": "truncated",
+      "relative_h_error": 0.015606313943862915,
+      "max_abs_z_error": 2.7817845344543457,
+      "z_tolerance": 0.4267088851928711,
+      "h_relative_tolerance": 0.01,
+      "passes_original_numeric_tolerance": false
+    },
+    {
+      "seq_id": "B01_00_long",
+      "stage": 0,
+      "mode": "same_length_masked",
+      "relative_h_error": 0.019281309098005295,
+      "max_abs_z_error": 2.7341349124908447,
+      "z_tolerance": 0.4267088851928711,
+      "h_relative_tolerance": 0.01,
+      "passes_original_numeric_tolerance": false
+    },
+    {
+      "seq_id": "B01_00_long",
+      "stage": 1,
+      "mode": "truncated",
+      "relative_h_error": 0.010799000971019268,
+      "max_abs_z_error": 0.32170963287353516,
+      "z_tolerance": 0.583479362487793,
+      "h_relative_tolerance": 0.01,
+      "passes_original_numeric_tolerance": false
+    },
+    {
+      "seq_id": "B01_00_long",
+      "stage": 1,
+      "mode": "same_length_masked",
+      "relative_h_error": 0.012134525924921036,
+      "max_abs_z_error": 0.4329071044921875,
+      "z_tolerance": 0.583479362487793,
+      "h_relative_tolerance": 0.01,
+      "passes_original_numeric_tolerance": false
+    }
+  ],
+  "calls": 8,
+  "original_gate_overridden": false,
+  "interpretation": "Compare same-shape masked and truncated checks; architecture remains causal. Numeric equivalence alone is not feature semantics or scientific qualification."
+}

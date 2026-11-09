@@ -1,0 +1,88 @@
+{
+  "id": "R04_domain_discriminability_spectrum_20261028",
+  "frozen_at_utc": "2026-10-28T02:15:07.783245+00:00",
+  "status": "AUTHORIZED_CACHE_ONLY_EXPLORATORY_REANALYSIS",
+  "user_request": "current branch 01a18038-5407-7fe2-abe0-48a7f9e77c3e; expand domain directional candidates, 3figures with actual-h spectral dependency stop",
+  "source_root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027",
+  "owner_root": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R04_domain_usage_20261027/domain_discriminability_spectrum_20261028",
+  "window_zero_based": [
+    32,
+    192
+  ],
+  "split_counts_per_domain": {
+    "discovery": 30,
+    "development": 10,
+    "heldout": 20
+  },
+  "new_forwards": 0,
+  "training": false,
+  "clustering": false,
+  "physical_domain": false,
+  "independent_confirmation": false,
+  "eligibility": "both math and biology >=5 discovery documents with positive native activation",
+  "score": "single-feature per-document mean native contribution, including zero",
+  "discovery_auc": "P(score_math>score_bio)+0.5*P(equal), 30x30 pairs",
+  "direction": "sign(discovery_auc-0.5); zero direction retained in background, not selected",
+  "ordering": "descending abs(discovery_auc-0.5), ascending feature_id; no heldout tie-break",
+  "expanded_candidates_per_direction": 64,
+  "expanded_definition": "directional discriminability candidate, NOT original R04 activation-rate-ratio>=2 candidate",
+  "main_display_per_dictionary": 16,
+  "main_display_rule": "global first16 eligible ranks, not forced8+8",
+  "retain_old_groups": [
+    "shared32",
+    "math16",
+    "bio16"
+  ],
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 2026102804,
+    "unit": "document, independently resample20math and20bio with replacement",
+    "interval": "2.5/97.5 percentile, pointwise exploratory intervals; no significance declarations",
+    "all_eligible_auc_CI": true
+  },
+  "usage_statistics": "per document: counts/160; sum(z)*native_decoder_norm/counts if counts>0 else NA; sum(z)*native_decoder_norm/160; group means over documents, conditional intensity excludes NA; pooled intensity also separate",
+  "differences": "math minus bio for each usage statistic; direction-fixed AUC minus0.5; discovery vs heldout AUC difference; intervals in tables",
+  "display_scaling": "hit%; intensity and mean contribution divide per-feature discovery token contribution RMS; original native values in tables; no recomputation from heldout",
+  "random": {
+    "seed": 2026102805,
+    "draws": 1000,
+    "groups": [
+      "new_top16",
+      "expanded_math64",
+      "expanded_bio64",
+      "old_shared32",
+      "old_math16",
+      "old_bio16"
+    ],
+    "universe": "same-dictionary eligible coordinates excluding every member of current matched group",
+    "bins": "floor(log2(DCLM_hits+0.5)) x floor(total_discovery_document_support/5)",
+    "sample": "exact number per joint bin, no replacement within draw; no fallback; insufficient bin makes full set NA; no forced candidate retention",
+    "comparison": "descriptive heldout mean direction-fixed AUC and frequency composition, not p-value for selection or causal mechanism; spectral comparison NOT RUN without real h"
+  },
+  "pca": {
+    "status": "BLOCKED_REAL_R04_HOOK_REPRESENTATIONS_MISSING",
+    "separate_hooks": {
+      "SAE": "block27 MLP input after native post_attention_layernorm, raw model coordinates",
+      "CC": "block27 residual-post before final global norm, raw model coordinates"
+    },
+    "dimension": 1024,
+    "discovery_positions_per_hook": 9600,
+    "all_document_positions_per_hook": 19200,
+    "centering": "one pooled discovery mean; equal math/bio, equal document,160tokens/document",
+    "additional_standardization": false,
+    "full_rank_basis": 1024,
+    "rank_bins": 16,
+    "bin_rule": "contiguous64directions each, final remainder if needed",
+    "unit_decoder_projection": "squared unit native decoder dot PC; full sum1; missing residual explicit if truncated",
+    "domain_mean_difference": "difference of means of document-average real h, project onto frozen discovery basis",
+    "reference_variance": "real-h spectral-band variance, discovery and frozen-coordinate dev/heldout",
+    "activation_weighted": "optional separate sum of individual squared contributions; excludes cross terms, not total variance"
+  },
+  "display_examples": "top16 strongest discovery-ranked eachdirection illustrative; original R04 examples retained as counter; any token example is descriptive not heldout confirmation",
+  "limits": [
+    "AI content-reviewed domain labels",
+    "terminology/style/source confounds",
+    "old heldout repeatedly examined",
+    "not model necessity, semantic natural clusters, frequency cause, physical long-range mechanism"
+  ]
+}

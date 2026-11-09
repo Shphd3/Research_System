@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "checks": [
+    "55 fixed unique IDs, all in original960",
+    "math near freeze from direct position cache",
+    "math strict freeze from direct position cache",
+    "math token and matched baseline masses sum1",
+    "biology near freeze from direct position cache",
+    "biology strict freeze from direct position cache",
+    "biology token and matched baseline masses sum1",
+    "per-member top-token table retains all55 including no-high",
+    "each nonempty member token distribution sums1",
+    "all per-member high counts and document coverage independently agree",
+    "every matched target/previousID, genre, position-bin and source restriction holds",
+    "matching never reuses a document across pairs or a position within token/level",
+    "group responses recomputed from fixed thresholds, zeros and equal document-pair means",
+    "6400 annotation inputs contain only random caseID and prior text",
+    "all human annotation fields remain unverified",
+    "example members remain fixed first discovery ranks",
+    "no-high counterexample remains visible",
+    "all289thepositions times55members retained"
+  ],
+  "checked_categories": 18,
+  "frozen_members": 55,
+  "heldout_positions": 6400,
+  "new_model_forwards": 0,
+  "human_review": "PENDING",
+  "statistical_claims": "Exploratory observational comparisons, not causal/semantic confirmation."
+}

@@ -1,0 +1,62 @@
+{
+  "UTC": "2026-11-04T08:33:14.438198+00:00",
+  "status": "PASS_WITH_READING_LIMITATION",
+  "reviewer": "Codex /root, GPT-6; self-review, not independent human review",
+  "reviewed_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/case_F11.png",
+      "sha256": "9348f9141b9d7d1fcd10b887909dccb2ecd375c4d59d4ef228557a8c52813666"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/case_F15.png",
+      "sha256": "b4b1e2bd4d5e2968e095bd9bbba8445300ab62712f2d5dc6fbb8cfd034565be1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/case_F19.png",
+      "sha256": "e895f33fc03bf6bbb1b3fb79d5efd0533985c654c0c8af25fadf792340e99675"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/case_F27.png",
+      "sha256": "e6a52e16f826b7e5c939bf94202fb2212ee8855193bb9f26d972a98b4936edb0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/controls.png",
+      "sha256": "7d2957456d400372e55c4cf1d3d416d499fd88458d4f9ce3a7b49dcc0d336f3e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/fact_contrast_audit.png",
+      "sha256": "4310482750c38f5df93296f2edd24601998dee4549aa78dc14bc298e582a94ba"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/frequency_opportunities.png",
+      "sha256": "c2a8a1677fd930a51692de150d9cfd69d64a3abdea890e0ae72d16ee087e8ccd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/frequency_turnover.png",
+      "sha256": "69e255df0c194c19a05270b74b7140323b1baddf21dd0e11e1007cdb12c85fb6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/main_distance.png",
+      "sha256": "06dba4c2d22588235152b40a6deb808b924965f60451ec49dd75009fe2bc6216"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/strength_audit.png",
+      "sha256": "dd8fa8c74a480406074fcd0d026927fa52420b506d6f0641bbb264337f3e52fe"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/figures/threshold_audit.png",
+      "sha256": "88cc608ef974375b6eabccd2389f612b75e7ade6116e5daf208816111b2c7253"
+    }
+  ],
+  "checks": [
+    "opened and visually inspected all 11 PNG files",
+    "main graph readable, axes and family N explicit",
+    "controls graph compares same 12 families; position-ID control separate N6",
+    "case cell labels are raw activations, color standardized only for display",
+    "frequency opportunity comparison and support retained",
+    "threshold histogram uses linear ticks"
+  ],
+  "limitations": [
+    "Some family-ID annotations overlap in dense audit scatterplots; exact family values are retained in CSV and case records. The concise meeting figure has no such overlap."
+  ]
+}

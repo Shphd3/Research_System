@@ -1,0 +1,232 @@
+{
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "parent_model_asset_id": "model_qwen3_0p6b_base_official_a5",
+  "tokenizer_asset_id": "tokenizer_qwen3_0p6b_base_official_a5",
+  "data": "/data/250010109/MoE_Router/experiments/20261011_a17_conditional_mapping_transfer/data/conditional_mapping_v1",
+  "data_asset_id": "data_a17_conditional_mapping_v1",
+  "data_manifest_sha256": "a2c899d858cc267d3ec10bf2ca189c6915d01e0f7026bd1369f1541daac7dc2b",
+  "data_file_sha256": {
+    "train.jsonl": "3b57c72970cba2a5478caab85369bfb53804094960422ba7e2fca9ddcf14ca03",
+    "dev.jsonl": "e382ae70dea12c65aeb9178e1c32ec1eb205039181be2dbc38b38ec9379a0471"
+  },
+  "old_adapter_asset_id": "adapter_a17_04_single_attention_20261011t145214z_full_attn1_adam_main",
+  "old_checkpoint_path": "/data/250010109/MoE_Router/experiments/20261011_a17_single_attention_acquisition/runs/single_attention_20261011T145214Z/full/attn1_adam/main/checkpoints/update_01200/state.pt",
+  "old_checkpoint_sha256": "48595673c24579164e271cfeb1b86be6a234e2dfc06218b74d8ca07e16411b75",
+  "old_checkpoint_step": 1200,
+  "seed": 29,
+  "seeds": [
+    29,
+    43,
+    71
+  ],
+  "smoke_updates": 3,
+  "full_updates": 1200,
+  "milestones": [
+    0,
+    1,
+    16,
+    50,
+    120,
+    240,
+    600,
+    1200
+  ],
+  "qualification_accuracy": 0.95,
+  "clip": 1.0,
+  "optimizer": {
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "class": "AdamW"
+  },
+  "answer_words": [
+    "红",
+    "黄",
+    "蓝",
+    "黑",
+    "绿",
+    "白",
+    "紫",
+    "灰",
+    "金",
+    "银",
+    "猫",
+    "狗",
+    "鸟",
+    "鱼",
+    "牛",
+    "马",
+    "羊",
+    "虎",
+    "龙",
+    "花"
+  ],
+  "answer_ids": [
+    99425,
+    99789,
+    100400,
+    56652,
+    99679,
+    99243,
+    101168,
+    100815,
+    34230,
+    99660,
+    100472,
+    100737,
+    100462,
+    100655,
+    100664,
+    99313,
+    101187,
+    100422,
+    99465,
+    99232
+  ],
+  "objective": {
+    "kind": "answer_only_cross_entropy",
+    "microbatch": 20,
+    "accumulation": 1,
+    "valid_targets_per_update": 20,
+    "auxiliary_components": []
+  },
+  "trainable_parameter_count": 6291456,
+  "contract_paths": {
+    "anchor": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/17_shared_and_interference_learning/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/anchor.md",
+    "protocol": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A17/17_04_conditional_mapping_transfer/rounds/R06_functional_protection_20261025/protocol.md"
+  },
+  "input_assets": [
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "data_a17_conditional_mapping_v1",
+    "adapter_a17_04_single_attention_20261011t145214z_full_attn1_adam_main",
+    "representation_a17_r05_native_prefix_20261023",
+    "checkpoint_family_a17_r05_20261023_a_seed_29_ts_9c543c28d832"
+  ],
+  "scope": "User-authorized 36 fixed-exposure runs; no TEST, addition, SAE, CrossCoder, MoE, hyperparameter search or resource expansion",
+  "run_id": "R06_functional_protection_20261025",
+  "cache_dir": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/cache",
+  "rank": 16,
+  "attenuation_start": 0.1,
+  "attenuation_end": 0.01,
+  "reselect_steps": [
+    400,
+    800
+  ],
+  "resource_profile": "h100-1-reserved",
+  "max_concurrent_gpus": 1,
+  "source_authorization": "current user request + adopted V3; ordinary choices delegated; no per-stage approval",
+  "confirmation_status": "EXPLORATORY_EXPOSED_DEV",
+  "primary_seed": 29,
+  "repeats_after_all_stage_minima": [
+    43,
+    71
+  ],
+  "moe": {
+    "position": "layer27.mlp.down_proj",
+    "experts": 2,
+    "top_k": 1,
+    "summary_dim": 16,
+    "router_aux_load_coefficient": 0.01,
+    "router_lr": 0.001,
+    "joint_lr": 0.0001,
+    "router_fixed_updates": 600,
+    "router_joint_updates": 600,
+    "arms": [
+      "ordinary",
+      "single_normal",
+      "single_protected",
+      "multi_normal",
+      "multi_protected"
+    ],
+    "router_arms": [
+      "oracle",
+      "random",
+      "full",
+      "summary",
+      "random_summary"
+    ]
+  },
+  "natural": {
+    "train_documents": 128,
+    "validation_documents": 64,
+    "sequence_length": 128,
+    "updates": 400,
+    "source_asset_id": "dclm_raw_holdout_global02",
+    "natural_conclusion": "finite continuation + retained list behavior; pretraining exposure Unknown"
+  },
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection",
+  "max_updates": 240,
+  "eval_steps": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    120,
+    180,
+    240
+  ],
+  "real_probe_loss_steps": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    120,
+    180,
+    240
+  ],
+  "methods": [
+    "U",
+    "S",
+    "F",
+    "D"
+  ],
+  "old_slots_nonzero": [
+    0,
+    4,
+    36
+  ],
+  "new_slots": 36,
+  "old_slots": 36,
+  "loss_denominator": 72,
+  "probe_size": 64,
+  "microbatch": 12,
+  "eval_microbatch": 20,
+  "probe_microbatch": 16,
+  "gradient_norm_squared_floor": 1e-24,
+  "attenuation_horizon": 1200,
+  "wallclock_seconds": 14400,
+  "training_cutoff_seconds": 13800,
+  "basis_path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/runs/A/seed_29/TS/basis_initial.pt",
+  "old_dev_required_accuracy": 1.0,
+  "code_root": "/data/250010109/MoE_Router/experiments/20261025_a17_functional_protection/source",
+  "success_rule": {
+    "F_minus_U_old_mean_pp": 5,
+    "all_three_old_positive": true,
+    "each_new_drop_max_pp": 5,
+    "threshold_new_accuracy": 0.9,
+    "consecutive_evaluations": 2
+  },
+  "save_steps": [
+    0,
+    1,
+    2,
+    16,
+    64,
+    120,
+    180,
+    240
+  ]
+}

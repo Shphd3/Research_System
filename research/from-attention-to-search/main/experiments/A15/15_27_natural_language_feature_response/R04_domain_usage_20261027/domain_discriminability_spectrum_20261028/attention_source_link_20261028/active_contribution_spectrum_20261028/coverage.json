@@ -1,0 +1,57 @@
+[
+  {
+    "item": "全活跃贡献加权谱/精确平均排名",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/all_source_position_spectral_values.csv"
+  },
+  {
+    "item": "等权活跃方向",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/spectral_group_means.csv"
+  },
+  {
+    "item": "合成向量与交叉项",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/cross_terms_relative_power.csv"
+  },
+  {
+    "item": "实际原表征中心化核对",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/spectral_group_means.csv"
+  },
+  {
+    "item": "8项主比较及文档区间/BH",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/primary8_mean_rank_contrasts.csv"
+  },
+  {
+    "item": "原Attention/距离/位置/前32/空白/结构词",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/document_weighted_diagnostics.csv"
+  },
+  {
+    "item": "原pair32:192窗口敏感性与完整支持数",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/support_summary.csv"
+  },
+  {
+    "item": "固定领域成员辅助分解",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "tables/fixed_domain_group_decomposition_by_document.csv"
+  },
+  {
+    "item": "两主图/九附图/逐图读法",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "figures_cn.md"
+  },
+  {
+    "item": "原始数据/全部统计/代码/哈希",
+    "status": "DONE_EXPLORATORY",
+    "evidence": "data_index_cn.md"
+  },
+  {
+    "item": "新模型前向/训练/字典/PCA拟合/重选/干预",
+    "status": "NOT_RUN_BY_SCOPE",
+    "evidence": "0"
+  }
+]

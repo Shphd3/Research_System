@@ -1,0 +1,164 @@
+{
+  "checked_at": "2026-09-15T03:25:47.791347+00:00",
+  "source_tree": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk",
+  "source_identity_boundary": "Current disk snapshot only; not asserted identical to historical submitted archive",
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/model/configuration_qwen3_sae.py",
+      "sha256": "8fa36b3811a9ef3a63c54848ee7816d64f8ed131a6b582a1750b471933434e59"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/model/modeling_qwen3_sae.py",
+      "sha256": "b9ba377955b4761dbca9cde281a109090b30de5ebbeb4639572ff1c78d91e855"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/model/sae.py",
+      "sha256": "a318f0bd899ecf9fd327644b998f79a3000972af2ac268245ea377aa3a17591f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/engine.py",
+      "sha256": "3b8bef3c83e7504aa9c29d411aa335753a1228de352cc93753bbe490b5239a94"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/data.py",
+      "sha256": "cd09bff846a722133d7511f07187a5a95ed240be259d112fbe74872814bacd1f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/dense_sae/checkpoint.py",
+      "sha256": "ea3610126caabe8896bee8d4e52380b5fd8ba65a5b96088657da05edaf18468a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/scripts/runtime.sh",
+      "sha256": "520b51f782147815dc6682dfd1150cc08c5598faef946d4fd4ed15d8abdb4cb5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/scripts/activate_5090_runtime.sh",
+      "sha256": "5346d40b041222c61fb8dcb21098922a496b342e34beb5b8c3dacea5942d3297"
+    },
+    {
+      "path": "/data/250010109/dependency_packages/dense_baseline_torch280_cu128_py310/manifest.json",
+      "sha256": "0b7fe48a39238c4bd2cca233be3d5cb977e35e4816ebf4d5870c268b6c6447fe"
+    }
+  ],
+  "reference_model": {
+    "vocab_size": 151936,
+    "hidden_size": 1024,
+    "intermediate_size": 3072,
+    "num_hidden_layers": 8,
+    "num_attention_heads": 16,
+    "num_key_value_heads": 8,
+    "head_dim": 128,
+    "max_position_embeddings": 2048,
+    "rope_theta": 1000000.0,
+    "rms_norm_eps": 1e-06,
+    "initializer_range": 0.02,
+    "tie_word_embeddings": true,
+    "sae_mode": "bottleneck",
+    "sae_width": 30000,
+    "sae_k": 32,
+    "sae_loss_weight": 1.0,
+    "aux_backbone_grad": true,
+    "sae_auxk": 256,
+    "sae_auxk_coef": 0.03125,
+    "sae_dead_tokens_threshold": 10000000,
+    "sae_activity_threshold": 0.001,
+    "bottleneck_alpha": 1.0,
+    "ce_chunk_tokens": 128,
+    "checkpoint_ce": true,
+    "gradient_checkpointing": false
+  },
+  "reference_5090_model": {
+    "vocab_size": 151936,
+    "hidden_size": 1024,
+    "intermediate_size": 3072,
+    "num_hidden_layers": 8,
+    "num_attention_heads": 16,
+    "num_key_value_heads": 8,
+    "head_dim": 128,
+    "max_position_embeddings": 2048,
+    "rope_theta": 1000000.0,
+    "rms_norm_eps": 1e-06,
+    "initializer_range": 0.02,
+    "tie_word_embeddings": true,
+    "sae_mode": "none",
+    "sae_width": 30000,
+    "sae_k": 32,
+    "sae_loss_weight": 1.0,
+    "bottleneck_alpha": 0.0,
+    "ce_chunk_tokens": 128,
+    "checkpoint_ce": true,
+    "gradient_checkpointing": false
+  },
+  "throughput_reference": {
+    "path": "/data/250010109/MoE_Router/experiments/20260914_sae_mediated_live_auxk/runs/sae_mediated_formal50b_4h100_20260914T153000Z/metrics.jsonl",
+    "selected_rows": 120,
+    "filter": "last 120 full 262144-target updates among last 240 lines; partial updates excluded",
+    "selected_raw_lines_sha256": "fe4fee0544b014301e66de35c882f64bd41b53443e375238fcfbc152fa106108",
+    "first_optimizer_step": 21080,
+    "last_optimizer_step": 21199,
+    "median_valid_targets_per_second": 138688.10861681306,
+    "min": 126817.13102845011,
+    "max": 142492.383512866,
+    "scope": "read-only throughput reference, not current job status or new model benchmark"
+  },
+  "throughput_reference_5090": {
+    "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/metrics.jsonl",
+    "selected_rows": 120,
+    "filter": "last 120 full 262144-target updates among last 240 lines; partial updates excluded",
+    "selected_raw_lines_sha256": "8ac6b00db6c99eef999c7b065c90ab4e3336eebaa6c5b0ea4985b5efa81065ae",
+    "first_optimizer_step": 38030,
+    "last_optimizer_step": 38149,
+    "median_valid_targets_per_second": 228027.19681659993,
+    "min": 216032.85310677794,
+    "max": 228264.78305597743,
+    "scope": "read-only throughput reference, not current job status or new model benchmark"
+  },
+  "findings": {
+    "legacy_observer_location": "final_h, not post-norm2 pre-MLP",
+    "current_lambda_config_range": [
+      0,
+      1
+    ],
+    "current_engine_passes_sae_weight": true,
+    "new_sidecar_implemented": false,
+    "parameter_shape_check": "torch meta device, no GPU kernel or tensor allocation",
+    "parameters": {
+      "backbone": 90379264,
+      "sae": 10250512,
+      "total": 100629776
+    }
+  },
+  "local_gpu_snapshot": {
+    "count": 2,
+    "name": "NVIDIA H100 80GB HBM3",
+    "total_memory_mib_each": 81559,
+    "training_started": false
+  },
+  "resource_clarification": "two independent 2xRTX5090 Spot jobs (four GPUs total), plus one H100 Spot option",
+  "aec2_h100_worker_query": {
+    "worker_spec": "n6ls.iu.i40.1",
+    "gpu_count": 1,
+    "vcpu_count": 22,
+    "host_memory_gib": 240,
+    "queue_or_spot_capacity_claim": false
+  },
+  "runtime_5090_manifest": {
+    "base_image_id": "shphd-lite-0911",
+    "created_at": "2026-09-13T08:50:00+00:00",
+    "install_source": "official PyTorch cu128 index",
+    "python": "3.10.12",
+    "tensorboard": "2.9.0",
+    "tensorboard_source": "base_image",
+    "torch": "2.8.0+cu128",
+    "torch_arch_list": [
+      "sm_70",
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ],
+    "torch_cuda": "12.8"
+  }
+}

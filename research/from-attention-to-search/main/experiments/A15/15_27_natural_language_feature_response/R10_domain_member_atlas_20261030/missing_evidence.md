@@ -1,0 +1,7 @@
+# Evidence gaps and minimal NOT RUN supplement
+
+Pure target-only comparison B is missing. Existing E0/E1 keep the core text but change `This passage presents a concrete example` to `This passage provides a brief explanation`. Treat it as target-plus-suffix sensitivity. A is available: target IDs3110/16148 are fixed per ending, and every math/biology pair has the same target index; global family positions range30–38.
+
+A minimal **AI proposal**, not authorization: reuse the48 existing E0 rows from12 exposed-heldout families ×2domains ×2wordings. Add `explanation` under the EXACT E0 preceding prefix, giving96 crossed conditions with48 cached and48 new. Offline tokenization gives1728 valid prefix tokens; all target positions unchanged=True. A sequential256-padded implementation would process12288 model token positions and48 new complete-prefix forwards. Native joint-14-layer z and original gate remain required. Actual batching, wall-clock and GPU cost are Unknown until execution design/authorization. Save all main960 responses, no reselection. Proposed texts are execution-side `proposed_B_NOT_RUN.jsonl`; executed forwards0. New target wording also changes meaning; this comparison estimates a target-form/meaning effect and cannot prove pure identity. No new blind families are created.
+
+An independent natural-reference PCA is also MISSING: R07's archived basis is byte-identical to the R04 pooled discovery basis. R08's target-token PCA is a different object. No independent robustness claim is made and no new representation extraction is run.

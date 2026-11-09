@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "elapsed_seconds": 235.386323928833,
+  "archive": "/data/250010109/Research_System/daily_research_reports/1104/20261104_R20_distance_composition.zip",
+  "archive_sha256": "b55fdbc1de43a78de666cdf08c19b5672abaa9cebebbbf656134b5bc7f1be434",
+  "extraction": "/tmp/R20_full_reanalysis_41ntahfz",
+  "compared_outputs": 35,
+  "changed_outputs": [],
+  "model_forward": false,
+  "network": false,
+  "excluded_run_metadata": [
+    {
+      "path": "results/template_sensitivity.json",
+      "field": "UTC",
+      "archived": "2026-11-04T08:24:19.147863+00:00",
+      "recomputed": "2026-11-04T08:35:12.899208+00:00",
+      "all_remaining_fields_exact": true
+    }
+  ],
+  "exact_byte_outputs": 34,
+  "all_statistical_values_exact": true,
+  "comparison_rule": "All 35 regenerated outputs compared. 34 byte-identical; template_sensitivity JSON differs only in run UTC, all other fields exactly equal.",
+  "initial_comparison_receipt": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/versions/full_reanalysis_byte_comparison_v1.json",
+  "verified_archive_saved_as": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/versions/R20_packet_v2.zip"
+}

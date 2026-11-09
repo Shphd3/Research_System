@@ -1,0 +1,51 @@
+{
+  "split": "discovery",
+  "pass": true,
+  "time_utc": "2026-10-26T10:57:40.368927+00:00",
+  "target_nmse_mean": 0.07620480434141225,
+  "target_nmse_p90": 0.10599663853645326,
+  "target_nmse_max": 0.20631882548332214,
+  "n_sequences": 144,
+  "decoder_formula_max_relative_error": 1.1457997572961176e-07,
+  "replay": [
+    {
+      "seq_id": "A01_base",
+      "max_absolute_z_difference": 0.0,
+      "tolerance": 0.006518898162841797,
+      "pass": true
+    },
+    {
+      "seq_id": "A01_changed",
+      "max_absolute_z_difference": 0.0,
+      "tolerance": 0.0065464952087402346,
+      "pass": true
+    },
+    {
+      "seq_id": "A01_neutral_base",
+      "max_absolute_z_difference": 0.0,
+      "tolerance": 0.006521256408691406,
+      "pass": true
+    },
+    {
+      "seq_id": "A01_neutral_changed",
+      "max_absolute_z_difference": 0.0,
+      "tolerance": 0.006501236114501953,
+      "pass": true
+    }
+  ],
+  "input_hashes_unchanged": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": true,
+    "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt": true
+  },
+  "model_dtype": "bfloat16",
+  "sae_dtype": "float32",
+  "parameter_updates": 0,
+  "gradients_present": false,
+  "elapsed_seconds": 20.025943279266357,
+  "peak_cuda_bytes": 1687291392,
+  "test_read": false,
+  "torch": "2.5.1+cu121",
+  "transformers": "4.53.3",
+  "python": "/root/anaconda3/envs/spectral-hier/bin/python",
+  "npz_sha256": "51793c0bb38b05517a21f2a961ff4471e0c5edaf5c5085198b7f7613959fb2f5"
+}

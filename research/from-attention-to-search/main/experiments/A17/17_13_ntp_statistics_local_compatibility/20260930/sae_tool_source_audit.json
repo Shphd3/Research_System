@@ -1,0 +1,72 @@
+{
+  "kind": "read_only_sae_tool_source_audit",
+  "date": "2026-09-30",
+  "new_model_collection": false,
+  "new_hypothesis_test": false,
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260920_s7_lambda0p1_from_scratch_4h100/dense_sae/model/sae.py",
+      "sha256": "a318f0bd899ecf9fd327644b998f79a3000972af2ac268245ea377aa3a17591f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260930_natural_ntp_compatibility/scripts/core.py",
+      "sha256": "6c5569dd40f8b4deea71ba1d7d28059220c41f86dbb55f98d837c2a710f8bc6d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20260930_domain_update_geometry/scripts/collect.py",
+      "sha256": "0e4e4883033ee85eb83ccde033d26cb41c789ab5601dd181d93ee4e799d3e7a9"
+    }
+  ],
+  "verified_from_code": {
+    "site": "native attention output a, before residual addition; not c",
+    "dictionary": "column-normalized decoder; decode=bias+D*alpha",
+    "encoding": "ReLU encoder(a-bias), TopK32 nonnegative coefficients",
+    "s7_contract": "sidecar mode, hook layer7, exact33B state; existing capture asserts sae_input==native a",
+    "tail": "native a+r into last-block MLP and final norm/logits; SAE reconstruction not inserted"
+  },
+  "historical_measured_spec": {
+    "dictionary_shape": [
+      1024,
+      30000
+    ],
+    "source": "../domain_update_geometry/detailed.md"
+  },
+  "reuse": [
+    "frozen model load/capture/tail",
+    "model.sae.encode/decode/dictionary",
+    "real-target c/e/gradient qualifications"
+  ],
+  "adaptation_not_implemented": [
+    "model-Fisher stochastic logit-probe VJP",
+    "activation/Fisher/empirical-gradient profile pairing",
+    "same-context equal-rank controls",
+    "probe noise and finite KL qualification"
+  ],
+  "result": "NOT_RUN",
+  "resource_feasibility": "NOT_BENCHMARKED",
+  "mathematical_source_checks": {
+    "kind": "small_analytic_numerical_source_checks",
+    "date": "2026-09-30",
+    "status": "PASS",
+    "checks": [
+      "exact_enumerated_logit_probe_fisher",
+      "fisher_psd",
+      "model_label_zero_mean_and_second_moment",
+      "real_label_covariance_mean_decomposition",
+      "empirical_moments_not_model_fisher",
+      "column_major_parameter_fisher",
+      "decoder_direction_sensitivity",
+      "local_KL_quadratic_convergence",
+      "negative_offdiagonal_psd_feature_metric",
+      "nonorthogonal_atoms_not_energy_partition",
+      "orthogonal_trace_fraction",
+      "native_residual_preserving_decoder_chart",
+      "context_averaging_not_kronecker_factorization"
+    ],
+    "new_model_collection": false,
+    "new_natural_language_result": false,
+    "interval_calibration_performed": false,
+    "actual_model_probe_or_KL_smoke_performed": false,
+    "source_rendering_checked": false
+  }
+}

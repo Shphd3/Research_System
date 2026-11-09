@@ -59,10 +59,10 @@ or establishes generalization without actual behavior evidence.
 
 R22-R29 add constructive explanation and review-mode cases. Include other domains
 and a sound argument needing no repair when sampling them. A dated
-[author self-review](../skill_integrations/constructive_reasoning_20261108_cn.md)
+[author self-review](../archive/process_records/constructive_reasoning_20261108_cn.md)
 preserves actual answers and unrun evaluation limits; it is not an independent
 old/new model comparison.
 
 R30-R32 and their brief/facts-only variants have a separate
-[supplement review](../skill_integrations/mechanism_bridge_20261108_cn.md).
+[supplement review](../archive/process_records/mechanism_bridge_20261108_cn.md).
 Its recorded answers and author review do not constitute new model experiments.

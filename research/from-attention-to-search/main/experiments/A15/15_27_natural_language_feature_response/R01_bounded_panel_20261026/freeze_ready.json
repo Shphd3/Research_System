@@ -1,0 +1,30 @@
+{
+  "status": "READY_FOR_PRE_FORWARD_FREEZE",
+  "processing_agent": "/root/asset_audit",
+  "created_at_utc": "2026-10-26T10:56:35.617453+00:00",
+  "approval": "DELEGATED_BOUNDED_ANALYSIS_CHOICES; current user explicitly authorizes direct freeze and bounded execution",
+  "source_review": {
+    "relative_links": "PASS",
+    "anchor_exactly8sections": "PASS",
+    "protocol18sections": "PASS",
+    "markdown_math_source": "PASS; rendering and mathematical truth not checked",
+    "bilingual_core_alignment": "SELF_REVIEW_PASS",
+    "holdout_response_read_for_authoring": false
+  },
+  "files_sha256": {
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_natural_language_feature_response.md": "5bb13a3781e430df444abe5877fe89ff146fa977a170ccb871bd6c48f7304889",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/focus/focus_natural_language_feature_response_cn.md": "b3d1502c1ff827a989e99a0696ae21c196287d4aabeb272416a05462093ebd8a",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/15_27_natural_language_feature_response_anchor.md": "7123261afca35c1009717396507fb6e444fb574756ebd4dca01198ca4cc6602f",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/15_spectral_representation_and_functional_routing/15_27_natural_language_feature_response/15_27_natural_language_feature_response_anchor_cn.md": "5fabbb79c75431d35616ef30215adc91ecf00b8f2b876fd52ff242c2581ffd37",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/README.md": "0bbc64046c025d685cd8658ca446a2d99abc3b9937ac6a75df4c8a9c8b781221",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/README_cn.md": "531a2e556f8b3f7ebfb04514bb1c63009cc5355b483cbf412580f92e0d0d2341",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/asset_audit.md": "332402085cd566422e7236244632b6c6c01011d12f210c004a04693b862b8aac",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/asset_audit_cn.md": "bff5ae26434b8ea45337021b5e086c53385e7360e16ace897915184360699ee9",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/internal_audits.md": "2f2c022d7735ace1ff6de631231c772d77119f7cdb566d6b8308f7ac0e6f1157",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/internal_audits_cn.md": "b2cfd82e0161410cc8183674edabaffbb62aeea3f030f3d21254394ac380e853",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/protocol.md": "7b6cf8870290274ff9cf4a97f1f3e97815a9f69093351f115a51166231121b7b",
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R01_bounded_panel_20261026/protocol_cn.md": "27e358562fc47f920b683b21149cc18fa8b486ae4feae4400fe64e0ca904fcbe"
+  },
+  "final_tokenized_sequences_sha256": "945914b9007a4a576f6de99b00b791af56e8daf4464de9169959e733b20d2246",
+  "after_ready": "No further document writes by this agent; parent owns freeze and actual execution receipts"
+}

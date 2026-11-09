@@ -1,0 +1,16 @@
+[
+  {
+    "site": "ATTN_SAE",
+    "primary": "F23",
+    "counter": "F28",
+    "rule": "F23 fixed pre-inference. After reading all families: report all failures F23/F27/F28; first strict successful family with nonpositive opposite projection is MLP F11. Attention F28 is the first other strict failed family with larger retained projection. Presentation-only correction is logged; primary selection/tests unchanged.",
+    "primary_strict": true
+  },
+  {
+    "site": "MLPIN_SAE",
+    "primary": "F23",
+    "counter": "F11",
+    "rule": "F23 fixed pre-inference. After reading all families: report all failures F23/F27/F28; first strict successful family with nonpositive opposite projection is MLP F11. Attention F28 is the first other strict failed family with larger retained projection. Presentation-only correction is logged; primary selection/tests unchanged.",
+    "primary_strict": true
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "UTC": "2026-11-04T02:16:03.776362+00:00",
+  "excluded_from_packet": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/cache/ATTN_SAE__discovery__position__audit_snapshots.npz",
+      "bytes": 1691172,
+      "sha256": "6fb0ede568723a6ca55fb50622b8e6faa02188b9a3e171cae0e1b634b361e6cb",
+      "reason": "Full selected null support audit states retained execution-side; all trace/statistic arrays and original sparse inputs included in review packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/cache/ATTN_SAE__heldout__position__audit_snapshots.npz",
+      "bytes": 1703946,
+      "sha256": "8bfbd785290e1f7bc1ca546de250ac40269bd6f4760f9b69e466e81091f5d813",
+      "reason": "Full selected null support audit states retained execution-side; all trace/statistic arrays and original sparse inputs included in review packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/cache/ATTN_SAE__heldout__position_token3__audit_snapshots.npz",
+      "bytes": 1702693,
+      "sha256": "a38d7d0546c3517f4045d1d9e84ad3bd2da3d824923bef936e3a58b39b11d77f",
+      "reason": "Full selected null support audit states retained execution-side; all trace/statistic arrays and original sparse inputs included in review packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/cache/MLPIN_SAE__discovery__position__audit_snapshots.npz",
+      "bytes": 1410695,
+      "sha256": "000b930ac02cfa49d3146ec20c23ce8b99a879b2c1eeb1e55be64a4badc40884",
+      "reason": "Full selected null support audit states retained execution-side; all trace/statistic arrays and original sparse inputs included in review packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/cache/MLPIN_SAE__heldout__position__audit_snapshots.npz",
+      "bytes": 1419832,
+      "sha256": "90aaefb31ce17c23c3f82a7ad568ad31c9bb803597788c423a8b9ca20a6e05b5",
+      "reason": "Full selected null support audit states retained execution-side; all trace/statistic arrays and original sparse inputs included in review packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/cache/MLPIN_SAE__heldout__position_token3__audit_snapshots.npz",
+      "bytes": 1417591,
+      "sha256": "370166897903e849907e36da66bfba40b5c9a22994e7e925efbf3fa81ca3beb9",
+      "reason": "Full selected null support audit states retained execution-side; all trace/statistic arrays and original sparse inputs included in review packet"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S09_marginal_vs_joint_1104/cache/curveball.so",
+      "bytes": 25768,
+      "sha256": "4a6e8a6ab3dde08452c8339f527e62a45793291abfdb8c74b43449138c81bba5",
+      "reason": "Compiled host library; C++source included for rebuilding"
+    }
+  ],
+  "intermediate_every_trade_or_every_snapshot_full_state": "Not saved; only full eight audit states/condition and all per-draw statistics retained",
+  "model_SAE_and_full_Arrow_corpora": "Not included; source paths/IDs/hashes retained",
+  "all771original_selected_questions_and_native_sparse_activations_included": true,
+  "all256joint_trace_samples_per_condition_included": true
+}

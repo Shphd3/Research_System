@@ -1,0 +1,80 @@
+{
+  "id": "analysis_r18_near_far_object_fact_behavior_20261104",
+  "title_cn": "R18近远物品事实配对行为评分",
+  "category": "analysis",
+  "kind": "complete_candidate_sequence_paired_fact_switching",
+  "payload_status": "SOURCE_FILES_PRESENT",
+  "locations": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior",
+      "expected": "directory",
+      "required": true,
+      "probes": [
+        {
+          "path": "config.json",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "results/smoke.jsonl",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "results/heldout.jsonl",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "tables/family_pairs.csv",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "tables/distance_summary.csv",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "evidence/verification.json",
+          "expected": "file",
+          "required": true
+        },
+        {
+          "path": "evidence/completed.json",
+          "expected": "file",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "identity": {
+    "parent_dataset": "dataset_r18_near_far_object_fact_pairs_20261104",
+    "model": "model_qwen3_0p6b_base_official_a5",
+    "tokenizer": "tokenizer_qwen3_0p6b_base_official_a5",
+    "prefixes": 444,
+    "heldout_families": 24,
+    "main_gaps": [
+      16,
+      64,
+      128
+    ],
+    "full_candidate_chain": true,
+    "dtype": "float32",
+    "device": "cpu",
+    "training": false,
+    "SAE_analysis": false,
+    "intervention": false,
+    "scientific_acceptance": "Unknown"
+  },
+  "projects": [
+    "from-attention-to-search",
+    "moe-router-execution"
+  ],
+  "required_projects": [],
+  "storage_owner": "MoE_Router",
+  "source_paths": [
+    "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R18_20261104_near_far_behavior/summary.md",
+    "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R01_behavior/config.json"
+  ]
+}

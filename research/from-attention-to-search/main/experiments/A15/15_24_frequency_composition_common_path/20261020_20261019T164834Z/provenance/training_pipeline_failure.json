@@ -1,0 +1,6 @@
+{
+  "status": "FAILURE",
+  "error": "RuntimeError('worker failures preserved [0, 1, 1, 1]')",
+  "traceback": "Traceback (most recent call last):\n  File \"/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/code/training_pipeline.py\", line 70, in <module>\n    fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);main()\n  File \"/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/code/training_pipeline.py\", line 62, in main\n    if not all(rc==0 for rc in statuses):raise RuntimeError(f'worker failures preserved {statuses}')\nRuntimeError: worker failures preserved [0, 1, 1, 1]\n",
+  "seconds": 109.452869893983
+}

@@ -1,0 +1,22 @@
+{
+  "adjudicable": false,
+  "cannot_claim": [
+    "MTP uses fewer FLOPs.",
+    "Pretrained LLMs obtain the same benefit.",
+    "The result transfers to open-ended assistant benchmarks."
+  ],
+  "ceiling_limited": false,
+  "claim": "The pretrained run does not establish a K=2 MTP semantic-efficiency advantage on the fixed persistent-assistant task.",
+  "local_guard_pass_count": 0,
+  "mtp_auc_higher_count": 2,
+  "mtp_faster_count": 0,
+  "mtp_final_not_lower_count": 2,
+  "mtp_threshold_reach_count": 0,
+  "ntp_threshold_reach_count": 0,
+  "overall_status": "insufficient",
+  "required_seed_count": 4,
+  "step0_ceiling_guard_enabled": true,
+  "step0_mtp_at_threshold_count": 0,
+  "step0_ntp_at_threshold_count": 0,
+  "validity_all_pass": true
+}

@@ -1,0 +1,54 @@
+{
+  "asset_identity": {
+    "status": "DONE_VALID",
+    "evidence": "assets_manifest.json; evidence/verification.json"
+  },
+  "native_load_hook_batch": {
+    "status": "DONE_VALID",
+    "evidence": "evidence/calibration_batch16.json"
+  },
+  "DEV_then_lock": {
+    "status": "DONE_VALID",
+    "evidence": "evidence/development_lock.json"
+  },
+  "Q_G_own_frequencies": {
+    "status": "DONE_VALID",
+    "evidence": "results/reference_frequency.csv.gz"
+  },
+  "P1_common": {
+    "status": "DONE_VALID",
+    "evidence": "results/primary.csv channel shared"
+  },
+  "P2_decomposition": {
+    "status": "DONE_VALID",
+    "evidence": "results/decomposition_summary.csv; results/triple_regions.csv.gz"
+  },
+  "P3_equal_and_DEVweighted": {
+    "status": "DONE_VALID",
+    "evidence": "results/primary.csv; results/difference_feature_profiles.csv.gz"
+  },
+  "wording_behavior_position_controls": {
+    "status": "DONE_VALID",
+    "evidence": "results/behavior.csv; results/body_position_sensitivity.csv; results/alternative_baselines.csv"
+  },
+  "raw_text_cases": {
+    "status": "DONE_VALID",
+    "evidence": "casebook_cn.md; results/case_members.csv"
+  },
+  "original_sources_unchanged": {
+    "status": "DONE_VALID",
+    "evidence": "evidence/verification.json"
+  },
+  "P4_optional_relations": {
+    "status": "NOT_RUN_OPTIONAL",
+    "reason": "Not required for P0-P3; no beyond-marginal joint claim"
+  },
+  "new_unseen_scene_confirmation": {
+    "status": "NOT_RUN",
+    "reason": "No new source/scene construction approved in this bounded reused-stimulus run"
+  },
+  "scientific_acceptance": {
+    "status": "Unknown",
+    "reason": "Researcher judgment; not set by execution"
+  }
+}

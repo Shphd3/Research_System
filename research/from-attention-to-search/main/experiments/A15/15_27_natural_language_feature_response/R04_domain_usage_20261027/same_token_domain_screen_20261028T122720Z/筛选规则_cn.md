@@ -1,0 +1,7 @@
+# 缓存内探索性筛选规则
+
+执行授权来自本轮用户明确要求筛选候选并复核其频段。它附属于原R04问题，不新建Focus或Work/Codex任务，不改变R06或原R04科学状态。
+
+机器可复现规则：[筛选与复核门槛](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/same_token_domain_screen_20261028T122720Z/selection_rules.json)。名单冻结：[冻结时间点产物](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/same_token_domain_screen_20261028T122720Z/candidate_freeze.json)。全部16保留，无新模型前向、参数更新、字典变化或频段重估。
+
+发现集选候选；开发/旧留出只作固定名单诊断；DCLM频率后查，不影响排序。样本来自可核查真实摘录，但来源和句法尚未匹配，不能声称纯领域语义。

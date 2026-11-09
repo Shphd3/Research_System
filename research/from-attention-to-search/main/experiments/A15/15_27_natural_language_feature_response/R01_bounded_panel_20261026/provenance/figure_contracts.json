@@ -1,0 +1,35 @@
+{
+  "figure1": {
+    "status": "COMPLETE",
+    "question": "How do fixed instances change across tokens?",
+    "measurement": "SAE z at visible-prefix token positions; fixed discovery feature IDs and common color scale",
+    "direct_observation": "inspect fixed example heatmaps; numeric values in token cache",
+    "allowed_interpretation": "instance-level activation profile only",
+    "cannot_infer": "cluster stability, whole-sentence semantics or functional success"
+  },
+  "figure2": {
+    "status": "COMPLETE",
+    "question": "Do feature paired-response relations replicate?",
+    "measurement": "Pearson correlation of discovery-controlled contribution deltas; same frozen tree order on holdout",
+    "direct_observation": "7 groups from discovery; H2=SUPPORT",
+    "allowed_interpretation": "this operational relation group on this constructed panel",
+    "cannot_infer": "verified experts, knowledge modules, causal feature dependence or mentor-defined clusters"
+  },
+  "figure3": {
+    "status": "COMPLETE",
+    "question": "Does clue relocation change a preserved relation response?",
+    "measurement": "near/far changed-minus-base raw contribution contrasts",
+    "direct_observation": {
+      "verdict": "SUPPORT_DISTANCE_ORDER_SENSITIVITY",
+      "supporting_features": [
+        26149,
+        16240
+      ],
+      "estimable_features": 25,
+      "best_q": 0.0288,
+      "boundary": "distance and clue order jointly varied; no long-range-exclusive or causal claim"
+    },
+    "allowed_interpretation": "distance/order sensitivity under the specific neutral relocation",
+    "cannot_infer": "long-range exclusivity or a pure distance causal effect"
+  }
+}

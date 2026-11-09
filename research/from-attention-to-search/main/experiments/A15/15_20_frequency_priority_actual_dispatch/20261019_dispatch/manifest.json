@@ -1,0 +1,116 @@
+{
+  "completed_utc": "2026-10-18T16:37:33.715996+00:00",
+  "client_date": "2026-10-19 Asia/Shanghai",
+  "processing_agent": "Codex /root with independent numerical, asset and reasoning audits",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z",
+  "project_result_root": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_priority_actual_dispatch/20261019_dispatch",
+  "Anchor": "/data/250010109/Research_System/Projects/from-attention-to-search/main/problem_anchors/crosscoder_feature_relations/frequency_priority_actual_dispatch/anchor_cn.md",
+  "Protocol": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_priority_actual_dispatch/20261019_dispatch/protocol_cn.md",
+  "design_freeze": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/design_freeze.json",
+  "execution_state": "COMPLETE_FOR_ALL_AVAILABLE_CONDITIONS",
+  "question_state": "Unknown; researcher interpretation pending",
+  "conditions": {
+    "O": "COMPLETE_TRAIN_AND_EVAL",
+    "F": "COMPLETE_TRAIN_AND_EVAL",
+    "T": "COMPLETE_TRAIN_AND_EVAL",
+    "Tphi": "COMPLETE_TRAIN_AND_EVAL",
+    "R11": "COMPLETE_TRAIN_AND_EVAL",
+    "R22": "COMPLETE_TRAIN_AND_EVAL",
+    "R33": "COMPLETE_TRAIN_AND_EVAL"
+  },
+  "P": {
+    "status": "NOT RUN",
+    "reason": "same-position original preprocessed joint14layer H missing in bounded inspected assets",
+    "not_substituted": [
+      "last-layer h",
+      "zD reconstruction",
+      "new model forward/GPU job"
+    ]
+  },
+  "counts": {
+    "TRAIN": 130712,
+    "EVAL": 65402,
+    "reliable_pool": 9615,
+    "L": 964,
+    "C": 962,
+    "T10": 10,
+    "Tphi_swaps": 489,
+    "Tphi_changed_members": 175,
+    "fixed_TRAIN_edges": 16740,
+    "bootstrap_replicates": 200,
+    "figures": 19,
+    "figure_files": 57,
+    "text_cards": 184
+  },
+  "code": {
+    "core_dispatch.py": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/scripts/core_dispatch.py",
+      "sha256": "dfcae5c945cdf5a3e5b937a70bc04eb83e98d12aeecf80248587feea3302644b"
+    },
+    "relation_adjust.py": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/scripts/relation_adjust.py",
+      "sha256": "a49893aabc39b0cc4bed47c6c999f69896a006ee15f626e1092159340a9d6240"
+    },
+    "render_display_fixes.py": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/scripts/render_display_fixes.py",
+      "sha256": "079b46ee556e2034d0dd78c9995a09c8e43d9adb64ddc4ed54c2b4038b2f8c6d"
+    },
+    "resource_monitor.py": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/scripts/resource_monitor.py",
+      "sha256": "ab611326b246ccd16e2c0a71512bd649746674691ce48dfc95aeca2b503ccae8"
+    },
+    "visual_dispatch.py": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/scripts/visual_dispatch.py",
+      "sha256": "d9d57dbf73d922207cea3f6d7d7e4fe070bef60fede9306640ac7f05e38b7186"
+    }
+  },
+  "producer_receipts": {
+    "core_receipt.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/core_receipt.json",
+      "sha256": "00184ce820562924db2daa082d72382e1c719f6e6fe22b14e2e4266529ec5b77"
+    },
+    "relation_receipt.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/relation_receipt.json",
+      "sha256": "e68c03aacbc4c07a55cc9ed46cf42acff259188d9aa5796b28ae2c562ac470cc"
+    },
+    "visual_receipt.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/visual_receipt.json",
+      "sha256": "907cbe02a6ec4f30b6e9adf319beea0d6ada55c90487cc2803b942e58212b369"
+    },
+    "display_fix_receipt.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/display_fix_receipt.json",
+      "sha256": "43e53d574316ed851a13055506b7c2a8037757a5e846f02d87fb1a3e8cc1e4a2"
+    },
+    "text_decoder_receipt.json": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/text_decoder_receipt.json",
+      "sha256": "f6f1b7fdb5fa0b5cb1c88657325e53681558e43709b59799bede1e89793ebf70"
+    }
+  },
+  "resource": {
+    "existing_CPU_quota": 8,
+    "RSS_limit_GiB": 16,
+    "new_disk_limit_GiB": 2,
+    "elapsed_since_run_creation_seconds": 1694.979584,
+    "new_selected_outputs_snapshot_bytes": 194307364,
+    "disk_within_budget": true,
+    "sampled_peak_aggregate_RSS_bytes": 1120260096,
+    "resource_monitor_boundary": "2-second samples of core/relation/initial visual entrypoints; per-producer maxRSS supplements samples, display repair has separate maxRSS, no continuous full-process peak claimed"
+  },
+  "no_expert_training": true,
+  "no_new_model_forward": true,
+  "no_new_GPU_job": true,
+  "no_score_calibration_or_parameter_scan": true,
+  "no_commit_push": true,
+  "scientific_claim_boundary": "Dispatch outcomes only, current fixed cache/graph/heuristic/score/window; no learning or capacity evidence",
+  "remaining_next_question": "AI suggestion: define score comparability and preregister one TRAIN-frozen calibration comparison; not executed",
+  "payload_manifest": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_priority_actual_dispatch/20261019_dispatch/payload_manifest.json",
+  "figure_manifest": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_priority_dispatch/20261018T160918Z/provenance/figures_manifest.json",
+  "navigation_check": {
+    "status": "2_PREEXISTING_UNRELATED_ISSUES",
+    "issues": [
+      "missing Projects/ntp_learning_mechanisms/README_cn.md",
+      "untracked Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md"
+    ],
+    "in_scope_local_links": "PASS_136"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE",
+  "job": "pt-ihan2rw2",
+  "verified_platform_state": "SUCCEEDED",
+  "models": 20,
+  "stable_epoch_checkpoints": 80,
+  "conditions": 10,
+  "seeds": [
+    11,
+    22
+  ],
+  "updates_per_model": 504,
+  "valid_answer_targets_per_model": 256644,
+  "all_formal_conditions_same_budget": true,
+  "same_seed_expert_initialization_matches": true,
+  "protocol_and_config_frozen_hashes_unchanged": true,
+  "smoke": "PASS",
+  "all_split_label_verification": "PASS",
+  "all_formal_tensorboard_streams": "PASS",
+  "actual_run_bytes": 24526834190,
+  "max_GPU_allocated_bytes": 5718969856,
+  "CPU_concurrent4_worker_peak_sum_upper_bound_bytes": 10128764928,
+  "CPU_note": "conservative sum of four largest worker peaks, not a simultaneous RSS sample; coordinator/extraction separately small",
+  "remote_pipeline_seconds": 345.0963309649378,
+  "CPU_analysis_seconds": 18.529374232515693,
+  "output_asset_count": 22,
+  "output_access": "assets/checks/2026-10-19_tulu_sft_outputs.json",
+  "partial": [],
+  "not_run": "generation accuracy, new target adaptation, spectra and next-budget check were outside this round",
+  "scientific_judgment": "Unknown",
+  "AI_observation": "all20 final overall and reference-low NLL worse than frozen baseline; some early overall improvements; S1 joint learning criterion not met",
+  "stopped_after_delivery": true
+}

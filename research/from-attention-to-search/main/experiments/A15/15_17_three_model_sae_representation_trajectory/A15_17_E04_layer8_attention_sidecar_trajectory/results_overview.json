@@ -1,0 +1,132 @@
+{
+  "analysis_revision": "v2: raw-selected probe C reused for B1/B2/B3; all non-probe metrics copied unchanged from eligible full run",
+  "checkpoints": [
+    0,
+    500000000,
+    1000000000,
+    3000000000,
+    5000000000,
+    10000000000
+  ],
+  "claim_boundary": "representation accessibility and local objective geometry only; no functional-use or causal long-run claim",
+  "datasets": [
+    "P_synthetic",
+    "N_M2D2"
+  ],
+  "figure_files": [
+    "01_hypothesis_and_gradient_paths.png",
+    "02_domain_readability_trajectories.png",
+    "03_paired_geometry_and_readability.png",
+    "04_fixed_feature_activation_trajectory.png",
+    "05_variance_distribution_trajectories.png",
+    "06_gradient_magnitude_ratio_angle_full.png",
+    "06_gradient_magnitude_ratio_angle_support.png",
+    "07_fisher_absolute_b3.png",
+    "07_fisher_absolute_raw.png",
+    "09_reconstruction_fvu_trajectory.png",
+    "10_training_loss.png",
+    "11_pca_joint.png",
+    "12_umap_joint.png",
+    "13_tsne_joint.png",
+    "14_variance_spectrum_10b.png",
+    "15_s7_internal_variance_heatmaps.png"
+  ],
+  "final_10b_b3": [
+    {
+      "between": 2.202508865159265,
+      "dataset": "P",
+      "fisher": 0.15149334724966956,
+      "model": "M0",
+      "participation_ratio": 2.7938753034279205,
+      "probe_balanced_accuracy": 0.9944444444444445,
+      "probe_c": 0.01,
+      "tokens": 10000000000,
+      "tokens_b": 10.0,
+      "top10_share": 0.8628964332327007,
+      "top1_share": 0.5819692979093025,
+      "total_variance": 16.834685636889724,
+      "transform": "b3",
+      "within": 14.538650740414406
+    },
+    {
+      "between": 13.405846462645957,
+      "dataset": "N",
+      "fisher": 0.13299972044298042,
+      "model": "M0",
+      "participation_ratio": 28.3111343743752,
+      "probe_balanced_accuracy": 0.8325,
+      "probe_c": 0.01,
+      "tokens": 10000000000,
+      "tokens_b": 10.0,
+      "top10_share": 0.4795580316091492,
+      "top1_share": 0.11938173740397465,
+      "total_variance": 114.48811668585881,
+      "transform": "b3",
+      "within": 100.7960499314982
+    },
+    {
+      "between": 42.22201151891903,
+      "dataset": "P",
+      "fisher": 0.25157654138327235,
+      "model": "S7",
+      "participation_ratio": 18.241384131455415,
+      "probe_balanced_accuracy": 0.9333333333333333,
+      "probe_c": 0.01,
+      "tokens": 10000000000,
+      "tokens_b": 10.0,
+      "top10_share": 0.6059046998864758,
+      "top1_share": 0.13320416444444858,
+      "total_variance": 211.22516898502917,
+      "transform": "b3",
+      "within": 167.82968430508214
+    },
+    {
+      "between": 14.28846157340239,
+      "dataset": "N",
+      "fisher": 0.13703638111353791,
+      "model": "S7",
+      "participation_ratio": 25.717926103635904,
+      "probe_balanced_accuracy": 0.835,
+      "probe_c": 0.01,
+      "tokens": 10000000000,
+      "tokens_b": 10.0,
+      "top10_share": 0.49964397389101517,
+      "top1_share": 0.12559506656996766,
+      "total_variance": 118.85324578384407,
+      "transform": "b3",
+      "within": 104.26765109598202
+    }
+  ],
+  "gradient_10b_support": [
+    {
+      "layer": 7,
+      "mean_angle_degrees": 89.9605296389547,
+      "mean_cosine": 0.0006888868510278932,
+      "mean_norm_ratio": 1.4607641579595019,
+      "model": "S7"
+    }
+  ],
+  "models": [
+    "M0",
+    "S7"
+  ],
+  "sidecar_models": [
+    "S7"
+  ],
+  "status": "PASS",
+  "table_files": [
+    "final_covariance_spectrum.csv",
+    "final_representation_metrics.csv",
+    "fixed_feature_contribution_trajectory.csv",
+    "fixed_feature_selection.csv",
+    "gradient_metrics.csv",
+    "hierarchical_representation_metrics.csv",
+    "paired_fisher_differences.csv",
+    "paired_probe_differences.csv",
+    "reconstruction_health.csv",
+    "sidecar_internal_metrics.csv",
+    "sparse_contribution_probe_metrics.csv",
+    "training_loss_delta_25m.csv",
+    "training_loss_trajectory.csv"
+  ]
+}

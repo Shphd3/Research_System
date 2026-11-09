@@ -1,0 +1,40 @@
+[
+  {
+    "id": "F1",
+    "question": "根据已知信息，A 是否为奇异矩阵？回答是、否或无法确定。",
+    "answer_prefix": "答案：",
+    "candidates": [
+      {
+        "label": "yes",
+        "text": "是。"
+      },
+      {
+        "label": "no",
+        "text": "否。"
+      },
+      {
+        "label": "unknown",
+        "text": "无法确定。"
+      }
+    ]
+  },
+  {
+    "id": "F2",
+    "question": "只使用给定信息，判断矩阵 A 是否奇异。请选择：无法判断、不是奇异矩阵、是奇异矩阵。",
+    "answer_prefix": "回答：",
+    "candidates": [
+      {
+        "label": "unknown",
+        "text": "无法判断。"
+      },
+      {
+        "label": "no",
+        "text": "不是奇异矩阵。"
+      },
+      {
+        "label": "yes",
+        "text": "是奇异矩阵。"
+      }
+    ]
+  }
+]

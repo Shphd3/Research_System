@@ -1,0 +1,5 @@
+# 本次已授权的缓存扩展
+
+用户明确要求只保留CrossCoder，并观察数学/生物各16及32候选的频率组成。本次仅扩大固定名单长度，不改变原发现门槛/排序或原频段；先冻结候选，再读频率。依附原R04问题，不另建研究任务/Anchor，不改变科学状态。原留出已反复查看，本次复核只作探索性。
+
+[执行规则](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/CC_domain_top16_top32_20261028T140417Z/selection_rules.json) · [全部输入哈希](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/CC_domain_top16_top32_20261028T140417Z/all_input_hashes.json) · [审计](/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/CC_domain_top16_top32_20261028T140417Z/audit.json)

@@ -1,0 +1,19 @@
+{
+  "audited_at": "2026-08-12",
+  "auditor": "Codex",
+  "figures": {
+    "figure1_layer8_layer9_same_direction_curves.png": {
+      "sha256": "19af1d8c54be07a6a8ebf6e76b1aa3530d3ef571aa2bda79e2c84936d4b17484",
+      "resolution": [2816, 1848],
+      "status": "PASS",
+      "notes": "Same basis and rank order are explicit; log curve and signed delta are legible; smoothing and frozen region are labeled. The terminal-direction spike is retained rather than clipped, while formal inference is deferred to fixed bands in Figure 2."
+    },
+    "figure2_registered_band_evidence.png": {
+      "sha256": "149824585c238f85100b97a8fc652044def18e8b719bbafa4212549db118b75c",
+      "resolution": [3960, 1298],
+      "status": "PASS",
+      "notes": "Normalized redistribution, absolute growth, and semantic bridge are visually separated; F9-F12 shading is consistent; simultaneous versus pointwise uncertainty is labeled; the layer-9 fine-minus-coarse value and interval are annotated."
+    }
+  },
+  "overall_status": "PASS"
+}

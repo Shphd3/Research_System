@@ -1,0 +1,7 @@
+# Protocol: binary feature occurrence by token position
+
+Authorized by current user for cache-only descriptive statistics in the existing task. Native A22 joint14layer sharedz yields ONE I(z>0) per feature/token. It is not a layer-local readout; no independent-layer trend is computed. Fixed DCLM groups4469/4437/4451/3027,all16384 coordinates,original40heldout documents20/domain,192positions. Reuse saved active counts and verify every CSR row.
+
+Metrics separately: group active count;count/fixed group size;position-level count/all active count (zero denominatorNA);I(any member active). Full exact positions0..191,six predefined32-token bands,original32:192window and query-only positions;original matched source events/supports/strata/high-middle groups with exact previous hierarchy weights. No rematching or candidate selection. All-feature exact-position counts and source-condition weighted hit rates retained.
+
+Descriptive5000paired document bootstrap seed2026102816,separate domain streams,pointwise95%intervals only when>=10documents. No newpvalues or formal trend tests. Old heldout repeatedly inspected: exploratory. Complete applicable cached data,figures,tables,scripts and checks. No new forward,training,dictionary,task,resource,intervention,clustering,PCA orTEST. Absolute positions mix identities and contexts,not causal generation or semantic progression. Human mechanism acceptance/closureUnknown. config.json freezes exact inputs and settings.

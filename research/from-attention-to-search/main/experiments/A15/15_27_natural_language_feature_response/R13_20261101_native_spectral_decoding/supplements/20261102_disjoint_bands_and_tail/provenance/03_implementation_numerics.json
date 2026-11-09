@@ -1,0 +1,107 @@
+{
+  "smoke": {
+    "pass": true,
+    "identity_NLL_max_abs_all737": 0.0,
+    "replay": [
+      {
+        "condition": "k16",
+        "NLL_max_abs": 0.0,
+        "probability_max_abs": 0.0
+      },
+      {
+        "condition": "tail",
+        "NLL_max_abs": 0.0,
+        "probability_max_abs": 0.0
+      }
+    ],
+    "torch": "2.8.0+cu128",
+    "transformers": "4.53.3",
+    "GPU": "NVIDIA GeForce RTX 5090",
+    "trainable_parameters": 0,
+    "new_transformer_forwards": 0
+  },
+  "band_visibility": [
+    {
+      "condition": "b16_32",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9944642857142857,
+      "min_L2_distance_from_mean_after_BF16": 39.8719482421875,
+      "mean_centered_energy_fraction": 0.0653737015461014,
+      "minimum_reference_eigenvalue_in_band": 665.073535167855
+    },
+    {
+      "condition": "b32_64",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9950041852678572,
+      "min_L2_distance_from_mean_after_BF16": 54.95596694946289,
+      "mean_centered_energy_fraction": 0.07350858660400555,
+      "minimum_reference_eigenvalue_in_band": 362.9165128871622
+    },
+    {
+      "condition": "b64_128",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9958412388392858,
+      "min_L2_distance_from_mean_after_BF16": 67.87212371826172,
+      "mean_centered_energy_fraction": 0.08776319464305209,
+      "minimum_reference_eigenvalue_in_band": 205.9078167497465
+    },
+    {
+      "condition": "b128_256",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9961872209821429,
+      "min_L2_distance_from_mean_after_BF16": 81.14688873291016,
+      "mean_centered_energy_fraction": 0.11395567890485438,
+      "minimum_reference_eigenvalue_in_band": 115.99868672055254
+    },
+    {
+      "condition": "b256_512",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9966183035714286,
+      "min_L2_distance_from_mean_after_BF16": 84.68219757080078,
+      "mean_centered_energy_fraction": 0.16426968268176628,
+      "minimum_reference_eigenvalue_in_band": 56.264387178984116
+    },
+    {
+      "condition": "b512_768",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9958175223214286,
+      "min_L2_distance_from_mean_after_BF16": 61.23721694946289,
+      "mean_centered_energy_fraction": 0.12703128563360164,
+      "minimum_reference_eigenvalue_in_band": 29.38761211184292
+    },
+    {
+      "condition": "b768_960",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9946665736607143,
+      "min_L2_distance_from_mean_after_BF16": 41.06743621826172,
+      "mean_centered_energy_fraction": 0.07529646820383865,
+      "minimum_reference_eigenvalue_in_band": 15.481307944162829
+    },
+    {
+      "condition": "b960_1025",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9883063616071428,
+      "min_L2_distance_from_mean_after_BF16": 18.52385139465332,
+      "mean_centered_energy_fraction": 0.018943703366172217,
+      "minimum_reference_eigenvalue_in_band": 4.213581851236012
+    },
+    {
+      "condition": "equal64_512",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.992275390625,
+      "min_L2_distance_from_mean_after_BF16": 35.28754425048828,
+      "mean_centered_energy_fraction": 0.03443778561462776,
+      "minimum_reference_eigenvalue_in_band": 48.04550974264255
+    },
+    {
+      "condition": "equal64_768",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9912123325892858,
+      "min_L2_distance_from_mean_after_BF16": 28.29005241394043,
+      "mean_centered_energy_fraction": 0.02748298626089946,
+      "minimum_reference_eigenvalue_in_band": 24.622654399549997
+    },
+    {
+      "condition": "equal64_961",
+      "mean_fraction_BF16_entries_changed_from_mean_only": 0.9882854352678572,
+      "min_L2_distance_from_mean_after_BF16": 18.25990867614746,
+      "mean_centered_energy_fraction": 0.01859218174838174,
+      "minimum_reference_eigenvalue_in_band": 4.213581851236012
+    }
+  ],
+  "new_transformer_forwards": 0,
+  "training_updates": 0,
+  "trainable_parameters": 0,
+  "precision": "FP64projection,BF16nativehead,FP32softmax",
+  "tail64_alias": "sameasoldR13;notindependentreproduction"
+}

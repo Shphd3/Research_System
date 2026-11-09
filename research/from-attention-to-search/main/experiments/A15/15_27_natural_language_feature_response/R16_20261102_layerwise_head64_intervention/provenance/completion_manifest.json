@@ -1,0 +1,34 @@
+{
+  "status": "COMPLETED_BOUNDED_FROZEN_FORWARD_ANALYSIS",
+  "job_id": "pt-od3opbw5",
+  "time_utc": "2026-11-02T06:28:56.888960+00:00",
+  "platform_state": "SUCCEEDED",
+  "physical_eval_documents": 180,
+  "natural_documents": 175,
+  "natural_positions": 700,
+  "the_positions": 37,
+  "reference_documents": 60,
+  "PCA_positions_per_layer": 9600,
+  "layers": 28,
+  "raw_records": 249843,
+  "new_training_updates": 0,
+  "scopes": [
+    "all_prefix",
+    "target_only"
+  ],
+  "max_concurrent_GPUs": 2,
+  "worker_evaluation_seconds": [
+    277.70648312568665,
+    274.7883355617523
+  ],
+  "peak_GPU_bytes": [
+    1313833984,
+    1315143680
+  ],
+  "tie_policy": "probability desc thenID asc",
+  "category_membership_changed": 0,
+  "identity_h_and_NLL_replay_error": 0,
+  "old_basis_top1_replay_errors": 0,
+  "scientific_acceptance": "Unknown",
+  "question_closure": "Unknown"
+}

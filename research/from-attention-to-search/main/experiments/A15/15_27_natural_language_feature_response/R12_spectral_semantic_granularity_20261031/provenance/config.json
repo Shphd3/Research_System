@@ -1,0 +1,53 @@
+{
+  "bands": {
+    "head": [
+      1,
+      64
+    ],
+    "middle": [
+      481,
+      544
+    ],
+    "tail": [
+      961,
+      1024
+    ]
+  },
+  "D_V_matched_per_class": {
+    "discovery": 8,
+    "development": 4
+  },
+  "tasks": [
+    "coarse",
+    "math_fine",
+    "bio_fine"
+  ],
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "bootstrap": 2000,
+  "permutation": 99,
+  "seed": 1031,
+  "label_pairs": {
+    "math": [
+      "algebra",
+      "analysis"
+    ],
+    "biology": [
+      "cell",
+      "ecology_evolution"
+    ]
+  },
+  "primary_token": 279,
+  "position_rule": "last in96..191",
+  "model_training_updates": 0,
+  "new_model_forwards": 0,
+  "source_basis": "R10/R04 pooled9600 old discovery vectors;same as R07",
+  "H_exposed_before_round": true,
+  "text_hypotheses": "D-only terms and signed readout axes",
+  "precision": "canonical FP64 decoder product with cached native z;compare saved BF16decode NMSE",
+  "fit_seconds": 5.712263107299805
+}

@@ -1,0 +1,58 @@
+{
+  "checked_at_utc": "2026-10-26T11:22:25.987579+00:00",
+  "processing_agent": "/root",
+  "new_scope_local_markdown_links": {
+    "documents": 24,
+    "missing": 0,
+    "status": "PASS"
+  },
+  "markdown_math_source": {
+    "documents": 24,
+    "issues": 0,
+    "status": "PASS",
+    "rendered_math": "NOT_CHECKED"
+  },
+  "selected_evidence_source_copy_hashes": {
+    "files": 20,
+    "status": "PASS"
+  },
+  "execution_manifest_hash_verification": {
+    "files": 82,
+    "status": "PASS"
+  },
+  "portable_bundle": {
+    "status": "CURRENT",
+    "source_and_reading_hashes": "PASS",
+    "files": 58,
+    "source_bytes": 2930703,
+    "omitted_dependencies": 163,
+    "raw_model_array_JSONL_payloads": 0,
+    "boundary": "Outside-worker and unselected owner links recorded in UNAVAILABLE.md"
+  },
+  "input_asset_strict_checks": "PASS4required",
+  "output_asset_strict_checks": "PASS3produced",
+  "forward_budget": {
+    "panel": 288,
+    "replay": 4,
+    "total": 292,
+    "maximum": 1000,
+    "status": "PASS"
+  },
+  "reconstruction_and_replay": "PASS bothsplits and4replays",
+  "synthetic_implementation_reviews": "PASS3before inference",
+  "visual_check": "PASS actual PNGinspection; plot-only layout/source-author修订 recorded",
+  "git_payload_checks": {
+    "root_generated_tracked": 0,
+    "project_selected_evidence": 168,
+    "prohibited_or_invalid": 0,
+    "status": "PASS"
+  },
+  "navigation_working_tree": {
+    "checked_entrypoints": 104,
+    "remaining_issue": "MISSING_MAP_ANCHOR15_25_03",
+    "preexisting_at_start": true,
+    "new15_27_owner_and_map_row": "PASS",
+    "pending_tracking": "15presententrypoints,not committed evidence"
+  },
+  "publication": "Localonly; no commit,push or externalpublication"
+}

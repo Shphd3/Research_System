@@ -1,0 +1,104 @@
+{
+  "analysis_asset_id": "analysis_crosscoder_context_dependency_data_gate_20261026",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/context_dependency_20261026/execution",
+  "functional_result": "NOT_TESTED",
+  "scientific_question_closed": false,
+  "actual_sequence_forwards": 0,
+  "selected_files": {
+    "README.md": {
+      "sha256": "07dfc5235bb087552d35c4c101e59249a066d7ff89466537814c7fe0cc99c6c6",
+      "bytes": 446
+    },
+    "artifact_manifest.md": {
+      "sha256": "a16c84e433dde401f3156bda91ee727136648beb2f07c0034ce08ae2aade8659",
+      "bytes": 2256
+    },
+    "authorization.json": {
+      "sha256": "d752162b8cc0566a6be63569c9475b8e0f5b23a47075fdb5efbc8a1b08d6efc6",
+      "bytes": 2148
+    },
+    "detailed.md": {
+      "sha256": "847622380c62209cfa78b9bb17866d7b9a0cf07fcfb64e48a0a0343e43240ba3",
+      "bytes": 1563
+    },
+    "detailed_cn.md": {
+      "sha256": "6e33139993c695c5e4872719bf95e424b746df3ad7ee0c80d271487ed0da6660",
+      "bytes": 4248
+    },
+    "examples_cn.md": {
+      "sha256": "42b8b89abb497c68372c17a3add888d6faca9becc2cf7ca4bae3b90fa67272f1",
+      "bytes": 1716
+    },
+    "execution_status.json": {
+      "sha256": "cd6b0bfe174b4767ef70115bc811383a8a999e0cebaa59ef4b44339d878114ca",
+      "bytes": 408
+    },
+    "summary.md": {
+      "sha256": "51bf8f8b245a714a2f87e91c0f6459c49dce7c621833a885269ca11e8e2e3cd0",
+      "bytes": 1717
+    },
+    "summary_cn.md": {
+      "sha256": "63ce3f0054d9c1d8ba88cb90f3492cfecf5951951beb5ef1feb63624961c1f14",
+      "bytes": 2773
+    },
+    "provenance/data_context_illustrations.json": {
+      "sha256": "6ab1ea14e525bd7c5de35f63252e81f3679a951e008d89f8c53b5585c72ebb67",
+      "bytes": 2931
+    },
+    "provenance/delivery_check.json": {
+      "sha256": "b160ac77b65c698be47e9a0efa866ad211543fc891b48f62c37918bdbfd4ff6e",
+      "bytes": 1761
+    },
+    "provenance/discover_support.py": {
+      "sha256": "d2428cb0996410709849643b1c4a9672a92b97de306da92324e9b8f76234cead",
+      "bytes": 6615
+    },
+    "provenance/execution_freeze.json": {
+      "sha256": "8cb6b60aabf8dc5ea03882f0245ca4dd6b72fd67deb4bbfeb26eccb19f482e1b",
+      "bytes": 1624
+    },
+    "provenance/input_access.json": {
+      "sha256": "5be7e61909cf48d646ac8b3afc628f2086dd8fb8dd1d810f645aada3ec7a1e71",
+      "bytes": 12310
+    },
+    "provenance/original_input_immutability.json": {
+      "sha256": "a52111066e9b97507587a47d056327279d7e703129cca952210ef52879b6fd4b",
+      "bytes": 159
+    },
+    "provenance/output_access.json": {
+      "sha256": "05c8ed7bdc6fd82e9d3cda9c8c7d94b622171e69d77a909e95ca1d01e99c9b17",
+      "bytes": 6548
+    },
+    "provenance/preparation_focus_crosscoder_context_computation_dependency.md": {
+      "sha256": "2dc4e8120e7d9dd6358de2749c8e7973c0bd53e67dfb4e6b5742aec7a2d7aa93",
+      "bytes": 1894
+    },
+    "provenance/preparation_focus_crosscoder_context_computation_dependency_cn.md": {
+      "sha256": "0b9fa290a9062fb2601f32af51f5152174d462c1b54467230eca9b804255ed89",
+      "bytes": 1701
+    },
+    "provenance/report_data_gate.py": {
+      "sha256": "c82bd74b589588128e222fabb96c54a26e7b69adb5583f7e9610010f66ae37db",
+      "bytes": 18332
+    },
+    "provenance/run.sh": {
+      "sha256": "ccbeb9dc225056ce98ebf0689f52761e7b4187460e8b0d7ab000af5ab30f0617",
+      "bytes": 450
+    },
+    "provenance/saved_table_audit.json": {
+      "sha256": "ebef951c6dbbca6910aac77cc8a82b7be0bb636ed9aedec3ad8fea3e39997f15",
+      "bytes": 530
+    },
+    "provenance/support_receipt.json": {
+      "sha256": "b77a1b18bf181d91c3f7e32a61778a4d37417f327c3b17886de5d403fd28c15e",
+      "bytes": 1536
+    },
+    "tables/token_support_top10.csv": {
+      "sha256": "baee5746ee521a6acda9cfa2dd3a3fae653334067ca04979dd60d373943e96aa",
+      "bytes": 743
+    }
+  },
+  "full_table": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/context_dependency_20261026/execution/tables/token_support_all.csv",
+  "full_table_sha256": "c5a730bc5527c44b7e9b239a8cc19b06ad8481345b7c1711522b3848a4490c34",
+  "selected_evidence_exception": "top10derivedCSVand4descriptivetextcaseswithsourceIDs;fulltableexecutiononly"
+}

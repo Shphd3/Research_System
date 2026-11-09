@@ -1,0 +1,47 @@
+{
+  "num_sequences": 1024,
+  "num_experts": 8,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "topks": [
+    1,
+    2,
+    4
+  ],
+  "rows": 54,
+  "by_topk": {
+    "1": {
+      "max_selection_share_mean": 0.27706273396809894,
+      "max_selection_share_min": 0.19986724853515625,
+      "max_selection_share_max": 0.44066619873046875,
+      "top2_selection_share_mean": 0.4521414438883464,
+      "top4_selection_share_mean": 0.7183649275037978,
+      "effective_experts_mean": 6.74677999211627,
+      "gini_load_mean": 0.30744028091430664,
+      "routing_entropy_mean": 0.9163267480002509
+    },
+    "2": {
+      "max_selection_share_mean": 0.22902202606201172,
+      "max_selection_share_min": 0.17803192138671875,
+      "max_selection_share_max": 0.3225059509277344,
+      "top2_selection_share_mean": 0.39676539103190106,
+      "top4_selection_share_mean": 0.6736993789672852,
+      "effective_experts_mean": 7.214359163043473,
+      "gini_load_mean": 0.2396005524529351,
+      "routing_entropy_mean": 0.9495827423201667
+    },
+    "4": {
+      "max_selection_share_mean": 0.17917564180162218,
+      "max_selection_share_min": 0.15847301483154297,
+      "max_selection_share_max": 0.21453380584716797,
+      "top2_selection_share_mean": 0.3339018291897244,
+      "top4_selection_share_mean": 0.6110031869676378,
+      "effective_experts_mean": 7.6601667669495015,
+      "gini_load_mean": 0.15231239795684814,
+      "routing_entropy_mean": 0.9789846705065833
+    }
+  }
+}

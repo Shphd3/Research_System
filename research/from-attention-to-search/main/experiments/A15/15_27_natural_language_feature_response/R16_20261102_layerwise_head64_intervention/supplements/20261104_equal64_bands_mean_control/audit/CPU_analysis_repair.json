@@ -1,0 +1,8 @@
+{
+  "issue": "Repeated NPZ decompression inside fixed-case serialization loop",
+  "repair": "load per-document arrays once; rerun CPU summarization only",
+  "raw_GPU_chunks_changed": false,
+  "model_forward_rerun": false,
+  "scientific_plan_changed": false,
+  "timestamp": 1793760024.8859587
+}

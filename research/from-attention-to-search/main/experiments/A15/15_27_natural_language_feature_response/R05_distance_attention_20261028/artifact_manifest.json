@@ -1,0 +1,36 @@
+{
+  "round": "R05_distance_attention_20261028",
+  "owner": "A15_27",
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028",
+  "canonical_result": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R05_distance_attention_20261028/summary.md",
+  "first_reading_cn": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R05_distance_attention_20261028/明早先读这个.md",
+  "raw_directories": {
+    "data": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/data",
+    "forward": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/forward",
+    "analysis": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/analysis",
+    "tables": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/tables",
+    "figures": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/figures"
+  },
+  "forwards": 1096,
+  "cap": 1096,
+  "checks": 16,
+  "audit_pass": true,
+  "candidate_count": {
+    "SAE": 20,
+    "CC": 25
+  },
+  "missing": [
+    "same-token-ID comparison support<10documents",
+    "no confirmed Bfar orneardecay role"
+  ],
+  "not_run": [
+    "interventions",
+    "model/dictionarytraining",
+    "outputcorrectness"
+  ],
+  "claim_state": {
+    "task_state": "COMPLETE_BOUNDED",
+    "scientific_mechanism_judgment": "Unknown",
+    "question_closure": "Unknown"
+  }
+}

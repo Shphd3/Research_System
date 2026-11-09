@@ -1,0 +1,40 @@
+{
+  "time_utc": "2026-10-27T17:51:05.243053+00:00",
+  "problem": "duplicate pass keyword while appending prefix comparison;exception after5chargedcheckforwards,no main forward",
+  "fix": "update comparison dictionary before constructor;source validator accepts explicitly logged engineering revision only",
+  "spent_attempts": 5,
+  "replacement_check_plan": 10,
+  "total_expected": 1095,
+  "scientific_settings_changed": false,
+  "tolerances_changed": false,
+  "accepted_code_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/run_forward.py": "4109800d58a57d17fc9b86edc43953e3f7716b78459c3fd13d0ac77c072448ce",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/analyze_A.py": "45f1a230ec5dd81d149d548e666524ba3aaf54b3174a5a96ea394c52b32b266d"
+  },
+  "native_attention_repair": {
+    "reason": "eager switch exceeds original .02z tolerances;unused path rejected. NativeR04cache exact andprefix exact. Earlier weightcomparison helper tautological,markedINVALID,not evidence.",
+    "method": "FP32QKsoftmaxfromnative rotatedBF16QK,keep originalSDPAoutput;single reservedcheck compares probability-weightedV to actualSDPAoutput",
+    "tolerances_unchanged": true,
+    "check_count_final": 16,
+    "total_forward_max": 1096,
+    "scientific_population_metrics_selection_unchanged": true
+  },
+  "A_offline_repairs": "Use actual R04 role keys shared/math/bio; index pairs once and cache doc group summaries; no selection,weighting ortest changes. Before any A main result.",
+  "implicit_causal_mask_repair": {
+    "failure": "SDPA uses implicitis_causal whenmask=None. Separate attentionprobabilityreader omitted explicitfuturemask; nativeBaseoutputs and dictionary reads unchanged. No A main data existed.",
+    "fix": "explicit key<=query mask forprobabilities; compare BF16-roundedweightedV to nativeSDPAoutput on each of120officialA documents;not an extra prefix or new checksequence",
+    "invalid_checks": "previous readoutcheckfailed;preserve it. Nativecache/replay/prefix/reconstruction stillqualified,unusedeagerrejected.",
+    "checks_spent": 16,
+    "full_prefix_cap_unchanged": 1096,
+    "A_validity_gate": "same .02relative and.005absoluteoutputtol;no tolerance relaxation; all officialArowsmustpass beforeinterpretation"
+  },
+  "probability_validation_units": {
+    "time_utc": "2026-10-27T18:01:52.448726+00:00",
+    "before_A_main": true,
+    "clarification": "Frozen .005 absolute tolerance is probability units,not hiddenvalue units. Readout probabilities compared against FP64QKsoftmax reference with same .02relative/.005absolute limits;nativeSDPAweightedV checked at.02relative,absolutehiddenvalueerror reportedonly. Explicitcausality/sumchecks. No Aresults existed whenfixed.",
+    "no_extra_prefix": true,
+    "unchanged_native_model_forward": true
+  },
+  "A_archive_cache_repair": "Materialize each document CSR array once, avoiding repeated npz decompression in pair loop. Offline process stopped and resumed skipping completed docs;no new model forwards or metric change.",
+  "frequency_CI_grouping_repair": "Frequency point estimates unchanged. Supplementary uncertainty now uses exact existingR04canonicalhostname/pathstrippingrule,254groups for256windows,not rawURL256groups. No candidate or primarytest changes."
+}

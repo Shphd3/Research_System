@@ -1,0 +1,31 @@
+{
+  "arms": {
+    "centered_full": {
+      "event_files": 2,
+      "run": "/data/250010109/MoE_Router/outputs/online_spectral_router_training/osrt-8gpu-smoke-v6-centered-full-s17"
+    },
+    "local_hmt": {
+      "event_files": 2,
+      "run": "/data/250010109/MoE_Router/outputs/online_spectral_router_training/osrt-8gpu-smoke-v6-local-hmt-s17"
+    },
+    "relay_hmt": {
+      "event_files": 2,
+      "run": "/data/250010109/MoE_Router/outputs/online_spectral_router_training/osrt-8gpu-smoke-v6-relay-hmt-s17"
+    },
+    "relay_random": {
+      "event_files": 2,
+      "run": "/data/250010109/MoE_Router/outputs/online_spectral_router_training/osrt-8gpu-smoke-v6-relay-random-s17"
+    },
+    "vanilla_full": {
+      "event_files": 2,
+      "run": "/data/250010109/MoE_Router/outputs/online_spectral_router_training/osrt-8gpu-smoke-v6-vanilla-full-s17"
+    }
+  },
+  "rank0_batch_sha256_by_step": [
+    "0fdb47361553d7dc60f41377802346b16682305157613bb03909a57c154480fc",
+    "2965c5d74d5d5338253eefcfc01a6810d4cd7cb20594625c9440e2f1b4439cc9",
+    "a2962c3f895574b74ce90f912ad94b59989f5b57cf09eefebf386f30214f7bd5"
+  ],
+  "status": "pass",
+  "step0_parameter_sha256": "dd25272ba2e8c61917f7178adb0844de8892d4eef1bdcdf140a4e6cfe33eb7fe"
+}

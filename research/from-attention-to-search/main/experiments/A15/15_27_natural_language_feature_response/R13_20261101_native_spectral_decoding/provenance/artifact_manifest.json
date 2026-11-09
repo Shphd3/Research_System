@@ -1,0 +1,1004 @@
+{
+  "status": "COMPLETE_EXPLORATORY",
+  "time_utc": "2026-11-01T03:39:33.839402+00:00",
+  "scientific_owner": "15_27_05",
+  "producer_job": "pt-kz3udzv0",
+  "failed_jobs": [
+    "pt-tcuu1t2m",
+    "pt-ev9c0mz8"
+  ],
+  "legacy_cache_smoke_failed_then_refreshed": true,
+  "training_updates": 0,
+  "transformer_forward_calls": 192,
+  "actual_files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/fresh_h.npy",
+      "bytes": 6037632,
+      "sha256": "f6da8bf8b72a43d9223ef9092e9491074e26991053cd4e44b80e77dc5a7fe5b3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_positions.jsonl",
+      "bytes": 1500741,
+      "sha256": "8b00c34ed5bd975b14b91937eb34e207496e883500b6caab0bf699f03540aa99"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/fresh_cache_manifest.json",
+      "bytes": 629,
+      "sha256": "c7eacf013a217aefc51dd2b95329dacde1cadd08e73f89dcf7bdd74f66031e08"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/positions.jsonl",
+      "bytes": 1368081,
+      "sha256": "85972b552fb96c6be8bd784521d0b0d5be73a1bb487c4c7b3955f28cd2c5d0fe"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/bases.npz",
+      "bytes": 38991656,
+      "sha256": "8fc5e47a95d8d47d497765c726d2d0d6a09878499c67b0f925fe2c0974444626"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/frequency.npz",
+      "bytes": 2888034,
+      "sha256": "99b9c9b379421f40ac97246b3cebc8e0c91bb52519fda13b41011101a99bbbd1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/freeze.json",
+      "bytes": 2019,
+      "sha256": "cf2b4c1270479b910009020cf5927d0614647db1e7f3d47bd6d087fb36b78693"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/provenance/protocol_executed_A4.md",
+      "bytes": 9763,
+      "sha256": "151ea50042f115c80a4d1d3c15ba29b4b2cc78f9d5c37ea238a9e4c3a734fb34"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/manifest.json",
+      "bytes": 18506,
+      "sha256": "4a48ec24be87b5292672b4eea090c8d49f1af14dabfb2dbf0f53c712263799a2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/position_metrics.csv",
+      "bytes": 6578493,
+      "sha256": "55a7182e7fdaa806f41dd2de1067fa8307c4b2428414cde385e46d3558b63dca"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/document_metrics.csv",
+      "bytes": 1340593,
+      "sha256": "73f61cf7403fb305c6792cf5ed4964961f151078a7bbbd5b07cd548abe19d298"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/raw_outputs.jsonl",
+      "bytes": 31025915,
+      "sha256": "b6f3af602d52553124b7f6325dfc6e038aa71962e4cb76bce6aed73401d4c187"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/summary_metrics.csv",
+      "bytes": 75463,
+      "sha256": "f99519bb27cf74fe020e157b83b31dc14a8f33fc7840f0bbfa3dc631dedabfae"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/recovery_by_full_top1_type.csv",
+      "bytes": 33043,
+      "sha256": "d449470fce99ab3e63e51f7a5187d3f070db54ab189fb969e26a46ca567e403c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/analysis/addition_control_contrasts.csv",
+      "bytes": 5252,
+      "sha256": "5eac1cd301ca8713c13316848092fa909bf2554677e3e889df2f1c03abf12989"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/audit/final_validation.json",
+      "bytes": 3392,
+      "sha256": "08f7d9b86d3e7eb8ee29cb901d6cb455d6fee8b6f94be127c3933c550bc81baa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/terminal_receipt.json",
+      "bytes": 521,
+      "sha256": "b456413ed45ab1e40ada307422e6bec87a07c7458d65e2a97468a0470737a25b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_090.npz",
+      "bytes": 370523,
+      "sha256": "ed862c35094120f4c57dd64595784616134f8c4d675785da127cea67088215de"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_091.npz",
+      "bytes": 370420,
+      "sha256": "2a2ea2fa78832eea6e0319e41bc967eed8eeea557b66f1a4e77437181d22f7d5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_092.npz",
+      "bytes": 370559,
+      "sha256": "d3633b4fedec3728c7d69773c65cb6822f74d9262cbf604a0971733e273e1fa3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_093.npz",
+      "bytes": 370980,
+      "sha256": "cb1f9dff5e53d7072960019c39190143c68b61cc7c6dfe8ed29297f91d7c8be2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_094.npz",
+      "bytes": 370619,
+      "sha256": "2244f29f760a27feade3b655970ff0a4641279d33567c02edfd2a406e4cd5655"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_095.npz",
+      "bytes": 370459,
+      "sha256": "6a4b79371f6a330638a7004e165f63111f40108061c4e5173e30596f5f1cc321"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_096.npz",
+      "bytes": 371049,
+      "sha256": "fc40dd94bcf9ec020d3208852660c464535c221d2c3135a5529e66289bb79f83"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_097.npz",
+      "bytes": 371004,
+      "sha256": "6ebb8707b745f6cd5ec9b3f5bac47d387725b8215bc830cbf57668f78ac24a6c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_098.npz",
+      "bytes": 370660,
+      "sha256": "791a5a13ba1cab4bd93f4a4d4fbc7f3bae3848f3a0f45c1e620dad058d47ec1a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_099.npz",
+      "bytes": 370589,
+      "sha256": "480cfed024a362f1d98c8d651491cdc8353e1b026c2ca456c925ca6356da38de"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_100.npz",
+      "bytes": 370318,
+      "sha256": "f99c86bcafab1f69d39b1973313a8a87adc2b7f750e34b027bcf9a79db46c264"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_101.npz",
+      "bytes": 370757,
+      "sha256": "2a5c0838827af2868ded949f8d1491372d39becddc185816628177fab4b333ad"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_102.npz",
+      "bytes": 370092,
+      "sha256": "c48102fa456365f971f513b1e5190691aad280e11b2181a60afb079d3b9b6b4e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_103.npz",
+      "bytes": 369610,
+      "sha256": "179dc9d80f55c3e31964505ac8fbdfba9ec6dd217c5f507bb7a30485f4997e62"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_104.npz",
+      "bytes": 370570,
+      "sha256": "6e2c7f7009bd084a1cd96a16f6d93aeafed27da5e9cdc5e8845692f885f631b5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_105.npz",
+      "bytes": 369892,
+      "sha256": "18f4823d3ef158823ca9f9e6649259cfe418d714ce1ab77e76afb9762c3b51e0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_106.npz",
+      "bytes": 370121,
+      "sha256": "f15e101570de652e39a3679b2973984102146573e2fc97e0c739fd4e383b9775"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_107.npz",
+      "bytes": 370410,
+      "sha256": "a1b9e809041b63bc5e07e4cd62e59c98f6dd270f2877d5ab961ca3111faf1567"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_108.npz",
+      "bytes": 370685,
+      "sha256": "fbf5040c482ed428c89c1b76e14d753c575c836c73dac9546b3020de718c9cee"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_109.npz",
+      "bytes": 370552,
+      "sha256": "bb445b64eb0e9592010bf72315e82ace0ef06ea902f21548e810f953046cb4c9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_110.npz",
+      "bytes": 370948,
+      "sha256": "ffa75a5b6e77748199608344776f66cdcff90e4353ea65efc23a1df4ef314b3b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_111.npz",
+      "bytes": 370694,
+      "sha256": "69b3c4ebe7292edb87e8f8c0978359ae0f2eca0d12013256ece4bfdc30d8cb7b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_112.npz",
+      "bytes": 370361,
+      "sha256": "9183fb22870a99401d238935a4b7c21c23d21e0d5e0cf6a5b978182485dddbe4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_113.npz",
+      "bytes": 370882,
+      "sha256": "e61a5b706179a866c7ec07b73e39c32962e71d56641f1313b6e86fe4d198475e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_114.npz",
+      "bytes": 370956,
+      "sha256": "fcb6389743fe89567137bdae211abd58d296e965efadccf70add41f5fb5b5990"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_115.npz",
+      "bytes": 370621,
+      "sha256": "63e73092c115bbea5d5abb65a7b6b3a17efd92d4e013e810ec42a512462827a9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_116.npz",
+      "bytes": 370801,
+      "sha256": "2979be297d13543e18d152d41da73d73d58e637eb4ba7d8554b600a9047f0716"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_117.npz",
+      "bytes": 370698,
+      "sha256": "afc4e1caffc0bb268346c738ef718444f1fa6d5dac34b7c1896b93bb515b9745"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_118.npz",
+      "bytes": 370957,
+      "sha256": "54b05347b7fdfc5809e386dc2cdbab22dcb466e0e1f3fd5e77adc12d7a3579dd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_119.npz",
+      "bytes": 370905,
+      "sha256": "a0cc792fbd7ba9a1a1be0b064400c53930b568cc2aa6fd9d54487112bef206b4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_120.npz",
+      "bytes": 370610,
+      "sha256": "31c05e8dac9cfed657dd044850ece3ef5718b7e827a369d26b815110cfe56598"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_121.npz",
+      "bytes": 370550,
+      "sha256": "578f4005b5383890ee300d9c83a70c642bde8fc3a03b23e22aacded84293a4bb"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_122.npz",
+      "bytes": 370763,
+      "sha256": "3cab102f38dcb123f3d25b55c66cc465f6ad965bc9ddb779380af5ef140a8b75"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_123.npz",
+      "bytes": 370204,
+      "sha256": "365a2edfb6290ad555d86fbed568b139b449493ee1ceaf42987203c084673476"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_124.npz",
+      "bytes": 370522,
+      "sha256": "c84b47bd4df7448350012358cdd032f2d0db6fbae73bca3f732d6913480db651"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_125.npz",
+      "bytes": 370026,
+      "sha256": "db662306f8637a45844c331fb48def00f401e2186dbb6da985a317f47554c7e4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_126.npz",
+      "bytes": 371029,
+      "sha256": "c684d4093211039ca464facf48014bd1a4319dc38bf8877e3f1ac78cf2d3e66b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_127.npz",
+      "bytes": 370583,
+      "sha256": "0295856a91a5b1ea8ec5ceb70d673076f59b66d08b436d89708446b9a1909264"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_128.npz",
+      "bytes": 370681,
+      "sha256": "de0146afd7e29772dfb6ebc316ba4c25fe12420c8279304581672743ae4d9822"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_129.npz",
+      "bytes": 370419,
+      "sha256": "e45f860dfa453004815b496bed2bb738e2102707ac472100c9b748a59b6bd5e6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_130.npz",
+      "bytes": 370845,
+      "sha256": "809ac3da4bbeb169d805737bbc0263f9705a55d22e5a87b8c0cc58d0fa37a674"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_131.npz",
+      "bytes": 370098,
+      "sha256": "f2ee9a21f2cad4260ab3793b9a2fe757800ba272e02aa79ac197f1067cce33b2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_132.npz",
+      "bytes": 371018,
+      "sha256": "f60ce13a47e14b5771fa3048409d0242d13e7bead20e26bc6cd13116621713a6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_133.npz",
+      "bytes": 370829,
+      "sha256": "8408a155c9be35b7f4b1b14d0327d85426113a61ed4654201507bfff42775b58"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_134.npz",
+      "bytes": 370886,
+      "sha256": "933a209b7a5297600de681bb5f1f83d4177b66b5b5d1c3f67707b6fbf29cda00"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_135.npz",
+      "bytes": 370464,
+      "sha256": "5193654fafe8edb4c077e9411bdebfc32b2b200be947432699e21b6e319a6a01"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_136.npz",
+      "bytes": 370574,
+      "sha256": "0f54a502157d088a3acd0a188f83ceaa6568e36b61878546eff6968cc28b3759"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_137.npz",
+      "bytes": 370535,
+      "sha256": "d767fc5d38411a4cbe0727d3d602a2cb98983dffa97431ff1f6cf664cc78e486"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_138.npz",
+      "bytes": 370397,
+      "sha256": "97a46b5a5af5f56c41d3af554cb7c5aac03ea2c4e0359a4188a277be0f8eed7e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_139.npz",
+      "bytes": 371178,
+      "sha256": "28bd28c266ababa845f4ea381203d77ce59ad005716a5b40cdab3bf6748172d7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_140.npz",
+      "bytes": 370741,
+      "sha256": "9885fda272225a0652d87a3f89bb9ea5bcd6035a9cd06ce1a74593e7f46aff3a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_141.npz",
+      "bytes": 370071,
+      "sha256": "9745002b19a4ac81a677673c22f17dbd0249ccb850f903d36ca7cea99c63f336"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_142.npz",
+      "bytes": 370695,
+      "sha256": "1c85c178c9c9021a9ce7a6ea27c80a7fecfdc1c2b632cca6369a96346cc51acc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_143.npz",
+      "bytes": 370742,
+      "sha256": "a8994be775fc1253c4de7cc230095a4dd9e93f1d21e6b5d4ef06fb3db8dcd360"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_144.npz",
+      "bytes": 370511,
+      "sha256": "d14f0d210748faba0df620e677fc9ad514d664d45aa756bde23ef2fde54de073"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_145.npz",
+      "bytes": 370244,
+      "sha256": "91035ccaf4cf0a0b632e1ea3cba5acdee425bd717f0ec99c3c2610ac27cda750"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_146.npz",
+      "bytes": 370781,
+      "sha256": "891ce20c3a91aaeccaa025e16b0578f9a703cca0c0ffd8ce86f8224c9ff3f926"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_147.npz",
+      "bytes": 370723,
+      "sha256": "47c1576faff8bfc595a1240f637bc55cf59ff6eb2b992a588597e314fd32988c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_148.npz",
+      "bytes": 370103,
+      "sha256": "57dcabba72bba1a29822a92571936d4805e0e3e62ab64780ca2519ae9b0ae0d7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_149.npz",
+      "bytes": 370457,
+      "sha256": "ede3f06f67bb1066b148a8aafd77781e1ec59ad75bc846d9822c50b41b6c3ba5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_240.npz",
+      "bytes": 370404,
+      "sha256": "236d159a9db556bb8765a1e11f2f2f84ad6a03686dfdf545985282e53bf0a9d0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_241.npz",
+      "bytes": 370509,
+      "sha256": "57aa8af242f886ff3e655da778f24b5ccc3c2a4c1d89487fe410b5ccc5bfe3a9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_242.npz",
+      "bytes": 370859,
+      "sha256": "aea96df4c509f9c29075aae68ae723715441571fbdd8d7f0ad40ceec91a32326"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_243.npz",
+      "bytes": 370246,
+      "sha256": "040d02238c99a1cb47f3ddae9ccc3c7b14ac3e170a5d13ad32a813d4f5ebf05b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_244.npz",
+      "bytes": 371058,
+      "sha256": "e816d6b4f907de3adfb2940f6797188fef5c6b7f0e35c79d147c7498ff408a6a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_245.npz",
+      "bytes": 370608,
+      "sha256": "ddf065eaa4603742d1a6de43b735e2c6d3292dca8cbb7e58a5d71628f1391255"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_246.npz",
+      "bytes": 370703,
+      "sha256": "622d4030c422cafccfcfb2b02fd1ae1306848fc931d80050593632f51a7ea249"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_247.npz",
+      "bytes": 370935,
+      "sha256": "b61c058b19a0eef4b2f2b0ac1cbf67fcbb41891ac6beaa7c1f6226234d49fe7f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_248.npz",
+      "bytes": 370505,
+      "sha256": "6a7842df2c3c068fd7cf71a60147c0a2e4d93a6f4dd8a10990abf496109ea2a7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_249.npz",
+      "bytes": 370702,
+      "sha256": "d4f243d5a846aa74d278b584c411232637fde8cef07330e536679348977508ff"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_250.npz",
+      "bytes": 369547,
+      "sha256": "49cff03eff3ee325e50c40338ca5939b2dede3152c6ab44f2e0ce03aedc9e917"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_251.npz",
+      "bytes": 370712,
+      "sha256": "45492b17789fe0ae8b5922ff25872fac3f633fb2b69ebba4869be79efdfa041a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_252.npz",
+      "bytes": 370785,
+      "sha256": "063a6d518dcb2717e19868681b6f12dfce479c85f6273b9e94050069625a8c5e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_253.npz",
+      "bytes": 370455,
+      "sha256": "1265ec198029cf5b69de323bd73c34003c4f88ede6f55708f64ebd3d75c076dd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_254.npz",
+      "bytes": 370684,
+      "sha256": "eb6e4b7e0fd33bc52c4a4c80070d49a7c9adb26f66925d426bc705fa2644d575"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_255.npz",
+      "bytes": 370608,
+      "sha256": "f0dab4d1781dca6ee7933f1da46ee5b06591af805827161d567ee81543d625a0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_256.npz",
+      "bytes": 370656,
+      "sha256": "9c5fb7c6cbfe56959f008afe8078f7fe9f63ef7481aa925fd7e66b3899e1edfd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_257.npz",
+      "bytes": 370726,
+      "sha256": "d5cecf4821cbfabcaea299a32a3def8669fbcb34ba1d7796bb6d4c24acfbe683"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_258.npz",
+      "bytes": 370734,
+      "sha256": "b76a8f78257b83393fbd3a871f19ca2065a15fad68f62f7974b5b4cbe7784517"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_259.npz",
+      "bytes": 370075,
+      "sha256": "4db388afe3401b97986377f7fbde6d851fd8b29dabc7dc493e22e38afe4f873a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_260.npz",
+      "bytes": 370760,
+      "sha256": "dd9cf24ef7a29ba2c28ba1549750ad5941c2dd7a6fb659366c71c99d29a05d35"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_261.npz",
+      "bytes": 370772,
+      "sha256": "0b417dfb1a329aef3a92a8bc94dc14a6356fddd1de9dcd56405c31d1715d08f5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_262.npz",
+      "bytes": 370200,
+      "sha256": "b25b718ccf35c3206c1dde64ce65eb71dc9ce96f5342f4d2442693da65d8455d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_263.npz",
+      "bytes": 370487,
+      "sha256": "8fb48f0027456dc68743a75fe06ead0bde184fab1f523aa613df14898b131082"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_264.npz",
+      "bytes": 370576,
+      "sha256": "6416e3ba6d240ac45c7ed037148dfe6d6191ff479bc16ae9925e5cfb0a4062cd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_265.npz",
+      "bytes": 370344,
+      "sha256": "a8bc6f7a1279dd693ea3f6c27bc54e92025811d82c472f6ddcbc4f8eec2153a8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_266.npz",
+      "bytes": 370465,
+      "sha256": "bc8050ccdd44424c4062f2465e78f3bbe1ce2483c00ab91d7000d396a7949416"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_267.npz",
+      "bytes": 369962,
+      "sha256": "b18db18349e1b8bd617031f48d804a4498463f99f182df462262ccc37a4f2adc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_268.npz",
+      "bytes": 369957,
+      "sha256": "3c9362ec7d14baa9a0880ecc50c705c01084c581979d2d35031096a37a5f41e2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_269.npz",
+      "bytes": 370575,
+      "sha256": "3b2ace4636feea1bb10d21ccb656f95f00048801bbcfa94b8a2ca307379652e1"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_270.npz",
+      "bytes": 370688,
+      "sha256": "0f12816937ea8c2baae35739086b7a8dfcf9bb33db25df01b4a3185d9c77913c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_271.npz",
+      "bytes": 370417,
+      "sha256": "77ba96d18edbb737a2a29847dfebaf05b98db0557989a4fb2e38ad1709c4482c"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_272.npz",
+      "bytes": 370230,
+      "sha256": "b23caeda85d6dd122f135523cd1c2f7cf697b9b87df0388895944894aa02db63"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_273.npz",
+      "bytes": 370375,
+      "sha256": "942847b074deec5d52e30bbeace24f32a1d22891259c30c631bffa526c9240fe"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_274.npz",
+      "bytes": 370504,
+      "sha256": "f76ea735f149f1c15f4144ba161568287e296e77f5e0c0c0f0d707aed39e8987"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_275.npz",
+      "bytes": 370350,
+      "sha256": "e458b08816569d06d864b6b0e9fa33f931eb37e838c5792483de5ccb7b2b8438"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_276.npz",
+      "bytes": 370621,
+      "sha256": "012ed12bf2f0d78c8eef4bbda5f269d7c9aa6f0c5c978f94a7acb649e790c1f3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_277.npz",
+      "bytes": 370507,
+      "sha256": "cebb440e967f033f1c00c3af323f22b6f1c99ebf4df5cef0f4cb37f4176a8876"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_278.npz",
+      "bytes": 370702,
+      "sha256": "d5cd23552291198bb564736a8b1651b989c7b43f98796d63be13d5fe57379fe8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_279.npz",
+      "bytes": 371031,
+      "sha256": "8f0620ace9daa9e818aa033d2d3fce38563aad3b9aa6e015d1f5c66f70ba3505"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_280.npz",
+      "bytes": 370598,
+      "sha256": "eaff977ab5f3399bcf3cbffdb3f83debdfa7995ac73ad98162799894e59821b5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_281.npz",
+      "bytes": 370649,
+      "sha256": "75807cf61f818897051cf8bdd96faea491f10ca05184c609efd62bbde0c59e33"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_282.npz",
+      "bytes": 370239,
+      "sha256": "0ac5533f33f12efd8862285da7bae8aa41426b17c58210b6b20a576110f19119"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_283.npz",
+      "bytes": 370330,
+      "sha256": "e8bc8039e5558f42aa41ca4aaf7a5308ec1fe113fd4afff9741d35c5378c2192"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_284.npz",
+      "bytes": 370223,
+      "sha256": "1203bfb7896b12b320f7772b9aec852f0daf38f0a73c5e4fc6c988dae757776b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_285.npz",
+      "bytes": 369961,
+      "sha256": "a2fbfcd72eda77a99618aac39b7de0b25b4c9f23ffb21bd8375c2f1f5fa6ded3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_286.npz",
+      "bytes": 370692,
+      "sha256": "c29d5e2ae2a2812817d981eae939ba342dbcf5d9f6a3bde952f3583106ce4041"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_287.npz",
+      "bytes": 370717,
+      "sha256": "f2d6366b31b33caaa72aaa3025a28ba2a83f6215997831b0d289326fb02d18d8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_288.npz",
+      "bytes": 370167,
+      "sha256": "11f7782f155e5eb886555f7653ce4dcfe92c8e950ca367232aa34cf3029fa7b9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_289.npz",
+      "bytes": 370867,
+      "sha256": "53aace972bf9d6313ab744e2413952acb074ca647e106b95f59c9472a4cac814"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_290.npz",
+      "bytes": 370769,
+      "sha256": "bc83aa231c3e5566ff7776b980ffce92892a39ac5f421752e426269dcb22bdfe"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_291.npz",
+      "bytes": 370479,
+      "sha256": "44814fb6cfd4ecd4d6785146facd9b5c29bbc177cb32983bf889ae56ff09a602"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_292.npz",
+      "bytes": 370397,
+      "sha256": "35f3c7192ffd90ed31a4e657ec5c6438f7793d4b5cf47f2f300aed3c8876f65d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_293.npz",
+      "bytes": 369876,
+      "sha256": "50bc01e95059da5ab46b87cc4e181b89beb3642ae3fbae9cd85bcfee122ded30"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_294.npz",
+      "bytes": 370962,
+      "sha256": "94c6c34d1b4bb1e89579d59b3587fa6b9c0b0de8979c7e5a50ba08a329b83743"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_295.npz",
+      "bytes": 370822,
+      "sha256": "0a8fc26fb69a5782597f0964ac000988f61166f7ee1d0fb643236b643a51a898"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_296.npz",
+      "bytes": 370223,
+      "sha256": "606b56ced2b8b81d786cd46ef7563a0538b4c80b7106c6ef66aa80caa2a28cda"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_297.npz",
+      "bytes": 369833,
+      "sha256": "22e9c4f86b7e5592573b1a32f422058f8097c767c0b1735125ff92f944c5f6d9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_298.npz",
+      "bytes": 369903,
+      "sha256": "1205a8f130dbfa8acad7ef8842dab2875813c952d92fec2f15d2878a35e83ce7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_299.npz",
+      "bytes": 370806,
+      "sha256": "7542788fcd9f63213886269fb20208518b854b3fd760669f57ea30e2d8c9d64a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_390.npz",
+      "bytes": 370680,
+      "sha256": "2c3538a62a17679860d0e29fe6940fc93ded494dc5cb12746f383edd7d6fc3b0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_391.npz",
+      "bytes": 370862,
+      "sha256": "2afb0d36f1b8500a27ccc319c0ed4fd352ab91ede85737acc3ee8d5c355ef64b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_392.npz",
+      "bytes": 370509,
+      "sha256": "caeb23ec7f927eeb601945cdcfb7c5b63fb5e1ce91cb60039f6075103081ca53"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_393.npz",
+      "bytes": 370893,
+      "sha256": "5e466ba6ba820ad9f9933421d389a7a372d8bba6ed712185b7d63350b4ce7dd8"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_394.npz",
+      "bytes": 371025,
+      "sha256": "16cf5e86e798590ded632f6ec2fe1c76fa9b1302e2d7e114d3cccb1efef7265f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_395.npz",
+      "bytes": 369816,
+      "sha256": "17dcbe94b7ed097f45228df365a8685bd8b3d887264aa23f11c2d4e0b0ea296f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_396.npz",
+      "bytes": 370849,
+      "sha256": "5c9fba263c2102638246f5dd3951f8939bd99eeb10531b4ff8555f9e1c1b9d31"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_397.npz",
+      "bytes": 370535,
+      "sha256": "9306cc5ccc2b78318f89df47c26b58f079910edfff148bb25fdbd417b0164873"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_398.npz",
+      "bytes": 370883,
+      "sha256": "e53d2d9fe3d2419dca2e4e4f6079ee732503dac41892bd0f772c741abc243651"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_399.npz",
+      "bytes": 370296,
+      "sha256": "f1bee067711f3cad78cfeeb2fdd6b6e1e97d65cdc7769c560b5540caaf85985e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_400.npz",
+      "bytes": 370783,
+      "sha256": "a4417ad4f901c6edb7beceaed1675e1797810f9275b47e02d366a66955d38cfd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_401.npz",
+      "bytes": 370580,
+      "sha256": "841e44c86c16b60cbee4336b6666d3e2c34b6dea7a11277c2d57eff58ec99536"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_402.npz",
+      "bytes": 370599,
+      "sha256": "9ea81b4992e0553f4c84cf0c75baaca8181e52f9ccf9d1e8e690158742564b92"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_403.npz",
+      "bytes": 370784,
+      "sha256": "f0ccb1f4e3dd0b54932178150a9e9df4763a47a761395e6c4f824075aa85c626"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_404.npz",
+      "bytes": 371054,
+      "sha256": "128a35b04ed1813bb01b2009995b830043ae5064fcd379993ef2322da8219c53"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_405.npz",
+      "bytes": 370292,
+      "sha256": "dc7b18cdb7fcbfe603432ddb53e796ce2a3a483382922e796d508d26b87035f2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_406.npz",
+      "bytes": 370791,
+      "sha256": "7e40f225826aea88b32e31f0169e45e088d70451bb82b7a885e3284f4fbf5863"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_407.npz",
+      "bytes": 370596,
+      "sha256": "2a1db04e7f3aec3561418bc45ebbf6827373dd86223e48d5171e8742690770c2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_408.npz",
+      "bytes": 370486,
+      "sha256": "b971851f9374f18828adf5144ffe1e4f6ca9672ca553e5b2f78b44c2f6a8a250"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_409.npz",
+      "bytes": 370885,
+      "sha256": "ec6153e3d76575876895ecea346d26f3f5a385a951a62e4ad0cf01bfd2224693"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_410.npz",
+      "bytes": 370971,
+      "sha256": "2ee3f341fee9699df06c0c39c12f17542cff1e7a0f78c6c7f48bc0dcf5463ee5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_411.npz",
+      "bytes": 370641,
+      "sha256": "47a55796208df78f48143f6ea6330e080e5150f9f19167200ad05b0f2646cef9"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_412.npz",
+      "bytes": 370880,
+      "sha256": "61f58fbc43e4ebb745a5459cef490feb4839f3f2fc2202b8d723e3010402c2c4"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_413.npz",
+      "bytes": 370827,
+      "sha256": "6d04609b87209b389e0918c06eaa772b4e173fc87c5d6c1e7ca32dac57d4bcd7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_414.npz",
+      "bytes": 370851,
+      "sha256": "b516294c788f16a335a5a36cc97f8417ac4ef03f66594b84c9229b425b9f05ef"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_415.npz",
+      "bytes": 370849,
+      "sha256": "68a795ca346ffab955f86db68ef67c19755b1ac68ea0b196b32efe76e6a90de6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_416.npz",
+      "bytes": 370041,
+      "sha256": "35aef0aa837ceab444b4e71abbb5a20379691ce7d233ccc66860601005e4aa76"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_417.npz",
+      "bytes": 370720,
+      "sha256": "546fe3472f16b0e1aa98540ee6f04472b808a242003bfd41ffe3724f69cefba3"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_418.npz",
+      "bytes": 370829,
+      "sha256": "93ae0741bdb5efffd78b942e7e39f1f8d79f0af832f2a7cebbb93e02dd2c0613"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_419.npz",
+      "bytes": 370701,
+      "sha256": "04211511ab567b10ff96976517c4a20f8372986a1b704ba08ee293f601751f3d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_420.npz",
+      "bytes": 370614,
+      "sha256": "e63f04f3a15c2097ed27ac83ba96adf56c44895a02737b460d8a6bea189aacaa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_421.npz",
+      "bytes": 370545,
+      "sha256": "54d56d0b1f7fe0ef117b159cc9895bc584fe9e95f48eefc0eba8cba9eb7e37fc"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_422.npz",
+      "bytes": 370182,
+      "sha256": "8e9cc040ae6031b851d7b7b5f65ecb2db93039547b4e541670e99ef5c40087e0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_423.npz",
+      "bytes": 370845,
+      "sha256": "49ba318a4e2d92ad0cdb560893e82a5d74afcbb52cba6aa218e905992e298481"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_424.npz",
+      "bytes": 370830,
+      "sha256": "30594ef7d04a17768a2f025a7da2dd681ba5a78856e9dbfe3ae483785a82a110"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_425.npz",
+      "bytes": 370711,
+      "sha256": "78638fb0a701b97b7c7c4cc926c63bea93fe1588fcf20836ea39ab15287ca051"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_426.npz",
+      "bytes": 370775,
+      "sha256": "7c2fbb25ca77f56276fe95358b664bb83ff36070b4cf09aef19deadf159f9730"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_427.npz",
+      "bytes": 370473,
+      "sha256": "6bd9cad1647760d415c8d16b4f8b032e0527769596ce81566a79e73883ce989a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_428.npz",
+      "bytes": 370892,
+      "sha256": "c855e64d44498076328ab06a9507d3ba4b74510d8561478c805d7cec2fe7fed7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_429.npz",
+      "bytes": 370554,
+      "sha256": "f015f689a9ccba6dde6e4b1332f3b7d2baf41d8dc205d3c111c1d10f50425946"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_430.npz",
+      "bytes": 370635,
+      "sha256": "f3eddbdcf2b06af074926e0fd8801162ac499d8e438028a1fa908cd16765417e"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_431.npz",
+      "bytes": 370636,
+      "sha256": "db24eb75f346b9171a1f6bd6c773f9531ec489894d6bfc33277308b39a005d23"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_432.npz",
+      "bytes": 370560,
+      "sha256": "dea6422ebd94fe5e9a1cddd65356fd594deed9bc085d5ea1375cf55b857a14f6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_433.npz",
+      "bytes": 370844,
+      "sha256": "3d4c17d094af2dcdaece3221d2929fdf1bb6c1d7febe44cdb2321d1c7a627dd5"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_434.npz",
+      "bytes": 370606,
+      "sha256": "f8d6f7d9f8a5513fb5f5c4921f630b6c9be36ff9b18b2436c4a2caf9472b85ce"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_435.npz",
+      "bytes": 370803,
+      "sha256": "728d7a8a5385b3ff696629120ca7f02acca62ba095dbe73cb4078b7bdf6b6154"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_436.npz",
+      "bytes": 370803,
+      "sha256": "fa89c221c2d81c15d98609f3d56ff1a99491aa79ca590ea14ec8d920c2b160ba"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_437.npz",
+      "bytes": 370973,
+      "sha256": "4bb50477ea54e79b8c76dc8bd681c9baadce1f0795417754e3e3b886698a2629"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_438.npz",
+      "bytes": 370486,
+      "sha256": "6981342d7251d507c362d5e53d11c115a1b1b100f516a4ca07d7b65d0b0b65c0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_439.npz",
+      "bytes": 370642,
+      "sha256": "b5f9624aa801be1106e21c4c82f0da799f270dcc939f633b6a8c20b29d945f91"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_440.npz",
+      "bytes": 370474,
+      "sha256": "d2f1fb1ab67c7eaf114bc281561da2f3703e918a5e6f84df7d07daf981884a89"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_441.npz",
+      "bytes": 370393,
+      "sha256": "cafc858ba65369f2b4bd1b3d27459321a486b7e0e6db7fb3fa69cdafaa91b497"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_442.npz",
+      "bytes": 370275,
+      "sha256": "75b5b8035eb1a268c3a0aafb3dee1aeda9f36c4835107eb3caf4490fa0212e3b"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_443.npz",
+      "bytes": 370584,
+      "sha256": "ee61735459efdede84a55b80057e5baf03d66f92f0894fad79dab8c8bcf6a4b0"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_444.npz",
+      "bytes": 370897,
+      "sha256": "f60cc3345ec26f95c229b3e9f274d8ab8ca6499862cd66f12a373c6bab28d712"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_445.npz",
+      "bytes": 370504,
+      "sha256": "8e17bb70145f8481bf71b8f9a16526585cbbe3e54d979e98dc9e75e11764355f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_446.npz",
+      "bytes": 370658,
+      "sha256": "f3093d660ccf615d098512fc492a4d8401ac9e142f2dd747a5f51418d12a2c56"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_447.npz",
+      "bytes": 370576,
+      "sha256": "7f74c91cb182e5cc029886610aab31112cad8df52a3b42fac5f6e7dc645939c7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_448.npz",
+      "bytes": 370830,
+      "sha256": "ec88d45530cb4d4288726e9bb0205393d733aec8dae34a85d9137c9709c0b68a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/data/native_h27_fresh/R11_A02_449.npz",
+      "bytes": 370412,
+      "sha256": "af0dcfbded6efd11f232f27c819e8ae4a5c8446f4c03edc5e24e47bc5332a56e"
+    }
+  ],
+  "scientific_acceptance": "Unknown",
+  "recompute": "scripts/analyze.py;recovery_groups.py;validate.py;render.py,CPU only on saved chunks",
+  "current_protocol_includes_post_output_A5_A6": true,
+  "exact_executed_protocol_snapshot": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/provenance/protocol_executed_A4.md"
+}

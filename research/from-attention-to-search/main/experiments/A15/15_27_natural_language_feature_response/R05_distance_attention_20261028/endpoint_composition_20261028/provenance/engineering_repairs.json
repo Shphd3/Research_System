@@ -1,0 +1,32 @@
+{
+  "new_forwards": 0,
+  "scientific_settings_changed": false,
+  "items": [
+    {
+      "stage": "audit/example",
+      "problem": "numpy.int64 in illustrative extra feature IDs was not JSON serializable",
+      "fix": "convert IDs to Python int only",
+      "original_code": "repairs/audit_and_example_before_json_fix.py",
+      "original_log": "audit_console.log",
+      "metric_or_selection_change": false
+    },
+    {
+      "stage": "report",
+      "problem": "raw diagnostic pair group named control while readable summary calls it middle",
+      "fix": "normalize diagnostic labels control->middle;primary arrays/statistics unchanged",
+      "original_log": "render_console.log",
+      "metric_or_selection_change": false
+    },
+    {
+      "stage": "figurelayout",
+      "problem": "full64+4example too tall for a small explanation figure",
+      "fix": "main uses first12 original-order role IDs plus same4 numeric extraIDs;full64figure retained as appendix",
+      "new_feature_selection": false
+    },
+    {
+      "stage": "performance",
+      "fix": "reuse seeded bootstrap index arrays by sample size,identical values to initial estimator",
+      "metric_change": false
+    }
+  ]
+}

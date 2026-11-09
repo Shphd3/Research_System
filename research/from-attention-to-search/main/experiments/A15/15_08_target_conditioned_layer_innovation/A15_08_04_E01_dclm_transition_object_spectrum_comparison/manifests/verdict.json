@@ -1,0 +1,48 @@
+{
+  "activation_sha256": "7cc64025908d8c1e8b9f30dcb04d0fd485bf44f5803b8693a4f02fe6ffa14454",
+  "contrast_rule": {
+    "definition_robust_within_tolerance": "all contrasts median_abs<0.02 and directional_consistency<0.70",
+    "definition_sensitive": "any contrast median_abs>=0.05 and directional_consistency>=0.70",
+    "otherwise": "INSUFFICIENT_OR_MIXED"
+  },
+  "contrasts": [
+    {
+      "directional_consistency": 0.6285714285714286,
+      "left_condition": "adjacent_pre_attention_rmsnorm_difference",
+      "matched_layers": 35,
+      "median_absolute_difference": 0.013678553981436248,
+      "median_signed_difference": 0.005862237420615535,
+      "negative_fraction": 0.37142857142857144,
+      "positive_fraction": 0.6285714285714286,
+      "right_condition": "adjacent_pre_attention_raw_residual_difference",
+      "zero_fraction": 0.0
+    },
+    {
+      "directional_consistency": 0.5714285714285714,
+      "left_condition": "adjacent_actual_mlp_input_rmsnorm_difference",
+      "matched_layers": 35,
+      "median_absolute_difference": 0.01172447484123107,
+      "median_signed_difference": 0.00537371763556424,
+      "negative_fraction": 0.42857142857142855,
+      "positive_fraction": 0.5714285714285714,
+      "right_condition": "adjacent_post_attention_raw_residual_difference",
+      "zero_fraction": 0.0
+    },
+    {
+      "directional_consistency": 0.8055555555555556,
+      "left_condition": "actual_mlp_input_rmsnorm_state",
+      "matched_layers": 36,
+      "median_absolute_difference": 0.19467513434294087,
+      "median_signed_difference": 0.19467513434294087,
+      "negative_fraction": 0.19444444444444445,
+      "positive_fraction": 0.8055555555555556,
+      "right_condition": "post_attention_raw_residual_state",
+      "zero_fraction": 0.0
+    }
+  ],
+  "curve_count": 283,
+  "elapsed_seconds": 23.11918330192566,
+  "rank_cap": 2047,
+  "registered_verdict": "DEFINITION_SENSITIVE",
+  "token_count": 2048
+}

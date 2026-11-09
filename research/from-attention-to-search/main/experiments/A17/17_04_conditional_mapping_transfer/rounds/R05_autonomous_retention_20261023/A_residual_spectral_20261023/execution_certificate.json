@@ -1,0 +1,67 @@
+{
+  "monitor_owner": "Codex primary agent, current conversation",
+  "scope": "user-authorized A frozen residual diagnosis; zero training",
+  "profile": {
+    "AEC2": "share-cluster",
+    "ENVELOPE": "docs/execution_envelope.md",
+    "EXECUTION_SURFACE": "acp",
+    "GPUS": "1x H100 80GB",
+    "GPU_USED": "true",
+    "IMAGE_CUDA": "12.4",
+    "IMAGE_ID": "shphd-lite-0911",
+    "IMAGE_INTERPRETER": "Python 3.10",
+    "IMAGE_TORCH": "2.3",
+    "IMAGE_URL": "registry.cn-sh-01g.sensecore.cn/ccr-zhicheng-03/shphd-lite-0911:shphd-mig-20260910161423",
+    "PRIORITY": "normal",
+    "QUOTA_TYPE": "reserved",
+    "RESOURCE_PROFILE": "h100-1-reserved",
+    "STORAGE_MOUNT": "01995892-d478-76d8-aec7-13fd8284477e:/data",
+    "SUBMISSION_ENTRY_POINT": "/data/250010109/MoE_Router/experiments/20260808_online_spectral_router_30b_v1/scripts/sco_acp_compat.sh",
+    "WORKER_NODES": "1",
+    "WORKER_PROCESSES": "1",
+    "WORKER_SPEC": "n6ls.iu.i40.1",
+    "WORKSPACE": "share-space"
+  },
+  "job_id": "pt-hfmdpfra",
+  "platform_state": {
+    "create_time": "2026-10-23T03:32:39Z",
+    "display_name": "retention-A-residual-spectral-20261023",
+    "name": "pt-hfmdpfra",
+    "start_time": "2026-10-23T03:33:21Z",
+    "state": "SUCCEEDED",
+    "update_time": "2026-10-23T03:40:02.253432Z"
+  },
+  "runtime_completion": {
+    "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/completion.json",
+    "bytes": 689,
+    "sha256": "c9b9f8e309e6c98481dec9cc2bdd052f698e22b5cf7110d48f867271a969ee3a"
+  },
+  "runtime_source_freeze": {
+    "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/analysis/A_residual_spectral_20261023/freeze_before_new_forward.json",
+    "bytes": 2506,
+    "sha256": "c9a972b8d96ae618d1701f1efe27301252938f3b16c1ad1f2e48c20d48a4514f"
+  },
+  "durable_pod_log": {
+    "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/acp_receipts/pod/retention-A-residual-spectral-20261023-20261023T033323Z.log",
+    "bytes": 13272,
+    "sha256": "51aefb85171082785cc3cccc70a41f3369200df0a93c6102f585d2f0533c0dbf"
+  },
+  "activation_script": {
+    "path": "/data/250010109/MoE_Router/experiments/20261023_autonomous_retention/source/runtime.sh",
+    "bytes": 219,
+    "sha256": "bdb44df1396ef77bddc67af1cdcbaa844b81b269cbf1b701a134b5e65781b97f"
+  },
+  "prefix_runtime_script": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/scripts/runtime.sh",
+    "bytes": 679,
+    "sha256": "281ce4c7c0ad723e215590417f140dc1c1ddb3435c9095d715c3750c0d07faf5"
+  },
+  "GPU_used": true,
+  "spectral_SVD_CPU_FP64": true,
+  "new_forward_counts": {
+    "input_captures": 7,
+    "intervention_evaluations": 59
+  },
+  "training_updates": 0,
+  "no_model_weights_saved": true
+}

@@ -1,0 +1,56 @@
+{
+  "producer": "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/postprocessing/plot_mechanism.py",
+  "producer_sha256": "a8f0ef60fce652022d02fe45daedebdb2a013f6bda9516d0edbdd2d083e35825",
+  "figures": [
+    {
+      "figure": "01_data_construction",
+      "sources": [],
+      "meaning": "Illustrative data schema, not empirical data",
+      "boundary": "Words are illustrative; exact tokenized prefixes are in the independent audit.",
+      "aggregation": "Equal command/panel weight; mean and range over three continuation orders sharing one old state, unless explicitly labeled seed29.",
+      "png_sha256": "b524b7109cc30cfc0ec0746fadc7e2580591849f8f9e69876320641f268dc4e3"
+    },
+    {
+      "figure": "02_early_trajectory",
+      "sources": [
+        "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/independent_audit/r02_trajectories_equal_seed_means.csv"
+      ],
+      "meaning": "Response and accuracy at saved steps0/1/16/50/120/240",
+      "boundary": "Joint has additional old supervision and half the new exposure; paths are not matched by new learning level.",
+      "aggregation": "Equal command/panel weight; mean and range over three continuation orders sharing one old state, unless explicitly labeled seed29.",
+      "png_sha256": "e74148efe9bcb5d1e707693f7598b8bb266725edb3963d01e470c71262ed6989"
+    },
+    {
+      "figure": "03_matrix_interventions",
+      "sources": [
+        "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full_parameter_rollback.csv"
+      ],
+      "meaning": "Means over three order seeds; intervention conditions are actual forwards",
+      "boundary": "Rollback/insertion effects depend on the other weights; no unique functional attribution.",
+      "aggregation": "Equal command/panel weight; mean and range over three continuation orders sharing one old state, unless explicitly labeled seed29.",
+      "png_sha256": "b5ec35112d6443de23a1a64fd5c811661104bb68fae6ca9ad17328f4bc2bc1fa"
+    },
+    {
+      "figure": "04_weight_interpolation",
+      "sources": [
+        "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full_parameter_rollback.csv",
+        "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full_interpolation_compatibility.csv"
+      ],
+      "meaning": "Each line is one order seed; graph shows combined accuracy",
+      "boundary": "Compatibility judgment uses all eight cells, not the combined curves; unsampled alpha values remain untested.",
+      "aggregation": "Equal command/panel weight; mean and range over three continuation orders sharing one old state, unless explicitly labeled seed29.",
+      "png_sha256": "2adf2a11568c1c9c841039f7009db9a253d3af4d8bcba358009cba3b5a5f49c8"
+    },
+    {
+      "figure": "05_representation_bridge",
+      "sources": [
+        "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/representation_per_record.csv",
+        "/data/250010109/MoE_Router/experiments/20261012_a17_r02_mechanism_audit/runs/audit_20261012_r03_v1/full/seed_29/representation_analysis.json"
+      ],
+      "meaning": "Left: finite command effects. Right: magnitudes of exact vector terms",
+      "boundary": "Vector norms are not shares of prediction causation; one seed and a fixed small panel.",
+      "aggregation": "Equal command/panel weight; mean and range over three continuation orders sharing one old state, unless explicitly labeled seed29.",
+      "png_sha256": "d1b68f051c7ada1731076240ebda0b951b9f01582f297c7845dc63ea34271866"
+    }
+  ]
+}

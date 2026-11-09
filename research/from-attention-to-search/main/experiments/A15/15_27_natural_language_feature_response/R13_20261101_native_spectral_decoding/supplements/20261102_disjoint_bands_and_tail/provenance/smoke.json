@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "identity_NLL_max_abs_all737": 0.0,
+  "replay": [
+    {
+      "condition": "k16",
+      "NLL_max_abs": 0.0,
+      "probability_max_abs": 0.0
+    },
+    {
+      "condition": "tail",
+      "NLL_max_abs": 0.0,
+      "probability_max_abs": 0.0
+    }
+  ],
+  "torch": "2.8.0+cu128",
+  "transformers": "4.53.3",
+  "GPU": "NVIDIA GeForce RTX 5090",
+  "trainable_parameters": 0,
+  "new_transformer_forwards": 0
+}

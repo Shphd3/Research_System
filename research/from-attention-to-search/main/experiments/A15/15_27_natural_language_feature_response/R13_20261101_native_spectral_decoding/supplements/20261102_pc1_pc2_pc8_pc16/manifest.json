@@ -1,0 +1,69 @@
+{
+  "round": "R13 supplement 20261102_pc1_pc2_pc8_pc16",
+  "time_utc": "2026-11-02T04:06:50.557401+00:00",
+  "parent_project": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding",
+  "parent_execution": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding",
+  "project": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/A15/15_27_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_pc1_pc2_pc8_pc16",
+  "execution": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R13_20261101_native_spectral_decoding/supplements/20261102_pc1_pc2_pc8_pc16",
+  "new_conditions": [
+    "pc2",
+    "k8"
+  ],
+  "reused_conditions": [
+    "k1",
+    "k16",
+    "mean_only",
+    "identity"
+  ],
+  "asset_ids": [
+    "representation_qwen3_0p6b_block27_native_spectral_decoding_20261101",
+    "analysis_a15_27_05_native_spectral_decoding_20261101",
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5"
+  ],
+  "status": "COMPLETE_EXPLORATORY",
+  "scientific_acceptance": "Unknown",
+  "job_id": "pt-w4u4zh0w",
+  "reference_membership": {
+    "common_nonformat_reference_IDs": 1412,
+    "format_reference_IDs": 4547,
+    "natural_observed_common_IDs": 165,
+    "natural_observed_format_IDs": 31,
+    "the_observed_common_IDs": 14,
+    "the_observed_format_IDs": 1
+  },
+  "projection_definitions": {
+    "k1": [
+      1
+    ],
+    "pc2": [
+      2
+    ],
+    "k8": [
+      1,
+      8
+    ],
+    "k16": [
+      1,
+      16
+    ],
+    "intervals": "one-based,inclusive;meanaddedall"
+  },
+  "output_asset_id": "analysis_a15_27_05_native_spectral_pc1_pc2_pc8_pc16_20261102",
+  "terminal": {
+    "status": "COMPLETE",
+    "positions": 737,
+    "new_conditions": [
+      "pc2",
+      "k8"
+    ],
+    "new_transformer_forwards": 0,
+    "training_updates": 0,
+    "elapsed_seconds": 29.116425275802612,
+    "peak_GPU_bytes": 1327131648,
+    "device_used": [
+      0
+    ]
+  },
+  "facts": "k1:common2.15%,format10.49%,other0.00%; pc2:common6.95%,format3.70%,other0.00%; k8:common9.46%,format27.57%,other0.00%; k16:common14.37%,format26.13%,other0.00%"
+}

@@ -1,0 +1,118 @@
+{
+  "audit": {
+    "core_records": 7168,
+    "counterfactual_records": 768,
+    "node_answer_cells": 56,
+    "primary_depth_answer_cells": 24,
+    "primary_records": 3072,
+    "query_binding_reversal_records": 768,
+    "selector_counts": {
+      "C12": 128,
+      "C34": 128,
+      "L1": 64,
+      "L2": 64,
+      "L3": 64,
+      "L4": 64,
+      "ROOT": 256
+    },
+    "status": "pass",
+    "token_length_range": [
+      160,
+      167
+    ],
+    "worlds": 256
+  },
+  "candidate_pool_size": 2984,
+  "example_world": {
+    "aliases": [
+      "David",
+      "Thomas",
+      "Kelly",
+      "Taylor",
+      "Ross"
+    ],
+    "edges": [
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "fact_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "labels": {
+      "C12": "southeast",
+      "C34": "southeast",
+      "L1": "southeast",
+      "L2": "east",
+      "L3": "southeast",
+      "L4": "east",
+      "ROOT": "southeast"
+    },
+    "pool_index": 1247,
+    "primary_by_depth": {
+      "D0": "L1",
+      "D1": "C12",
+      "D2": "ROOT"
+    },
+    "primary_nodes": [
+      "L1",
+      "C12",
+      "ROOT"
+    ],
+    "world_id": "w000",
+    "world_index": 0
+  },
+  "files": {
+    "core_prompts.jsonl": "e150fa369d0eae8c99aa8ec463aa5448f171128e4bf01ceef31a72ab1a4d7bf0",
+    "counterfactual_prompts.jsonl": "f94ada6bcad4d63418f5006faa3936958bdce4e615e7f57b45e089b237c5eded",
+    "query_binding_reversal_prompts.jsonl": "b7ac9a62545008a5970f5eb85e0c1de1cb005eeecdd6172747ec7590e77a73a9",
+    "worlds.jsonl": "1e33850ccea5b5544911f3979cbabc1b3d2c3e62dcfb450d8ff4a46219463158"
+  },
+  "generator_seed": 20260806,
+  "generator_sha256": "241a2160fa0af96e31e53152838854da452314ead6c20ad746da6cbe48726bbb",
+  "model_config_sha256": "deaa300e5384a480c2cafd0db33cba0da89db8eeeb8ddc2b584b89bd46d52ffb",
+  "model_path": "/data/share/Qwen3-8B",
+  "node_positions": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "C12",
+    "C34",
+    "ROOT"
+  ],
+  "status": "frozen",
+  "target_ids": {
+    "east": 10984,
+    "north": 10200,
+    "northeast": 40829,
+    "northwest": 52242,
+    "south": 9806,
+    "southeast": 41452,
+    "southwest": 52985,
+    "west": 9710
+  },
+  "templates": [
+    "T1",
+    "T2",
+    "T3",
+    "T4"
+  ],
+  "tokenizer_class": "Qwen2TokenizerFast"
+}

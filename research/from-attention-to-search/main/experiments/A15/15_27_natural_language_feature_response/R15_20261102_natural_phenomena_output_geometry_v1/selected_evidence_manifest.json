@@ -1,0 +1,625 @@
+{
+  "run": "R15_20261102_natural_phenomena_output_geometry_v1",
+  "source_records": [
+    {
+      "path": "figures/01_phenomena_band_map.pdf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/01_phenomena_band_map.pdf",
+      "sha256": "0e5542b09b8680916ac4bfe36714c8f21bb389b98b01cbcebb42a33c940d7389",
+      "bytes": 122113
+    },
+    {
+      "path": "figures/01_phenomena_band_map.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/01_phenomena_band_map.png",
+      "sha256": "56753244756d0adc10f5932b0b24ad177ff2aa020d2284ac5ba2130df941ca3f",
+      "bytes": 436789
+    },
+    {
+      "path": "figures/02_representation_output_geometry.pdf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/02_representation_output_geometry.pdf",
+      "sha256": "6149b564c8c7785252cdddf4e043283867dba5a92644045d3bfc606e52c6a99d",
+      "bytes": 104203
+    },
+    {
+      "path": "figures/02_representation_output_geometry.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/02_representation_output_geometry.png",
+      "sha256": "3fa2cfe90dcdccbe933d8b7098647eb9e88d42d3e670ea888a58cebd53c3dc38",
+      "bytes": 300192
+    },
+    {
+      "path": "figures/03_actual_text_change_output_gain.pdf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/03_actual_text_change_output_gain.pdf",
+      "sha256": "047c5b5793e1f68960788fffcc0df325d7a8b8b547648e15c729e7b23090d17b",
+      "bytes": 110103
+    },
+    {
+      "path": "figures/03_actual_text_change_output_gain.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/03_actual_text_change_output_gain.png",
+      "sha256": "6ed165bb64b59c4bfe04d3141139fe9d748a0c87ae725ddc138eebf3021223b7",
+      "bytes": 279354
+    },
+    {
+      "path": "figures/04_frozen_explanations_validation.pdf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/04_frozen_explanations_validation.pdf",
+      "sha256": "e81fe31c616a720e167e5719463ec9068cc13b5bda01188715cdb399a80aef8c",
+      "bytes": 53965
+    },
+    {
+      "path": "figures/04_frozen_explanations_validation.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/04_frozen_explanations_validation.png",
+      "sha256": "a3c6fd472c793d0a7c71d3aebd78ac16d0d7c487fd46aca88330e5d48568f0f6",
+      "bytes": 118732
+    },
+    {
+      "path": "figures/05_signed_direction_exploratory.pdf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/05_signed_direction_exploratory.pdf",
+      "sha256": "0f5cd35c321d634848a200908aa536a254ec3f7760bf72646064fd3f07a55404",
+      "bytes": 108880
+    },
+    {
+      "path": "figures/05_signed_direction_exploratory.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/05_signed_direction_exploratory.png",
+      "sha256": "d640c55b44c532a07bcbf6e04da3a868cb84b34f88683decd5b0e6889f6a2c93",
+      "bytes": 275027
+    },
+    {
+      "path": "figures/A01_word_form_descriptive.pdf",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/A01_word_form_descriptive.pdf",
+      "sha256": "fb2a90c9e890d4ca7b5bb57f86682212e985ff0b8449f702c500e25a7d46cc18",
+      "bytes": 55000
+    },
+    {
+      "path": "figures/A01_word_form_descriptive.png",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figures/A01_word_form_descriptive.png",
+      "sha256": "8be5a7c91afdc96e3f4565b5709964626b36261494cc5e0c55671a7ee1ec015a",
+      "bytes": 162576
+    },
+    {
+      "path": "scripts/analyze.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/analyze.py",
+      "sha256": "d30200b50e76287626dbf124d4be6184a1902f0c47ed0e55c22e933151bc5da8",
+      "bytes": 15989
+    },
+    {
+      "path": "scripts/band_cases.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/band_cases.py",
+      "sha256": "dc0780c6a8c58e88e082e99425be060a55c4df8b3ce716a25d651b5a20f0acb7",
+      "bytes": 4421
+    },
+    {
+      "path": "scripts/cases.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/cases.py",
+      "sha256": "3820811f96c6371f3c6bbb1c692af79e13ee9d7a7674169ea04812d2575c6571",
+      "bytes": 8030
+    },
+    {
+      "path": "scripts/descriptive.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/descriptive.py",
+      "sha256": "83326d3812a18eb96c111b7af9efdeb50150cbc00847c8c803f6d3c89d602c8e",
+      "bytes": 2583
+    },
+    {
+      "path": "scripts/extract.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/extract.py",
+      "sha256": "868b5c377c3242dc7951fe59db862cac6ed5b5f9b71701e6a2df19eef5f94eac",
+      "bytes": 9219
+    },
+    {
+      "path": "scripts/geometry.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/geometry.py",
+      "sha256": "8e13c9fec632ff95de2a625c08d15792fa1751b7106acc7f8c3bb98e024a836c",
+      "bytes": 6320
+    },
+    {
+      "path": "scripts/intervene.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/intervene.py",
+      "sha256": "f09381789ff4b8c62777bf8b59c59955de2b87326aee2e42ab987e6a6bb93a67",
+      "bytes": 8178
+    },
+    {
+      "path": "scripts/labels.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/labels.py",
+      "sha256": "5bf081f607db0c268bcf054e393530e318764662ce0d386dfe882dc1b4adcc9f",
+      "bytes": 1856
+    },
+    {
+      "path": "scripts/labels_effective_v1p1.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/labels_effective_v1p1.py",
+      "sha256": "96a71114a3b9488405cefada5e8ddaa713d7cd58144e6d1a8c7f723aea647f63",
+      "bytes": 2233
+    },
+    {
+      "path": "scripts/labels_effective_v1p2.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/labels_effective_v1p2.py",
+      "sha256": "048d20b474ffe0f09bc505482859d58841c9592d998c8349dfd2a2419754092f",
+      "bytes": 2581
+    },
+    {
+      "path": "scripts/pipeline_discovery.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/pipeline_discovery.py",
+      "sha256": "13bc982e82c5e6e4fd51c2a4fc6b6e50d8d4049cd1c418dbb7af0263a829073e",
+      "bytes": 992
+    },
+    {
+      "path": "scripts/positive_cards.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/positive_cards.py",
+      "sha256": "1d3d9b2d90bc2c85a259a47d23ec8c3838d8e37c9c2bf3e9ce1f1ae29da7f3ec",
+      "bytes": 1188
+    },
+    {
+      "path": "scripts/prepare.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/prepare.py",
+      "sha256": "b130a5ecdf02f24ca1274cdd520a43304780d0b88f8bee440b9066d7032c1eac",
+      "bytes": 9825
+    },
+    {
+      "path": "scripts/render.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/render.py",
+      "sha256": "c2289cf8f3a39a2ef1b906edc20010c643b352379596bb2dbf120172fabd59ae",
+      "bytes": 11331
+    },
+    {
+      "path": "scripts/report.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/report.py",
+      "sha256": "43671f69f091b8c0c05b721f0c840d9bc7367ec6342c342744b905d6301eb7b7",
+      "bytes": 16252
+    },
+    {
+      "path": "scripts/robustness.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/robustness.py",
+      "sha256": "63117e967599f534bc3ec3357b1760bb7b8088226c5cfd61abaa77ec2e79cee8",
+      "bytes": 3102
+    },
+    {
+      "path": "scripts/signed_directions.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/signed_directions.py",
+      "sha256": "3c9e448f30e5b829d52a0cb42c5266475ba33c9a919cf8dd5fc3c89009a79509",
+      "bytes": 3689
+    },
+    {
+      "path": "scripts/signed_robustness.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/signed_robustness.py",
+      "sha256": "d7057607f0745be1f9fe13e88703efe97a672595554a333abbaeb2f7281162c9",
+      "bytes": 3370
+    },
+    {
+      "path": "scripts/support.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/support.py",
+      "sha256": "773f0b1e57d8a1f301452d9909c01a68d48bf8e31144430ae44d2cbedd28bdd6",
+      "bytes": 1725
+    },
+    {
+      "path": "scripts/validate.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/scripts/validate.py",
+      "sha256": "dcf8f0a9c8a3aefaa5df424892b1513abc416845dd48ca2bc2cd2e7ffceaf6ea",
+      "bytes": 5534
+    },
+    {
+      "path": "provenance/analysis_code_before_results.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/analysis_code_before_results.json",
+      "sha256": "1d65feb33e5417520b1382f061adf582f354bc94e6753d98a795cdf13a6775b6",
+      "bytes": 3452
+    },
+    {
+      "path": "provenance/analysis_io_performance_fix.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/analysis_io_performance_fix.json",
+      "sha256": "7f12aa43bb5ac6b20be04e80001651c2f8569318e31ac0244e0dfbebc7bc7e05",
+      "bytes": 410
+    },
+    {
+      "path": "provenance/annotation_provenance.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/annotation_provenance.json",
+      "sha256": "57e45de1146cb96c27af9492dcf0b65a429414679bbbcc660df960e30df4864f",
+      "bytes": 1142
+    },
+    {
+      "path": "provenance/band_familywise_bootstrap.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/band_familywise_bootstrap.json",
+      "sha256": "826385b757857a9ce3310903579f399a0d07ff57d813ca3cb252c2e54a8e2654",
+      "bytes": 350
+    },
+    {
+      "path": "provenance/canonical_alias_page_audit.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/canonical_alias_page_audit.json",
+      "sha256": "41a90b090a50b34bcc0eba8b180251b23454a34a1eff589370d527b949ceb001",
+      "bytes": 250
+    },
+    {
+      "path": "provenance/config.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/config.json",
+      "sha256": "95e327deb3387b0bd2932dbec0a1e8516b5bcce17c01fede077477f767a21be3",
+      "bytes": 22144
+    },
+    {
+      "path": "provenance/cross_source_old_page_screen.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/cross_source_old_page_screen.json",
+      "sha256": "fa1260b4108498aafac2c90c8c80fa6bc431327faedbfce4a7610a4971c04769",
+      "bytes": 167
+    },
+    {
+      "path": "provenance/data_preparation.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/data_preparation.json",
+      "sha256": "7ba72a0101ffca9edb3c5c936c3a3b6800a648a56c37efb8a5c157cda28d91a9",
+      "bytes": 18507
+    },
+    {
+      "path": "provenance/discovery_context_review.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/discovery_context_review.json",
+      "sha256": "4d1cea70517fb19d4606beaecca30556f5ef00b85167865d80553e2f9bcd1d47",
+      "bytes": 1519
+    },
+    {
+      "path": "provenance/discovery_flag_extension.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/discovery_flag_extension.json",
+      "sha256": "8433cf21ef60d951e10b6d177aa335b080442f4a97c50dfaf8163eb6d5445fb9",
+      "bytes": 815
+    },
+    {
+      "path": "provenance/figure_manifest.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figure_manifest.json",
+      "sha256": "619c361f82b94d7045c8f46d2d912c404b6504ed41123520b6af53e30c0ff09d",
+      "bytes": 3653
+    },
+    {
+      "path": "provenance/final_validation.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/final_validation.json",
+      "sha256": "eca99971e48a5e398ef110a64cd3281c0f691cc592ef8c8c9db3656c2c5bdc18",
+      "bytes": 2943
+    },
+    {
+      "path": "provenance/freeze.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/freeze.json",
+      "sha256": "de0f3a8bf7fdc4627941fe58d6084a51c6b6cad680f22a4a24dcaafcf8f3c686",
+      "bytes": 3036
+    },
+    {
+      "path": "provenance/head_geometry.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/head_geometry.json",
+      "sha256": "87d1d0066b98582b37daeea3bba7172b269bbf831ddd049418e41710c6c8af6c",
+      "bytes": 397
+    },
+    {
+      "path": "provenance/identity_files_final.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/identity_files_final.json",
+      "sha256": "582824d5f44799e859f0b940ea324f07cee0832d15e1fe1ffd291a97dd722e06",
+      "bytes": 799
+    },
+    {
+      "path": "provenance/input_assets.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/input_assets.json",
+      "sha256": "df87dc8bd48e18674ba53a7d96ca879234ef841248bd571c4ebb63a9232718fa",
+      "bytes": 14098
+    },
+    {
+      "path": "provenance/intervention_receipt.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/intervention_receipt.json",
+      "sha256": "bed42ee7932a46e31895b1a18a7cdf4f82dff8ded7e4ec66923ed6af7345b991",
+      "bytes": 119
+    },
+    {
+      "path": "provenance/label_boundary_amendment.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/label_boundary_amendment.json",
+      "sha256": "823833372d91dfa9102d8e14634b08b37438e8541d725352206dc31bb0a1931c",
+      "bytes": 585
+    },
+    {
+      "path": "provenance/model_interface.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/model_interface.json",
+      "sha256": "853b05a82be13604fdd3257c77c6a845d483919aa62b5dc4a0275b2d23c81d09",
+      "bytes": 539
+    },
+    {
+      "path": "provenance/output_assets_access.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/output_assets_access.json",
+      "sha256": "3279c05ded396007f3ca807077c4ecd2578319642f2dd20ce0a7e3896d0331f8",
+      "bytes": 10839
+    },
+    {
+      "path": "provenance/pca_fit.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/pca_fit.json",
+      "sha256": "37a2c0739a572819de01018dfed1727cabbd1ae00a90d7e6d13a439a3c430251",
+      "bytes": 58828
+    },
+    {
+      "path": "provenance/pca_stability.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/pca_stability.json",
+      "sha256": "f0d2f472741c4b3142b0c2e8f093554ffa0d962853a1cc25d4c30517de150fc0",
+      "bytes": 444
+    },
+    {
+      "path": "provenance/prepare_holdout_only_before_A1.py",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/prepare_holdout_only_before_A1.py",
+      "sha256": "6f4ca6ffbec1352637f5a4e26930656209a7d5d507003345a0be03576f7f68ce",
+      "bytes": 9572
+    },
+    {
+      "path": "provenance/registered_outputs.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/registered_outputs.json",
+      "sha256": "97e68b97e3df1e985f147a2f455008896a48c091720ebdfe2d881688051b6e67",
+      "bytes": 450
+    },
+    {
+      "path": "provenance/signed_direction_family.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/signed_direction_family.json",
+      "sha256": "0752304a7d3df4c816aee9262d6a9800d494989b730809bb4cd4bef9aef018ba",
+      "bytes": 498
+    },
+    {
+      "path": "provenance/smoke.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/smoke.json",
+      "sha256": "206537f5947278e3463cd97bfe628e52cd7b29a5f3de9b2bef83f0909ae76121",
+      "bytes": 1225
+    },
+    {
+      "path": "provenance/source_support_amendment.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/source_support_amendment.json",
+      "sha256": "154566dd2e4443bfb1f82bf40e917ca2a6e2cf3231663043ba25e7e50f68c9bf",
+      "bytes": 561
+    },
+    {
+      "path": "provenance/terminal_extraction.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/terminal_extraction.json",
+      "sha256": "0144f690eb7d6bf55fa1cfc74f2b76c62dda8065ecd95b858ec460f7aa0eb3ca",
+      "bytes": 214
+    },
+    {
+      "path": "provenance/token_mask_coverage.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/audit/token_mask_coverage.json",
+      "sha256": "800eb03ade40da52cfee5762968b35a7c62f1829f00a8dd2084bc7990203855a",
+      "bytes": 313
+    },
+    {
+      "path": "provenance/validation_selection_frozen.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/validation_selection_frozen.json",
+      "sha256": "58ac4e6a88ff1319c2bf00ea032c8159ba220b1723a1f9979abe1c9048dcce73",
+      "bytes": 6174
+    },
+    {
+      "path": "evidence/actual_change_direct_head_audit.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/actual_change_direct_head_audit.csv",
+      "sha256": "e8596512a97d5025b2b9385f428035a045dedb3679ba66bc4a8f5bd64b70003b",
+      "bytes": 802
+    },
+    {
+      "path": "evidence/band_case_metrics.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/band_case_metrics.json",
+      "sha256": "b945fcb0a89d7e7338ab110132c3fbac790889e7581146589d50ad0f8ff5409a",
+      "bytes": 10026
+    },
+    {
+      "path": "evidence/band_example_pairs_input_only.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/band_example_pairs_input_only.json",
+      "sha256": "428bfc1ee0b1bf22f096d16d8768b4f0ebde76680fe16290473a5052ef3fb4b0",
+      "bytes": 2885
+    },
+    {
+      "path": "evidence/descriptive_token_category_document_effects.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/descriptive_token_category_document_effects.csv",
+      "sha256": "57df254a1170667f81ca3321e18783f251154ea7bd10ad4acbb4deeec89b7ffd",
+      "bytes": 703286
+    },
+    {
+      "path": "evidence/descriptive_token_category_summary.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/descriptive_token_category_summary.csv",
+      "sha256": "beb6ad3f04b4187eec0de55ac31cff2470a64b0488c404c4f6d701c0a1fb042a",
+      "bytes": 2456
+    },
+    {
+      "path": "evidence/development_associations.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/development_associations.csv",
+      "sha256": "f5ba231b0f936f39925ecc59fbd47b1acc8b4613b0ac2946fbf6168c3006947b",
+      "bytes": 262889
+    },
+    {
+      "path": "evidence/development_matched_positions.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/development_matched_positions.csv",
+      "sha256": "fc7d274183e6186657c38c450ea2f5541532b50b693a492836c7a460c229c5a8",
+      "bytes": 557654
+    },
+    {
+      "path": "evidence/development_phenomenon_support.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/development_phenomenon_support.csv",
+      "sha256": "0e0d1d9ac6af1ef3e24c4a14b4edf4466374fbc836f3593fdb6f9dd1864ae6d4",
+      "bytes": 232845
+    },
+    {
+      "path": "evidence/development_selection_candidates.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/development_selection_candidates.csv",
+      "sha256": "23c9fd962bc2a5d2aff616bfb7631f1aff80f93f7f55548635c9d29725790c26",
+      "bytes": 189589
+    },
+    {
+      "path": "evidence/discovery_associations.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/discovery_associations.csv",
+      "sha256": "27119721dfcd35f5e562285be22c755ddfc7dcff87252d912fda5f0eb1976584",
+      "bytes": 268123
+    },
+    {
+      "path": "evidence/discovery_cards.jsonl",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/discovery_cards.jsonl",
+      "sha256": "d25a244442e8f0fe71bb0f668d3efc27a25bb950df9509646fa568af83745cb5",
+      "bytes": 140888
+    },
+    {
+      "path": "evidence/discovery_matched_positions.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/discovery_matched_positions.csv",
+      "sha256": "0957ca45694e4a7cd24bc8296f1c93d9519a0217c5a6ad72a295d6a8ec7ea7dc",
+      "bytes": 1089376
+    },
+    {
+      "path": "evidence/discovery_phenomenon_support.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/discovery_phenomenon_support.csv",
+      "sha256": "b88368059815d1382975d6007c49310354c364f69ff0ac4bf9d11cfc065368d0",
+      "bytes": 452470
+    },
+    {
+      "path": "evidence/discovery_positive_strength_cards.jsonl",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/discovery_positive_strength_cards.jsonl",
+      "sha256": "2a6f94d4aae3e215a0c5cb888dd4295156d95249fb762dae640d24d8e8740fcd",
+      "bytes": 76080
+    },
+    {
+      "path": "evidence/document_source_index.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/document_source_index.csv",
+      "sha256": "5ab1582e5efb411b9fbc87882c1e15a01f9a6f4ba1e3696c802d289d2d9e662c",
+      "bytes": 125825
+    },
+    {
+      "path": "evidence/h_direction_document_bootstrap_stability.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/h_direction_document_bootstrap_stability.csv",
+      "sha256": "9aba9bd95086facecbab7be02bd902ec0905db6c18246066e1bc208c8a05b626",
+      "bytes": 23627
+    },
+    {
+      "path": "evidence/head_gain_reference.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/head_gain_reference.json",
+      "sha256": "62cdbd1ff3b3a410a5e0d0fde25d4d6df054769f98e385064244d071a79c37e5",
+      "bytes": 320
+    },
+    {
+      "path": "evidence/historical_basis_comparison.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/historical_basis_comparison.csv",
+      "sha256": "92196eca6a9959e5b72f3b82bc43cf1045c30921b49f0df828ab15301e3e7a7e",
+      "bytes": 737
+    },
+    {
+      "path": "evidence/nonadditive_residual_ledger.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/nonadditive_residual_ledger.csv",
+      "sha256": "19c9c26ba5401f0b8dfd537af0b5ec5aa3bf4fae7ca9ec8ae6a9f3be6ccd2941",
+      "bytes": 28587
+    },
+    {
+      "path": "evidence/pca_document_bootstrap_stability.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/pca_document_bootstrap_stability.csv",
+      "sha256": "416017e767f2f2747b97caf1d22fffa009c891fad5eb5f5dde06205bc5d09f6d",
+      "bytes": 13961
+    },
+    {
+      "path": "evidence/phenomenon_definitions_v1p2.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/data/phenomenon_definitions_v1p2.json",
+      "sha256": "8d9ddff38c6fc619db296029d08743793c8e8e60a9e79ea42a3ea53e71fcd2b3",
+      "bytes": 3126
+    },
+    {
+      "path": "evidence/phenomenon_output_gain_summary.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/phenomenon_output_gain_summary.csv",
+      "sha256": "805644e584a3a82da202cc01b47b9b0688b6a0dbd5ee5d009f50dec0f7277a61",
+      "bytes": 3100
+    },
+    {
+      "path": "evidence/postnorm_band_readout_geometry.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/postnorm_band_readout_geometry.csv",
+      "sha256": "77b8e7406140222dece76bdb48d1a4abb6a999015c6e37bb4e7479206ceab656",
+      "bytes": 995
+    },
+    {
+      "path": "evidence/representation_head_spectra.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/representation_head_spectra.csv",
+      "sha256": "388a5ddd77f7814122252baaf0f2cc02b1f7cd4f6a1f70d1e2c58e9dc5faebe8",
+      "bytes": 160132
+    },
+    {
+      "path": "evidence/representation_head_subspace_overlap.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/representation_head_subspace_overlap.csv",
+      "sha256": "e00c06f0bf33c7c2f2f9567e6aa42019c442f8d8aeb9edbc07ffe47a55f09337",
+      "bytes": 1465
+    },
+    {
+      "path": "evidence/signed_direction_associations.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/signed_direction_associations.csv",
+      "sha256": "0459106e7fd838f978dc157a635da6ef68457e5443ba5ca73416f9e221e4b078",
+      "bytes": 177229
+    },
+    {
+      "path": "evidence/signed_direction_sensitivity.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/signed_direction_sensitivity.csv",
+      "sha256": "168674d25317c80f270162b077a4eff32e3e2fac53429cb6de5bfae6b76ec1de",
+      "bytes": 6363
+    },
+    {
+      "path": "evidence/signed_direction_validation.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/signed_direction_validation.csv",
+      "sha256": "487532264521a86cc22068e3ee32dedb08be7ccd6d2b54e84ed20223e1dc5687",
+      "bytes": 131561
+    },
+    {
+      "path": "evidence/signed_sensitivity_document_effects.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/signed_sensitivity_document_effects.csv",
+      "sha256": "e66de2868927ab9d2362d35b6b13b0b0d3ea31e0defe8f77df0ddc34731049fe",
+      "bytes": 480289
+    },
+    {
+      "path": "evidence/source_and_length_coverage.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/source_and_length_coverage.csv",
+      "sha256": "d77325f6542fff6f664783ffe369afa5e7986104b548686f2fa5278222d1cf90",
+      "bytes": 42173
+    },
+    {
+      "path": "evidence/spectra_bands.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/spectra_bands.csv",
+      "sha256": "9bde20b48a4bafa818a748f86e91e4326c95b0c40769ca533060990ac661a216",
+      "bytes": 1694
+    },
+    {
+      "path": "evidence/text_case_selection.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/text_case_selection.json",
+      "sha256": "2c60d08e1e8cfa322a7f400fd361cf5b4252a43750711d3e814035dbe83b5125",
+      "bytes": 49354
+    },
+    {
+      "path": "evidence/text_case_slot_eligibility.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/text_case_slot_eligibility.json",
+      "sha256": "95b0251414dbafc3e86ab47953fdf3579547a7d6677e024ffc3c3dfc9e88decb",
+      "bytes": 320
+    },
+    {
+      "path": "evidence/three_feature_geometry_views.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/three_feature_geometry_views.csv",
+      "sha256": "c696f973b92b4a0302d416f82542f7b4da2499cde06b9df713b2ec6eaa8ff0e4",
+      "bytes": 280085
+    },
+    {
+      "path": "evidence/validation_actual_changes.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/validation_actual_changes.csv",
+      "sha256": "f193c68b762c8a1d8ea85cec36700200fafc9e61b53d85cb50576c0f6763b4c3",
+      "bytes": 1996937
+    },
+    {
+      "path": "evidence/validation_associations.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/validation_associations.csv",
+      "sha256": "45bd558790da7693227febf196cd86a7dd1552848e65b60da2611f4e34e8bd99",
+      "bytes": 258757
+    },
+    {
+      "path": "evidence/validation_band_map.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/validation_band_map.csv",
+      "sha256": "65e0a6cc10d075dd30c499f7e608a2f1945ee342e48d0488fe32f4e68be7ddec",
+      "bytes": 28763
+    },
+    {
+      "path": "evidence/validation_matched_positions.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/validation_matched_positions.csv",
+      "sha256": "dbd8d2aac91ec975e385dabaa4a2892f6588c1a882eafdda1e2bb3c1d4384e4b",
+      "bytes": 589602
+    },
+    {
+      "path": "evidence/validation_phenomenon_support.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/validation_phenomenon_support.csv",
+      "sha256": "51b4967122bf7b18158f10abc4c33bfb40a3279ceab384006ff626f6bbf745ca",
+      "bytes": 231845
+    },
+    {
+      "path": "evidence/validation_selected_verdicts.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/validation_selected_verdicts.csv",
+      "sha256": "2f31cb6b87093f62a9f8945fdfb9c1c642b9dce9ef6fe53ba71f572b65d8ba47",
+      "bytes": 967
+    },
+    {
+      "path": "evidence/validation_source_robustness.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/analysis/validation_source_robustness.csv",
+      "sha256": "4f44df8c411f24586f4770be3210ff30917b1e46006ff4b9f08c925ffa9c7411",
+      "bytes": 16818
+    }
+  ],
+  "science_state": "Unknown;A6exploratory",
+  "figures_numeric_source_manifest": "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R15_20261102_natural_phenomena_output_geometry_v1/figure_manifest.json"
+}

@@ -1,0 +1,30 @@
+{
+  "experiment_id": "A15_08_01_E01_layerwise_long_range_gain_and_representation_rank",
+  "protocol_status": "APPROVED_FOR_REMOTE_4XH100_FULL_RUN",
+  "approved_scope": [
+    "implementation",
+    "model_independent_preflight",
+    "four_gpu_identity_smoke",
+    "single_node_four_h100_full_run"
+  ],
+  "unauthorized_scope": [
+    "publication",
+    "external_sync",
+    "git_commit",
+    "git_push"
+  ],
+  "design_frozen_at": "2026-08-11T12:03:11Z",
+  "scientific_body_sha256": "7197183c95b4cbfefeaf431f13da0d06313100c7c10649ea3272ac053430a08a",
+  "scientific_body_definition": "UTF-8 bytes from the Protocol heading '## 1.' through the line before '## 17.' after approval",
+  "resource_profile": "h100-4-spot",
+  "execution_surface": "ACP",
+  "workspace": "share-space",
+  "aec2_cluster": "share-cluster",
+  "worker_spec": "n6ls.iu.i40.4",
+  "worker_nodes": 1,
+  "gpu_processes": 4,
+  "quota_type": "spot",
+  "aggregate_gpu_hour_ceiling": 16,
+  "raw_storage_gib_ceiling": 150,
+  "human_confirmation": "Blocks B-G and the common-basis activation-density curve were accepted; remote execution on four H100 GPUs was explicitly requested."
+}

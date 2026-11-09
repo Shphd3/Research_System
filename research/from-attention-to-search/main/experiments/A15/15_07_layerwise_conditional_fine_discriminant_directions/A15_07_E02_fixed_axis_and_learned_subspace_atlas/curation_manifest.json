@@ -1,0 +1,61 @@
+{
+  "schema": "a15_07_e02_curated_result_manifest_v1",
+  "status": "COMPLETED",
+  "scientific_result_status": "AWAITING_HUMAN_JUDGMENT",
+  "worker_root": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e02_fixed_axis_low_rank_atlas",
+  "sources": {
+    "freeze": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e02_fixed_axis_low_rank_atlas/frozen/freeze.json",
+      "sha256": "532a257852e4ab6b324e8c2146cc079416f25191d5925d1b9d42cc508562d029"
+    },
+    "formal_extraction": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e02_fixed_axis_low_rank_atlas/runs/formal-20260821T/extraction/extraction_manifest.json",
+      "sha256": "e09566daac22db37fdf8935fc1118fa8a107f9607b788b7332a40aa7696a6e8c"
+    },
+    "primary_analysis": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e02_fixed_axis_low_rank_atlas/runs/formal-20260821T/analysis/analysis.json",
+      "sha256": "7dab27ab7ab839cd3abc1d0a8caa91fcd59412b88dd327efbcbf88cf46201780"
+    },
+    "primary_manifest": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e02_fixed_axis_low_rank_atlas/runs/formal-20260821T/analysis/result_manifest.json",
+      "sha256": "307ee4b62051fd2e2bcf6b031bda653d360fc4f53f666c8ddd03e534c8957c32"
+    },
+    "learned_overlap_amendment": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e02_fixed_axis_low_rank_atlas/runs/formal-20260821T/analysis/tables/learned_subspace_overlap.csv",
+      "sha256": "20e7780f22c8a99d6ec31677c01979b79297590269b5ec4e92e36802643572bf"
+    },
+    "figure_contracts": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e02_fixed_axis_low_rank_atlas/runs/formal-20260821T/figures_v4/figure_contracts.json",
+      "sha256": "ab3ec642d17f0edec1223c5d88aa7460b55105dd34fa534599b465fffa18c392"
+    },
+    "figure_render_amendment": {
+      "path": "/data/250010109/MoE_Router/experiments/20260820_a15_07_e02_fixed_axis_low_rank_atlas/frozen/amendment_003.md",
+      "sha256": "86715f7c268bea9649fa825d314a56cd9b663f32cfec71ecc134de7f6a60d65c"
+    }
+  },
+  "figures": [
+    "figure_1_functional_dimension_curves.png",
+    "figure_2_direction_and_spectral_band_atlas.png",
+    "figure_2a_local_parameter_block24_curve.png",
+    "figure_2b_local_parameter_block28_curve.png",
+    "figure_2c_mean_response_block24_curve.png",
+    "figure_2d_mean_response_block28_curve.png",
+    "figure_2e_activation_pca_block24_curve.png",
+    "figure_2f_activation_pca_block28_curve.png",
+    "figure_3_overlap_and_fine_class_fingerprint.png"
+  ],
+  "tables": [
+    "domain_layer_atlas.csv",
+    "functional_curves.csv",
+    "selected_axes.csv",
+    "learned_spectral_energy.csv",
+    "learned_subspace_overlap.csv",
+    "domain_overlap.csv"
+  ],
+  "notes": [
+    "No fixed basis qualified; semantic fingerprint panels intentionally remain empty.",
+    "Learned overlap is geometry only and cannot rescue the failed compact-function gate.",
+    "The six spectral heatmap panels were mechanically re-rendered as six curves; data and scientific eligibility are unchanged.",
+    "No Router, expert, LoRA, graph, sync, commit, push, or daily-report action was performed."
+  ]
+}

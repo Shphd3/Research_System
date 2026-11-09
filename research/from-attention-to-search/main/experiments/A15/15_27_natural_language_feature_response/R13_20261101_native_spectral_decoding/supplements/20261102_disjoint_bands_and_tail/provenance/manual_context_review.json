@@ -1,0 +1,34 @@
+{
+  "status": "AI_BOUNDED_READING_NOT_SCIENTIFIC_CLOSURE",
+  "main_cases": {
+    "134": "这段前文已明确讨论台球桌的多边形边界，并且前一句已经出现polygons。“Even triangles, the simplest of”之后，polygons或原模型第二候选all都能接上语境。五个指定区间及尾部的前三却主要是逗号、括号、空格和the，未形成这个具体类别补全。PC16–31把polygons相对仅均值提高约102倍，但绝对概率仍只有0.000647%，排名1088；PC256–511为0.000279%，排名2778。最末PC960–1024仅0.00000553%，排名9864，比仅均值还低。原模型为40.4467%、首选。这里看不到尾部直接解出“多边形”语义；即使将来出现polygons，也还需排除前文词面重复／复制的解释。",
+    "242": "当前句子是“可能影响……”但尚未出现受影响对象。humans、human相关片段或the开头的名词短语都可能合理；原模型自己也只把真实humans排第6，首选the，因此不能把真实后继未排首位一概说成无语义。单独PC32–63的the在语法上能继续，却只是通用冠词；其它段的逗号、and、括号缺少这个位置需要的对象指向。PC256–511给humans约0.001079%、排名1064；最末段约0.000138%、排名3555，而原模型约2.6457%。这些概率修正确有变化，但没有直接读出稳定的“影响人类”内容。本例当前ID27887在匹配面板中没有合格同token异文档对照，不用总体对照结论冒充本例的直接验证。",
+    "434": "这里是X射线波长与晶体尺度的叙述，“their wavelength is typically the”后接same表达关系，而不是新的领域对象名称。原模型给same约70.0425%、首选。单独PC256–511把same从仅均值0.001508%提高至0.050997%，约34倍，但仍仅排77；PC512–767约0.015902%、排194。最末PC960–1024约0.002478%、排453，前三仍是括号、逗号、空格。可观察到对正确关系片段概率的支持，却没有直接恢复出该关系作为首选。并且本例最末段真实系数比异文档同token系数更差，说明总体正增益不保证每个例子都更贴切。"
+  },
+  "fixed12_cases_checked": [
+    "natural:R11_A02_122:174",
+    "natural:R11_A02_135:181",
+    "natural:R11_A02_096:71",
+    "natural:R11_A02_134:144",
+    "natural:R11_A02_242:78",
+    "natural:R11_A02_255:117",
+    "natural:R11_A02_285:134",
+    "natural:R11_A02_281:110",
+    "natural:R11_A02_410:109",
+    "natural:R11_A02_419:64",
+    "natural:R11_A02_434:160",
+    "natural:R11_A02_422:151"
+  ],
+  "output_classification": "last65top1allfourformatIDs,notpureindependentnoise;contextassociationnotexternalsemanticlabels",
+  "counterexamples": [
+    "134tailnegativevsmeanandcontextshuffle",
+    "434tailnegativevscontextshuffle",
+    "281Theand419Whatnegativevsmean"
+  ],
+  "bounded_positive": [
+    "last64aggregateNLLgain0.2259",
+    "last64nonformatothergain0.3855",
+    "fixed410relativeprobabilitygainbutnotwordrecovery"
+  ],
+  "no_new_sample_selection": true
+}

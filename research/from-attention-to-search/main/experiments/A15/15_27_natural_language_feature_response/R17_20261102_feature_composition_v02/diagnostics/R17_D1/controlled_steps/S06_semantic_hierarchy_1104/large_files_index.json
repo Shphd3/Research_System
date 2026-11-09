@@ -1,0 +1,31 @@
+{
+  "UTC": "2026-11-03T17:15:39.138012+00:00",
+  "not_in_package": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/cache/discovery.npz",
+      "bytes": 14360001,
+      "sha256": "20e2126065b6e069bd2fc10764731501c97b18d9cd8d8b147d47f045514fb444",
+      "contains": "Full30000-dimensional preactivation/z plus h/ranks/cutoffs/reconstruction; weights excluded"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261102_feature_composition_v02/diagnostics/R17_D1/controlled_steps/S06_semantic_hierarchy_1104/cache/remaining.npz",
+      "bytes": 71569570,
+      "sha256": "2a9301c612064613099b05e200791caf200d64af950b1b9c5ef758f1f77302df",
+      "contains": "Full30000-dimensional preactivation/z plus h/ranks/cutoffs/reconstruction; weights excluded"
+    }
+  ],
+  "portable_complete": [
+    "384texts/tokens",
+    "all sparse z in each30000dictionary",
+    "all native candidate token scores",
+    "full summary CSVs",
+    "selected complete preactivations",
+    "scripts/config/figures"
+  ],
+  "excluded": [
+    "model/SAE weights",
+    "unselected full preactivation matrices",
+    "private conversation memory",
+    "unrelated files"
+  ]
+}

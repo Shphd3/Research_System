@@ -1,0 +1,110 @@
+{
+  "experiment": "S04_neutral_suffix_fixed_candidates_24",
+  "UTC": "2026-11-03T14:38:11.223180+00:00",
+  "authorization": "Direct current user request: one bounded suffix+native behavior check, same24 bodies and exact S03 candidates. Stop afterwards.",
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "input_SHA256": {
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "/data/250010109/model_cache/Qwen3-0.6B-Base-official/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "sites": {
+    "ATTN_SAE": {
+      "asset_id": "sae_a17_qwen_raw_o_proj_1b_valid_full_20261009t182142z",
+      "path": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/runs/full_20261009T182142Z/sae_full_final.pt",
+      "sha256": "1e16759da1ef1bad953d3df1bcf641c01b81edc87ca6b56d61b32251f41ebe64",
+      "loader": "/data/250010109/MoE_Router/experiments/20261010_a17_raw_projection_sae/source/e16_sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.self_attn.o_proj output before residual addition"
+    },
+    "MLPIN_SAE": {
+      "asset_id": "sae_qwen3_0p6b_e16_layer27_final_1b",
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "loader": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/sae_core.py",
+      "loader_sha256": "6b7a00252c210f0cd91328db2e07210a99145a0e93f116a9db267d33e05be11d",
+      "k": 32,
+      "n_latents": 30000,
+      "encoding": "native encoder(x), ReLU, Top32; active iff selected z>0; no input normalization, no decoder bias subtraction",
+      "hook": "block27.mlp forward_pre_hook actual input after residual addition and post_attention_layernorm"
+    }
+  },
+  "suffix": "\nDescription:",
+  "candidates": [
+    {
+      "label": "cat",
+      "text": " cat.",
+      "token_ids": [
+        8251,
+        13
+      ],
+      "token_count": 2
+    },
+    {
+      "label": "dog",
+      "text": " dog.",
+      "token_ids": [
+        5562,
+        13
+      ],
+      "token_count": 2
+    }
+  ],
+  "split": {
+    "exploration": [
+      "F01",
+      "F02",
+      "F03"
+    ],
+    "heldout_check": [
+      "F04",
+      "F05",
+      "F06"
+    ]
+  },
+  "candidate_selection": "NONE: reuse exact ordered S03 lists and discovery directions; no threshold/ranking changes",
+  "selection_SHA256": "eddcfe0940247c03250cc1e4dd777fb728d86f19c122647dcb2a7ee1402a4d2a",
+  "old_raw_discovery_mean_difference": {
+    "ATTN_SAE": {
+      "23899": -1.0098660786946614,
+      "9495": 1.5268809000651042,
+      "3516": -1.3907893498738606,
+      "14602": -7.429497718811035,
+      "24256": -4.012131690979004,
+      "12146": -0.37030967076619464
+    },
+    "MLPIN_SAE": {
+      "14481": -0.28975677490234375,
+      "2682": -2.182766596476237,
+      "27076": 1.6483449935913086,
+      "25899": -0.02384789784749349,
+      "5196": 0.32750097910563153,
+      "27880": -3.441272735595703
+    }
+  },
+  "old_cache_SHA256": {
+    "exploration": "368a55685a256df1c6f32cc649a1b01d1b8c6d1e00c57c1a792d75efe3f08d08",
+    "heldout_check": "4abc8dc429969d2392d2b7357365d11a3e421073a4c3de46cd0acd53345bc4a6"
+  },
+  "data_SHA256": {
+    "S02_original_behavior_scores.jsonl": "f7ac273167f6fdcafc8e01116189dd6a24716658da4891406f368dfff0901a26",
+    "S03_frozen_selection.json": "eddcfe0940247c03250cc1e4dd777fb728d86f19c122647dcb2a7ee1402a4d2a",
+    "S03_original_panel.jsonl": "1e5d55aebef00aa6daad00aad3a935d33c0ed2637ac84c0a37ff108e6840391f",
+    "panel.jsonl": "ffd50d95ba8f0d94e29e01add1c4d8da51bb9df5d025e20ef9a41d4895e6286b"
+  },
+  "behavior": "sum conditional logprob of all candidate tokens, including leading-space class token and final period; no length/neutral-prior correction. P/N no correct label.",
+  "score_delta": "S_cat - S_dog; max sum wins; exact tie uses cat first, recorded",
+  "normalization": "Per each exact frozen named list H1_common, H1_added_cat, H1_added_dog, H2: q_z=z/||z||2; q_u=u/||u||2. Zero norm undefined/null, no epsilon. Lists and denominator do not change when members become inactive.",
+  "H2_reference": "Report both new vs same-family old direction and new vs frozen S03 discovery direction; raw metric uses old-only exploration mean fixed here, normalized weighted metric uses original S03 frozen direction.",
+  "H2_count_rule": "For each site/atom/metric/reference/split, denominator3families. Exclusive priority: zero_norm (normalized metric only), member_inactive (either cat or dog not active under new suffix, also old for old-pair reference), no_reference (old difference zero/undefined), same/opposite/zero_difference. Report inactive/zero_norm marginal flags separately; raw and q differences still shown even if inactive.",
+  "direction_epsilon": 1e-08,
+  "precision": "CPU FP32 model/SAE and logsoftmax; FP64 score sum and offline analysis",
+  "physical_shape": [
+    4,
+    192
+  ],
+  "stop": "24 prefix captures and24 two-candidate comparisons, then report; no extra prompts/data, feature selection, SVD, H3/H4, fitting, training or intervention"
+}

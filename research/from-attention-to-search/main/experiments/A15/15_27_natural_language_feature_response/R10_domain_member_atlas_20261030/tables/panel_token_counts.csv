@@ -1,0 +1,4949 @@
+token_id,token_string,count,math_count,biology_count,per_domain_denominator,frequency_bin,special
+0,!,2,2,0,9600,middle,False
+1,"""",14,7,7,9600,high,False
+2,#,1,0,1,9600,low,False
+3,$,40,40,0,9600,high,False
+4,%,1,0,1,9600,low,False
+6,',7,1,6,9600,high,False
+7,(,10,9,1,9600,high,False
+8,),73,47,26,9600,high,False
+9,*,2,2,0,9600,middle,False
+10,+,11,10,1,9600,high,False
+11,",",717,341,376,9600,high,False
+12,-,28,11,17,9600,high,False
+13,.,392,209,183,9600,high,False
+14,/,6,5,1,9600,high,False
+15,0,90,44,46,9600,high,False
+16,1,176,96,80,9600,high,False
+17,2,115,65,50,9600,high,False
+18,3,51,20,31,9600,high,False
+19,4,43,16,27,9600,high,False
+20,5,29,9,20,9600,high,False
+21,6,26,7,19,9600,high,False
+22,7,25,15,10,9600,high,False
+23,8,30,11,19,9600,high,False
+24,9,45,16,29,9600,high,False
+25,:,38,20,18,9600,high,False
+26,;,14,10,4,9600,high,False
+28,=,8,8,0,9600,high,False
+29,>,1,1,0,9600,low,False
+30,?,12,9,3,9600,high,False
+31,@,2,0,2,9600,middle,False
+32,A,15,7,8,9600,high,False
+33,B,5,3,2,9600,high,False
+34,C,5,1,4,9600,high,False
+35,D,2,1,1,9600,middle,False
+36,E,3,2,1,9600,high,False
+37,F,3,0,3,9600,high,False
+38,G,14,10,4,9600,high,False
+39,H,1,1,0,9600,low,False
+40,I,6,2,4,9600,high,False
+42,K,5,3,2,9600,high,False
+43,L,3,1,2,9600,high,False
+44,M,2,2,0,9600,middle,False
+45,N,2,1,1,9600,middle,False
+46,O,2,1,1,9600,middle,False
+47,P,4,1,3,9600,high,False
+48,Q,3,3,0,9600,high,False
+49,R,1,1,0,9600,low,False
+50,S,7,5,2,9600,high,False
+51,T,2,1,1,9600,middle,False
+52,U,1,1,0,9600,low,False
+53,V,1,1,0,9600,low,False
+55,X,17,13,4,9600,high,False
+56,Y,2,1,1,9600,middle,False
+58,[,31,13,18,9600,high,False
+59,\,21,21,0,9600,high,False
+60,],45,7,38,9600,high,False
+61,^,15,15,0,9600,high,False
+62,_,13,13,0,9600,high,False
+64,a,26,10,16,9600,high,False
+65,b,4,2,2,9600,high,False
+66,c,5,3,2,9600,high,False
+67,d,2,1,1,9600,middle,False
+68,e,20,4,16,9600,high,False
+69,f,11,8,3,9600,high,False
+70,g,3,1,2,9600,high,False
+71,h,6,4,2,9600,high,False
+72,i,19,14,5,9600,high,False
+73,j,1,0,1,9600,low,False
+74,k,12,10,2,9600,high,False
+75,l,1,0,1,9600,low,False
+76,m,12,6,6,9600,high,False
+77,n,18,17,1,9600,high,False
+78,o,6,0,6,9600,high,False
+79,p,7,1,6,9600,high,False
+80,q,2,2,0,9600,middle,False
+81,r,2,2,0,9600,middle,False
+82,s,25,7,18,9600,high,False
+83,t,2,0,2,9600,middle,False
+84,u,5,2,3,9600,high,False
+85,v,4,3,1,9600,high,False
+86,w,2,0,2,9600,middle,False
+87,x,16,15,1,9600,high,False
+88,y,7,3,4,9600,high,False
+89,z,8,8,0,9600,high,False
+90,{,9,9,0,9600,high,False
+91,|,5,3,2,9600,high,False
+92,},29,29,0,9600,high,False
+96,�,4,4,0,9600,high,False
+116,�,3,3,0,9600,high,False
+198,"
+",22,17,5,9600,high,False
+220, ,202,130,72,9600,high,False
+231,�,2,2,0,9600,middle,False
+258,in,8,3,5,9600,high,False
+259, t,2,2,0,9600,middle,False
+261,er,2,0,2,9600,middle,False
+263,on,9,2,7,9600,high,False
+264, a,340,208,132,9600,high,False
+265,re,2,1,1,9600,middle,False
+266,at,12,6,6,9600,high,False
+267,st,2,0,2,9600,middle,False
+268,en,3,1,2,9600,high,False
+269,or,15,8,7,9600,high,False
+270, th,4,0,4,9600,high,False
+271,"
+
+",28,18,10,9600,high,False
+272, c,4,3,1,9600,high,False
+273,le,4,2,2,9600,high,False
+274, s,4,3,1,9600,high,False
+275,it,4,2,2,9600,high,False
+276,an,16,3,13,9600,high,False
+277,ar,3,1,2,9600,high,False
+278,al,13,9,4,9600,high,False
+279, the,764,373,391,9600,high,False
+281, p,9,8,1,9600,high,False
+282, f,10,9,1,9600,high,False
+284, =,35,33,2,9600,high,False
+285,is,5,1,4,9600,high,False
+287,ing,13,7,6,9600,high,False
+288,es,8,3,5,9600,high,False
+291,ed,13,3,10,9600,high,False
+292,ic,19,7,12,9600,high,False
+293, b,6,5,1,9600,high,False
+294, d,6,3,3,9600,high,False
+295,et,1,0,1,9600,low,False
+296, m,6,2,4,9600,high,False
+299,ro,4,2,2,9600,high,False
+300,as,5,1,4,9600,high,False
+301,el,3,2,1,9600,high,False
+302,ct,1,1,0,9600,low,False
+303,nd,1,1,0,9600,low,False
+304, in,280,125,155,9600,high,False
+306,ent,2,0,2,9600,middle,False
+307,id,7,0,7,9600,high,False
+308, n,22,18,4,9600,high,False
+311, to,272,129,143,9600,high,False
+312, re,2,0,2,9600,middle,False
+313,--,1,0,1,9600,low,False
+314, {,10,10,0,9600,high,False
+315, of,488,249,239,9600,high,False
+316,om,2,0,2,9600,middle,False
+317,");
+",1,1,0,9600,low,False
+318,im,10,8,2,9600,high,False
+320, (,142,71,71,9600,high,False
+321,il,9,1,8,9600,high,False
+323, and,335,128,207,9600,high,False
+324,ur,9,3,6,9600,high,False
+325,se,3,0,3,9600,high,False
+326, l,1,0,1,9600,low,False
+328, S,2,2,0,9600,middle,False
+329,ad,2,2,0,9600,middle,False
+330," """,21,9,12,9600,high,False
+331,ch,4,0,4,9600,high,False
+333,if,4,2,2,9600,high,False
+336,em,2,1,1,9600,middle,False
+337,ol,8,5,3,9600,high,False
+339,th,3,2,1,9600,high,False
+340,")
+",1,1,0,9600,low,False
+342, g,4,2,2,9600,high,False
+343,ig,2,0,2,9600,middle,False
+345,",
+",3,3,0,9600,high,False
+346,ce,4,3,1,9600,high,False
+347,od,8,1,7,9600,high,False
+350, T,21,7,14,9600,high,False
+351,ag,7,3,4,9600,high,False
+353, *,2,2,0,9600,middle,False
+354,ot,12,8,4,9600,high,False
+355,us,15,3,12,9600,high,False
+356, C,6,1,5,9600,high,False
+358, I,24,13,11,9600,high,False
+361,ue,1,0,1,9600,low,False
+362, A,26,19,7,9600,high,False
+363,ow,1,1,0,9600,low,False
+364, ',5,0,5,9600,high,False
+365,ew,1,1,0,9600,low,False
+367,ation,11,1,10,9600,high,False
+369, for,97,60,37,9600,high,False
+370,ab,1,0,1,9600,low,False
+371,ort,1,1,0,9600,low,False
+372,um,3,1,2,9600,high,False
+374, is,336,212,124,9600,high,False
+378,�,2,2,0,9600,middle,False
+379, y,6,5,1,9600,high,False
+380,ist,7,2,5,9600,high,False
+382,".
+
+",138,75,63,9600,high,False
+384, e,2,2,0,9600,middle,False
+386, M,4,2,2,9600,high,False
+387, be,102,61,41,9600,high,False
+388,ers,6,2,4,9600,high,False
+389, on,69,31,38,9600,high,False
+390, con,1,0,1,9600,low,False
+391,ap,1,0,1,9600,low,False
+392,ub,1,0,1,9600,low,False
+393, P,4,3,1,9600,high,False
+398,ly,6,3,3,9600,high,False
+400, $,59,59,0,9600,high,False
+404,ir,1,0,1,9600,low,False
+409, de,7,2,5,9600,high,False
+410,ith,4,0,4,9600,high,False
+411,out,2,1,1,9600,middle,False
+413,our,3,0,3,9600,high,False
+415,lic,1,0,1,9600,low,False
+416,res,1,0,1,9600,low,False
+417,pt,5,5,0,9600,high,False
+419, this,59,30,29,9600,high,False
+421, if,43,36,7,9600,high,False
+422, D,5,4,1,9600,high,False
+423,ver,2,1,1,9600,middle,False
+424,age,3,0,3,9600,high,False
+425, B,23,12,11,9600,high,False
+429, that,153,84,69,9600,high,False
+431, R,12,8,4,9600,high,False
+432, it,69,52,17,9600,high,False
+434, F,12,6,6,9600,high,False
+435, r,6,6,0,9600,high,False
+436,os,12,1,11,9600,high,False
+437,and,6,3,3,9600,high,False
+438, as,104,55,49,9600,high,False
+439,ect,1,1,0,9600,low,False
+441,rom,7,0,7,9600,high,False
+443,con,2,1,1,9600,middle,False
+444, L,5,2,3,9600,high,False
+448, with,70,37,33,9600,high,False
+449,iz,1,1,0,9600,low,False
+451, N,8,3,5,9600,high,False
+452, al,5,3,2,9600,high,False
+453,op,6,1,5,9600,high,False
+458, an,78,39,39,9600,high,False
+459,ata,2,0,2,9600,middle,False
+460,ore,4,3,1,9600,high,False
+461,ri,2,1,1,9600,middle,False
+462, pro,1,0,1,9600,low,False
+465,ter,3,0,3,9600,high,False
+467, W,3,1,2,9600,high,False
+468, E,10,3,7,9600,high,False
+472, H,11,5,6,9600,high,False
+473,ack,2,0,2,9600,middle,False
+476, or,51,23,28,9600,high,False
+479, G,6,5,1,9600,high,False
+480,able,7,6,1,9600,high,False
+481, -,13,9,4,9600,high,False
+482,ine,3,0,3,9600,high,False
+487,ity,11,5,6,9600,high,False
+488, +,7,7,0,9600,high,False
+489, tr,5,1,4,9600,high,False
+494,ult,1,0,1,9600,low,False
+495,str,1,0,1,9600,low,False
+497,""",",1,1,0,9600,low,False
+498, you,28,17,11,9600,high,False
+500,pl,2,0,2,9600,middle,False
+501, new,3,0,3,9600,high,False
+502, j,4,2,2,9600,high,False
+504, from,70,26,44,9600,high,False
+505, ex,2,0,2,9600,middle,False
+506, O,8,7,1,9600,high,False
+508, [,8,8,0,9600,high,False
+509,oc,3,0,3,9600,high,False
+510,":
+",2,2,0,9600,middle,False
+511, se,1,0,1,9600,low,False
+512, le,9,3,6,9600,high,False
+517,ant,7,2,5,9600,high,False
+518, at,36,14,22,9600,high,False
+519,ase,1,0,1,9600,low,False
+521, ch,2,0,2,9600,middle,False
+523,ave,1,0,1,9600,low,False
+524,ang,1,1,0,9600,low,False
+525, are,118,42,76,9600,high,False
+527,’,2,0,2,9600,middle,False
+528,_t,2,2,0,9600,middle,False
+530,ial,7,1,6,9600,high,False
+531,act,1,0,1,9600,low,False
+533,ive,6,2,4,9600,high,False
+535,ost,2,1,1,9600,middle,False
+536, class,1,1,0,9600,low,False
+537, not,61,39,22,9600,high,False
+538,og,2,1,1,9600,middle,False
+541,all,5,1,4,9600,high,False
+542,ff,1,1,0,9600,low,False
+546,are,5,3,2,9600,high,False
+547, U,2,1,1,9600,middle,False
+550,ies,3,0,3,9600,high,False
+551,ize,1,0,1,9600,low,False
+552,ure,3,3,0,9600,high,False
+553, by,99,46,53,9600,high,False
+554,ire,1,0,1,9600,low,False
+556,.p,1,1,0,9600,low,False
+557, sh,2,0,2,9600,middle,False
+558,ice,1,0,1,9600,low,False
+559,ast,1,0,1,9600,low,False
+564,cl,2,1,1,9600,middle,False
+566, he,8,5,3,9600,high,False
+568,).,22,8,14,9600,high,False
+569, @,1,0,1,9600,low,False
+572, was,23,13,10,9600,high,False
+574,this,1,0,1,9600,low,False
+576, The,83,42,41,9600,high,False
+577,ide,3,0,3,9600,high,False
+578,ace,1,0,1,9600,low,False
+579,ib,1,1,0,9600,low,False
+580,ac,1,0,1,9600,low,False
+582, we,22,18,4,9600,high,False
+586,ve,4,0,4,9600,high,False
+587,ath,1,0,1,9600,low,False
+592, res,5,4,1,9600,high,False
+593,)),4,3,1,9600,high,False
+594,'s,43,23,20,9600,high,False
+595, k,10,6,4,9600,high,False
+596,ans,4,0,4,9600,high,False
+600, i,8,7,1,9600,high,False
+601, us,3,3,0,9600,high,False
+602,pp,1,0,1,9600,low,False
+603,one,8,7,1,9600,high,False
+610,ach,1,1,0,9600,low,False
+614, have,67,31,36,9600,high,False
+617,ull,1,0,1,9600,low,False
+619, J,5,1,4,9600,high,False
+620,_p,1,1,0,9600,low,False
+623,St,2,1,1,9600,middle,False
+624,".
+",8,8,0,9600,high,False
+627,form,1,0,1,9600,low,False
+630,"}
+
+",1,1,0,9600,low,False
+632,ite,2,0,2,9600,middle,False
+633, get,2,2,0,9600,middle,False
+634,rr,1,0,1,9600,low,False
+635,ome,1,0,1,9600,low,False
+641,In,14,5,9,9600,high,False
+642,les,6,2,4,9600,high,False
+645,ie,1,1,0,9600,low,False
+646, can,69,38,31,9600,high,False
+647, V,5,4,1,9600,high,False
+650, un,1,1,0,9600,low,False
+653, do,7,3,4,9600,high,False
+655, el,1,0,1,9600,low,False
+656, self,3,1,2,9600,high,False
+657,ated,2,0,2,9600,middle,False
+658,ary,11,3,8,9600,high,False
+663, Th,2,1,1,9600,middle,False
+665,te,5,1,4,9600,high,False
+668, ab,1,1,0,9600,low,False
+674,ob,5,1,4,9600,high,False
+676,app,1,1,0,9600,low,False
+678, all,34,24,10,9600,high,False
+680,ition,1,1,0,9600,low,False
+681,ance,2,0,2,9600,middle,False
+684,vent,3,2,1,9600,high,False
+685,ia,7,0,7,9600,high,False
+686, will,20,10,10,9600,high,False
+692,")
+
+",2,0,2,9600,middle,False
+697, your,4,3,1,9600,high,False
+700, out,8,3,5,9600,high,False
+701,"),",21,10,11,9600,high,False
+702, has,35,16,19,9600,high,False
+705, up,8,3,5,9600,high,False
+706,ax,1,0,1,9600,low,False
+709,ge,5,5,0,9600,high,False
+711,ON,1,0,1,9600,low,False
+713,ich,1,0,1,9600,low,False
+714, but,32,17,15,9600,high,False
+715," 
+",1,1,0,9600,low,False
+717,_m,1,1,0,9600,low,False
+718,add,1,1,0,9600,low,False
+719,quest,1,0,1,9600,low,False
+720,odel,1,1,0,9600,low,False
+722,ery,1,1,0,9600,low,False
+724,ens,4,0,4,9600,high,False
+728, go,1,0,1,9600,low,False
+729, function,11,9,2,9600,high,False
+730, K,13,9,4,9600,high,False
+738, set,34,31,3,9600,high,False
+745,ally,7,3,4,9600,high,False
+747,ep,2,0,2,9600,middle,False
+748,’s,7,6,1,9600,high,False
+752, me,4,3,1,9600,high,False
+757,ec,6,1,5,9600,high,False
+758, In,38,20,18,9600,high,False
+759,ph,6,0,6,9600,high,False
+760, |,2,2,0,9600,middle,False
+769,eth,1,0,1,9600,low,False
+770, else,1,0,1,9600,low,False
+773, so,20,12,8,9600,high,False
+774,atic,2,1,1,9600,middle,False
+775, lo,2,0,2,9600,middle,False
+776,pro,1,0,1,9600,low,False
+777,ton,5,0,5,9600,high,False
+779,own,1,0,1,9600,low,False
+782,ous,2,0,2,9600,middle,False
+785,The,49,20,29,9600,high,False
+791,eg,1,1,0,9600,low,False
+793,ude,1,0,1,9600,low,False
+796, ar,2,0,2,9600,middle,False
+803, more,20,10,10,9600,high,False
+806, his,10,9,1,9600,high,False
+807, they,34,14,20,9600,high,False
+809, Y,8,5,3,9600,high,False
+810,use,1,1,0,9600,low,False
+812,ish,1,0,1,9600,low,False
+815,io,1,0,1,9600,low,False
+819,ings,1,0,1,9600,low,False
+821, data,4,2,2,9600,high,False
+825, one,53,28,25,9600,high,False
+827, dis,3,1,2,9600,high,False
+829, name,2,1,1,9600,middle,False
+830, true,5,3,2,9600,high,False
+832,led,2,0,2,9600,middle,False
+834, ne,2,0,2,9600,middle,False
+835, end,5,1,4,9600,high,False
+839,log,1,1,0,9600,low,False
+840,Ex,1,0,1,9600,low,False
+847, my,8,3,5,9600,high,False
+854,”,3,2,1,9600,high,False
+855, pre,3,0,3,9600,high,False
+856, x,14,14,0,9600,high,False
+859,ov,3,2,1,9600,high,False
+861, >,2,2,0,9600,middle,False
+862, their,42,11,31,9600,high,False
+877, id,4,4,0,9600,high,False
+879, who,7,4,3,9600,high,False
+882, time,19,11,8,9600,high,False
+883, man,1,1,0,9600,low,False
+887,rop,1,0,1,9600,low,False
+892, which,62,26,36,9600,high,False
+894, any,17,14,3,9600,high,False
+895, false,3,2,1,9600,high,False
+897, value,1,1,0,9600,low,False
+899,""")",1,0,1,9600,low,False
+902, no,15,10,5,9600,high,False
+905,.com,1,0,1,9600,low,False
+906, app,1,1,0,9600,low,False
+910, Ch,1,0,1,9600,low,False
+911, about,10,6,4,9600,high,False
+912, add,1,0,1,9600,low,False
+914, string,2,2,0,9600,middle,False
+916, over,9,7,2,9600,high,False
+921,"]
+",1,0,1,9600,low,False
+922, qu,1,0,1,9600,low,False
+924,ca,1,0,1,9600,low,False
+930,son,1,0,1,9600,low,False
+934,AR,1,0,1,9600,low,False
+936,].,4,4,0,9600,high,False
+938,ical,2,0,2,9600,middle,False
+939, des,1,0,1,9600,low,False
+940,uth,5,0,5,9600,high,False
+941,ix,1,0,1,9600,low,False
+942,ays,1,0,1,9600,low,False
+943, type,5,2,3,9600,high,False
+944,'t,10,3,7,9600,high,False
+946, inter,2,0,2,9600,middle,False
+947,var,5,5,0,9600,high,False
+949, part,13,8,5,9600,high,False
+955,(f,2,2,0,9600,middle,False
+960,ose,3,0,3,9600,high,False
+968,ng,1,1,0,9600,low,False
+973,ates,4,0,4,9600,high,False
+975, work,4,4,0,9600,high,False
+977,inal,1,0,1,9600,low,False
+978, sp,1,0,1,9600,low,False
+979, when,13,6,7,9600,high,False
+983,to,1,1,0,9600,low,False
+990, use,9,6,3,9600,high,False
+1001,Th,1,1,0,9600,low,False
+1008, other,33,13,20,9600,high,False
+1011,ms,3,3,0,9600,high,False
+1012, been,30,6,24,9600,high,False
+1020,ann,5,3,2,9600,high,False
+1021,ade,1,0,1,9600,low,False
+1030, had,4,0,4,9600,high,False
+1032, Re,2,1,1,9600,middle,False
+1033, were,10,6,4,9600,high,False
+1035, would,25,12,13,9600,high,False
+1036, “,6,4,2,9600,high,False
+1039, our,5,2,3,9600,high,False
+1042, year,3,1,2,9600,high,False
+1045, some,37,21,16,9600,high,False
+1047,ys,2,0,2,9600,middle,False
+1052, there,33,23,10,9600,high,False
+1053, said,1,0,1,9600,low,False
+1055,of,1,0,1,9600,low,False
+1056,line,2,1,1,9600,middle,False
+1059, her,2,1,1,9600,middle,False
+1062, co,5,3,2,9600,high,False
+1065,min,1,1,0,9600,low,False
+1070,ute,3,1,2,9600,high,False
+1075, like,12,4,8,9600,high,False
+1077, let,1,1,0,9600,low,False
+1079, am,3,2,1,9600,high,False
+1083, also,39,13,26,9600,high,False
+1084, It,21,10,11,9600,high,False
+1089,_n,2,2,0,9600,middle,False
+1091, than,13,4,9,9600,high,False
+1095,ating,3,1,2,9600,high,False
+1096, This,20,12,8,9600,high,False
+1101, just,5,3,2,9600,high,False
+1102, result,8,4,4,9600,high,False
+1103,ian,14,7,7,9600,high,False
+1105, them,13,5,8,9600,high,False
+1107,der,1,1,0,9600,low,False
+1110,://,3,1,2,9600,high,False
+1111,ule,1,0,1,9600,low,False
+1112,...,2,2,0,9600,middle,False
+1116,ush,3,2,1,9600,high,False
+1119, into,11,3,8,9600,high,False
+1121,amp,1,0,1,9600,low,False
+1122,ied,1,0,1,9600,low,False
+1124, \,54,54,0,9600,high,False
+1125,"],",1,1,0,9600,low,False
+1128, what,10,7,3,9600,high,False
+1132,olum,1,0,1,9600,low,False
+1136, sc,1,0,1,9600,low,False
+1140, list,5,3,2,9600,high,False
+1141,(s,2,2,0,9600,middle,False
+1142, case,14,10,4,9600,high,False
+1147, z,7,7,0,9600,high,False
+1149,let,2,1,1,9600,middle,False
+1151,red,1,0,1,9600,low,False
+1154," ,",2,2,0,9600,middle,False
+1155,(t,1,1,0,9600,low,False
+1156, first,15,8,7,9600,high,False
+1160, act,2,0,2,9600,middle,False
+1163, Tr,1,1,0,9600,low,False
+1165,={,2,2,0,9600,middle,False
+1168,cent,2,0,2,9600,middle,False
+1172, only,21,11,10,9600,high,False
+1180,ank,2,0,2,9600,middle,False
+1181, its,43,32,11,9600,high,False
+1182, back,2,1,1,9600,middle,False
+1184, need,3,1,2,9600,high,False
+1185, cl,2,0,2,9600,middle,False
+1186, sub,7,2,5,9600,high,False
+1187, la,2,0,2,9600,middle,False
+1189,".""",1,1,0,9600,low,False
+1191, start,1,0,1,9600,low,False
+1205, We,5,5,0,9600,high,False
+1211,ics,2,0,2,9600,middle,False
+1212, under,4,1,3,9600,high,False
+1221, then,12,12,0,9600,high,False
+1223,ious,1,0,1,9600,low,False
+1229,ning,1,1,0,9600,low,False
+1230, Un,1,1,0,9600,low,False
+1231, may,29,12,17,9600,high,False
+1232, Wh,1,1,0,9600,low,False
+1241,und,5,0,5,9600,high,False
+1242,sum,8,8,0,9600,high,False
+1246, how,14,6,8,9600,high,False
+1247,rite,2,1,1,9600,middle,False
+1249,To,1,1,0,9600,low,False
+1251, people,4,2,2,9600,high,False
+1257, ind,3,1,2,9600,high,False
+1260, He,3,3,0,9600,high,False
+1263,ole,1,0,1,9600,low,False
+1265, should,13,7,6,9600,high,False
+1266,opy,5,5,0,9600,high,False
+1274, bet,1,0,1,9600,low,False
+1276,ular,2,0,2,9600,middle,False
+1279,bs,1,1,0,9600,low,False
+1280,ting,3,3,0,9600,high,False
+1281, make,11,5,6,9600,high,False
+1282,Tr,1,0,1,9600,low,False
+1283, after,10,4,6,9600,high,False
+1290, right,5,4,1,9600,high,False
+1291,right,1,1,0,9600,low,False
+1293, long,8,3,5,9600,high,False
+1298, Pro,1,1,0,9600,low,False
+1302,.g,8,5,3,9600,high,False
+1320, fl,1,1,0,9600,low,False
+1330,ins,1,0,1,9600,low,False
+1331,-s,2,1,1,9600,middle,False
+1333, Int,1,1,0,9600,low,False
+1334, array,1,1,0,9600,low,False
+1335,",""",6,1,5,9600,high,False
+1336,Pro,1,0,1,9600,low,False
+1340, she,3,1,2,9600,high,False
+1342,aph,1,0,1,9600,low,False
+1346, par,1,0,1,9600,low,False
+1349, read,2,0,2,9600,middle,False
+1350,print,1,1,0,9600,low,False
+1352, form,10,5,5,9600,high,False
+1356, trans,5,2,3,9600,high,False
+1361,ities,1,0,1,9600,low,False
+1365, –,5,0,5,9600,high,False
+1366, want,1,1,0,9600,low,False
+1368,ments,1,0,1,9600,low,False
+1369, ||,1,1,0,9600,low,False
+1370,az,1,1,0,9600,low,False
+1371,be,1,0,1,9600,low,False
+1372, number,32,28,4,9600,high,False
+1376, key,1,0,1,9600,low,False
+1378, two,22,12,10,9600,high,False
+1379, size,2,0,2,9600,middle,False
+1380, where,13,11,2,9600,high,False
+1387,uch,2,2,0,9600,middle,False
+1392, arg,2,0,2,9600,middle,False
+1393, while,8,2,6,9600,high,False
+1401, look,2,1,1,9600,middle,False
+1404,eter,1,0,1,9600,low,False
+1405,’t,1,1,0,9600,low,False
+1410, could,8,6,2,9600,high,False
+1411, br,1,0,1,9600,low,False
+1413,ures,3,1,2,9600,high,False
+1414, know,6,3,3,9600,high,False
+1416, If,4,1,3,9600,high,False
+1417, Sh,1,1,0,9600,low,False
+1419,back,2,2,0,9600,middle,False
+1424, hand,1,1,0,9600,low,False
+1425,Ind,1,1,0,9600,low,False
+1429, most,13,6,7,9600,high,False
+1430, try,3,3,0,9600,high,False
+1431, now,9,5,4,9600,high,False
+1435, him,1,1,0,9600,low,False
+1437,ify,1,1,0,9600,low,False
+1438, break,2,1,1,9600,middle,False
+1442,itt,2,2,0,9600,middle,False
+1443, ap,3,1,2,9600,high,False
+1445,(n,6,6,0,9600,high,False
+1446, You,1,1,0,9600,low,False
+1447,":
+
+",14,13,1,9600,high,False
+1448,-m,1,1,0,9600,low,False
+1449, every,10,10,0,9600,high,False
+1455,-b,3,2,1,9600,high,False
+1457,][,14,0,14,9600,high,False
+1459, point,19,14,5,9600,high,False
+1461, fil,2,0,2,9600,middle,False
+1467, text,2,2,0,9600,middle,False
+1471, pol,1,1,0,9600,low,False
+1473, show,7,6,1,9600,high,False
+1475,ased,1,0,1,9600,low,False
+1477, find,4,2,2,9600,high,False
+1482, current,1,0,1,9600,low,False
+1483, used,18,10,8,9600,high,False
+1486, play,1,0,1,9600,low,False
+1487, log,2,2,0,9600,middle,False
+1489,fl,1,1,0,9600,low,False
+1490, see,2,0,2,9600,middle,False
+1492, help,3,0,3,9600,high,False
+1493, these,17,9,8,9600,high,False
+1494, pass,2,0,2,9600,middle,False
+1495, down,1,0,1,9600,low,False
+1496, even,17,12,5,9600,high,False
+1498,uild,4,0,4,9600,high,False
+1506,ized,6,4,2,9600,high,False
+1508, ob,1,1,0,9600,low,False
+1511,UR,1,0,1,9600,low,False
+1513, don,7,2,5,9600,high,False
+1515,man,2,0,2,9600,middle,False
+1519,He,1,0,1,9600,low,False
+1521, did,3,1,2,9600,high,False
+1523,_h,2,2,0,9600,middle,False
+1526, through,12,5,7,9600,high,False
+1527, An,3,2,1,9600,high,False
+1528,che,1,0,1,9600,low,False
+1529, inv,1,0,1,9600,low,False
+1532, New,8,1,7,9600,high,False
+1536,ler,1,0,1,9600,low,False
+1537, last,4,2,2,9600,high,False
+1538, event,8,6,2,9600,high,False
+1541,ily,1,0,1,9600,low,False
+1543,ines,4,0,4,9600,high,False
+1547,lear,1,0,1,9600,low,False
+1549, again,3,2,1,9600,high,False
+1550, high,7,3,4,9600,high,False
+1555, line,12,8,4,9600,high,False
+1558, does,8,4,4,9600,high,False
+1560, cr,1,0,1,9600,low,False
+1561,ars,2,0,2,9600,middle,False
+1568,ature,1,0,1,9600,low,False
+1573, before,1,0,1,9600,low,False
+1574,ale,1,0,1,9600,low,False
+1576, because,8,3,5,9600,high,False
+1579,ik,1,1,0,9600,low,False
+1584, state,4,0,4,9600,high,False
+1588, here,4,4,0,9600,high,False
+1590, final,1,1,0,9600,low,False
+1597, And,1,1,0,9600,low,False
+1598, run,1,0,1,9600,low,False
+1599, X,23,18,5,9600,high,False
+1600,ym,4,0,4,9600,high,False
+1602, very,13,2,11,9600,high,False
+1603,ces,1,0,1,9600,low,False
+1604,_N,2,2,0,9600,middle,False
+1605,ared,3,0,3,9600,high,False
+1608,ited,1,0,1,9600,low,False
+1610,itch,1,1,0,9600,low,False
+1613, ac,2,0,2,9600,middle,False
+1614, model,4,3,1,9600,high,False
+1615, mon,5,0,5,9600,high,False
+1616, way,4,3,1,9600,high,False
+1618, call,1,0,1,9600,low,False
+1622, dec,1,0,1,9600,low,False
+1623,lease,5,0,5,9600,high,False
+1627,formation,1,0,1,9600,low,False
+1632, well,15,6,9,9600,high,False
+1633, object,1,1,0,9600,low,False
+1634, As,9,4,5,9600,high,False
+1635, years,5,2,3,9600,high,False
+1644, Ar,1,0,1,9600,low,False
+1648,):,1,1,0,9600,low,False
+1651, view,3,2,1,9600,high,False
+1652, pres,1,0,1,9600,low,False
+1655,At,2,1,1,9600,middle,False
+1657, many,17,8,9,9600,high,False
+1660, being,12,7,5,9600,high,False
+1661, good,5,1,4,9600,high,False
+1667, using,11,7,4,9600,high,False
+1671,ists,2,0,2,9600,middle,False
+1674, Al,1,0,1,9600,low,False
+1678,time,1,1,0,9600,low,False
+1685, param,3,3,0,9600,high,False
+1690,ps,1,0,1,9600,low,False
+1691,Element,1,1,0,9600,low,False
+1694,by,3,2,1,9600,high,False
+1697, person,1,0,1,9600,low,False
+1707, style,1,0,1,9600,low,False
+1713,ident,1,0,1,9600,low,False
+1714, method,2,0,2,9600,middle,False
+1717,less,1,0,1,9600,low,False
+1720, expect,1,1,0,9600,low,False
+1723,urs,1,0,1,9600,low,False
+1724, prot,3,0,3,9600,high,False
+1729, sur,2,1,1,9600,middle,False
+1730, found,13,4,9,9600,high,False
+1732,par,2,0,2,9600,middle,False
+1733,imes,1,1,0,9600,low,False
+1734,.e,8,6,2,9600,high,False
+1736, post,7,7,0,9600,high,False
+1737,-d,2,0,2,9600,middle,False
+1741, such,24,13,11,9600,high,False
+1742,select,1,0,1,9600,low,False
+1744, think,2,0,2,9600,middle,False
+1745, differ,1,0,1,9600,low,False
+1752, For,17,13,4,9600,high,False
+1753, much,7,2,5,9600,high,False
+1754,uc,8,1,7,9600,high,False
+1757, som,1,0,1,9600,low,False
+1758, http,2,1,1,9600,middle,False
+1760, count,1,1,0,9600,low,False
+1762,char,2,0,2,9600,middle,False
+1766, gener,1,0,1,9600,low,False
+1782,the,1,1,0,9600,low,False
+1787, open,2,2,0,9600,middle,False
+1795, follow,1,0,1,9600,low,False
+1800, Res,1,1,0,9600,low,False
+1806,Un,1,1,0,9600,low,False
+1811,rows,1,1,0,9600,low,False
+1817, each,11,6,5,9600,high,False
+1824, support,3,1,2,9600,high,False
+1827,""").",1,1,0,9600,low,False
+1828, own,5,1,4,9600,high,False
+1838,Form,3,3,0,9600,high,False
+1839, sex,1,0,1,9600,low,False
+1842, et,2,0,2,9600,middle,False
+1846, those,8,6,2,9600,high,False
+1847,off,1,1,0,9600,low,False
+1849, system,13,5,8,9600,high,False
+1850, best,3,1,2,9600,high,False
+1852, same,16,8,8,9600,high,False
+1855, create,2,0,2,9600,middle,False
+1862,ats,1,0,1,9600,low,False
+1863, Z,2,2,0,9600,middle,False
+1865, made,3,1,2,9600,high,False
+1869,rid,1,0,1,9600,low,False
+1870,ified,1,0,1,9600,low,False
+1872,yn,6,0,6,9600,high,False
+1874, group,10,7,3,9600,high,False
+1879, world,5,3,2,9600,high,False
+1882, process,3,0,3,9600,high,False
+1883,(b,1,1,0,9600,low,False
+1887, main,5,3,2,9600,high,False
+1893,PI,1,0,1,9600,low,False
+1894, color,2,1,1,9600,middle,False
+1895, report,1,0,1,9600,low,False
+1896, take,6,2,4,9600,high,False
+1897,rib,1,0,1,9600,low,False
+1899, day,1,0,1,9600,low,False
+1901, sk,1,1,0,9600,low,False
+1906,Image,1,0,1,9600,low,False
+1909, top,9,8,1,9600,high,False
+1910, free,4,1,3,9600,high,False
+1911,AS,5,5,0,9600,high,False
+1913, On,3,2,1,9600,high,False
+1917, action,3,1,2,9600,high,False
+1921,not,12,11,1,9600,high,False
+1922, index,1,1,0,9600,low,False
+1931, real,5,4,1,9600,high,False
+1936, build,1,1,0,9600,low,False
+1939,"?
+
+",9,3,6,9600,high,False
+1940,…,1,0,1,9600,low,False
+1947, art,1,1,0,9600,low,False
+1948, between,9,5,4,9600,high,False
+1959, —,1,0,1,9600,low,False
+1961,oin,1,1,0,9600,low,False
+1962, ke,1,0,1,9600,low,False
+1966,sub,1,0,1,9600,low,False
+1967, Le,3,3,0,9600,high,False
+1968, head,1,0,1,9600,low,False
+1969, must,5,5,0,9600,high,False
+1973, order,3,2,1,9600,high,False
+1975,over,5,5,0,9600,high,False
+1977, say,7,5,2,9600,high,False
+1985, product,5,4,1,9600,high,False
+1986,This,8,7,1,9600,high,False
+1988, But,6,6,0,9600,high,False
+1995, information,1,0,1,9600,low,False
+2002,icle,1,0,1,9600,low,False
+2003, week,2,1,1,9600,middle,False
+2012,".
+
+
+
+",2,2,0,9600,middle,False
+2016,Sh,1,1,0,9600,low,False
+2021, sw,3,3,0,9600,high,False
+2022,ization,9,6,3,9600,high,False
+2030, und,1,0,1,9600,low,False
+2033, response,3,1,2,9600,high,False
+2041, without,4,1,3,9600,high,False
+2053, ref,1,1,0,9600,low,False
+2055, So,4,3,1,9600,high,False
+2058, still,9,3,6,9600,high,False
+2062, cap,1,0,1,9600,low,False
+2066,ved,1,0,1,9600,low,False
+2070, field,3,2,1,9600,high,False
+2073,“,1,1,0,9600,low,False
+2074,col,4,0,4,9600,high,False
+2075,(x,3,3,0,9600,high,False
+2082,An,1,1,0,9600,low,False
+2083, team,4,0,4,9600,high,False
+2086, second,3,2,1,9600,high,False
+2087, going,2,0,2,9600,middle,False
+2088, range,2,0,2,9600,middle,False
+2090,ness,1,1,0,9600,low,False
+2097, fact,9,5,4,9600,high,False
+2114, home,3,2,1,9600,high,False
+2115, left,1,0,1,9600,low,False
+2119,oci,1,0,1,9600,low,False
+2120,Pl,1,0,1,9600,low,False
+2121,As,2,1,1,9600,middle,False
+2124,Of,1,1,0,9600,low,False
+2132,It,3,1,2,9600,high,False
+2136,www,3,1,2,9600,high,False
+2137,"},",5,5,0,9600,high,False
+2142,ism,2,1,1,9600,middle,False
+2146,"...
+
+",1,1,0,9600,low,False
+2150, page,1,0,1,9600,low,False
+2154,sp,1,0,1,9600,low,False
+2155, different,15,8,7,9600,high,False
+2156,iable,3,3,0,9600,high,False
+2160, Is,4,3,1,9600,high,False
+2163, around,4,2,2,9600,high,False
+2167, really,2,1,1,9600,middle,False
+2168, image,3,3,0,9600,high,False
+2169, target,4,2,2,9600,high,False
+2176, both,11,2,9,9600,high,False
+2182, put,2,1,1,9600,middle,False
+2188, level,5,1,4,9600,high,False
+2210,ina,1,0,1,9600,low,False
+2213, content,1,0,1,9600,low,False
+2216,ric,1,0,1,9600,low,False
+2217,".""
+
+",2,0,2,9600,middle,False
+2218, fa,2,0,2,9600,middle,False
+2220,-f,1,0,1,9600,low,False
+2225, develop,3,1,2,9600,high,False
+2238, too,1,0,1,9600,low,False
+2244, great,2,0,2,9600,middle,False
+2248,ron,1,0,1,9600,low,False
+2249,iving,3,0,3,9600,high,False
+2256, super,2,1,1,9600,middle,False
+2257,bar,1,1,0,9600,low,False
+2266, context,2,1,1,9600,middle,False
+2268,-p,2,1,1,9600,middle,False
+2270, met,1,0,1,9600,low,False
+2272, life,4,1,3,9600,high,False
+2274, US,2,0,2,9600,middle,False
+2293,—,1,1,0,9600,low,False
+2297, change,3,0,3,9600,high,False
+2299,'re,2,1,1,9600,middle,False
+2304,Le,1,1,0,9600,low,False
+2308, No,1,1,0,9600,low,False
+2309, position,7,4,3,9600,high,False
+2311, book,9,9,0,9600,high,False
+2319, version,2,2,0,9600,middle,False
+2326, three,7,3,4,9600,high,False
+2328,ero,1,0,1,9600,low,False
+2329, law,1,1,0,9600,low,False
+2331, base,3,2,1,9600,high,False
+2337, during,5,0,5,9600,high,False
+2338,tes,1,0,1,9600,low,False
+2342,ves,5,0,5,9600,high,False
+2348, against,2,1,1,9600,middle,False
+2354,With,1,1,0,9600,low,False
+2355, power,6,6,0,9600,high,False
+2356,ium,2,0,2,9600,middle,False
+2359,left,2,2,0,9600,middle,False
+2379, They,5,0,5,9600,high,False
+2382,ons,4,2,2,9600,high,False
+2385,-t,5,1,4,9600,high,False
+2392, element,7,7,0,9600,high,False
+2397,ched,1,0,1,9600,low,False
+2403,All,1,1,0,9600,low,False
+2404,ification,7,4,3,9600,high,False
+2409, big,2,1,1,9600,middle,False
+2412,ots,4,2,2,9600,high,False
+2415, map,1,1,0,9600,low,False
+2416,era,3,0,3,9600,high,False
+2419,",”",1,0,1,9600,low,False
+2421, few,1,0,1,9600,low,False
+2425,ules,5,0,5,9600,high,False
+2428,https,1,0,1,9600,low,False
+2433,ories,1,1,0,9600,low,False
+2436, node,5,5,0,9600,high,False
+2441, another,6,1,5,9600,high,False
+2448,NS,1,1,0,9600,low,False
+2449,ology,6,1,5,9600,high,False
+2456, effect,6,2,4,9600,high,False
+2459,ending,1,1,0,9600,low,False
+2461,For,2,0,2,9600,middle,False
+2472, leg,1,1,0,9600,low,False
+2474, since,11,7,4,9600,high,False
+2477, non,15,12,3,9600,high,False
+2480, full,2,1,1,9600,middle,False
+2487, body,6,0,6,9600,high,False
+2503, ...,2,1,1,9600,middle,False
+2506, keep,1,0,1,9600,low,False
+2516, Bo,2,0,2,9600,middle,False
+2518, red,8,3,5,9600,high,False
+2521, Or,2,0,2,9600,middle,False
+2524, control,1,0,1,9600,low,False
+2525, come,4,1,3,9600,high,False
+2530, source,2,0,2,9600,middle,False
+2533,"]
+
+",31,13,18,9600,high,False
+2539,odes,1,0,1,9600,low,False
+2543, prov,1,0,1,9600,low,False
+2554,ination,2,0,2,9600,middle,False
+2564,.html,1,1,0,9600,low,False
+2566,field,1,1,0,9600,low,False
+2567, required,1,1,0,9600,low,False
+2572,".,",10,7,3,9600,high,False
+2576,ts,1,0,1,9600,low,False
+2577,af,2,1,1,9600,middle,False
+2578, might,3,2,1,9600,high,False
+2585, How,1,1,0,9600,low,False
+2588, hard,5,2,3,9600,high,False
+2591,used,1,1,0,9600,low,False
+2593,mod,1,0,1,9600,low,False
+2598, called,11,6,5,9600,high,False
+2611,ety,1,0,1,9600,low,False
+2613, small,6,4,2,9600,high,False
+2617, protected,5,0,5,9600,high,False
+2619, There,4,3,1,9600,high,False
+2624,oo,1,0,1,9600,low,False
+2629, sum,7,7,0,9600,high,False
+2632, little,4,2,2,9600,high,False
+2639, status,3,1,2,9600,high,False
+2659,.org,1,1,0,9600,low,False
+2660,me,1,1,0,9600,low,False
+2661, given,10,10,0,9600,high,False
+2664, better,2,1,1,9600,middle,False
+2669, already,1,1,0,9600,low,False
+2670, including,9,2,7,9600,high,False
+2673,ically,4,0,4,9600,high,False
+2677, always,4,4,0,9600,high,False
+2679,If,2,1,1,9600,middle,False
+2682,vis,3,0,3,9600,high,False
+2686, less,4,2,2,9600,high,False
+2692, account,1,0,1,9600,low,False
+2696, lot,1,1,0,9600,low,False
+2701, following,5,5,0,9600,high,False
+2710, boolean,1,1,0,9600,low,False
+2711, search,1,1,0,9600,low,False
+2712,ken,1,1,0,9600,low,False
+2718,ling,3,0,3,9600,high,False
+2721,bed,2,1,1,9600,middle,False
+2727, says,10,3,7,9600,high,False
+2732, rest,1,0,1,9600,low,False
+2734, interest,4,2,2,9600,high,False
+2736, perform,1,1,0,9600,low,False
+2739, ver,1,1,0,9600,low,False
+2747, site,2,0,2,9600,middle,False
+2750, values,3,3,0,9600,high,False
+2754,icro,1,0,1,9600,low,False
+2770, gl,6,0,6,9600,high,False
+2779, cell,30,0,30,9600,high,False
+2781, player,1,1,0,9600,low,False
+2783, cost,1,0,1,9600,low,False
+2790, total,3,2,1,9600,high,False
+2794,UM,1,1,0,9600,low,False
+2796,ights,1,1,0,9600,low,False
+2797, clear,1,0,1,9600,low,False
+2798,uro,3,0,3,9600,high,False
+2803, seem,1,1,0,9600,low,False
+2805, short,3,0,3,9600,high,False
+2816, gre,2,0,2,9600,middle,False
+2820, health,3,0,3,9600,high,False
+2825, Gr,1,1,0,9600,low,False
+2841, children,2,0,2,9600,middle,False
+2845,ably,1,1,0,9600,low,False
+2846, distrib,1,1,0,9600,low,False
+2847, cur,1,1,0,9600,low,False
+2852,-l,5,1,4,9600,high,False
+2855,omb,1,1,0,9600,low,False
+2856, initial,2,2,0,9600,middle,False
+2860, online,1,0,1,9600,low,False
+2863,au,2,1,1,9600,middle,False
+2867, instance,1,1,0,9600,low,False
+2870,where,1,1,0,9600,low,False
+2872, organ,2,0,2,9600,middle,False
+2874, reason,1,0,1,9600,low,False
+2876, Mar,2,1,1,9600,middle,False
+2877,(a,1,1,0,9600,low,False
+2878, within,2,1,1,9600,middle,False
+2879,".”
+
+",1,1,0,9600,low,False
+2889, cent,1,0,1,9600,low,False
+2900,pose,2,1,1,9600,middle,False
+2906, school,1,1,0,9600,low,False
+2908, consider,1,1,0,9600,low,False
+2912,opt,2,0,2,9600,middle,False
+2914,ulation,3,0,3,9600,high,False
+2924, include,7,2,5,9600,high,False
+2932, She,1,0,1,9600,low,False
+2937, later,1,1,0,9600,low,False
+2938, That,1,1,0,9600,low,False
+2948, love,1,1,0,9600,low,False
+2952, able,2,0,2,9600,middle,False
+2966,room,1,0,1,9600,low,False
+2968, give,8,6,2,9600,high,False
+2971, condition,2,2,0,9600,middle,False
+2973,ators,1,0,1,9600,low,False
+2975, copy,1,0,1,9600,low,False
+2976,uture,1,0,1,9600,low,False
+2980, Can,2,2,0,9600,middle,False
+2982,do,2,1,1,9600,middle,False
+2987, either,3,2,1,9600,high,False
+2989, important,7,4,3,9600,high,False
+2990, lead,6,2,4,9600,high,False
+2997, family,8,1,7,9600,high,False
+3000, exist,7,4,3,9600,high,False
+3003,'ve,1,0,1,9600,low,False
+3004,vers,1,0,1,9600,low,False
+3015, water,3,1,2,9600,high,False
+3029,ama,2,0,2,9600,middle,False
+3033, government,1,0,1,9600,low,False
+3036,And,1,1,0,9600,low,False
+3037, display,2,0,2,9600,middle,False
+3039, times,3,3,0,9600,high,False
+3040, four,5,4,1,9600,high,False
+3041, far,1,0,1,9600,low,False
+3042, present,3,0,3,9600,high,False
+3043, NS,1,1,0,9600,low,False
+3046, bas,1,0,1,9600,low,False
+3054, room,2,2,0,9600,middle,False
+3055, once,2,2,0,9600,middle,False
+3057,center,2,2,0,9600,middle,False
+3059, results,6,3,3,9600,high,False
+3060, continue,1,0,1,9600,low,False
+3061, talk,1,1,0,9600,low,False
+3063, grow,1,0,1,9600,low,False
+3073,ured,1,1,0,9600,low,False
+3076, mean,5,5,0,9600,high,False
+3080, until,4,3,1,9600,high,False
+3082, area,1,0,1,9600,low,False
+3083,uit,1,1,0,9600,low,False
+3084, length,11,7,4,9600,high,False
+3085, With,1,1,0,9600,low,False
+3093, kind,2,0,2,9600,middle,False
+3095,ounds,1,1,0,9600,low,False
+3100, light,10,0,10,9600,high,False
+3108, side,5,4,1,9600,high,False
+3110, example,20,9,11,9600,high,False
+3118, based,4,0,4,9600,high,False
+3121,omain,3,3,0,9600,high,False
+3123, away,3,1,2,9600,high,False
+3128, Mon,1,0,1,9600,low,False
+3132,ively,5,3,2,9600,high,False
+3134,imer,1,0,1,9600,low,False
+3139, experience,1,1,0,9600,low,False
+3143, near,2,1,1,9600,middle,False
+3147,ibility,1,1,0,9600,low,False
+3151, specific,2,0,2,9600,middle,False
+3154,ones,1,0,1,9600,low,False
+3155, Do,1,1,0,9600,low,False
+3156, along,11,4,7,9600,high,False
+3158, express,1,1,0,9600,low,False
+3161, begin,1,0,1,9600,low,False
+3166, thing,1,0,1,9600,low,False
+3167,Trans,1,0,1,9600,low,False
+3170, why,3,0,3,9600,high,False
+3171, doesn,1,0,1,9600,low,False
+3172,ij,1,0,1,9600,low,False
+3175, single,7,1,6,9600,high,False
+3183,/m,1,0,1,9600,low,False
+3193, po,1,0,1,9600,low,False
+3196, ant,1,0,1,9600,low,False
+3197, When,2,1,1,9600,middle,False
+3200, season,1,0,1,9600,low,False
+3204, possible,7,5,2,9600,high,False
+3207, didn,1,0,1,9600,low,False
+3212,_x,2,2,0,9600,middle,False
+3213, recent,4,2,2,9600,high,False
+3216, By,1,0,1,9600,low,False
+3217, May,4,1,3,9600,high,False
+3229, told,1,0,1,9600,low,False
+3233, auto,2,0,2,9600,middle,False
+3238, working,3,3,0,9600,high,False
+3241, window,1,0,1,9600,low,False
+3245, least,7,1,6,9600,high,False
+3251, General,2,2,0,9600,middle,False
+3255, record,1,0,1,9600,low,False
+3256,IB,2,0,2,9600,middle,False
+3259, making,3,1,2,9600,high,False
+3260,ued,1,1,0,9600,low,False
+3263,""".",1,1,0,9600,low,False
+3266, percent,1,0,1,9600,low,False
+3271, move,5,5,0,9600,high,False
+3277,inate,2,0,2,9600,middle,False
+3278,'ll,1,1,0,9600,low,False
+3281, special,3,2,1,9600,high,False
+3290,ario,1,0,1,9600,low,False
+3291, tell,1,1,0,9600,low,False
+3293, select,1,1,0,9600,low,False
+3296,oper,5,5,0,9600,high,False
+3303, Am,1,1,0,9600,low,False
+3308, course,5,5,0,9600,high,False
+3309, late,1,0,1,9600,low,False
+3311, amount,3,2,1,9600,high,False
+3313,ino,2,0,2,9600,middle,False
+3322, enough,4,1,3,9600,high,False
+3330, looking,3,2,1,9600,high,False
+3331, hold,2,2,0,9600,middle,False
+3341,ides,1,1,0,9600,low,False
+3343, property,3,3,0,9600,high,False
+3347, low,3,0,3,9600,high,False
+3351, today,1,0,1,9600,low,False
+3356,ymb,2,0,2,9600,middle,False
+3359, attack,1,0,1,9600,low,False
+3360, Ste,2,2,0,9600,middle,False
+3363, means,5,3,2,9600,high,False
+3364, story,1,1,0,9600,low,False
+3365,ids,2,0,2,9600,middle,False
+3368, mom,1,1,0,9600,low,False
+3371, den,3,3,0,9600,high,False
+3377, Form,3,0,3,9600,high,False
+3378, sort,1,1,0,9600,low,False
+3381, thought,7,5,2,9600,high,False
+3389,umer,1,1,0,9600,low,False
+3390,KE,1,1,0,9600,low,False
+3391,then,1,0,1,9600,low,False
+3395, review,1,0,1,9600,low,False
+3403, above,6,5,1,9600,high,False
+3405, question,9,6,3,9600,high,False
+3410, provide,2,0,2,9600,middle,False
+3412, research,11,3,8,9600,high,False
+3417,}},1,1,0,9600,low,False
+3425, whether,4,4,0,9600,high,False
+3427,isc,1,0,1,9600,low,False
+3432, having,6,3,3,9600,high,False
+3435,abs,2,0,2,9600,middle,False
+3438, exc,1,1,0,9600,low,False
+3441,ao,1,1,0,9600,low,False
+3460, large,4,1,3,9600,high,False
+3461,ral,1,0,1,9600,low,False
+3468, host,2,0,2,9600,middle,False
+3476, role,4,0,4,9600,high,False
+3483, dev,1,1,0,9600,low,False
+3484, deal,1,0,1,9600,low,False
+3491, problem,24,22,2,9600,high,False
+3498, though,6,4,2,9600,high,False
+3501, points,7,7,0,9600,high,False
+3520, actually,5,0,5,9600,high,False
+3526, million,1,0,1,9600,low,False
+3527, aff,1,0,1,9600,low,False
+3530,ios,1,0,1,9600,low,False
+3533,Pr,1,1,0,9600,low,False
+3535, understand,1,1,0,9600,low,False
+3536,uary,1,1,0,9600,low,False
+3541, les,1,0,1,9600,low,False
+3545, often,13,4,9,9600,high,False
+3546, info,1,1,0,9600,low,False
+3550, space,18,17,1,9600,high,False
+3553, store,2,0,2,9600,middle,False
+3554,",
+
+",4,4,0,9600,high,False
+3561, format,1,0,1,9600,low,False
+3565, details,1,1,0,9600,low,False
+3574, Free,1,0,1,9600,low,False
+3579, face,1,1,0,9600,low,False
+3581, save,1,0,1,9600,low,False
+3587,edit,23,12,11,9600,high,False
+3590, social,1,0,1,9600,low,False
+3593,").
+
+",16,9,7,9600,high,False
+3598, major,7,1,6,9600,high,False
+3602, yet,2,1,1,9600,middle,False
+3607, food,2,0,2,9600,middle,False
+3608,Source,1,0,1,9600,low,False
+3611,ites,4,0,4,9600,high,False
+3613, members,2,0,2,9600,middle,False
+3614, comb,3,3,0,9600,high,False
+3619, bar,2,1,1,9600,middle,False
+3625, inc,1,0,1,9600,low,False
+3629,apping,1,1,0,9600,low,False
+3635, become,3,1,2,9600,high,False
+3639, United,1,0,1,9600,low,False
+3643, makes,6,2,4,9600,high,False
+3645, contact,1,0,1,9600,low,False
+3650, except,1,0,1,9600,low,False
+3654, certain,3,3,0,9600,high,False
+3658,iles,1,1,0,9600,low,False
+3662,oss,2,0,2,9600,middle,False
+3667,ster,1,0,1,9600,low,False
+3668, character,1,0,1,9600,low,False
+3681, previous,1,1,0,9600,low,False
+3684, material,2,2,0,9600,middle,False
+3685, below,4,1,3,9600,high,False
+3686, Christ,1,0,1,9600,low,False
+3691, black,3,0,3,9600,high,False
+3692, component,1,0,1,9600,low,False
+3695, buy,2,2,0,9600,middle,False
+3704, root,10,9,1,9600,high,False
+3705, handle,3,3,0,9600,high,False
+3730, doing,1,0,1,9600,low,False
+3731, Red,2,0,2,9600,middle,False
+3732,lin,1,0,1,9600,low,False
+3735, pick,2,0,2,9600,middle,False
+3738, human,9,2,7,9600,high,False
+3757, John,6,3,3,9600,high,False
+3766, application,3,3,0,9600,high,False
+3767,any,3,1,2,9600,high,False
+3772, section,2,0,2,9600,middle,False
+3776, One,2,2,0,9600,middle,False
+3786, together,1,1,0,9600,low,False
+3791,ising,2,1,1,9600,middle,False
+3793, terms,4,3,1,9600,high,False
+3800, others,5,2,3,9600,high,False
+3807, several,6,2,4,9600,high,False
+3822, University,5,2,3,9600,high,False
+3832, subject,5,4,1,9600,high,False
+3838,What,4,3,1,9600,high,False
+3840, history,6,5,1,9600,high,False
+3841, Fe,1,0,1,9600,low,False
+3842, individual,3,0,3,9600,high,False
+3848,fs,1,1,0,9600,low,False
+3853, future,1,0,1,9600,low,False
+3859, ax,2,2,0,9600,middle,False
+3862,There,5,3,2,9600,high,False
+3867, took,1,1,0,9600,low,False
+3868, games,1,1,0,9600,low,False
+3871, products,1,0,1,9600,low,False
+3872,Is,1,1,0,9600,low,False
+3881, known,17,9,8,9600,high,False
+3884, seen,4,1,3,9600,high,False
+3887, live,5,0,5,9600,high,False
+3889,Per,1,1,0,9600,low,False
+3890, variable,1,0,1,9600,low,False
+3891,iet,3,3,0,9600,high,False
+3897, provided,1,1,0,9600,low,False
+3900, hope,1,1,0,9600,low,False
+3908, young,3,1,2,9600,high,False
+3920, study,12,1,11,9600,high,False
+3923,yl,1,1,0,9600,low,False
+3930, limit,3,3,0,9600,high,False
+3931, cut,2,0,2,9600,middle,False
+3936,ival,1,1,0,9600,low,False
+3941, across,2,0,2,9600,middle,False
+3953, particular,7,5,2,9600,high,False
+3955,ico,2,0,2,9600,middle,False
+3960, learn,2,1,1,9600,middle,False
+3966,One,2,2,0,9600,middle,False
+3968, ~,2,0,2,9600,middle,False
+3971, mind,2,0,2,9600,middle,False
+3980, comment,1,0,1,9600,low,False
+3983,But,2,0,2,9600,middle,False
+3990, Type,3,0,3,9600,high,False
+4008, description,3,3,0,9600,high,False
+4013, series,5,5,0,9600,high,False
+4014,wards,1,1,0,9600,low,False
+4019,ries,3,3,0,9600,high,False
+4020,actions,1,1,0,9600,low,False
+4024, original,5,3,2,9600,high,False
+4035," =
+",1,1,0,9600,low,False
+4036,Edit,1,0,1,9600,low,False
+4041, comes,4,3,1,9600,high,False
+4056,ised,1,0,1,9600,low,False
+4057, remove,1,0,1,9600,low,False
+4058, Trans,1,1,0,9600,low,False
+4059,met,1,1,0,9600,low,False
+4060,see,3,2,1,9600,high,False
+4080,(-,1,1,0,9600,low,False
+4092, according,2,0,2,9600,middle,False
+4102, ,29,23,6,9600,high,False
+4106,Eng,1,1,0,9600,low,False
+4119, models,1,0,1,9600,low,False
+4124, early,2,0,2,9600,middle,False
+4126, center,2,2,0,9600,middle,False
+4128, language,2,2,0,9600,middle,False
+4130,xy,1,1,0,9600,low,False
+4132, inf,1,0,1,9600,low,False
+4135, easy,2,1,1,9600,middle,False
+4142,–,9,7,2,9600,high,False
+4143, students,4,3,1,9600,high,False
+4147, buffer,1,0,1,9600,low,False
+4149, Math,1,1,0,9600,low,False
+4152, due,7,0,7,9600,high,False
+4155, ep,2,0,2,9600,middle,False
+4156,otype,2,0,2,9600,middle,False
+4157, cannot,4,4,0,9600,high,False
+4162, pred,4,0,4,9600,high,False
+4168, period,1,0,1,9600,low,False
+4172,'d,1,1,0,9600,low,False
+4176,ural,1,0,1,9600,low,False
+4182, Ne,1,0,1,9600,low,False
+4185, common,9,5,4,9600,high,False
+4188,ges,1,1,0,9600,low,False
+4190, suggest,3,0,3,9600,high,False
+4192,".
+
+
+",14,5,9,9600,high,False
+4193, accept,1,1,0,9600,low,False
+4194, random,2,2,0,9600,middle,False
+4195,erm,1,1,0,9600,low,False
+4196, Vector,1,1,0,9600,low,False
+4197,with,1,1,0,9600,low,False
+4217, players,1,1,0,9600,low,False
+4220, These,4,0,4,9600,high,False
+4221, among,7,2,5,9600,high,False
+4226, answer,7,6,1,9600,high,False
+4231, age,2,0,2,9600,middle,False
+4237, distributed,1,0,1,9600,low,False
+4243,dis,1,0,1,9600,low,False
+4244, words,8,4,4,9600,high,False
+4246,zy,1,0,1,9600,low,False
+4254, Col,1,0,1,9600,low,False
+4260,la,1,1,0,9600,low,False
+4261, York,1,0,1,9600,low,False
+4262,Lo,1,0,1,9600,low,False
+4263, discuss,1,1,0,9600,low,False
+4268, land,1,1,0,9600,low,False
+4269, stream,1,0,1,9600,low,False
+4270, Par,1,0,1,9600,low,False
+4271, quality,1,1,0,9600,low,False
+4279, half,4,1,3,9600,high,False
+4285, simple,7,7,0,9600,high,False
+4287, empty,1,1,0,9600,low,False
+4288,esh,1,1,0,9600,low,False
+4292,").
+",2,2,0,9600,middle,False
+4297, everything,1,0,1,9600,low,False
+4302, nothing,1,1,0,9600,low,False
+4303, running,2,2,0,9600,middle,False
+4317, na,1,1,0,9600,low,False
+4322,/p,1,1,0,9600,low,False
+4329, Some,5,0,5,9600,high,False
+4335, ur,2,0,2,9600,middle,False
+4337, World,4,0,4,9600,high,False
+4340,How,1,1,0,9600,low,False
+4342,icles,4,0,4,9600,high,False
+4344, changes,7,2,5,9600,high,False
+4345, personal,1,1,0,9600,low,False
+4350, Jan,1,0,1,9600,low,False
+4354, However,4,1,3,9600,high,False
+4361, whole,5,3,2,9600,high,False
+4362, needed,4,1,3,9600,high,False
+4363, likely,3,0,3,9600,high,False
+4367, fight,1,0,1,9600,low,False
+4378, writing,1,1,0,9600,low,False
+4379, rate,1,1,0,9600,low,False
+4385,cd,2,2,0,9600,middle,False
+4388, Sm,1,0,1,9600,low,False
+4398, More,1,1,0,9600,low,False
+4401, development,5,0,5,9600,high,False
+4402,ently,2,2,0,9600,middle,False
+4407,aker,1,1,0,9600,low,False
+4408, indu,1,1,0,9600,low,False
+4411, believe,1,0,1,9600,low,False
+4413,omet,1,0,1,9600,low,False
+4414, Intern,1,0,1,9600,low,False
+4416,So,2,1,1,9600,middle,False
+4419, features,3,0,3,9600,high,False
+4426, collection,7,5,2,9600,high,False
+4428, similar,3,1,2,9600,high,False
+4429, taken,1,1,0,9600,low,False
+4439,graph,2,0,2,9600,middle,False
+4453, entire,1,0,1,9600,low,False
+4462, member,2,0,2,9600,middle,False
+4467, Sim,1,0,1,9600,low,False
+4484, push,1,1,0,9600,low,False
+4486, please,1,0,1,9600,low,False
+4494, types,3,0,3,9600,high,False
+4503, phot,1,0,1,9600,low,False
+4505, Europe,3,0,3,9600,high,False
+4512, defined,10,10,0,9600,high,False
+4518, instead,3,1,2,9600,high,False
+4522, idea,1,1,0,9600,low,False
+4530, coll,1,1,0,9600,low,False
+4532,istic,1,1,0,9600,low,False
+4535,though,1,0,1,9600,low,False
+4541, active,2,0,2,9600,middle,False
+4544, mo,5,0,5,9600,high,False
+4545, death,1,0,1,9600,low,False
+4549, article,4,3,1,9600,high,False
+4558, almost,4,3,1,9600,high,False
+4564, connect,2,0,2,9600,middle,False
+4566, via,7,4,3,9600,high,False
+4573, environment,8,0,8,9600,high,False
+4580,exp,1,1,0,9600,low,False
+4583, complete,4,3,1,9600,high,False
+4586, general,10,9,1,9600,high,False
+4588, asked,1,1,0,9600,low,False
+4592,SP,3,2,1,9600,high,False
+4593, …,2,2,0,9600,middle,False
+4617,stry,1,0,1,9600,low,False
+4621, vector,8,8,0,9600,high,False
+4622, normal,3,0,3,9600,high,False
+4623, further,2,1,1,9600,middle,False
+4628, speed,1,1,0,9600,low,False
+4633, taking,3,2,1,9600,high,False
+4645,ba,1,0,1,9600,low,False
+4647, term,8,5,3,9600,high,False
+4650, potential,3,0,3,9600,high,False
+4652, published,3,0,3,9600,high,False
+4658, probably,2,1,1,9600,middle,False
+4669, enjoy,1,1,0,9600,low,False
+4671,ering,1,0,1,9600,low,False
+4677,BO,1,0,1,9600,low,False
+4680, weight,3,1,2,9600,high,False
+4682, conditions,6,3,3,9600,high,False
+4686,-to,5,3,2,9600,high,False
+4695, Now,1,0,1,9600,low,False
+4709, loss,1,0,1,9600,low,False
+4717, stay,1,1,0,9600,low,False
+4722, lower,1,1,0,9600,low,False
+4724, Dem,1,0,1,9600,low,False
+4727, perfect,1,1,0,9600,low,False
+4734, exact,1,1,0,9600,low,False
+4737,ech,1,1,0,9600,low,False
+4741, former,1,1,0,9600,low,False
+4743, six,2,1,1,9600,middle,False
+4744,ida,8,0,8,9600,high,False
+4745, margin,1,0,1,9600,low,False
+4746, heart,1,0,1,9600,low,False
+4751, rather,4,0,4,9600,high,False
+4755, questions,2,2,0,9600,middle,False
+4764, however,2,0,2,9600,middle,False
+4765,weight,1,0,1,9600,low,False
+4766, inside,1,1,0,9600,low,False
+4771, graph,4,4,0,9600,high,False
+4774, attempt,1,1,0,9600,low,False
+4775,opp,2,0,2,9600,middle,False
+4776,uses,4,0,4,9600,high,False
+4778, round,1,1,0,9600,low,False
+4787, North,1,0,1,9600,low,False
+4802, energy,2,0,2,9600,middle,False
+4803,like,1,0,1,9600,low,False
+4809,irth,1,0,1,9600,low,False
+4814,can,2,0,2,9600,middle,False
+4815, behind,3,3,0,9600,high,False
+4817,fg,1,1,0,9600,low,False
+4818, Sk,1,1,0,9600,low,False
+4825,long,1,0,1,9600,low,False
+4836, separ,2,2,0,9600,middle,False
+4837,cs,1,0,1,9600,low,False
+4843, third,1,1,0,9600,low,False
+4854,Each,2,1,1,9600,middle,False
+4879, release,3,0,3,9600,high,False
+4889, outside,3,3,0,9600,high,False
+4893, imm,1,0,1,9600,low,False
+4900,Dec,1,1,0,9600,low,False
+4910, ground,1,1,0,9600,low,False
+4911, unique,2,1,1,9600,middle,False
+4923,Bl,1,0,1,9600,low,False
+4936, simply,3,2,1,9600,high,False
+4937, fast,1,0,1,9600,low,False
+4938, memory,2,0,2,9600,middle,False
+4953,och,1,0,1,9600,low,False
+4960, extra,1,0,1,9600,low,False
+4961, reported,1,0,1,9600,low,False
+4963, resources,2,0,2,9600,middle,False
+4968, Pre,1,0,1,9600,low,False
+4977, seems,3,1,2,9600,high,False
+4982, unit,4,4,0,9600,high,False
+4990, takes,1,1,0,9600,low,False
+4992, etc,1,0,1,9600,low,False
+4994, appear,1,0,1,9600,low,False
+4998, hom,8,6,2,9600,high,False
+5000, difficult,4,3,1,9600,high,False
+5001, coming,2,1,1,9600,middle,False
+5005, Then,4,4,0,9600,high,False
+5008, quite,1,0,1,9600,low,False
+5011,iqu,4,0,4,9600,high,False
+5019, everyone,1,1,0,9600,low,False
+5020, pretty,1,0,1,9600,low,False
+5021, longer,1,1,0,9600,low,False
+5023, currently,2,1,1,9600,middle,False
+5025, relationship,2,2,0,9600,middle,False
+5027, Map,1,1,0,9600,low,False
+5036, names,3,2,1,9600,high,False
+5042, actual,2,1,1,9600,middle,False
+5043, fields,2,2,0,9600,middle,False
+5046, fix,2,1,1,9600,middle,False
+5048, cases,5,2,3,9600,high,False
+5055, National,3,0,3,9600,high,False
+5068, performance,1,0,1,9600,low,False
+5086, itself,4,3,1,9600,high,False
+5089, significant,2,0,2,9600,middle,False
+5091, respect,2,2,0,9600,middle,False
+5098, progress,1,1,0,9600,low,False
+5101, resource,2,1,1,9600,middle,False
+5103, dim,1,1,0,9600,low,False
+5106, direction,1,1,0,9600,low,False
+5107, additional,2,2,0,9600,middle,False
+5109, numbers,13,13,0,9600,high,False
+5114, statement,2,1,1,9600,middle,False
+5127,oph,3,0,3,9600,high,False
+5134,"
+
+
+
+
+
+",2,0,2,9600,middle,False
+5136,ctions,1,1,0,9600,low,False
+5138, join,1,0,1,9600,low,False
+5144,/or,2,0,2,9600,middle,False
+5147, subs,5,0,5,9600,high,False
+5157, choose,1,1,0,9600,low,False
+5159, America,1,0,1,9600,low,False
+5185, note,1,1,0,9600,low,False
+5191,ester,1,0,1,9600,low,False
+5193, upon,6,0,6,9600,high,False
+5197,uz,1,1,0,9600,low,False
+5202,.k,2,2,0,9600,middle,False
+5203, groups,4,3,1,9600,high,False
+5221, gets,1,0,1,9600,low,False
+5230, included,2,2,0,9600,middle,False
+5232, Ap,1,0,1,9600,low,False
+5240, cause,4,1,3,9600,high,False
+5242, van,2,1,1,9600,middle,False
+5244, focus,3,0,3,9600,high,False
+5248, multiple,5,2,3,9600,high,False
+5251,-M,1,0,1,9600,low,False
+5256, addition,5,3,2,9600,high,False
+5257, various,3,1,2,9600,high,False
+5263, increase,3,0,3,9600,high,False
+5290, reading,3,1,2,9600,high,False
+5297, standard,6,4,2,9600,high,False
+5298,etic,3,0,3,9600,high,False
+5300, padding,1,1,0,9600,low,False
+5301, His,2,2,0,9600,middle,False
+5302, states,6,6,0,9600,high,False
+5306, internal,2,1,1,9600,middle,False
+5310, especially,3,1,2,9600,high,False
+5311,ming,1,1,0,9600,low,False
+5312, cross,1,0,1,9600,low,False
+5318,_i,7,7,0,9600,high,False
+5322, problems,13,9,4,9600,high,False
+5325, arch,1,0,1,9600,low,False
+5326, written,2,2,0,9600,middle,False
+5335, images,1,1,0,9600,low,False
+5338,First,3,2,1,9600,high,False
+5342,ste,1,0,1,9600,low,False
+5344, force,1,1,0,9600,low,False
+5355, Py,3,3,0,9600,high,False
+5372,iant,1,0,1,9600,low,False
+5380,ians,7,7,0,9600,high,False
+5382, living,2,0,2,9600,middle,False
+5383, pattern,3,0,3,9600,high,False
+5390, useful,7,2,5,9600,high,False
+5392, tool,1,1,0,9600,low,False
+5395, feed,1,0,1,9600,low,False
+5411, popular,1,0,1,9600,low,False
+5413, methods,3,3,0,9600,high,False
+5416,cal,1,1,0,9600,low,False
+5420, allowed,2,0,2,9600,middle,False
+5421, impact,1,1,0,9600,low,False
+5424, elements,3,2,1,9600,high,False
+5435, related,3,2,1,9600,high,False
+5458, student,1,1,0,9600,low,False
+5461, average,3,2,1,9600,high,False
+5473, court,2,2,0,9600,middle,False
+5477,-st,2,1,1,9600,middle,False
+5479, parts,5,1,4,9600,high,False
+5480, decision,3,2,1,9600,high,False
+5482,oub,1,0,1,9600,low,False
+5486, approach,2,2,0,9600,middle,False
+5496, channel,1,0,1,9600,low,False
+5499, finally,1,0,1,9600,low,False
+5501,Please,1,1,0,9600,low,False
+5503,oring,1,1,0,9600,low,False
+5505, kill,1,0,1,9600,low,False
+5506, drug,1,1,0,9600,low,False
+5510, ways,1,0,1,9600,low,False
+5529,rote,1,0,1,9600,low,False
+5530, sense,5,2,3,9600,high,False
+5533,omy,1,0,1,9600,low,False
+5535, latest,1,0,1,9600,low,False
+5537, region,2,0,2,9600,middle,False
+5538, deep,3,0,3,9600,high,False
+5539,witch,1,0,1,9600,low,False
+5540, Park,2,0,2,9600,middle,False
+5542, From,1,1,0,9600,low,False
+5555, weeks,1,0,1,9600,low,False
+5556,urg,2,0,2,9600,middle,False
+5557, damage,2,1,1,9600,middle,False
+5558, lost,2,1,1,9600,middle,False
+5559,ani,2,2,0,9600,middle,False
+5567, paper,3,1,2,9600,high,False
+5577, themselves,1,0,1,9600,low,False
+5583,alls,1,0,1,9600,low,False
+5589,istics,1,1,0,9600,low,False
+5593, dead,1,0,1,9600,low,False
+5607,ula,1,0,1,9600,low,False
+5610, contains,12,8,4,9600,high,False
+5616, China,1,0,1,9600,low,False
+5627, SO,2,0,2,9600,middle,False
+5633, Our,2,2,0,9600,middle,False
+5641,ych,1,1,0,9600,low,False
+5646, includes,2,0,2,9600,middle,False
+5650, Mod,1,1,0,9600,low,False
+5655,-e,2,0,2,9600,middle,False
+5662, machine,1,1,0,9600,low,False
+5664, NO,1,1,0,9600,low,False
+5666, operation,3,3,0,9600,high,False
+5670, production,1,0,1,9600,low,False
+5671, areas,3,0,3,9600,high,False
+5675, operator,1,1,0,9600,low,False
+5687,ailed,2,0,2,9600,middle,False
+5692, Here,3,3,0,9600,high,False
+5693, argument,4,4,0,9600,high,False
+5695, establish,1,0,1,9600,low,False
+5696,ography,1,0,1,9600,low,False
+5702, activity,6,0,6,9600,high,False
+5707, provides,2,2,0,9600,middle,False
+5710, wasn,1,1,0,9600,low,False
+5711, uses,1,1,0,9600,low,False
+5724, Long,2,0,2,9600,middle,False
+5726, ability,3,0,3,9600,high,False
+5729,ological,10,8,2,9600,high,False
+5731,")),",1,1,0,9600,low,False
+5733, parameter,4,4,0,9600,high,False
+5746, functions,12,11,1,9600,high,False
+5754, choice,1,1,0,9600,low,False
+5766, characters,1,1,0,9600,low,False
+5767,enced,1,0,1,9600,low,False
+5779, ten,1,1,0,9600,low,False
+5785, reference,3,2,1,9600,high,False
+5786, mis,2,0,2,9600,middle,False
+5792, regular,5,4,1,9600,high,False
+5800,Part,1,1,0,9600,low,False
+5807, White,1,0,1,9600,low,False
+5810, natural,15,11,4,9600,high,False
+5815, associated,2,1,1,9600,middle,False
+5821, travel,1,1,0,9600,low,False
+5833, prec,1,0,1,9600,low,False
+5849,.a,1,1,0,9600,low,False
+5857,gs,1,1,0,9600,low,False
+5863,IA,1,0,1,9600,low,False
+5866, levels,1,0,1,9600,low,False
+5867, {{,2,2,0,9600,middle,False
+5868, looks,1,1,0,9600,low,False
+5871, necessary,1,1,0,9600,low,False
+5873,cell,1,0,1,9600,low,False
+5880, released,2,0,2,9600,middle,False
+5887, Department,1,0,1,9600,low,False
+5888, properties,10,10,0,9600,high,False
+5904, evidence,3,1,2,9600,high,False
+5912, rule,4,2,2,9600,high,False
+5918,ae,2,1,1,9600,middle,False
+5927, returned,1,1,0,9600,low,False
+5937, otherwise,1,0,1,9600,low,False
+5938, German,2,0,2,9600,middle,False
+5942, systems,1,0,1,9600,low,False
+5944, structure,9,2,7,9600,high,False
+5948, Link,1,1,0,9600,low,False
+5961, directly,2,0,2,9600,middle,False
+5963,ris,1,0,1,9600,low,False
+5976, While,2,0,2,9600,middle,False
+5980,-based,2,1,1,9600,middle,False
+5990, usually,4,1,3,9600,high,False
+6001, serious,1,0,1,9600,low,False
+6008, plant,3,0,3,9600,high,False
+6010, distance,5,4,1,9600,high,False
+6016, protect,1,0,1,9600,low,False
+6022, School,1,0,1,9600,low,False
+6023,hi,1,0,1,9600,low,False
+6027, contr,1,1,0,9600,low,False
+6028, primary,5,2,3,9600,high,False
+6032, bi,6,3,3,9600,high,False
+6040, Dev,1,0,1,9600,low,False
+6066,bb,3,3,0,9600,high,False
+6069, led,2,0,2,9600,middle,False
+6072,gl,1,0,1,9600,low,False
+6076,MD,2,0,2,9600,middle,False
+6077, sample,2,2,0,9600,middle,False
+6083, shape,2,2,0,9600,middle,False
+6092, safe,1,0,1,9600,low,False
+6094, shared,2,1,1,9600,middle,False
+6099, remember,1,1,0,9600,low,False
+6116, became,1,0,1,9600,low,False
+6119, Code,1,0,1,9600,low,False
+6144, equal,7,7,0,9600,high,False
+6147, allows,1,0,1,9600,low,False
+6149, middle,1,0,1,9600,low,False
+6156, August,1,1,0,9600,low,False
+6162, cop,1,0,1,9600,low,False
+6171, objects,1,1,0,9600,low,False
+6172, matrix,4,0,4,9600,high,False
+6174, ones,3,2,1,9600,high,False
+6176, green,2,0,2,9600,middle,False
+6188, designed,1,1,0,9600,low,False
+6192,tab,1,0,1,9600,low,False
+6193, layer,1,0,1,9600,low,False
+6200, core,1,1,0,9600,low,False
+6202,Main,2,1,1,9600,middle,False
+6203, expert,1,1,0,9600,low,False
+6233, beautiful,1,1,0,9600,low,False
+6234, secret,1,0,1,9600,low,False
+6238, origin,4,4,0,9600,high,False
+6239, effects,4,0,4,9600,high,False
+6241,illa,4,0,4,9600,high,False
+6254,cons,1,0,1,9600,low,False
+6282,hold,1,0,1,9600,low,False
+6283,rim,1,0,1,9600,low,False
+6291, solution,3,3,0,9600,high,False
+6295,otes,1,1,0,9600,low,False
+6296,ental,1,1,0,9600,low,False
+6297,omen,1,0,1,9600,low,False
+6301, slow,1,0,1,9600,low,False
+6303, blue,4,4,0,9600,high,False
+6305, lives,2,1,1,9600,middle,False
+6306, ^,2,0,2,9600,middle,False
+6314,icens,2,0,2,9600,middle,False
+6324,/w,1,1,0,9600,low,False
+6329, nor,1,0,1,9600,low,False
+6334,ulate,5,5,0,9600,high,False
+6335, club,1,0,1,9600,low,False
+6337, loop,1,0,1,9600,low,False
+6351, complex,12,11,1,9600,high,False
+6358, analysis,4,3,1,9600,high,False
+6366, computer,1,0,1,9600,low,False
+6385,pass,1,1,0,9600,low,False
+6388, leading,1,0,1,9600,low,False
+6396, flow,1,0,1,9600,low,False
+6398, involved,3,0,3,9600,high,False
+6405,asy,2,0,2,9600,middle,False
+6412,CS,1,0,1,9600,low,False
+6414, eyes,8,0,8,9600,high,False
+6426, wish,1,1,0,9600,low,False
+6430, stage,1,0,1,9600,low,False
+6433,igen,6,0,6,9600,high,False
+6436,ells,1,0,1,9600,low,False
+6438, meeting,1,1,0,9600,low,False
+6439, worked,2,0,2,9600,middle,False
+6454, ang,1,0,1,9600,low,False
+6457, medical,1,0,1,9600,low,False
+6481, modern,4,2,2,9600,high,False
+6484,CD,2,1,1,9600,middle,False
+6485, Lo,1,0,1,9600,low,False
+6489, international,2,0,2,9600,middle,False
+6509, considered,5,2,3,9600,high,False
+6513, growth,3,0,3,9600,high,False
+6515, Washington,2,0,2,9600,middle,False
+6530, collect,1,1,0,9600,low,False
+6534, situation,1,0,1,9600,low,False
+6543, blood,4,0,4,9600,high,False
+6548, photo,1,0,1,9600,low,False
+6551, gave,1,1,0,9600,low,False
+6554, mother,2,0,2,9600,middle,False
+6559, trade,1,0,1,9600,low,False
+6577,iding,2,1,1,9600,middle,False
+6584, professional,1,1,0,9600,low,False
+6587, completely,3,1,2,9600,high,False
+6588, practice,1,1,0,9600,low,False
+6594, sites,5,0,5,9600,high,False
+6595,pa,1,0,1,9600,low,False
+6617, heard,2,1,1,9600,middle,False
+6620,)[,1,0,1,9600,low,False
+6621, dise,1,0,1,9600,low,False
+6629, measure,4,3,1,9600,high,False
+6635, decided,1,1,0,9600,low,False
+6642,ki,1,1,0,9600,low,False
+6644, contain,1,0,1,9600,low,False
+6664,imp,1,1,0,9600,low,False
+6672, difference,1,1,0,9600,low,False
+6682, reports,2,0,2,9600,middle,False
+6683, adult,2,0,2,9600,middle,False
+6691,-A,1,1,0,9600,low,False
+6693, whose,7,5,2,9600,high,False
+6696, gives,4,2,2,9600,high,False
+6699,(G,1,1,0,9600,low,False
+6707, easily,5,4,1,9600,high,False
+6708, ideas,2,2,0,9600,middle,False
+6713,Can,1,1,0,9600,low,False
+6716, pair,3,3,0,9600,high,False
+6724, exists,2,1,1,9600,middle,False
+6741, brand,1,1,0,9600,low,False
+6749, ing,1,0,1,9600,low,False
+6756,Ext,1,1,0,9600,low,False
+6761, depend,1,0,1,9600,low,False
+6762," .
+
+",1,1,0,9600,low,False
+6770, basic,4,2,2,9600,high,False
+6771, Let,1,1,0,9600,low,False
+6774, star,2,0,2,9600,middle,False
+6777, carry,1,0,1,9600,low,False
+6782, syn,3,0,3,9600,high,False
+6785, positive,6,6,0,9600,high,False
+6811, prem,2,0,2,9600,middle,False
+6814, throughout,7,1,6,9600,high,False
+6815, pull,1,1,0,9600,low,False
+6816, pages,1,1,0,9600,low,False
+6821, edge,5,5,0,9600,high,False
+6825, creating,1,1,0,9600,low,False
+6832, learning,3,2,1,9600,high,False
+6839, shown,4,1,3,9600,high,False
+6846, classes,1,1,0,9600,low,False
+6851, obtain,1,0,1,9600,low,False
+6852, Sl,1,0,1,9600,low,False
+6853, lack,1,0,1,9600,low,False
+6865,They,2,0,2,9600,middle,False
+6869, hair,6,0,6,9600,high,False
+6876, knew,1,0,1,9600,low,False
+6884, wide,1,0,1,9600,low,False
+6888, math,2,2,0,9600,middle,False
+6896, exactly,4,2,2,9600,high,False
+6918,car,1,1,0,9600,low,False
+6919, altern,1,0,1,9600,low,False
+6928, Show,1,1,0,9600,low,False
+6930, favorite,1,1,0,9600,low,False
+6941, named,3,2,1,9600,high,False
+6944, Other,1,0,1,9600,low,False
+6955, economic,1,0,1,9600,low,False
+6961, physical,2,0,2,9600,middle,False
+6973, dro,1,0,1,9600,low,False
+6974, towards,1,1,0,9600,low,False
+6979, define,1,1,0,9600,low,False
+6981, father,1,0,1,9600,low,False
+6988,ometry,1,1,0,9600,low,False
+6993, nature,5,1,4,9600,high,False
+7021,(y,3,3,0,9600,high,False
+7022,atically,1,1,0,9600,low,False
+7024,ying,1,0,1,9600,low,False
+7025, sometimes,4,2,2,9600,high,False
+7029,ifications,1,1,0,9600,low,False
+7036, Note,1,1,0,9600,low,False
+7037, myself,1,1,0,9600,low,False
+7039,Now,3,3,0,9600,high,False
+7040, interesting,2,1,1,9600,middle,False
+7042, population,4,0,4,9600,high,False
+7043, California,1,0,1,9600,low,False
+7046, greater,1,1,0,9600,low,False
+7053,band,1,1,0,9600,low,False
+7054, Play,2,2,0,9600,middle,False
+7055, band,2,1,1,9600,middle,False
+7064,BA,1,1,0,9600,low,False
+7073,eller,1,0,1,9600,low,False
+7077, rank,3,0,3,9600,high,False
+7079, projects,1,0,1,9600,low,False
+7089, plot,1,1,0,9600,low,False
+7091, warrant,1,0,1,9600,low,False
+7106, pa,3,0,3,9600,high,False
+7117, brought,1,1,0,9600,low,False
+7143, Call,1,0,1,9600,low,False
+7145,imated,2,2,0,9600,middle,False
+7146, remain,1,0,1,9600,low,False
+7147, anti,1,0,1,9600,low,False
+7148, London,1,1,0,9600,low,False
+7168, zero,5,5,0,9600,high,False
+7171, paid,1,0,1,9600,low,False
+7172, increased,2,1,1,9600,middle,False
+7179, International,2,0,2,9600,middle,False
+7184,axis,2,2,0,9600,middle,False
+7194, birth,3,0,3,9600,high,False
+7199, limited,1,0,1,9600,low,False
+7202,plies,1,1,0,9600,low,False
+7209, Every,3,3,0,9600,high,False
+7216, tour,2,2,0,9600,middle,False
+7225, fully,2,2,0,9600,middle,False
+7228, announced,1,0,1,9600,low,False
+7236, materials,1,1,0,9600,low,False
+7241, unless,3,3,0,9600,high,False
+7244, sexual,2,0,2,9600,middle,False
+7249, photos,6,0,6,9600,high,False
+7250,iform,1,1,0,9600,low,False
+7252,)],1,1,0,9600,low,False
+7262, pressure,4,0,4,9600,high,False
+7266,rian,2,0,2,9600,middle,False
+7271, definition,4,4,0,9600,high,False
+7274, thinking,1,1,0,9600,low,False
+7281, Also,1,1,0,9600,low,False
+7284, CO,1,0,1,9600,low,False
+7286, concept,5,5,0,9600,high,False
+7288, •,13,11,2,9600,high,False
+7289, sets,7,5,2,9600,high,False
+7290, meaning,2,0,2,9600,middle,False
+7297, Super,2,0,2,9600,middle,False
+7299, multi,1,1,0,9600,low,False
+7312, Player,1,1,0,9600,low,False
+7313, Del,2,2,0,9600,middle,False
+7324, summer,1,0,1,9600,low,False
+7329, surface,8,3,5,9600,high,False
+7332, variables,1,1,0,9600,low,False
+7358,",y",1,1,0,9600,low,False
+7361, skills,3,1,2,9600,high,False
+7373, effective,2,0,2,9600,middle,False
+7375, tools,3,2,1,9600,high,False
+7391, spent,1,1,0,9600,low,False
+7402, missing,2,0,2,9600,middle,False
+7411, cards,2,2,0,9600,middle,False
+7417,olar,1,0,1,9600,low,False
+7420, Power,1,1,0,9600,low,False
+7424, records,1,0,1,9600,low,False
+7428, purpose,3,0,3,9600,high,False
+7433,WS,1,1,0,9600,low,False
+7465, norm,3,3,0,9600,high,False
+7477,apse,2,0,2,9600,middle,False
+7478,atisf,1,1,0,9600,low,False
+7481, described,5,0,5,9600,high,False
+7482, places,2,1,1,9600,middle,False
+7484, alone,1,1,0,9600,low,False
+7493, expression,3,0,3,9600,high,False
+7496, Most,1,1,0,9600,low,False
+7497, testing,1,0,1,9600,low,False
+7506, Law,1,0,1,9600,low,False
+7512, describe,5,3,2,9600,high,False
+7525, operations,2,2,0,9600,middle,False
+7531, SC,1,1,0,9600,low,False
+7540, yield,1,0,1,9600,low,False
+7541, feet,1,1,0,9600,low,False
+7546, integer,7,7,0,9600,high,False
+7548, highly,1,0,1,9600,low,False
+7556,itation,1,1,0,9600,low,False
+7557, transport,1,0,1,9600,low,False
+7563,-th,1,0,1,9600,low,False
+7566,anted,2,0,2,9600,middle,False
+7567, benefits,1,0,1,9600,low,False
+7586, forms,4,1,3,9600,high,False
+7608, rect,1,1,0,9600,low,False
+7616, guard,1,1,0,9600,low,False
+7638, Arg,1,1,0,9600,low,False
+7640, fish,2,0,2,9600,middle,False
+7644,(X,4,4,0,9600,high,False
+7658,-C,2,1,1,9600,middle,False
+7661,More,2,2,0,9600,middle,False
+7676, suffer,1,0,1,9600,low,False
+7678, straight,1,1,0,9600,low,False
+7681, ded,1,0,1,9600,low,False
+7698,rate,1,0,1,9600,low,False
+7703, increasing,2,0,2,9600,middle,False
+7707, compared,1,0,1,9600,low,False
+7716, detail,1,1,0,9600,low,False
+7718, Common,1,1,0,9600,low,False
+7722, fresh,1,1,0,9600,low,False
+7726, moved,1,0,1,9600,low,False
+7731,"):
+
+",1,1,0,9600,low,False
+7735, symbol,1,1,0,9600,low,False
+7739, hundred,1,0,1,9600,low,False
+7746, links,1,0,1,9600,low,False
+7748, Indian,1,1,0,9600,low,False
+7757,ulated,1,0,1,9600,low,False
+7761, cells,30,0,30,9600,high,False
+7762,olic,1,1,0,9600,low,False
+7766,ifying,1,0,1,9600,low,False
+7770, college,2,2,0,9600,middle,False
+7775, individuals,1,0,1,9600,low,False
+7781, suit,1,1,0,9600,low,False
+7785, smart,1,1,0,9600,low,False
+7790, successfully,1,0,1,9600,low,False
+7798, nodes,2,2,0,9600,middle,False
+7802, affect,2,1,1,9600,middle,False
+7822, studies,3,0,3,9600,high,False
+7826, growing,1,0,1,9600,low,False
+7838, certainly,1,0,1,9600,low,False
+7851, �,7,7,0,9600,high,False
+7853, aware,1,1,0,9600,low,False
+7855, British,1,0,1,9600,low,False
+7856, NE,1,0,1,9600,low,False
+7865,eler,1,0,1,9600,low,False
+7868, binary,1,1,0,9600,low,False
+7873,.[,47,7,40,9600,high,False
+7877, closed,11,11,0,9600,high,False
+7881, developed,5,2,3,9600,high,False
+7886, sym,4,1,3,9600,high,False
+7892, although,6,3,3,9600,high,False
+7897, amazing,3,3,0,9600,high,False
+7901, failure,1,1,0,9600,low,False
+7903,Properties,2,2,0,9600,middle,False
+7907, generated,3,1,2,9600,high,False
+7917,orders,1,0,1,9600,low,False
+7923,isation,1,1,0,9600,low,False
+7941,She,1,0,1,9600,low,False
+7945, particularly,2,1,1,9600,middle,False
+7947, domain,2,2,0,9600,middle,False
+7952, appears,1,1,0,9600,low,False
+7954, Unit,1,1,0,9600,low,False
+7956,ali,1,0,1,9600,low,False
+7963, tele,1,0,1,9600,low,False
+7966, reasons,1,0,1,9600,low,False
+7968,ensity,1,0,1,9600,low,False
+7970,omin,2,0,2,9600,middle,False
+7982, distribution,6,6,0,9600,high,False
+7999, posts,1,0,1,9600,low,False
+8003, micro,7,0,7,9600,high,False
+8014, interested,1,1,0,9600,low,False
+8023,phere,4,1,3,9600,high,False
+8024, axis,3,3,0,9600,high,False
+8036, obvious,3,3,0,9600,high,False
+8037, basis,4,2,2,9600,high,False
+8038, science,1,0,1,9600,low,False
+8040,izations,1,1,0,9600,low,False
+8045, variety,3,0,3,9600,high,False
+8051, Sil,4,0,4,9600,high,False
+8063, eight,3,1,2,9600,high,False
+8086, construction,1,1,0,9600,low,False
+8088,but,1,0,1,9600,low,False
+8109, brain,5,0,5,9600,high,False
+8110, followed,1,1,0,9600,low,False
+8115, abstract,2,2,0,9600,middle,False
+8123, volume,1,0,1,9600,low,False
+8125,-L,2,0,2,9600,middle,False
+8131, larger,2,0,2,9600,middle,False
+8149, supply,2,0,2,9600,middle,False
+8153, units,1,0,1,9600,low,False
+8155,mi,1,0,1,9600,low,False
+8168, factor,4,3,1,9600,high,False
+8173, sources,1,0,1,9600,low,False
+8180, eat,3,0,3,9600,high,False
+8185, tro,1,0,1,9600,low,False
+8186, claims,1,1,0,9600,low,False
+8193, produce,7,1,6,9600,high,False
+8206,which,2,0,2,9600,middle,False
+8225, negative,1,1,0,9600,low,False
+8241, providing,2,1,1,9600,middle,False
+8251, cat,1,0,1,9600,low,False
+8253, determine,1,0,1,9600,low,False
+8257, Texas,1,0,1,9600,low,False
+8263, partner,2,0,2,9600,middle,False
+8278, Only,1,0,1,9600,low,False
+8280, Gl,2,0,2,9600,middle,False
+8286, signal,4,1,3,9600,high,False
+8287, alpha,2,0,2,9600,middle,False
+8300, refer,1,0,1,9600,low,False
+8318, invalid,1,0,1,9600,low,False
+8322, journal,4,0,4,9600,high,False
+8329, spend,1,0,1,9600,low,False
+8330, Australia,2,0,2,9600,middle,False
+8340, Edit,1,1,0,9600,low,False
+8356, fixed,5,5,0,9600,high,False
+8357, applications,2,2,0,9600,middle,False
+8365, perhaps,4,4,0,9600,high,False
+8370,ronic,1,0,1,9600,low,False
+8373,Some,2,0,2,9600,middle,False
+8376, tend,1,0,1,9600,low,False
+8380, wild,3,1,2,9600,high,False
+8381, degree,8,8,0,9600,high,False
+8388, notes,1,1,0,9600,low,False
+8394, Mal,2,0,2,9600,middle,False
+8397, Robert,2,1,1,9600,middle,False
+8402,",b",2,2,0,9600,middle,False
+8420,Here,1,1,0,9600,low,False
+8426, highest,1,1,0,9600,low,False
+8429, Why,3,1,2,9600,high,False
+8433, connected,4,4,0,9600,high,False
+8450, thus,2,0,2,9600,middle,False
+8451, Register,1,0,1,9600,low,False
+8453, Chinese,3,2,1,9600,high,False
+8457, disease,4,0,4,9600,high,False
+8458, remains,2,1,1,9600,middle,False
+8459, Prof,1,0,1,9600,low,False
+8460,-form,2,0,2,9600,middle,False
+8463,icate,3,2,1,9600,high,False
+8464, stress,1,0,1,9600,low,False
+8474, guide,2,2,0,9600,middle,False
+8478, Size,1,0,1,9600,low,False
+8480, responsible,1,0,1,9600,low,False
+8482, containing,1,0,1,9600,low,False
+8483, Price,1,1,0,9600,low,False
+8484,||,1,1,0,9600,low,False
+8499, signed,1,1,0,9600,low,False
+8500, sequence,8,7,1,9600,high,False
+8505,MT,1,1,0,9600,low,False
+8513, Great,1,0,1,9600,low,False
+8521, families,3,1,2,9600,high,False
+8542, showed,1,0,1,9600,low,False
+8544, topic,3,3,0,9600,high,False
+8549, partners,3,0,3,9600,high,False
+8573, happens,1,1,0,9600,low,False
+8585, French,1,0,1,9600,low,False
+8593, male,5,0,5,9600,high,False
+8595,anging,1,0,1,9600,low,False
+8597, previously,1,0,1,9600,low,False
+8604, kept,1,1,0,9600,low,False
+8606, traditional,2,1,1,9600,middle,False
+8609, helps,2,0,2,9600,middle,False
+8622, central,2,1,1,9600,middle,False
+8625, satisf,1,1,0,9600,low,False
+8628, heat,1,0,1,9600,low,False
+8635,aws,1,0,1,9600,low,False
+8641, mal,1,0,1,9600,low,False
+8644, mouse,3,0,3,9600,high,False
+8651, separate,2,1,1,9600,middle,False
+8660, understanding,2,1,1,9600,middle,False
+8661, easier,2,1,1,9600,middle,False
+8669,ils,2,0,2,9600,middle,False
+8674, relative,2,2,0,9600,middle,False
+8683, serve,2,1,1,9600,middle,False
+8686, majority,2,0,2,9600,middle,False
+8704, Since,2,2,0,9600,middle,False
+8708, reflect,2,1,1,9600,middle,False
+8722, gain,1,1,0,9600,low,False
+8738,GER,1,0,1,9600,low,False
+8760, benefit,1,0,1,9600,low,False
+8763,ulo,1,1,0,9600,low,False
+8769,edom,4,0,4,9600,high,False
+8778, female,1,0,1,9600,low,False
+8781, chain,2,0,2,9600,middle,False
+8788, knows,1,0,1,9600,low,False
+8789, generally,4,2,2,9600,high,False
+8794, contents,1,0,1,9600,low,False
+8802,firm,1,1,0,9600,low,False
+8813,Ne,2,0,2,9600,middle,False
+8815,Math,1,1,0,9600,low,False
+8818, despite,3,0,3,9600,high,False
+8820, whatever,2,2,0,9600,middle,False
+8826, regarding,1,1,0,9600,low,False
+8831,poss,1,1,0,9600,low,False
+8844, listen,1,1,0,9600,low,False
+8845, goals,1,1,0,9600,low,False
+8847,Dr,1,0,1,9600,low,False
+8848, rare,2,0,2,9600,middle,False
+8853, People,1,0,1,9600,low,False
+8860, prim,1,0,1,9600,low,False
+8861,redict,1,1,0,9600,low,False
+8862, rad,1,0,1,9600,low,False
+8865, spread,1,0,1,9600,low,False
+8881, caused,3,0,3,9600,high,False
+8886, Each,3,1,2,9600,high,False
+8887, radio,1,0,1,9600,low,False
+8894, extension,2,2,0,9600,middle,False
+8907, Ber,1,1,0,9600,low,False
+8909, Like,1,0,1,9600,low,False
+8910, helped,1,0,1,9600,low,False
+8916, therefore,2,1,1,9600,middle,False
+8922, minor,2,0,2,9600,middle,False
+8947, produced,4,1,3,9600,high,False
+8978, mac,1,0,1,9600,low,False
+8999, Many,2,1,1,9600,middle,False
+9015, gam,1,0,1,9600,low,False
+9016, extremely,1,0,1,9600,low,False
+9027, showing,1,1,0,9600,low,False
+9043, Two,1,0,1,9600,low,False
+9044, becomes,2,1,1,9600,middle,False
+9054, vel,3,0,3,9600,high,False
+9058, dry,2,0,2,9600,middle,False
+9081,sa,1,0,1,9600,low,False
+9091, trial,1,1,0,9600,low,False
+9099, placed,4,0,4,9600,high,False
+9104, weather,4,4,0,9600,high,False
+9111,plex,3,0,3,9600,high,False
+9112,Note,1,1,0,9600,low,False
+9115, planning,1,1,0,9600,low,False
+9124, visual,2,2,0,9600,middle,False
+9135, protection,1,0,1,9600,low,False
+9139,)},3,3,0,9600,high,False
+9144, candidate,1,0,1,9600,low,False
+9154, Bay,1,1,0,9600,low,False
+9155, smaller,4,2,2,9600,high,False
+9157,well,1,0,1,9600,low,False
+9160,bert,3,3,0,9600,high,False
+9176,ema,2,0,2,9600,middle,False
+9179, inner,1,0,1,9600,low,False
+9197,EP,4,0,4,9600,high,False
+9210, angle,5,5,0,9600,high,False
+9211, Because,2,1,1,9600,middle,False
+9213, aim,1,1,0,9600,low,False
+9214, stick,1,0,1,9600,low,False
+9223, born,1,0,1,9600,low,False
+9226, raised,1,0,1,9600,low,False
+9234, episode,1,0,1,9600,low,False
+9238,  ,4,4,0,9600,high,False
+9245, construct,1,1,0,9600,low,False
+9250, external,1,0,1,9600,low,False
+9251, applied,2,1,1,9600,middle,False
+9252, prefix,1,0,1,9600,low,False
+9253,oted,2,2,0,9600,middle,False
+9271, finding,2,0,2,9600,middle,False
+9272,".)
+
+",4,3,1,9600,high,False
+9294, century,2,2,0,9600,middle,False
+9315, temperature,2,0,2,9600,middle,False
+9324, seemed,1,1,0,9600,low,False
+9327, labor,1,1,0,9600,low,False
+9334, square,7,7,0,9600,high,False
+9336,"”,",2,2,0,9600,middle,False
+9339, thanks,1,0,1,9600,low,False
+9342, experiment,5,3,2,9600,high,False
+9363, factors,2,1,1,9600,middle,False
+9387, cancer,3,0,3,9600,high,False
+9396, sea,3,0,3,9600,high,False
+9407,cos,6,2,4,9600,high,False
+9419, species,51,0,51,9600,high,False
+9420,-D,1,0,1,9600,low,False
+9423, advantage,1,1,0,9600,low,False
+9428, truly,1,1,0,9600,low,False
+9429, compare,1,1,0,9600,low,False
+9433,bes,5,3,2,9600,high,False
+9469, ({,1,1,0,9600,low,False
+9472, bits,1,1,0,9600,low,False
+9481, limitations,1,0,1,9600,low,False
+9482, ended,1,1,0,9600,low,False
+9485,These,2,2,0,9600,middle,False
+9489, independent,1,1,0,9600,low,False
+9497, mi,1,0,1,9600,low,False
+9511,gb,1,1,0,9600,low,False
+9539, continues,2,0,2,9600,middle,False
+9544, bin,1,1,0,9600,low,False
+9555, established,1,1,0,9600,low,False
+9569, identity,2,1,1,9600,middle,False
+9588,del,1,1,0,9600,low,False
+9589, Florida,1,0,1,9600,low,False
+9612,/n,2,2,0,9600,middle,False
+9635,uj,3,3,0,9600,high,False
+9646, Once,1,0,1,9600,low,False
+9658, assume,2,1,1,9600,middle,False
+9663,-term,2,1,1,9600,middle,False
+9669,range,3,3,0,9600,high,False
+9677, parties,1,1,0,9600,low,False
+9705, documentation,1,0,1,9600,low,False
+9719,"]),",2,1,1,9600,middle,False
+9733, mentioned,2,1,1,9600,middle,False
+9740, Er,2,1,1,9600,middle,False
+9741, critic,2,2,0,9600,middle,False
+9751, hyp,1,1,0,9600,low,False
+9755, completion,2,2,0,9600,middle,False
+9787, tail,2,2,0,9600,middle,False
+9807,forms,1,0,1,9600,low,False
+9810,aks,1,0,1,9600,low,False
+9814, brief,1,0,1,9600,low,False
+9815, Scott,1,1,0,9600,low,False
+9830,See,2,0,2,9600,middle,False
+9831, willing,1,1,0,9600,low,False
+9834, yes,1,1,0,9600,low,False
+9842, driving,1,1,0,9600,low,False
+9848, approx,3,3,0,9600,high,False
+9857, George,1,1,0,9600,low,False
+9861, poly,1,0,1,9600,low,False
+9864, animal,6,0,6,9600,high,False
+9867, native,1,0,1,9600,low,False
+9873, interval,1,1,0,9600,low,False
+9892, positions,1,1,0,9600,low,False
+9895, purposes,1,0,1,9600,low,False
+9898, animals,7,0,7,9600,high,False
+9904, solutions,3,3,0,9600,high,False
+9917,han,1,1,0,9600,low,False
+9947, skill,1,0,1,9600,low,False
+9959, Water,2,0,2,9600,middle,False
+9966, supposed,1,1,0,9600,low,False
+9968, diet,1,0,1,9600,low,False
+9974,note,2,1,1,9600,middle,False
+9977, climate,1,0,1,9600,low,False
+9980,ested,1,0,1,9600,low,False
+9982, holds,1,0,1,9600,low,False
+9990, senior,1,0,1,9600,low,False
+10001, kernel,1,1,0,9600,low,False
+10007, listed,2,0,2,9600,middle,False
+10008, mostly,1,1,0,9600,low,False
+10010, blocks,1,1,0,9600,low,False
+10017, occurred,2,1,1,9600,middle,False
+10022,"""The",1,0,1,9600,low,False
+10035, calc,2,0,2,9600,middle,False
+10048,Sup,1,1,0,9600,low,False
+10061,Let,1,1,0,9600,low,False
+10072, lab,1,0,1,9600,low,False
+10126, theory,18,15,3,9600,high,False
+10128,",n",1,1,0,9600,low,False
+10151, packet,2,1,1,9600,middle,False
+10155,formed,1,1,0,9600,low,False
+10158, exercise,1,1,0,9600,low,False
+10161, asking,1,1,0,9600,low,False
+10163, orders,1,0,1,9600,low,False
+10164, spending,1,0,1,9600,low,False
+10169,\',1,1,0,9600,low,False
+10170,?),1,1,0,9600,low,False
+10173, influence,2,0,2,9600,middle,False
+10174, Africa,1,0,1,9600,low,False
+10186, policies,1,0,1,9600,low,False
+10187,-ex,2,0,2,9600,middle,False
+10188,-tr,2,2,0,9600,middle,False
+10198, circum,2,2,0,9600,middle,False
+10199, filled,1,1,0,9600,low,False
+10200, north,2,0,2,9600,middle,False
+10219, discussion,2,2,0,9600,middle,False
+10238, segment,2,2,0,9600,middle,False
+10244, Mary,1,1,0,9600,low,False
+10250, prime,12,12,0,9600,high,False
+10253,Use,1,0,1,9600,low,False
+10295, examples,10,10,0,9600,high,False
+10306, maintain,2,1,1,9600,middle,False
+10321, experienced,1,0,1,9600,low,False
+10322, odd,3,3,0,9600,high,False
+10324, procedure,1,1,0,9600,low,False
+10328, Although,1,1,0,9600,low,False
+10339, explain,3,0,3,9600,high,False
+10342, noted,1,1,0,9600,low,False
+10374,math,5,5,0,9600,high,False
+10386,uan,2,0,2,9600,middle,False
+10387,iciency,1,0,1,9600,low,False
+10398,Definition,1,1,0,9600,low,False
+10414, tips,1,0,1,9600,low,False
+10416, fuel,1,0,1,9600,low,False
+10449, presented,1,0,1,9600,low,False
+10453,iner,2,2,0,9600,middle,False
+10468, locations,2,0,2,9600,middle,False
+10469, samples,5,5,0,9600,high,False
+10477, ped,1,0,1,9600,low,False
+10480,alian,2,0,2,9600,middle,False
+10485, mine,1,0,1,9600,low,False
+10492, doubt,1,1,0,9600,low,False
+10502, mental,1,0,1,9600,low,False
+10510, ele,1,0,1,9600,low,False
+10525, cup,6,6,0,9600,high,False
+10526, pure,1,1,0,9600,low,False
+10535, communication,1,0,1,9600,low,False
+10536,mem,1,0,1,9600,low,False
+10542, identify,1,1,0,9600,low,False
+10548, According,1,0,1,9600,low,False
+10565, welcome,1,1,0,9600,low,False
+10566,king,1,1,0,9600,low,False
+10572, survey,1,0,1,9600,low,False
+10577, turns,1,1,0,9600,low,False
+10582, intr,1,0,1,9600,low,False
+10592, linked,2,0,2,9600,middle,False
+10593,free,1,0,1,9600,low,False
+10596, faster,1,0,1,9600,low,False
+10601, combination,1,1,0,9600,low,False
+10602, intended,1,0,1,9600,low,False
+10618,itory,1,0,1,9600,low,False
+10620, Gal,4,4,0,9600,high,False
+10621, Old,2,0,2,9600,middle,False
+10632,rase,1,1,0,9600,low,False
+10636, entered,1,1,0,9600,low,False
+10650, audience,1,0,1,9600,low,False
+10665,ibr,3,0,3,9600,high,False
+10694,after,1,0,1,9600,low,False
+10704,osis,1,0,1,9600,low,False
+10707, competition,1,0,1,9600,low,False
+10713,"""We",2,1,1,9600,middle,False
+10718,asis,3,0,3,9600,high,False
+10719, bind,1,0,1,9600,low,False
+10720, Island,1,0,1,9600,low,False
+10740, absolute,2,2,0,9600,middle,False
+10742, tells,1,1,0,9600,low,False
+10744, communities,1,0,1,9600,low,False
+10767, possibly,2,1,1,9600,middle,False
+10769, Japanese,2,2,0,9600,middle,False
+10774, confirmed,1,0,1,9600,low,False
+10775, cycle,4,0,4,9600,high,False
+10779, plants,6,0,6,9600,high,False
+10793, decades,1,1,0,9600,low,False
+10795, versions,1,0,1,9600,low,False
+10799, coffee,3,3,0,9600,high,False
+10815, bond,1,0,1,9600,low,False
+10820, identified,1,1,0,9600,low,False
+10838, determined,2,1,1,9600,middle,False
+10847, advanced,1,1,0,9600,low,False
+10854, pal,1,1,0,9600,low,False
+10865, broken,2,1,1,9600,middle,False
+10870, ss,1,0,1,9600,low,False
+10901, leaves,2,1,1,9600,middle,False
+10902, adopt,1,0,1,9600,low,False
+10905, executive,1,0,1,9600,low,False
+10916, technical,1,1,0,9600,low,False
+10924, bot,2,0,2,9600,middle,False
+10946, Jo,1,1,0,9600,low,False
+10951, massive,1,0,1,9600,low,False
+10953, measures,2,2,0,9600,middle,False
+10962, lay,1,0,1,9600,low,False
+10964, Their,1,0,1,9600,low,False
+10965,oul,1,0,1,9600,low,False
+10967, Where,3,3,0,9600,high,False
+10970, binding,1,0,1,9600,low,False
+10971, flight,1,0,1,9600,low,False
+10975, drugs,2,0,2,9600,middle,False
+10982, stated,2,2,0,9600,middle,False
+10984, east,1,0,1,9600,low,False
+10993, copies,1,0,1,9600,low,False
+11004, debate,1,0,1,9600,low,False
+11017, follows,3,3,0,9600,high,False
+11031, plane,3,3,0,9600,high,False
+11035,}\,1,1,0,9600,low,False
+11047, calculate,1,1,0,9600,low,False
+11050, efficient,1,1,0,9600,low,False
+11051, medium,2,0,2,9600,middle,False
+11064, proof,18,18,0,9600,high,False
+11067, sides,2,1,1,9600,middle,False
+11078, CD,8,2,6,9600,high,False
+11083,isting,1,0,1,9600,low,False
+11100, sac,1,0,1,9600,low,False
+11102, recommended,1,0,1,9600,low,False
+11105, discovered,1,1,0,9600,low,False
+11109,May,1,0,1,9600,low,False
+11129, vision,2,0,2,9600,middle,False
+11130,cy,1,0,1,9600,low,False
+11136, typically,2,0,2,9600,middle,False
+11137, causes,2,0,2,9600,middle,False
+11153, fashion,1,1,0,9600,low,False
+11159,issue,1,0,1,9600,low,False
+11170, encoding,1,0,1,9600,low,False
+11204,”.,1,1,0,9600,low,False
+11209,However,1,1,0,9600,low,False
+11220, developing,2,0,2,9600,middle,False
+11229, intelligence,1,1,0,9600,low,False
+11242,RY,1,0,1,9600,low,False
+11243, bigger,1,0,1,9600,low,False
+11245, famous,1,1,0,9600,low,False
+11247, explained,2,1,1,9600,middle,False
+11249, nuclear,2,0,2,9600,middle,False
+11250,-N,1,1,0,9600,low,False
+11251, crisis,2,0,2,9600,middle,False
+11253, answers,2,2,0,9600,middle,False
+11264, Cast,1,0,1,9600,low,False
+11276, authorities,1,0,1,9600,low,False
+11281,puter,1,1,0,9600,low,False
+11285, familiar,2,0,2,9600,middle,False
+11298, witness,1,1,0,9600,low,False
+11300, union,2,2,0,9600,middle,False
+11303, thoughts,1,0,1,9600,low,False
+11331, Ma,3,2,1,9600,high,False
+11338, hel,1,0,1,9600,low,False
+11341, ratio,1,0,1,9600,low,False
+11344, IL,1,0,1,9600,low,False
+11346,cap,1,1,0,9600,low,False
+11364, processes,3,0,3,9600,high,False
+11367, adds,2,0,2,9600,middle,False
+11368, entirely,1,1,0,9600,low,False
+11385, era,1,0,1,9600,low,False
+11406, dangerous,1,0,1,9600,low,False
+11426, Land,1,1,0,9600,low,False
+11436,""".
+
+",1,0,1,9600,low,False
+11445, Its,1,0,1,9600,low,False
+11449, experiences,1,0,1,9600,low,False
+11457, ordered,3,2,1,9600,high,False
+11458, evening,1,0,1,9600,low,False
+11476,-com,1,1,0,9600,low,False
+11482, extr,3,2,1,9600,high,False
+11483, chemical,2,0,2,9600,middle,False
+11497, coal,1,0,1,9600,low,False
+11508, leads,3,2,1,9600,high,False
+11523, introduced,3,3,0,9600,high,False
+11550, targets,1,0,1,9600,low,False
+11553,sex,1,0,1,9600,low,False
+11577, extended,1,1,0,9600,low,False
+11581, Non,1,1,0,9600,low,False
+11582,-ch,1,0,1,9600,low,False
+11586, Environment,1,0,1,9600,low,False
+11616,°,1,1,0,9600,low,False
+11625, solve,5,5,0,9600,high,False
+11627, nine,2,2,0,9600,middle,False
+11639, frequency,3,2,1,9600,high,False
+11643, African,1,0,1,9600,low,False
+11647, experts,1,1,0,9600,low,False
+11649, depending,1,0,1,9600,low,False
+11658, concerned,1,0,1,9600,low,False
+11680,uent,3,3,0,9600,high,False
+11683,except,3,2,1,9600,high,False
+11689, specifically,2,0,2,9600,middle,False
+11702, Equ,1,1,0,9600,low,False
+11706,ogen,2,0,2,9600,middle,False
+11722, bear,3,0,3,9600,high,False
+11733, Both,2,0,2,9600,middle,False
+11743, ([,1,1,0,9600,low,False
+11799, differences,3,0,3,9600,high,False
+11811, researchers,3,0,3,9600,high,False
+11816, illegal,2,0,2,9600,middle,False
+11823, pp,1,1,0,9600,low,False
+11827, suggested,2,2,0,9600,middle,False
+11829,aching,1,0,1,9600,low,False
+11834, mu,1,0,1,9600,low,False
+11836,ifiers,1,0,1,9600,low,False
+11866,hal,2,0,2,9600,middle,False
+11871, relationships,2,0,2,9600,middle,False
+11876, Louis,3,2,1,9600,high,False
+11889, unable,1,1,0,9600,low,False
+11896,elly,1,1,0,9600,low,False
+11912, advance,1,1,0,9600,low,False
+11918,rog,1,0,1,9600,low,False
+11929, signs,1,1,0,9600,low,False
+11931, letters,1,1,0,9600,low,False
+11936, vertex,1,1,0,9600,low,False
+11941, significantly,1,0,1,9600,low,False
+11942, ec,1,0,1,9600,low,False
+11958, bird,1,0,1,9600,low,False
+11961,HS,2,0,2,9600,middle,False
+11997, impossible,1,1,0,9600,low,False
+11998,aire,1,1,0,9600,low,False
+12030, Area,1,1,0,9600,low,False
+12032,hen,1,1,0,9600,low,False
+12040, relatively,1,0,1,9600,low,False
+12060, wave,4,4,0,9600,high,False
+12070,anz,1,1,0,9600,low,False
+12090, Instead,1,1,0,9600,low,False
+12094, speaking,1,1,0,9600,low,False
+12095, Paris,1,1,0,9600,low,False
+12102, IB,2,0,2,9600,middle,False
+12108,rical,1,1,0,9600,low,False
+12111, algorithm,6,6,0,9600,high,False
+12114, numerous,1,0,1,9600,low,False
+12118, prove,4,4,0,9600,high,False
+12140, vertical,5,4,1,9600,high,False
+12158, environmental,4,0,4,9600,high,False
+12159, corresponding,2,2,0,9600,middle,False
+12170, occur,2,0,2,9600,middle,False
+12182, eating,1,0,1,9600,low,False
+12240,ematic,1,1,0,9600,low,False
+12264, trouble,2,2,0,9600,middle,False
+12270, Mexico,1,0,1,9600,low,False
+12291, waste,2,0,2,9600,middle,False
+12296, aid,2,1,1,9600,middle,False
+12299, passing,2,1,1,9600,middle,False
+12300, faces,1,0,1,9600,low,False
+12304, alle,1,0,1,9600,low,False
+12336,ered,1,0,1,9600,low,False
+12344, scientific,2,1,1,9600,middle,False
+12348, degrees,1,1,0,9600,low,False
+12392, attached,1,1,0,9600,low,False
+12396, figures,1,1,0,9600,low,False
+12408, trees,1,0,1,9600,low,False
+12429,stein,1,1,0,9600,low,False
+12440, correctly,1,1,0,9600,low,False
+12447,[c,1,1,0,9600,low,False
+12448, ---,1,1,0,9600,low,False
+12452,ician,3,0,3,9600,high,False
+12453, chapter,2,2,0,9600,middle,False
+12459, lambda,1,0,1,9600,low,False
+12460, distinct,2,0,2,9600,middle,False
+12475, Tre,2,0,2,9600,middle,False
+12493, pri,1,0,1,9600,low,False
+12499, carbon,2,0,2,9600,middle,False
+12510, tested,2,0,2,9600,middle,False
+12514, Cook,2,2,0,9600,middle,False
+12528, shell,2,0,2,9600,middle,False
+12537, youth,1,1,0,9600,low,False
+12538, techniques,1,1,0,9600,low,False
+12549,Since,1,0,1,9600,low,False
+12557, multip,2,2,0,9600,middle,False
+12564, compute,1,1,0,9600,low,False
+12570,sters,1,0,1,9600,low,False
+12575, replaced,2,2,0,9600,middle,False
+12579, matching,1,1,0,9600,low,False
+12598, adults,3,0,3,9600,high,False
+12621, spaces,5,5,0,9600,high,False
+12625,-box,1,0,1,9600,low,False
+12626, framework,1,0,1,9600,low,False
+12629, teaching,1,0,1,9600,low,False
+12641, quote,1,0,1,9600,low,False
+12646,-k,3,2,1,9600,high,False
+12650, importance,1,0,1,9600,low,False
+12658,Thanks,1,1,0,9600,low,False
+12660,ova,1,1,0,9600,low,False
+12671, circle,7,7,0,9600,high,False
+12677, humans,4,0,4,9600,high,False
+12679,ographic,1,1,0,9600,low,False
+12681,-like,2,2,0,9600,middle,False
+12684, votes,1,1,0,9600,low,False
+12685, desired,1,1,0,9600,low,False
+12695, rotation,1,1,0,9600,low,False
+12712, Guide,1,1,0,9600,low,False
+12715,aman,3,3,0,9600,high,False
+12720, reaction,2,0,2,9600,middle,False
+12726, readers,2,1,1,9600,middle,False
+12738,zo,1,0,1,9600,low,False
+12743, gest,1,0,1,9600,low,False
+12744, hist,2,0,2,9600,middle,False
+12746, orphan,1,0,1,9600,low,False
+12762,abil,1,0,1,9600,low,False
+12767, vast,1,1,0,9600,low,False
+12768,Real,1,1,0,9600,low,False
+12771, picked,1,1,0,9600,low,False
+12785, industrial,1,0,1,9600,low,False
+12803,",x",4,4,0,9600,high,False
+12804, division,2,0,2,9600,middle,False
+12812, Na,1,0,1,9600,low,False
+12818, extent,2,0,2,9600,middle,False
+12820,VA,1,1,0,9600,low,False
+12822, edges,1,1,0,9600,low,False
+12824, indeed,2,2,0,9600,middle,False
+12829, kinds,1,1,0,9600,low,False
+12833, protein,15,0,15,9600,high,False
+12850, matters,1,1,0,9600,low,False
+12872, contrast,4,0,4,9600,high,False
+12888,anny,1,1,0,9600,low,False
+12894, bundle,1,1,0,9600,low,False
+12895,Could,1,0,1,9600,low,False
+12897,-id,2,1,1,9600,middle,False
+12917,eres,1,0,1,9600,low,False
+12942, resulting,3,1,2,9600,high,False
+12943, estimated,1,0,1,9600,low,False
+12944, improved,1,0,1,9600,low,False
+12947,$.,5,5,0,9600,high,False
+12949,Like,1,0,1,9600,low,False
+12958,ogram,3,0,3,9600,high,False
+12970,perience,1,0,1,9600,low,False
+12979,CB,1,0,1,9600,low,False
+12985, contained,3,2,1,9600,high,False
+13009, agents,1,0,1,9600,low,False
+13012, hint,1,0,1,9600,low,False
+13036, extend,2,2,0,9600,middle,False
+13041, meat,1,0,1,9600,low,False
+13057, perspective,1,1,0,9600,low,False
+13059, Sn,1,1,0,9600,low,False
+13064, facts,2,2,0,9600,middle,False
+13079,John,1,1,0,9600,low,False
+13129,rank,1,0,1,9600,low,False
+13133, shouldn,1,1,0,9600,low,False
+13137, helper,1,0,1,9600,low,False
+13142, statistics,3,3,0,9600,high,False
+13143, beauty,1,1,0,9600,low,False
+13163, sugar,1,0,1,9600,low,False
+13166, observed,3,1,2,9600,high,False
+13173,orem,5,5,0,9600,high,False
+13176,etect,1,0,1,9600,low,False
+13184,once,1,1,0,9600,low,False
+13214, originally,2,0,2,9600,middle,False
+13221, basically,4,1,3,9600,high,False
+13233,bf,1,1,0,9600,low,False
+13234, connections,2,1,1,9600,middle,False
+13235, Before,1,0,1,9600,low,False
+13276, reasonable,2,1,1,9600,middle,False
+13282, Fox,1,0,1,9600,low,False
+13289, vary,1,1,0,9600,low,False
+13293, Another,1,1,0,9600,low,False
+13302, expressed,2,1,1,9600,middle,False
+13307,iously,1,1,0,9600,low,False
+13314,Example,1,1,0,9600,low,False
+13322, Four,2,1,1,9600,middle,False
+13334,aka,1,1,0,9600,low,False
+13336, teachers,2,2,0,9600,middle,False
+13352, stands,1,1,0,9600,low,False
+13369, Australian,3,1,2,9600,high,False
+13372,contains,2,2,0,9600,middle,False
+13394,Also,1,0,1,9600,low,False
+13406, filters,2,2,0,9600,middle,False
+13430, powers,1,1,0,9600,low,False
+13431,-E,1,1,0,9600,low,False
+13438,iest,1,0,1,9600,low,False
+13440, beta,1,0,1,9600,low,False
+13475, usual,2,1,1,9600,middle,False
+13482, linear,4,4,0,9600,high,False
+13495, symptoms,1,0,1,9600,low,False
+13530, pairs,2,1,1,9600,middle,False
+13549, diagram,3,3,0,9600,high,False
+13553, attempts,2,1,1,9600,middle,False
+13570, widely,2,0,2,9600,middle,False
+13578, equivalent,9,9,0,9600,high,False
+13601,ori,1,0,1,9600,low,False
+13604, regions,1,0,1,9600,low,False
+13605, believes,1,0,1,9600,low,False
+13617, layers,1,0,1,9600,low,False
+13621, acid,8,0,8,9600,high,False
+13622, Asia,2,0,2,9600,middle,False
+13630, Wild,1,0,1,9600,low,False
+13638, forest,2,0,2,9600,middle,False
+13642, Window,1,0,1,9600,low,False
+13643, resistance,2,0,2,9600,middle,False
+13656, historical,1,1,0,9600,low,False
+13666, occurs,6,3,3,9600,high,False
+13671, yesterday,1,0,1,9600,low,False
+13675, alive,1,1,0,9600,low,False
+13712, vacc,2,0,2,9600,middle,False
+13718,bat,1,0,1,9600,low,False
+13719, finds,2,1,1,9600,middle,False
+13757,away,1,0,1,9600,low,False
+13759, Again,1,0,1,9600,low,False
+13767, react,1,0,1,9600,low,False
+13771, largely,2,0,2,9600,middle,False
+13772, diss,1,1,0,9600,low,False
+13776, corn,1,1,0,9600,low,False
+13779, fruit,1,0,1,9600,low,False
+13794, uniform,2,2,0,9600,middle,False
+13796,lar,1,1,0,9600,low,False
+13798, depends,4,3,1,9600,high,False
+13814, frequently,1,0,1,9600,low,False
+13833, ancient,4,2,2,9600,high,False
+13862, referred,2,0,2,9600,middle,False
+13876, brown,2,0,2,9600,middle,False
+13885, existence,2,0,2,9600,middle,False
+13897, Ty,1,0,1,9600,low,False
+13904,-related,2,0,2,9600,middle,False
+13907, Lesser,1,0,1,9600,low,False
+13912, codes,1,0,1,9600,low,False
+13914, writes,1,1,0,9600,low,False
+13923, scientists,2,0,2,9600,middle,False
+13929, sight,2,0,2,9600,middle,False
+13934, coordinates,10,9,1,9600,high,False
+13938, grew,1,1,0,9600,low,False
+13942, perfectly,2,2,0,9600,middle,False
+13970, slowly,1,1,0,9600,low,False
+13972, Cell,3,0,3,9600,high,False
+13980, courses,1,1,0,9600,low,False
+13993,oda,1,0,1,9600,low,False
+14002, opposite,2,1,1,9600,middle,False
+14006, enjoyed,1,1,0,9600,low,False
+14011,onic,3,0,3,9600,high,False
+14016, sufficient,1,1,0,9600,low,False
+14018, phen,1,0,1,9600,low,False
+14037,Another,1,0,1,9600,low,False
+14043, maps,2,2,0,9600,middle,False
+14046, nearby,2,1,1,9600,middle,False
+14085,$$,1,1,0,9600,low,False
+14096,Student,1,1,0,9600,low,False
+14101, Ha,1,1,0,9600,low,False
+14105,ingers,1,0,1,9600,low,False
+14122, formed,2,1,1,9600,middle,False
+14137, AB,3,2,1,9600,high,False
+14138, fairly,1,1,0,9600,low,False
+14164, bridge,1,0,1,9600,low,False
+14175, concrete,2,2,0,9600,middle,False
+14201, legs,1,0,1,9600,low,False
+14212,otic,1,1,0,9600,low,False
+14226, extreme,2,0,2,9600,middle,False
+14227, professor,2,1,1,9600,middle,False
+14235, Da,1,1,0,9600,low,False
+14246, secondary,3,0,3,9600,high,False
+14257, derived,5,3,2,9600,high,False
+14260, typical,4,1,3,9600,high,False
+14262, bounds,1,1,0,9600,low,False
+14285, walls,5,2,3,9600,high,False
+14301, Thus,2,2,0,9600,middle,False
+14302, Stone,1,1,0,9600,low,False
+14303, appeal,2,2,0,9600,middle,False
+14308,ulf,1,0,1,9600,low,False
+14312, necessarily,4,3,1,9600,high,False
+14322, Ba,1,0,1,9600,low,False
+14324, weights,1,1,0,9600,low,False
+14338, exposure,2,0,2,9600,middle,False
+14381, causing,1,0,1,9600,low,False
+14389, structures,4,1,3,9600,high,False
+14413, Ca,1,1,0,9600,low,False
+14418, magazine,1,0,1,9600,low,False
+14460, ii,1,0,1,9600,low,False
+14461, expansion,4,4,0,9600,high,False
+14507, responses,1,0,1,9600,low,False
+14538, giant,1,0,1,9600,low,False
+14548, collected,2,1,1,9600,middle,False
+14576, mainly,3,1,2,9600,high,False
+14579, counts,1,1,0,9600,low,False
+14582,Question,1,1,0,9600,low,False
+14587, mile,1,1,0,9600,low,False
+14590, surrounding,1,0,1,9600,low,False
+14601, asc,1,0,1,9600,low,False
+14613, findings,2,0,2,9600,middle,False
+14614, assembly,2,0,2,9600,middle,False
+14616, remained,1,0,1,9600,low,False
+14626, Yet,1,0,1,9600,low,False
+14652, cable,4,0,4,9600,high,False
+14671, Little,2,0,2,9600,middle,False
+14693, Storage,1,1,0,9600,low,False
+14696, somewhere,2,1,1,9600,middle,False
+14713, amounts,1,0,1,9600,low,False
+14744, entities,1,1,0,9600,low,False
+14764, drawn,3,3,0,9600,high,False
+14768,atin,2,0,2,9600,middle,False
+14771,!\,1,1,0,9600,low,False
+14791, interior,3,3,0,9600,high,False
+14806, formula,3,2,1,9600,high,False
+14807, indicates,1,1,0,9600,low,False
+14851, mature,6,0,6,9600,high,False
+14862, gene,11,0,11,9600,high,False
+14865, MIT,1,0,1,9600,low,False
+14877,bro,1,0,1,9600,low,False
+14878, subjects,1,1,0,9600,low,False
+14894, whe,1,0,1,9600,low,False
+14917, Systems,1,1,0,9600,low,False
+14927, Charles,1,0,1,9600,low,False
+14938, tub,6,0,6,9600,high,False
+14945,uzzle,1,1,0,9600,low,False
+14955,"],[",1,1,0,9600,low,False
+14975, recognized,2,1,1,9600,middle,False
+14976, practical,1,1,0,9600,low,False
+14986,Power,1,1,0,9600,low,False
+14995,olding,1,0,1,9600,low,False
+15043, realized,1,0,1,9600,low,False
+15057, references,1,0,1,9600,low,False
+15072, Kingdom,1,0,1,9600,low,False
+15086,atable,1,1,0,9600,low,False
+15087,)$,5,5,0,9600,high,False
+15097, clothes,1,1,0,9600,low,False
+15099, activation,3,0,3,9600,high,False
+15102, initially,1,0,1,9600,low,False
+15110,proto,1,0,1,9600,low,False
+15115, Joseph,1,1,0,9600,low,False
+15129, permitted,1,0,1,9600,low,False
+15132, Such,1,0,1,9600,low,False
+15136,times,1,1,0,9600,low,False
+15148, closely,1,0,1,9600,low,False
+15149,etry,2,2,0,9600,middle,False
+15153,igest,1,0,1,9600,low,False
+15159,_{,10,10,0,9600,high,False
+15170,}{,1,1,0,9600,low,False
+15172, valuable,1,0,1,9600,low,False
+15175, stable,1,1,0,9600,low,False
+15190, Tax,1,1,0,9600,low,False
+15201,elled,1,0,1,9600,low,False
+15218, possess,2,1,1,9600,middle,False
+15223, horse,1,1,0,9600,low,False
+15247,sha,1,1,0,9600,low,False
+15261,iph,1,0,1,9600,low,False
+15271, latter,2,2,0,9600,middle,False
+15277, Therefore,1,1,0,9600,low,False
+15279, parallel,4,4,0,9600,high,False
+15282, recognize,1,1,0,9600,low,False
+15293, consumption,1,0,1,9600,low,False
+15308, Very,1,0,1,9600,low,False
+15330, permanent,1,0,1,9600,low,False
+15341,ariant,1,1,0,9600,low,False
+15379, evolution,1,0,1,9600,low,False
+15388,portion,1,1,0,9600,low,False
+15392, Gi,1,0,1,9600,low,False
+15394, tum,4,0,4,9600,high,False
+15418,quiv,1,1,0,9600,low,False
+15430, thin,1,0,1,9600,low,False
+15433, Os,1,1,0,9600,low,False
+15448, lies,2,2,0,9600,middle,False
+15473, programming,3,3,0,9600,high,False
+15484, regardless,1,0,1,9600,low,False
+15486,ulating,1,0,1,9600,low,False
+15494, universe,1,1,0,9600,low,False
+15496, presentation,1,1,0,9600,low,False
+15502, regularly,1,1,0,9600,low,False
+15503, primarily,1,0,1,9600,low,False
+15551, inject,2,2,0,9600,middle,False
+15552, DNA,6,1,5,9600,high,False
+15562, zoom,1,1,0,9600,low,False
+15564,pecific,1,0,1,9600,low,False
+15576, respectively,2,2,0,9600,middle,False
+15587,pic,1,0,1,9600,low,False
+15590, fluid,1,0,1,9600,low,False
+15594,BN,1,0,1,9600,low,False
+15614, accessible,1,1,0,9600,low,False
+15626, tensor,1,1,0,9600,low,False
+15629, functional,1,0,1,9600,low,False
+15662, urban,1,0,1,9600,low,False
+15668, voting,1,1,0,9600,low,False
+15679, falling,1,1,0,9600,low,False
+15681, Pa,2,0,2,9600,middle,False
+15712, medicine,1,0,1,9600,low,False
+15750, harder,1,0,1,9600,low,False
+15780,proof,1,1,0,9600,low,False
+15791, essentially,1,0,1,9600,low,False
+15811, fundamental,1,1,0,9600,low,False
+15815, Academy,1,0,1,9600,low,False
+15864,ented,1,1,0,9600,low,False
+15908, formal,1,1,0,9600,low,False
+15938,acht,1,0,1,9600,low,False
+15940,sin,2,2,0,9600,middle,False
+15976,theta,5,5,0,9600,high,False
+15985, understood,2,1,1,9600,middle,False
+15986,His,1,0,1,9600,low,False
+16014,During,2,0,2,9600,middle,False
+16061, locked,1,0,1,9600,low,False
+16083, everybody,1,0,1,9600,low,False
+16093, writers,1,0,1,9600,low,False
+16098, Bat,7,0,7,9600,high,False
+16099, converted,2,2,0,9600,middle,False
+16100,eding,1,0,1,9600,low,False
+16106,mid,2,2,0,9600,middle,False
+16119,dot,1,1,0,9600,low,False
+16126,mitter,1,0,1,9600,low,False
+16155,ologist,1,0,1,9600,low,False
+16158, chicken,1,0,1,9600,low,False
+16168, =================================================================,1,1,0,9600,low,False
+16184, coordinate,1,1,0,9600,low,False
+16202, horizontal,1,1,0,9600,low,False
+16211, passes,1,1,0,9600,low,False
+16216, sensitive,1,0,1,9600,low,False
+16217, tall,2,0,2,9600,middle,False
+16230, interaction,1,0,1,9600,low,False
+16231,abetes,1,0,1,9600,low,False
+16244, Southern,2,1,1,9600,middle,False
+16259, Queen,1,1,0,9600,low,False
+16266, foundation,1,0,1,9600,low,False
+16278,-bl,1,0,1,9600,low,False
+16282, interact,2,0,2,9600,middle,False
+16307, flying,2,0,2,9600,middle,False
+16340,etric,3,3,0,9600,high,False
+16341,/P,1,0,1,9600,low,False
+16347,orph,1,0,1,9600,low,False
+16356,XY,1,0,1,9600,low,False
+16367,oped,1,1,0,9600,low,False
+16376, extensive,1,1,0,9600,low,False
+16380, performing,1,1,0,9600,low,False
+16400, reveal,2,1,1,9600,middle,False
+16407, constitution,1,0,1,9600,low,False
+16439, Taylor,2,2,0,9600,middle,False
+16441, responded,1,0,1,9600,low,False
+16462, Pacific,1,0,1,9600,low,False
+16483,etermin,1,1,0,9600,low,False
+16516, Weight,1,1,0,9600,low,False
+16533, underlying,2,1,1,9600,middle,False
+16555, describes,2,1,1,9600,middle,False
+16574,-point,2,2,0,9600,middle,False
+16588, calculated,1,1,0,9600,low,False
+16608, Fish,1,0,1,9600,low,False
+16622, proven,3,2,1,9600,high,False
+16626, commonly,1,0,1,9600,low,False
+16642, Professor,2,1,1,9600,middle,False
+16643, hydro,1,0,1,9600,low,False
+16645, organized,1,0,1,9600,low,False
+16654, FR,1,1,0,9600,low,False
+16691, emit,1,0,1,9600,low,False
+16725, orientation,2,2,0,9600,middle,False
+16759, Sir,1,0,1,9600,low,False
+16770, virus,2,0,2,9600,middle,False
+16776,iste,1,1,0,9600,low,False
+16790, applies,1,1,0,9600,low,False
+16800, introduction,3,0,3,9600,high,False
+16827,phi,4,4,0,9600,high,False
+16830, compact,11,11,0,9600,high,False
+16852, everywhere,2,1,1,9600,middle,False
+16858, Building,1,1,0,9600,low,False
+16876, waves,1,1,0,9600,low,False
+16882, shoulder,1,0,1,9600,low,False
+16905, bio,1,0,1,9600,low,False
+16911, Zealand,5,1,4,9600,high,False
+16925, somehow,1,0,1,9600,low,False
+16938, Arizona,1,0,1,9600,low,False
+16953, mechanism,1,0,1,9600,low,False
+16960,oids,1,0,1,9600,low,False
+16963, chances,1,0,1,9600,low,False
+16965, complicated,1,1,0,9600,low,False
+16974,onomy,1,0,1,9600,low,False
+16982, constraints,1,1,0,9600,low,False
+16992, propag,1,0,1,9600,low,False
+16999, behaviour,2,1,1,9600,middle,False
+17003, challenging,1,1,0,9600,low,False
+17006, captured,1,0,1,9600,low,False
+17042, fitness,1,0,1,9600,low,False
+17045, serves,2,0,2,9600,middle,False
+17047, geometry,11,11,0,9600,high,False
+17071, hyper,1,1,0,9600,low,False
+17073, twenty,1,1,0,9600,low,False
+17091,  ,3,3,0,9600,high,False
+17112, targeted,1,0,1,9600,low,False
+17167, consists,1,1,0,9600,low,False
+17171, soil,2,0,2,9600,middle,False
+17188, rely,2,0,2,9600,middle,False
+17194, quotes,1,1,0,9600,low,False
+17201, attempted,1,0,1,9600,low,False
+17206, literature,1,1,0,9600,low,False
+17228, vertices,4,4,0,9600,high,False
+17259,",[",7,0,7,9600,high,False
+17267, roughly,3,3,0,9600,high,False
+17272,inator,1,1,0,9600,low,False
+17289, signals,1,0,1,9600,low,False
+17294, personality,1,0,1,9600,low,False
+17345, alg,2,2,0,9600,middle,False
+17366,etr,3,3,0,9600,high,False
+17377, minimal,3,2,1,9600,high,False
+17387, producing,1,0,1,9600,low,False
+17408, ruling,1,1,0,9600,low,False
+17420, subsequent,1,0,1,9600,low,False
+17433,cribed,1,0,1,9600,low,False
+17436,annon,1,1,0,9600,low,False
+17452, characteristics,2,0,2,9600,middle,False
+17454,eln,1,1,0,9600,low,False
+17473, definitions,1,1,0,9600,low,False
+17508, principle,5,1,4,9600,high,False
+17545, gray,4,0,4,9600,high,False
+17556,thetic,2,0,2,9600,middle,False
+17569,iac,1,0,1,9600,low,False
+17599, Henry,1,1,0,9600,low,False
+17601, involves,2,1,1,9600,middle,False
+17697, survive,2,0,2,9600,middle,False
+17699, jun,1,1,0,9600,low,False
+17702, fifth,1,1,0,9600,low,False
+17715, Despite,1,0,1,9600,low,False
+17721, Mouse,1,0,1,9600,low,False
+17736, threats,1,0,1,9600,low,False
+17748, Cy,1,1,0,9600,low,False
+17769, Reading,1,0,1,9600,low,False
+17773, neuro,1,0,1,9600,low,False
+17779, divided,2,2,0,9600,middle,False
+17798, Hay,1,1,0,9600,low,False
+17821, transparent,1,0,1,9600,low,False
+17843, recognition,1,1,0,9600,low,False
+17858,udy,1,1,0,9600,low,False
+17859, gut,1,0,1,9600,low,False
+17860, Greek,2,2,0,9600,middle,False
+17872,elter,1,0,1,9600,low,False
+17879, consideration,1,1,0,9600,low,False
+17884, Bell,1,1,0,9600,low,False
+17921, arrow,2,2,0,9600,middle,False
+17933, stops,1,0,1,9600,low,False
+17935,)|,1,1,0,9600,low,False
+17949,Because,1,0,1,9600,low,False
+17951, ocean,3,0,3,9600,high,False
+17970, delight,1,1,0,9600,low,False
+17975, preparation,1,0,1,9600,low,False
+18003, formation,2,0,2,9600,middle,False
+18020, blind,1,0,1,9600,low,False
+18028, Eastern,1,0,1,9600,low,False
+18035, historic,1,0,1,9600,low,False
+18040, BC,2,2,0,9600,middle,False
+18055,itivity,1,1,0,9600,low,False
+18070, southern,4,0,4,9600,high,False
+18072, macro,3,0,3,9600,high,False
+18130, rewrite,1,1,0,9600,low,False
+18145, scholar,1,1,0,9600,low,False
+18154, demands,1,0,1,9600,low,False
+18157, Micro,4,0,4,9600,high,False
+18166,hou,1,1,0,9600,low,False
+18169, joining,1,1,0,9600,low,False
+18170,fish,2,0,2,9600,middle,False
+18172, northern,4,0,4,9600,high,False
+18212, pert,4,4,0,9600,high,False
+18266, metric,1,1,0,9600,low,False
+18308, equally,2,1,1,9600,middle,False
+18310, concerning,1,0,1,9600,low,False
+18335, discovery,3,1,2,9600,high,False
+18337,obi,2,0,2,9600,middle,False
+18346, periods,1,1,0,9600,low,False
+18368, transmission,1,0,1,9600,low,False
+18379, enhance,2,1,1,9600,middle,False
+18431,olds,1,1,0,9600,low,False
+18448, Natural,1,0,1,9600,low,False
+18491, oct,3,0,3,9600,high,False
+18494, western,3,0,3,9600,high,False
+18521, rarely,1,0,1,9600,low,False
+18523,opes,1,0,1,9600,low,False
+18577, answered,1,1,0,9600,low,False
+18579, dual,2,1,1,9600,middle,False
+18589,-one,2,2,0,9600,middle,False
+18617, pandas,2,0,2,9600,middle,False
+18637, Medicine,1,0,1,9600,low,False
+18644, produces,3,1,2,9600,high,False
+18651, proved,4,3,1,9600,high,False
+18653, defines,1,1,0,9600,low,False
+18677,icit,1,0,1,9600,low,False
+18696, favourite,1,0,1,9600,low,False
+18732, boundary,5,4,1,9600,high,False
+18740, meg,1,0,1,9600,low,False
+18741, zo,2,0,2,9600,middle,False
+18765, Perhaps,1,1,0,9600,low,False
+18779,-al,2,2,0,9600,middle,False
+18784, Oregon,1,0,1,9600,low,False
+18796, Columbia,1,0,1,9600,low,False
+18805, eggs,4,0,4,9600,high,False
+18810, lemma,1,1,0,9600,low,False
+18812,lings,1,0,1,9600,low,False
+18813, gym,1,0,1,9600,low,False
+18834, Pattern,1,0,1,9600,low,False
+18875, greatly,1,0,1,9600,low,False
+18886, suck,1,0,1,9600,low,False
+18888, Et,1,0,1,9600,low,False
+18894, intense,1,1,0,9600,low,False
+18906,-specific,1,1,0,9600,low,False
+18923, memories,1,1,0,9600,low,False
+18927, probability,6,6,0,9600,high,False
+18929, genetic,5,0,5,9600,high,False
+18940, concepts,1,1,0,9600,low,False
+18950, applying,1,1,0,9600,low,False
+18955,orts,2,0,2,9600,middle,False
+18958,eye,1,0,1,9600,low,False
+18971, Song,1,1,0,9600,low,False
+18984,family,2,0,2,9600,middle,False
+19029, movements,2,0,2,9600,middle,False
+19032, communicate,1,0,1,9600,low,False
+19043, α,1,0,1,9600,low,False
+19070,    ,2,2,0,9600,middle,False
+19072, EP,1,0,1,9600,low,False
+19080, trials,4,4,0,9600,high,False
+19098,sure,1,1,0,9600,low,False
+19099,pot,3,0,3,9600,high,False
+19110, assumed,1,1,0,9600,low,False
+19127,beta,1,1,0,9600,low,False
+19130,-field,1,1,0,9600,low,False
+19138, edited,1,0,1,9600,low,False
+19197, mic,1,0,1,9600,low,False
+19225, fingers,1,0,1,9600,low,False
+19246, intersection,1,1,0,9600,low,False
+19256, regulation,2,0,2,9600,middle,False
+19257, refers,6,1,5,9600,high,False
+19258, destruction,1,0,1,9600,low,False
+19259, continuous,2,1,1,9600,middle,False
+19267, disorder,1,0,1,9600,low,False
+19268,flash,1,0,1,9600,low,False
+19313, conver,1,1,0,9600,low,False
+19325, portions,1,1,0,9600,low,False
+19334, viewed,1,1,0,9600,low,False
+19368,share,3,1,2,9600,high,False
+19370, PT,5,5,0,9600,high,False
+19425,ulus,1,0,1,9600,low,False
+19469, aimed,2,1,1,9600,middle,False
+19472, wrapped,1,0,1,9600,low,False
+19476, studied,5,2,3,9600,high,False
+19482, syntax,1,1,0,9600,low,False
+19516, identical,3,1,2,9600,high,False
+19527, satisfied,1,1,0,9600,low,False
+19563, vulnerable,1,0,1,9600,low,False
+19576,Green,1,0,1,9600,low,False
+19578, smoking,1,0,1,9600,low,False
+19619, gains,1,0,1,9600,low,False
+19625,-V,3,3,0,9600,high,False
+19638,nm,2,0,2,9600,middle,False
+19639, prediction,1,1,0,9600,low,False
+19654, birds,4,0,4,9600,high,False
+19660, flu,3,0,3,9600,high,False
+19661, survival,1,0,1,9600,low,False
+19680, managers,1,0,1,9600,low,False
+19703, roots,2,2,0,9600,middle,False
+19721, extensions,1,1,0,9600,low,False
+19734, electrical,1,0,1,9600,low,False
+19753, stability,1,0,1,9600,low,False
+19754, diabetes,4,0,4,9600,high,False
+19810,Despite,1,0,1,9600,low,False
+19836, unlike,1,0,1,9600,low,False
+19847, tissue,4,0,4,9600,high,False
+19853, whereas,1,0,1,9600,low,False
+19869, demonstrate,2,0,2,9600,middle,False
+19879, temperatures,1,0,1,9600,low,False
+19892,-un,1,1,0,9600,low,False
+19929, Ger,2,0,2,9600,middle,False
+19931,unct,2,0,2,9600,middle,False
+19948, fishing,1,0,1,9600,low,False
+19950, concentration,2,0,2,9600,middle,False
+19961,fold,1,0,1,9600,low,False
+19988, Forest,4,0,4,9600,high,False
+19991,amine,2,0,2,9600,middle,False
+19999,{-,2,2,0,9600,middle,False
+20013, wing,4,0,4,9600,high,False
+20021, nan,1,0,1,9600,low,False
+20027, meets,1,0,1,9600,low,False
+20131, rib,1,0,1,9600,low,False
+20142, inhib,1,0,1,9600,low,False
+20172,elo,1,1,0,9600,low,False
+20173, Students,1,1,0,9600,low,False
+20181, visitor,1,0,1,9600,low,False
+20254, sigma,1,1,0,9600,low,False
+20269, surf,1,0,1,9600,low,False
+20277,Delta,3,3,0,9600,high,False
+20278, limitation,2,0,2,9600,middle,False
+20286, Large,1,0,1,9600,low,False
+20315,aneously,1,0,1,9600,low,False
+20329, cod,3,3,0,9600,high,False
+20334, blend,1,1,0,9600,low,False
+20337, maintaining,1,0,1,9600,low,False
+20346, constructed,3,3,0,9600,high,False
+20429, SPI,1,1,0,9600,low,False
+20438, indicator,1,0,1,9600,low,False
+20443, artificial,2,1,1,9600,middle,False
+20469, prominent,2,2,0,9600,middle,False
+20473,ardo,1,0,1,9600,low,False
+20498, encoded,3,0,3,9600,high,False
+20504, neu,3,0,3,9600,high,False
+20520, waters,1,0,1,9600,low,False
+20527,ishes,1,1,0,9600,low,False
+20589, rod,1,0,1,9600,low,False
+20628, neutral,1,1,0,9600,low,False
+20629,Both,1,0,1,9600,low,False
+20631, horn,1,0,1,9600,low,False
+20671, blast,1,0,1,9600,low,False
+20690, Being,1,0,1,9600,low,False
+20692, conventional,1,0,1,9600,low,False
+20699, consistently,1,0,1,9600,low,False
+20727, genes,4,0,4,9600,high,False
+20740, Mi,1,1,0,9600,low,False
+20753, interactive,1,1,0,9600,low,False
+20757, frequent,1,1,0,9600,low,False
+20776,ilder,1,0,1,9600,low,False
+20803, ranks,3,0,3,9600,high,False
+20815, unc,1,1,0,9600,low,False
+20816, shapes,1,0,1,9600,low,False
+20855,omial,1,1,0,9600,low,False
+20882, digest,2,0,2,9600,middle,False
+20892, bands,2,2,0,9600,middle,False
+20913, connecting,1,0,1,9600,low,False
+20927,eration,1,0,1,9600,low,False
+20961, examine,2,2,0,9600,middle,False
+20971, traveling,1,1,0,9600,low,False
+20975, explicitly,1,1,0,9600,low,False
+20976, mathematic,10,10,0,9600,high,False
+20981,learning,1,1,0,9600,low,False
+21009, hosted,1,0,1,9600,low,False
+21040, congress,1,1,0,9600,low,False
+21051, visits,1,0,1,9600,low,False
+21068, meth,1,0,1,9600,low,False
+21080, focusing,1,0,1,9600,low,False
+21085, passage,2,0,2,9600,middle,False
+21091, classified,2,0,2,9600,middle,False
+21101, outline,1,0,1,9600,low,False
+21104, Works,1,1,0,9600,low,False
+21112,fm,1,1,0,9600,low,False
+21113, divers,1,0,1,9600,low,False
+21132, picking,1,1,0,9600,low,False
+21144, Consider,2,2,0,9600,middle,False
+21161,actors,1,0,1,9600,low,False
+21163, myth,1,1,0,9600,low,False
+21164, neur,1,0,1,9600,low,False
+21204, experiments,1,0,1,9600,low,False
+21211,uren,1,0,1,9600,low,False
+21212,+i,2,2,0,9600,middle,False
+21214, virtually,1,0,1,9600,low,False
+21239, striking,1,1,0,9600,low,False
+21283, ranges,1,0,1,9600,low,False
+21306,ologists,1,0,1,9600,low,False
+21309,-known,2,1,1,9600,middle,False
+21331, Nature,2,0,2,9600,middle,False
+21372, chrom,4,1,3,9600,high,False
+21389,-$,1,1,0,9600,low,False
+21392, Intelligence,1,0,1,9600,low,False
+21453,Try,1,1,0,9600,low,False
+21484, assumes,1,1,0,9600,low,False
+21495, triangle,4,4,0,9600,high,False
+21501, affects,2,1,1,9600,middle,False
+21520,"""This",1,0,1,9600,low,False
+21552,anno,1,0,1,9600,low,False
+21555, acceptable,1,1,0,9600,low,False
+21568, constraint,3,3,0,9600,high,False
+21575, Ocean,3,0,3,9600,high,False
+21595, measurements,1,0,1,9600,low,False
+21609, mol,1,0,1,9600,low,False
+21612, suspended,1,1,0,9600,low,False
+21615, projection,1,1,0,9600,low,False
+21669, rh,1,1,0,9600,low,False
+21675,"]
+
+
+",12,2,10,9600,high,False
+21677,—the,1,0,1,9600,low,False
+21685,Di,1,0,1,9600,low,False
+21687, exclude,1,0,1,9600,low,False
+21690, coc,6,0,6,9600,high,False
+21700, gentle,1,1,0,9600,low,False
+21720, voltage,3,0,3,9600,high,False
+21739, restricted,1,1,0,9600,low,False
+21764,Occ,1,1,0,9600,low,False
+21772, Pages,1,1,0,9600,low,False
+21777, equality,2,2,0,9600,middle,False
+21787, generations,1,0,1,9600,low,False
+21791, forma,1,0,1,9600,low,False
+21815, confused,2,2,0,9600,middle,False
+21828, solving,2,2,0,9600,middle,False
+21830,otypes,3,0,3,9600,high,False
+21855,atom,1,0,1,9600,low,False
+21880, interactions,4,0,4,9600,high,False
+21908,oline,1,0,1,9600,low,False
+21910, populations,2,0,2,9600,middle,False
+21930, observation,1,1,0,9600,low,False
+21944, pier,1,0,1,9600,low,False
+21955, closure,2,2,0,9600,middle,False
+21963, Eu,13,13,0,9600,high,False
+21985, activated,3,0,3,9600,high,False
+21992, emerged,1,1,0,9600,low,False
+21998, Carl,1,1,0,9600,low,False
+22032, longest,1,1,0,9600,low,False
+22051,ahan,1,0,1,9600,low,False
+22077, immune,4,0,4,9600,high,False
+22103, barrier,1,0,1,9600,low,False
+22174, soccer,1,1,0,9600,low,False
+22235, Islands,1,0,1,9600,low,False
+22240, notion,4,4,0,9600,high,False
+22324, cord,2,0,2,9600,middle,False
+22348, Indeed,1,1,0,9600,low,False
+22373,Ep,1,0,1,9600,low,False
+22375, Atlantic,1,0,1,9600,low,False
+22389, Utah,1,0,1,9600,low,False
+22393, Sciences,1,0,1,9600,low,False
+22420,.stack,1,1,0,9600,low,False
+22434,orses,1,1,0,9600,low,False
+22514, hunting,1,0,1,9600,low,False
+22517,amous,1,0,1,9600,low,False
+22531, mystery,1,0,1,9600,low,False
+22561, suggesting,1,0,1,9600,low,False
+22575, Vancouver,1,0,1,9600,low,False
+22596, nervous,4,0,4,9600,high,False
+22631,.ne,1,0,1,9600,low,False
+22646, stere,1,1,0,9600,low,False
+22664, HIV,3,0,3,9600,high,False
+22674, rubber,1,1,0,9600,low,False
+22692, describing,1,1,0,9600,low,False
+22703, requiring,1,1,0,9600,low,False
+22706, delayed,1,0,1,9600,low,False
+22730, Ban,1,1,0,9600,low,False
+22766, complement,5,5,0,9600,high,False
+22791, nest,1,0,1,9600,low,False
+22800, reproduce,1,0,1,9600,low,False
+22804, remarkable,1,0,1,9600,low,False
+22823, optimal,2,1,1,9600,middle,False
+22827, Moreover,2,2,0,9600,middle,False
+22845, interpretation,2,2,0,9600,middle,False
+22864, embedded,1,0,1,9600,low,False
+22870, sentences,1,1,0,9600,low,False
+22879, vectors,2,2,0,9600,middle,False
+22924,tel,1,0,1,9600,low,False
+22930, occasionally,1,1,0,9600,low,False
+22963, Marine,1,0,1,9600,low,False
+22970, coinc,1,1,0,9600,low,False
+22975,astro,1,0,1,9600,low,False
+23007, Bot,1,0,1,9600,low,False
+23033, diameter,1,0,1,9600,low,False
+23041, Pear,2,0,2,9600,middle,False
+23045, streams,2,0,2,9600,middle,False
+23057, encountered,1,1,0,9600,low,False
+23091, branches,1,0,1,9600,low,False
+23094, complexity,2,2,0,9600,middle,False
+23130, representatives,1,0,1,9600,low,False
+23156,ulates,2,2,0,9600,middle,False
+23157, bacteria,6,0,6,9600,high,False
+23201, Marg,1,1,0,9600,low,False
+23239, Perfect,1,1,0,9600,low,False
+23247,complex,1,1,0,9600,low,False
+23275, biological,2,0,2,9600,middle,False
+23294,environment,1,0,1,9600,low,False
+23296,building,1,1,0,9600,low,False
+23327, shorter,1,1,0,9600,low,False
+23375,ometric,1,1,0,9600,low,False
+23383,PACE,2,2,0,9600,middle,False
+23405, Furthermore,1,1,0,9600,low,False
+23415, composed,1,0,1,9600,low,False
+23490, locally,3,2,1,9600,high,False
+23513, oldest,1,0,1,9600,low,False
+23523, hol,2,2,0,9600,middle,False
+23525, Bio,1,0,1,9600,low,False
+23544,eph,1,0,1,9600,low,False
+23552, oxygen,2,0,2,9600,middle,False
+23558,aments,1,0,1,9600,low,False
+23560, precise,3,2,1,9600,high,False
+23591, Survey,1,1,0,9600,low,False
+23604, dip,1,0,1,9600,low,False
+23606, equation,2,1,1,9600,middle,False
+23607, possibilities,1,1,0,9600,low,False
+23609,osph,1,0,1,9600,low,False
+23638, precisely,1,1,0,9600,low,False
+23643, analyze,1,1,0,9600,low,False
+23686, tran,1,0,1,9600,low,False
+23689, satisfaction,3,3,0,9600,high,False
+23694, pig,1,0,1,9600,low,False
+23700, sequences,1,1,0,9600,low,False
+23721, compass,2,2,0,9600,middle,False
+23725, triple,1,1,0,9600,low,False
+23754," ?
+
+",1,1,0,9600,low,False
+23757, allocation,1,1,0,9600,low,False
+23759, structural,1,0,1,9600,low,False
+23782, widespread,2,0,2,9600,middle,False
+23783, mechanisms,2,0,2,9600,middle,False
+23788, fiber,1,0,1,9600,low,False
+23809, infinite,3,3,0,9600,high,False
+23810,-order,1,1,0,9600,low,False
+23815,zh,1,1,0,9600,low,False
+23839, considerable,1,0,1,9600,low,False
+23881,alg,1,0,1,9600,low,False
+23890, investigating,1,1,0,9600,low,False
+23893, Writing,1,0,1,9600,low,False
+23920, babies,1,0,1,9600,low,False
+23945, implies,1,1,0,9600,low,False
+23994, ranging,1,0,1,9600,low,False
+23998, ultra,1,1,0,9600,low,False
+24017, classroom,1,1,0,9600,low,False
+24035,eward,1,0,1,9600,low,False
+24037, males,4,0,4,9600,high,False
+24038, ONE,1,0,1,9600,low,False
+24047, placing,1,0,1,9600,low,False
+24050, thumb,1,0,1,9600,low,False
+24055, traits,2,0,2,9600,middle,False
+24098, tolerance,1,0,1,9600,low,False
+24129,igm,1,0,1,9600,low,False
+24145, Selection,1,0,1,9600,low,False
+24150, Currently,1,1,0,9600,low,False
+24154, implications,1,0,1,9600,low,False
+24168, arbitrary,1,1,0,9600,low,False
+24185, ri,1,1,0,9600,low,False
+24202,onal,1,0,1,9600,low,False
+24213, Yan,1,1,0,9600,low,False
+24231, computing,2,2,0,9600,middle,False
+24262, calories,1,0,1,9600,low,False
+24279,etics,2,0,2,9600,middle,False
+24295, existed,1,0,1,9600,low,False
+24339,法,1,0,1,9600,low,False
+24354, shed,2,0,2,9600,middle,False
+24382, fate,1,0,1,9600,low,False
+24391,":
+
+
+",1,1,0,9600,low,False
+24392, discussing,1,1,0,9600,low,False
+24430,GP,1,0,1,9600,low,False
+24438, rational,6,6,0,9600,high,False
+24456, dominant,1,0,1,9600,low,False
+24467, vaccine,4,0,4,9600,high,False
+24484, cycles,1,1,0,9600,low,False
+24495, Chen,2,0,2,9600,middle,False
+24543, DA,2,2,0,9600,middle,False
+24545, Industrial,1,1,0,9600,low,False
+24603,photos,1,0,1,9600,low,False
+24608,filters,1,1,0,9600,low,False
+24619,iele,1,1,0,9600,low,False
+24631, infr,1,0,1,9600,low,False
+24632, smallest,1,1,0,9600,low,False
+24660, polar,1,1,0,9600,low,False
+24675, cognitive,3,0,3,9600,high,False
+24691, nit,1,0,1,9600,low,False
+24705,yll,2,0,2,9600,middle,False
+24706, approached,1,1,0,9600,low,False
+24723,eway,1,0,1,9600,low,False
+24737, separation,1,0,1,9600,low,False
+24768, ×,1,1,0,9600,low,False
+24779,licity,2,2,0,9600,middle,False
+24818, =================,1,1,0,9600,low,False
+24844, phenomenon,1,0,1,9600,low,False
+24870, irre,1,1,0,9600,low,False
+24891, replacing,1,1,0,9600,low,False
+24892, sampling,7,7,0,9600,high,False
+24909, Russell,1,1,0,9600,low,False
+24938, decreased,1,1,0,9600,low,False
+24991, feeding,2,0,2,9600,middle,False
+24999, persistent,1,0,1,9600,low,False
+25026, pole,1,1,0,9600,low,False
+25031, sixth,1,1,0,9600,low,False
+25071, injection,1,1,0,9600,low,False
+25079, kingdom,2,0,2,9600,middle,False
+25094, Primary,1,0,1,9600,low,False
+25136,enne,2,2,0,9600,middle,False
+25156, separately,1,1,0,9600,low,False
+25185, algorithms,4,4,0,9600,high,False
+25188,rogen,1,0,1,9600,low,False
+25189, hoped,1,0,1,9600,low,False
+25202, legally,1,0,1,9600,low,False
+25248, determination,1,0,1,9600,low,False
+25262, optimization,1,1,0,9600,low,False
+25298, pap,4,0,4,9600,high,False
+25311, Examples,1,0,1,9600,low,False
+25322, fruits,1,0,1,9600,low,False
+25359,omer,2,0,2,9600,middle,False
+25362, circles,1,1,0,9600,low,False
+25373, unders,1,1,0,9600,low,False
+25382, mysterious,2,0,2,9600,middle,False
+25385, cave,1,0,1,9600,low,False
+25503,ienne,1,0,1,9600,low,False
+25506, liver,1,0,1,9600,low,False
+25514,/class,1,1,0,9600,low,False
+25553, Hop,3,3,0,9600,high,False
+25555,ctic,5,0,5,9600,high,False
+25588, correlation,1,1,0,9600,low,False
+25595, nutrition,1,0,1,9600,low,False
+25597, determining,1,1,0,9600,low,False
+25605,Plot,1,1,0,9600,low,False
+25648, fastest,1,0,1,9600,low,False
+25654, seeks,1,0,1,9600,low,False
+25685, Grey,1,0,1,9600,low,False
+25697, Hair,1,0,1,9600,low,False
+25722,finite,3,3,0,9600,high,False
+25747,-ad,2,2,0,9600,middle,False
+25764, Rather,1,1,0,9600,low,False
+25777, elegant,1,1,0,9600,low,False
+25780, integers,5,5,0,9600,high,False
+25879, conform,2,2,0,9600,middle,False
+25880,idal,1,0,1,9600,low,False
+25893, inquiry,1,1,0,9600,low,False
+25895, collecting,2,0,2,9600,middle,False
+25941, angles,2,2,0,9600,middle,False
+25989, insect,1,0,1,9600,low,False
+25993, subset,4,4,0,9600,high,False
+26003,itol,1,0,1,9600,low,False
+26012, variants,2,0,2,9600,middle,False
+26064, Buck,1,0,1,9600,low,False
+26083,gebra,1,1,0,9600,low,False
+26096, Scottish,1,1,0,9600,low,False
+26116, cure,1,0,1,9600,low,False
+26163, elevation,3,3,0,9600,high,False
+26164,flu,1,0,1,9600,low,False
+26204, wings,2,1,1,9600,middle,False
+26219, investigated,1,1,0,9600,low,False
+26242,olars,2,0,2,9600,middle,False
+26266,",\",2,2,0,9600,middle,False
+26312, defining,3,3,0,9600,high,False
+26361, regarded,2,1,1,9600,middle,False
+26374, mutation,2,0,2,9600,middle,False
+26437, Melbourne,1,0,1,9600,low,False
+26444,KA,4,0,4,9600,high,False
+26457, fancy,1,0,1,9600,low,False
+26461, Ub,1,0,1,9600,low,False
+26536,lace,1,1,0,9600,low,False
+26551, makeup,1,0,1,9600,low,False
+26569, determines,1,1,0,9600,low,False
+26572, Soc,1,1,0,9600,low,False
+26576,oner,1,0,1,9600,low,False
+26587, Wikipedia,1,0,1,9600,low,False
+26594, laboratory,1,0,1,9600,low,False
+26618, randomly,1,1,0,9600,low,False
+26646, twist,1,1,0,9600,low,False
+26658,ivial,2,2,0,9600,middle,False
+26674, performs,1,0,1,9600,low,False
+26702, governed,2,0,2,9600,middle,False
+26715,radius,3,3,0,9600,high,False
+26735, cultures,1,0,1,9600,low,False
+26789,É,1,0,1,9600,low,False
+26862,iem,3,3,0,9600,high,False
+26887,thesize,1,0,1,9600,low,False
+26888,sqrt,2,2,0,9600,middle,False
+26931, circular,2,2,0,9600,middle,False
+26936,imedia,1,1,0,9600,low,False
+26960, Military,1,1,0,9600,low,False
+26963, Surface,1,1,0,9600,low,False
+26993, cere,2,0,2,9600,middle,False
+27035, packets,1,1,0,9600,low,False
+27052,choose,2,2,0,9600,middle,False
+27061, influenced,1,0,1,9600,low,False
+27069, metabol,1,0,1,9600,low,False
+27076, specialized,1,0,1,9600,low,False
+27079, accordingly,2,1,1,9600,middle,False
+27094,keleton,3,0,3,9600,high,False
+27106,Pat,1,0,1,9600,low,False
+27115, struggled,1,1,0,9600,low,False
+27222, suppress,1,0,1,9600,low,False
+27268, synthetic,2,2,0,9600,middle,False
+27333,ylum,1,0,1,9600,low,False
+27339, syndrome,3,0,3,9600,high,False
+27343, Meg,1,0,1,9600,low,False
+27412, Nash,1,1,0,9600,low,False
+27422, pandemic,1,0,1,9600,low,False
+27433, fights,1,0,1,9600,low,False
+27437, reversed,1,1,0,9600,low,False
+27485, females,4,0,4,9600,high,False
+27491, essence,1,1,0,9600,low,False
+27521, Hawaii,1,0,1,9600,low,False
+27536, Lower,2,1,1,9600,middle,False
+27571,Sil,2,0,2,9600,middle,False
+27596, facilitate,1,0,1,9600,low,False
+27605, vest,1,0,1,9600,low,False
+27690, exponent,2,2,0,9600,middle,False
+27756, harmful,1,0,1,9600,low,False
+27796, proteins,5,0,5,9600,high,False
+27800, facial,2,0,2,9600,middle,False
+27815, baking,1,0,1,9600,low,False
+27861, occasional,1,0,1,9600,low,False
+27887, affecting,1,0,1,9600,low,False
+27908,ingo,1,0,1,9600,low,False
+27926, Anne,1,0,1,9600,low,False
+27949, inverse,1,1,0,9600,low,False
+27956, solved,3,3,0,9600,high,False
+27968, cater,1,0,1,9600,low,False
+28006, dental,1,0,1,9600,low,False
+28024, É,1,1,0,9600,low,False
+28058,atcher,1,1,0,9600,low,False
+28059, comics,1,1,0,9600,low,False
+28066, utilize,1,0,1,9600,low,False
+28202, vacuum,1,1,0,9600,low,False
+28229, devoted,1,1,0,9600,low,False
+28234, AA,1,1,0,9600,low,False
+28263, Linear,1,1,0,9600,low,False
+28274, infected,2,0,2,9600,middle,False
+28289, Taiwan,1,0,1,9600,low,False
+28292, surprisingly,1,1,0,9600,low,False
+28312,seen,1,0,1,9600,low,False
+28313, lig,2,0,2,9600,middle,False
+28316, lengths,1,1,0,9600,low,False
+28377, Brow,1,1,0,9600,low,False
+28396, disappeared,1,0,1,9600,low,False
+28405, scales,2,0,2,9600,middle,False
+28424, Simply,1,1,0,9600,low,False
+28583, characteristic,1,0,1,9600,low,False
+28591, marine,4,0,4,9600,high,False
+28596, Structure,1,0,1,9600,low,False
+28611, conservation,2,0,2,9600,middle,False
+28645,-product,1,1,0,9600,low,False
+28674, consequence,1,1,0,9600,low,False
+28675,",...",2,2,0,9600,middle,False
+28715,Based,1,0,1,9600,low,False
+28752, altered,1,0,1,9600,low,False
+28753, Nar,1,1,0,9600,low,False
+28765, varying,1,1,0,9600,low,False
+28799,-def,1,0,1,9600,low,False
+28821, nicely,1,1,0,9600,low,False
+28824, classical,4,3,1,9600,high,False
+28853, dich,1,0,1,9600,low,False
+28862, viral,1,0,1,9600,low,False
+28867,Os,2,2,0,9600,middle,False
+28922, hierarchy,1,1,0,9600,low,False
+28926, promoted,1,0,1,9600,low,False
+28961, solver,1,0,1,9600,low,False
+28977, shoe,1,1,0,9600,low,False
+29000, islands,2,0,2,9600,middle,False
+29019,Additional,1,1,0,9600,low,False
+29039, comparable,1,0,1,9600,low,False
+29048,ois,4,4,0,9600,high,False
+29054,ationally,1,0,1,9600,low,False
+29064, forming,4,1,3,9600,high,False
+29143,tau,1,1,0,9600,low,False
+29157, associations,1,0,1,9600,low,False
+29165,vari,1,0,1,9600,low,False
+29176, mate,1,0,1,9600,low,False
+29235, twelve,1,0,1,9600,low,False
+29288, XX,1,0,1,9600,low,False
+29297, Carlos,1,0,1,9600,low,False
+29350,ologically,3,0,3,9600,high,False
+29362, swift,1,0,1,9600,low,False
+29364, adapted,2,0,2,9600,middle,False
+29372, polygon,7,7,0,9600,high,False
+29398, ambit,1,1,0,9600,low,False
+29433,",Y",1,1,0,9600,low,False
+29435, skeleton,1,0,1,9600,low,False
+29448, heter,1,0,1,9600,low,False
+29470, cir,2,1,1,9600,middle,False
+29476, evident,1,1,0,9600,low,False
+29510,cherche,1,0,1,9600,low,False
+29530,-ray,1,0,1,9600,low,False
+29535,Ma,1,1,0,9600,low,False
+29562,"].
+
+",1,0,1,9600,low,False
+29576, curriculum,1,1,0,9600,low,False
+29608, Bund,1,1,0,9600,low,False
+29629, iterate,4,4,0,9600,high,False
+29632, chapters,2,2,0,9600,middle,False
+29658, earliest,1,1,0,9600,low,False
+29691, Swiss,1,1,0,9600,low,False
+29697,ods,3,0,3,9600,high,False
+29724, bears,3,0,3,9600,high,False
+29728, neural,1,0,1,9600,low,False
+29776,)^,2,2,0,9600,middle,False
+29799, fg,1,1,0,9600,low,False
+29812, ate,1,0,1,9600,low,False
+29869,orus,1,1,0,9600,low,False
+29885, thrust,1,0,1,9600,low,False
+29894, audiences,1,1,0,9600,low,False
+29954, Bou,1,1,0,9600,low,False
+29970, tourist,1,0,1,9600,low,False
+30013,-base,1,1,0,9600,low,False
+30027, maxim,1,1,0,9600,low,False
+30037, Ord,1,0,1,9600,low,False
+30056, wondered,1,1,0,9600,low,False
+30084,-world,1,1,0,9600,low,False
+30106, molecular,2,1,1,9600,middle,False
+30143,ε,3,3,0,9600,high,False
+30169, congr,3,3,0,9600,high,False
+30178,fan,1,0,1,9600,low,False
+30208, ethical,1,0,1,9600,low,False
+30224, exhibit,2,1,1,9600,middle,False
+30276, fossil,2,0,2,9600,middle,False
+30283, infant,1,0,1,9600,low,False
+30288, definit,1,0,1,9600,low,False
+30326, unity,1,1,0,9600,low,False
+30328,Further,1,1,0,9600,low,False
+30384, nucle,1,0,1,9600,low,False
+30394, Near,2,0,2,9600,middle,False
+30398,wave,1,1,0,9600,low,False
+30403, retrieved,1,0,1,9600,low,False
+30426, avoiding,1,0,1,9600,low,False
+30428, viable,1,0,1,9600,low,False
+30430,-is,1,1,0,9600,low,False
+30455, poorly,2,0,2,9600,middle,False
+30473,mutable,1,1,0,9600,low,False
+30596,-react,1,0,1,9600,low,False
+30606, consisting,1,1,0,9600,low,False
+30614, Upper,1,1,0,9600,low,False
+30657,ā,1,1,0,9600,low,False
+30664,kh,1,1,0,9600,low,False
+30715, decay,2,0,2,9600,middle,False
+30718, bypass,1,0,1,9600,low,False
+30720,RNA,1,0,1,9600,low,False
+30763, chick,1,0,1,9600,low,False
+30789, arise,2,0,2,9600,middle,False
+30790, avoided,1,0,1,9600,low,False
+30806,obic,1,0,1,9600,low,False
+30819, recursive,1,1,0,9600,low,False
+30865, occurring,1,1,0,9600,low,False
+30878, continuously,1,1,0,9600,low,False
+30903, ignoring,1,1,0,9600,low,False
+30923, TN,1,0,1,9600,low,False
+30931, prescribed,1,1,0,9600,low,False
+31052, insulin,3,0,3,9600,high,False
+31080, enjoyable,1,1,0,9600,low,False
+31085, researcher,2,0,2,9600,middle,False
+31094, conclude,1,0,1,9600,low,False
+31096, Cohen,1,1,0,9600,low,False
+31138, considers,2,0,2,9600,middle,False
+31169, Ye,1,0,1,9600,low,False
+31193, Prize,1,1,0,9600,low,False
+31290,pers,1,0,1,9600,low,False
+31326, plasma,2,0,2,9600,middle,False
+31340, squares,2,2,0,9600,middle,False
+31349,Tax,1,0,1,9600,low,False
+31350, Heaven,1,1,0,9600,low,False
+31359, Calcul,1,1,0,9600,low,False
+31499, suited,1,0,1,9600,low,False
+31511,imited,1,1,0,9600,low,False
+31515,theorem,1,1,0,9600,low,False
+31523, dressing,1,1,0,9600,low,False
+31551,haus,2,2,0,9600,middle,False
+31559, occurrence,1,1,0,9600,low,False
+31649, Carn,1,1,0,9600,low,False
+31716,}$,6,6,0,9600,high,False
+31719,+$,1,1,0,9600,low,False
+31776,Must,1,1,0,9600,low,False
+31785, protocols,1,0,1,9600,low,False
+31787, theoretical,2,1,1,9600,middle,False
+31789, Zen,1,1,0,9600,low,False
+31805, derivative,4,3,1,9600,high,False
+31839, validity,1,1,0,9600,low,False
+31867, OC,1,1,0,9600,low,False
+31871, characterized,1,0,1,9600,low,False
+31924,atching,1,1,0,9600,low,False
+31939,MG,1,0,1,9600,low,False
+32019, immun,4,0,4,9600,high,False
+32052, belonging,1,0,1,9600,low,False
+32055, substances,1,0,1,9600,low,False
+32108,化,1,0,1,9600,low,False
+32160, NL,1,1,0,9600,low,False
+32163,-reg,1,0,1,9600,low,False
+32217,-am,2,0,2,9600,middle,False
+32252, appealing,1,1,0,9600,low,False
+32259,grading,1,0,1,9600,low,False
+32303, paras,1,0,1,9600,low,False
+32335, incorporate,1,1,0,9600,low,False
+32368, Associate,1,0,1,9600,low,False
+32371, Lag,2,2,0,9600,middle,False
+32379, Ku,1,0,1,9600,low,False
+32395,eny,2,0,2,9600,middle,False
+32404,ometers,1,0,1,9600,low,False
+32417, fifty,1,0,1,9600,low,False
+32420,-dimensional,4,4,0,9600,high,False
+32427, Analytics,2,2,0,9600,middle,False
+32442,tro,1,0,1,9600,low,False
+32559, Mis,1,0,1,9600,low,False
+32640, outlined,1,1,0,9600,low,False
+32730,elin,2,0,2,9600,middle,False
+32769, genome,1,0,1,9600,low,False
+32771,again,1,0,1,9600,low,False
+32775,-striped,1,0,1,9600,low,False
+32779,usk,1,1,0,9600,low,False
+32845,vascular,2,0,2,9600,middle,False
+32869, acids,1,0,1,9600,low,False
+32892, teaches,1,1,0,9600,low,False
+32930, structured,1,0,1,9600,low,False
+32983, tubes,1,0,1,9600,low,False
+33004, vulnerability,1,0,1,9600,low,False
+33006,orum,1,0,1,9600,low,False
+33061, connects,2,2,0,9600,middle,False
+33124,ogene,1,0,1,9600,low,False
+33143, Heritage,1,0,1,9600,low,False
+33191,ursors,1,0,1,9600,low,False
+33210, corresponds,1,1,0,9600,low,False
+33213, neurons,8,0,8,9600,high,False
+33218, β,2,0,2,9600,middle,False
+33223, glucose,1,0,1,9600,low,False
+33244,illas,1,0,1,9600,low,False
+33263,−,1,1,0,9600,low,False
+33282, Chi,1,1,0,9600,low,False
+33297,nat,1,0,1,9600,low,False
+33353, influences,1,0,1,9600,low,False
+33358, biology,4,2,2,9600,high,False
+33377, grasp,1,1,0,9600,low,False
+33420, rope,1,1,0,9600,low,False
+33442,)L,1,1,0,9600,low,False
+33445, disposal,1,0,1,9600,low,False
+33456, iso,2,0,2,9600,middle,False
+33479, modeling,1,0,1,9600,low,False
+33480,/products,1,0,1,9600,low,False
+33551, FP,1,1,0,9600,low,False
+33565, successor,2,2,0,9600,middle,False
+33583, preserved,2,1,1,9600,middle,False
+33644, relies,2,1,1,9600,middle,False
+33686, manipulation,1,1,0,9600,low,False
+33701, ker,2,0,2,9600,middle,False
+33796, Camb,2,0,2,9600,middle,False
+33909, Distribution,1,1,0,9600,low,False
+33944, singular,2,2,0,9600,middle,False
+33973,-me,1,1,0,9600,low,False
+34101, genius,1,1,0,9600,low,False
+34157, Elements,2,2,0,9600,middle,False
+34168, receptor,3,0,3,9600,high,False
+34188, ambient,1,1,0,9600,low,False
+34212, sut,2,0,2,9600,middle,False
+34219, regulated,1,0,1,9600,low,False
+34226, finite,5,5,0,9600,high,False
+34227, varies,1,0,1,9600,low,False
+34250, manga,2,2,0,9600,middle,False
+34288, simpler,2,2,0,9600,middle,False
+34306, absorb,1,0,1,9600,low,False
+34334, discusses,1,1,0,9600,low,False
+34355, Concept,1,1,0,9600,low,False
+34383, traces,1,1,0,9600,low,False
+34396, feeds,2,0,2,9600,middle,False
+34430, phases,1,0,1,9600,low,False
+34433,=\,3,3,0,9600,high,False
+34439, intact,1,0,1,9600,low,False
+34463,prove,2,0,2,9600,middle,False
+34475,Major,1,0,1,9600,low,False
+34505,illary,1,0,1,9600,low,False
+34506, Stein,2,2,0,9600,middle,False
+34511, continually,1,0,1,9600,low,False
+34609,Micro,1,0,1,9600,low,False
+34619, calcium,1,0,1,9600,low,False
+34689,-school,1,1,0,9600,low,False
+34702, Apart,1,1,0,9600,low,False
+34713, Numbers,2,2,0,9600,middle,False
+34834, Jak,1,1,0,9600,low,False
+34840,hom,1,1,0,9600,low,False
+34847, distinctive,1,0,1,9600,low,False
+34865,alis,1,0,1,9600,low,False
+34873,iji,1,1,0,9600,low,False
+34896, appreciation,1,1,0,9600,low,False
+34907, Determin,1,0,1,9600,low,False
+34941, mamm,3,0,3,9600,high,False
+34950, improves,1,0,1,9600,low,False
+35031, explored,1,1,0,9600,low,False
+35070, Kor,1,0,1,9600,low,False
+35078,ticks,1,0,1,9600,low,False
+35114, fertil,3,0,3,9600,high,False
+35118, uncertain,1,0,1,9600,low,False
+35154, tumor,3,0,3,9600,high,False
+35183, Prim,1,0,1,9600,low,False
+35299,-five,1,1,0,9600,low,False
+35316, Pretty,1,1,0,9600,low,False
+35363,zig,1,1,0,9600,low,False
+35386, strengths,1,1,0,9600,low,False
+35405, complications,1,0,1,9600,low,False
+35473, elastic,1,1,0,9600,low,False
+35534,cence,1,0,1,9600,low,False
+35584, Mes,1,0,1,9600,low,False
+35606, coefficient,2,2,0,9600,middle,False
+35647, trivial,2,2,0,9600,middle,False
+35662, illustrated,2,0,2,9600,middle,False
+35704, cores,1,0,1,9600,low,False
+35715, transcript,1,0,1,9600,low,False
+35753, organs,1,0,1,9600,low,False
+35775, potent,1,0,1,9600,low,False
+35799, seasonal,2,0,2,9600,middle,False
+35808, hormone,2,0,2,9600,middle,False
+35821, cooler,1,0,1,9600,low,False
+35933, curves,1,1,0,9600,low,False
+35957, criterion,3,3,0,9600,high,False
+35972, mathematical,6,6,0,9600,high,False
+36000, recreational,1,1,0,9600,low,False
+36002, Cle,1,0,1,9600,low,False
+36054, satisfying,1,1,0,9600,low,False
+36066, deletion,1,0,1,9600,low,False
+36072, cables,1,0,1,9600,low,False
+36141,although,1,0,1,9600,low,False
+36204, intentionally,1,0,1,9600,low,False
+36256, metres,1,0,1,9600,low,False
+36332,GF,2,0,2,9600,middle,False
+36344, colleague,1,1,0,9600,low,False
+36378,iral,1,0,1,9600,low,False
+36391,nos,1,0,1,9600,low,False
+36392, abundance,1,0,1,9600,low,False
+36393, nutrients,2,0,2,9600,middle,False
+36398, sums,2,2,0,9600,middle,False
+36418, Arctic,2,0,2,9600,middle,False
+36428, Industries,1,0,1,9600,low,False
+36455, phy,2,0,2,9600,middle,False
+36486, cope,1,0,1,9600,low,False
+36593, prey,4,0,4,9600,high,False
+36655, fifteen,1,0,1,9600,low,False
+36665,cup,1,1,0,9600,low,False
+36671, undergo,1,0,1,9600,low,False
+36674,etically,1,0,1,9600,low,False
+36681, umb,1,0,1,9600,low,False
+36707, gly,1,0,1,9600,low,False
+36708, bud,2,0,2,9600,middle,False
+36728, Dale,1,0,1,9600,low,False
+36732, Ny,1,1,0,9600,low,False
+36733, chlor,4,0,4,9600,high,False
+36763, Edwards,1,0,1,9600,low,False
+36780,etched,1,1,0,9600,low,False
+36824, weighted,1,1,0,9600,low,False
+36829, coefficients,4,4,0,9600,high,False
+36841,otyp,1,0,1,9600,low,False
+36864,"""[",1,0,1,9600,low,False
+36986,alu,1,0,1,9600,low,False
+37018,frac,1,1,0,9600,low,False
+37030, Scientific,1,0,1,9600,low,False
+37036,Mad,1,0,1,9600,low,False
+37056, induction,3,2,1,9600,high,False
+37110,istically,1,0,1,9600,low,False
+37131, retention,2,0,2,9600,middle,False
+37139, admits,2,2,0,9600,middle,False
+37162,=g,1,1,0,9600,low,False
+37175,Consider,2,2,0,9600,middle,False
+37243, Answers,1,0,1,9600,low,False
+37380, presentations,1,1,0,9600,low,False
+37394, vigil,1,0,1,9600,low,False
+37395, counterparts,1,0,1,9600,low,False
+37450, inability,1,1,0,9600,low,False
+37477, Alexand,2,2,0,9600,middle,False
+37558,LOS,1,0,1,9600,low,False
+37596, mathematics,9,9,0,9600,high,False
+37597, contexts,1,1,0,9600,low,False
+37598,-ac,2,0,2,9600,middle,False
+37636, devil,2,0,2,9600,middle,False
+37668,gue,3,3,0,9600,high,False
+37685, Mediterranean,1,0,1,9600,low,False
+37715,roupe,1,0,1,9600,low,False
+37717, twisted,1,1,0,9600,low,False
+37869, empir,1,0,1,9600,low,False
+37870, pathway,1,0,1,9600,low,False
+37873,-induced,1,0,1,9600,low,False
+37906, equations,6,6,0,9600,high,False
+38111, archae,1,0,1,9600,low,False
+38200, depress,1,0,1,9600,low,False
+38292, quicker,1,0,1,9600,low,False
+38296, cite,1,1,0,9600,low,False
+38341, planted,1,0,1,9600,low,False
+38345, periodic,1,1,0,9600,low,False
+38351,uniform,4,4,0,9600,high,False
+38420, Chocolate,1,0,1,9600,low,False
+38515,′,1,0,1,9600,low,False
+38545, Sox,1,0,1,9600,low,False
+38554, membrane,8,0,8,9600,high,False
+38556, reproduction,3,0,3,9600,high,False
+38596, Hil,2,2,0,9600,middle,False
+38664, recognised,1,1,0,9600,low,False
+38686, bore,1,0,1,9600,low,False
+38835, fox,2,0,2,9600,middle,False
+38918, Geometry,2,2,0,9600,middle,False
+38921, canal,2,2,0,9600,middle,False
+38923, Biology,2,0,2,9600,middle,False
+38973, bridges,1,0,1,9600,low,False
+38991, Maz,1,1,0,9600,low,False
+38999, graphs,2,2,0,9600,middle,False
+39020, sunlight,1,0,1,9600,low,False
+39035, IEEE,1,0,1,9600,low,False
+39075, reconsider,1,1,0,9600,low,False
+39088, embedding,2,2,0,9600,middle,False
+39097,adox,1,0,1,9600,low,False
+39127,ivation,1,1,0,9600,low,False
+39143, shortest,1,1,0,9600,low,False
+39150, threaten,1,0,1,9600,low,False
+39200, vaccines,3,0,3,9600,high,False
+39208, breeding,1,0,1,9600,low,False
+39295, NR,1,0,1,9600,low,False
+39342, neighbourhood,2,2,0,9600,middle,False
+39442, omitted,1,1,0,9600,low,False
+39445, orn,1,0,1,9600,low,False
+39455, Fol,1,0,1,9600,low,False
+39489, dioxide,1,0,1,9600,low,False
+39499, eliminating,1,0,1,9600,low,False
+39535, observable,1,0,1,9600,low,False
+39552, destructive,2,0,2,9600,middle,False
+39568,exchange,1,1,0,9600,low,False
+39599, sperm,2,0,2,9600,middle,False
+39604, regulator,1,0,1,9600,low,False
+39612, crust,1,0,1,9600,low,False
+39641, Various,1,1,0,9600,low,False
+39714, NM,2,0,2,9600,middle,False
+39751, norms,2,2,0,9600,middle,False
+39760,compact,3,3,0,9600,high,False
+39770, Pont,2,0,2,9600,middle,False
+39879, Colin,1,1,0,9600,low,False
+39950, stacks,1,0,1,9600,low,False
+40014, Mountains,1,0,1,9600,low,False
+40035, CW,1,1,0,9600,low,False
+40080, proposition,1,1,0,9600,low,False
+40119, resting,1,0,1,9600,low,False
+40153, lob,1,0,1,9600,low,False
+40163, lum,1,0,1,9600,low,False
+40164, differential,1,1,0,9600,low,False
+40173, risky,1,0,1,9600,low,False
+40200, assessments,1,0,1,9600,low,False
+40233, Cultural,1,0,1,9600,low,False
+40306, Edinburgh,2,2,0,9600,middle,False
+40322,rho,2,2,0,9600,middle,False
+40404,Mult,1,1,0,9600,low,False
+40480, yeast,6,0,6,9600,high,False
+40577, Rat,1,0,1,9600,low,False
+40601, obey,1,1,0,9600,low,False
+40659, whisk,1,0,1,9600,low,False
+40660, idi,1,0,1,9600,low,False
+40759, flaws,1,1,0,9600,low,False
+40761, metabolic,2,0,2,9600,middle,False
+40766,appear,1,0,1,9600,low,False
+40785,otel,1,0,1,9600,low,False
+40795,atomy,1,0,1,9600,low,False
+40811, insects,2,0,2,9600,middle,False
+40836, grains,1,1,0,9600,low,False
+40861, relevance,1,1,0,9600,low,False
+40862, Colour,1,0,1,9600,low,False
+40893, evolutionary,4,0,4,9600,high,False
+40900,fair,2,2,0,9600,middle,False
+40909, Cir,1,0,1,9600,low,False
+40976, Rus,1,1,0,9600,low,False
+41007, Jeffrey,1,0,1,9600,low,False
+41018, analyzing,1,1,0,9600,low,False
+41047, evenly,1,1,0,9600,low,False
+41078,limits,4,4,0,9600,high,False
+41214,isors,1,0,1,9600,low,False
+41229, uniquely,1,1,0,9600,low,False
+41266,ystone,1,0,1,9600,low,False
+41291,ulators,4,0,4,9600,high,False
+41295,)!,1,1,0,9600,low,False
+41346, Erik,1,0,1,9600,low,False
+41382, Shakespeare,1,1,0,9600,low,False
+41400, amino,2,0,2,9600,middle,False
+41434, infants,1,0,1,9600,low,False
+41503, dispro,1,1,0,9600,low,False
+41520, epidemic,1,0,1,9600,low,False
+41531, respiratory,2,0,2,9600,middle,False
+41555, defects,1,0,1,9600,low,False
+41587, discovering,2,2,0,9600,middle,False
+41588, eco,1,0,1,9600,low,False
+41670, Prec,1,0,1,9600,low,False
+41717, extensively,1,0,1,9600,low,False
+41730, upstream,1,0,1,9600,low,False
+41777,idea,1,0,1,9600,low,False
+41930, molecule,2,0,2,9600,middle,False
+41959, Sah,1,0,1,9600,low,False
+41980, signaling,1,0,1,9600,low,False
+41986, murders,1,1,0,9600,low,False
+41996, Eyes,1,0,1,9600,low,False
+42054, decreases,1,1,0,9600,low,False
+42123, isolate,1,0,1,9600,low,False
+42208, bats,1,0,1,9600,low,False
+42284, mankind,1,1,0,9600,low,False
+42359, chalk,1,0,1,9600,low,False
+42379,ivities,1,0,1,9600,low,False
+42429, spelling,1,0,1,9600,low,False
+42446, triangles,1,1,0,9600,low,False
+42490,species,1,0,1,9600,low,False
+42508, Applied,1,1,0,9600,low,False
+42556, conception,2,2,0,9600,middle,False
+42569, encaps,1,0,1,9600,low,False
+42586,idy,1,0,1,9600,low,False
+42598,emat,1,0,1,9600,low,False
+42623,elic,1,0,1,9600,low,False
+42638, reconstruction,3,2,1,9600,high,False
+42675, clues,2,0,2,9600,middle,False
+42772,cate,1,0,1,9600,low,False
+42818,-dependent,1,0,1,9600,low,False
+42829, transplant,1,0,1,9600,low,False
+42840, competitor,1,0,1,9600,low,False
+42882, Wade,1,1,0,9600,low,False
+42954, shells,1,0,1,9600,low,False
+42972, contributes,1,0,1,9600,low,False
+43010,+y,2,2,0,9600,middle,False
+43086,amental,1,0,1,9600,low,False
+43088, Yo,1,1,0,9600,low,False
+43090, IA,5,0,5,9600,high,False
+43123,μ,1,0,1,9600,low,False
+43147, phenomena,1,1,0,9600,low,False
+43179, discrete,1,1,0,9600,low,False
+43204, organisms,7,0,7,9600,high,False
+43297, strat,1,0,1,9600,low,False
+43381, embry,1,0,1,9600,low,False
+43400, compromised,1,0,1,9600,low,False
+43431, Alzheimer,1,0,1,9600,low,False
+43440, receptors,3,0,3,9600,high,False
+43454, equival,1,1,0,9600,low,False
+43489, localized,1,0,1,9600,low,False
+43496, penetration,1,0,1,9600,low,False
+43542, differs,1,0,1,9600,low,False
+43580,Around,1,0,1,9600,low,False
+43587,sexual,2,0,2,9600,middle,False
+43613, representations,1,1,0,9600,low,False
+43627, shoots,1,0,1,9600,low,False
+43636, twins,1,0,1,9600,low,False
+43680, Danish,1,0,1,9600,low,False
+43697, peculiar,2,1,1,9600,middle,False
+43718, correspondence,1,1,0,9600,low,False
+43770, definite,1,1,0,9600,low,False
+43794, depicted,1,0,1,9600,low,False
+43801, conceptual,1,0,1,9600,low,False
+43810, enclosed,1,0,1,9600,low,False
+43817, recognise,2,0,2,9600,middle,False
+43828, reconstruct,1,1,0,9600,low,False
+43864, neph,1,0,1,9600,low,False
+43893, modular,1,0,1,9600,low,False
+43939, Bristol,1,1,0,9600,low,False
+44174, lungs,3,0,3,9600,high,False
+44197, notation,1,1,0,9600,low,False
+44216, Hopkins,1,0,1,9600,low,False
+44234, fetching,1,1,0,9600,low,False
+44239, duct,3,0,3,9600,high,False
+44318, Roose,1,0,1,9600,low,False
+44412, reservoir,1,0,1,9600,low,False
+44448,-times,2,2,0,9600,middle,False
+44500,Thus,2,2,0,9600,middle,False
+44510,/[,1,0,1,9600,low,False
+44548, simplest,1,1,0,9600,low,False
+44560, traps,1,0,1,9600,low,False
+44613, toes,1,0,1,9600,low,False
+44634,respect,1,1,0,9600,low,False
+44687, Tas,1,0,1,9600,low,False
+44699, recognizes,1,0,1,9600,low,False
+44713, definitive,1,0,1,9600,low,False
+44745,pherical,3,3,0,9600,high,False
+44803, Zo,1,0,1,9600,low,False
+44850, Neu,1,0,1,9600,low,False
+44882, topology,3,3,0,9600,high,False
+44908,===============,1,1,0,9600,low,False
+44960, AIDS,1,0,1,9600,low,False
+45060, qualification,1,0,1,9600,low,False
+45097, Wings,1,0,1,9600,low,False
+45120, symmetry,2,2,0,9600,middle,False
+45154,-val,1,1,0,9600,low,False
+45195,orean,3,3,0,9600,high,False
+45198, gor,1,0,1,9600,low,False
+45205, unrelated,2,2,0,9600,middle,False
+45223, acre,1,0,1,9600,low,False
+45306, wavelength,2,0,2,9600,middle,False
+45380, illustrates,1,1,0,9600,low,False
+45440, surprises,1,1,0,9600,low,False
+45449,        ,1,1,0,9600,low,False
+45515, Kol,1,1,0,9600,low,False
+45620, rotated,1,1,0,9600,low,False
+45635, suppression,1,0,1,9600,low,False
+45652, aforementioned,1,1,0,9600,low,False
+45655,therapy,1,0,1,9600,low,False
+45720, theor,1,1,0,9600,low,False
+45790, transforming,1,0,1,9600,low,False
+45840, transcription,2,0,2,9600,middle,False
+45870,opus,5,0,5,9600,high,False
+45882, Throughout,1,1,0,9600,low,False
+46020, organism,5,0,5,9600,high,False
+46069, Rein,1,0,1,9600,low,False
+46181, susceptible,1,0,1,9600,low,False
+46187, diagrams,1,1,0,9600,low,False
+46188, inflammatory,1,0,1,9600,low,False
+46245, cardiac,1,0,1,9600,low,False
+46257, arter,1,0,1,9600,low,False
+46261, privileged,3,0,3,9600,high,False
+46265,atisfied,1,1,0,9600,low,False
+46347, prostate,1,0,1,9600,low,False
+46362,marked,1,1,0,9600,low,False
+46485,保存,1,0,1,9600,low,False
+46490, simulations,1,0,1,9600,low,False
+46537, comeback,1,0,1,9600,low,False
+46673, coded,1,0,1,9600,low,False
+46702, Teachers,1,1,0,9600,low,False
+46726, weighing,2,0,2,9600,middle,False
+46762, recess,1,0,1,9600,low,False
+46876, algebra,10,10,0,9600,high,False
+46899, rigorous,1,1,0,9600,low,False
+46906, developmental,1,0,1,9600,low,False
+46908, flawed,1,1,0,9600,low,False
+46909,rene,1,1,0,9600,low,False
+46983, Shock,1,1,0,9600,low,False
+47011, fertility,2,0,2,9600,middle,False
+47032, Sources,1,0,1,9600,low,False
+47046, envision,1,1,0,9600,low,False
+47161, maturity,1,0,1,9600,low,False
+47163, miner,1,0,1,9600,low,False
+47253,Lost,1,1,0,9600,low,False
+47311, polynomial,10,10,0,9600,high,False
+47313,pcs,1,1,0,9600,low,False
+47471,imates,1,1,0,9600,low,False
+47509, bans,1,0,1,9600,low,False
+47522,QA,1,0,1,9600,low,False
+47571,forma,1,0,1,9600,low,False
+47604, syll,1,0,1,9600,low,False
+47664,vents,3,3,0,9600,high,False
+47670, juvenile,1,0,1,9600,low,False
+47718, BAD,1,1,0,9600,low,False
+47723, σ,3,3,0,9600,high,False
+47822,^{,6,6,0,9600,high,False
+47826, threatens,1,1,0,9600,low,False
+47846, slowed,1,0,1,9600,low,False
+47939,isia,1,0,1,9600,low,False
+47978,Ho,1,1,0,9600,low,False
+47980, ruler,2,2,0,9600,middle,False
+47986,itic,2,0,2,9600,middle,False
+48020,berger,1,1,0,9600,low,False
+48053,approx,1,1,0,9600,low,False
+48087, Territory,1,0,1,9600,low,False
+48088, inherently,1,1,0,9600,low,False
+48127, sounding,1,0,1,9600,low,False
+48129, classify,2,1,1,9600,middle,False
+48142, enzyme,2,0,2,9600,middle,False
+48155, disciplines,2,2,0,9600,middle,False
+48195, mart,1,1,0,9600,low,False
+48229, Xen,3,0,3,9600,high,False
+48284, neuron,4,0,4,9600,high,False
+48367,coding,1,0,1,9600,low,False
+48375, Protein,1,0,1,9600,low,False
+48425,—in,1,0,1,9600,low,False
+48454, bios,2,0,2,9600,middle,False
+48465,nell,1,1,0,9600,low,False
+48481, investigator,1,0,1,9600,low,False
+48496,ITES,2,0,2,9600,middle,False
+48595, limbs,1,0,1,9600,low,False
+48607, bundles,3,3,0,9600,high,False
+48674, fibers,3,1,2,9600,high,False
+48703, realization,1,1,0,9600,low,False
+48753, induce,2,0,2,9600,middle,False
+49012, spinal,1,0,1,9600,low,False
+49023, nutrient,2,0,2,9600,middle,False
+49027, fats,1,0,1,9600,low,False
+49055, Lap,1,1,0,9600,low,False
+49089, delightful,1,1,0,9600,low,False
+49135, unpredictable,1,0,1,9600,low,False
+49198, Plants,2,0,2,9600,middle,False
+49208,ritic,1,0,1,9600,low,False
+49226, possesses,1,0,1,9600,low,False
+49283, unfamiliar,1,1,0,9600,low,False
+49353, constructing,1,1,0,9600,low,False
+49360, mitigate,1,0,1,9600,low,False
+49387, Likewise,1,0,1,9600,low,False
+49433, primes,4,4,0,9600,high,False
+49461, dwarf,1,0,1,9600,low,False
+49471,Prior,2,2,0,9600,middle,False
+49500, infectious,1,0,1,9600,low,False
+49512,recursive,1,1,0,9600,low,False
+49568,Ub,1,0,1,9600,low,False
+49702, dividing,1,0,1,9600,low,False
+49729, exhibits,1,1,0,9600,low,False
+49773, Amer,1,1,0,9600,low,False
+49776, feather,1,0,1,9600,low,False
+49795, Mathematics,1,1,0,9600,low,False
+49853, ecological,2,0,2,9600,middle,False
+49952, imaginary,2,2,0,9600,middle,False
+49971,aty,1,0,1,9600,low,False
+50078,clidean,7,7,0,9600,high,False
+50080, oxide,1,0,1,9600,low,False
+50096, Simmons,2,2,0,9600,middle,False
+50280,oris,3,3,0,9600,high,False
+50351, stale,1,1,0,9600,low,False
+50467, Species,1,0,1,9600,low,False
+50471, withstand,2,0,2,9600,middle,False
+50491,jective,2,2,0,9600,middle,False
+50565,Scient,1,0,1,9600,low,False
+50715, chromosome,4,0,4,9600,high,False
+50800, knot,6,6,0,9600,high,False
+50823, phon,2,0,2,9600,middle,False
+50853,cdot,2,2,0,9600,middle,False
+50858, Ling,1,0,1,9600,low,False
+50933, genetically,2,0,2,9600,middle,False
+50950," 
+",1,1,0,9600,low,False
+50968, Mant,1,0,1,9600,low,False
+51059, beforehand,1,1,0,9600,low,False
+51094, Hugo,1,1,0,9600,low,False
+51096,loid,1,0,1,9600,low,False
+51108, iff,2,2,0,9600,middle,False
+51127, vulnerabilities,1,0,1,9600,low,False
+51180, resemble,1,0,1,9600,low,False
+51190, Loren,2,2,0,9600,middle,False
+51240,specific,2,0,2,9600,middle,False
+51255,β,2,0,2,9600,middle,False
+51256, endangered,2,0,2,9600,middle,False
+51279,ogenesis,5,0,5,9600,high,False
+51294, consequently,1,0,1,9600,low,False
+51477,ORA,1,0,1,9600,low,False
+51509, extinction,4,0,4,9600,high,False
+51618, SQ,5,5,0,9600,high,False
+51725,"""Our",1,0,1,9600,low,False
+51736, Nicolas,1,1,0,9600,low,False
+51851, Andrews,1,1,0,9600,low,False
+51897, predicting,1,1,0,9600,low,False
+52015,trag,3,0,3,9600,high,False
+52094, physiological,1,0,1,9600,low,False
+52140, Johns,1,0,1,9600,low,False
+52167,Fab,1,1,0,9600,low,False
+52174,aptic,3,0,3,9600,high,False
+52212, sucked,1,0,1,9600,low,False
+52217, impairment,2,0,2,9600,middle,False
+52236, ubiqu,2,0,2,9600,middle,False
+52258, bran,1,0,1,9600,low,False
+52282, appealed,1,1,0,9600,low,False
+52321,-effective,1,0,1,9600,low,False
+52368, Rochester,1,0,1,9600,low,False
+52457, nets,1,0,1,9600,low,False
+52460, ure,6,0,6,9600,high,False
+52468, degradation,1,0,1,9600,low,False
+52484, geometric,5,5,0,9600,high,False
+52751, vicinity,1,0,1,9600,low,False
+52807,orphism,3,0,3,9600,high,False
+52831,adia,1,0,1,9600,low,False
+52847, recursively,1,1,0,9600,low,False
+52881, Strict,1,0,1,9600,low,False
+52933, trig,1,1,0,9600,low,False
+52956,ū,1,1,0,9600,low,False
+52962, factorial,1,1,0,9600,low,False
+52970, transformations,1,1,0,9600,low,False
+52979, terminals,1,0,1,9600,low,False
+52985, southwest,1,0,1,9600,low,False
+53040, 文,1,0,1,9600,low,False
+53130,ellular,1,0,1,9600,low,False
+53152,uchs,1,1,0,9600,low,False
+53163, differentiate,1,0,1,9600,low,False
+53180, oceans,1,0,1,9600,low,False
+53237,=======,1,1,0,9600,low,False
+53250, comprise,1,0,1,9600,low,False
+53295, asym,3,0,3,9600,high,False
+53484, constructive,1,1,0,9600,low,False
+53663, Shannon,2,2,0,9600,middle,False
+53669,urons,1,0,1,9600,low,False
+53752, constrained,2,2,0,9600,middle,False
+53764,-fixed,1,1,0,9600,low,False
+53788, cheeks,1,0,1,9600,low,False
+53814, endeavor,1,1,0,9600,low,False
+53904, vitro,1,0,1,9600,low,False
+53961, fec,1,0,1,9600,low,False
+53994,icom,3,0,3,9600,high,False
+54006, Ultimately,1,0,1,9600,low,False
+54048,olle,1,1,0,9600,low,False
+54079, formulas,4,4,0,9600,high,False
+54087, bred,1,0,1,9600,low,False
+54104, cubes,1,1,0,9600,low,False
+54118,Eu,1,1,0,9600,low,False
+54119, cloned,1,0,1,9600,low,False
+54127, Proceedings,1,0,1,9600,low,False
+54221, forensic,1,1,0,9600,low,False
+54409, moll,1,0,1,9600,low,False
+54413, homo,1,0,1,9600,low,False
+54417, diffuse,1,0,1,9600,low,False
+54451, Ji,2,2,0,9600,middle,False
+54480, computational,1,1,0,9600,low,False
+54493, Eisen,1,1,0,9600,low,False
+54611,variants,2,2,0,9600,middle,False
+54748,batim,1,1,0,9600,low,False
+54782, Compact,1,1,0,9600,low,False
+54876,"$,",8,8,0,9600,high,False
+54886, formulation,3,3,0,9600,high,False
+54967, enzymes,2,0,2,9600,middle,False
+54975, Lisp,1,1,0,9600,low,False
+55041, Levi,1,1,0,9600,low,False
+55078,opl,2,0,2,9600,middle,False
+55085, textbook,1,1,0,9600,low,False
+55117, predators,2,0,2,9600,middle,False
+55129, nth,1,1,0,9600,low,False
+55169, butterfly,3,1,2,9600,high,False
+55204,idan,2,0,2,9600,middle,False
+55234, indefinitely,1,0,1,9600,low,False
+55309,quist,1,1,0,9600,low,False
+55320,DNA,1,0,1,9600,low,False
+55327, rearr,1,0,1,9600,low,False
+55433,andas,1,0,1,9600,low,False
+55463, reactive,1,0,1,9600,low,False
+55569, mammals,2,0,2,9600,middle,False
+55659, chords,1,1,0,9600,low,False
+55738, undes,1,0,1,9600,low,False
+55786, spanning,1,0,1,9600,low,False
+55812,asurable,1,1,0,9600,low,False
+56204, approximation,2,2,0,9600,middle,False
+56251, intuition,1,1,0,9600,low,False
+56327, Rift,1,0,1,9600,low,False
+56415, proposing,1,1,0,9600,low,False
+56425, fibre,1,1,0,9600,low,False
+56649, specimens,1,0,1,9600,low,False
+56774, whales,1,0,1,9600,low,False
+56778,ocytes,3,0,3,9600,high,False
+56799, unusually,1,0,1,9600,low,False
+56984,roma,1,0,1,9600,low,False
+57046, UPS,1,0,1,9600,low,False
+57084, specimen,1,0,1,9600,low,False
+57129, solitary,1,1,0,9600,low,False
+57319, XY,2,1,1,9600,middle,False
+57414, propagate,1,1,0,9600,low,False
+57485, binds,2,0,2,9600,middle,False
+57541,abus,1,0,1,9600,low,False
+57731, satisfactory,1,0,1,9600,low,False
+57739, Optimization,1,0,1,9600,low,False
+57763,indle,3,3,0,9600,high,False
+57817, theorem,16,16,0,9600,high,False
+57846, atan,2,2,0,9600,middle,False
+57888, cyan,1,0,1,9600,low,False
+57908,Calcul,1,1,0,9600,low,False
+57960, $\,9,9,0,9600,high,False
+58003, Hawaiian,1,0,1,9600,low,False
+58044,ucing,1,0,1,9600,low,False
+58059, hypothetical,1,1,0,9600,low,False
+58114, reversal,1,0,1,9600,low,False
+58286,enia,1,0,1,9600,low,False
+58302,metrical,6,0,6,9600,high,False
+58369, Esk,1,0,1,9600,low,False
+58431, Adapt,1,0,1,9600,low,False
+58444,elial,2,0,2,9600,middle,False
+58703, ⇒,1,1,0,9600,low,False
+58766,xin,1,0,1,9600,low,False
+58835,ipers,1,0,1,9600,low,False
+58838, evenings,1,0,1,9600,low,False
+58882, bamboo,3,0,3,9600,high,False
+58912,producer,1,0,1,9600,low,False
+58926,glob,1,0,1,9600,low,False
+58938, differentiation,2,0,2,9600,middle,False
+58975, Watt,2,0,2,9600,middle,False
+59045, PBS,1,1,0,9600,low,False
+59099, sensing,1,0,1,9600,low,False
+59110,Researchers,1,0,1,9600,low,False
+59147, ε,5,5,0,9600,high,False
+59293, dele,1,0,1,9600,low,False
+59334, Devon,1,0,1,9600,low,False
+59417, regeneration,1,0,1,9600,low,False
+59694, depicting,1,1,0,9600,low,False
+59726, systematically,1,1,0,9600,low,False
+59820, Sta,3,0,3,9600,high,False
+59828,-existent,1,0,1,9600,low,False
+59851, captive,1,0,1,9600,low,False
+59864, modulo,2,2,0,9600,middle,False
+59881, frog,2,0,2,9600,middle,False
+59892,psilon,2,2,0,9600,middle,False
+59893, characterization,1,0,1,9600,low,False
+59932,Mot,1,1,0,9600,low,False
+60020, expresses,1,0,1,9600,low,False
+60217, knots,4,4,0,9600,high,False
+60227, wording,1,0,1,9600,low,False
+60236, labelled,1,1,0,9600,low,False
+60258, Basin,1,0,1,9600,low,False
+60286, antiqu,1,1,0,9600,low,False
+60342, XC,2,2,0,9600,middle,False
+60359, libr,1,0,1,9600,low,False
+60497,illin,4,0,4,9600,high,False
+60501,east,1,0,1,9600,low,False
+60526, Flu,1,0,1,9600,low,False
+60720, monkeys,1,0,1,9600,low,False
+60851, ecosystems,3,0,3,9600,high,False
+60866, modelling,1,1,0,9600,low,False
+61045, Parkinson,1,0,1,9600,low,False
+61066,-headed,1,0,1,9600,low,False
+61067, Kra,1,1,0,9600,low,False
+61086, toxins,3,0,3,9600,high,False
+61110, transmitter,1,0,1,9600,low,False
+61147,iggs,1,1,0,9600,low,False
+61307, assemblies,1,0,1,9600,low,False
+61390, stray,1,0,1,9600,low,False
+61420, twentieth,1,1,0,9600,low,False
+61464, bladder,1,0,1,9600,low,False
+61507, nucleus,1,0,1,9600,low,False
+61536,semester,1,1,0,9600,low,False
+61546, disagreement,1,0,1,9600,low,False
+61553, modeled,1,1,0,9600,low,False
+61630, chemotherapy,1,0,1,9600,low,False
+61672, ethanol,4,0,4,9600,high,False
+61827,"...)
+
+",1,1,0,9600,low,False
+61865, Prediction,1,0,1,9600,low,False
+61952, antibody,1,0,1,9600,low,False
+61996,-),1,1,0,9600,low,False
+62020, Attention,1,0,1,9600,low,False
+62024, attribution,1,1,0,9600,low,False
+62090, cep,2,0,2,9600,middle,False
+62147, ≥,3,3,0,9600,high,False
+62208, hypertension,1,0,1,9600,low,False
+62230, paraph,1,1,0,9600,low,False
+62406,indrical,1,1,0,9600,low,False
+62481, cyst,1,0,1,9600,low,False
+62736, criticisms,1,1,0,9600,low,False
+62800, intestinal,1,0,1,9600,low,False
+62815, renal,4,0,4,9600,high,False
+63000, valves,1,0,1,9600,low,False
+63088, pulp,1,0,1,9600,low,False
+63131, Voting,1,1,0,9600,low,False
+63152, informs,1,1,0,9600,low,False
+63381, inefficient,1,1,0,9600,low,False
+63464, ubiquitous,1,0,1,9600,low,False
+63468, crystall,1,0,1,9600,low,False
+63501, speculate,1,0,1,9600,low,False
+63503, vascular,3,0,3,9600,high,False
+63577, genus,6,0,6,9600,high,False
+63656, positives,1,1,0,9600,low,False
+63679, epith,2,0,2,9600,middle,False
+63828, spaced,2,2,0,9600,middle,False
+64060,-span,1,0,1,9600,low,False
+64151, spherical,1,1,0,9600,low,False
+64224,eterminate,3,1,2,9600,high,False
+64341,acellular,1,0,1,9600,low,False
+64430,Matching,1,1,0,9600,low,False
+64431, unk,7,7,0,9600,high,False
+64620, helmets,1,0,1,9600,low,False
+64633,pheres,1,0,1,9600,low,False
+64714, Appendix,1,0,1,9600,low,False
+64816,urbation,2,2,0,9600,middle,False
+64873, guts,1,0,1,9600,low,False
+64989, nineteenth,1,1,0,9600,low,False
+65028, dopamine,1,0,1,9600,low,False
+65104,ASP,1,1,0,9600,low,False
+65106,mur,4,0,4,9600,high,False
+65166, decomposition,1,1,0,9600,low,False
+65203, measurable,1,1,0,9600,low,False
+65222,Possible,1,0,1,9600,low,False
+65232, births,1,0,1,9600,low,False
+65266,licative,1,1,0,9600,low,False
+65270,Bird,1,0,1,9600,low,False
+65435, Ost,1,1,0,9600,low,False
+65491, seab,1,0,1,9600,low,False
+65542, promoter,1,0,1,9600,low,False
+65564, caves,1,0,1,9600,low,False
+65600, influencing,1,0,1,9600,low,False
+65628,oten,2,1,1,9600,middle,False
+65736, speculative,1,0,1,9600,low,False
+65806, erected,1,0,1,9600,low,False
+65859, continents,1,0,1,9600,low,False
+65930, convex,7,7,0,9600,high,False
+65963, Tut,1,1,0,9600,low,False
+66066, cultivated,1,0,1,9600,low,False
+66117, generalized,2,2,0,9600,middle,False
+66145,ographies,2,2,0,9600,middle,False
+66235, Immun,1,0,1,9600,low,False
+66358, analysed,1,0,1,9600,low,False
+66556, ATP,2,0,2,9600,middle,False
+66609, heuristic,3,3,0,9600,high,False
+66750, arcs,1,1,0,9600,low,False
+66846, dynasty,1,1,0,9600,low,False
+66906, predator,1,0,1,9600,low,False
+66912, melan,3,0,3,9600,high,False
+66990,outside,1,1,0,9600,low,False
+67072, footwear,1,1,0,9600,low,False
+67096, biting,1,0,1,9600,low,False
+67210, Frem,1,1,0,9600,low,False
+67270, metast,2,0,2,9600,middle,False
+67500, Siber,1,0,1,9600,low,False
+67534,zones,1,0,1,9600,low,False
+67583, plotted,2,2,0,9600,middle,False
+67595, inferred,1,1,0,9600,low,False
+67750,)—,2,0,2,9600,middle,False
+67765, drilled,1,0,1,9600,low,False
+67816,dots,1,1,0,9600,low,False
+67837, antig,3,0,3,9600,high,False
+67851, algae,4,0,4,9600,high,False
+67901, satisfies,2,2,0,9600,middle,False
+67951, supplemental,1,1,0,9600,low,False
+67986, geomet,2,2,0,9600,middle,False
+67997,-general,1,1,0,9600,low,False
+68159, polygons,4,4,0,9600,high,False
+68210,Cou,1,0,1,9600,low,False
+68256, Figures,1,1,0,9600,low,False
+68261,umor,1,0,1,9600,low,False
+68313, graft,1,0,1,9600,low,False
+68391,asionally,1,1,0,9600,low,False
+68451, isot,1,0,1,9600,low,False
+68602, implicated,1,0,1,9600,low,False
+68629, summarized,1,1,0,9600,low,False
+68655, Notebook,1,1,0,9600,low,False
+68736, commentator,1,1,0,9600,low,False
+68792, Rak,1,0,1,9600,low,False
+68818, extinct,2,0,2,9600,middle,False
+68902, cellul,3,0,3,9600,high,False
+69123,Different,1,0,1,9600,low,False
+69193,-processing,1,0,1,9600,low,False
+69201, rotations,1,1,0,9600,low,False
+69284, Anthrop,1,0,1,9600,low,False
+69334, δ,3,3,0,9600,high,False
+69363,shown,2,2,0,9600,middle,False
+69404,ytic,1,0,1,9600,low,False
+69410, allele,2,0,2,9600,middle,False
+69453,Probably,1,1,0,9600,low,False
+69484, distort,1,1,0,9600,low,False
+69537, cran,1,0,1,9600,low,False
+69650,-gl,1,0,1,9600,low,False
+69655, characterize,1,0,1,9600,low,False
+69685, inhibitor,1,0,1,9600,low,False
+69691,requent,1,0,1,9600,low,False
+69693,Hair,1,0,1,9600,low,False
+69813, sugars,1,0,1,9600,low,False
+69881,oky,1,0,1,9600,low,False
+69917,omorphic,5,5,0,9600,high,False
+69935, Manga,1,1,0,9600,low,False
+70002, SIN,1,1,0,9600,low,False
+70161, precursor,1,0,1,9600,low,False
+70274, surrounds,1,0,1,9600,low,False
+70392, Goodman,1,0,1,9600,low,False
+70432, mantle,1,0,1,9600,low,False
+70599, habitats,1,0,1,9600,low,False
+70683, residues,4,0,4,9600,high,False
+70708, maths,2,2,0,9600,middle,False
+70761,bras,3,3,0,9600,high,False
+70788,sciously,1,1,0,9600,low,False
+70800,langle,2,2,0,9600,middle,False
+70933,ilinear,2,2,0,9600,middle,False
+71040, Mathematic,1,1,0,9600,low,False
+71114, denotes,1,1,0,9600,low,False
+71149, peptide,1,0,1,9600,low,False
+71182,rangle,1,1,0,9600,low,False
+71254, contraception,1,0,1,9600,low,False
+71366, Formation,1,0,1,9600,low,False
+71500, infinitely,1,1,0,9600,low,False
+71527, apex,1,0,1,9600,low,False
+71574, McDon,1,1,0,9600,low,False
+71590,abella,2,0,2,9600,middle,False
+71635, urinary,1,0,1,9600,low,False
+71768, ambiguity,1,0,1,9600,low,False
+71867,chlor,1,0,1,9600,low,False
+71978,iae,1,0,1,9600,low,False
+71984, Behavioral,1,0,1,9600,low,False
+72087, plank,3,0,3,9600,high,False
+72291,ény,1,1,0,9600,low,False
+72340, remnants,1,0,1,9600,low,False
+72475,orpion,1,0,1,9600,low,False
+72503, exhaustive,1,1,0,9600,low,False
+72657, microscope,1,0,1,9600,low,False
+72733, thor,1,0,1,9600,low,False
+72829, manifold,3,3,0,9600,high,False
+72898, missionary,1,1,0,9600,low,False
+73110, Ernst,1,1,0,9600,low,False
+73165, lantern,1,0,1,9600,low,False
+73350, synonym,1,0,1,9600,low,False
+73351, Qin,1,1,0,9600,low,False
+73444, oddly,2,2,0,9600,middle,False
+73527,"""M",1,0,1,9600,low,False
+73533, sensit,1,0,1,9600,low,False
+73667,ynthesis,3,0,3,9600,high,False
+73708, venom,1,0,1,9600,low,False
+73709, transcend,1,1,0,9600,low,False
+73711, Mayer,3,3,0,9600,high,False
+73777, speculated,2,2,0,9600,middle,False
+73822,")}
+
+",1,1,0,9600,low,False
+73838, Symposium,1,0,1,9600,low,False
+73881,igon,1,1,0,9600,low,False
+73898, nond,1,1,0,9600,low,False
+73972,enton,1,1,0,9600,low,False
+74019, crochet,1,1,0,9600,low,False
+74064, constituent,1,0,1,9600,low,False
+74123,".
+
+
+
+
+",1,1,0,9600,low,False
+74151, exponentially,1,0,1,9600,low,False
+74177, decipher,1,0,1,9600,low,False
+74210, cognition,1,0,1,9600,low,False
+74225,urbed,2,2,0,9600,middle,False
+74371,Clearly,1,1,0,9600,low,False
+74417, gob,3,0,3,9600,high,False
+74433, coursework,1,1,0,9600,low,False
+74548, illuminated,1,0,1,9600,low,False
+74762, quotient,2,2,0,9600,middle,False
+74916, divisible,1,1,0,9600,low,False
+74926, circumference,1,1,0,9600,low,False
+74932, sexes,2,0,2,9600,middle,False
+74941, specificity,1,0,1,9600,low,False
+74970,—including,1,0,1,9600,low,False
+74982, canine,1,0,1,9600,low,False
+75044,clid,7,7,0,9600,high,False
+75118,romosome,1,0,1,9600,low,False
+75377, treaties,1,0,1,9600,low,False
+75423,ozy,1,0,1,9600,low,False
+75482, inherits,1,1,0,9600,low,False
+75820, hawk,1,0,1,9600,low,False
+75891,organisms,1,0,1,9600,low,False
+75895,lesi,1,0,1,9600,low,False
+75904, inclination,3,3,0,9600,high,False
+75952, illumination,1,0,1,9600,low,False
+76002, cyclic,2,2,0,9600,middle,False
+76030, serotonin,1,0,1,9600,low,False
+76238, palate,1,0,1,9600,low,False
+76443, Algebra,1,1,0,9600,low,False
+76502,pillar,1,0,1,9600,low,False
+76526,fec,1,0,1,9600,low,False
+76578, pigment,3,0,3,9600,high,False
+76771, outbreaks,1,0,1,9600,low,False
+76961,ynomials,1,1,0,9600,low,False
+76976, confidently,1,0,1,9600,low,False
+77087, tensors,1,1,0,9600,low,False
+77114, ripping,1,0,1,9600,low,False
+77119, anchored,1,0,1,9600,low,False
+77159, proofs,1,1,0,9600,low,False
+77216, monot,1,1,0,9600,low,False
+77243, moss,1,0,1,9600,low,False
+77303,Anything,1,0,1,9600,low,False
+77327, gib,1,0,1,9600,low,False
+77404, yielding,2,2,0,9600,middle,False
+77486,Rol,1,1,0,9600,low,False
+77494, Valle,1,0,1,9600,low,False
+77525,Atlantic,1,0,1,9600,low,False
+77752,acteria,1,0,1,9600,low,False
+77772, mRNA,1,0,1,9600,low,False
+77783, ellipt,1,1,0,9600,low,False
+77809, uniformly,2,2,0,9600,middle,False
+77894,genesis,1,0,1,9600,low,False
+77901, Aristotle,2,2,0,9600,middle,False
+77939,Anne,1,0,1,9600,low,False
+78036, analytic,1,1,0,9600,low,False
+78183, analogous,1,1,0,9600,low,False
+78248, membranes,1,0,1,9600,low,False
+78283, parasites,3,0,3,9600,high,False
+78285,ducible,1,1,0,9600,low,False
+78290,apses,1,0,1,9600,low,False
+78343,iability,2,2,0,9600,middle,False
+78430, nurture,2,0,2,9600,middle,False
+78438, proverb,1,0,1,9600,low,False
+78447, salesman,1,1,0,9600,low,False
+78510, cylindrical,1,1,0,9600,low,False
+78611, Reported,1,0,1,9600,low,False
+78660, ornament,1,0,1,9600,low,False
+78684, pollen,1,0,1,9600,low,False
+78809, cyt,2,0,2,9600,middle,False
+78833,ylation,1,0,1,9600,low,False
+78990,Jessica,1,1,0,9600,low,False
+78992, Pty,1,0,1,9600,low,False
+79084, sustaining,1,0,1,9600,low,False
+79169, hunted,1,0,1,9600,low,False
+79315, audible,1,0,1,9600,low,False
+79374, Friedrich,1,1,0,9600,low,False
+79644, freshwater,2,0,2,9600,middle,False
+79672,Reviewed,1,1,0,9600,low,False
+79731, Shapiro,1,1,0,9600,low,False
+79735, Werner,1,1,0,9600,low,False
+79753,Demon,1,0,1,9600,low,False
+79767, converge,1,1,0,9600,low,False
+79898,emann,1,1,0,9600,low,False
+79994, rms,1,1,0,9600,low,False
+80018, Euler,2,2,0,9600,middle,False
+80115, subgroup,1,0,1,9600,low,False
+80373, fossils,6,0,6,9600,high,False
+80440, fungi,3,0,3,9600,high,False
+80442, OA,1,1,0,9600,low,False
+80519,olated,1,0,1,9600,low,False
+80660, Ecc,1,0,1,9600,low,False
+80715, Cartesian,1,1,0,9600,low,False
+80778, sentinel,1,0,1,9600,low,False
+80794, Biol,1,0,1,9600,low,False
+80844, Catalan,1,1,0,9600,low,False
+80848, Stem,1,0,1,9600,low,False
+80919, inters,1,0,1,9600,low,False
+80986, Principle,1,0,1,9600,low,False
+81059, antagonist,1,0,1,9600,low,False
+81060, kinase,1,0,1,9600,low,False
+81072, Gems,1,1,0,9600,low,False
+81158, divergence,1,1,0,9600,low,False
+81216, originate,2,0,2,9600,middle,False
+81239, flowering,1,0,1,9600,low,False
+81241, harmonic,1,1,0,9600,low,False
+81244,perse,1,1,0,9600,low,False
+81323, phenotype,2,0,2,9600,middle,False
+81357, tackled,1,1,0,9600,low,False
+81614, follic,1,0,1,9600,low,False
+81623, flakes,2,2,0,9600,middle,False
+81989, antigen,3,0,3,9600,high,False
+82004, reconstructed,1,1,0,9600,low,False
+82081, chromosomes,7,0,7,9600,high,False
+82089,mitters,1,0,1,9600,low,False
+82122, dwind,1,0,1,9600,low,False
+82146, Gö,1,1,0,9600,low,False
+82234,inine,2,0,2,9600,middle,False
+82279, contrasts,1,0,1,9600,low,False
+82406, dolphins,2,0,2,9600,middle,False
+82499, Signals,1,0,1,9600,low,False
+82591, achieves,2,2,0,9600,middle,False
+82654, sightings,1,0,1,9600,low,False
+82668, calculus,1,1,0,9600,low,False
+82761, larvae,1,0,1,9600,low,False
+82949, modifies,2,0,2,9600,middle,False
+83068, pelvic,1,0,1,9600,low,False
+83147,citation,2,0,2,9600,middle,False
+83273, propositions,1,1,0,9600,low,False
+83343, carbonate,2,0,2,9600,middle,False
+83395, lys,1,0,1,9600,low,False
+83435, genera,2,0,2,9600,middle,False
+83609, weaving,2,2,0,9600,middle,False
+83889, motifs,1,0,1,9600,low,False
+83974, lem,1,0,1,9600,low,False
+84017, intox,1,0,1,9600,low,False
+84233,SAT,1,1,0,9600,low,False
+84302, kilograms,2,0,2,9600,middle,False
+84331, Gould,2,0,2,9600,middle,False
+84484, Surprise,1,1,0,9600,low,False
+84682,Traditional,1,0,1,9600,low,False
+84822, mutated,1,0,1,9600,low,False
+84886,itin,7,0,7,9600,high,False
+84966, repetitions,1,1,0,9600,low,False
+85386,δ,1,1,0,9600,low,False
+85424,resher,1,1,0,9600,low,False
+85467, branching,2,1,1,9600,middle,False
+85499, singly,2,2,0,9600,middle,False
+85536, dung,1,0,1,9600,low,False
+85801, continuum,2,2,0,9600,middle,False
+85845,logen,2,0,2,9600,middle,False
+85915, conject,4,4,0,9600,high,False
+85943, Isles,1,0,1,9600,low,False
+86051, caveat,1,1,0,9600,low,False
+86084,typically,1,0,1,9600,low,False
+86167,^n,5,5,0,9600,high,False
+86182, homogeneous,2,2,0,9600,middle,False
+86248,etyl,1,0,1,9600,low,False
+86481, Nowadays,1,1,0,9600,low,False
+86678,ensis,1,0,1,9600,low,False
+86968, camouflage,1,0,1,9600,low,False
+87024, fern,1,0,1,9600,low,False
+87070, predatory,1,0,1,9600,low,False
+87077, Euras,2,0,2,9600,middle,False
+87080,RAR,1,0,1,9600,low,False
+87091, autoimmune,1,0,1,9600,low,False
+87147, plast,1,0,1,9600,low,False
+87210,^{-,3,3,0,9600,high,False
+87214, abyss,1,0,1,9600,low,False
+87454,brane,1,0,1,9600,low,False
+87549, unic,2,0,2,9600,middle,False
+87654, mutants,1,0,1,9600,low,False
+87671,asions,1,0,1,9600,low,False
+87772,perms,1,0,1,9600,low,False
+87796, staining,1,0,1,9600,low,False
+87864, Johann,1,0,1,9600,low,False
+87966,modulo,1,1,0,9600,low,False
+88011, aph,1,0,1,9600,low,False
+88071,adapt,1,0,1,9600,low,False
+88177, axiom,3,3,0,9600,high,False
+88255, pasture,1,0,1,9600,low,False
+88318, sulfate,1,0,1,9600,low,False
+88360, dormant,1,0,1,9600,low,False
+88516, Helps,1,1,0,9600,low,False
+88538,θ,2,2,0,9600,middle,False
+88539,orta,1,0,1,9600,low,False
+88621,pecies,4,0,4,9600,high,False
+88647,istinguish,1,1,0,9600,low,False
+88773, embryos,1,0,1,9600,low,False
+88847,omencl,1,0,1,9600,low,False
+88921,inear,1,1,0,9600,low,False
+88952, dend,2,0,2,9600,middle,False
+88954, Fourier,2,2,0,9600,middle,False
+89175, squid,1,0,1,9600,low,False
+89201, conformity,1,0,1,9600,low,False
+89251, neurotrans,2,0,2,9600,middle,False
+89275,-producing,1,0,1,9600,low,False
+89353, arcane,1,1,0,9600,low,False
+89446, frogs,1,0,1,9600,low,False
+89536,mmas,2,2,0,9600,middle,False
+89549,-plane,1,1,0,9600,low,False
+89556, scoff,1,1,0,9600,low,False
+89874, induces,1,1,0,9600,low,False
+90160,iosis,2,0,2,9600,middle,False
+90169,ioms,2,2,0,9600,middle,False
+90257, sclerosis,1,0,1,9600,low,False
+90304,]^,2,2,0,9600,middle,False
+90510, CSP,2,2,0,9600,middle,False
+90576,otoxic,1,0,1,9600,low,False
+90618,Spatial,1,1,0,9600,low,False
+90869,rms,1,1,0,9600,low,False
+90877, signalling,1,0,1,9600,low,False
+90941, Preservation,1,0,1,9600,low,False
+91040,Pear,1,0,1,9600,low,False
+91060,Equivalent,2,2,0,9600,middle,False
+91235,oplast,3,0,3,9600,high,False
+91299, climates,2,0,2,9600,middle,False
+91362,{n,1,1,0,9600,low,False
+91500, purified,1,0,1,9600,low,False
+91550,mathrm,1,1,0,9600,low,False
+91592, Remain,1,1,0,9600,low,False
+91660, Integral,1,1,0,9600,low,False
+91692, deepen,1,1,0,9600,low,False
+91862, angi,1,0,1,9600,low,False
+91928, Computational,2,0,2,9600,middle,False
+91960, azimuth,1,1,0,9600,low,False
+92070,igraphy,1,0,1,9600,low,False
+92144, Knot,1,1,0,9600,low,False
+92229, endoth,1,0,1,9600,low,False
+92234, inequalities,1,1,0,9600,low,False
+92309,singular,1,0,1,9600,low,False
+92373,osphate,1,0,1,9600,low,False
+92428, Tasmania,1,0,1,9600,low,False
+92432, biochemical,1,0,1,9600,low,False
+92540, generalize,1,1,0,9600,low,False
+92598, persecuted,1,0,1,9600,low,False
+93216, Gauss,2,2,0,9600,middle,False
+93250, knack,1,1,0,9600,low,False
+93428,Sac,1,0,1,9600,low,False
+93498,bic,1,0,1,9600,low,False
+93538,).[,4,1,3,9600,high,False
+93608, Pays,1,0,1,9600,low,False
+93788, sucker,1,0,1,9600,low,False
+93889, doubly,1,1,0,9600,low,False
+93934,_nh,1,1,0,9600,low,False
+94122, predictors,1,0,1,9600,low,False
+94135, fibr,2,0,2,9600,middle,False
+94240, converse,2,2,0,9600,middle,False
+94260, elic,1,0,1,9600,low,False
+94347, fungal,3,0,3,9600,high,False
+94348,Greek,1,1,0,9600,low,False
+94355, stimulates,1,1,0,9600,low,False
+94361, fishes,1,0,1,9600,low,False
+94580, orthogonal,3,3,0,9600,high,False
+94628, Madagascar,1,0,1,9600,low,False
+95004, Calcium,1,0,1,9600,low,False
+95008,osomal,2,0,2,9600,middle,False
+95181,etes,1,0,1,9600,low,False
+95224,-contained,1,1,0,9600,low,False
+95362,thag,3,3,0,9600,high,False
+95459,ué,1,1,0,9600,low,False
+95514,ozo,1,0,1,9600,low,False
+95871, ulcer,1,0,1,9600,low,False
+96065,{(,2,2,0,9600,middle,False
+96219,-sectional,1,0,1,9600,low,False
+96248, medial,1,0,1,9600,low,False
+96254, asympt,1,1,0,9600,low,False
+96419,-Saharan,1,0,1,9600,low,False
+96987, Apt,1,0,1,9600,low,False
+97160, alleles,2,0,2,9600,middle,False
+97180, axial,1,0,1,9600,low,False
+97202, botanical,1,0,1,9600,low,False
+97386, beetle,1,0,1,9600,low,False
+97467, Burgess,1,0,1,9600,low,False
+97488,informatics,1,0,1,9600,low,False
+97543,throp,2,0,2,9600,middle,False
+97577,odef,1,0,1,9600,low,False
+97631, woodland,1,0,1,9600,low,False
+97785,-independent,1,0,1,9600,low,False
+97794,Triangles,1,1,0,9600,low,False
+97803, Laz,1,1,0,9600,low,False
+97836,however,1,0,1,9600,low,False
+97875, φ,1,1,0,9600,low,False
+98034, Recap,1,1,0,9600,low,False
+98074,ymology,1,0,1,9600,low,False
+98169, dolphin,1,0,1,9600,low,False
+98262, Ferm,5,5,0,9600,high,False
+98362,aviest,1,0,1,9600,low,False
+98445, juven,1,0,1,9600,low,False
+98569, inhibited,1,0,1,9600,low,False
+98658, capacit,1,0,1,9600,low,False
+98727, synaptic,3,0,3,9600,high,False
+98744, exon,1,0,1,9600,low,False
+98766,romatic,2,0,2,9600,middle,False
+98813,ifers,1,0,1,9600,low,False
+98819, polys,1,0,1,9600,low,False
+99961,資,1,0,1,9600,low,False
+100589,產,1,0,1,9600,low,False
+144336,√,1,1,0,9600,low,False
+144971,≡,1,1,0,9600,low,False
+145264,∧,1,1,0,9600,low,False
+145505,⊂,1,1,0,9600,low,False
+145786,ǔ,1,1,0,9600,low,False
+145809,∅,1,1,0,9600,low,False
+146577,∕,1,1,0,9600,low,False

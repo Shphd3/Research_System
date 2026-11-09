@@ -1,0 +1,98 @@
+{
+  "experiment_id": "A17_03_E03_trajectory_mechanism",
+  "run": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z",
+  "engineering": "COMPLETE",
+  "scientific_judgment": "Unknown",
+  "jobs": {
+    "smoke": "pt-c1i5f9pl",
+    "full": "pt-8aoyrzuw"
+  },
+  "counts": {
+    "smoke": 12,
+    "replay": 4,
+    "full": 108,
+    "training_updates": 0
+  },
+  "registered_assets": [
+    "representation_a17_03_trajectory_smoke_20261011t090921z",
+    "representation_a17_03_trajectory_full_20261011t090921z"
+  ],
+  "access_snapshot": "/data/250010109/Research_System/assets/checks/2026-10-11_a17_trajectory_20261011T090921Z.json",
+  "files": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/config.json",
+      "sha256": "deb7390edc29183ff04de1b4cfcb3704c9b74eee19c1353ea71db0e70e5bb4d6",
+      "bytes": 3523642
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/freeze.json",
+      "sha256": "fc85fcbfac37078a67272c3a24b598567dbb0339bbdb47e960629c358aaddd57",
+      "bytes": 43065
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/analysis_source_manifest.json",
+      "sha256": "4bc57462483105cddafac747a88ab849f56fdaef3f1118f745d0083f9858b024",
+      "bytes": 511
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/completion.json",
+      "sha256": "37d262e0f37764a5c36b23fb8d99b0b67db9ade64d4c533e91c921823e867b18",
+      "bytes": 21834
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/analysis/full/engineering_audit.json",
+      "sha256": "aa0107b80808c8c9332706d0e870d5558e72b15e16ca99e4a7d884dacea45aaa",
+      "bytes": 491
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/analysis/full/case_contrasts.json",
+      "sha256": "546ebdd01b7f6492d37d1164e6942a4224a3919b378df8802c6894f906d9e526",
+      "bytes": 768137
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/analysis/trajectory/aggregate.json",
+      "sha256": "d9d8f32db82bbc8fefd336dea60789be2810812832bea006b4c09f3e7c507df2",
+      "bytes": 55036
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/registration/receipt.json",
+      "sha256": "d7fa5a8f3e7cc521b50d193e1b1addf23d49cc3608f5b7ca7c13f2dc3c9b6f4a",
+      "bytes": 509
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/analysis/full/order_state_heterogeneity.json",
+      "sha256": "c156ace8cb8c19efeb2eda7f4e31d47e9aca014da3b126903e676654a77b718d",
+      "bytes": 1400
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/analysis/full/example_lost_repair.json",
+      "sha256": "dc478ed251a7fb6b1029fb1b15b0a8c6545399b31821cad90f5d37b8369df629",
+      "bytes": 3393
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/analysis/audit_summarize.py",
+      "sha256": "1b45f5259a7ed753ef85b59004bc1a18449610a0b07fe1a95a0f6d1476ddb3b8",
+      "bytes": 7576
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/analysis/trajectory.py",
+      "sha256": "03e9dc25e81f1963aed2521666cebc8d7a5742855049931fa735bb4b581d48a2",
+      "bytes": 4144
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/analysis/write_results.py",
+      "sha256": "c54a7854a085dba8d089b63d96c0da0edc292c9719612b5b2efa8baf0842e562",
+      "bytes": 16654
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/analysis/full_platform_terminal.json",
+      "sha256": "0f650967e6439c9488b5ce6b970074f333ff58daa8496aee721edc37bb5c7c78",
+      "bytes": 4239
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261011_a17_trajectory_mechanism/runs/trajectory_20261011T090921Z/execution_certificate.md",
+      "sha256": "977a7c551a8db0733a4e9213d9b981e9c3052aaf1947d89df9bfc8311f235a93",
+      "bytes": 1204
+    }
+  ]
+}

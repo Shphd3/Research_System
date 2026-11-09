@@ -1,0 +1,96 @@
+{
+  "phase": "panel",
+  "pass": false,
+  "time_utc": "2026-10-26T16:28:31.258875+00:00",
+  "processing_agent": "/root",
+  "n_model_sequences": 120,
+  "n_measured_positions": 360,
+  "nmse_mean": 0.07915990273985597,
+  "nmse_p90": 0.09556438177824021,
+  "nmse_max": 0.11717727035284042,
+  "decoder_formula_max_relerror": 1.0499121572138392e-07,
+  "replay_and_causal_checks": [
+    {
+      "seq_id": "B01_00_short",
+      "purpose": "replay",
+      "max_abs_z_difference": 0.0,
+      "tolerance": 0.006389988861083985,
+      "pass": true
+    },
+    {
+      "seq_id": "B01_00_long",
+      "purpose": "replay",
+      "max_abs_z_difference": 0.0,
+      "tolerance": 0.006526168212890625,
+      "pass": true
+    },
+    {
+      "seq_id": "B01_01_short",
+      "purpose": "replay",
+      "max_abs_z_difference": 0.0,
+      "tolerance": 0.006299287567138672,
+      "pass": true
+    },
+    {
+      "seq_id": "B01_01_long",
+      "purpose": "replay",
+      "max_abs_z_difference": 0.0,
+      "tolerance": 0.006579019317626953,
+      "pass": true
+    },
+    {
+      "seq_id": "B01_00_short",
+      "purpose": "causal_prefix",
+      "stage": 0,
+      "max_abs_z_difference": 3.814697265625e-06,
+      "z_tolerance": 0.41826192474365237,
+      "relative_h_error": 0.0,
+      "h_relative_tolerance": 0.01,
+      "pass": true,
+      "scope": "numeric prefix consistency under causal SDPA; later suffix excluded in check"
+    },
+    {
+      "seq_id": "B01_00_short",
+      "purpose": "causal_prefix",
+      "stage": 1,
+      "max_abs_z_difference": 5.7220458984375e-06,
+      "z_tolerance": 0.5899599227905273,
+      "relative_h_error": 0.0,
+      "h_relative_tolerance": 0.01,
+      "pass": true,
+      "scope": "numeric prefix consistency under causal SDPA; later suffix excluded in check"
+    },
+    {
+      "seq_id": "B01_00_long",
+      "purpose": "causal_prefix",
+      "stage": 0,
+      "max_abs_z_difference": 2.7817845344543457,
+      "z_tolerance": 0.4267088851928711,
+      "relative_h_error": 0.015606313943862915,
+      "h_relative_tolerance": 0.01,
+      "pass": false,
+      "scope": "numeric prefix consistency under causal SDPA; later suffix excluded in check"
+    },
+    {
+      "seq_id": "B01_00_long",
+      "purpose": "causal_prefix",
+      "stage": 1,
+      "max_abs_z_difference": 0.32170963287353516,
+      "z_tolerance": 0.583479362487793,
+      "relative_h_error": 0.010799000971019268,
+      "h_relative_tolerance": 0.01,
+      "pass": false,
+      "scope": "numeric prefix consistency under causal SDPA; later suffix excluded in check"
+    }
+  ],
+  "elapsed_seconds": 13.966646909713745,
+  "peak_cuda_bytes": 1687291392,
+  "parameter_updates": 0,
+  "sealed_TEST_read": false,
+  "new_resources": 0,
+  "model_dtype": "BF16",
+  "SAE_dtype": "FP32",
+  "torch": "2.5.1+cu121",
+  "transformers": "4.53.3",
+  "source_code_sha256": "9eb467ffcdc15005c92787c558b011639fc3c28ef01f6f993e9a431a9bf2fee3"
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "frequency_interval_moe_bounded_delivery_v1",
+  "utc": "2026-10-18T11:15:42Z",
+  "run_root": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z",
+  "job_id": "pt-vv7zkyxf",
+  "platform_state": "SUCCEEDED",
+  "execution": "CACHE_AND_ENGINEERING_SMOKE_AND_CPU_DIAGNOSTICS_COMPLETE",
+  "formal_comparison": "NOT_RUN_INSUFFICIENT_LINEAR_ROUTE_COVERAGE",
+  "scientific_question_verdict": "UNKNOWN; no learning comparison performed",
+  "main_observation": "A experts 0/1/2 receive zero TRAIN positions; expert7 receives119843/130712",
+  "reports": [
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/detailed.md",
+      "bytes": 14122,
+      "sha256": "7927bd85db3491ff9de20308aad61eb25eca98e889f580ea825cea9229fa6012"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/detailed_cn.md",
+      "bytes": 17791,
+      "sha256": "80cc22f11cb11a6ebdaa8ff4d8777467bf6dc84149762da9a72be1a402541488"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/protocol.md",
+      "bytes": 17826,
+      "sha256": "a1c49439bf85c08f7d017cf7728e2e58c98ba41c2f4f113536d95c86ed85014b"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/protocol_cn.md",
+      "bytes": 11372,
+      "sha256": "24e2dc3d53b2f87738b56cbfd254c8d1a4a1f1086be8ff7ddf0d8fdfeb472094"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/summary.md",
+      "bytes": 3734,
+      "sha256": "309839e0c591749e62f74a4a76222200bf9ac730db3580f37bb64cd9d127fa35"
+    },
+    {
+      "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/experiments/crosscoder_feature_relations/frequency_interval_residual_moe/summary_cn.md",
+      "bytes": 3591,
+      "sha256": "fa734f04a56132ad18fda2087ce3a8b405f724e276c16ea63c26a89c6a0b1c1e"
+    }
+  ],
+  "asset_ids": [
+    "representation_crosscoder_frequency_interval_moe_20261018t103820z",
+    "checkpoint_crosscoder_frequency_interval_moe_smoke_20261018t103820z",
+    "analysis_crosscoder_frequency_interval_moe_20261018t103820z"
+  ],
+  "producer_artifacts": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/provenance/analysis_receipt.json",
+  "cache_identity": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/provenance/cache_preparation_receipt.json",
+  "smoke": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/smoke/smoke_receipt.json",
+  "historical_baseline_qualification": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/provenance/baseline_reuse_receipt.json",
+  "source_freeze": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/provenance/freeze_manifest.json",
+  "observability_amendment": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/provenance/freeze_observability_amendment.json",
+  "final_validation": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_interval_moe/20261018T103820Z/provenance/delivery_validation.json",
+  "checkpoint_boundary": "Four actual step16/2048-repeat-exposure Smoke states; external-process recovery NOT_QUALIFIED",
+  "completed_limits": {
+    "pipeline_wall_seconds": 72.46201869472861,
+    "cpu_analysis_wall_seconds": 22.55019829981029,
+    "formal_optimizer_updates": 0,
+    "torch_peak_allocated_bytes": 8998948352,
+    "cpu_continuous_peak": "NOT_RECORDED",
+    "run_bytes_at_delivery": 1065003675,
+    "new_disk_limit_bytes": 8589934592
+  },
+  "no_commit_or_push": true,
+  "next_experiment": "NOT_STARTED"
+}

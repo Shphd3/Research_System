@@ -1,0 +1,60 @@
+{
+  "success_scope": "R01exposeddiscovery,notnewR02confirmation",
+  "R01_success": {
+    "case_id": "A01",
+    "token": "bank",
+    "token_id": 6073,
+    "target_position": 16,
+    "feature_id": 6401,
+    "base_z": 0.0,
+    "changed_z": 4.044557094573975,
+    "visible_change": "river bank -> savings bank"
+  },
+  "R02_measurement_success": {
+    "case_id": "B01",
+    "token": "bass",
+    "token_id": 21529,
+    "feature_id": 19601,
+    "stage": "aftercue1",
+    "z00": 5.16217565536499,
+    "z01": 5.16217565536499,
+    "z10": 5.52941370010376,
+    "z11": 5.52941370010376,
+    "interaction": 0.0,
+    "interpretation": "samevisibleprefixreadingsmatchbeforecue2;notjointsemanticvalidation"
+  },
+  "R02_counterexample": {
+    "case_id": "B01",
+    "token": "bass",
+    "token_id": 21529,
+    "feature_id": 1818,
+    "positions": [
+      90,
+      106,
+      111
+    ],
+    "aftercue2_z_by00_10_01_11": [
+      4.1272382736206055,
+      4.394707202911377,
+      4.611041069030762,
+      4.107564449310303
+    ],
+    "interaction_by_stage": [
+      0.0,
+      -0.7709455490112305,
+      0.24626874923706055
+    ],
+    "compatible_conditions_of4": 2,
+    "interpretation": "nonadditivityappearsbutsemanticmappingfails;originalmeasurementgatealsofailed"
+  },
+  "frozen_first_failed_group_example": {
+    "group": "G02",
+    "old_max_case": "B17",
+    "old_max_feature": 28673,
+    "old_main_delta": -8.74260139465332,
+    "new_case": "B01",
+    "new_feature_all4combinations_all3stages": 0.0,
+    "interpretation": "strongoldbassresponsedoesnotbyitselfqualifynewjointcluegroup;newmemberminsupport1of6"
+  },
+  "no_new_qualified_scientific_success_case": true
+}

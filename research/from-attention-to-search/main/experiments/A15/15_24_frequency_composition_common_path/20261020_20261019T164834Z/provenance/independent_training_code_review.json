@@ -1,0 +1,115 @@
+{
+  "reviewer": "/root/representation_reuse_audit",
+  "kind": "independent read-only implementation audit; not scientific approval or training execution",
+  "time_utc": "2026-10-19T16:57:50.583591+00:00",
+  "source": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/code/train_matched.py",
+  "code_sha256": "5bbbad26e2f3bdb65166bdbbbfb3a7b7cb3b6d97f699f3a5fd177fd4502d89e5",
+  "status": "PASS_STATIC_WITH_RUNTIME_GATES",
+  "runtime_execution": "NOT_PERFORMED_BY_REVIEWER",
+  "defects": [],
+  "static_pass": [
+    {
+      "criterion": "True NTP loss gradient through frozen original head to exactly two distinct full experts",
+      "evidence": "head(model(h,r)) and CE.backward; branch gathers both routes, weights0.5 and no detach; FrozenHead buffers have no parameter grads yet differentiable h; lines177-200,221-245,379-407."
+    },
+    {
+      "criterion": "Nondegenerate zero-output initialization",
+      "evidence": "CPU seeded random up/gate, zero down only; paired init hash; lines182-187,342-355."
+    },
+    {
+      "criterion": "Effective batch512/micro128 actual-target normalization",
+      "evidence": "Each micro CE reduction=sum divided by actual effective batch total, last44 included; lines221-245,588-594."
+    },
+    {
+      "criterion": "Same init, data order, steps, expert parameters and top2 across four paired arms",
+      "evidence": "seed-specific initialization hashes and PCG64 order;168steps,85548positions, fixed width1024, active distinct2 verified by routes; lines106-112,295-303,543-575,612."
+    },
+    {
+      "criterion": "Low targets use new fixed T-B1 not old L964",
+      "evidence": "train_bands reads new run routes/groups.npz band; metrics both T/R use same band ids; lines115-163; actual groups.npz band shape16384 low_features1694."
+    },
+    {
+      "criterion": "DEV losses terminal only across all eight complete models",
+      "evidence": "train workers cache train/eval only; finalize asserts all8 COMPLETE before reading DEV; lines553-554,684-725."
+    },
+    {
+      "criterion": "Complete resume model/optimizer/RNG/counters/order/scheduler rule",
+      "evidence": "complete_state saves actual model and Adam states plus all RNG, order,cursor,seen/exposure; restore validates identity; smoke disk-replays next update model/Adam/NLL; lines358-376,422-449."
+    },
+    {
+      "criterion": "Required TensorBoard loss/tokens/update mapping",
+      "evidence": "CE nats and total against valid seen and updates, lr/progress/health/expert exposure; actual event re-read check planned in smoke; lines462-473,496-510."
+    }
+  ],
+  "pending_runtime": [
+    "Actual GPU initial-logit equivalence",
+    "Actual head-backprop down then up/gate checks",
+    "Real disk optimizer/RNG next-update replay",
+    "Actual TensorBoard event readback",
+    "Supervisor active-wall/aggregate-RSS/new-disk/child-failure enforcement; smoke active_seconds is logged but internal smoke has no time check. Worker deadline checks exist."
+  ],
+  "scope_boundary": "No source edits, no model forward, no training, no GPU by reviewer. Budget supervisor is root-owned and was not yet available at first review.",
+  "review_history": [
+    {
+      "time_utc": "2026-10-19T16:56:51.348837+00:00",
+      "code_sha256": "c2d9945a1c88d6dfd5ccf1bf2f3be2f213f7254dfe7d3a1021f413842a9c20d1",
+      "status": "REPAIR_REQUIRED",
+      "defects": [
+        {
+          "id": "R1",
+          "severity": "required result completeness",
+          "lines": [
+            733,
+            750
+          ],
+          "issue": "Protocol section10 requires paired seed-mean Delta_T and interaction bootstrap intervals; only interaction is bootstrapped and only its paired mean is appended. Delta_R mean also omitted.",
+          "repair": "Use same whole-dialogue bootstrap weights to report paired-seed-mean Delta_T, Delta_R and interaction; preserve two per-seed values; expose Delta_T and I intervals before any support judgment."
+        },
+        {
+          "id": "R2",
+          "severity": "recoverable checkpoint assessment omission",
+          "lines": [
+            567,
+            570,
+            604,
+            610,
+            630,
+            634
+          ],
+          "issue": "Latest resumable state is saved before assess. If assess fails and worker resumes at that milestone, loop skips assessing resumed milestone. At168 it can mark COMPLETE without final train/eval metrics/arrays.",
+          "repair": "Repair missing current milestone assessments after restore and before next update; require all five planned checkpoint train/eval/metrics outputs before COMPLETE. Missing assess must not require redoing unrelated training."
+        }
+      ]
+    }
+  ],
+  "resolved": [
+    {
+      "id": "R1",
+      "new_lines": [
+        778,
+        797
+      ],
+      "evidence": "All Delta_T/Delta_R/interaction paired seed means receive same-seed whole-dialogue bootstrap; primary rule recorded explicitly."
+    },
+    {
+      "id": "R2",
+      "new_lines": [
+        550,
+        568,
+        611,
+        614,
+        644,
+        647
+      ],
+      "evidence": "Restored milestone evaluation completed if missing/invalid; all five full TRAIN/EVAL arrays+metrics and expected model milestones checked before COMPLETE."
+    }
+  ],
+  "producer_CPU_static_receipt": {
+    "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/analysis/frequency_composition_common_path/20261019T164834Z/training/static_check.json",
+    "status": "PASS",
+    "code_sha": "c2d9945a1c88d6dfd5ccf1bf2f3be2f213f7254dfe7d3a1021f413842a9c20d1",
+    "source_hash_matches": false,
+    "scope": "Producer CPU checks inspected; reviewer did not run training or duplicate them."
+  },
+  "important_boundary": "Static PASS permits no new authority: GPU smoke evidence and root supervisor budget/failed-child enforcement remain execution obligations. No DEV-based parameter selection is implemented."
+}

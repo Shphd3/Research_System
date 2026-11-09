@@ -1,0 +1,33 @@
+{
+  "model_class": "Qwen3ForCausalLM",
+  "layers": 28,
+  "hidden": 1024,
+  "vocab": 151936,
+  "lm_head_shape": [
+    151936,
+    1024
+  ],
+  "embedding_tied": true,
+  "bias": null,
+  "final_norm_eps": 1e-06,
+  "A22_layers": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+  ],
+  "threshold": 0.051281172782182693,
+  "normalization": "frozen TRAIN centered vector RMS",
+  "actual_device": "CPU2threads;BF16model/encoder;FP32raw decoder;FP64geometry",
+  "local_H100_used": false
+}

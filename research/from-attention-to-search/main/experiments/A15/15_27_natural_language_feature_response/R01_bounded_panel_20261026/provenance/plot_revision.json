@@ -1,0 +1,47 @@
+{
+  "schema": "render_only_readability_revision_v1",
+  "processing_agent": "/root/offline_analysis",
+  "reason": "Original figure1 colorbar overlaid data and original figure2 reference-frequency label was clipped.",
+  "changes": [
+    "Explicit non-overlapping colorbar axes for figure1; wrapped full prefixes and token indices; same fixed data/features/color scale.",
+    "Figure2 uses exactly frozen matrices/tree/order; explicit frequency/support scales and registered group boxes; lexical-support limitation stated.",
+    "Descriptive target-support and example raw/ratio tables; no new p-values or choice thresholds.",
+    "Corrected figure1 footer authorship to Codex-assistant constructed text; no claim of human-authored originals."
+  ],
+  "frozen_statistics_unchanged": true,
+  "input_hashes": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/analyze.py": "3ed38388f078024a1168394a2ca3120908ab52269fcf7d84648434620a10b07c",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/statistical_plan.json": "2d316e8fa20d0d0843ea5e8afe995c32c30f4b7e390594331fb2ed497c170f03",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/candidate_freeze.json": "a54c37ab0854c4a2e9c535c87d9720cdc8a03c719d19856ae148ad3ea66b5838",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/discovery_statistics.npz": "927852281b420118a6a27aba34f9dfd779c32d440295d897735a73a10a6e2279",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/holdout_statistics.npz": "1af6339236f348a0c22fe6f160a3e568be426b924f19a7f32b25513f6d380f74",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/results.json": "4b4c69c2b3cac2e261d17eb5dd2bebbfc55d2e16b56e0e01600345dededf4bca"
+  },
+  "renderer_sha256": "3141e239900eddf5003606e1abfb0de1845d55957ebbd066f6a51bc26f90476b",
+  "outputs": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/figures/figure1_token_feature_heatmaps_readable.png": "002b5b6d5a17b0122b048832001da6762ac3d03772e32c489eb94fbba909290c",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/figures/figure1_token_feature_heatmaps_readable.pdf": "deb10ea66c7e8b079fb5045e519760be3daf76fdf52b91e8205292022f071cfa",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/figures/figure2_response_relations_readable.png": "70672ff78e1e23c909f3a5a713bf13e75ad0a0b60999ec40bb2642c9a69606f2",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/figures/figure2_response_relations_readable.pdf": "f8359c2d942e52b1577590de5e26d962ea8cc836194033a062e55a9018db11da",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/H2_target_support_description.csv": "abe4b943cd362b201b3499aa90af6be56c61880289ca58772162b2b7c19f7a2e",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/offline/example_version_readouts.csv": "8578853375d687024a3d63aa41b87a5223e1a38e0136adaa74e658f0047d3e23"
+  },
+  "model_forwards": 0,
+  "scientific_criteria_changed": false,
+  "visual_check": {
+    "status": "PASS",
+    "method": "view_image actual PNG inspection after footer correction",
+    "checked": [
+      "figure1_token_feature_heatmaps_readable.png",
+      "figure2_response_relations_readable.png",
+      "figure2_feature_annotations.png",
+      "figure3_distance_pairs.png"
+    ],
+    "observations": [
+      "Figure1 colorbar outside all heatmaps; full prefixes, indexed tokens, clue spans and target positions visible.",
+      "Figure1 source attribution now explicitly states Codex-assistant constructed text and controlled edits, no raw natural-corpus excerpts.",
+      "Figure2 scales and annotation table remain readable; prior visual inspection PASS unchanged by footer-only change."
+    ],
+    "boundary": "Readability and provenance wording check; not scientific validation."
+  }
+}

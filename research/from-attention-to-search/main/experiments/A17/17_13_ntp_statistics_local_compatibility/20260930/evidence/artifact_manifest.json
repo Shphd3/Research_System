@@ -1,0 +1,160 @@
+{
+  "source_run": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial",
+  "frozen_protocol_sha256": "7d68d9b851689616ad1ea7eda3ea30670dc50fd478da0a3fedd288f96a4d0679",
+  "registered_source_hashes": {
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/analyze.py": "c158b3dfec60a4f73eb61b8ad57417efde149202bc80684a9156c240896eba3d",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/calibrate.py": "3a478c6fdc2c3b9d56f2c429c87954f3ea1e3ed10f05e6097dc4db8480721d15",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/collect.py": "893342dd8b43e57a99ee1b2a89b84b75e7b57b775ad6e406337c09d627b30a3a",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/common.py": "ec9577791c6c0de8b31a6d5b7f111e19f0e5294e867088e51d78c381e1b60a39",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/functional.py": "a3a3c47eb646dfb22eaaf9ae365fd2d3a3610a52d6f7d3d52158ba28d0834547",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/geometry.py": "a637e502e3239910699391d1c25405e76ec539bb7ff4dbc0c7e1e60363ef3b6a",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/prepare.py": "7f68357ad0f138f61674452ce5069180ce2bc66b248cb8873ea208f3e388c594",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/report.py": "93ec144e86fa8afcb0d1300c4e13176468e77912890547b5b8f01931e60f29f3",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/stable_vjp.py": "fcc638247747ded16e730e2223022a8d43d01b20cd7f83221441423b3c7a8c3e",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/stage.py": "87a06ef5edbcd8b04ae06f9be13baf16719bc5abdd388aac6d25616d2c25eb8b",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/test_contract.py": "3811f6f147dd574fb81aa6c348de174895d7f0982728bacb035fd9087d33e646",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/test_precision.py": "804c9fa9b1af73e35cef4f1bfb336f3dea02c01a543714f69d581cf2d292e977",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/scripts/test_primary.py": "45b1a0d14fb27dafd992dd6c71c7e602f65790aa3dc8d91fff35b6a2f6ae7490",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runtime.sh": "03ed8c0bf5f5d78d911f4070cbb1ae499365c5e1283323f66927ff19ddfe4664",
+    "/data/250010109/MoE_Router/experiments/20260930_natural_ntp_compatibility/scripts/core.py": "6c5569dd40f8b4deea71ba1d7d28059220c41f86dbb55f98d837c2a710f8bc6d",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/data_manifest.json": "7dff72e97a1e4ec0d0d90d8645f7609b8419c894276440e784bbf1b5b076b74d",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/selected.jsonl": "2c6f6ea5a1c3b97acbdb3f2d4f630ed4247f18dce915868b9b04c5457301a82b",
+    "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/calibration.json": "f5ed5f9b62f5951c3aa17ecce610f5b5d669e86397d0ca0e5035dd5692c3134d"
+  },
+  "artifacts": [
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/primary.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/primary.json",
+      "sha256": "32205ee9a4e29deaef343eab174c6ee0c9e05512cafe383cd07b2087241339d0",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/compatibility_conditional_labeled.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/compatibility_conditional_labeled.csv",
+      "sha256": "f23a28c371a73fbfc757bd8660de4670f98e55e5648041e32741adf3a64f6beb",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/conditional_diagonals.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/conditional_diagonals.csv",
+      "sha256": "dc1c03bdd1795fa65a715a4680e6bb6bf73f378c1db3cc69d1a025dcd35b2973",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/compatibility_mixture.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/compatibility_mixture.csv",
+      "sha256": "83188bd923153b9cd8f1d3231b9989c46386ea3cb9fd58e785fdc446a9ca631a",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/functional_domain_relations.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/functional_domain_relations.csv",
+      "sha256": "811c6af69f7c578fbd7c73620cd5233c4bb0d41aa2fe2770066a1dd707a1124a",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/functional_span_controls.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/functional_span_controls.csv",
+      "sha256": "ba288302200fe93fa3dffa8194790cbc05b3dc4a4d85daeb33d9a6d493bd365d",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/functional_contrast_summary.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/functional_contrast_summary.csv",
+      "sha256": "0ddf0caa4c9718f42ff2ff8fd7aa7104c7f2939f5ce963c5fb88d3b455bc8786",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/fisher_probe_noise.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/fisher_probe_noise.csv",
+      "sha256": "668d751dcc6a556c9824629a4205b69d09fbcd41a472a231f2497644b1f4252f",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/anisotropy.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/anisotropy.csv",
+      "sha256": "998da6466d4ac1dafc78421d200b4043c513481f6abd2fc2f129857d572628fc",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/atom_sets.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/atom_sets.json",
+      "sha256": "a56f21a765707f030269ac1c3dfa83de47cb0983c0a3acbbd6217183a0bb7375",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/functional_receipt.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/functional_receipt.json",
+      "sha256": "9d0d17df7068a228d32e7aa7d5cb02aee0e0b5531b2e4fa8ef604c36b970b866",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/postrun_audit.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/postrun_audit.json",
+      "sha256": "833e4986fa59a21bdf328d9d72ba8f95ead2e1f537d17da5e3ca160d80b439e8",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/mean_covariance_decomposition.csv",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/analysis/mean_covariance_decomposition.csv",
+      "sha256": "858d68147efbb0a90c219457d0f65d50b1533c780b64f32c203b430c5a1e0a74",
+      "complete": true,
+      "eligibility": "bounded/descriptive; see Detailed",
+      "producer": "registered immutable Full sources; explicit postrun repair for domain diagonal renderer"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/completion_receipt.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/full_initial/completion_receipt.json",
+      "sha256": "ba6ac62bda5ca037945898b430544867d086d4ec37412cf17b68d15e5b90b7b5",
+      "complete": true,
+      "eligibility": "operational completion"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/smoke_receipt.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/runs/smoke_qualified/smoke_receipt.json",
+      "sha256": "475de1e3cdebd8e3d7dcb2f01dd41378ba2ee029bf93daef8d35563c85e6f7f4",
+      "complete": true,
+      "eligibility": "numeric qualification/provenance only"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/calibration.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/calibration.json",
+      "sha256": "f5ed5f9b62f5951c3aa17ecce610f5b5d669e86397d0ca0e5035dd5692c3134d",
+      "complete": true,
+      "eligibility": "numeric qualification/provenance only"
+    },
+    {
+      "artifact": "/data/250010109/Research_System/daily_research_reports/0930/docs/ntp_statistics_local_compatibility/evidence/source_exposure_audit.json",
+      "origin": "/data/250010109/MoE_Router/experiments/20260930_ntp_statistics_local_compatibility/data/source_exposure_audit.json",
+      "sha256": "9cf95a5e66a05840800b5431ccfa9eea2f03f654dcab7abb1c702e4d1ef6328a",
+      "complete": true,
+      "eligibility": "numeric qualification/provenance only"
+    }
+  ],
+  "curated_selected_profiles_sha256": "9b5078e22757863913fe42750b3f5c312cad1d970efef3e9f23db252cb4672f9",
+  "raw_arrays_and_all_atom_tables_remain_execution_side": true
+}

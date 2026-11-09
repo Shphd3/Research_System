@@ -1,0 +1,1379 @@
+{
+  "UTC": "2026-11-04T08:07:55.858875+00:00",
+  "status": "PASS",
+  "rows": 228,
+  "file": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_all.npz",
+  "sha256": "dd7356f5f2fcbe08668191a8ee396ac3f6c7f8b20e8f3477ee153c7bc4590d06",
+  "bytes": 6276835,
+  "transformation": "Every original field/float retained; concatenate row axis, exact repeated decoder_norm arrays deduplicated once; original files remain unchanged.",
+  "inputs": [
+    {
+      "id": "F07_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_reverse_d16_A.npz",
+      "bytes": 72875,
+      "sha256": "1942ff00f5a4d071007fc6a20895e4dfaaeaa24b0cd7b918c7456b8332eef093"
+    },
+    {
+      "id": "F07_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_content_d16_A.npz",
+      "bytes": 73493,
+      "sha256": "ab69260f2ddbe6895867f8947e03f3739903137ffa9935710aa83e8754434b3f"
+    },
+    {
+      "id": "F07_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_fixed_e_d16_A.npz",
+      "bytes": 72764,
+      "sha256": "9e03bb75f44f0eda3d7ee081aff9c2176ce41bd91ccd18639101abf103cbe85c"
+    },
+    {
+      "id": "F07_pos64_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_pos64_d16_A.npz",
+      "bytes": 73074,
+      "sha256": "9fbb68104ee7b1c3b567a51e2df36dc43b92fe3086df53d695f746eac72bf74f"
+    },
+    {
+      "id": "F07_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_reverse_d64_A.npz",
+      "bytes": 73237,
+      "sha256": "d34e24a70b9a7b7b50855d90590279ab143ee374bc344dbc5c6377ab942299c8"
+    },
+    {
+      "id": "F07_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_content_d64_A.npz",
+      "bytes": 73514,
+      "sha256": "7fc5a7d80bb0953fb8963d7f01659010b47e2750319b967db1e02effd003ec94"
+    },
+    {
+      "id": "F07_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_fixed_e_d64_A.npz",
+      "bytes": 72631,
+      "sha256": "5bd8fa98e05b38a5b4611306c4c97b52b389563109a0b29af832908305880309"
+    },
+    {
+      "id": "F07_pos64_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_pos64_d64_A.npz",
+      "bytes": 72882,
+      "sha256": "eac959bfb22c9c47291341a568ec26be58a437462e91ad9e522df070e164d3f2"
+    },
+    {
+      "id": "F07_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_reverse_d128_A.npz",
+      "bytes": 73412,
+      "sha256": "f799dcbc86310db1bde536a738d04e832b320b84234d0b00bf8da7b4dbf0a591"
+    },
+    {
+      "id": "F07_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_content_d128_A.npz",
+      "bytes": 73585,
+      "sha256": "cca809844dc2ee1bafc9769d340cabbc432d22ef55e03214c464f9e0e5dec6d9"
+    },
+    {
+      "id": "F07_pos64_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_pos64_d128_A.npz",
+      "bytes": 73214,
+      "sha256": "d5efb0d747f8840cbd3c62ea8e70452b740ab5641b768379b38be130b7c4977b"
+    },
+    {
+      "id": "F07_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_reverse_d16_B.npz",
+      "bytes": 73735,
+      "sha256": "b65dd38342e81a23621c2af0e48eb76be883e065e14e5d36fe264a8fdc7a5930"
+    },
+    {
+      "id": "F07_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_content_d16_B.npz",
+      "bytes": 74158,
+      "sha256": "5b11afe8dde6530205244cf2e292accd64b5b7501ae0467716b9fbd51e89850c"
+    },
+    {
+      "id": "F07_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_fixed_e_d16_B.npz",
+      "bytes": 73349,
+      "sha256": "81acbb045ebdaa84a3326b1d0e28029c056747322a4eb42f5ba3c64a262127de"
+    },
+    {
+      "id": "F07_pos64_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_pos64_d16_B.npz",
+      "bytes": 73705,
+      "sha256": "f8084271e01bc9dddb957597785e2e2b5fd71488a901d434f28c4e6bc2909a13"
+    },
+    {
+      "id": "F07_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_reverse_d64_B.npz",
+      "bytes": 73988,
+      "sha256": "1b9007566ae6e5e439b079dbe2afc6879fb594bcb2c7df24afe456a18bd62897"
+    },
+    {
+      "id": "F07_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_content_d64_B.npz",
+      "bytes": 74838,
+      "sha256": "490c8d114c5a4d6c27229ca88b4ce067902a6a68b7279d94ef8e8e2a1be6e503"
+    },
+    {
+      "id": "F07_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_fixed_e_d64_B.npz",
+      "bytes": 73156,
+      "sha256": "bcb969ce4edcc6c1ea2fc6e84219aa8e7b42b8faf17ecef9784bc7fd2e0ebf13"
+    },
+    {
+      "id": "F07_pos64_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_pos64_d64_B.npz",
+      "bytes": 73494,
+      "sha256": "0418950c43890b6fcba047e9d0557696a68b5f5a3a236d9f0d8b1637537f5074"
+    },
+    {
+      "id": "F07_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_reverse_d128_B.npz",
+      "bytes": 74371,
+      "sha256": "c4e80eeeef6df2b5ac6f254e90977820a55863a657bb3761bb4a52af67cc6dad"
+    },
+    {
+      "id": "F07_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_content_d128_B.npz",
+      "bytes": 75003,
+      "sha256": "4e94afbed24d9cfd1db874eae8e367699386c429b56fc0a87c01fee6bd42799a"
+    },
+    {
+      "id": "F07_pos64_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F07_pos64_d128_B.npz",
+      "bytes": 74033,
+      "sha256": "bca63a663eb4ac7d35e539c308410637ca95c95adb2a5b7f996aa2f2e8597707"
+    },
+    {
+      "id": "F08_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_reverse_d16_A.npz",
+      "bytes": 73495,
+      "sha256": "cc54821c8ab3204ce2675d59169db7a42727c5c7e6ce1e4201b63d231b703e0a"
+    },
+    {
+      "id": "F08_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_content_d16_A.npz",
+      "bytes": 73067,
+      "sha256": "2a49adaea7f5dc3f1601921030339ab74e9af20b459608eb28d90fbcfb39ec46"
+    },
+    {
+      "id": "F08_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_fixed_e_d16_A.npz",
+      "bytes": 74086,
+      "sha256": "94fa512ce27838434a1efc31f956b7214427123f18e2316a533d2846f45cd61e"
+    },
+    {
+      "id": "F08_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_reverse_d64_A.npz",
+      "bytes": 73730,
+      "sha256": "dcae1474be4f03b2a975ac2f08a38f69cabe5354d61938351eb37cdd2c4b9ba1"
+    },
+    {
+      "id": "F08_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_content_d64_A.npz",
+      "bytes": 72827,
+      "sha256": "acb27718cea08dc9ec474cb460e18fd121ac1281ab6f96d7937983719ff700fb"
+    },
+    {
+      "id": "F08_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_fixed_e_d64_A.npz",
+      "bytes": 74144,
+      "sha256": "66dd52a2543f218f010dc640a391c0a40905c5fa9cc1710dbaafc874839d4819"
+    },
+    {
+      "id": "F08_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_reverse_d128_A.npz",
+      "bytes": 75047,
+      "sha256": "d4ea263c812b27b93d7bbc24fa9a3f62d270c02847ef4a9d1bae4a929c364979"
+    },
+    {
+      "id": "F08_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_content_d128_A.npz",
+      "bytes": 73343,
+      "sha256": "8ae271fce7a4082084ac8830816159801aa2520486547c6057101d935a4674a8"
+    },
+    {
+      "id": "F08_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_reverse_d16_B.npz",
+      "bytes": 72539,
+      "sha256": "d13c789c7b94b27dc4a2f15e3ad3a576d8c5b36e48a78dcdcc6a5d49ea0b6b6d"
+    },
+    {
+      "id": "F08_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_content_d16_B.npz",
+      "bytes": 72742,
+      "sha256": "e15902d42f4d8946db920aad3af99a6b4df09ccecee8ba790bee83eae6805722"
+    },
+    {
+      "id": "F08_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_fixed_e_d16_B.npz",
+      "bytes": 73482,
+      "sha256": "fdcf3cbd48a68644c1394dbf97aca7a382eac2df725b0e148936889c177db781"
+    },
+    {
+      "id": "F08_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_reverse_d64_B.npz",
+      "bytes": 72571,
+      "sha256": "bccc9d61cc3bb95f8f4e2f5a31c1c1c15db5975a373cda894555b16b6f7bf804"
+    },
+    {
+      "id": "F08_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_content_d64_B.npz",
+      "bytes": 72402,
+      "sha256": "7bb8d214e9779ef2fa7168daf34d4edcf6a9ed553605acaa12281146db8b79cd"
+    },
+    {
+      "id": "F08_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_fixed_e_d64_B.npz",
+      "bytes": 73663,
+      "sha256": "632cf6987cd3cfb935d927bd16df67c7cab8d7dbb566ba24e867fd705b57120e"
+    },
+    {
+      "id": "F08_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_reverse_d128_B.npz",
+      "bytes": 74072,
+      "sha256": "99d043723cccd2c4a9a5341a444286137446766f10468489f2d955a894f86712"
+    },
+    {
+      "id": "F08_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F08_content_d128_B.npz",
+      "bytes": 73229,
+      "sha256": "761258c1cc9427d637bbff089c34180c0cbbc7e85318911b1d3bab3e7ef26ef5"
+    },
+    {
+      "id": "F11_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_reverse_d16_A.npz",
+      "bytes": 73259,
+      "sha256": "f0546c2a4457a816115a93422a997268c681925f077bb797c629dd83ae2c1273"
+    },
+    {
+      "id": "F11_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_content_d16_A.npz",
+      "bytes": 72886,
+      "sha256": "5a449f730b24ca7eba0933e03c2c248b1321dd940da88b4c90cd4b2b90d77d95"
+    },
+    {
+      "id": "F11_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_fixed_e_d16_A.npz",
+      "bytes": 72698,
+      "sha256": "a802c9166149fe3b4964b11e38c119d7d5bbb88b036edc68454e0c4aae809993"
+    },
+    {
+      "id": "F11_pos64_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_pos64_d16_A.npz",
+      "bytes": 73162,
+      "sha256": "aba177d09e11002e7571e70415398100bbad9e3b4bcedf5dca82516aa649512d"
+    },
+    {
+      "id": "F11_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_reverse_d64_A.npz",
+      "bytes": 72881,
+      "sha256": "c6b6e7293045578a217450e9ac2989de187e195d0ec453507ce6b6262b304a3a"
+    },
+    {
+      "id": "F11_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_content_d64_A.npz",
+      "bytes": 73558,
+      "sha256": "602f294e18dc1058c8c9e17f378ffd25ae44d615071f9e0b10d48a54a0f026a0"
+    },
+    {
+      "id": "F11_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_fixed_e_d64_A.npz",
+      "bytes": 72794,
+      "sha256": "aa6faf5a8aef5be28944ac24707e43978006c2f8e0532586ff1d2e505294e6b8"
+    },
+    {
+      "id": "F11_pos64_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_pos64_d64_A.npz",
+      "bytes": 73009,
+      "sha256": "c63382356f347db9552838e1f29838eaf9ce32051ae15563d205374660ef3e25"
+    },
+    {
+      "id": "F11_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_reverse_d128_A.npz",
+      "bytes": 72814,
+      "sha256": "33b8f576c16ebf5d1b8083a269e5d7c9f4d9631cc9bd4466576437840505c0b1"
+    },
+    {
+      "id": "F11_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_content_d128_A.npz",
+      "bytes": 73297,
+      "sha256": "ad76b5bf21e08d61fe3324bd7a1b37e6ba2c27cc5acb04978ee7dc60aeb9807d"
+    },
+    {
+      "id": "F11_pos64_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_pos64_d128_A.npz",
+      "bytes": 72698,
+      "sha256": "acd474d9c792067098f99b193699e29a5357004c0d9b5a5724726402b47e29fd"
+    },
+    {
+      "id": "F11_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_reverse_d16_B.npz",
+      "bytes": 74335,
+      "sha256": "68ad6264e06110ad0786bf216392b504f990d8c12508a4223b4bc52542085e1f"
+    },
+    {
+      "id": "F11_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_content_d16_B.npz",
+      "bytes": 73728,
+      "sha256": "7c4a008c44101deb47ab20128458d1536c06a3927505b9e6982a94af5e9c40b2"
+    },
+    {
+      "id": "F11_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_fixed_e_d16_B.npz",
+      "bytes": 73808,
+      "sha256": "06260db3723bd01f1fa519849bd31d2dc75832d6caad16a2cbf9f20f5a403ba2"
+    },
+    {
+      "id": "F11_pos64_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_pos64_d16_B.npz",
+      "bytes": 74402,
+      "sha256": "9927dc050252ac3558a0d535923b8e77f8e4eb9660efed67cd8d8244720f158e"
+    },
+    {
+      "id": "F11_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_reverse_d64_B.npz",
+      "bytes": 73684,
+      "sha256": "ac1290cfed5df5f5d9228ae255193c324506a5196778e428c18817b61f6c9c6a"
+    },
+    {
+      "id": "F11_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_content_d64_B.npz",
+      "bytes": 74603,
+      "sha256": "0b033e43c8a94edacbeaf3b213d9165c0bd7cc9dc935cc8cfc58dcda93140980"
+    },
+    {
+      "id": "F11_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_fixed_e_d64_B.npz",
+      "bytes": 73844,
+      "sha256": "a123cadd2b3c1ebddc14a51f8e4d80880f64f3189a998fdcb7a47ab45f50fcdf"
+    },
+    {
+      "id": "F11_pos64_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_pos64_d64_B.npz",
+      "bytes": 74344,
+      "sha256": "e2619ddb4472559aa164973bd8a85b4092ca897b922c95deb16433e92fc5b94e"
+    },
+    {
+      "id": "F11_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_reverse_d128_B.npz",
+      "bytes": 73825,
+      "sha256": "134bb8a7c701d3cc76a855ed4a7c02ee581a26b8ef98d3adc2b6c3e1b024750d"
+    },
+    {
+      "id": "F11_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_content_d128_B.npz",
+      "bytes": 74167,
+      "sha256": "4b970673c5e4471b2165f3315d7c897e1a91ee44b9b04e885db8c34faf9ce642"
+    },
+    {
+      "id": "F11_pos64_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F11_pos64_d128_B.npz",
+      "bytes": 73625,
+      "sha256": "a7a2bd1a92f8161b78b67856a24364507eb634fd90c09ec0aed213b5269ed2fe"
+    },
+    {
+      "id": "F12_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_reverse_d16_A.npz",
+      "bytes": 72844,
+      "sha256": "44f3a8a1b33ec5d20c1582f7b738e6a52891293419f122dbe4e2502777bc30cc"
+    },
+    {
+      "id": "F12_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_content_d16_A.npz",
+      "bytes": 72337,
+      "sha256": "a23c5d0d2da0858c8b0efa47fe26ac67b49da7eace1920b8998e2df1b192412c"
+    },
+    {
+      "id": "F12_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_fixed_e_d16_A.npz",
+      "bytes": 72562,
+      "sha256": "c3381bde38c6203a57034fdd8c81930d1023f23cc36d370bd87c626adbb58e18"
+    },
+    {
+      "id": "F12_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_reverse_d64_A.npz",
+      "bytes": 72093,
+      "sha256": "c288c4528053c8d22982d529d14b916b21a073d7db85a85a049c6a0ed44e910f"
+    },
+    {
+      "id": "F12_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_content_d64_A.npz",
+      "bytes": 72275,
+      "sha256": "36df1227e896f289fbd5877a8acf8bbb64d397235d7cc9259a7d4e973de8dadd"
+    },
+    {
+      "id": "F12_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_fixed_e_d64_A.npz",
+      "bytes": 72029,
+      "sha256": "cb2c53d1db9992a23407a4b6e38ecef40af3b8bfe9f27f77d679fc9406295f27"
+    },
+    {
+      "id": "F12_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_reverse_d128_A.npz",
+      "bytes": 72242,
+      "sha256": "8742314af1263c9225165b30a146d3577b1c2f0222f38640b1d51db32e5954ad"
+    },
+    {
+      "id": "F12_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_content_d128_A.npz",
+      "bytes": 72096,
+      "sha256": "7793f3ed459471a11371268ec7be2ab624e7de43a6326c8fae1924e0aeb04692"
+    },
+    {
+      "id": "F12_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_reverse_d16_B.npz",
+      "bytes": 72037,
+      "sha256": "f0c69b7e7bc3d746d49a124130a0ead24a366fd7561ba939110dc7f2bf0d5f02"
+    },
+    {
+      "id": "F12_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_content_d16_B.npz",
+      "bytes": 72375,
+      "sha256": "18b555c1be09f1685446430f87f918a58980f52f15f665c78b1449d043ed7baa"
+    },
+    {
+      "id": "F12_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_fixed_e_d16_B.npz",
+      "bytes": 72134,
+      "sha256": "246efbe01258474921c65496512083270dd5641fb83f20aa75564363312909c3"
+    },
+    {
+      "id": "F12_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_reverse_d64_B.npz",
+      "bytes": 71917,
+      "sha256": "053f3c8a082eb7bbd23556d3146d1dd61d463760b0fb9f997c8aceeaa34f80d1"
+    },
+    {
+      "id": "F12_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_content_d64_B.npz",
+      "bytes": 73219,
+      "sha256": "96cabe67ddb7cd31e26e92448c1f982079041b61e7d81303af3b673ea4efb7e0"
+    },
+    {
+      "id": "F12_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_fixed_e_d64_B.npz",
+      "bytes": 72298,
+      "sha256": "ae4e4b68096d1231db5924aca5146c343d2d036ae9d21fd49e73a7ef61844bec"
+    },
+    {
+      "id": "F12_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_reverse_d128_B.npz",
+      "bytes": 72035,
+      "sha256": "9e95652ab57cac60b58c7d7c2d9d26f5f97b79298bf6595c28c1fc550f46fa7a"
+    },
+    {
+      "id": "F12_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F12_content_d128_B.npz",
+      "bytes": 73128,
+      "sha256": "96a2bfd20f4d529768ad6e27ea79cbca70c93724269e20cd253eedf17f4738c0"
+    },
+    {
+      "id": "F15_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_reverse_d16_A.npz",
+      "bytes": 73125,
+      "sha256": "34329799c3490d3d8ffb61a31ffb533abcf97f7d720826b9a4c640787a379c4a"
+    },
+    {
+      "id": "F15_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_content_d16_A.npz",
+      "bytes": 72558,
+      "sha256": "4fa9dd18c932d4997783bfc16a2a1eab3a6da2e27d88f21252e3c04fe3f411eb"
+    },
+    {
+      "id": "F15_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_fixed_e_d16_A.npz",
+      "bytes": 73051,
+      "sha256": "4a04c2f26fce4e6cc8232ea1d53dd5a19417f6319ccff37d63533bdd10d68d5f"
+    },
+    {
+      "id": "F15_pos64_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_pos64_d16_A.npz",
+      "bytes": 73423,
+      "sha256": "9a298e3ba81a64f84d0b2e595dfc481bf16263e988f5b0310bf5acc1f7757b4f"
+    },
+    {
+      "id": "F15_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_reverse_d64_A.npz",
+      "bytes": 72960,
+      "sha256": "e3bed828e57b1a5fe58a965cb82d065054c57d0bf078f83e20f8fc2e35df5079"
+    },
+    {
+      "id": "F15_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_content_d64_A.npz",
+      "bytes": 71921,
+      "sha256": "0e6aeed4f0fe874acca5b4ec4a7b6be1f499fd2b3e04581760e96b3541978a9b"
+    },
+    {
+      "id": "F15_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_fixed_e_d64_A.npz",
+      "bytes": 72368,
+      "sha256": "de598e1db3e5a1fdffb8811584fec87abaa512b9979c2723f431b8f36e214a10"
+    },
+    {
+      "id": "F15_pos64_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_pos64_d64_A.npz",
+      "bytes": 72514,
+      "sha256": "af60b71722219713651f24c4771726d2bdf1aac7cf541f51bf93688a0ad56d6b"
+    },
+    {
+      "id": "F15_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_reverse_d128_A.npz",
+      "bytes": 73548,
+      "sha256": "ef18e88499fdaf46b1006bfbeb506d587c4a13506f4ac0f0d0aa33ea965f6f3d"
+    },
+    {
+      "id": "F15_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_content_d128_A.npz",
+      "bytes": 72812,
+      "sha256": "08dfa63093fcb235084ac3c11dcf44c933b7328f6060552219ac1d72933c1e61"
+    },
+    {
+      "id": "F15_pos64_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_pos64_d128_A.npz",
+      "bytes": 72247,
+      "sha256": "72df04bc66b9dcd4fbf738e1202d0ba9881fb721236355d4c75d550162c418e9"
+    },
+    {
+      "id": "F15_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_reverse_d16_B.npz",
+      "bytes": 72550,
+      "sha256": "ed80be9e88af1a4085a583133b6fd8121eb0c43addde69025c3e01d8184c5bc9"
+    },
+    {
+      "id": "F15_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_content_d16_B.npz",
+      "bytes": 71885,
+      "sha256": "2b77ad7c3fa8e8a4b56162dd4a6463ad719cb6fcfac6abe2e6951286f83dbc2c"
+    },
+    {
+      "id": "F15_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_fixed_e_d16_B.npz",
+      "bytes": 72536,
+      "sha256": "455ad1db619e24b0f9001209fab415f0855f48562331427123ed7018ec54dcb6"
+    },
+    {
+      "id": "F15_pos64_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_pos64_d16_B.npz",
+      "bytes": 72378,
+      "sha256": "125dfa9dbabd878da73d88b2854b69bf1144d9a6cc2f404a8ce471821976b960"
+    },
+    {
+      "id": "F15_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_reverse_d64_B.npz",
+      "bytes": 72141,
+      "sha256": "1773fda5bd0d9e6ae198d9da994406a0c02ef9e583fb7b5463741d4eb0b4fdfa"
+    },
+    {
+      "id": "F15_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_content_d64_B.npz",
+      "bytes": 71354,
+      "sha256": "0a1617109e68ff57cbe959e1abb98e5ef8d68c829e4bff9d37411a2ee806f7b0"
+    },
+    {
+      "id": "F15_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_fixed_e_d64_B.npz",
+      "bytes": 71748,
+      "sha256": "14ddc9b05591646684fba36eeb1ef91a0787f40f57506650c75420f72526e292"
+    },
+    {
+      "id": "F15_pos64_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_pos64_d64_B.npz",
+      "bytes": 71781,
+      "sha256": "94bb9c3659eee2d9016d64f05bd81377bad957406017289ffe04ca3b66f259c4"
+    },
+    {
+      "id": "F15_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_reverse_d128_B.npz",
+      "bytes": 72682,
+      "sha256": "71c9726dd7cd71d1244e863afa6733933afd416aa8b8331d3b7d5ae80f837d66"
+    },
+    {
+      "id": "F15_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_content_d128_B.npz",
+      "bytes": 71928,
+      "sha256": "f239234b7ed0a31a8cd033931798c1eb53d06c71375dc7b5362feb993b73a0f3"
+    },
+    {
+      "id": "F15_pos64_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F15_pos64_d128_B.npz",
+      "bytes": 71417,
+      "sha256": "5f5989c01daa56af83b46c1d57b4a63f5c815e34ee61a0203fd990157c85501c"
+    },
+    {
+      "id": "F16_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_reverse_d16_A.npz",
+      "bytes": 73689,
+      "sha256": "7c33c3f12c4ae0e1e88e564ee1deea9ae8c8b2c9efdb46f9d5b06245820df03d"
+    },
+    {
+      "id": "F16_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_content_d16_A.npz",
+      "bytes": 73592,
+      "sha256": "c668e03e14eaac2213bebf0c0cc576200a5821e05b6420c22d1a8fc61810b6f7"
+    },
+    {
+      "id": "F16_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_fixed_e_d16_A.npz",
+      "bytes": 74348,
+      "sha256": "0ca1c7c3d75a512515763c43b541867e406e2961bfbed98329c7fd8b28897350"
+    },
+    {
+      "id": "F16_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_reverse_d64_A.npz",
+      "bytes": 73875,
+      "sha256": "9713dd37b92debb5bd7b69fdf24a4d0d733763f44ef7e2f739bc47afedd7c9b4"
+    },
+    {
+      "id": "F16_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_content_d64_A.npz",
+      "bytes": 73503,
+      "sha256": "af9e94b7f2cc87f2feb631e77475afb9ddaff76c0b8fa9e40970f140c797b15e"
+    },
+    {
+      "id": "F16_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_fixed_e_d64_A.npz",
+      "bytes": 73656,
+      "sha256": "63f1f4d4269228716444f445705a4e2cb368515810de89c183ded3fbb89bb294"
+    },
+    {
+      "id": "F16_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_reverse_d128_A.npz",
+      "bytes": 73658,
+      "sha256": "825773b6904b218f446576606c52d396ee6ac40a9cba7702aad9f073ab1c28e3"
+    },
+    {
+      "id": "F16_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_content_d128_A.npz",
+      "bytes": 73723,
+      "sha256": "a88e1f1f9c153eaa7f157a2bd474dfb007384e6772d93e4c70b46d5d5b0b58d2"
+    },
+    {
+      "id": "F16_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_reverse_d16_B.npz",
+      "bytes": 74545,
+      "sha256": "a03260580dad30e4567217c2b2d01107dfc00a505bcf2897aa6ae5aafaa33da6"
+    },
+    {
+      "id": "F16_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_content_d16_B.npz",
+      "bytes": 74197,
+      "sha256": "704e2e90f132f4a5ee958ede5eeccdddd376643e96c337205708ae7b6b41cbaa"
+    },
+    {
+      "id": "F16_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_fixed_e_d16_B.npz",
+      "bytes": 74584,
+      "sha256": "b4e90925d8a73d65cae15b37119f1089bce7e86a2453d97593b26d503bf22945"
+    },
+    {
+      "id": "F16_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_reverse_d64_B.npz",
+      "bytes": 74586,
+      "sha256": "0b8ccebf4a20541a1ed3382afe3f1e3593537e2fe3fa4270b95f03101ae8e823"
+    },
+    {
+      "id": "F16_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_content_d64_B.npz",
+      "bytes": 73898,
+      "sha256": "ee53b94cb81562a75ea246bf630f6c8aab0fd58c990057d8d8754d5a5d9104e9"
+    },
+    {
+      "id": "F16_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_fixed_e_d64_B.npz",
+      "bytes": 74287,
+      "sha256": "f521eb75c5c1b311f0aef742f81962754619393e1136daea1c9aa0d1b1ea795e"
+    },
+    {
+      "id": "F16_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_reverse_d128_B.npz",
+      "bytes": 74269,
+      "sha256": "66f2630d95e809ec4b456570e97a251290abf6392eb9786976623f94edc84e6b"
+    },
+    {
+      "id": "F16_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F16_content_d128_B.npz",
+      "bytes": 73826,
+      "sha256": "adceb6f81611ce2c40b73b726ba1ffb138dc78fad927b2d6bfa94624ae4b8078"
+    },
+    {
+      "id": "F19_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_reverse_d16_A.npz",
+      "bytes": 72873,
+      "sha256": "737063b4b7e41fc1b123a2038f052801c6147805a8086145e6d9d93d13002835"
+    },
+    {
+      "id": "F19_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_content_d16_A.npz",
+      "bytes": 72210,
+      "sha256": "d775ced7e21cbbdabd8dee8d17c1b2be3bfa1a18f5ac0fb9ff79a2d3be5a2b87"
+    },
+    {
+      "id": "F19_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_fixed_e_d16_A.npz",
+      "bytes": 71816,
+      "sha256": "ddf81c1e2e3c6906a2b2e1cf471e067e5e5c678ce432ea1784d805316025b806"
+    },
+    {
+      "id": "F19_pos64_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_pos64_d16_A.npz",
+      "bytes": 72208,
+      "sha256": "09b15ea8fb4e2627d9a2f24a0763d56366576f1b1f597ef890f31cf655d138be"
+    },
+    {
+      "id": "F19_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_reverse_d64_A.npz",
+      "bytes": 72620,
+      "sha256": "5a86979d566f94c82559d3855f0d0266a05b8c9eb153ec694d893baf0c240191"
+    },
+    {
+      "id": "F19_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_content_d64_A.npz",
+      "bytes": 71795,
+      "sha256": "5974ba93717c49769d1b59c5cc3a9eb8eaff24fb541a247705a849c98b3af6ce"
+    },
+    {
+      "id": "F19_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_fixed_e_d64_A.npz",
+      "bytes": 71699,
+      "sha256": "67e1d1dd05be52ccb1a23ee47af204c6c28c1d834e528ffc04edb431f6de2f05"
+    },
+    {
+      "id": "F19_pos64_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_pos64_d64_A.npz",
+      "bytes": 71528,
+      "sha256": "593b5a0c459ff575d1a1b56f310c6924731177915cc651885c3f04645d3e9d87"
+    },
+    {
+      "id": "F19_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_reverse_d128_A.npz",
+      "bytes": 72481,
+      "sha256": "d44aff0ab7ebf82aae2e329b1305ae858b8b8c7b0fcfeb1ac64723627e7c5a6c"
+    },
+    {
+      "id": "F19_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_content_d128_A.npz",
+      "bytes": 71918,
+      "sha256": "0fab04300a3124b36550345d7ae98e362d7baee893d7d14859d7280ac3d9b4ca"
+    },
+    {
+      "id": "F19_pos64_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_pos64_d128_A.npz",
+      "bytes": 72257,
+      "sha256": "9803995f27ecb9d52cb638180b0b022932481746d61bd8339cbf3e90dfc5afda"
+    },
+    {
+      "id": "F19_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_reverse_d16_B.npz",
+      "bytes": 72651,
+      "sha256": "1c5a145303c9227242253428af7aab4da6d0976247f14cbad211c83e4c416387"
+    },
+    {
+      "id": "F19_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_content_d16_B.npz",
+      "bytes": 72455,
+      "sha256": "e6549f966798b5320c95c8fda17c7bba5c3ae879d1e27d3c540bc4d4b59a1aeb"
+    },
+    {
+      "id": "F19_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_fixed_e_d16_B.npz",
+      "bytes": 71972,
+      "sha256": "fd4e27e384ab9ec6229dc09a49ac1a68c04fa9e9fcd80e4d1e6fd6bf8283e4f2"
+    },
+    {
+      "id": "F19_pos64_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_pos64_d16_B.npz",
+      "bytes": 72225,
+      "sha256": "445141f87aa9255a727050ee62ff48e953bbe0f5ca0562ab3d3e6bb7b4c896d3"
+    },
+    {
+      "id": "F19_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_reverse_d64_B.npz",
+      "bytes": 72743,
+      "sha256": "66269d178234d0a28e49a5d494d3e1fce5d210f21082e6278dacdb65a965f011"
+    },
+    {
+      "id": "F19_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_content_d64_B.npz",
+      "bytes": 71855,
+      "sha256": "679b2bce67ee3bf5da1729596f49823983dd7f58b1edf90900795bcfe2d4d6e1"
+    },
+    {
+      "id": "F19_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_fixed_e_d64_B.npz",
+      "bytes": 72115,
+      "sha256": "c0c53ab1ce848439692bdcea4894b6d4bf8c3a342d98f192aa83d33d0d1f0590"
+    },
+    {
+      "id": "F19_pos64_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_pos64_d64_B.npz",
+      "bytes": 71854,
+      "sha256": "cb8e2afee4db48f6293c3d7664e384738774b55c25b6b2d4af4a8704587cf24a"
+    },
+    {
+      "id": "F19_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_reverse_d128_B.npz",
+      "bytes": 72838,
+      "sha256": "e62b6dda220f20e16a985634505d7a00fb92f603b147c351b377463e6faaabf8"
+    },
+    {
+      "id": "F19_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_content_d128_B.npz",
+      "bytes": 71950,
+      "sha256": "de526595ee1887a54fe611f60d0c215ed2324d9bd08c3294ddbb7fbcda9b2169"
+    },
+    {
+      "id": "F19_pos64_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F19_pos64_d128_B.npz",
+      "bytes": 72774,
+      "sha256": "a8192b97ab07e7cabd184073da70f56e6092825460f3cbaef43445867dcd3bc1"
+    },
+    {
+      "id": "F20_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_reverse_d16_A.npz",
+      "bytes": 72800,
+      "sha256": "b212aef945bf2ed270921b0b49d44920eb290a80f04a9f0c81d9dff1dc19ef18"
+    },
+    {
+      "id": "F20_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_content_d16_A.npz",
+      "bytes": 74801,
+      "sha256": "7186154ec61a9b5f619576ddd9fec3e126c7ec229dcb604cccd5ce7c1aa3da11"
+    },
+    {
+      "id": "F20_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_fixed_e_d16_A.npz",
+      "bytes": 73458,
+      "sha256": "32a86126d89efc9501672ce75bc971eea88f0cfd3e33a692d4f363a32f510bce"
+    },
+    {
+      "id": "F20_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_reverse_d64_A.npz",
+      "bytes": 72141,
+      "sha256": "159c4b18bba380a6d7435a86a092bb7cda0ef8f03c83a3443e77b5bebbb44457"
+    },
+    {
+      "id": "F20_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_content_d64_A.npz",
+      "bytes": 73876,
+      "sha256": "3b4f167711fb8ab4f0a7e9f3869858c105b45398b4dc15d422223b806a450d92"
+    },
+    {
+      "id": "F20_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_fixed_e_d64_A.npz",
+      "bytes": 72661,
+      "sha256": "d8128e2aad9fae96009bcf7d387f700035932214846453d26b328c404175e397"
+    },
+    {
+      "id": "F20_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_reverse_d128_A.npz",
+      "bytes": 72517,
+      "sha256": "df2c611939df269450d5c4e30df77cb136b7217b935898d0579b921b21d33eaa"
+    },
+    {
+      "id": "F20_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_content_d128_A.npz",
+      "bytes": 73830,
+      "sha256": "b9e4cdf6675726690c1f27beb4dfd75cff76f14992b8d1a37de25647ba7bfe86"
+    },
+    {
+      "id": "F20_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_reverse_d16_B.npz",
+      "bytes": 71832,
+      "sha256": "57281847e808f87e4769bf87a9a2f80c5e80424d8813468acf0db9fde3910581"
+    },
+    {
+      "id": "F20_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_content_d16_B.npz",
+      "bytes": 74084,
+      "sha256": "cb18217b2eb3ead6930f3b4a226332804b01321b46c8a268434118b054efb935"
+    },
+    {
+      "id": "F20_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_fixed_e_d16_B.npz",
+      "bytes": 72204,
+      "sha256": "ad5d82b68a9728446d180d99a419e9a8f2d9b93f6b690a94850fe1c3c3de4a09"
+    },
+    {
+      "id": "F20_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_reverse_d64_B.npz",
+      "bytes": 71403,
+      "sha256": "9050d123f0d7a70bb149fb9aa72339b02c225e934102159be9d4a38b065a133a"
+    },
+    {
+      "id": "F20_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_content_d64_B.npz",
+      "bytes": 73410,
+      "sha256": "7df456b1277dc74b4da017be3bf3778cd7fe347d0d6be74b608b468b91636baf"
+    },
+    {
+      "id": "F20_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_fixed_e_d64_B.npz",
+      "bytes": 71738,
+      "sha256": "52a5b78b64f64bc9df03ede485954ead9567acd12ede98284f03ba3ba6b83884"
+    },
+    {
+      "id": "F20_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_reverse_d128_B.npz",
+      "bytes": 71838,
+      "sha256": "9149f2d015df6f30261e716fe01c4fba7dc9a0338587f7be7df3c1fc9954d13d"
+    },
+    {
+      "id": "F20_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F20_content_d128_B.npz",
+      "bytes": 73645,
+      "sha256": "4268cd7199f33565fd14d29dcbe06792e467db990dd89099fa2cbd0db99d3fc2"
+    },
+    {
+      "id": "F23_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_reverse_d16_A.npz",
+      "bytes": 75352,
+      "sha256": "027d6b35e10c0c998ee4c233e3eb2d656bf6447ae9b7b2f9582422276c2c32b4"
+    },
+    {
+      "id": "F23_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_content_d16_A.npz",
+      "bytes": 76473,
+      "sha256": "51f58a98178e0aba9c007b148ed2f2cebcb20cdda535cd3696d42966b0324538"
+    },
+    {
+      "id": "F23_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_fixed_e_d16_A.npz",
+      "bytes": 77438,
+      "sha256": "d126df72cf76964550452fbc5a8f11ad835dbbea33b9a3fa89a7378bd2f7089f"
+    },
+    {
+      "id": "F23_pos64_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_pos64_d16_A.npz",
+      "bytes": 75619,
+      "sha256": "7237636bbce8b52d449e9a034df94bf4c29cdb4f087e2dd581059e6245d5ece8"
+    },
+    {
+      "id": "F23_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_reverse_d64_A.npz",
+      "bytes": 76311,
+      "sha256": "775161168af3a3a36890b57db9727ada0b51e1349c7539794ae839f425ca1789"
+    },
+    {
+      "id": "F23_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_content_d64_A.npz",
+      "bytes": 76934,
+      "sha256": "47b6e56ce47a45fdbf47d42f68ccd2d7c569c49e809c90cedcb0f8f2a6482fd4"
+    },
+    {
+      "id": "F23_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_fixed_e_d64_A.npz",
+      "bytes": 76046,
+      "sha256": "d7e8afd2fa7b8175542b1d5ac89ea528ea041b979a29933702e0e0db2519dd74"
+    },
+    {
+      "id": "F23_pos64_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_pos64_d64_A.npz",
+      "bytes": 76182,
+      "sha256": "891c8fcb03b3696c3d6f652f6e1f85e754e26f1a1c5017e23c61ed67546158ea"
+    },
+    {
+      "id": "F23_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_reverse_d128_A.npz",
+      "bytes": 76833,
+      "sha256": "949a9e2f34b8cedff9c78d59aeb3abe1a10d49fb9a418842e6544c99954c0d92"
+    },
+    {
+      "id": "F23_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_content_d128_A.npz",
+      "bytes": 77200,
+      "sha256": "a795de705cc4d933f45f944953b0a5548c14faee9f554807f44b2f7d7eb74834"
+    },
+    {
+      "id": "F23_pos64_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_pos64_d128_A.npz",
+      "bytes": 76034,
+      "sha256": "cae3487137eab06a2eba33a99258aba1268687193eb0e62bb5aa74f0935dd26d"
+    },
+    {
+      "id": "F23_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_reverse_d16_B.npz",
+      "bytes": 73843,
+      "sha256": "6eb563e6f214a843465faa889a96ccd75e88e172961af56ee05026f884425746"
+    },
+    {
+      "id": "F23_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_content_d16_B.npz",
+      "bytes": 74841,
+      "sha256": "9f8073baa3d33f02d5a476a4b6f70e7f37bbc20aa4d0f737f207003d1ab0e1a2"
+    },
+    {
+      "id": "F23_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_fixed_e_d16_B.npz",
+      "bytes": 75628,
+      "sha256": "395898e2168bc25bdd8eecd0aee8784e73457cc8ff10885b736e77974720418f"
+    },
+    {
+      "id": "F23_pos64_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_pos64_d16_B.npz",
+      "bytes": 74702,
+      "sha256": "0565d84a0db261a64367e6136256d7e9e553eb5108291a6d7abfa71d5e1de776"
+    },
+    {
+      "id": "F23_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_reverse_d64_B.npz",
+      "bytes": 74872,
+      "sha256": "02d2542c72ca8d48eafb5c72e3e6be865e3a56996f0fc83160a1885fc419cb9b"
+    },
+    {
+      "id": "F23_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_content_d64_B.npz",
+      "bytes": 74758,
+      "sha256": "3ef507858c18b7bab7f8fe2b52ed075dc80e2008fdae08ef49a897e2101d575a"
+    },
+    {
+      "id": "F23_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_fixed_e_d64_B.npz",
+      "bytes": 74897,
+      "sha256": "78731095ac628d2dbc29f6ecd76f4dfc6025df117b961c4c04ac838a8dc62c52"
+    },
+    {
+      "id": "F23_pos64_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_pos64_d64_B.npz",
+      "bytes": 74798,
+      "sha256": "7045f19dcc778a33042952f2bb0685f71c88253e58912146d9d62f5d7a609e59"
+    },
+    {
+      "id": "F23_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_reverse_d128_B.npz",
+      "bytes": 75617,
+      "sha256": "c101a05f5cf665288412c8719baaee2a620d74b2095cc9bbace2fb89dbaf4d3e"
+    },
+    {
+      "id": "F23_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_content_d128_B.npz",
+      "bytes": 74915,
+      "sha256": "3262c1d0e0ec1f7c639faf2c196f04f60fff1d6c1912b4e059db50f60947f7c9"
+    },
+    {
+      "id": "F23_pos64_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F23_pos64_d128_B.npz",
+      "bytes": 75014,
+      "sha256": "0b37f6f61a3387910a9f9f1b22616619cccad17dd2a310a128a2ea71838d68c4"
+    },
+    {
+      "id": "F24_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_reverse_d16_A.npz",
+      "bytes": 75187,
+      "sha256": "619d08378feaf9d5efcf5e196ced034cbf1d840e0da2f261aeb8a86d64fcc708"
+    },
+    {
+      "id": "F24_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_content_d16_A.npz",
+      "bytes": 76501,
+      "sha256": "dfc6790cf83beaa0abc7c94483503627d2d1b6c4591f60bd480d18d7354eb218"
+    },
+    {
+      "id": "F24_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_fixed_e_d16_A.npz",
+      "bytes": 76259,
+      "sha256": "51f5a280648f6c0488898bf9f69b6b443ecc852fe52b6ea8eb0c183ebc8e8b6b"
+    },
+    {
+      "id": "F24_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_reverse_d64_A.npz",
+      "bytes": 75457,
+      "sha256": "b7ab44fa01fd38189c37f5eaa5f377b0763bddb46ad8bd64d947279b168f627a"
+    },
+    {
+      "id": "F24_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_content_d64_A.npz",
+      "bytes": 76169,
+      "sha256": "9f405d32bd1eb35791b8267d1cf1c80ceeee70fa084deba845ce5f9e6a658005"
+    },
+    {
+      "id": "F24_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_fixed_e_d64_A.npz",
+      "bytes": 75191,
+      "sha256": "73dc781cfdde83a26a4e5af91627ad249184af53957cf42c41377ba42a57affc"
+    },
+    {
+      "id": "F24_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_reverse_d128_A.npz",
+      "bytes": 76232,
+      "sha256": "4d499fbed2e66e33f60c8ad872ffe6e19f3526a014986ef6d58f946e2b5d5186"
+    },
+    {
+      "id": "F24_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_content_d128_A.npz",
+      "bytes": 76578,
+      "sha256": "fc36f5cfb52931f629720d5954820fda340855b1151a180a0de446f1569e6a7d"
+    },
+    {
+      "id": "F24_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_reverse_d16_B.npz",
+      "bytes": 76169,
+      "sha256": "b1fc888bda64de08eb561f33d9b552265680a86642a4f325c330edb23c621939"
+    },
+    {
+      "id": "F24_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_content_d16_B.npz",
+      "bytes": 76524,
+      "sha256": "b579105114ea3b3aeb7bdc7d96e4d50c7492d4eb1e42e46768249f62a6e803d0"
+    },
+    {
+      "id": "F24_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_fixed_e_d16_B.npz",
+      "bytes": 77544,
+      "sha256": "6d3ac29f4986868ee903a3a825e6073ef8729c1e7c32e45707365f29c9f7f1ba"
+    },
+    {
+      "id": "F24_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_reverse_d64_B.npz",
+      "bytes": 76789,
+      "sha256": "818cad814a69908e9f842d004c932fc1dae84d43ac6f6619a1bfa18390d1c794"
+    },
+    {
+      "id": "F24_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_content_d64_B.npz",
+      "bytes": 76305,
+      "sha256": "1eb95695023ab378810a93665caa4d7e19798fc9d0c1e9d58e643fde22d40d3b"
+    },
+    {
+      "id": "F24_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_fixed_e_d64_B.npz",
+      "bytes": 76331,
+      "sha256": "311db554f4f5cf7636d687b7980cf24ea264458c943329c69a8bb8ed4151353d"
+    },
+    {
+      "id": "F24_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_reverse_d128_B.npz",
+      "bytes": 77352,
+      "sha256": "1a31a1010e927d33aecb42bca0b7aa75579086f34be5096f6e6b9fe4d1ef3e0e"
+    },
+    {
+      "id": "F24_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F24_content_d128_B.npz",
+      "bytes": 76428,
+      "sha256": "affc3414af63f05c2499c3fb3666f79527be0506befea59b7a28cecdac1502a2"
+    },
+    {
+      "id": "F27_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_reverse_d16_A.npz",
+      "bytes": 72865,
+      "sha256": "4a5cd4496d8f6f2b0ce0fc460b45de50afa6e62ddcc376b6231cd6bc2aeafaae"
+    },
+    {
+      "id": "F27_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_content_d16_A.npz",
+      "bytes": 75277,
+      "sha256": "46eeef2ab5439652764e620434973f6e56dad803cef6291192fe661d0044c1f9"
+    },
+    {
+      "id": "F27_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_fixed_e_d16_A.npz",
+      "bytes": 72550,
+      "sha256": "6bc651e3504c04db87c327dc1b4adf3097af3d5040e2838f50f159080ca3a969"
+    },
+    {
+      "id": "F27_pos64_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_pos64_d16_A.npz",
+      "bytes": 72479,
+      "sha256": "72661e2c1252d48aab52acafc12e30880c8b33bae19900f34b3eeebcde9d35c5"
+    },
+    {
+      "id": "F27_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_reverse_d64_A.npz",
+      "bytes": 72085,
+      "sha256": "5d12da86239b4c888b5085e9acd4fd7f5d5c8562784ee0c2e3949c1ff74b46f6"
+    },
+    {
+      "id": "F27_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_content_d64_A.npz",
+      "bytes": 74582,
+      "sha256": "8197394663b0b9283bf60c65edf198bf34cb5c970a9c25fbffdd064cdb88a63f"
+    },
+    {
+      "id": "F27_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_fixed_e_d64_A.npz",
+      "bytes": 72009,
+      "sha256": "0e807215f3655591f2ff4810659feb53c5e06833e269d8a32156565524966a76"
+    },
+    {
+      "id": "F27_pos64_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_pos64_d64_A.npz",
+      "bytes": 71906,
+      "sha256": "1446f0917cfed3d87e14eb4a1d61acc36ee52c0439dddfa262231936217cb4d8"
+    },
+    {
+      "id": "F27_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_reverse_d128_A.npz",
+      "bytes": 71994,
+      "sha256": "b313dba8fe9a58c2871c9eacc74ff21f87186d69fc91315dae1ebfca4b1ace68"
+    },
+    {
+      "id": "F27_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_content_d128_A.npz",
+      "bytes": 73920,
+      "sha256": "3c41e4118cfcf829bf9cd07034f324687a3b7182ec776e993df96e7c5e7e4cd7"
+    },
+    {
+      "id": "F27_pos64_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_pos64_d128_A.npz",
+      "bytes": 72011,
+      "sha256": "f0dbb724cdb80d3be9daa1475c490ee5688b56b01f87e7ec2fd603c9e35c8fcd"
+    },
+    {
+      "id": "F27_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_reverse_d16_B.npz",
+      "bytes": 72602,
+      "sha256": "942cb7e2acb24b3cf8e9329460eb4293901e92596d51fd0ac9800f0bf418b511"
+    },
+    {
+      "id": "F27_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_content_d16_B.npz",
+      "bytes": 76692,
+      "sha256": "ae33e473f6f21af7774a2554414abb0f42f26a5e3d4143cb11a327e92a4c2051"
+    },
+    {
+      "id": "F27_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_fixed_e_d16_B.npz",
+      "bytes": 72719,
+      "sha256": "8f2b3ccfe8899512e0aad43fa2fc4a704361e4edc366caf8ac304fafe3283232"
+    },
+    {
+      "id": "F27_pos64_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_pos64_d16_B.npz",
+      "bytes": 72354,
+      "sha256": "d6f1b1ae9aae811744989bde507081f05bd77ec975d5e3c04566b18be77db4bf"
+    },
+    {
+      "id": "F27_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_reverse_d64_B.npz",
+      "bytes": 72293,
+      "sha256": "212cb81e836565d0ff98512a78717b3295d9eac73a1c6215fedb2f3696b19419"
+    },
+    {
+      "id": "F27_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_content_d64_B.npz",
+      "bytes": 75535,
+      "sha256": "e05f8db3ed4be343c55f5e6646f5a34c63dff058e9323e24ef137c6531155c07"
+    },
+    {
+      "id": "F27_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_fixed_e_d64_B.npz",
+      "bytes": 72525,
+      "sha256": "c07c8e64c3540f28d557814e41c356ab053311854d8b188e245f8c781b568831"
+    },
+    {
+      "id": "F27_pos64_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_pos64_d64_B.npz",
+      "bytes": 72590,
+      "sha256": "27174041b19ae9926d79569f1c26af13154b468165aedf0e897a0458082d896a"
+    },
+    {
+      "id": "F27_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_reverse_d128_B.npz",
+      "bytes": 72552,
+      "sha256": "c919548be1b953b5e5e1f60f94dfd624a2de922d29921d39d4996ec8c8583cea"
+    },
+    {
+      "id": "F27_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_content_d128_B.npz",
+      "bytes": 75190,
+      "sha256": "acbca5569b89db11220a41872e10b9647c7c608e288c96ada80df0e7ff901f36"
+    },
+    {
+      "id": "F27_pos64_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F27_pos64_d128_B.npz",
+      "bytes": 73010,
+      "sha256": "849f7ef3419533aabdb281cfb9d8e5afe0fd1ff5c0834e07402b19fc720dcc3b"
+    },
+    {
+      "id": "F28_reverse_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_reverse_d16_A.npz",
+      "bytes": 72679,
+      "sha256": "f72a47b3cb0888f4eb71079032cecda9b5b439b636fa3fa6e316627df6e90a07"
+    },
+    {
+      "id": "F28_content_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_content_d16_A.npz",
+      "bytes": 78134,
+      "sha256": "90a69de392d2953403e1370f5b77db9284924e7617e019a4c92ee5494117eeba"
+    },
+    {
+      "id": "F28_fixed_e_d16_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_fixed_e_d16_A.npz",
+      "bytes": 72324,
+      "sha256": "f98854437a2ed00463d47ee9d65d23dacd31e0d3b71ff4f3a4139c58e937c648"
+    },
+    {
+      "id": "F28_reverse_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_reverse_d64_A.npz",
+      "bytes": 72842,
+      "sha256": "d9e1a523ea2bb1acb5149651139b0fc67213bc9f9cd8f710a236f1ee48a6f459"
+    },
+    {
+      "id": "F28_content_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_content_d64_A.npz",
+      "bytes": 75891,
+      "sha256": "c6547dac523246f935b23a17ba0687701984b2cbc51847a09cb590bd711f45bc"
+    },
+    {
+      "id": "F28_fixed_e_d64_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_fixed_e_d64_A.npz",
+      "bytes": 72579,
+      "sha256": "b0a60d1637a6de89d60eae558387e0f6c22ec16bc4e71d15d4e5d23cd211a9fa"
+    },
+    {
+      "id": "F28_reverse_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_reverse_d128_A.npz",
+      "bytes": 72777,
+      "sha256": "c5ad1b440d8feb5cb9b04e8439f73c0b42dac08bcd897732e2003de7d1fed3c6"
+    },
+    {
+      "id": "F28_content_d128_A",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_content_d128_A.npz",
+      "bytes": 75768,
+      "sha256": "b78141020511b6cb26daac101dbb8b6119799883fadd2b4dff921ffd3ec3381a"
+    },
+    {
+      "id": "F28_reverse_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_reverse_d16_B.npz",
+      "bytes": 72590,
+      "sha256": "0c975a060c50b6bfe3e5a2903f316bdbad9b1119fa2208017d417f6f6aa022ec"
+    },
+    {
+      "id": "F28_content_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_content_d16_B.npz",
+      "bytes": 77301,
+      "sha256": "931d996aaf85a699d8e2f0166e5446b2e4ed410be59ea30fed435ac2fc429cae"
+    },
+    {
+      "id": "F28_fixed_e_d16_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_fixed_e_d16_B.npz",
+      "bytes": 72583,
+      "sha256": "5502a655fb67de1081a621756fa0b3cfc28585373d6330288f383d64a3e33778"
+    },
+    {
+      "id": "F28_reverse_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_reverse_d64_B.npz",
+      "bytes": 72863,
+      "sha256": "354450da3677afaffb6494249f42737e9e5b4c7f24ce3fa8d333d1ce91b8e620"
+    },
+    {
+      "id": "F28_content_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_content_d64_B.npz",
+      "bytes": 75212,
+      "sha256": "a54958e1467110d225325db6497f78f7d0fae7c13a3a3a98ad15dfe29426b87c"
+    },
+    {
+      "id": "F28_fixed_e_d64_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_fixed_e_d64_B.npz",
+      "bytes": 72955,
+      "sha256": "558683285a428e9adec2f59e5ca7d750f2a243380929a0d4b1a0aa2fb6152a4a"
+    },
+    {
+      "id": "F28_reverse_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_reverse_d128_B.npz",
+      "bytes": 72548,
+      "sha256": "e062a4ffc6075006924b980a6e7c18e43b663efcaa963ae5d2beb905d0e8335a"
+    },
+    {
+      "id": "F28_content_d128_B",
+      "path": "/data/250010109/MoE_Router/experiments/20261104_near_far_object_fact_use/R03_distance_composition/cache/new_rows/F28_content_d128_B.npz",
+      "bytes": 75176,
+      "sha256": "4b333db69cfbea531bc1b4658b910fa28c3e50ffd7a96708817957d58a7b92f3"
+    }
+  ]
+}

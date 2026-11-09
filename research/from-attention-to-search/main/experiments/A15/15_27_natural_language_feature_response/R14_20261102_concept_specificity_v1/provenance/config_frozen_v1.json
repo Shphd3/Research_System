@@ -1,0 +1,65 @@
+{
+  "run": "R14_20261102_concept_specificity_v1",
+  "seed": 1102,
+  "bootstrap_seed": 21102,
+  "bootstrap_replicates": 4000,
+  "random_seeds": [
+    11021,
+    11022,
+    11023
+  ],
+  "model": "/data/250010109/model_cache/Qwen3-0.6B-Base-official",
+  "crosscoder_checkpoint": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+  "layers": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+  ],
+  "LM_dtype": "BF16",
+  "projection_dtype": "FP64",
+  "head": "native RMSNorm once then tied BF16 lm_head; fixed evaluation row batch64",
+  "family_counts": {
+    "development_per_domain": 4,
+    "evaluation_per_domain": 12
+  },
+  "token_scoring": "all answer tokens including period, no EOS, full answer sequence summed, first token from prefix last position",
+  "CC_gate": "u=post_relu(normalize(h14));z=u*(u*sum_layer_decoder_norm>checkpoint_threshold);1024 position pad;eval frozen",
+  "frequency_reference_positions": 65536,
+  "frequency_reference_independent_documents": "UNKNOWN: packed DCLM reference positions, no recovered document map",
+  "frequency_cuts_hits": [
+    20,
+    170,
+    881
+  ],
+  "frequency_zero_and_insufficient": "separate, retained in full/reconstruction and residual; not target group",
+  "fixed_families": [
+    "biology_05",
+    "biology_06",
+    "mathematics_05",
+    "mathematics_06",
+    "physics_05",
+    "physics_06"
+  ],
+  "estimate": {
+    "cache_GB_max": 2,
+    "GPU_used": 1,
+    "max_concurrent_GPU": 2,
+    "wall_minutes_initial_estimate": [
+      10,
+      35
+    ]
+  },
+  "semantic_acceptance": "Unknown",
+  "resources": "5090-2-spot; embedded smoke before scoring; second allocated device unused; no H100"
+}

@@ -1,0 +1,16 @@
+{
+  "time": "2026-10-19T05:19:00.419256+00:00",
+  "user_authorization": "对于低频token和低频feature之间的对应关系，希望在更大的数据集验证，同时检查不同层，全面检查是否真有对应关系。",
+  "scope": "Frozen cached H1 extension only; no training, neural forward, GPU, routing change or commit/push",
+  "source_code_sha256": "0a232e3915b5a26798567f50d5149242d0136ca03e022a4600ce974c8ed6e426",
+  "primary": "Per-corpus D/TRAIN defined four-log-band pooled current-token rarity vs paired per-layer R1; all14 selected layers",
+  "controls": "old_Tulu1694 fixed pool; token-ID equal; hit count/fraction/any; absolute M and total; per-feature equal analysis; block and context-position checks",
+  "uncertainty": "1000 complete-block resamples of equal-block mean rho only; no pooled-rho CI",
+  "seed": 20261019,
+  "CPU": 8,
+  "RSS_GiB": 16,
+  "new_disk_GiB": 1,
+  "active_cap_seconds": 1800,
+  "wall_cap_seconds": 5400,
+  "missing": "NA retained; no original-document independence claim"
+}

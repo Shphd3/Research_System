@@ -1,0 +1,28 @@
+{
+  "bootstrap_stability": 0.5377401936522141,
+  "entrance": {
+    "bootstrap_stability": 0.5377401936522141,
+    "failures": [
+      "median_group_bootstrap_ami_below_0.80"
+    ],
+    "leaf_fractions": {
+      "0": 0.26776,
+      "1": 0.24085,
+      "2": 0.21487,
+      "3": 0.27652
+    },
+    "paraphrase_consistency": 0.99641,
+    "passed": false
+  },
+  "fitted_group_count": 20000,
+  "mean_coarse_cosine_to_assigned_center": 0.4090599384153414,
+  "mean_fine_cosine_to_assigned_center": 0.5735186841447568,
+  "n_bootstrap": 20,
+  "n_starts": 16,
+  "oracle_fields_read": false,
+  "paraphrase_consistency": 0.99641,
+  "schema": "a15_13_frozen_search_labels_v1",
+  "seed": 1701,
+  "temperature": 0.1,
+  "total_group_count": 25000
+}

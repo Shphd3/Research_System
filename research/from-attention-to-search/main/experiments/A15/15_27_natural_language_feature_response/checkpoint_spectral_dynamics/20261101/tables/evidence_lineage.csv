@@ -1,0 +1,8 @@
+claim,protocol,source,observation,eligibility,boundary
+Scale continues to change,"own-centeredC,absoluteeigenvalues,trace",tables/checkpoint_statistics.csv,31B86733.071→33B83565.392;−3.652%,fixed-corpusdescriptive,pre-final-norm;nooutputcausality
+Normalized shape changes late,TV=0.5L1normalizedeigenvalues,tables/pair_metrics.csv;tables/sampling_reference_summary.csv,0.0306787versussplitmedian0.007212389,pairedfixedinputs,"half-splitreference,notpopulationCI"
+Original head direction drift,projectiondistanceandsplitreference,tables/subspace_distances.csv,top16.44093;top64.39481,rawcoordinates,doesnotimplyfunctionchange
+Middle/tail timing not identifiable,pairedhalfsplitreference,tables/sampling_reference_summary.csv,middle.84249vs.88001;tail.59913vs.66172,insufficientdirectionresolution,notpermanentnonconvergence
+Rotation accounts for part of drift,"referencefitSO(d),independenteval,no scaling",tables/pair_metrics.csv;audit/rotation_only_correction.json,lateevalresidual.60855→.35742;CKA.95503,all30det+1,remainingresidual;noCKAinterval
+Class information available at distinct sampled times,"sameR12splits,refittedlinearreadouts",tables/readout_metrics.csv,domaingood0.5B;math0.5Binsufficient17B88.9%;bio0.5B83.3%,exploratorysmallhistoricallyexposedH,notexactonsetornativeuse
+No established matched-dimension increment,"36primarycontrasts,pairedHintervals,Holm",tables/increment_contrasts.csv,0/36positiveestablished,eligiblebutlimitedpower,noeffectnotproven

@@ -1,0 +1,41 @@
+{
+  "decoders": {
+    "SAE": {
+      "path": "/data/250010109/MoE_Router/experiments/20260903_a15_13_e16_dclm_final_layer_sae/runs/full-20260903T150734Z/sae_full_final.pt",
+      "sha256_fresh": "e4e2049aced8ba9a3b043bbb2b3308b497b7ec22f107531e37197873ee545b65",
+      "checkpoint_decoder_shape": [
+        1024,
+        30000
+      ],
+      "selected_count": 183,
+      "space": "block27 MLP input after native post-attention layernorm",
+      "native_scale": 1.0,
+      "native_norm_matches_R04": true,
+      "unit_norm_max_abs_error": 3.3306690738754696e-16,
+      "spectral_projection": "NOT_RUN_MISSING_TRUE_H",
+      "model_constructed": false
+    },
+    "CC": {
+      "path": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+      "sha256_fresh": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628",
+      "checkpoint_decoder_shape": [
+        14,
+        16384,
+        1024
+      ],
+      "selected_count": 192,
+      "space": "block27 residual-post before final global norm",
+      "native_scale": 374.3495121024576,
+      "native_norm_matches_R04": true,
+      "unit_norm_max_abs_error": 2.220446049250313e-16,
+      "spectral_projection": "NOT_RUN_MISSING_TRUE_H",
+      "model_constructed": false
+    }
+  },
+  "tokenizer_sha256_fresh": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "example_rows": 2061,
+  "selection": "all frozen expanded and old cohorts; highest3 contributions per domain in distinct heldout docs, descriptive only; one source-token at a time, never future text",
+  "token_counts": "raw hit counts, not token-conditional preference",
+  "new_forwards": 0,
+  "model_constructed": false
+}

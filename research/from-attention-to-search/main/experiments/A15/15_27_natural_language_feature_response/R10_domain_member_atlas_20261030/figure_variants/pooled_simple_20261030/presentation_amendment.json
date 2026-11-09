@@ -1,0 +1,19 @@
+{
+  "revision": "presentation-P1-native-all-activation",
+  "original_config_sha256": "1d05cb2d5acf2de6cd5eb426ea6d4d0fcc65c0d83506ec662a2837e18c75750c",
+  "reason": "User additionally requested activated-token low/middle/high composition and fewer words/bars. Native z>0 explicitly answers all activation; original frozen-p90 high-response results remain separate sensitivity figures.",
+  "main_figures": {
+    "figure1": "pooled reference frequency; near55vs all-cached-strict16",
+    "figure2": "native-positive token types and member-equal positions; all16",
+    "figure3": "native-positive token within-panel frequency; all16"
+  },
+  "unchanged": [
+    "A22 dictionary/gate",
+    "near55 and discovery-strict29 lists",
+    "old per-member high-response thresholds",
+    "high-response support gate",
+    "original R10 frequency cuts"
+  ],
+  "new_scope": "descriptive all120-document zero-opposite subset and all120-document token coverage categories; not independently heldout",
+  "new_model_forwards": 0
+}

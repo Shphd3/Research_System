@@ -1,0 +1,312 @@
+{
+  "calibration_path": "/data/250010109/Research_System/Projects/from-attention-to-search/XingyuD/MoE_Routing_Experiments/active/a15_01_05_e01_qwen3_coarse_fine_semantic_variance_atlas/data/calibration_tokens.pt",
+  "calibration_tensor_sha256": "d88620267dbdc9c2b87ec24c2f51d9e6fb317cb8c051ec96503414ea9bff60b9",
+  "device": "cuda:1",
+  "document_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127
+  ],
+  "elapsed_seconds": 149.33724808692932,
+  "fp32_batch_vs_fp64_direct_gram_relative_error": 7.033623145240828e-08,
+  "head_concat_max_abs_error": 0.0,
+  "head_projection_relative_error": 1.4961840590368055e-07,
+  "layers": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32,
+    34,
+    36
+  ],
+  "mode": "full",
+  "model_path": "/data/share/Qwen3-8B",
+  "moments": {
+    "10": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_10.pt",
+      "sha256": "a51bca5c0b551937139540e0a94f70daab6600e41ae87229098c812af9999e30"
+    },
+    "12": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_12.pt",
+      "sha256": "dc70f3113ed0dd93de6657a57f7e279834b1b3c494e10bb39adea09e8503a9da"
+    },
+    "14": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_14.pt",
+      "sha256": "e2ae8167c3f05ee0b9342d4986a36914c81e74546675567698e07358cc46505e"
+    },
+    "16": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_16.pt",
+      "sha256": "0eea54bf3fc106e6af1db3137fb4646028cce216cabfd1e9a1f83c41602b7874"
+    },
+    "18": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_18.pt",
+      "sha256": "0f65dc5e22f23d62aedbe79479cebf75bc1f060e96371d96a77081cbba4630ab"
+    },
+    "2": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_02.pt",
+      "sha256": "0ca136a4ca19dec04dd6bd6b8e57776bd88827bd36c9fbf8aad739613d72da54"
+    },
+    "20": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_20.pt",
+      "sha256": "08a7b21b552c83ece4d47b263cea409fbea64d66e0f1ec210e7f9a0f6cb33b33"
+    },
+    "22": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_22.pt",
+      "sha256": "d7e3f5d0f49d438384201341d6cb45b05c60a5c8aa8436d14863f2d666b2264d"
+    },
+    "24": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_24.pt",
+      "sha256": "d364ec05216791c1b7dc735dc66f071f18c0d93c75ad1c7bc6cf7a6437f9253b"
+    },
+    "26": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_26.pt",
+      "sha256": "e517ac0849e0d091d9066dc7da4d2529c99f6febf2081fa77731fd9e32eb9d00"
+    },
+    "28": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_28.pt",
+      "sha256": "a4e02a5a5b31c2ef7820747682e987927ff1af1743a21a1d1802c19431587f5a"
+    },
+    "30": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_30.pt",
+      "sha256": "6888e53cc9cc5bbdae6c3dd524e4cd303e196ad9d2f3822ea670c7230ab4df05"
+    },
+    "32": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_32.pt",
+      "sha256": "bd852e511b17d8a98d7b047b9f899d1068ecf1c528f8ba131bcd05a1e039f0ce"
+    },
+    "34": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_34.pt",
+      "sha256": "26e4f2c69548e5639ebf56e723ea507bbf192a3b31043be2936bf19e7b204bf1"
+    },
+    "36": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_36.pt",
+      "sha256": "da6cd5d57380eec3e5207e93fbcd3ed9842706c16e19ac2a6c99ea33401a3cde"
+    },
+    "4": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_04.pt",
+      "sha256": "93ac736afa3e6fee439e5eefd9aa4c30041127cfee016d368891aed6db00a95a"
+    },
+    "6": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_06.pt",
+      "sha256": "aab8a7d759dbed13b49c1c8fbdbbbcd0ab6aa601eb9325801e22764c4e40c9d5"
+    },
+    "8": {
+      "counts": [
+        32768,
+        32768
+      ],
+      "path": "runs/full_moments/moments/layer_08.pt",
+      "sha256": "ad0f1f6366cdfa9f623902476b40a687600c04d8f0dc76883251e910ab3e0c1e"
+    }
+  },
+  "rank": 1,
+  "replay_max_abs_error": 0.0,
+  "representation": "full 4096-dimensional input to each self_attn.o_proj (concatenated 32 x 128 attention outputs)",
+  "tokens_per_document": 512,
+  "world": 2
+}

@@ -1,0 +1,31 @@
+{
+  "existing_required_asset_ids": [
+    "model_qwen3_0p6b_base_official_a5",
+    "tokenizer_qwen3_0p6b_base_official_a5",
+    "crosscoder_qwen3_14layer_16384_bf16_a18_formal_14layer_batchtopk_a22_999997440_20261013",
+    "analysis_a15_27_04_r10_domain_member_atlas_20261030",
+    "analysis_a15_27_r10_near_domain_token_context_20261030"
+  ],
+  "new_dataset": {
+    "asset_id": null,
+    "status": "NOT_BUILT",
+    "planned_domains": [
+      "math",
+      "biology",
+      "physics"
+    ],
+    "planned_documents": 450,
+    "do_not_register_planned_payloads_as_available": true
+  },
+  "physics_metadata_lookup": {
+    "scope": "assets/catalog.json metadata search only",
+    "matches": [
+      "hf_prepared_cais_mmlu",
+      "m2d2_n8_raw_archives",
+      "m2d2_paired_dev_legacy_archives"
+    ],
+    "qualification": "NOT_SELECTED_NOT_CONTENT_AUDITED"
+  },
+  "model_and_cc_hash_status": "expected digests inherited from existing source records; no full weights loaded or rehashed now",
+  "legacy_freeze_sha256": "37c721cbd0a7c940cc7d212ce304db5697e36b8400bdd41c07e2eb42ebe4ed1a"
+}

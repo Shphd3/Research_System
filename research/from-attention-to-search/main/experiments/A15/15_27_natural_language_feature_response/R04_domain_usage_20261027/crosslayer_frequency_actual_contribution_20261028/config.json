@@ -1,0 +1,78 @@
+{
+  "id": "R04_crosslayer_frequency_actual_contribution_20261028",
+  "frozen_at_utc": "2026-10-28T05:50:30.120011+00:00",
+  "authorization": "current user explicitly authorizes complete cache-only statistics and3mainfigures,same task; no new model forward/training/dictionary",
+  "object": "A22 F16384 joint14layer shared native z,zero-based blocks1,3,...27 residual-post",
+  "new_forwards": 0,
+  "new_training": 0,
+  "new_PCA": 0,
+  "new_clustering": 0,
+  "new_candidates": 0,
+  "new_tasks": 0,
+  "data": "originalR04heldout40realDCLMmathbiologydocuments20/domain; tokenpositions32:192zero-based160positions; equal documents",
+  "layers": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27
+  ],
+  "frequency": "reuseexactR05DCLMfrequency_low/middle/high/low_supportIDs and thresholds,reference65536positions,>=20hits for eligible terciles,tiesunsplit;same IDs acrossdomains",
+  "main_unit": "training-normalized CrossCoder input space: z*||decoder_l_i||,L2norm NOTsquare",
+  "sensitivity_unit": "original modelhook space: training contribution*TRAIN_RMS_l",
+  "main": "perfeature perdoc mean over160positions includingzeros,then equal fixedfrequencygroup members,then equal documents",
+  "diagnostics": {
+    "hit": "each feature counts/160, sharedz gives layer-invariant hit rate",
+    "conditional": "perfeature perdoc meanzwhenactive*norm_l;counts0NA;group averages only estimable activefeatures perdoc,then documents equal;report activefeature/doc support",
+    "eventweighted_auxiliary": "perdoc group mean contribution / group mean hit, separately labeled pooled-active-event conditional; exact perdoc product identity only,not same as equal-feature conditional"
+  },
+  "composition": "perposition sumgroupmembercontributionnorms / sumALLmembercontributionnorms,zero denominatorNA;then averagepositionswithin doc,documentswithin domain;all4groups partition;not explainedvariance",
+  "primary_contrasts": [
+    "math_high-minus-low14layers",
+    "biology_high-minus-low14layers",
+    "(math_high-minus-low)-(biology_high-minus-low)14layers"
+  ],
+  "statistics": {
+    "bootstrap": 5000,
+    "seed": 2026102811,
+    "unit": "document; paired acrosslayers andhighlow within domain; math/bio independently resampled",
+    "signflip": 19999,
+    "signflip_seed": 2026102812,
+    "within_domain_test": "two-sided document signflip, symmetry assumption,MonteCarlo plus1",
+    "between_domain_test": "19999 independent-domain document-label permutations of within-doc high-low vectors,20/20 counts preserved;conditional exchangeability null,notrandomized domain assignment",
+    "permutation_seed": 2026102813,
+    "multiple_tests": "one BH42 across3contrasts*14layers,training-normalized primary only;rawmodelspace is sensitivity,no new p-values",
+    "interval": "pointwise percentile95%;no layer selection",
+    "feature_conditional_interval_min_active_docs": 10
+  },
+  "paired_layer_supplement": "all13adjacent-layer within-doc changes for all4groups,means/shares,descriptive intervals only;no cherry-picked layer tests",
+  "bounds": [
+    "no layer-independent activation",
+    "no firstformation/dynamicmigration",
+    "singlefeature crosslayer shape fixed bydecoder;condition differences are sharedz/memberweight changes",
+    "normsum not normofsum;no cross terms/variance interpretation",
+    "oldheldout repeatedly inspected exploratory",
+    "no Attention group introduced"
+  ],
+  "input_sha256": {
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/data/documents.jsonl": "32e1e8a2e661808bf34a0b3df6636dd30aea784375adebe225c47a392db4a943",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/forward/documents_CC.npz": "4d39874704c555fd3e1994b8ff3b4616e42f332900c36d9511ebec26c0ecb744",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/forward/reference_CC.npz": "f241f53e5b5f41048ca8cc3861fa6d829d2cf42794fb5ebf5b58fd704787868e",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/forward/decoder_scales.npz": "a542aa53411623d767693f1099537668a89665e493f4ecfc278abcdbcc7fd0eb",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/analysis/CC_frequency_bins.json": "1609d89bd253eb2b5de143be13841a1f09be40b539f564d2420b219b77a06381",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/analysis/CC_A_group_definitions.json": "1b921923ccc1ea2dbe49d407e43bad2038ee548418f97ab25f7b185df02d073d",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R05_distance_attention_20261028/analysis/CC_crosslayer.npz": "bf8ec82a8cef96042bb0bf5b4002dda0a44426845eac8ac25ac27068e3478428",
+    "/data/250010109/MoE_Router/experiments/20261026_natural_language_feature_response/R04_domain_usage_20261027/run_dual_forward.py": "4c7a84cd3e5b1a2b4cd161297d1e30cd5e987ad699d43ea8c4b6672d3455e1dd"
+  },
+  "checkpoint": "/data/250010109/MoE_Router/experiments/20261012_qwen3_crosscoder/runs/formal_14layer_batchtopk_a22/checkpoint_000999997440.pt",
+  "checkpoint_expected_sha256": "09b432e98dd7426f9ea4170809d75068a2ada2ed38c1e97d3fa18e119cd79628"
+}

@@ -1,0 +1,26 @@
+{
+  "config": {
+    "out_dir": "Projects/from-attention-to-search/main/experiments/A06/A06_26_common_rare_residual_proxy_synthetic",
+    "dim": 64,
+    "experts": 4,
+    "samples_per_group": 2048,
+    "seeds": 8,
+    "common_strength": 4.0,
+    "rare_strength": 1.6,
+    "noise_std": 0.25,
+    "common_gain": 8.0,
+    "rare_gain": 3.0,
+    "matrix_noise": 0.01,
+    "common_recapture": 3.5
+  },
+  "experiments": [
+    "A06_26a",
+    "A06_26b",
+    "A06_26c",
+    "A06_26d",
+    "A06_26e",
+    "A06_26f",
+    "A06_26g"
+  ],
+  "primary_summary": "Projects/from-attention-to-search/main/experiments/A06/A06_26_common_rare_residual_proxy_synthetic/tables/all_experiment_summary.csv"
+}
