@@ -15,9 +15,18 @@ derivations/audits. No phenomenon becomes a mechanism or discussed test a result
 
 ## 1. Question And Structure
 
-Start with the phenomenon, genuine uncertainty, importance and scope. Identify
-the limitation, its cost, the decision an answer changes, and the significance
-boundary.
+For ongoing work, recover the researcher's original question, purpose and any
+pre-result hypotheses or predictions from the current question record and
+conversation before interpreting results. State what the evidence answers within
+that question and what remains unresolved; do not silently replace it with an
+easier question or retrofit a hypothesis to the observed result. Missing prior
+hypotheses stay unknown. A new observation may legitimately inspire a question
+or explanation: label it exploratory/post hoc, retain the original question and
+record why a revision is proposed. Do not present it as a pre-specified test.
+
+For a genuinely new question, start with the phenomenon, genuine uncertainty,
+importance and scope. Identify the limitation, its cost, the decision an answer
+changes, and the significance boundary.
 A prescribed method constrains the work; it does not supply its purpose.
 
 Describe what stays fixed, what varies, locality, repetition, capacity, timing

@@ -20,6 +20,10 @@ budget (≤3, `PROJECTS.md`) before opening a new question.
 
 ## How to think
 
+- For ongoing work, anchor interpretation to the sourced original question and
+  pre-result hypotheses before choosing an explanation; apply the kernel's
+  [Question And Structure](../../../docs/methodology/research_exploration_kernel.md#1-question-and-structure)
+  rule. A useful new phenomenon does not replace the question being answered.
 - Start from structure, not a metric: state the falsifiable prior, derive the
   mathematical quantity or objective it implies, then the computation that
   measures it. If a proposed step cannot be traced this way, say so and repair

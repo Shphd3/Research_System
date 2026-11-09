@@ -39,6 +39,8 @@ Use the relevant source/rule and judge the answer, not keyword presence alone.
 | R30 | No clear mean cross-update conflict; larger batches accompany lower one-step variation; ask whether structured routing could improve learning | Map routing-induced sample distributions to a reference-defined target-gradient equivalent batch; distinguish counts; propose substitution and mediator controls, rivals and one decision | Treat actual tokens as equivalent samples, assert an expert-count multiplier or a long-run root cause |
 | R31 | Say effective batch or equivalent capacity without a reference | Name reference, task/direction/block, invariants, metric, breakdown and a new prediction; bound or withdraw an undefined equivalence | A matching scalar proxy implies equal trajectories, generalization or cost |
 | R32 | Ideal addressing fails; attribute the failure uniquely to reading | Use selected ideal/controlled/real interface levels with removed/retained difficulties and fairness; retain capacity/training/interface rivals | Oracle failure proves a unique cause, or generate every possible level |
+| R33 | Original question: can structured routing improve long-tail learning by reducing update noise? Only a one-step variance result is available | Keep that question; report the bounded variance evidence, the conditional mechanism bridge and the untested routing/training link | Replace the question with “should we look beyond gradient conflict?” because the result makes that easy to answer |
+| R34 | A result reveals an unexpected correlation and suggests a new mechanism | Preserve the original question and pre-result hypothesis; label the new explanation post hoc, explain the revision and propose its next separating test | Backdate the new hypothesis, or forbid useful exploratory question revision |
 
 ## Review Procedure
 
@@ -66,3 +68,8 @@ old/new model comparison.
 R30-R32 and their brief/facts-only variants have a separate
 [supplement review](../archive/process_records/mechanism_bridge_20261108_cn.md).
 Its recorded answers and author review do not constitute new model experiments.
+
+R33-R34 and the sound-argument control R19 have a dated
+[question-anchor author self-review](../archive/process_records/question_anchor_20261109_cn.md).
+It records actual review answers, not an independent model evaluation or a
+measured improvement over the previous rules.

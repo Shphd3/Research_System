@@ -12,7 +12,10 @@ Lead with the most useful conditional explanation, then audit the decisive step.
 
 1. Separate observation, hypothesis, mechanism, prediction, measurement or
    intervention, conclusion and decision.
-2. Start from the phenomenon and system structure: object → operation/update →
+2. Recover the original question and any pre-result hypotheses from their sources.
+   Check which part the evidence answers; audit question drift and retrospective
+   hypothesis fitting. Label new exploratory explanations rather than backdating
+   them. Then explain the relevant system structure: object → operation/update →
    prediction or loss consequence, in words before mathematics.
 3. For each explanatory arrow: assumptions, competing cause, evidence. Name
    which is missing: derivation, test, explanation, or a decision leap.

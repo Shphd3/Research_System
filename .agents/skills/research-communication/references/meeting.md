@@ -28,6 +28,11 @@ missing derivation, untested link and unsupported design leap before editing.
 
 ## Match The Talk To The Question
 
+Preserve the researcher's substantive question when rewriting. Do not substitute
+a weaker methodological question merely because the available result answers it.
+Give the partial answer and remaining unknown under the original question; label
+any proposed revision explicitly.
+
 Follow the requested duration and order: purpose, concrete model, candidate
 mechanism/hypothesis, why this comparison separates explanations, one or two
 decisive results, belief update, boundary and next scientific decision. Use
