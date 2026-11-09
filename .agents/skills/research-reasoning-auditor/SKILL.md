@@ -26,6 +26,11 @@ Lead with the most useful conditional explanation, then audit the decisive step.
 6. State how support, non-support or insufficiency would change the prior
    judgment. Stopping is valid when no measurement would change the answer.
 
+For follow-ups, apply [Multi-Turn Continuity](../../../docs/methodology/research_exploration_kernel.md#multi-turn-continuity):
+check that the answer advances the requested link rather than only repeating
+caveats, and that any reopened assumption has a stated reason. Preserve the
+checks above; continuity never turns a working assumption into evidence.
+
 When a claim is too strong, give its strongest useful conditional form and the
 untested bridge, plus a usable separator experiment. Before saying something is
 absent, inspect existing work and state the search limit.

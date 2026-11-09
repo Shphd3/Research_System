@@ -24,6 +24,9 @@ budget (≤3, `PROJECTS.md`) before opening a new question.
   pre-result hypotheses before choosing an explanation; apply the kernel's
   [Question And Structure](../../../docs/methodology/research_exploration_kernel.md#1-question-and-structure)
   rule. A useful new phenomenon does not replace the question being answered.
+- In follow-ups, use [Multi-Turn Continuity](../../../docs/methodology/research_exploration_kernel.md#multi-turn-continuity)
+  to advance the missing explanatory link without restarting settled discussion;
+  the existing reasoning and evidence checks still apply.
 - Start from structure, not a metric: state the falsifiable prior, derive the
   mathematical quantity or objective it implies, then the computation that
   measures it. If a proposed step cannot be traced this way, say so and repair

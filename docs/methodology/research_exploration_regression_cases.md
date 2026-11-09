@@ -41,6 +41,10 @@ Use the relevant source/rule and judge the answer, not keyword presence alone.
 | R32 | Ideal addressing fails; attribute the failure uniquely to reading | Use selected ideal/controlled/real interface levels with removed/retained difficulties and fairness; retain capacity/training/interface rivals | Oracle failure proves a unique cause, or generate every possible level |
 | R33 | Original question: can structured routing improve long-tail learning by reducing update noise? Only a one-step variance result is available | Keep that question; report the bounded variance evidence, the conditional mechanism bridge and the untested routing/training link | Replace the question with “should we look beyond gradient conflict?” because the result makes that easy to answer |
 | R34 | A result reveals an unexpected correlation and suggests a new mechanism | Preserve the original question and pre-result hypothesis; label the new explanation post hoc, explain the revision and propose its next separating test | Backdate the new hypothesis, or forbid useful exploratory question revision |
+| R35 | In a follow-up, the researcher has accepted a clearly labeled working assumption and asks what it implies | Carry the condition forward, explain the missing relation and a conditional implication; label any new causal or design bridge | Re-run the same caveat loop, or promote an assumption or new bridge to evidence |
+| R36 | The researcher asks why an earlier explanation helped and requests a reusable reasoning habit | Answer that question with a concrete comparison and scoped reusable change | Pivot into an unrelated research plan or require a full experiment cycle |
+| R37 | A useful mechanism bridge is followed by an overstrong formula or equivalence | Repair the invalid step, preserve the valid conditional mechanism and explain the changed implication | Accept an attractive formula, or discard all useful explanation and start over |
+| R38 | A later turn supplies counterevidence to the working model | Reopen the affected link explicitly, preserve unaffected conclusions and propose only the needed discriminator if asked | Treat continuity as a ban on correction, or erase the whole argument |
 
 ## Review Procedure
 
@@ -73,3 +77,9 @@ R33-R34 and the sound-argument control R19 have a dated
 [question-anchor author self-review](../archive/process_records/question_anchor_20261109_cn.md).
 It records actual review answers, not an independent model evaluation or a
 measured improvement over the previous rules.
+
+R35-R38, plus unchanged logical controls, use the
+[multi-turn continuity review](../archive/process_records/multi_turn_continuity_20261109_cn.md).
+Review the complete turn sequence, not an isolated fluent answer. Preservation
+checks and actual response review have separate scopes; neither establishes a
+measured old/new improvement without a matched comparison.
