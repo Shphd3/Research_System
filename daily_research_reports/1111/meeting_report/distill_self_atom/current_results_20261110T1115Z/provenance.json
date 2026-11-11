@@ -1,0 +1,164 @@
+{
+  "time_UTC": "2026-11-10T11:17:42.308499+00:00",
+  "producer": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/current_results.py",
+  "producer_sha256": "56260ecce28a7047743b631ce89ee9385c403ff1f321afb8a0f26c6eb9070dd9",
+  "source_assets": [
+    "analysis_r05_A8_native_evaluations_20261110",
+    "representation_r04_positions_seven_20261109",
+    "analysis_r04_atom_ledger_seven_20261109"
+  ],
+  "sources": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/out/A1_eval_nll_by_step.csv",
+      "bytes": 11636,
+      "sha256": "61b0ba1c3ad327e997a708369aaa63b18b781938579ca30a4a2231f6adecdb68"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/out/B3_Mbar_distribution.csv",
+      "bytes": 16645,
+      "sha256": "2e287e4bd2616cddd103633f778b89611b324deb8b4df361a643effb678608c7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/out/C8_matched_1000_2000.csv",
+      "bytes": 1133,
+      "sha256": "627178ae229256c5fbf3d83087770242f78f689a385979829f258c558ea35a36"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A0/step001000.npz",
+      "bytes": 37749482,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A0/step002000.npz",
+      "bytes": 37749482,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/runs/A5/metrics.jsonl",
+      "bytes": 25280856,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/runs/A6/metrics.jsonl",
+      "bytes": 28174487,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/metrics.jsonl",
+      "bytes": 29254420,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A1/metrics.jsonl",
+      "bytes": 32753212,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A1-deep/metrics.jsonl",
+      "bytes": 33097961,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A2/metrics.jsonl",
+      "bytes": 33413934,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A4/metrics.jsonl",
+      "bytes": 33290067,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/A8_endpoint_bootstrap.csv",
+      "bytes": 3158,
+      "sha256": "60262e55c06e72fdd1326c4406dcc44067e4a8fe1dd0f209c39a4f38b392f35f"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/A_bootstrap_differences.csv",
+      "bytes": 8233,
+      "sha256": "0963407456b70c1dc543267c791060e818147e1c61227e8699ccdec726b68c06"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/A_learning.csv",
+      "bytes": 10361,
+      "sha256": "eeb6b6451cc619d9c526b95aa73af9ca175f9072b6a6ff5d776ce864b82a2d2d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/B_M_medians.csv",
+      "bytes": 10868,
+      "sha256": "ef5792e06c65e95a2d02a05671e21c23aa5eab382cd0035b97f0630bc1bbbb25"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/C_ledger_by_bin.csv",
+      "bytes": 5683,
+      "sha256": "e387f2d0389cdc4879feb561da36767561ce08d82d29b9de8334f56d5a37d20d"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/A8_t50.csv",
+      "bytes": 908699,
+      "sha256": "be296391593e5227607d7a53ef743f6a3f0fa52d8afb247d73eb7c901a25e57a"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/M_A8_2000.csv",
+      "bytes": 11932882,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/ledger_A8_1000_1250.csv",
+      "bytes": 3398161,
+      "sha256": "cf24970740cc94c5feceeee55d30d4bd949cc25fcb9ca193540e8a1e5b902ad6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/ledger_A8_1250_1500.csv",
+      "bytes": 3397919,
+      "sha256": "01284e07099b4dd1842ae7091ec07f69e78ab0108e017449e73bebdf031241cd"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/ledger_A8_1500_1750.csv",
+      "bytes": 3402292,
+      "sha256": "777731745d496c7858fd831ff3f1f31e8bfcfbb44a51bb535852938f0936c4ea"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/ledger_A8_1750_2000.csv",
+      "bytes": 3401897,
+      "sha256": "a047add9482d2351be6a010033db876f2e4494101cbb3651335747062080a2fa"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/ledger_A8_250_500.csv",
+      "bytes": 3263840,
+      "sha256": "2d07c3b512801d1357ef9201200ad2f9510580498aba44dc56b5060426dc84a7"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/ledger_A8_500_750.csv",
+      "bytes": 3361854,
+      "sha256": "280a3e2091f10c2bb719ee61669a6b29ac3a08c0ca72eeb65eb995a3ed133a44"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/out/per_atom/ledger_A8_750_1000.csv",
+      "bytes": 3380950,
+      "sha256": "8fe709798e1c5a7bf3fc71831a589534c2e14f509d120fd30f6920ba06b7def6"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/positions/A8/step001000.npz",
+      "bytes": 37749482,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/analysis/positions/A8/step002000.npz",
+      "bytes": 37749482,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/data/EVAL_codes.pt",
+      "bytes": 268436988,
+      "sha256": "see registered immutable source asset"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261110_distill_self_atom_routing/runs/A8/metrics.jsonl",
+      "bytes": 28795832,
+      "sha256": "see registered immutable source asset"
+    }
+  ],
+  "researcher_judgment": "Unknown",
+  "post_generation_edit": "Presentation only: standalone math delimiters, spaces around inline math, explicit aggregate versusfp16 paired difference; no numeric tables or plots changed."
+}

@@ -1,0 +1,13 @@
+{
+  "removed_own_draft_figures": [
+    "/data/250010109/MoE_Router/experiments/20261110_a5_gain_checks/results/check2_train_CE.png",
+    "/data/250010109/MoE_Router/experiments/20261110_a5_gain_checks/results/check2_train_CE.pdf",
+    "/data/250010109/MoE_Router/experiments/20261110_a5_gain_checks/results/check2_EVAL_NLL.png",
+    "/data/250010109/MoE_Router/experiments/20261110_a5_gain_checks/results/check2_EVAL_NLL.pdf"
+  ],
+  "replacement": [
+    "check2_overall_lead",
+    "check2_frequency_lead"
+  ],
+  "reason": "Remove empty training-band panel; show both A0 and A1 frequency comparisons. No numeric changes or R04 mutations."
+}

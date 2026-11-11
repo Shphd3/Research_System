@@ -1,0 +1,11 @@
+{
+  "primary_gradient_process_seconds": 165.72348608076572,
+  "secondary_gradient_process_seconds": 329.9930859301239,
+  "failed_gradient_conservative_seconds": 120,
+  "total_gradient_budget_charged_seconds": 615.7165720108896,
+  "gradient_limit_seconds": 5400,
+  "forward_process_seconds": 900.8812431115657,
+  "local_device": "_CudaDeviceProperties(name='NVIDIA H100 80GB HBM3 MIG 3g.40gb', major=9, minor=0, total_memory=40448MB, multi_processor_count=60)",
+  "model_updates": 0,
+  "note": "Process wall spans includeCPUload/hash/IO,notCUDAkernel-onlytime;onlyalreadyallocatedlocalMIGused"
+}

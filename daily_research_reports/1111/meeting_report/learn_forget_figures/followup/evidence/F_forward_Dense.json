@@ -1,0 +1,127 @@
+{
+  "arm": "Dense",
+  "row": {
+    "model": "Dense",
+    "tokens": 500000000,
+    "step": 1908,
+    "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000500000000/state.pt",
+    "config": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/resolved_config.json",
+    "manifest": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000500000000/manifest.json",
+    "bytes": 3377283567,
+    "sha256": "a1cccdefbaffa1bfb33291a7c26cd68fc82d72bafb01d1af8b10e87044b5bfd9",
+    "exists": true,
+    "purpose": "trajectory",
+    "arm": "Dense"
+  },
+  "sha256_verified": "a1cccdefbaffa1bfb33291a7c26cd68fc82d72bafb01d1af8b10e87044b5bfd9",
+  "seconds": 48.06652275286615,
+  "all_parameters_and_bias_unchanged": true,
+  "NLL_and_selection_checks": [
+    {
+      "split": "EVAL",
+      "NLL_subset": 4.202543752421928,
+      "cached_fp16_NLL_subset": 4.202543140786474,
+      "difference": 6.116354533958202e-07
+    }
+  ],
+  "hidden_capture_dtype": "float16; float64 statistics",
+  "rounding": [
+    {
+      "split": "DEV",
+      "layer": 0,
+      "max_abs_hidden_rounding": 0.0019526481628417969,
+      "mean_square_rounding_fraction": 4.301630340819429e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 1,
+      "max_abs_hidden_rounding": 0.0019412040710449219,
+      "mean_square_rounding_fraction": 4.3117431403061346e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 2,
+      "max_abs_hidden_rounding": 0.0019464492797851562,
+      "mean_square_rounding_fraction": 4.312138202067217e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 3,
+      "max_abs_hidden_rounding": 0.0019450187683105469,
+      "mean_square_rounding_fraction": 4.316173374263599e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 4,
+      "max_abs_hidden_rounding": 0.0019521713256835938,
+      "mean_square_rounding_fraction": 4.324288482848715e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 5,
+      "max_abs_hidden_rounding": 0.001949310302734375,
+      "mean_square_rounding_fraction": 4.316622792543967e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 6,
+      "max_abs_hidden_rounding": 0.0019507408142089844,
+      "mean_square_rounding_fraction": 4.3150016892923304e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 7,
+      "max_abs_hidden_rounding": 0.001953125,
+      "mean_square_rounding_fraction": 4.317955415444885e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 0,
+      "max_abs_hidden_rounding": 0.0019521713256835938,
+      "mean_square_rounding_fraction": 4.2997687188517375e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 1,
+      "max_abs_hidden_rounding": 0.0019512176513671875,
+      "mean_square_rounding_fraction": 4.313405810307813e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 2,
+      "max_abs_hidden_rounding": 0.0019488334655761719,
+      "mean_square_rounding_fraction": 4.310551915409633e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 3,
+      "max_abs_hidden_rounding": 0.0019502639770507812,
+      "mean_square_rounding_fraction": 4.3112663661304396e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 4,
+      "max_abs_hidden_rounding": 0.0019521713256835938,
+      "mean_square_rounding_fraction": 4.3189434251189596e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 5,
+      "max_abs_hidden_rounding": 0.0019521713256835938,
+      "mean_square_rounding_fraction": 4.316428103834369e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 6,
+      "max_abs_hidden_rounding": 0.001953125,
+      "mean_square_rounding_fraction": 4.3183213449538016e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 7,
+      "max_abs_hidden_rounding": 0.0019526481628417969,
+      "mean_square_rounding_fraction": 4.319875301916909e-08
+    }
+  ],
+  "training_updates": 0
+}

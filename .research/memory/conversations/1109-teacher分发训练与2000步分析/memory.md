@@ -3,7 +3,7 @@
 Conversation name: 1109-teacher分发训练与2000步分析
 Processed by: Codex (harness: Codex desktop; model: unknown)
 Created at: 2026-11-08T16:12:21.826877+00:00
-Latest update at: 2026-11-09T03:01:40.136831+00:00
+Latest update at: 2026-11-09T05:44:00.625361+00:00
 Continues from: .research/memory/conversations/1108-snr机制-mig先导/memory.md（prompt 中 1108-SNR机制MIG先导 的实际记录名）
 Environment: repo=/data/250010109/Research_System; exec=/data/250010109/MoE_Router; local MIG visible
 
@@ -147,3 +147,49 @@ Environment: repo=/data/250010109/Research_System; exec=/data/250010109/MoE_Rout
 - Current work: 本次组织填写完成。按研究者要求未补图，未重跑D1/D2、未做新前向/训练、未查询或恢复续训监督。仅用已有2000步CSV核对附件的相关值及汇总排序。D1已由另一Agent给出负结果；D2的总体/低频方向差异和统计口径边界在explore中明示。
 - Next action: 研究者阅读explore并选择下一理论/实验优先级；附件待做清单不自动成为新运行授权。当前不自动启动任务、不commit/push。
 - References: research/from-attention-to-search/main/explore/1109_snr_longtail/log.md（本次四条探索记录）；执行根inputs/1109_组会稿_草稿.md、inputs/1109_框架交接文档.md（附件原字节副本）；evidence/framework_attachment_numeric_check_20261109T0259Z.json（已有CSV数字复核）；evidence/explore_log_append_receipt_20261109.json与explore_fill_validation_20261109.json（追加范围/模板/18条链接检查）；daily_research_reports/1109/meeting_report/figures_tables/（另一Agent维护的D1/D2，生产脚本为analysis/meeting_1109/build_tables.py与d2_concentration_loss.py，本轮只读）。
+
+
+## 2026-11-09T05:44:00.625361+00:00 -- 研究者授权新R03低频feature末层蒸馏，DEV已通过，等待新ACP节点
+
+- Processed by: Codex (harness: Codex desktop; model: unknown)
+- Summary: 新用户任务要求完整执行低频feature定向末层蒸馏，三组C0/C1/C2从同一A0@2000模型/优化器/RNG/数据游标续训，不中途问继续。当前DEV选择64目标、4642合格低频；参考1578146正文代理位置/1316文档，与432677校准位置/330文档隔离。DEV目标M7中位数3.726510，原生0.867730、旧b0聚类0.623552、匹配随机0.698978；不把硬目标潜力当成训练收益。系数0.0005687732179535707以DEV梯度范数比5%固定，实际模型aux-only梯度仅到blocks.7.moe.router.weight。科学判断Unknown。
+- Current work: 新执行根 /data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_distill_20261109；share新ACP任务pt-5hk74r96，4H10080GB Reserved16c256g，当前STARTING/worker Pending，尚无正式更新。未取消P12旧任务。资产、原文本切片/tokenizer/SAE接口和完整文件内容哈希已通过。SAE实际接口为block7.norm2输出=末层MLP/router输入，不是norm2前的残差。20步实测尚待节点，不得写成已训练或给实测ETA。
+- Next action: 监督现有pt-5hk74r96，不重复提交。run.sh→code/runner.py：四rank预生成2000..2299的真实q和同监督token内置换q缓存→C0实测20步并完整保存（计入正式300）→锁定共同300步预算→C0恢复续至+300→C1/C2分别从A0@2000各+300；异常30秒重试最多3次，遇输入哈希/非有限值不绕过。每50步相同EVAL、每100步同步存档，起点公用新EVAL。三组完成后运行python code/report.py，再登记输出、strict访问、检查图/包/链接并交付，不可在仅提交后结束监督。
+- References: 当前explore log已追加本轮跑前预测/分支；新执行根configs/preregistered_plan.json、evaluation_contract.json、calibration.json；evidence/DEV_diagnostic.json、gradient_isolation.json、model_content_identity.json、text_tokenizer_alignment.json、source_reuse_audit.json；code/common.py、prepare_dev.py、precompute_train.py、calibrate.py、train.py、evaluate.py、runner.py、register_assets.py、report.py；evidence/active_source_release.json保留训练前代码版本。原R03数据和checkpoint只读，输出均在新followups目录，不commit/push。
+- Boundaries: C2是每全局update在4rank×2micro的同一监督位置集合内置换q向量，保持熵分布/专家总质量，不是换feature名字；只有末层router有aux、0–6层照常LM训练。主读数为选定feature条件NLL等权均值，另报位置并集；实际末层硬M7为主操纵。所有端点比较都限本轮共同+300，不混旧A*终点。不能说feature条件NLL等于feature学会，不能从M增自动推学习收益。
+
+
+## 2026-11-09 14:28 CST｜R03新任务运行续接：资源与独占领取
+
+share `pt-5hk74r96`仍STARTING/worker Pending，无训练更新。P12新增协作提交失败：429，剩余GPU配额2、申请4；未产生新job ID，拒绝回执在执行根`acp_receipts/submit-r03-lowfreq-last7-p12-20261109-20261109T061826Z.json`。不取消其他任务，不盲目重复提交。
+
+当前入口`bash run.sh -> code/pool_runner.py`，schema `exclusive_pool_v1`。AFS `evidence/work_claims`原子目录独占领取预计算与各臂；未核实旧owner终止不得抢占。只有C0前20步测吞吐/显存后锁定统一300步，随后其他worker才可领取C1/C2；只有一个worker也会顺序完成三臂。原子领取不是额外训练预算。训练源码带schema guard，避免旧runner误重复运行。代码版本看`evidence/active_source_release.json`和每臂实际`resolved_config.json`。
+
+执行根：/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_distill_20261109
+继续工作：检查share分配与日志 → 1200缓存分片 → C0+20资格检查 → 三组各+300、完整端点评估与存档 → report.py → 资产登记与strict、图与ZIP验证、explore和memory追加 → 中文交付。研究者要求全程到完成，不能仅提交后结束。无本轮新commit/push授权。
+
+
+## 2026-11-09 14:31 CST｜R03排队期间生成必需缓存
+
+上一资源条目的14:28为手写记录时间；其平台状态实际核验在14:18–14:23，均为share Pending、P12配额拒绝。当前在空闲本地H100 MIG3g40上串行处理四条原始数据流，生成同一FP32冻结teacher/SAE目标缓存，按每个完整全局更新做四rank池化置换；缓存完成后或四卡worker接管时记录真实设备和交接。正式训练仍只允许四H10080GB。
+
+本轮新增源码与实际复用源的不可变版本位于 `/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_distill_20261109/evidence/source_release_1794205794794622125`，完整列表和哈希见其manifest.json；各臂resolved_config记录真正启动时源码，资格检查尚未开始。新代码清单见[R03_lowfreq_last7_scripts.md](R03_lowfreq_last7_scripts.md)。
+
+
+## 2026-11-09 16:02 CST｜R03三组已完成，停止本轮训练监督并交付比较
+
+C0/C1/C2均从A0@2000各+300，保存2300步模型/266项AdamW/scheduler/四rank RNG/数据游标，正式GPU任务share pt-5hk74r96 SUCCEEDED。P12辅助pt-yaewtmkm未分配节点、未领取任何臂，已撤回为SUSPENDED；最初429、第二提交与撤回回执均保留，没有取消其他任务。无需再续跑本轮。
+
+比较：C0/C1/C2目标等权NLL=3.531094819/3.529205532/3.529247998，M7=0.971218572/1.035971525/0.954566046，总体NLL=4.002433651/4.001488064/4.001167544。C1 M7明显更高，但主NLL对随机仅−0.000042；次要加权/并集/总体口径反向，文档bootstrap区间跨0，额外学习价值未确立，研究者科学判断Unknown。正文代理有网页模板，纯正文验证未完成；单种子/短续训/上下文1024→2048；不把条件NLL解释为feature已学会。不要自动扩大预算或commit/push。
+
+冻结ZIP：`/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_distill_20261109/deliverables/R03_lowfreq_last7_300.zip`；SHA256 `89190ab09ae75bee4b99b525abe1ef3c7c0849767d61d5637c5a3021e3928ade`。校验报告与解压目录：`/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_distill_20261109/deliverables/verified_from_frozen_zip/R03_lowfreq_last7_300/summary_cn.md`。包内154哈希/20链接、CRC和全部1200缓存SHA通过，11实际资产strict。直接阅读报告即可获得原问题→结果→认识更新→边界。操作证据`evidence/training_complete.json`、`report_complete.json`、`delivery_verification.json`、`execution_summary_final.json`及`unused_p12_worker_cleanup.json`。
+
+本轮最终源码索引见R03_lowfreq_last7_scripts.md，训练实际核心版本以各臂resolved_config.json为准；包内code/source_snapshot是开跑前版本，code顶层是最终分析代码。现有冻结ZIP不覆盖，后续修订另存版本。未修改旧R03/A*结果或原checkpoint，没有本轮新commit/push。
+
+
+## 2026-11-09T10:14:51Z -- 新授权：share-only R03等预算长续训已开始
+
+- Summary: 研究者当前明确授权share四H100 Reserved训练低频干预并检查停止P12本人活动任务。P12现场8条均终止/暂停，活动0，无需停止。新任务`pt-l0wd83dn` RUNNING，单作业内C1/C0/C2三臂，分别从旧2300完整存档继续到3500，每臂新增1200步。此为已看到300步结果后的同种子延长，不是独立复验。旧任务pt-9k4mvtp4发生torchrun --start参数冲突，0缓存/0模型更新即停为SUSPENDED；缓存改名--cache-begin/end并加launcher --，CPU实际传参probe通过，原日志保留。
+- Current work: C1首50实际更新完成，2350存档266项AdamW/RNG/cursor与2M EVAL完成、TB/有限loss/token计数PASS，计算中位2.011秒/update。当前补其余1150更新缓存，脚本自动继续C1到3500，再C0/C2到3500；C0/C2本次延长尚未启动，不能与C1不同步比较。原300步结果和ZIP不覆盖。未commit/push。
+- Next action: 查看同一share任务及durable logs，不重复提交、不用P12。controller自动retry30秒最多3次；身份/数值守卫不绕过。请求仅当前提交/启动与方案讨论，没有承诺未来聊天后台持续监督。跨层检测头/Crosscoder只讨论，未授权额外训练；科学判断Unknown。
+- References: 执行根 `/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109`；configs/plan.json固定预算/边界；README_cn.md与evidence/execution_certificate.json记录真实阶段；evidence/startup_qualification.json首50PASS；code/runner.py自动流程；R03_lowfreq_long_scripts.md源码索引。discussion_crosslayer_cn.md解释统一参考字典+学生各层小检测头，以及学生表示多层联合稀疏字典的候选路线。

@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "arm": "A5",
+      "original_training_eval": 4.039118998470363,
+      "cache_unquantized": 4.039118998470363,
+      "fp16_position_mean": 4.039118895281092,
+      "cache_minus_original": 0.0,
+      "fp16_minus_cache": -1.0318927046171211e-07,
+      "file": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step002000.npz",
+      "sha256": "44476f99a66f39f65f0dd5ef563562fbc7de9a9cb3d73a0af45dcdb7f443e3d7"
+    },
+    {
+      "arm": "A0",
+      "original_training_eval": 4.083141621774195,
+      "cache_unquantized": 4.083141671201614,
+      "fp16_position_mean": 4.083142550149944,
+      "cache_minus_original": 4.942741860247679e-08,
+      "fp16_minus_cache": 8.789483301185896e-07,
+      "file": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A0/step002000.npz",
+      "sha256": "62e51f099ab9303855c3faae85b560f8753f09538fdccd9ab7f2f7672a8a1ea8"
+    },
+    {
+      "arm": "A1",
+      "original_training_eval": 4.157604346902656,
+      "cache_unquantized": 4.157614256728676,
+      "fp16_position_mean": 4.157613721082669,
+      "cache_minus_original": 9.90982602022683e-06,
+      "fp16_minus_cache": -5.356460075489622e-07,
+      "file": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step002000.npz",
+      "sha256": "5c69116db6af8595b513fed294834b589ce704b9bec779c7fb3830c3bcaf365e"
+    }
+  ],
+  "prior": {
+    "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions_prior_claude/A1/step002000.npz",
+    "nll": 4.157614256728676,
+    "loss_exact": true,
+    "routes_exact": true
+  },
+  "user_override": "2026-11-10: 先追查一致性，然后核验后继续，不过这个差距很小我认为可以通过，请继续实验处理，推进检验",
+  "interpretation": "A1差异已存在于R04既有一致性记录；如prior exact为真，确定性重算也复现相同缓存。源头是原四卡训练评估与单MIG重算间的数值差，具体kernel原因未识别；不是本轮fp16量化引入。不校正原数据，不宣称逐位复现。",
+  "status": "PASS_WITH_USER_ACCEPTED_DEVIATION"
+}

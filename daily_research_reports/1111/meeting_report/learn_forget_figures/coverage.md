@@ -1,0 +1,20 @@
+# coverage
+
+AI分析；研究者判断Unknown。FAILEDmeansconstraintorqualificationfailedafteractualmeasurement;BLOCKEDhistoricalgriddataismissing. No untrainedrequiredmodelremains.
+
+| item                               | status           | evidence                                                       | boundary                                                                                                             |
+|:-----------------------------------|:-----------------|:---------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------|
+| 0inventory_and_initial             | DONE_VALID       | checkpoint_inventory_final.csv;14forwardreceipts               | 12trajectory states plusMoE33B andDense34.076B references;allstrictloadedandSHAverified                              |
+| 0activation_alignment              | DONE_VALID       | evidence/activation_alignment.json                             | FFNactivebudgetequal;MoEadds65536routerparameters andhaslargertotalcapacity                                          |
+| 0position_forward                  | DONE_VALID       | positions/*.npz;forward_*.json                                 | eval;modelandbiasunchanged;nooptimizer                                                                               |
+| 0NLL_and_M                         | DONE_VALID       | baseline_NLL_document_CI.csv;baseline_concentration.csv        | Same2097152positions;docbootstrap2000                                                                                |
+| 1mastery_acquisition_forgetting    | DONE_VALID       | fig1_mastery_transitions.csv;fig1_gap_decomposition.csv        | MoE33Bprimary,Dense34.076Brequested sensitivity;Dense10Bextra;thresholdtiesandinitialstateexplicit                   |
+| 2gradient16groups                  | DONE_VALID       | fig2_rules.csv;fig2_borrowing_by_A5_group.csv                  | All16groupsR4at1B/10Bforbothmodels;nonpositivesignalsmissing;localreadout                                            |
+| 2precision8seq                     | DONE_EXPLORATORY | precision8/fig2_rules.csv;fig2_projection_norm_calibration.csv | One additionalbatchprecisioncheck;notreplacementofregistered1seq                                                     |
+| 3all_optimizer_conditions          | DONE_EXPLORATORY | fig3_optimization_history.csv;fig3_frontier.csv                | 6objectives*4starts*30updatediterates;DEVselectiononly;notglobaloptimum                                              |
+| 3lambda1_feasible_updated_endpoint | FAILED           | fig3_feasibility_diagnostic.csv;fig3_frontier.csv              | Specifiedupdatezerosbackground47.52%positions,loadlowerbound1.9008>1.2;initialA5canbefeasible,notglobalinfeasibility |
+| 3frozen_DEV_bias_EVAL_load_cap     | FAILED           | fig3_frontier.csv                                              | AllfrozenDEVbiasoptimizedsolutions exceed1.2onEVAL;equal1.257957                                                     |
+| 3EVAL_load_calibrated_sensitivity  | DONE_EXPLORATORY | fig3_EVAL_load_calibration.csv                                 | FixedDEV A;transductiveEVALmarginalbiascalibration;no modelbiasupdate                                                |
+| 4fit_and_switch                    | DONE_VALID       | fig4_fixed_fit_residuals.csv;fig4_switch_recovery.csv          | Fixed3armOLSdescriptive;gate/bias/routingjointswitch                                                                 |
+| 4real_interval_forgetting          | DONE_VALID       | fig4_forgetting_all.csv                                        | Originalledgerdefinitionsandactualsavedintervals                                                                     |
+| 4all_old_arms_250grid              | BLOCKED          | fig4_forgetting_all.csv                                        | OldA0only500-step,A4/A1deep1000-step positions;missingweightsnotretrained;countsnotinterpolated                      |

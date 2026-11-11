@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-10T18:19:53.106147+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-jj9wt",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 770,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17869,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "representation_learn_forget_followup_FFN_inputs_20261111",
+      "title_cn": "representation_learn_forget_followup_FFN_inputs_20261111",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A0_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A0_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A2_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A2_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A5_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A5_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_Dense_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_Dense_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A0_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A0_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A2_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A2_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A5_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A5_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/samples.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 2320,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/evidence/F_checkpoint_inventory.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 2567,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

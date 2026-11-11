@@ -350,6 +350,25 @@ profiles:
     priority: normal
     storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
     gpu_used: true
+  "5090-4-reserved":
+    status: requires_explicit_selection
+    selected_on: "2026-11-10"
+    allowed_scope: "R05 remaining A9/A9d and R06 A5 continuation to baseline1B step3816; R06 immediately selected by the latest direct user instruction, with no live duplicate"
+    scope_extended_on: "2026-11-11"
+    scope_extension_source: "Latest user authorization on2026-11-11: switch immediately to4RTX5090Reserved;smoke,verify,delete smoke,then sequentially continueA5 and all remaining analyses in the same allocation;supervise until container ends."
+    selection_source: "Researcher explicitly requested replacing the current share four-H100 job with four RTX5090 Reserved and immediate submission in the1110 distill/self-atom conversation."
+    verified_by: "2026-11-10 signed live workspace binding and resourceSpecs GET: computing-cluster-5090-01g, n12lp.nn.i10a.4, four32GB devices,56vCPU240GiB; allocation/startup remains separate."
+    surface: acp
+    workspace: share-space
+    aec2: computing-cluster-5090-01g
+    worker_spec: n12lp.nn.i10a.4
+    worker_nodes: 1
+    worker_processes: 4
+    gpus: "4x RTX 5090 32GB"
+    quota_type: reserved
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
   "5090-4-spot":
     status: requires_explicit_selection
     selected_on: "2026-09-13"

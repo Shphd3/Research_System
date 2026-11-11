@@ -1,0 +1,96 @@
+# check1_hint_probes
+
+AI分析；研究者判断Unknown。
+
+宿主全部冻结；real/shuffled为同初始化、同训练位置和超参数的独立小探针；不是测试时仅打乱。A1宿主先前已用过A1分发，因此该格不满足“未用过该分发”的理想条件，按用户明确宿主矩阵保留。
+
+| host   | distribution   | band    |          I_X |   real_probe_nll |   shuffled_probe_nll |      delta_hint |   train_positions |   test_positions | probe                                             |
+|:-------|:---------------|:--------|-------------:|-----------------:|---------------------:|----------------:|------------------:|-----------------:|:--------------------------------------------------|
+| A0     | A5             | overall |  0.634822313 |       4.07584499 |           4.07517979 | -0.000665203337 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin0    |  0.859149674 |       3.79945957 |           3.7998736  |  0.000414026571 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin1    |  0.774901864 |       3.93767849 |           3.93775488 |  7.6387417e-05  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin2    |  0.718539531 |       3.91847035 |           3.9191481  |  0.000677743238 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin3    |  0.710603524 |       3.96373112 |           3.96376138 |  3.02588362e-05 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin4    |  0.7069425   |       3.91379968 |           3.91406171 |  0.000262025147 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin5    |  0.681756857 |       4.01235371 |           4.01188784 | -0.000465869503 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin6    |  0.675441664 |       4.08064584 |           4.0801708  | -0.000475036867 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin7    |  0.65524231  |       4.13855971 |           4.1380522  | -0.000507509544 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin8    |  0.638613909 |       4.19874895 |           4.19811957 | -0.000629377538 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A5             | bin9    |  0.598215426 |       4.06697604 |           4.06601755 | -0.000958488488 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | overall |  0.286556134 |       4.07529849 |           4.07486403 | -0.000434463813 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin0    |  0.28898364  |       3.79998072 |           3.80028305 |  0.000302324665 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin1    |  0.311490241 |       3.93780992 |           3.93744826 | -0.000361658554 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin2    |  0.334414035 |       3.91891571 |           3.918876   | -3.97012989e-05 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin3    |  0.347863702 |       3.96427747 |           3.96332806 | -0.000949407375 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin4    |  0.347400563 |       3.91410287 |           3.91346151 | -0.000641364163 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin5    |  0.326929281 |       4.0122091  |           4.01140553 | -0.000803577011 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin6    |  0.324042809 |       4.08043751 |           4.07975193 | -0.000685587442 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin7    |  0.292244075 |       4.13809875 |           4.13761894 | -0.000479810067 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin8    |  0.276181425 |       4.19799032 |           4.19769926 | -0.0002910619   |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A1             | bin9    |  0.268034003 |       4.06618051 |           4.06580265 | -0.000377855554 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | overall | -0.2391636   |       4.07583505 |           4.07491122 | -0.000923828112 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin0    | -0.253562901 |       3.7998754  |           3.79924518 | -0.000630216882 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin1    | -0.24152166  |       3.93830714 |           3.93686839 | -0.00143875531  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin2    | -0.231031616 |       3.91934266 |           3.91780934 | -0.00153331685  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin3    | -0.233162906 |       3.96432986 |           3.963327   | -0.00100286411  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin4    | -0.233782887 |       3.91463514 |           3.91357358 | -0.00106155901  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin5    | -0.239111918 |       4.01242538 |           4.0113599  | -0.00106547846  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin6    | -0.242089622 |       4.0807275  |           4.07969388 | -0.00103361558  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin7    | -0.24566277  |       4.1386741  |           4.13765918 | -0.00101491256  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin8    | -0.245823671 |       4.19875618 |           4.19778552 | -0.000970659756 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A2             | bin9    | -0.236302698 |       4.06675482 |           4.06594198 | -0.000812838282 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | overall |  0.748464673 |       4.07440693 |           4.07367351 | -0.000733424186 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin0    |  0.822576981 |       3.79844957 |           3.79849145 |  4.18846753e-05 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin1    |  0.75636015  |       3.93638914 |           3.93606576 | -0.000323381479 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin2    |  0.76630121  |       3.91748009 |           3.91693903 | -0.000541063241 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin3    |  0.779375383 |       3.96282509 |           3.96190414 | -0.000920951199 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin4    |  0.782578587 |       3.913057   |           3.91231412 | -0.000742876785 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin5    |  0.754752057 |       4.01103602 |           4.01018968 | -0.000846336748 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin6    |  0.75973983  |       4.07948982 |           4.07874691 | -0.000742904598 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin7    |  0.755594945 |       4.13727077 |           4.13650654 | -0.000764237844 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin8    |  0.752606949 |       4.19714973 |           4.19661015 | -0.000539587781 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A0     | A0-L7          | bin9    |  0.73700604  |       4.06538955 |           4.06459829 | -0.000791254872 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | overall |  0.634822313 |       4.15062526 |           4.15070831 |  8.30496003e-05 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin0    |  0.859149674 |       3.90598877 |           3.90694082 |  0.000952045575 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin1    |  0.774901864 |       4.02322107 |           4.02466281 |  0.0014417445   |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin2    |  0.718539531 |       3.98831245 |           3.98973559 |  0.0014231379   |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin3    |  0.710603524 |       4.03755258 |           4.03834328 |  0.000790701631 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin4    |  0.7069425   |       3.99139332 |           3.99217471 |  0.000781393106 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin5    |  0.681756857 |       4.09191903 |           4.09210481 |  0.000185784337 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin6    |  0.675441664 |       4.1580019  |           4.15781087 | -0.000191030421 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin7    |  0.65524231  |       4.21872677 |           4.21872526 | -1.51007432e-06 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin8    |  0.638613909 |       4.2774664  |           4.27725472 | -0.000211673205 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A5             | bin9    |  0.598215426 |       4.13789232 |           4.13790765 |  1.53273068e-05 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | overall |  0.286556134 |       4.15104079 |           4.15071831 | -0.000322478253 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin0    |  0.28898364  |       3.90685573 |           3.90682283 | -3.29013047e-05 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin1    |  0.311490241 |       4.02447877 |           4.02394545 | -0.000533320771 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin2    |  0.334414035 |       3.98922246 |           3.98872274 | -0.00049971712  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin3    |  0.347863702 |       4.03839962 |           4.03795226 | -0.000447354454 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin4    |  0.347400563 |       3.99212835 |           3.99212603 | -2.32009405e-06 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin5    |  0.326929281 |       4.09232313 |           4.09183656 | -0.000486564708 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin6    |  0.324042809 |       4.15832412 |           4.15767203 | -0.000652091637 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin7    |  0.292244075 |       4.21910508 |           4.21861185 | -0.000493223137 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin8    |  0.276181425 |       4.27782116 |           4.27719591 | -0.000625247946 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A1             | bin9    |  0.268034003 |       4.13824831 |           4.13810285 | -0.000145462602 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | overall | -0.2391636   |       4.15067187 |           4.15129501 |  0.000623149335 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin0    | -0.253562901 |       3.90489052 |           3.90730712 |  0.00241660219  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin1    | -0.24152166  |       4.02230694 |           4.02484416 |  0.00253721433  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin2    | -0.231031616 |       3.98826317 |           3.98959314 |  0.00132997786  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin3    | -0.233162906 |       4.03773046 |           4.03843865 |  0.000708192915 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin4    | -0.233782887 |       3.99152418 |           3.99245292 |  0.000928745798 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin5    | -0.239111918 |       4.09167094 |           4.09230014 |  0.000629197562 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin6    | -0.242089622 |       4.15758968 |           4.15826466 |  0.00067497414  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin7    | -0.24566277  |       4.2185725  |           4.21906104 |  0.000488537246 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin8    | -0.245823671 |       4.27739604 |           4.27783769 |  0.000441653723 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A2             | bin9    | -0.236302698 |       4.13814371 |           4.13870079 |  0.000557077358 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | overall |  0.748464673 |       4.14936668 |           4.14946707 |  0.00010039028  |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin0    |  0.822576981 |       3.90380973 |           3.9045435  |  0.000733774405 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin1    |  0.75636015  |       4.02160038 |           4.02203033 |  0.000429947789 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin2    |  0.76630121  |       3.98708204 |           3.98753796 |  0.000455917568 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin3    |  0.779375383 |       4.03606408 |           4.03632706 |  0.000262984522 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin4    |  0.782578587 |       3.9900367  |           3.99044734 |  0.000410647778 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin5    |  0.754752057 |       4.09026254 |           4.09053006 |  0.000267526031 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin6    |  0.75973983  |       4.15649719 |           4.1565751  |  7.79119082e-05 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin7    |  0.755594945 |       4.21720473 |           4.21746157 |  0.000256841899 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin8    |  0.752606949 |       4.27609842 |           4.27618383 |  8.54060744e-05 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |
+| A1     | A0-L7          | bin9    |  0.73700604  |       4.13683909 |           4.1368317  | -7.38271531e-06 |            524288 |          2097152 | residual MLP1024 onehot28; full-vocab frozen head |

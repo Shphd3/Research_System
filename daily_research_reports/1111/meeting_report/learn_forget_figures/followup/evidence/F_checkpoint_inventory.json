@@ -1,0 +1,48 @@
+[
+  {
+    "model": "Dense",
+    "tokens": 500000000,
+    "step": 1908,
+    "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000500000000/state.pt",
+    "config": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/resolved_config.json",
+    "manifest": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000500000000/manifest.json",
+    "bytes": 3377283567,
+    "sha256": "a1cccdefbaffa1bfb33291a7c26cd68fc82d72bafb01d1af8b10e87044b5bfd9",
+    "exists": true,
+    "purpose": "trajectory",
+    "arm": "Dense"
+  },
+  {
+    "arm": "A0",
+    "model": "MoE",
+    "step": 2000,
+    "tokens": 524288000,
+    "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/milestones/token_000524288000/state.pt",
+    "config": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A0.yaml",
+    "manifest": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A0/milestones/token_000524288000/manifest.json",
+    "bytes": 6096182806,
+    "sha256": "1139958af6489dd842dc2aec948766b803f05d00b4df738f22068e3c1fd3c626"
+  },
+  {
+    "arm": "A5",
+    "model": "MoE",
+    "step": 2000,
+    "tokens": 524288000,
+    "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/runs/A5/milestones/token_000524288000/state.pt",
+    "config": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/arms/A5.yaml",
+    "manifest": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/runs/A5/milestones/token_000524288000/manifest.json",
+    "bytes": 6095652350,
+    "sha256": "6e79a2082ace4a76c39ae8e4b8ae0061c09c4de57d29908df7576e1315d47555"
+  },
+  {
+    "arm": "A2",
+    "model": "MoE",
+    "step": 2000,
+    "tokens": 524288000,
+    "path": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A2/milestones/token_000524288000/state.pt",
+    "config": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/arms/A2.yaml",
+    "manifest": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A2/milestones/token_000524288000/manifest.json",
+    "bytes": 6095652350,
+    "sha256": "cd1810ae3eb1990a0e152b1578c37a23d4065a9a4f172cc551d9439cc31a92fd"
+  }
+]

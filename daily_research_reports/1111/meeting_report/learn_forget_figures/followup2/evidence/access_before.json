@@ -1,0 +1,1542 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-10T23:54:58.488962+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-dbvxz",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 770,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17869,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "dclm_pair_v1",
+      "title_cn": "DCLM paired train/validation view",
+      "category": "dataset",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/training_data_views/dclm_pair_v1",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "paired_training_view",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/manifest.json",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 754964,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/train/global-shard_01_of_10/local-shard_0_of_10_shard_00000000_processed.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 299003652,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/training_data_views/dclm_pair_v1/validation/validation.bin",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 459952424,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "analysis_r04_atom_groups_frozen_20261109",
+      "title_cn": "R04冻结原子谱分组与频率权重",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/data/atom_groups.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 482181,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/evidence/atom_groups.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6977,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/evidence/teacher_precision_top32.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 176,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_r04_positions_seven_20261109",
+      "title_cn": "R04 seven逐位置loss及硬Top2",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/evidence/position_manifest_seven.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 10834,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/consistency.jsonl",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14884,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A0/step000500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A0/step001000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A0/step001500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A0/step002000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step000250.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step000500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step000750.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step001000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step001250.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step001500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step001750.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1/step002000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A2/step000250.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A2/step000500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A2/step000750.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A2/step001000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A2/step001250.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A2/step001500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A2/step001750.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A2/step002000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A4/step001000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A4/step002000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1-deep/step001000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A1-deep/step002000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A6/step000250.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A6/step000500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A6/step000750.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A6/step001000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A6/step001250.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A6/step001500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A6/step001750.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A6/step002000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step000250.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step000500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step000750.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step001000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step001250.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step001500.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step001750.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/analysis/positions/A5/step002000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749482,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_a5checks_A0_500_restored_readonly_20261110",
+      "title_cn": "A0 500步归档字节一致的新路径恢复副本",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261110_a5_gain_checks/data/A0_500_restored_state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096182550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_learn_forget_inputs_20261111",
+      "title_cn": "checkpoint_family_learn_forget_inputs_20261111",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1125758485,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_000500000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3377283567,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_001000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3377283567,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_003000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3377283567,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_005000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3377283567,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/milestones/token_010000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3377283567,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_000000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 2032068542,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_000500000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_001000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_003000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_005000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_010000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/runs/formal/milestones/token_033000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214870,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/evidence/checkpoint_inventory.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 9747,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_learn_forget_positions_20261111",
+      "title_cn": "representation_learn_forget_positions_20261111",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/Dense_000000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194566,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/Dense_000500000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194566,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/Dense_001000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194566,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/Dense_003000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194566,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/Dense_005000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194566,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/Dense_010000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194566,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/Dense_034076363264.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194566,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/MoE_000000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749236,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/MoE_000500000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749236,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/MoE_001000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749236,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/MoE_003000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749236,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/MoE_005000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749236,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/MoE_010000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749236,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/positions/MoE_033000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 37749236,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/evidence/large_output_manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 7166,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "representation_learn_forget_followup_FFN_inputs_20261111",
+      "title_cn": "representation_learn_forget_followup_FFN_inputs_20261111",
+      "category": "representation",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "ARRAY_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A0_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A0_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A2_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A2_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A5_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_A5_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_Dense_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/h_Dense_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4294967424,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A0_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A0_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A2_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A2_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A5_DEV.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/sel_A5_EVAL.npy",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4194432,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/data/F/samples.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 2320,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/followup/evidence/F_checkpoint_inventory.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 2567,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_family_r06_A5_to1B_20261111",
+      "title_cn": "R06 A5续训实际保留完整状态与BF16权重",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/evidence/saved_checkpoints.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6470,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003500/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1188,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003500/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6095653271,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003500/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003500/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003500/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15321,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003500/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003750/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1188,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003750/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6095653271,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003750/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003750/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003750/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15321,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/checkpoints/step_00003750/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/milestones/token_001000341504/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1189,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/milestones/token_001000341504/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6095653271,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/milestones/token_001000341504/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/milestones/token_001000341504/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/milestones/token_001000341504/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15321,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/milestones/token_001000341504/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 15385,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/weights/step_002250.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1016065419,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/weights/step_002500.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1016065419,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/weights/step_002750.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1016065419,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/weights/step_003000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1016065419,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/weights/step_003250.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1016065419,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/weights/step_003500.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1016065419,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/weights/step_003750.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1016065419,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/20261111_a5_to_1B/runs/A5/weights/step_003816.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1016065419,
+          "ok": true,
+          "role": "primary",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

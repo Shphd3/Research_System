@@ -1,0 +1,15 @@
+# R06 A5 continuation to the native1B optimizer step
+
+Researcher-authorized single-arm continuation, H100Reserved first; switch to4RTX5090Reserved only after3600seconds unallocated. Original prompt SHA256 fd9438fd15f56c164b41ae81fdf62be9ca97794c05abbdc9cb000d6b83df26d0. SourceA5@2000; target nativebaseline manifest update3816, A5tokens1000341504 versus baseline1000000000. P10/P12 frozen before execution; scientific judgment Unknown. Chinese protocol owns complete implementation details and missing-dependency boundaries.
+
+
+Researcher amendment before training: post-training scientific analysis must run inside the retained Reserved allocation, without using MIG. Both native1B position caches are already produced by the independent four-figure task, so extra single-H100 jobs are unnecessary. Mastery uses the exact frozen33B reference, hysteresis and DEV strata, with the latest Dense reference as sensitivity. Exact native baseline@2000 is missing; report the R03 A0 proxy separately and retain insufficient eligibility for native-trajectory P12, without changing the frozen P12 threshold.
+
+
+## Operational amendment: independent overnight execution
+
+Latest direct researcher instructions supersede the one-hour H100 wait and the initial MIG analysis placement. The qualified smoke ran on four RTX5090 Reserved GPUs: 20 uninterrupted updates versus 10/save/actual SIGKILL/resume-to20, maximum CE difference0 and1076state tensors exactly equal. All smoke payloads, including auxiliary position caches, were deleted with receipts. The old smoke job pt-sghhdljb reached SUSPENDED before the sole formal continuation om-8dy8ynho was created at2026-11-10T17:49:44Z. The actual API shows fault_tolerance.backoff_limit=3 and LME.max_retries=3. Native CLI uses an om-prefixed ID when fault tolerance is enabled; the prepared payload-transform proxy was not applied. Platform rules are default; persisted scientific-stop records prevent further training rather than a claimed custom exit-code policy.
+
+Training, post-training statistics, figures, asset registration and the under20MB ZIP run sequentially in this formal Reserved job. None depends on the local MIG container surviving. Import and cache-interface preflight passed in the formal worker. P10/P12 criteria remain unchanged. Exact native baseline@2000 is unavailable; P12 native-trajectory eligibility remains insufficient and proxy numbers stay separate.
+
+The researcher also authorized adapting applicable readouts from thread01a1c63d-7c94-73e0-b6e0-9549af3af8d5. The added feature mastery/concentration analysis is frozen in the Chinese amendment before execution: A5 versus nativeMoE and Dense at1B, MoE33B learnable reference plus latestDense sensitivity, n>=50, EVAL denominator for M, within-frequency and partial rank correlations, low/high deciles with2000document resamples. It is descriptive and does not change P10/P12 or authorize other model training. The independent taskE remains owned by the referenced conversation. Researcher judgment Unknown.

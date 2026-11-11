@@ -1,0 +1,125 @@
+{
+  "arm": "A5",
+  "row": {
+    "arm": "A5",
+    "model": "MoE",
+    "step": 2000,
+    "tokens": 524288000,
+    "path": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/runs/A5/milestones/token_000524288000/state.pt",
+    "config": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/arms/A5.yaml",
+    "manifest": "/data/250010109/MoE_Router/experiments/20261109_atom_concentration_regularizer/runs/A5/milestones/token_000524288000/manifest.json",
+    "bytes": 6095652350,
+    "sha256": "6e79a2082ace4a76c39ae8e4b8ae0061c09c4de57d29908df7576e1315d47555"
+  },
+  "sha256_verified": "6e79a2082ace4a76c39ae8e4b8ae0061c09c4de57d29908df7576e1315d47555",
+  "seconds": 78.22005554661155,
+  "all_parameters_and_bias_unchanged": true,
+  "NLL_and_selection_checks": [
+    {
+      "split": "EVAL",
+      "NLL_subset": 4.044257587834565,
+      "cached_fp16_NLL_subset": 4.044264393659432,
+      "difference": -6.805824867228694e-06
+    }
+  ],
+  "hidden_capture_dtype": "float16; float64 statistics",
+  "rounding": [
+    {
+      "split": "DEV",
+      "layer": 0,
+      "max_abs_hidden_rounding": 0.0019521713256835938,
+      "mean_square_rounding_fraction": 4.303813128103684e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 1,
+      "max_abs_hidden_rounding": 0.0019502639770507812,
+      "mean_square_rounding_fraction": 4.308508394501587e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 2,
+      "max_abs_hidden_rounding": 0.0019483566284179688,
+      "mean_square_rounding_fraction": 4.316605384246941e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 3,
+      "max_abs_hidden_rounding": 0.0019526481628417969,
+      "mean_square_rounding_fraction": 4.318865975960762e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 4,
+      "max_abs_hidden_rounding": 0.0019521713256835938,
+      "mean_square_rounding_fraction": 4.3163790763856014e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 5,
+      "max_abs_hidden_rounding": 0.0019483566284179688,
+      "mean_square_rounding_fraction": 4.3168700614160116e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 6,
+      "max_abs_hidden_rounding": 0.0019516944885253906,
+      "mean_square_rounding_fraction": 4.314727064524959e-08
+    },
+    {
+      "split": "DEV",
+      "layer": 7,
+      "max_abs_hidden_rounding": 0.0019516944885253906,
+      "mean_square_rounding_fraction": 4.3148148165528255e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 0,
+      "max_abs_hidden_rounding": 0.0019497871398925781,
+      "mean_square_rounding_fraction": 4.2965464075450654e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 1,
+      "max_abs_hidden_rounding": 0.0019516944885253906,
+      "mean_square_rounding_fraction": 4.3056662235585463e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 2,
+      "max_abs_hidden_rounding": 0.0019507408142089844,
+      "mean_square_rounding_fraction": 4.3109320557732644e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 3,
+      "max_abs_hidden_rounding": 0.0019512176513671875,
+      "mean_square_rounding_fraction": 4.318876989373166e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 4,
+      "max_abs_hidden_rounding": 0.001953125,
+      "mean_square_rounding_fraction": 4.3123890236529405e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 5,
+      "max_abs_hidden_rounding": 0.0019526481628417969,
+      "mean_square_rounding_fraction": 4.321367796933373e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 6,
+      "max_abs_hidden_rounding": 0.0019512176513671875,
+      "mean_square_rounding_fraction": 4.320284219261339e-08
+    },
+    {
+      "split": "EVAL",
+      "layer": 7,
+      "max_abs_hidden_rounding": 0.0019526481628417969,
+      "mean_square_rounding_fraction": 4.316317614438958e-08
+    }
+  ],
+  "training_updates": 0
+}

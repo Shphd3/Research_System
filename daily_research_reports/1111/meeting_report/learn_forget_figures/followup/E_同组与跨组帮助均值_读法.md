@@ -1,0 +1,3 @@
+AI分析；研究者判断Unknown。
+
+同组低高与对应低频组的其他高频组分别等权平均；固定原点有效组对的R4 bootstrap区间；差值与其区间详E_main_statistics。

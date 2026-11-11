@@ -1,0 +1,153 @@
+# 蒸馏与自举原子路由：1111汇报
+
+AI分析；研究者判断 Unknown。A8、A9、A9d均已完成；本轮不提交新架构训练。训练结果与统计分析完成范围见 F_coverage，旧对照缺失的55个总体／频段区间单列。
+
+## 目的
+
+检验A5的固定teacher原子分组收益能否转成学生可部署路由，并区分切换造成的即时损伤与后续学习。NLL为固定EVAL负对数似然（nat，越低越好）；  $\bar M$  为teacher原子坐标中的硬路由集中度。
+
+## 结论
+
+1. A8将集中度提高10.20%却使终点NLL比A0高0.01886nat，P5支持而P6削弱。
+
+| arm     |      NLL |   M_median |
+|:--------|---------:|-----------:|
+| A5      | 4.039119 |   1.344968 |
+| A0      | 4.083142 |   1.010460 |
+| A1-deep | 4.085093 |   0.870829 |
+| A9d     | 4.098041 |   1.026740 |
+| A8      | 4.102006 |   1.113494 |
+| A9      | 4.124848 |   0.967771 |
+| A4      | 4.129442 |   0.810892 |
+| A1      | 4.157604 |   0.585752 |
+| A6      | 4.174997 |   0.924780 |
+| A2      | 4.286028 |   0.256799 |
+
+2. A9d比A9低0.02681nat、支持P9，两者仍差于A0且按末250步恢复速度均落入P7“恢复尚未完成”。
+
+| pair   |   difference |   ci95_low |   ci95_high |
+|:-------|-------------:|-----------:|------------:|
+| A8-A0  |     0.018864 |   0.017118 |    0.020535 |
+| A8-A5  |     0.062888 |   0.059057 |    0.066572 |
+| A8-A4  |    -0.027435 |  -0.029164 |   -0.025726 |
+| A9-A0  |     0.041705 |   0.039531 |    0.043695 |
+| A9d-A0 |     0.014899 |   0.013455 |    0.016281 |
+| A9-A9d |     0.026807 |   0.025567 |    0.028002 |
+
+3. 同权重切换的原子翻转与即时损失相关分别0.4871／0.5366、支持两臂P8，gate、bias和字典漂移仍是未分离的解释。
+
+| arm   | band    |   rho_swap_delta_chi |   rho_recovery_delta |   rho_recovery_chi |   rho_final_delta |   rho_final_delta_logM |   recovered |   unrecovered |
+|:------|:--------|---------------------:|---------------------:|-------------------:|------------------:|-----------------------:|------------:|--------------:|
+| A9    | overall |             0.487058 |            -0.031842 |          -0.070803 |          0.273698 |               0.018028 |       29871 |           124 |
+| A9d   | overall |             0.536567 |            -0.018461 |          -0.037503 |          0.251904 |              -0.045155 |       29915 |            80 |
+
+## 机制假设与模型
+
+A8保留原生router选择与gate，训练时将teacher的A5八组分数变为温度12.19546175的soft目标，加权0.1的KL只更新router，推理不使用teacher。A9使用A0@1000本层归一化输入训练的8192维TopK32冻结字典，按共激活分8组并在DEV匈牙利对齐到expert；硬Top2组分数加bias选择，gate各0.5，换层router排除optimizer、bias清零。A9d只换L4–7，其余状态从同一完整A0存档继续。冻结字典不反向更新。
+
+候选先验是重复稀疏信号集中进入相同expert可改善学习；最强竞争解释是集中度只是相关读数，已有expert对原有gate／分发适配，强制切换和后续表示漂移抵消其收益。本轮P5/P6把“集中度变高”和“训练loss受益”分开，P8/P9检查切换代价与早层影响。
+
+## 实验分析
+
+### 设置
+
+seed17；8层hidden1024、8expert Top2、507988992个主模型参数；相同数据顺序、每步262144有效token、固定EVAL2097152位置。A8训练2000步（524288000新增token）；A9/A9d各新增1000步（262144000新增token），累计游标仍到524288000。AdamW β=(0.9,0.95)、lr3e−4、原1000步warmup、clip1.0。A8在4H100，A9/A9d依研究者授权迁移至4RTX5090 Reserved：微批16×累积2改为8×累积4，保持全局batch。此适配与torch运行层变化记录在protocol。
+
+### 原始数据
+
+![详细loss](/data/250010109/Research_System/daily_research_reports/1111/meeting_report/distill_self_atom/F_loss_detailed.png)
+
+上行训练CE原始淡线及50步尾随均值，下行固定EVAL NLL，右列放大后段；蒸馏和正则项未混入CE。原表 F_train_CE_raw50、F_eval_all10。
+
+![终点差](/data/250010109/Research_System/daily_research_reports/1111/meeting_report/distill_self_atom/A_endpoint_differences.png)
+
+低于零表示前一臂更好；1871个文档、2000次块自助法给评估抽样区间。区间与聚合NLL的末位差来自fp16逐位置存储。
+
+![十频段](/data/250010109/Research_System/daily_research_reports/1111/meeting_report/distill_self_atom/A_frequency.png)
+
+频段0最稀有、9最常见；定义是teacher原子DEV频率，位置可属于多个频段。新两臂十频段均差于A0；原表 A_learning、A_bootstrap_differences。
+
+[集中度完整拆解](/data/250010109/Research_System/daily_research_reports/1111/meeting_report/distill_self_atom/concentration_cn.md)含层、频段、q/u均值分摊、bias与负载；[学会／遗忘](/data/250010109/Research_System/daily_research_reports/1111/meeting_report/distill_self_atom/learning_forgetting_cn.md)含相邻账本、匹配区间、净遗忘、切换冲击与恢复。
+
+### 为什么
+
+AI分析：A8的收益继承比例r为−0.428523，说明这次蒸馏没有继承A5优势；提高当前硬M并不足以保证loss收益，最后一层A5硬集合一致率只有37.34%，也还没有完整复现A5。A9全层切换立即损伤更大，并在零更新时就改变后层输入，A9d保留早层后损伤和终点差均更小；这支持早层硬替换是当前实现的薄弱部分。冻结字典的重建误差随训练上升，说明最初固定分组与后来表征逐渐不匹配。这些现象共同解释了“能恢复训练，但未超过原生”，尚不能判断只修改分组或只修改gate就能解决。
+
+| arm   |   median_M |   median_M_EVAL |   relative_median_gain |   fraction_increased |   mean_delta |   mean_q_contribution |   mean_u_contribution |
+|:------|-----------:|----------------:|-----------------------:|---------------------:|-------------:|----------------------:|----------------------:|
+| A0    |   1.010460 |        1.024844 |               0.000000 |             0.000000 |     0.000000 |              0.000000 |              0.000000 |
+| A5    |   1.344968 |        1.363952 |               0.331045 |             0.798633 |     0.309075 |              0.298237 |              0.010838 |
+| A8    |   1.113494 |        1.128547 |               0.101967 |             0.725821 |     0.139898 |              0.127172 |              0.012726 |
+| A9    |   0.967771 |        0.989395 |              -0.042247 |             0.437640 |    -0.013685 |             -0.038592 |              0.024907 |
+| A9d   |   1.026740 |        1.056258 |               0.016112 |             0.538956 |     0.027357 |              0.024964 |              0.002394 |
+
+### 认识更新与下一次架构讨论
+
+AI分析：现有数据支持保留“teacher原子分组可改善固定分发”的R04事实，但不支持直接把teacher换成学生冻结字典、全层硬切换就能继承收益。A9d在部署无teacher的条件下更接近A0，适合成为讨论基线；A0仍是本轮原生路由的loss参照。集中度与恢复速度应同loss、负载和额外编码成本一起评估。
+
+AI建议（NOT RUN）：在选下一轮主模型前，最小区分是固定A0@1000权重，仅在L4–7交叉比较原生／自举选择与原生概率归一化／0.5 gate，预先固定bias处理；若损失主要随gate变化，优先保留原生gate，若自举选择在两种gate下都显著受损，再审查分组及冻结表示适配。该前向控制尚未执行，后续架构与提训由研究者讨论决定。
+
+### 其他已完成分析和边界
+
+| prediction   | result               |    value |   ci95_low |   ci95_high |   last250_drop | researcher_judgment   |
+|:-------------|:---------------------|---------:|-----------:|------------:|---------------:|:----------------------|
+| P5           | 支持                 | 1.113494 | nan        |  nan        |     nan        | Unknown               |
+| P6           | 削弱                 | 0.018864 |   0.017118 |    0.020535 |     nan        | Unknown               |
+| P7_A9        | 不足（恢复尚未完成） | 0.041705 | nan        |  nan        |       0.085077 | Unknown               |
+| P7_A9d       | 不足（恢复尚未完成） | 0.014899 | nan        |  nan        |       0.085756 | Unknown               |
+| P8_A9        | 支持                 | 0.487058 | nan        |  nan        |     nan        | Unknown               |
+| P8_A9d       | 支持                 | 0.536567 | nan        |  nan        |     nan        | Unknown               |
+| P9           | 支持                 | 0.026807 |   0.025567 |    0.028002 |     nan        | Unknown               |
+
+可选E时间重标度已完成（264条总体／频段×预测变量行，见 E_atom_time_rescaling.csv/md）；它是逐原子描述性相关／回归，右删失剔除，左删失标记保留，未把原子当作独立训练种子。
+
+提示探针补充的稀释阳性4epoch增益0.003803小于冻结0.02门限，强提示阳性1.016478；检出0.04nat量级泄露的能力仍未建立，因此旧阴性结果不能强排除teacher提示泄露。早期A0@500宿主的A5增益0.000114，按原规则未检出。原表 hint_supplement.csv。
+
+单种子方差 Unknown；bootstrap只反映评估抽样。teacher沿用bf16原子编码，历史bf16与fp32 Top32逐索引重合98.96%、整集合70.59%，本轮未重测。评估是FP32权重配合bf16 autocast，逐位置损失存fp16，非全算子FP32前向。原子正常近似/BH账本保留文档内依赖，属描述性统计。
+
+同5090只读A0前向总体差在1000/2000步分别+0.000006335/+0.000003396nat，最小逐层硬集合一致率99.5795%／99.6124%；逐位置绝对差p99为0.0625nat，最大值并非零，不能叫逐位置一致。主要P5–P9继续使用冻结R04基线，敏感性P8仍支持。原生5090续训未执行，因此未排除训练轨迹硬件效应。
+
+### 数据缺口与执行交付
+
+| pair   |   step | status                 |   aggregate_NLL_difference | reason                                                                    |
+|:-------|-------:|:-----------------------|---------------------------:|:--------------------------------------------------------------------------|
+| A8-A4  |   1500 | 区间未完成；聚合差已知 |                  -0.008070 | 旧对照逐位置数据缺失，且该步权重未保存；仅有聚合NLL不足以计算文档配对区间 |
+| A9-A0  |   1250 | 区间未完成；聚合差已知 |                   0.081043 | 旧对照逐位置数据缺失，且该步权重未保存；仅有聚合NLL不足以计算文档配对区间 |
+| A9-A0  |   1750 | 区间未完成；聚合差已知 |                   0.045078 | 旧对照逐位置数据缺失，且该步权重未保存；仅有聚合NLL不足以计算文档配对区间 |
+| A9d-A0 |   1250 | 区间未完成；聚合差已知 |                   0.034293 | 旧对照逐位置数据缺失，且该步权重未保存；仅有聚合NLL不足以计算文档配对区间 |
+| A9d-A0 |   1750 | 区间未完成；聚合差已知 |                   0.018951 | 旧对照逐位置数据缺失，且该步权重未保存；仅有聚合NLL不足以计算文档配对区间 |
+
+上述5个检查点组合的55个总体／频段配对区间无法恢复；聚合loss曲线与所有终点主判据完整。未对旧臂插值造数据或重训。
+
+| arm   | start_UTC                        | end_UTC                          |   wall_seconds |   measured_step_seconds |   updates |   last_step | status   |
+|:------|:---------------------------------|:---------------------------------|---------------:|------------------------:|----------:|------------:|:---------|
+| A8    | 2026-11-10T06:10:34.071565+00:00 | 2026-11-10T08:15:27.986112+00:00 |    7493.914547 |             5664.940863 |      2000 |        2000 | complete |
+| A9    | 2026-11-10T11:53:33.194270+00:00 | 2026-11-10T13:11:00.646713+00:00 |    4647.452443 |             2878.804145 |      1000 |        2000 | complete |
+| A9d   | 2026-11-10T13:11:22.599362+00:00 | 2026-11-10T14:28:40.902733+00:00 |    4638.303371 |             2862.337123 |      1000 |        2000 | complete |
+
+5090任务pt-kmzxmmyf已SUCCEEDED并释放，11:24:04Z至14:30:38Z分配4卡，含冒烟、正式训练及只读核验。正式A9／A9d各约77.5／77.3分钟。含前期H100失败分配的保守总计23.660797 GPU小时（不含队列，MIG另列）；不是账单金额。冒烟删除74475393904字节，滚动完整存档删除42672915748字节，均有本任务回执。生成核验时可见文件系统余量95.738TB，不代表账户配额。
+
+A9额外冻结编码器67174400参数、A9d33587200参数；诊断decoder另有67108864／33554432参数，路由推理不需要decoder。实际完整终点及最近两个恢复存档、BF16权重、四卡RNG、SHA、资产ID见evidence/saved_A*.json与Detailed；旧滚动状态和冒烟负载已删除，旧R03/R04及A5检查产物保持。
+
+逐项完成范围见 F_coverage.csv/md；所有图有PNG/PDF、表有CSV/Markdown。包内保留关键逐原子切换／t50表，大型逐原子M和账本在执行目录保留并列于omitted_large_tables.json；包不含权重、数据及逐位置大文件。
+
+
+## 冻结来源与证据链
+
+原始protocol SHA256：`b577ed19ce503fdaa0415e54891faf3f958f470ab7278a77f20a8b9ae76adb30`。后续5090资源适配见protocol_cn.md追加记录，原文和P5–P9未改。G1原H100源状态20步CE差0；5090 G2最低0.999755859375，G3实际kill10恢复20的1076状态张量逐位一致、CE最大差0。A8实际执行旧版source快照另存，不能用后续修复源冒充。
+
+| claim                       | criterion          | raw                                                       | producer                                                  | eligibility         | limit                                                  |
+|:----------------------------|:-------------------|:----------------------------------------------------------|:----------------------------------------------------------|:--------------------|:-------------------------------------------------------|
+| A8 manipulation andbenefit  | P5/P6              | B_M_medians.csv;A_bootstrap_differences.csv               | analysis/finalize.py                                      | bounded as recorded | M is external geometry;single seed                     |
+| Selfbenefit andearlylayers  | P7/P9              | A_learning.csv;A_bootstrap_differences.csv                | analysis/finalize.py                                      | bounded as recorded | 1000newupdates;crosshardware native training reference |
+| Switch association          | P8                 | D_switch_correlations.csv;D_switch_quartiles.csv          | analysis/finalize.py                                      | bounded as recorded | Gate,bias,groupchoices jointlychange                   |
+| Concentration decomposition | descriptive        | F_concentration_bands.csv;F_concentration_layers.csv      | analysis/final_supplement.py                              | bounded as recorded | Exact algebra,not independent intervention             |
+| Learning/forgetting         | R04fixedthresholds | C_ledger_by_bin.csv;F_matched_learning.csv                | analysis/finalize.py;analysis/final_supplement.py         | bounded as recorded | Overlapping atoms;post-switch history differs          |
+| Retainedstates              | execution          | evidence/saved_A8.json;saved_A9.json;saved_A9d.json       | analysis/finalize_records.py                              | bounded as recorded | Fullstate versusBF16 snapshots separated               |
+| Runtimecontrol              | secondary          | runtime_forward_difference.csv;runtime_sensitivity_CI.csv | analysis/forward_reference_5090.py;runtime_sensitivity.py | bounded as recorded | Forwardonly;no native5090training                      |
+
+实际代码/config/数据与保存清单：`evidence/final_sources.json`、`actual_arm_configs_sources.json`、`analysis_output_manifest.json`、`source_release_qualified_A8/`、`saved_A*.json`、`self_atoms/READY.json`、`fork_source.json`。全部实际评估产物资产为`analysis_r05_A8_native_evaluations_20261110`、`analysis_r05_A9_native_evaluations_20261110`、`analysis_r05_A9d_native_evaluations_20261110`；权重族为`checkpoint_family_r05_A8_20261110`、`checkpoint_family_r05_A9_20261110`、`checkpoint_family_r05_A9d_20261110`。最终访问核验另存evidence/access_final_outputs_*.json。
+
+工程失败保留：两次初始启动引用错误、G1 fork RNG未赋值和误触发34步后备前缀（已停）、H100恢复退出NCCL heartbeat错误；均不作科学结果，数值G3另经CPU核验，并在5090实际重跑通过。失败分配计入成本。
+
+下一架构选择与科学接受：Unknown。

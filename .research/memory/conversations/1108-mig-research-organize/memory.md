@@ -4,7 +4,7 @@ Conversation name: 1108-mig-research-organize
 Conversation ID: dade3be2-884f-4a18-a3a9-98063cf78572 (Claude Code session; transcript /root/.claude/projects/-data-250010109-Research-System/dade3be2-884f-4a18-a3a9-98063cf78572.jsonl, backed up under chat_history_backups/claude/live)
 Processed by: Claude Code (harness: Claude Code CLI 2.1.280, interactive --remote-control session "MIG" in tmux claude-mobile; model: claude-opus-5-5). The contract's agent list has no Claude entry; recorded as-is rather than mislabelled.
 Created at: 2026-11-08T10:29:01Z
-Latest update at: 2026-11-08T10:29:01Z
+Latest update at: 2026-11-10T11:54:11Z
 Continues from: none
 Environment: data=/data/250010109 (visible); repo=/data/250010109/Research_System (visible); claude-runtime=/root/.claude (visible now, ephemeral: lost on container restart, restored from data)
 
@@ -19,3 +19,10 @@ Environment: data=/data/250010109 (visible); repo=/data/250010109/Research_Syste
   - /data/250010109/chat_history_backups/claude/ops/claude_remote_control.sh (the service)
   - /data/250010109/runtime_env/claude_provider.py; pre-change copy claude_provider.py.before-remove-mimo-20261108
   - /data/250010109/chat_history_backups/claude/ops/claude_sync.py (backup scope: excludes only ide, telemetry, worktrees, _sync_snapshots)
+
+## 2026-11-10T11:54:11Z -- Remote sessions lost after each restart: cause found, startup reworked
+
+- Summary: Infra only, no scientific artifact touched. The Nov 8 restart test exposed that app sessions were orphaned on every 4 h recycle. Cause (read from the Claude Code 2.1.322 binary and confirmed by debug log): `claude remote-control` discards a bridge-pointer.json whose mtime is over 4 h old and then registers a new environment id. Fix in ops/claude_remote_control.sh (touch/rebuild pointer, wait for proxy); verified in this container with a pointer aged 5 h and with the pointer deleted: backend returned the same environment both times. Added ops/claude_resume_sessions.py to reopen terminal --remote-control sessions at boot (simulated next boot: selects the 6 currently running sessions). setup_env.sh now restores Claude in the background parallel to Codex.
+- Current work: Done and tested as far as possible without a reboot. Not yet verified: a real container restart (hostname changes per pod; whether the backend still honours the environment id under a new machine_name is untested), and whether an app-created session in the reused environment reopens when messaged.
+- Next action: After the next restart read the newest runtime_logs/setup-*.log for `phase=claude-restore`, `phase=claude-online seconds=N` and `[Claude Resume]` lines, and ops/logs/remote-control-debug.log for `environment_id=`; it should equal the id in ops/remote-control-environment.json. If setup breaks, restore setup_env.sh.before-parallel-claude-20261110. Open item offered to the researcher: Codex restore (~295 s, three passes over 5.6 GB) was not changed.
+- References: /data/250010109/PERSISTENCE_RUNBOOK.md (2026-11-10 section); /data/250010109/setup_env.sh; /data/250010109/chat_history_backups/claude/ops/claude_remote_control.sh; /data/250010109/chat_history_backups/claude/ops/claude_resume_sessions.py

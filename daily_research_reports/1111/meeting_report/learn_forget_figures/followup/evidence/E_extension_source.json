@@ -1,0 +1,25 @@
+{
+  "source": "/data/250010109/training_data_views/dclm_pair_v1/validation/validation.bin",
+  "source_bytes": 459952424,
+  "new_retained_document_range": [
+    4212958,
+    6310846
+  ],
+  "new_used_input_target_range": [
+    4212958,
+    6310111
+  ],
+  "old_DEV": [
+    722,
+    2098469
+  ],
+  "old_EVAL": [
+    2098469,
+    4212958
+  ],
+  "source_document_disjoint": true,
+  "training_view_source_shard_excluded": true,
+  "no_exhaustive_text_deduplication_claim": true,
+  "teacher_precision": "FP32 matches originalDEV_codes.pt",
+  "user_authorized": true
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "check": 1,
+    "status": "COMPLETE",
+    "conclusion": "A0宿主A5提示量-0.000665 nat",
+    "rule": "泄露不是主要解释",
+    "judgment": "Unknown"
+  },
+  {
+    "check": 2,
+    "status": "COMPLETE",
+    "conclusion": "可观测晚期领先量总体斜率为正；末点仍右删失，不能由nat差缩小断言追平",
+    "rule": "可见区间未支持持续缩小；完整1000–2000判定不足",
+    "judgment": "Unknown"
+  },
+  {
+    "check": 3,
+    "status": "COMPLETE",
+    "conclusion": "A5−A0=-0.044024，文档95%区间[-0.047218,-0.040423]不跨0",
+    "rule": "仅固定模型EVAL文档抽样；种子方差Unknown",
+    "judgment": "Unknown"
+  },
+  {
+    "check": 4,
+    "status": "COMPLETE",
+    "conclusion": "bias使A5/A1集中度相对改变0.56%/15.95%",
+    "rule": "10% bias干扰分支触发",
+    "judgment": "Unknown"
+  },
+  {
+    "check": 5,
+    "status": "COMPLETE",
+    "conclusion": "塌缩层bias改变Top2 70.17%，maxgate中位数0.99902",
+    "rule": "联合阈值未同时满足",
+    "judgment": "Unknown"
+  },
+  {
+    "check": 6,
+    "status": "COMPLETE",
+    "conclusion": "L7 MLP一致率45.7%–56.5%；自举M中位数0.988–1.185",
+    "rule": "L7>60%配置0/3；自举M≥1.08配置3/6，<1.01配置2/6；10pp规则见check6a_rules.csv",
+    "judgment": "Unknown"
+  }
+]

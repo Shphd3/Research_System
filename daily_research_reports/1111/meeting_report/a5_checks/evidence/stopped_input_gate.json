@@ -1,0 +1,51 @@
+{
+  "time_utc": "2026-11-10T03:09:02.960329+00:00",
+  "status": "STOPPED_INPUT_NLL_MISMATCH",
+  "checks_1_to_6": "NOT_RUN",
+  "gpu_seconds": 0,
+  "gate": [
+    {
+      "arm": "A5",
+      "npz_unquantized_nll": 4.039118998470363,
+      "fp16_position_mean": 4.039118895281092,
+      "fp16_mean_error": -1.0318927046171211e-07,
+      "expected_six_decimals": 4.039119,
+      "pass_six_decimals": true
+    },
+    {
+      "arm": "A0",
+      "npz_unquantized_nll": 4.083141671201614,
+      "fp16_position_mean": 4.083142550149944,
+      "fp16_mean_error": 8.789483301185896e-07,
+      "expected_six_decimals": 4.083142,
+      "pass_six_decimals": true
+    },
+    {
+      "arm": "A1",
+      "npz_unquantized_nll": 4.157614256728676,
+      "fp16_position_mean": 4.157613721082669,
+      "fp16_mean_error": -5.356460075489622e-07,
+      "expected_six_decimals": 4.157604,
+      "pass_six_decimals": false
+    }
+  ],
+  "R04_existing_consistency_rows": [
+    {
+      "arm": "A1",
+      "step": 2000,
+      "nll": 4.157614256728676,
+      "train_eval_nll": 4.157604346902656,
+      "abs_diff": 9.90982602022683e-06,
+      "weights": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A1/milestones/token_000524288000/state.pt"
+    },
+    {
+      "arm": "A1",
+      "step": 2000,
+      "nll": 4.157614256728676,
+      "train_eval_nll": 4.157604346902656,
+      "abs_diff": 9.90982602022683e-06,
+      "weights": "/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/runs/A1/milestones/token_000524288000/state.pt"
+    }
+  ],
+  "boundary": "No R04 file changed. Do not infer permission to bypass gate from prior known mismatch."
+}

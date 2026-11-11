@@ -1,0 +1,26 @@
+[
+  {
+    "arm": "A5",
+    "npz_unquantized_nll": 4.039118998470363,
+    "fp16_position_mean": 4.039118895281092,
+    "fp16_mean_error": -1.0318927046171211e-07,
+    "expected_six_decimals": 4.039119,
+    "pass_six_decimals": true
+  },
+  {
+    "arm": "A0",
+    "npz_unquantized_nll": 4.083141671201614,
+    "fp16_position_mean": 4.083142550149944,
+    "fp16_mean_error": 8.789483301185896e-07,
+    "expected_six_decimals": 4.083142,
+    "pass_six_decimals": true
+  },
+  {
+    "arm": "A1",
+    "npz_unquantized_nll": 4.157614256728676,
+    "fp16_position_mean": 4.157613721082669,
+    "fp16_mean_error": -5.356460075489622e-07,
+    "expected_six_decimals": 4.157604,
+    "pass_six_decimals": false
+  }
+]

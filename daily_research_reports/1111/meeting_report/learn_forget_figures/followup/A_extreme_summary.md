@@ -1,0 +1,66 @@
+# A_extreme_summary
+
+AI分析；研究者判断Unknown。
+
+| reference    | selection   | by               | value    |   features |
+|:-------------|:------------|:-----------------|:---------|-----------:|
+| MoE33B       | MoE_more    | A5_group         | 0        |          1 |
+| MoE33B       | MoE_more    | A5_group         | 1        |          1 |
+| MoE33B       | MoE_more    | A5_group         | 2        |          3 |
+| MoE33B       | MoE_more    | A5_group         | 3        |          2 |
+| MoE33B       | MoE_more    | A5_group         | 4        |          7 |
+| MoE33B       | MoE_more    | A5_group         | 5        |          2 |
+| MoE33B       | MoE_more    | A5_group         | 6        |          3 |
+| MoE33B       | MoE_more    | A5_group         | 7        |          1 |
+| MoE33B       | MoE_more    | bin              | 0        |          7 |
+| MoE33B       | MoE_more    | bin              | 1        |          2 |
+| MoE33B       | MoE_more    | bin              | 2        |          4 |
+| MoE33B       | MoE_more    | bin              | 3        |          1 |
+| MoE33B       | MoE_more    | bin              | 4        |          3 |
+| MoE33B       | MoE_more    | bin              | 5        |          1 |
+| MoE33B       | MoE_more    | bin              | 6        |          2 |
+| MoE33B       | MoE_more    | majority_content | 认token  |          1 |
+| MoE33B       | MoE_more    | majority_content | 靠上下文 |         19 |
+| MoE33B       | Dense_more  | A5_group         | 0        |          1 |
+| MoE33B       | Dense_more  | A5_group         | 1        |          2 |
+| MoE33B       | Dense_more  | A5_group         | 2        |          5 |
+| MoE33B       | Dense_more  | A5_group         | 4        |          4 |
+| MoE33B       | Dense_more  | A5_group         | 5        |          2 |
+| MoE33B       | Dense_more  | A5_group         | 6        |          4 |
+| MoE33B       | Dense_more  | A5_group         | 7        |          2 |
+| MoE33B       | Dense_more  | bin              | 0        |          6 |
+| MoE33B       | Dense_more  | bin              | 1        |          2 |
+| MoE33B       | Dense_more  | bin              | 2        |          7 |
+| MoE33B       | Dense_more  | bin              | 3        |          1 |
+| MoE33B       | Dense_more  | bin              | 4        |          1 |
+| MoE33B       | Dense_more  | bin              | 6        |          1 |
+| MoE33B       | Dense_more  | bin              | 7        |          2 |
+| MoE33B       | Dense_more  | majority_content | 靠上下文 |         20 |
+| Dense_latest | MoE_more    | A5_group         | 0        |          1 |
+| Dense_latest | MoE_more    | A5_group         | 3        |          1 |
+| Dense_latest | MoE_more    | A5_group         | 4        |          6 |
+| Dense_latest | MoE_more    | A5_group         | 5        |          9 |
+| Dense_latest | MoE_more    | A5_group         | 6        |          3 |
+| Dense_latest | MoE_more    | bin              | 0        |          4 |
+| Dense_latest | MoE_more    | bin              | 1        |          6 |
+| Dense_latest | MoE_more    | bin              | 2        |          2 |
+| Dense_latest | MoE_more    | bin              | 3        |          1 |
+| Dense_latest | MoE_more    | bin              | 4        |          2 |
+| Dense_latest | MoE_more    | bin              | 5        |          3 |
+| Dense_latest | MoE_more    | bin              | 6        |          2 |
+| Dense_latest | MoE_more    | majority_content | 靠上下文 |         20 |
+| Dense_latest | Dense_more  | A5_group         | 0        |          1 |
+| Dense_latest | Dense_more  | A5_group         | 1        |          2 |
+| Dense_latest | Dense_more  | A5_group         | 2        |          5 |
+| Dense_latest | Dense_more  | A5_group         | 3        |          1 |
+| Dense_latest | Dense_more  | A5_group         | 4        |          4 |
+| Dense_latest | Dense_more  | A5_group         | 5        |          2 |
+| Dense_latest | Dense_more  | A5_group         | 6        |          1 |
+| Dense_latest | Dense_more  | A5_group         | 7        |          4 |
+| Dense_latest | Dense_more  | bin              | 0        |          5 |
+| Dense_latest | Dense_more  | bin              | 1        |          4 |
+| Dense_latest | Dense_more  | bin              | 2        |          6 |
+| Dense_latest | Dense_more  | bin              | 3        |          2 |
+| Dense_latest | Dense_more  | bin              | 4        |          2 |
+| Dense_latest | Dense_more  | bin              | 7        |          1 |
+| Dense_latest | Dense_more  | majority_content | 靠上下文 |         20 |

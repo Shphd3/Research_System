@@ -1,0 +1,13 @@
+# R03低频末层长续训脚本索引
+
+更新2026-11-09T10:14:51Z；执行根/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109。实际任务pt-l0wd83dn；P12禁止用于新任务。
+
+- [common.py](/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109/code/common.py)：原模型和末层KL，字节复用；R定位新执行根；SHA256 `8c2f1b46afdc4dbd76b35bd0a7c371abcb12ea369c705d6491f7acae6a4ef99c`
+- [train.py](/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109/code/train.py)：各臂2300完整状态精确续训，eval50/save250；SHA256 `856461092decb07450486eba15ea0704110b2ef5870884549a1bd74c14a1f496`
+- [precompute_train.py](/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109/code/precompute_train.py)：新2300–3499 teacher目标及全rank匹配置换；SHA256 `76265d8ae6882828b97b1c10efc29a753be44e61f455ad10e8e45a5739f254d3`
+- [runner.py](/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109/code/runner.py)：单share四卡固定三臂阶段、限次恢复；SHA256 `97264d1b939a60a6efae6bb1180d21bdab10d66bffd83fa4c5ab74efd96003de`
+- [register_assets.py](/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109/code/register_assets.py)：只登记实际缓存/存档/评估与strict；SHA256 `d06b84fd85ca786c7311f1ac488c42bd1a758c818ac475995af6f90981b4ad67`
+- [evaluate.py](/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109/code/evaluate.py)：原2M留出及feature/M/gate统计，字节复用；SHA256 `cf10ea82caf828bdbf2e67876658c998fdde7902e3fb14b0bcde4aec019da3cb`
+- [summarize.py](/data/250010109/MoE_Router/experiments/20261109_teacher_routing_signal_concentration/followups/lowfreq_lastlayer_long_20261109/code/summarize.py)：完成后三组原始曲线和有边界中文总结；SHA256 `885508ae78328a491f3565a7249301d5d713b7d89af67914feed210174855639`
+
+配置和运行来源：configs/plan.json、evidence/core_release.json及各臂resolved_config.json。此前300步的冻结结果均只读。

@@ -1,0 +1,324 @@
+{
+  "models": [
+    {
+      "model": "Dense",
+      "total_parameters": 281431040,
+      "active_parameters": 281431040,
+      "FFN_width": 3072,
+      "selected_FFNs": 1,
+      "optimizer": [
+        {
+          "group_name": "lm_matrix",
+          "lr": 0.0003,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.1,
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": true,
+          "decoupled_weight_decay": true,
+          "initial_lr": 0.0003
+        },
+        {
+          "group_name": "lm_no_decay",
+          "lr": 0.0003,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "weight_decay": 0.0,
+          "eps": 1e-08,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": true,
+          "decoupled_weight_decay": true,
+          "initial_lr": 0.0003
+        }
+      ],
+      "scheduler": {
+        "base_lrs": [
+          0.0003,
+          0.0003
+        ],
+        "last_epoch": 3816,
+        "_step_count": 3817,
+        "_is_initial": false,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          0.0003,
+          0.0003
+        ],
+        "lr_lambdas": [
+          null,
+          null
+        ]
+      },
+      "seed": 17,
+      "data_manifest_sha256": "8a91bdbb0eb537bd80612015b99f178ca1cbb54a2fa7cf8442ab1eae7f0a2f2d"
+    },
+    {
+      "model": "MoE",
+      "total_parameters": 507988992,
+      "active_parameters": 281496576,
+      "FFN_width": 1536,
+      "selected_FFNs": 2,
+      "optimizer": [
+        {
+          "weight_decay": 0.1,
+          "lr": 0.0003,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "foreach": null,
+          "maximize": false,
+          "capturable": false,
+          "differentiable": false,
+          "fused": true,
+          "initial_lr": 0.0003
+        },
+        {
+          "weight_decay": 0.0,
+          "lr": 0.0003,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "eps": 1e-08,
+          "amsgrad": false,
+          "foreach": null,
+          "maximize": false,
+          "capturable": false,
+          "differentiable": false,
+          "fused": true,
+          "initial_lr": 0.0003
+        }
+      ],
+      "scheduler": {
+        "base_lrs": [
+          0.0003,
+          0.0003
+        ],
+        "last_epoch": 3816,
+        "verbose": false,
+        "_step_count": 3817,
+        "_get_lr_called_within_step": false,
+        "_last_lr": [
+          0.0003,
+          0.0003
+        ],
+        "lr_lambdas": [
+          null,
+          null
+        ]
+      },
+      "seed": 17,
+      "data_manifest_sha256": "8a91bdbb0eb537bd80612015b99f178ca1cbb54a2fa7cf8442ab1eae7f0a2f2d"
+    }
+  ],
+  "prior_full_order_audit": {
+    "status": "PASS",
+    "at_utc": "2026-10-31T02:57:16.442176+00:00",
+    "actual_Dense_log": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/metrics.jsonl",
+    "actual_Dense_log_sha256": "2c66d92d4f5f4019f70d571c045a877fbbfa3b1d9eb72fdadd336108e59dab49",
+    "actual_Dense_resolved_config": "/data/250010109/MoE_Router/experiments/20260913_dense_baseline_pretraining/runs/full_10b_8x5090_20260913T102944Z/resolved_config.json",
+    "source_sha256": {
+      "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/moe_baseline/data_stream.py": "2527624b890f94ed3c3852f4e3ed9e8e25a7bf35890d8b3456635b9511701b79",
+      "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/moe_baseline/token_policy.py": "53acd94a9298fb11334b62dcff80f0908a7104c0739fef6b0de69c2d13ce8509",
+      "/data/250010109/MoE_Router/experiments/20261031_dense_order_aligned_moe_baseline/vendor/dense_sae/data.py": "8e894b5b62a2ba6d689d1058136591f92a91fb2bd99f6e9ea7e64e3e299c0559"
+    },
+    "actual_historical_updates_checked": 38150,
+    "all_ID_targetmask_hashes_exact": true,
+    "total_valid_tokens": 10000000000,
+    "boundary_updates": [
+      {
+        "update": 1908,
+        "valid_tokens": 91392,
+        "cumulative_tokens": 500000000
+      },
+      {
+        "update": 3816,
+        "valid_tokens": 91392,
+        "cumulative_tokens": 1000000000
+      },
+      {
+        "update": 11446,
+        "valid_tokens": 103424,
+        "cumulative_tokens": 3000000000
+      },
+      {
+        "update": 19076,
+        "valid_tokens": 103424,
+        "cumulative_tokens": 5000000000
+      },
+      {
+        "update": 38150,
+        "valid_tokens": 127488,
+        "cumulative_tokens": 10000000000
+      }
+    ],
+    "data_cycle_boundary_checks": [
+      {
+        "reference_rank": 0,
+        "update_offset": 0,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 1,
+        "update_offset": 0,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 2,
+        "update_offset": 0,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 3,
+        "update_offset": 0,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 0,
+        "update_offset": 1,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 1,
+        "update_offset": 1,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 2,
+        "update_offset": 1,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 3,
+        "update_offset": 1,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 0,
+        "update_offset": 1907,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 1,
+        "update_offset": 1907,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 2,
+        "update_offset": 1907,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 3,
+        "update_offset": 1907,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 0,
+        "update_offset": 3815,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 1,
+        "update_offset": 3815,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 2,
+        "update_offset": 3815,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 3,
+        "update_offset": 3815,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 0,
+        "update_offset": 114431,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 1,
+        "update_offset": 114431,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 2,
+        "update_offset": 114431,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 3,
+        "update_offset": 114431,
+        "epoch": 0,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 0,
+        "update_offset": 114432,
+        "epoch": 1,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 1,
+        "update_offset": 114432,
+        "epoch": 1,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 2,
+        "update_offset": 114432,
+        "epoch": 1,
+        "IDs_exact": true
+      },
+      {
+        "reference_rank": 3,
+        "update_offset": 114432,
+        "epoch": 1,
+        "IDs_exact": true
+      }
+    ],
+    "full_updates_per_30b_view_epoch": 114432,
+    "final50B_updates": 190749,
+    "expected_history_sha256": "c36fca6495a09ad24f01e710686d8216a74376af3c5ee5dec2e4b5c6ade4fcb0",
+    "GPU_calls": 0,
+    "dataset_payload_reads": 0,
+    "boundary": "Imported production stream versus every actual Dense historical mask fingerprint; no GPU training or scientific conclusion"
+  }
+}

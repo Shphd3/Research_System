@@ -1,0 +1,46 @@
+{
+  "time": "2026-11-10T03:40:46.908446+00:00",
+  "repairs": [
+    {
+      "stage": "startup gate",
+      "change": "No R04 modifications; user accepted original A1/MIG vs four-rank microdifference",
+      "numeric_effect": "retained original arrays, no offset correction"
+    },
+    {
+      "stage": "TensorBoard import",
+      "change": "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python in task process only",
+      "numeric_effect": "none; no global packages changed"
+    },
+    {
+      "stage": "check4 b0 ties",
+      "change": "use shared GPU-generated fixed labels instead of CPU topk for tied scores",
+      "numeric_effect": "A5 b0 median aligned to original b0 registration; rule unchanged"
+    },
+    {
+      "stage": "check5 group aggregation",
+      "change": "same predefined A6 layer groups used for A0; average layers per atom before median",
+      "numeric_effect": "restores original Mbar definition; pooled gates/flip counts unchanged"
+    },
+    {
+      "stage": "gate denominator",
+      "change": "match original float32.tiny clamp; observed min mass1.9e-6 exceeds both clamps",
+      "numeric_effect": "none for observed inputs"
+    },
+    {
+      "stage": "A0 step500",
+      "change": "restore archived state into NEW execution root; checksum exact to both archive and original manifest",
+      "numeric_effect": "none; original path untouched"
+    },
+    {
+      "stage": "plot2",
+      "change": "replace blank training-band panel; label right-censored lower bounds with upward arrows",
+      "numeric_effect": "none"
+    },
+    {
+      "stage": "record formatting",
+      "change": "explicit AI analysis/Unknown in every new table; rolling memory timestamp metadata",
+      "numeric_effect": "none"
+    }
+  ],
+  "hyperparameter_retuning": false
+}
