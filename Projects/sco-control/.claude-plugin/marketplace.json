@@ -1,0 +1,18 @@
+{
+  "name": "shphd-sco-control",
+  "description": "SenseCore SCO CLI control skill for Claude Code",
+  "owner": {
+    "name": "Shphd3"
+  },
+  "plugins": [
+    {
+      "name": "sco-control",
+      "description": "Skill for operating SenseCore SCO CLI: ACP jobs, CCI apps, AEC2 clusters, AFS storage, and CCR images",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "BinaryCheater"
+      }
+    }
+  ]
+}
