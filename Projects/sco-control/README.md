@@ -19,6 +19,8 @@ The bundled references are intentionally small. They capture practical command p
 
 此版本保留 [BinaryCheater/sco-skill](https://github.com/BinaryCheater/sco-skill) 的 MIT 许可和原作者署名。维护基线为本地留存的 upstream `21c7c0d`。本次无法从原地址获取较新的版本，远端最新状态待核实。
 
+独立发布地址为 [Shphd3/sco-control-training](https://github.com/Shphd3/sco-control-training)。
+
 ## Installation
 
 ### Claude Code (Plugin)
