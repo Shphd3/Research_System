@@ -25,11 +25,11 @@ The bundled references are intentionally small. They capture practical command p
 
 ### Claude Code (Plugin)
 
-From this checkout, register the local marketplace and install the plugin:
+Register the published marketplace and install the plugin:
 
 ```bash
-claude plugins:add-marketplace "$(pwd)" --name shphd-sco-control
-claude plugins:install sco-control
+claude plugin marketplace add Shphd3/sco-control-training
+claude plugin install sco-control@shphd-sco-control
 ```
 
 ### Codex (Manual Copy)
