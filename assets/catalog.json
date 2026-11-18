@@ -1,6 +1,688 @@
 {
   "assets": [
     {
+      "id": "checkpoint_s4_scale_reserved_step001000_20261118",
+      "title_cn": "S4-scale Reserved 第1000步完整检查点",
+      "category": "model_checkpoint",
+      "kind": "complete_training_checkpoint",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "identity": {
+        "model_architecture": "S4-learned: 8-layer width-1024 causal MoE, deep layers 4–7 use independent 256D read/write with fixed post-mixture gains",
+        "parent_initial_asset": "checkpoint_moe_baseline_dense_aligned_initial_20261030",
+        "initial_seed": 17,
+        "train_data_asset": "dclm_pair_v1",
+        "tokenizer_asset": "tokenizer_qwen3_0p6b_base",
+        "dev_eval_asset": "dataset_teacher_routing_dev_eval_20261109",
+        "producer_job_id": "pt-3ib2qr5s",
+        "loader": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/vendor/dense_sae/checkpoint.py",
+        "scale_source": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/scale.py",
+        "fixed_output_gains": [
+          2.2476410988505906,
+          2.2425807032965945,
+          2.4073345448291885,
+          2.2787930259533997
+        ],
+        "asset_interface": "state.pt and per-rank RNG under manifest v2 with model, optimizer, scheduler and training cursor; the fixed gains are reconstructed from the resolved config and calibration receipt",
+        "resume_qualification": "NOT_CHECKED for S4-scale at registration",
+        "scientific_acceptance": "Unknown",
+        "stage": "formal",
+        "optimizer_step": 1000,
+        "tokens_seen": 262144000,
+        "manifest": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000262144000/manifest.json",
+        "manifest_sha256": "c48644022e6d4c97fb2f717bc04759fe7bf09fe3963d0ff52626510228d4c78b",
+        "checkpoint_files": [
+          {
+            "path": "state.pt",
+            "sha256": "f4c4fb6fa08da22e27b78936995d565e26c312c21560e9d139685b0d17c18b0c",
+            "size_bytes": 6072817050
+          },
+          {
+            "path": "rng_rank_00000.pt",
+            "sha256": "07e6a05f14a7a22839da6e84a8c145c41fa4726636eb1806a406b3e864b7fcb2",
+            "size_bytes": 14484
+          },
+          {
+            "path": "rng_rank_00001.pt",
+            "sha256": "8eaf1f0093566901625a5b37e2534b7fc41341f1e14f55b3a18e8bffd2d5dbed",
+            "size_bytes": 14484
+          },
+          {
+            "path": "rng_rank_00002.pt",
+            "sha256": "b53c4895ed7e44f16eac7060135ebbb60af6aedb551d5575a34468275ba2bba1",
+            "size_bytes": 14484
+          },
+          {
+            "path": "rng_rank_00003.pt",
+            "sha256": "26cc8a373ce6631c32587fe0a7176eace9991c3d55deabff3ce08ea8e9db6d33",
+            "size_bytes": 14548
+          }
+        ]
+      },
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/preregistration.md",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/scale.py",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-fit/route_fit.py",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/worker.sh",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/acp/1118-s4-scale-h100-reserved.json",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/resolved_config.json",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/acp/mixture-calibration.json"
+      ],
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000262144000",
+          "expected": "directory",
+          "required": true,
+          "role": "formal_step_1000",
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file"
+            },
+            {
+              "path": "state.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file"
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/resolved_config.json",
+          "expected": "file",
+          "required": true,
+          "role": "resolved_config",
+          "probes": []
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/acp/mixture-calibration.json",
+          "expected": "file",
+          "required": true,
+          "role": "fixed_gain_input",
+          "probes": []
+        }
+      ],
+      "notes_cn": [
+        "清单逐项核对大小，保存发布方记录的 SHA-256。大状态文件本次未重算哈希或重做恢复。",
+        "启动冒烟为工程证据，预训练数据效率只用正式轨迹的配对评估。"
+      ]
+    },
+    {
+      "id": "checkpoint_family_s4_scale_reserved_milestones_20261118",
+      "title_cn": "S4-scale Reserved 早期正式与冒烟存档",
+      "category": "model_checkpoint",
+      "kind": "complete_training_checkpoint_family",
+      "payload_status": "MODEL_STATE_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "identity": {
+        "model_architecture": "S4-learned: 8-layer width-1024 causal MoE, deep layers 4–7 use independent 256D read/write with fixed post-mixture gains",
+        "parent_initial_asset": "checkpoint_moe_baseline_dense_aligned_initial_20261030",
+        "initial_seed": 17,
+        "train_data_asset": "dclm_pair_v1",
+        "tokenizer_asset": "tokenizer_qwen3_0p6b_base",
+        "dev_eval_asset": "dataset_teacher_routing_dev_eval_20261109",
+        "producer_job_id": "pt-3ib2qr5s",
+        "loader": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/vendor/dense_sae/checkpoint.py",
+        "scale_source": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/scale.py",
+        "fixed_output_gains": [
+          2.2476410988505906,
+          2.2425807032965945,
+          2.4073345448291885,
+          2.2787930259533997
+        ],
+        "asset_interface": "state.pt and per-rank RNG under manifest v2 with model, optimizer, scheduler and training cursor; the fixed gains are reconstructed from the resolved config and calibration receipt",
+        "resume_qualification": "NOT_CHECKED for S4-scale at registration",
+        "scientific_acceptance": "Unknown",
+        "members": [
+          {
+            "stage": "smoke",
+            "optimizer_step": 25,
+            "tokens_seen": 1638400,
+            "manifest": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/smoke/milestones/token_000001638400/manifest.json",
+            "manifest_sha256": "01a1de5a3ea3002023fa4106e4aea97e128a5a41473a98729e9d2151dbd832c4",
+            "checkpoint_files": [
+              {
+                "path": "state.pt",
+                "sha256": "4b3dd24e36302b2cc944a64e3661125f2fe107b59a8bb1816a39d02c026d0985",
+                "size_bytes": 6072815386
+              },
+              {
+                "path": "rng_rank_00000.pt",
+                "sha256": "1cb12d05f0ec19ecd71a193b0a424e3bf27f8653a9227f839b18e12c8eb5652c",
+                "size_bytes": 14296
+              }
+            ]
+          },
+          {
+            "stage": "smoke",
+            "optimizer_step": 50,
+            "tokens_seen": 3276800,
+            "manifest": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/smoke/milestones/token_000003276800/manifest.json",
+            "manifest_sha256": "e580d73791c9cb09e1ce7d13c104e29763324dff21db4113b67e8f3b6e8c5fc8",
+            "checkpoint_files": [
+              {
+                "path": "state.pt",
+                "sha256": "c9332e316240a3b7470388d18b20b6193799c7f97a0491b6b0451913c38ba82f",
+                "size_bytes": 6072815386
+              },
+              {
+                "path": "rng_rank_00000.pt",
+                "sha256": "1cb12d05f0ec19ecd71a193b0a424e3bf27f8653a9227f839b18e12c8eb5652c",
+                "size_bytes": 14296
+              }
+            ]
+          },
+          {
+            "stage": "formal",
+            "optimizer_step": 25,
+            "tokens_seen": 6553600,
+            "manifest": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000006553600/manifest.json",
+            "manifest_sha256": "73f04cc3f6dcbbd32be6a4add3aec0cdeafe0fd6ba09582b745ccc9ff282d61b",
+            "checkpoint_files": [
+              {
+                "path": "state.pt",
+                "sha256": "cb9216575aaa7d9c4087bc18e39c26d5edcb35ee1ac7db674b97cf7b56869232",
+                "size_bytes": 6072816730
+              },
+              {
+                "path": "rng_rank_00000.pt",
+                "sha256": "07e6a05f14a7a22839da6e84a8c145c41fa4726636eb1806a406b3e864b7fcb2",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00001.pt",
+                "sha256": "8eaf1f0093566901625a5b37e2534b7fc41341f1e14f55b3a18e8bffd2d5dbed",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00002.pt",
+                "sha256": "b53c4895ed7e44f16eac7060135ebbb60af6aedb551d5575a34468275ba2bba1",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00003.pt",
+                "sha256": "26cc8a373ce6631c32587fe0a7176eace9991c3d55deabff3ce08ea8e9db6d33",
+                "size_bytes": 14548
+              }
+            ]
+          },
+          {
+            "stage": "formal",
+            "optimizer_step": 50,
+            "tokens_seen": 13107200,
+            "manifest": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000013107200/manifest.json",
+            "manifest_sha256": "2be5a5ba523ecc5e159b4982c96b8fbc6b34addc176e5c4525db44097e5da6d6",
+            "checkpoint_files": [
+              {
+                "path": "state.pt",
+                "sha256": "ef073d93f0ea9f736871caab1da2370b1909fc06d92ea466b932dda5951e8ca5",
+                "size_bytes": 6072816730
+              },
+              {
+                "path": "rng_rank_00000.pt",
+                "sha256": "07e6a05f14a7a22839da6e84a8c145c41fa4726636eb1806a406b3e864b7fcb2",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00001.pt",
+                "sha256": "8eaf1f0093566901625a5b37e2534b7fc41341f1e14f55b3a18e8bffd2d5dbed",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00002.pt",
+                "sha256": "b53c4895ed7e44f16eac7060135ebbb60af6aedb551d5575a34468275ba2bba1",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00003.pt",
+                "sha256": "26cc8a373ce6631c32587fe0a7176eace9991c3d55deabff3ce08ea8e9db6d33",
+                "size_bytes": 14548
+              }
+            ]
+          },
+          {
+            "stage": "formal",
+            "optimizer_step": 100,
+            "tokens_seen": 26214400,
+            "manifest": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000026214400/manifest.json",
+            "manifest_sha256": "239ed589eefe3d8845d25cc5cb6725a5f83f6d748add8e2274b2fe20fa7f4a15",
+            "checkpoint_files": [
+              {
+                "path": "state.pt",
+                "sha256": "ec2f1eca323307eb4f12643665a14472a2631be6e5033f4cf42d17e8f0aa4940",
+                "size_bytes": 6072816730
+              },
+              {
+                "path": "rng_rank_00000.pt",
+                "sha256": "07e6a05f14a7a22839da6e84a8c145c41fa4726636eb1806a406b3e864b7fcb2",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00001.pt",
+                "sha256": "8eaf1f0093566901625a5b37e2534b7fc41341f1e14f55b3a18e8bffd2d5dbed",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00002.pt",
+                "sha256": "b53c4895ed7e44f16eac7060135ebbb60af6aedb551d5575a34468275ba2bba1",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00003.pt",
+                "sha256": "26cc8a373ce6631c32587fe0a7176eace9991c3d55deabff3ce08ea8e9db6d33",
+                "size_bytes": 14548
+              }
+            ]
+          },
+          {
+            "stage": "formal",
+            "optimizer_step": 250,
+            "tokens_seen": 65536000,
+            "manifest": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000065536000/manifest.json",
+            "manifest_sha256": "f3cb17bcb4dd9c1dfc2db4b2b6082ca377ac3554fb38085098f65dc46acaf82f",
+            "checkpoint_files": [
+              {
+                "path": "state.pt",
+                "sha256": "ad026a75875bd38c00fd2d89f49565231979aa95f84ae8f0892f5140f6ae2fa3",
+                "size_bytes": 6072816730
+              },
+              {
+                "path": "rng_rank_00000.pt",
+                "sha256": "07e6a05f14a7a22839da6e84a8c145c41fa4726636eb1806a406b3e864b7fcb2",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00001.pt",
+                "sha256": "8eaf1f0093566901625a5b37e2534b7fc41341f1e14f55b3a18e8bffd2d5dbed",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00002.pt",
+                "sha256": "b53c4895ed7e44f16eac7060135ebbb60af6aedb551d5575a34468275ba2bba1",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00003.pt",
+                "sha256": "26cc8a373ce6631c32587fe0a7176eace9991c3d55deabff3ce08ea8e9db6d33",
+                "size_bytes": 14548
+              }
+            ]
+          },
+          {
+            "stage": "formal",
+            "optimizer_step": 500,
+            "tokens_seen": 131072000,
+            "manifest": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000131072000/manifest.json",
+            "manifest_sha256": "0da17027a943d8a659e105f1798d232f82213ecf4994da0174d51bcda72e7ea2",
+            "checkpoint_files": [
+              {
+                "path": "state.pt",
+                "sha256": "967db7c28c979b7b3e9d38715d4cfee3c8c847334692b2622d85ba6fc5d2b011",
+                "size_bytes": 6072816794
+              },
+              {
+                "path": "rng_rank_00000.pt",
+                "sha256": "07e6a05f14a7a22839da6e84a8c145c41fa4726636eb1806a406b3e864b7fcb2",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00001.pt",
+                "sha256": "8eaf1f0093566901625a5b37e2534b7fc41341f1e14f55b3a18e8bffd2d5dbed",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00002.pt",
+                "sha256": "b53c4895ed7e44f16eac7060135ebbb60af6aedb551d5575a34468275ba2bba1",
+                "size_bytes": 14484
+              },
+              {
+                "path": "rng_rank_00003.pt",
+                "sha256": "26cc8a373ce6631c32587fe0a7176eace9991c3d55deabff3ce08ea8e9db6d33",
+                "size_bytes": 14548
+              }
+            ]
+          }
+        ]
+      },
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/preregistration.md",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/scale.py",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-fit/route_fit.py",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/worker.sh",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/acp/1118-s4-scale-h100-reserved.json",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/resolved_config.json",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/acp/mixture-calibration.json",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/smoke/resolved_config.json"
+      ],
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/smoke/milestones/token_000001638400",
+          "expected": "directory",
+          "required": true,
+          "role": "smoke_step_25",
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file"
+            },
+            {
+              "path": "state.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file"
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/smoke/milestones/token_000003276800",
+          "expected": "directory",
+          "required": true,
+          "role": "smoke_step_50",
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file"
+            },
+            {
+              "path": "state.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file"
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000006553600",
+          "expected": "directory",
+          "required": true,
+          "role": "formal_step_25",
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file"
+            },
+            {
+              "path": "state.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file"
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000013107200",
+          "expected": "directory",
+          "required": true,
+          "role": "formal_step_50",
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file"
+            },
+            {
+              "path": "state.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file"
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000026214400",
+          "expected": "directory",
+          "required": true,
+          "role": "formal_step_100",
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file"
+            },
+            {
+              "path": "state.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file"
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000065536000",
+          "expected": "directory",
+          "required": true,
+          "role": "formal_step_250",
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file"
+            },
+            {
+              "path": "state.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file"
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/milestones/token_000131072000",
+          "expected": "directory",
+          "required": true,
+          "role": "formal_step_500",
+          "probes": [
+            {
+              "path": "manifest.json",
+              "expected": "file"
+            },
+            {
+              "path": "state.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00000.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00001.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00002.pt",
+              "expected": "file"
+            },
+            {
+              "path": "rng_rank_00003.pt",
+              "expected": "file"
+            }
+          ]
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/formal/resolved_config.json",
+          "expected": "file",
+          "required": true,
+          "role": "formal_config",
+          "probes": []
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/runs/smoke/resolved_config.json",
+          "expected": "file",
+          "required": true,
+          "role": "smoke_config",
+          "probes": []
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/acp/mixture-calibration.json",
+          "expected": "file",
+          "required": true,
+          "role": "fixed_gain_input",
+          "probes": []
+        }
+      ],
+      "notes_cn": [
+        "清单逐项核对大小，保存发布方记录的 SHA-256。大状态文件本次未重算哈希或重做恢复。",
+        "启动冒烟为工程证据，预训练数据效率只用正式轨迹的配对评估。"
+      ]
+    },
+    {
+      "id": "analysis_s4_scale_exact_token_eval_20261118",
+      "title_cn": "S4-scale 与 Reserved S4、A0 的精确 token 配对 CE",
+      "category": "analysis",
+      "kind": "same_position_training_loss_comparison",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "required_projects": [],
+      "storage_owner": "MoE_Router",
+      "identity": {
+        "producer_job_id": "pt-3ib2qr5s",
+        "final_checkpoint_asset": "checkpoint_s4_scale_reserved_step001000_20261118",
+        "dev_eval_asset": "dataset_teacher_routing_dev_eval_20261109",
+        "exact_tokens": [
+          6553600,
+          13107200,
+          26214400,
+          65536000,
+          131072000,
+          262144000
+        ],
+        "positions": 2097152,
+        "bands": [
+          "overall",
+          "common",
+          "mid",
+          "long-tail"
+        ],
+        "method": "token-weighted fixed EVAL CE; 95% paired-position bootstrap; single seed",
+        "reference_receipts": [
+          "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/runs/A0/reference/eval_001000.json",
+          "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-fit/runs/S4-learned-reserved/formal/eval_001000.json"
+        ],
+        "scientific_acceptance": "Unknown"
+      },
+      "source_paths": [
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/preregistration.md",
+        "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/analysis/report.py"
+      ],
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/analysis/eval-points.csv",
+          "expected": "file",
+          "required": true,
+          "role": "absolute_ce",
+          "probes": []
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/analysis/paired-deltas.csv",
+          "expected": "file",
+          "required": true,
+          "role": "paired_deltas",
+          "probes": []
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/analysis/endpoint.json",
+          "expected": "file",
+          "required": true,
+          "role": "terminal_gap",
+          "probes": []
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1118_narrow_expert_train/1118-scale/analysis/s4-scale-loss.pdf",
+          "expected": "file",
+          "required": true,
+          "role": "vector_figure",
+          "probes": []
+        }
+      ],
+      "notes_cn": [
+        "派生数据仅使用匹配 token 数与完全一致的 EVAL 目标位置。"
+      ]
+    },
+    {
       "category": "checkpoint_family",
       "id": "checkpoint_family_fresh_s7_lambda0p1",
       "identity": {
