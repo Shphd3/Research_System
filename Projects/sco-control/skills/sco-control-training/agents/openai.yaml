@@ -1,0 +1,6 @@
+interface:
+  display_name: "SCO Control Training"
+  short_description: "Prepare and inspect SenseCore training"
+  default_prompt: "Use $sco-control-training to submit or inspect SenseCore SCO ACP/CCI jobs and related AEC2, AFS, and CCR resources."
+policy:
+  allow_implicit_invocation: true

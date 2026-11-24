@@ -1,0 +1,419 @@
+{
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "execution_root": "/data/250010109/MoE_Router/experiments/20261112_snr_toy",
+  "accelerator": "local NVIDIA H100 MIG 3g.40gb",
+  "code": [
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261112_snr_toy/code/deliver.py",
+      "sha256": "535e056032ad22fcaefd75991ce7e6a5020fefb345d9fec6d092d3fcd50c4255"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261112_snr_toy/code/e1.py",
+      "sha256": "4c6c394c1f0260972169eb19f5f46cba598434caf6c8336cb7e0f9ea8479cbad"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261112_snr_toy/code/e2.py",
+      "sha256": "983879d156e290a898c5618493295c3fe2dec96a4d9a461d083f78dc510d5aef"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261112_snr_toy/code/e3.py",
+      "sha256": "c09e7f3a5640d6bf9d7a2412627c88a6072c8ff0f6d9b1eff6dd6cd83dedc114"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261112_snr_toy/code/e5.py",
+      "sha256": "878b5e0aee291a562aec4c4d82735d3c9aedcad9ede7f556df35cad3b54203e2"
+    },
+    {
+      "path": "/data/250010109/MoE_Router/experiments/20261112_snr_toy/code/theory_checks.py",
+      "sha256": "f299ba4a81df495db12831536b18da052d22b13548e5ffaeb9e549c479a7e6e8"
+    }
+  ],
+  "wall_time_seconds_by_process_or_seed": {
+    "e1_runtime.json": {
+      "wall_s": 4.799161897972226,
+      "device": "cuda"
+    },
+    "e2_orth_11_runtime.json": {
+      "seed": 11,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 9.427099896594882
+    },
+    "e2_orth_29_runtime.json": {
+      "seed": 29,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 8.590542579069734
+    },
+    "e2_orth_47_runtime.json": {
+      "seed": 47,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 9.525495698675513
+    },
+    "e2_shared_11_runtime.json": {
+      "seed": 11,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 22.98904755152762
+    },
+    "e2_shared_29_runtime.json": {
+      "seed": 29,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 20.638747185468674
+    },
+    "e2_shared_47_runtime.json": {
+      "seed": 47,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 21.14039161428809
+    },
+    "e3_11_runtime.json": {
+      "wall_s": 4.78299680352211,
+      "device": "cuda"
+    },
+    "e3_29_runtime.json": {
+      "wall_s": 3.7872133012861013,
+      "device": "cuda"
+    },
+    "e3_47_runtime.json": {
+      "wall_s": 3.9558077473193407,
+      "device": "cuda"
+    },
+    "e5_11_runtime.json": {
+      "wall_s": 10.935611631721258,
+      "device": "cuda"
+    },
+    "e5_29_runtime.json": {
+      "wall_s": 10.056013375520706,
+      "device": "cuda"
+    },
+    "e5_47_runtime.json": {
+      "wall_s": 10.055271442979574,
+      "device": "cuda"
+    },
+    "e2_lr_extension/e2_orth_11_runtime.json": {
+      "seed": 11,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 10.526659928262234
+    },
+    "e2_lr_extension/e2_orth_29_runtime.json": {
+      "seed": 29,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 10.581645298749208
+    },
+    "e2_lr_extension/e2_orth_47_runtime.json": {
+      "seed": 47,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 10.720162492245436
+    },
+    "e2_lr_extension/e2_shared_11_runtime.json": {
+      "seed": 11,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 22.723405499011278
+    },
+    "e2_lr_extension/e2_shared_29_runtime.json": {
+      "seed": 29,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 22.963277135044336
+    },
+    "e2_lr_extension/e2_shared_47_runtime.json": {
+      "seed": 47,
+      "updates": 30000,
+      "device": "cuda",
+      "wall_s": 22.804222770035267
+    }
+  },
+  "raw_result_sizes_bytes": {
+    "e1_lr_best.csv": 3728,
+    "e1_lr_scan.csv": 457453,
+    "e1_projection.csv": 9623,
+    "e2_adam_pulse.csv": 10910,
+    "e2_losses.csv": 49937750,
+    "e2_lr_extension/e2_losses.csv": 50100623,
+    "e2_lr_extension/e2_lr_scan.csv": 10515,
+    "e2_lr_extension/e2_orth_11.npz": 1394512,
+    "e2_lr_extension/e2_orth_29.npz": 1395463,
+    "e2_lr_extension/e2_orth_47.npz": 1393549,
+    "e2_lr_extension/e2_shared_11.npz": 3108923,
+    "e2_lr_extension/e2_shared_29.npz": 3112463,
+    "e2_lr_extension/e2_shared_47.npz": 3115804,
+    "e2_lr_extension/e2_speed.csv": 4610126,
+    "e2_lr_extension/e2_timing.csv": 1861,
+    "e2_lr_scan.csv": 9840,
+    "e2_orth_11.npz": 1138500,
+    "e2_orth_29.npz": 1139014,
+    "e2_orth_47.npz": 1138356,
+    "e2_population_floor.csv": 2132,
+    "e2_shared_11.npz": 2886817,
+    "e2_shared_29.npz": 2896535,
+    "e2_shared_47.npz": 2897747,
+    "e2_speed.csv": 4586891,
+    "e2_timing.csv": 1948,
+    "e3_11.npz": 306094,
+    "e3_29.npz": 305963,
+    "e3_47.npz": 306307,
+    "e3_curve.csv": 1746396,
+    "e3_e4_lr_scan.csv": 3831,
+    "e3_feature_concentration.csv": 37058,
+    "e3_fixed_loss.csv": 8675,
+    "e3_population_floor.csv": 1072,
+    "e3_snr_scaling.csv": 1292,
+    "e3_timing.csv": 417,
+    "e5_11.npz": 4875,
+    "e5_29.npz": 4870,
+    "e5_47.npz": 4840,
+    "e5_dev_curve.csv": 19004,
+    "e5_dictionary_11.csv": 930,
+    "e5_dictionary_29.csv": 917,
+    "e5_dictionary_47.csv": 947,
+    "e5_eval.csv": 4812,
+    "e5_lr_scan.csv": 2323
+  },
+  "delivery_artifacts": [
+    {
+      "path": "01_固定步长投影.pdf",
+      "bytes": 21706,
+      "sha256": "61b59514490f936c5847576836c9162f3059a651a7a0b0c3b87c44470b457736"
+    },
+    {
+      "path": "01_固定步长投影.png",
+      "bytes": 169830,
+      "sha256": "07bb66230d95c5f713afaa370bc35f14beade2c8fbba80cc1924bc33fc16404e"
+    },
+    {
+      "path": "02_噪声与最优学习率.pdf",
+      "bytes": 21140,
+      "sha256": "3fa12ace0a46a45febfcc7583627ba970e1428f46116c74315b30669538e5515"
+    },
+    {
+      "path": "02_噪声与最优学习率.png",
+      "bytes": 128728,
+      "sha256": "e1bdda18f67007b36304328ac0be0617d6303908123716a6b535e83ffde4a351"
+    },
+    {
+      "path": "03_高低频竞争.pdf",
+      "bytes": 925312,
+      "sha256": "a93f24dc49712c3928ee2faa941ccdfe3fba6933feed341692f2aed5925a34ac"
+    },
+    {
+      "path": "03_高低频竞争.png",
+      "bytes": 392776,
+      "sha256": "1d93018dbd6fae3d275dd429d26e9efa7cd1ff013a7989c2a79617a82ab7ec9a"
+    },
+    {
+      "path": "04_二阶矩干预与分层降噪.pdf",
+      "bytes": 31718,
+      "sha256": "71516a9ccda36407cb83372327d64b4800a3d07015008514a98dd91ecaeab1c5"
+    },
+    {
+      "path": "04_二阶矩干预与分层降噪.png",
+      "bytes": 159932,
+      "sha256": "d082edfbe277fe53858ba875cadfde59e8524a61c8d59fbfe7a8c3514845c0cf"
+    },
+    {
+      "path": "05_固定分发的学习曲线.pdf",
+      "bytes": 108603,
+      "sha256": "4130441f78e72dde66f9359785875f64fd0185dba2c37469b6f9252dbc182fb1"
+    },
+    {
+      "path": "05_固定分发的学习曲线.png",
+      "bytes": 177997,
+      "sha256": "63547597f4fa5cb4819fc47189dd4f77917547fd6651365580ef67cbe384f47a"
+    },
+    {
+      "path": "06_固定步数损失与集中度.pdf",
+      "bytes": 19782,
+      "sha256": "ec0c97025055cbb5700b034e912034a5cd1502db586e3057f959d10371d2d292"
+    },
+    {
+      "path": "06_固定步数损失与集中度.png",
+      "bytes": 110285,
+      "sha256": "e5f87900798942ed2dd347c056d102bf2918b1e29407301a77c07bf6ed92ed03"
+    },
+    {
+      "path": "07_可学习树路由.pdf",
+      "bytes": 24510,
+      "sha256": "db7ba3085d64c526263b639a8c64d5b82c508e7e105fc676ee2ddbcc553413eb"
+    },
+    {
+      "path": "07_可学习树路由.png",
+      "bytes": 216290,
+      "sha256": "3e39f3fa6f872f77b77296dc843306b33a529a6804f880d5277f138ed1697a83"
+    },
+    {
+      "path": "08_学习率敏感性.pdf",
+      "bytes": 46114,
+      "sha256": "27c8bc345652af64c8ff33f7bb4200b9788ee4f016896ab3bfa1577968e3696c"
+    },
+    {
+      "path": "08_学习率敏感性.png",
+      "bytes": 225035,
+      "sha256": "dc4663661a3a9d0af391d290f4fa35f80f7ccbda59e08cbc1544b2fffb2c1d16"
+    },
+    {
+      "path": "e1_lr_scan.csv",
+      "bytes": 457453,
+      "sha256": "0d0cb87c3c47dcc627accb9d0573b938716a29e90261eaeee2e1436050be922f"
+    },
+    {
+      "path": "e2_adam_pulse.csv",
+      "bytes": 10910,
+      "sha256": "c7533c769478da6f153fea6af3006bc54631994f50a2524c9279041c7af43be8"
+    },
+    {
+      "path": "e2_lr_extension_scan.csv",
+      "bytes": 10515,
+      "sha256": "f46f6295ea3d8cb1aeaf3d86c0faf3396b098d97699feac2f02b97d92a402779"
+    },
+    {
+      "path": "e2_lr_scan.csv",
+      "bytes": 9840,
+      "sha256": "a60ce2e079bcda507fd92b81480c0b5c553a59d6a2aa80049780fe1c86257b69"
+    },
+    {
+      "path": "e2_population_floor.csv",
+      "bytes": 2132,
+      "sha256": "19e3e2ff2948690a70cbed3c71513b35611e688e10e81b16f4aa5a772637b656"
+    },
+    {
+      "path": "e3_e4_lr_scan.csv",
+      "bytes": 3831,
+      "sha256": "f10afd44dd4bfd5126516b06d45e67e48543522da57df7e68bb45abaa94dfa30"
+    },
+    {
+      "path": "e3_fixed_loss.csv",
+      "bytes": 8675,
+      "sha256": "33b7e46b54c091464ff66334ac45ad3b24ae0cc934fb5230add214b4532ff41a"
+    },
+    {
+      "path": "e3_population_floor.csv",
+      "bytes": 1072,
+      "sha256": "9b7e0129ae49246d6350525c325488ec26302c6e27c7327ff8987d277a1c03b5"
+    },
+    {
+      "path": "e3_snr_scaling.csv",
+      "bytes": 1292,
+      "sha256": "0e7f7cee1a688aea61da671024edbd3c400704459d1b7f0de69a29f80bc6e93f"
+    },
+    {
+      "path": "e3_timing.csv",
+      "bytes": 417,
+      "sha256": "bfc8020fb7ce343a8c20cb98915ad729d72cb76351150c72da96610fe0149862"
+    },
+    {
+      "path": "e5_eval.csv",
+      "bytes": 4812,
+      "sha256": "b6e36a06877f8db3e54129f89da02e4ec86b416c71cc15900493e5286237fe4b"
+    },
+    {
+      "path": "e5_lr_scan.csv",
+      "bytes": 2323,
+      "sha256": "357a57c3af7de7050022e74c63eeb3b798ece8045f494dc5e273567dc85598a5"
+    },
+    {
+      "path": "protocol_cn.md",
+      "bytes": 8389,
+      "sha256": "c02e6562fbd183b9abe32367420c9c3a13ef8301a02b9a8fd8b8401a38f140bd"
+    },
+    {
+      "path": "报告_cn.md",
+      "bytes": 10001,
+      "sha256": "931962fbacc6eb5641160dd3cf644d6811b013a0797dd11e294232a546aa51a6"
+    },
+    {
+      "path": "表_E1_方向投影.csv",
+      "bytes": 2246,
+      "sha256": "7c6b78eeaaa42c6ad41352b7a469a943fc22c243d9418ceba10dc73c916bb03d"
+    },
+    {
+      "path": "表_E1_方向投影.md",
+      "bytes": 3520,
+      "sha256": "7ab41c775bb0df17c0b030cdd279c1993b4e61ea6f9b1e404916a0414fd78948"
+    },
+    {
+      "path": "表_E1_最优学习率.csv",
+      "bytes": 2775,
+      "sha256": "dde16bcdc13f39fb77adedb0464f016ca9493de16c94e5b85cd0761454719da3"
+    },
+    {
+      "path": "表_E1_最优学习率.md",
+      "bytes": 8091,
+      "sha256": "59175b67c224cb4764bde1fb54763419fcc5ab14f37a9b29528f426b0180c5d7"
+    },
+    {
+      "path": "表_E2_三种子时点.csv",
+      "bytes": 1323,
+      "sha256": "c26ee2a96629a658e2d994a9fd63daf7f4a8308a48dbae31d758575bbd075ada"
+    },
+    {
+      "path": "表_E2_三种子时点.md",
+      "bytes": 3149,
+      "sha256": "bc358a98395b7e171c67e9b5d506ffa0143c37d06c0edb3d7024726ea1fa000c"
+    },
+    {
+      "path": "表_E2_事件起点的速度符号.csv",
+      "bytes": 535,
+      "sha256": "4add39652e00549a83378658db4eb4ab8e2155c730c697a5c55ba8de3ede0526"
+    },
+    {
+      "path": "表_E2_事件起点的速度符号.md",
+      "bytes": 1052,
+      "sha256": "bc8b80a038d505be3165d91382133fa5228a4e94c3e2ccac491125af0e048eda"
+    },
+    {
+      "path": "表_E2_学习率扩网格时点.csv",
+      "bytes": 1176,
+      "sha256": "e342c870f9c651a415914a91bebf8d1fb32963532286fd2f11f8f685a833fe59"
+    },
+    {
+      "path": "表_E2_学习率扩网格时点.md",
+      "bytes": 3165,
+      "sha256": "477e6bd895d2fd3533e62a434e8dcc1f589d7bb0804d62e355fc4242169fe2f3"
+    },
+    {
+      "path": "表_E3_E4_固定分发和学习率.csv",
+      "bytes": 293,
+      "sha256": "8661622773cdce118b85f971bae031ad8a3807201e67854c6cf667095ff20049"
+    },
+    {
+      "path": "表_E3_E4_固定分发和学习率.md",
+      "bytes": 763,
+      "sha256": "5a7c8406f182535a9048b795c2b5c71eadff8ed3b256103e59ec57f7e0476b31"
+    },
+    {
+      "path": "表_E3_损失与集中度拟合.csv",
+      "bytes": 554,
+      "sha256": "93e445ad639b33573fa8e83f9f88b8b68530227be0641381abfbae85ff7530bd"
+    },
+    {
+      "path": "表_E3_损失与集中度拟合.md",
+      "bytes": 1341,
+      "sha256": "e5da5aa0bf1945afe31127a87897f1211a6e5309fc359549d417774db6bf30b5"
+    },
+    {
+      "path": "表_E5_路径与损失.csv",
+      "bytes": 969,
+      "sha256": "d2725c3e1614e0b05425dea49e7173a496c96241c64f13f858fc481539f9e169"
+    },
+    {
+      "path": "表_E5_路径与损失.md",
+      "bytes": 2147,
+      "sha256": "3199666f94365a28927ed7d02abeb4da543287bda1175cb9b122ba8a1620bd79"
+    }
+  ],
+  "rerun_env": {
+    "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python",
+    "TOY_E2_VARIANT": "e2_lr_extension (only for supplemental scan)"
+  }
+}

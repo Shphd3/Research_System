@@ -37,6 +37,8 @@ Reserved 是提交时明确指定的资源类别。配额允许请求资源，�
 
 ## 2. 镜像、存储和已完成的验证
 
+需要配置 IB/RDMA、挂载对象存储或将成品归档到 AOSS 时，见 [ACP 训练网与 AOSS 存储操作指南](acp_aoss_rdma_guide_cn.md)。
+
 当前默认镜像键为 `shphd-lite-0911`。提交脚本从注册表解析完整镜像地址，不通过列举私有镜像猜地址。P12 实测环境是 Python 3.10、PyTorch `2.3.0a0+6ddf5cf85e.nv24.04`、CUDA 12.4。
 
 两边使用同一个原 AFS 卷：

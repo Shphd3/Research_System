@@ -1,27 +1,32 @@
 # Meeting Mode
 
-Use for a requested brief or speaking preparation. Keep the existing Focus and
-problem_key stable across meetings, dates and model switches. Focus holds the
-question and researcher decision; Summary holds results; this mode owns delivery.
+## 一分钟组会
+
+研究者的组会默认一分钟。口播通常用约 160–200 个汉字，数字多时再缩短。开场一句点出要解决的科研问题。每条用“我们现在怎样看这个问题＋哪个对照支持这个判断”，最后用一句指出应保留什么、改变什么或请导师判断什么。按研究者给的假设顺序组织即可。
+
+评估简化假设能否合理近似**当前要预测的量**。用听众能直接想象的动作写，例如“同一特征在多个领域亮起，本域亮得稍强”。报告比率时说清怎样分组和数什么。报告波动时说清哪个读数在变化、与什么相比。统计覆盖、样本清理及执行经过放在备查资料。若限制会改变判断，用半句交代。需要图时优先选 1–2 张，标题给出认识，标明对象、单位和参照。
+
+科研汇报图按论文图制作。横纵轴的量名、刻度文字、单位、图例和面板名默认用英文，同一模型的颜色与标记贯穿各图。英文图注写清样本单位、误差线含义和对照，给出嵌入字体的矢量 PDF 和高清 PNG。中文口播解释读图结论。
+
+Use the existing question and evidence for a requested brief or speaking
+preparation. The explore log or formal question record holds the researcher’s
+decision. The meeting document explains what the evidence lets the team do.
 
 ## One Speaking Entry
 
-Reuse a named brief; otherwise create the requested file at
-`daily_research_reports/MMDD/meeting_report/meeting_brief_<topic>_cn.md` (or requested language).
-Never create a meeting Focus or reset a question just to prepare a talk. Keep the
-spoken core, evidence links and optional Q&A in the same file. Point the day index
-to this single speaking entry; preserve older reports as labeled reading history.
-A language companion is not another Focus. No document for routine chat.
+Reuse a named brief or place the requested format in
+`daily_research_reports/MMDD/meeting_report/`. Use Markdown by default. Point
+the day index to the reading entry and keep earlier briefs available.
 
-Deliver the brief as self-contained Markdown: speaking core first, then titled
-derivation, evidence and Q&A sections as needed. Explain the decisive values and
-figure findings in prose so the brief is readable without opening an image or
-webpage. Follow the shared writing rules; plots keep their evidence lineage.
+Open with the conclusion and the reason it matters for the research goal.
+Keep the derivation, decisive figures and discussion questions together in
+the requested format. Explain each figure's main comparison in the adjacent
+text and link its source.
 
 ## Read Only What Changes The Answer
 
-Read the current Focus and named Summary; inspect Anchor/derivation for mechanism
-claims and Detailed only for decisive setup, numbers or eligibility. Earlier
+Read the current question and its explore log or named Summary. Inspect the
+derivation for mechanism claims and original tables for decisive numbers. Earlier
 experiments may explain progress but do not become one pooled scientific verdict.
 Resolve scope from the request and sources. Distinguish missing explanation,
 missing derivation, untested link and unsupported design leap before editing.
@@ -33,7 +38,7 @@ a weaker methodological question merely because the available result answers it.
 Give the partial answer and remaining unknown under the original question; label
 any proposed revision explicitly.
 
-Follow the requested duration and order: purpose, concrete model, candidate
+For a longer talk, adapt the requested duration and order: purpose, concrete model, candidate
 mechanism/hypothesis, why this comparison separates explanations, one or two
 decisive results, belief update, boundary and next scientific decision. Use
 concrete objects; explain what
@@ -58,13 +63,11 @@ explanation, not just which value is higher. Keep real choices already confirmed
 otherwise recommend a reasoned next step as `AI 建议`. Do not automatically end
 by asking the advisor to supply the model or choose from an unranked task list.
 
-A substantive knowledge update names the particular explanatory link that
-changed, connects previously separate observations and, where possible, gives
-a new prediction. State the prior understanding only when sourced; otherwise
-mark it unknown. Explain what the update makes worth doing next and what can
-wait. Retain decisive raw values and claim boundaries; candidate mechanisms
-remain labeled as such. Use these checks to improve the argument, not to impose
-four compulsory headings on a short factual brief.
+A substantive knowledge update names the assumption or term that changed and
+the practical choice it affects. For a requested diagnostic, answer the
+advisor's question directly, then show where the result enters the argument
+for the end goal. When two explanations call for different actions, propose one
+comparison and say why its outcome would change the recommendation.
 
 ## Rehearse Understanding
 
@@ -72,9 +75,8 @@ Ask a first-time listener to restate the question, why the comparison or proof
 answers it, the knowledge update, boundary and next decision. Use interrupted
 Q&A to locate unclear relations; match detail to the audience. Without a listener,
 label the check self-review. No mandatory rehearsal records.
-For requested pre-meeting preparation include two real follow-ups: why does this
-comparison distinguish the live explanations, and why is the stronger claim still
-unsupported? Answer from the source; do not invent another experiment to rehearse.
+Put likely follow-ups in the speaker notes when they affect the decision.
+Answer from the source and keep the one-minute speaking text focused on the result.
 
 A draft may present incomplete or negative science. Mark scientific wording as
 pending when appropriate; do not wait for another experiment or invent approval.

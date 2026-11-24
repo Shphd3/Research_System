@@ -1,0 +1,997 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-19T13:47:21.202070+00:00",
+  "context": {
+    "host": "app-110ebd7841a6480ebe272362b5d54844-6cd8b84d9b-kj67s",
+    "real_uid": 0,
+    "effective_uid": 0
+  },
+  "check_scope": "stat, one-byte file read, directory traversal/list and registered probes; no deserialization, full hashing, GPU, network or download",
+  "catalog": "/data/250010109/Research_System/assets/catalog.json",
+  "projects": [
+    {
+      "id": "from-attention-to-search",
+      "title_cn": "当前主研究项目",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/Research_System/Projects/from-attention-to-search",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/AGENTS.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 770,
+              "ok": true,
+              "required": true
+            },
+            {
+              "path": "/data/250010109/Research_System/Projects/from-attention-to-search/main/roadmap.md",
+              "expected": "file",
+              "status": "READABLE_FILE",
+              "size_bytes": 17869,
+              "ok": true,
+              "required": true
+            }
+          ],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    },
+    {
+      "id": "moe-router-execution",
+      "title_cn": "实验代码与原始产物执行工作区",
+      "category": "project",
+      "projects": [],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "PROJECT_ENTRYPOINTS",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router",
+          "expected": "directory",
+          "status": "LISTABLE_DIRECTORY",
+          "ok": true,
+          "role": "project_or_storage_root",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ],
+      "required_for_selection": false
+    }
+  ],
+  "assets": [
+    {
+      "id": "analysis_a0_sae_relation_final_1b_20261119",
+      "title_cn": "A0 SAE 真实关系与分层打乱两臂 1B 结果和专家读数",
+      "category": "analysis",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/interpretation.md",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3936,
+          "ok": true,
+          "role": "interpretation.md",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/result-tables.md",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 5975,
+          "ok": true,
+          "role": "result-tables.md",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/METHODS.md",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 2412,
+          "ok": true,
+          "role": "METHODS.md",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/readout-plan.md",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1954,
+          "ok": true,
+          "role": "readout-plan.md",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/loss-comparison.pdf",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 28650,
+          "ok": true,
+          "role": "loss-comparison.pdf",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/loss-comparison.png",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 211324,
+          "ok": true,
+          "role": "loss-comparison.png",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/frequency-contrasts.pdf",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 22251,
+          "ok": true,
+          "role": "frequency-contrasts.pdf",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/frequency-contrasts.png",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 201466,
+          "ok": true,
+          "role": "frequency-contrasts.png",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routing-diagnostics.pdf",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 31264,
+          "ok": true,
+          "role": "routing-diagnostics.pdf",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routing-diagnostics.png",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 279178,
+          "ok": true,
+          "role": "routing-diagnostics.png",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/eval-points.csv",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 425,
+          "ok": true,
+          "role": "eval-points.csv",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/training-points.csv",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 69883,
+          "ok": true,
+          "role": "training-points.csv",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/snapshot.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1500,
+          "ok": true,
+          "role": "snapshot.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/frequency-eval.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 35540,
+          "ok": true,
+          "role": "frequency-eval.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/loss-contributions.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6580,
+          "ok": true,
+          "role": "loss-contributions.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/frequency-loss-table.csv",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 17912,
+          "ok": true,
+          "role": "frequency-loss-table.csv",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/feature-losses.csv",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 223435,
+          "ok": true,
+          "role": "feature-losses.csv",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/feature-losses.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4800,
+          "ok": true,
+          "role": "feature-losses.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/cohort-coverage.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1380,
+          "ok": true,
+          "role": "cohort-coverage.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/teacher-coverage.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 940,
+          "ok": true,
+          "role": "teacher-coverage.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/training-load.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 102485,
+          "ok": true,
+          "role": "training-load.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/bindings-500m.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3262669,
+          "ok": true,
+          "role": "bindings-500m.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/bindings-1b.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3262874,
+          "ok": true,
+          "role": "bindings-1b.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/expert-input-composition-1b.csv",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 32693,
+          "ok": true,
+          "role": "expert-input-composition-1b.csv",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/replay-a0-reproduction.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1125,
+          "ok": true,
+          "role": "replay-a0-reproduction.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/eval-labels.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 7864343,
+          "ok": true,
+          "role": "eval-labels.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/replay_routes.py",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 4611,
+          "ok": true,
+          "role": "replay_routes.py",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/loss_figure.py",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6463,
+          "ok": true,
+          "role": "loss_figure.py",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/frequency_eval.py",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 8270,
+          "ok": true,
+          "role": "frequency_eval.py",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/feature_losses.py",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 3029,
+          "ok": true,
+          "role": "feature_losses.py",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/binding.py",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 12426,
+          "ok": true,
+          "role": "binding.py",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/load.py",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 5687,
+          "ok": true,
+          "role": "load.py",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/eval_000500000000.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 683,
+          "ok": true,
+          "role": "eval_000500000000.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/positions_000500000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 8397560,
+          "ok": true,
+          "role": "positions_000500000000.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/eval_000500000000.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 690,
+          "ok": true,
+          "role": "eval_000500000000.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/positions_000500000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 8397560,
+          "ok": true,
+          "role": "positions_000500000000.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-a0-500000000-128.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 515,
+          "ok": true,
+          "role": "routes-a0-500000000-128.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-a0-500000000-128.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 62789486,
+          "ok": true,
+          "role": "routes-a0-500000000-128.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-true-500000000-128.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 494,
+          "ok": true,
+          "role": "routes-true-500000000-128.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-true-500000000-128.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 62583738,
+          "ok": true,
+          "role": "routes-true-500000000-128.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-shuffle-500000000-128.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 501,
+          "ok": true,
+          "role": "routes-shuffle-500000000-128.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-shuffle-500000000-128.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 62511748,
+          "ok": true,
+          "role": "routes-shuffle-500000000-128.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/eval_001000000000.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 683,
+          "ok": true,
+          "role": "eval_001000000000.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/positions_001000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 8397560,
+          "ok": true,
+          "role": "positions_001000000000.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/eval_001000000000.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 689,
+          "ok": true,
+          "role": "eval_001000000000.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/positions_001000000000.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 8397560,
+          "ok": true,
+          "role": "positions_001000000000.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-a0-1000000000-128.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 516,
+          "ok": true,
+          "role": "routes-a0-1000000000-128.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-a0-1000000000-128.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 62262826,
+          "ok": true,
+          "role": "routes-a0-1000000000-128.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-true-1000000000-128.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 496,
+          "ok": true,
+          "role": "routes-true-1000000000-128.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-true-1000000000-128.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 62134800,
+          "ok": true,
+          "role": "routes-true-1000000000-128.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-shuffle-1000000000-128.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 503,
+          "ok": true,
+          "role": "routes-shuffle-1000000000-128.json",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/analysis/final-20261119/routes-shuffle-1000000000-128.npz",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 62060190,
+          "ok": true,
+          "role": "routes-shuffle-1000000000-128.npz",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_a0_sae_relation_shuffle_1000000000_20261119",
+      "title_cn": "A0 SAE 分层打乱关系 1B 完整训练存档",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_001000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "state.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_001000000000/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00000.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_001000000000/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00001.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_001000000000/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00002.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_001000000000/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14548,
+          "ok": true,
+          "role": "rng_rank_00003.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_001000000000/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1195,
+          "ok": true,
+          "role": "checkpoint_manifest",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_a0_sae_relation_true_500000000_20261119",
+      "title_cn": "A0 SAE relations true 0.5B 完整训练存档",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_000500000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "state.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_000500000000/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00000.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_000500000000/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00001.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_000500000000/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00002.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_000500000000/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14548,
+          "ok": true,
+          "role": "rng_rank_00003.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_000500000000/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1193,
+          "ok": true,
+          "role": "checkpoint_manifest",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_a0_sae_relation_true_1000000000_20261119",
+      "title_cn": "A0 SAE relations true 1B 完整训练存档",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_001000000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "state.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_001000000000/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00000.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_001000000000/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00001.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_001000000000/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00002.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_001000000000/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14548,
+          "ok": true,
+          "role": "rng_rank_00003.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/true/milestones/token_001000000000/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1195,
+          "ok": true,
+          "role": "checkpoint_manifest",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    },
+    {
+      "id": "checkpoint_a0_sae_relation_shuffle_500000000_20261119",
+      "title_cn": "A0 SAE relations shuffle 0.5B 完整训练存档",
+      "category": "model_checkpoint",
+      "projects": [
+        "from-attention-to-search",
+        "moe-router-execution"
+      ],
+      "access_status": "ACCESSIBLE",
+      "payload_status": "SOURCE_FILES_PRESENT",
+      "required_access_passed": true,
+      "strict_passed": true,
+      "loading_or_scientific_eligibility": "NOT_CHECKED",
+      "locations": [
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_000500000000/state.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 6096214550,
+          "ok": true,
+          "role": "state.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_000500000000/rng_rank_00000.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00000.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_000500000000/rng_rank_00001.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00001.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_000500000000/rng_rank_00002.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14484,
+          "ok": true,
+          "role": "rng_rank_00002.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_000500000000/rng_rank_00003.pt",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 14548,
+          "ok": true,
+          "role": "rng_rank_00003.pt",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        },
+        {
+          "path": "/data/250010109/MoE_Router/experiments/1119_a0_sae_relations/runs/shuffle/milestones/token_000500000000/manifest.json",
+          "expected": "file",
+          "status": "READABLE_FILE",
+          "size_bytes": 1193,
+          "ok": true,
+          "role": "checkpoint_manifest",
+          "required": true,
+          "probes": [],
+          "qualified_access": true
+        }
+      ]
+    }
+  ],
+  "selected_required_failures": []
+}

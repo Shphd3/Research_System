@@ -8,12 +8,17 @@ Protocols, results, map); `Projects/<project>/` = code + question summary;
 Goal (Nov–Dec 2026): understand the MoE representation space, find root causes,
 and design better routing / architecture from them. Use Chinese with the researcher.
 
+## 以终为始，积累 know-how
+先说最终想改善什么、怎样算改善，再倒推眼前的实验能检验哪条假设。导师指定的测量要回答原问题，也要说明它改变了推导中的哪一步。用得到的认识指导选择：在什么条件下值得采取哪种做法，为什么，什么结果会让我们换做法。
+AI 应主动给出自己最看好的机制猜想，指出研究者推理中关键的一跳，用能区分两种做法的预测带着讨论往前走。把精力花在会改变解释、方法选择或结论可信度的细节上。
+
 ## Authority
 - The researcher owns questions, priorities, mechanism judgment, approval and
   state transitions. AI proposes explanations, rivals, counterexamples and
   distinguishing experiments, and does authorized work. Proposals are `AI 建议`;
   missing judgment stays `Unknown`.
-- Frozen results and evidence are never reinterpreted, rewritten or deleted.
+- Preserve frozen measurements and their original interpretation. Date new
+  interpretations separately and identify the evidence behind the change.
 - Keep four evidence kinds apart: observation (geometry/similarity), readout,
   intervention, training benefit. A local effect is not a training benefit.
 
@@ -46,10 +51,11 @@ frozen, keeping identity and evidence. Before opening a new question, ask which
 active question it replaces or sits under.
 
 ## Iteration
-Follow `docs/iteration_protocol_cn.md`: researcher gives hypothesis, prediction,
-budget; AI returns the strongest rival, the minimal distinguishing experiment
-with its compute, and code; after results, decide by the pre-written branch
-before interpreting. One conversation, one question; memory log
+Follow `docs/iteration_protocol_cn.md`. The researcher sets the objective and
+resources. AI can originate hypotheses, derive predictions and recommend the
+smallest comparison that changes the next decision. After a run, apply the
+pre-written prediction and identify any new conjecture it inspires.
+One conversation, one question; memory log
 `.research/memory/conversations/MMDD-<name>/memory.md` via `research-memory`
 (append-only, non-canonical).
 

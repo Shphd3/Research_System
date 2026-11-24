@@ -1,7 +1,7 @@
 interface:
   display_name: "Research Progress Core"
   short_description: "Refine a research question and its next decision"
-  default_prompt: "Use $research-progress-core to refine the named research question or maintain its stable Focus, using evidence to clarify the researcher-owned next decision."
+  default_prompt: "Use $research-progress-core to work back from the research objective, propose a testable mechanism and explain which comparison would change the next decision."
 
 policy:
   allow_implicit_invocation: true

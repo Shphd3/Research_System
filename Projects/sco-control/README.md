@@ -1,4 +1,4 @@
-# Shphd SCO Control
+# SCO Control Training
 
 Skill for operating SenseCore SCO CLI workflows with a compact, layered command guide. Supports both Claude Code (plugin) and Codex (manual copy).
 
@@ -14,10 +14,11 @@ The bundled references are intentionally small. They capture practical command p
 
 ## 操作指南
 
-- [ACP 双任务互联、RDMA 和短训验收](skills/sco-control/references/acp-distributed-cn.md)
-- [ACP、CCI 的 AOSS 挂载与 AFS 对照测速](skills/sco-control/references/aoss-storage-cn.md)
+- [RTX 5090 多节点训练与 Socket 调优](skills/sco-control-training/references/rtx5090-training-cn.md)
+- [ACP 双任务互联、RDMA 和短训验收](skills/sco-control-training/references/acp-distributed-cn.md)
+- [ACP、CCI 的 AOSS 挂载与 AFS 对照测速](skills/sco-control-training/references/aoss-storage-cn.md)
 
-此版本保留 [BinaryCheater/sco-skill](https://github.com/BinaryCheater/sco-skill) 的 MIT 许可和原作者署名。维护基线为本地留存的 upstream `21c7c0d`。本次无法从原地址获取较新的版本，远端最新状态待核实。
+此版本保留 [BinaryCheater/sco-skill](https://github.com/BinaryCheater/sco-skill) 的 MIT 许可和原作者署名。已同步上游通用流程至 `1d6bb6a`，并保留本仓库的训练和存储配方。
 
 独立发布地址为 [Shphd3/sco-control-training](https://github.com/Shphd3/sco-control-training)。
 
@@ -36,14 +37,14 @@ claude plugin install sco-control@shphd-sco-control
 
 ```bash
 mkdir -p ~/.codex/skills
-cp -R skills/sco-control ~/.codex/skills/sco-control
+cp -R skills/sco-control-training ~/.codex/skills/sco-control-training
 ```
 
 Symlink for local development:
 
 ```bash
 mkdir -p ~/.codex/skills
-ln -s "$(pwd)/skills/sco-control" ~/.codex/skills/sco-control
+ln -s "$(pwd)/skills/sco-control-training" ~/.codex/skills/sco-control-training
 ```
 
 Restart Codex or reload skills if your client requires it.
@@ -57,7 +58,7 @@ Restart Codex or reload skills if your client requires it.
 Once installed, invoke the skill:
 
 ```text
-Use sco-control to list my CCI apps and inspect my ACP jobs.
+Use sco-control-training to list my CCI apps and inspect my ACP jobs.
 ```
 
 For read-only discovery, prefer:
@@ -78,6 +79,22 @@ For ACP quota selection:
 
 For CCI, `--keyword` fuzzy-matches `user_name`, `display_name`, and `name`, so use runtime user ids or app naming patterns as query values.
 
+### Working with multiple accounts
+
+Run [`sco init`](https://www.sensecore.cn/help/docs/CLI/SCO_Refrence/init) interactively to set up a named profile for each identity you are authorized to use. The global `--profile` option selects the profile for a single command.
+
+```bash
+sco config profiles list
+sco --profile "$SCO_PROFILE" acp jobs list --workspace-name "$SCO_WORKSPACE" -o table
+sco --profile "$SCO_PROFILE" afs volume list
+```
+
+For shared inputs, read-only access checks, and coordinating separate ACP jobs, see the [multi-account workflow](skills/sco-control-training/SKILL.md#multiple-accounts).
+
+### Local configuration
+
+Use `sco init` to keep AccessKeys in a local SCO profile. Copy the [environment example](skills/sco-control-training/references/sco.local.env.example) to `sco.local.env` for non-secret workspace, cluster, image and storage settings. The repository ignores that file and `cci-app.local.yaml`. Fill the files with values for your own environment and follow the [ACP preview walkthrough](skills/sco-control-training/references/run_sco_pattern.md#dry-run).
+
 ## Repository Layout
 
 ```text
@@ -86,23 +103,28 @@ For CCI, `--keyword` fuzzy-matches `user_name`, `display_name`, and `name`, so u
 └── plugin.json
 package.json
 skills/
-└── sco-control/
+└── sco-control-training/
     ├── SKILL.md
     ├── agents/openai.yaml
     └── references/
+        ├── acp-distributed-cn.md
         ├── acp.md
         ├── acp_submit_template.sh
         ├── aec2-afs.md
+        ├── aoss-storage-cn.md
         ├── cci.md
         ├── images.md
-        └── run_sco_pattern.md
+        ├── rtx5090-training-cn.md
+        ├── run_sco_pattern.md
+        ├── sco.local.env.example
+        └── torchrun-worker.py
 ```
 
 ## Safety
 
 The skill treats list/describe/log operations as the default. Mutating operations such as create, update, delete, start, stop, quota changes, ACL changes, and image builds should be run only after explicit user intent.
 
-The included `acp_submit_template.sh` is a sanitized reference template; it intentionally uses environment variables for workspace, cluster, storage, image, and project path values.
+The ACP template previews the full command by default. Set `DRY_RUN=0` explicitly to submit after reviewing the profile and resource arguments.
 
 ## License
 

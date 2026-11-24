@@ -209,6 +209,21 @@ profiles:
     priority: normal
     storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
     gpu_used: true
+  h100-2x2-reserved-sd-moe:
+    status: requires_explicit_selection
+    allowed_scope: "SD-MoE 14 replacement requested on 2026-11-25; require real cross-node NCCL IB/GDRDMA before training."
+    verified_by: "Historical A0 reserved 2x2 allocation om-078v2fuw. This job must validate RDMA again."
+    surface: acp
+    workspace: share-space
+    aec2: share-cluster
+    worker_spec: n6ls.iu.i40.2
+    worker_nodes: 2
+    worker_processes: 2
+    gpus: "2 nodes x 2 H100 80GB per node"
+    quota_type: reserved
+    priority: normal
+    storage_mount: "01995892-d478-76d8-aec7-13fd8284477e:/data"
+    gpu_used: true
   p12-h100-4-reserved:
     status: requires_explicit_selection
     selected_on: "2026-11-09"
@@ -447,7 +462,8 @@ a legacy key is a drift case, not an exception.
 ## 3. Routing
 
 For explicit share-space or P12 four-H100 Reserved training, follow the
-[workspace guide](sco_reserved_training_guide.md) / [中文操作指南](sco_reserved_training_guide_cn.md).
+[workspace guide](sco_reserved_training_guide.md) / [中文操作指南](sco_reserved_training_guide_cn.md). For RDMA and AOSS operations, see the
+[training network and AOSS guide](acp_aoss_rdma_guide_cn.md).
 `templates/execution/acp_submit_reserved_workspace.sh` selects one registered
 workspace profile and reuses the existing submission template, its gates,
 durable logging and receipts. It does not change the global default or submit

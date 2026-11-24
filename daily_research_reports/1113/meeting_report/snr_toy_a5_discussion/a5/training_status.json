@@ -1,0 +1,45 @@
+{
+  "stop_receipt": {
+    "job": "om-8v93ahuv",
+    "platform_state": "SUCCEEDED",
+    "platform_exit_utc": "2026-11-12T03:25:13.985382Z",
+    "reason": "User requested stop after completing meeting scope",
+    "checkpoint": {
+      "checkpoint_kind": "recovery",
+      "optimizer_step": 24303,
+      "path": "checkpoints/step_00024303",
+      "schema_version": 2,
+      "tokens_seen": 6370885632
+    },
+    "manifest_complete_and_sizes_verified": true
+  },
+  "final_checkpoint": {
+    "manifest": "/data/250010109/MoE_Router/experiments/20261111_a5_continue/runs/A5/checkpoints/step_00024303/manifest.json",
+    "file_sizes_checked": true
+  },
+  "5B_checkpoint": {
+    "manifest": "/data/250010109/MoE_Router/experiments/20261111_a5_continue/runs/A5/milestones/token_005000658944/manifest.json",
+    "file_sizes_checked": true
+  },
+  "5B_A5_online_eval": {
+    "bias_unchanged": true,
+    "lm_loss": 3.3791001629298214,
+    "optimizer_step": 19076,
+    "tokens_seen": 5000658944,
+    "valid_tokens": 2097152
+  },
+  "5B_native_MoE_offline_eval": 3.3750032044946203,
+  "5B_Dense_offline_eval": 3.4613815286353793,
+  "5B_A5_minus_MoE": 0.004096958435201081,
+  "5B_evidence_limit": "Online overall mean plus baseline cached overall means, no A5 per-position document pairing.",
+  "3B_A5_online_eval": {
+    "bias_unchanged": true,
+    "lm_loss": 3.3959549877406885,
+    "optimizer_step": 11446,
+    "tokens_seen": 3000500224,
+    "valid_tokens": 2097152
+  },
+  "3B_A5_offline_eval": 3.3959536063154565,
+  "same_frozen_EVAL_token_file_as_R04": true,
+  "baseline_5B_position_cache_hashes_verified": true
+}

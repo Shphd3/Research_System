@@ -35,3 +35,17 @@
 
 - Summary: MILESTONE {"step": 11446, "tokens_seen": 3000500224, "nll": 3.3959549877406885, "baseline_tokens": 3000000000, "native_nll": 3.3942828329868777, "checkpoint": "/data/250010109/MoE_Router/experiments/20261111_a5_continue/runs/A5/milestones/token_003000500224"}
 - References: /data/250010109/MoE_Router/experiments/20261111_a5_continue/evidence/supervision.jsonl
+
+## 2026-11-11T16:16:45.132077+00:00
+
+- Summary: 先按研究者指示推送 Research System，核实 origin/master 为 1bfdd09f。随后完成 3B 两项 MIG 测量。A5 第 11446 步，3,000,500,224 token；完整状态、四 rank RNG 与 BF16 权重通过 SHA256 校验。
+- Result: A5−原生 MoE 总体 NLL +0.00167，95% 区间 [−0.00006, +0.00371]；最低频三档均较低，最高频一档较高。集中度 1.3307 对 1.1035。低频梯度信噪比 0.892 倍（整块）与 0.769 倍（逐专家加权），预写预测未成立。研究者判断 Unknown。
+- Assets: checkpoint_r07_A5_011446_20261111、analysis_r07_A_3000000000_20261111、analysis_r07_B_A53B_20261111、analysis_r07_B_MoE3B_20261111。
+- Next action: 保持 om-8v93ahuv 与两个后台观察进程，等待 5B 对齐存档。
+- References: /data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/3B_测试结论_cn.md
+
+## 2026-11-11T16:22:39.999425+00:00
+
+- Summary: 用已保存的 1B／3B 固定 EVAL 逐位置损失作配对追赶分解，未重训。总体差值变化 +0.01797 nat，文档配对区间 [+0.01431,+0.02107]。十档点估计均向原生移动。最高频三档占差值变化 75.0%、评估分摊权重 76.2%。
+- Assets: analysis_r07_A5_1B_3B_catchup_20261112。
+- References: /data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/3B_测试结论_cn.md

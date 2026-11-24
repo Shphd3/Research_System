@@ -1,0 +1,588 @@
+{
+  "title": "A5 长尾收益与 toy model 机制讨论包",
+  "date_beijing": "2026-11-12",
+  "entry": "讨论导读_cn.md",
+  "researcher_judgment": "Unknown",
+  "sources": {
+    "toy_report": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/报告_cn.md",
+    "toy_raw_loss_curves": [
+      "/data/250010109/MoE_Router/experiments/20261112_snr_toy/results/e2_losses.csv",
+      "/data/250010109/MoE_Router/experiments/20261112_snr_toy/results/e3_curve.csv"
+    ],
+    "A5_R07_source_report": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/3B_测试结论_cn.md",
+    "A5_R07_protocol": "/data/250010109/Research_System/research/from-attention-to-search/main/experiments/A17/17_13_ntp_statistics_local_compatibility/R07_20261111_a5_continue/protocol_cn.md",
+    "A5_online_validation": "/data/250010109/MoE_Router/experiments/20261111_a5_continue/runs/A5/validation.jsonl",
+    "A5_5B_native_baseline_eval": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/evidence/forward_MoE_005000000000.json",
+    "A5_5B_dense_eval": "/data/250010109/MoE_Router/experiments/20261111_learn_forget_figures/evidence/forward_Dense_005000000000.json",
+    "A5_stop_receipt": "/data/250010109/MoE_Router/experiments/20261111_a5_continue/evidence/user_stop_20261112.json",
+    "meeting_inputs": [
+      "1111_导师讨论_完整转写勘误.md，第一份分层讨论及第二份 00:02–02:04",
+      "1111-和学长会议.md，信噪比和长尾解释段落",
+      "1112-高低频竞争玩具实验_Codex执行Prompt.md，跑前预测"
+    ]
+  },
+  "asset_ids": [
+    "analysis_snr_toy_20261112",
+    "analysis_r07_A_3000000000_20261111",
+    "analysis_r07_A5_1B_3B_catchup_20261112"
+  ],
+  "files": [
+    {
+      "path": "a5/03_concentration_and_gradient_snr.pdf",
+      "bytes": 23660,
+      "sha256": "6884919a70615eadaa1103b044d039a88ab5c737600b871569a2c4a3d30ea710",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/catchup_figures/03_concentration_and_gradient_snr.pdf",
+        "sha256": "6884919a70615eadaa1103b044d039a88ab5c737600b871569a2c4a3d30ea710"
+      }
+    },
+    {
+      "path": "a5/03_concentration_and_gradient_snr.png",
+      "bytes": 147811,
+      "sha256": "31f34ebe5de2f6b5a0392690c7d8c70072c20f40707864a23628d93e273f4e74",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/catchup_figures/03_concentration_and_gradient_snr.png",
+        "sha256": "31f34ebe5de2f6b5a0392690c7d8c70072c20f40707864a23628d93e273f4e74"
+      }
+    },
+    {
+      "path": "a5/A5_evidence.pdf",
+      "bytes": 27116,
+      "sha256": "0788225791846c7210cbb3b228c589b2ea359939734a2931d96fe6e71cb917a6"
+    },
+    {
+      "path": "a5/A5_evidence.png",
+      "bytes": 191290,
+      "sha256": "19a85682c18a09efe8607d021a6b60ad927ac045577883005fe63f1972cb28a1"
+    },
+    {
+      "path": "a5/check1_hint_probes.csv",
+      "bytes": 13775,
+      "sha256": "a6433a5c1b5f6c020e365a1379d8c1f4394c3af30d5844ff317082c6e2bf1a62",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1111/meeting_report/a5_checks/check1_hint_probes.csv",
+        "sha256": "a6433a5c1b5f6c020e365a1379d8c1f4394c3af30d5844ff317082c6e2bf1a62"
+      }
+    },
+    {
+      "path": "a5/concentration.csv",
+      "bytes": 1957,
+      "sha256": "c972e467aa5507b3ee16056271e64e5ab4834499792de69e2889d27678f77f80",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/A_集中度.csv",
+        "sha256": "c972e467aa5507b3ee16056271e64e5ab4834499792de69e2889d27678f77f80"
+      }
+    },
+    {
+      "path": "a5/early_gain_by_frequency.csv",
+      "bytes": 481,
+      "sha256": "64e35893367d4aed455372b6f2208d732c00502509469beb90c00f357bbd93f0",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1111/meeting_report/three_conclusions/03_A5_gain_by_frequency.csv",
+        "sha256": "64e35893367d4aed455372b6f2208d732c00502509469beb90c00f357bbd93f0"
+      }
+    },
+    {
+      "path": "a5/gap_change_additive_by_feature_band.csv",
+      "bytes": 1163,
+      "sha256": "c161abd8223cf6999ac14806a20eca3acc145d45843c622ca0ff8285473f8c8d",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/catchup_figures/gap_change_additive_by_feature_band.csv",
+        "sha256": "c161abd8223cf6999ac14806a20eca3acc145d45843c622ca0ff8285473f8c8d"
+      }
+    },
+    {
+      "path": "a5/gradient_snr.csv",
+      "bytes": 8597,
+      "sha256": "c118859f4b506c27229554b54ac9b13ba859ee81e8ad686facb597944b24e029",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/B_梯度信噪比.csv",
+        "sha256": "c118859f4b506c27229554b54ac9b13ba859ee81e8ad686facb597944b24e029"
+      }
+    },
+    {
+      "path": "a5/gradient_snr_by_expert.csv",
+      "bytes": 91392,
+      "sha256": "25c51b6845137fd6bf45da3e50cdeef57b7837a8bd21423dbc350a0814372e19",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/B_逐专家.csv",
+        "sha256": "25c51b6845137fd6bf45da3e50cdeef57b7837a8bd21423dbc350a0814372e19"
+      }
+    },
+    {
+      "path": "a5/gradient_snr_ratios.csv",
+      "bytes": 725,
+      "sha256": "52c67f36377cf2acc3735814c22368f7af9ea2dc7138affbc2a3cc67a378826e",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/B_比值与预测.csv",
+        "sha256": "52c67f36377cf2acc3735814c22368f7af9ea2dc7138affbc2a3cc67a378826e"
+      }
+    },
+    {
+      "path": "a5/mastery_endpoint_CI.csv",
+      "bytes": 3919,
+      "sha256": "fcb93a58b93eea0aadd484498f3edaf72a3d82d18ba3901bea5cf7befd1c59e0",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1111/meeting_report/a5_to_1B/mastery_endpoint_CI.csv",
+        "sha256": "fcb93a58b93eea0aadd484498f3edaf72a3d82d18ba3901bea5cf7befd1c59e0"
+      }
+    },
+    {
+      "path": "a5/overall_nll.csv",
+      "bytes": 756,
+      "sha256": "9436979df2c6cb66e6daf37796b1bd21fd2e4db015550f60bd5fbdcbb6ee27e0"
+    },
+    {
+      "path": "a5/paired_eval.csv",
+      "bytes": 10283,
+      "sha256": "b9b38a747d1e58f77404ce4960c7a090d8576b109bed084d0ebc0b786fd8c1f0",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/A_文档配对区间.csv",
+        "sha256": "b9b38a747d1e58f77404ce4960c7a090d8576b109bed084d0ebc0b786fd8c1f0"
+      }
+    },
+    {
+      "path": "a5/source_step_loss.csv",
+      "bytes": 2440,
+      "sha256": "348ba665490936af146177dd0bf76db4a75b5e2ca10a0416355f46bc0905c5ac",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/a5_continue/A5_vs_A0_优化步数_loss.csv",
+        "sha256": "348ba665490936af146177dd0bf76db4a75b5e2ca10a0416355f46bc0905c5ac"
+      }
+    },
+    {
+      "path": "a5/training_status.json",
+      "bytes": 1601,
+      "sha256": "bdd2282ac2ec884332f862eaa2aafa81d2e2bad6f2849d4caf2d0505dc8e9f26"
+    },
+    {
+      "path": "toy/01_固定步长投影.pdf",
+      "bytes": 21706,
+      "sha256": "61b59514490f936c5847576836c9162f3059a651a7a0b0c3b87c44470b457736",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/01_固定步长投影.pdf",
+        "sha256": "61b59514490f936c5847576836c9162f3059a651a7a0b0c3b87c44470b457736"
+      }
+    },
+    {
+      "path": "toy/01_固定步长投影.png",
+      "bytes": 169830,
+      "sha256": "07bb66230d95c5f713afaa370bc35f14beade2c8fbba80cc1924bc33fc16404e",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/01_固定步长投影.png",
+        "sha256": "07bb66230d95c5f713afaa370bc35f14beade2c8fbba80cc1924bc33fc16404e"
+      }
+    },
+    {
+      "path": "toy/02_噪声与最优学习率.pdf",
+      "bytes": 21140,
+      "sha256": "3fa12ace0a46a45febfcc7583627ba970e1428f46116c74315b30669538e5515",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/02_噪声与最优学习率.pdf",
+        "sha256": "3fa12ace0a46a45febfcc7583627ba970e1428f46116c74315b30669538e5515"
+      }
+    },
+    {
+      "path": "toy/02_噪声与最优学习率.png",
+      "bytes": 128728,
+      "sha256": "e1bdda18f67007b36304328ac0be0617d6303908123716a6b535e83ffde4a351",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/02_噪声与最优学习率.png",
+        "sha256": "e1bdda18f67007b36304328ac0be0617d6303908123716a6b535e83ffde4a351"
+      }
+    },
+    {
+      "path": "toy/03_高低频竞争.pdf",
+      "bytes": 925312,
+      "sha256": "a93f24dc49712c3928ee2faa941ccdfe3fba6933feed341692f2aed5925a34ac",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/03_高低频竞争.pdf",
+        "sha256": "a93f24dc49712c3928ee2faa941ccdfe3fba6933feed341692f2aed5925a34ac"
+      }
+    },
+    {
+      "path": "toy/03_高低频竞争.png",
+      "bytes": 392776,
+      "sha256": "1d93018dbd6fae3d275dd429d26e9efa7cd1ff013a7989c2a79617a82ab7ec9a",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/03_高低频竞争.png",
+        "sha256": "1d93018dbd6fae3d275dd429d26e9efa7cd1ff013a7989c2a79617a82ab7ec9a"
+      }
+    },
+    {
+      "path": "toy/04_二阶矩干预与分层降噪.pdf",
+      "bytes": 31718,
+      "sha256": "71516a9ccda36407cb83372327d64b4800a3d07015008514a98dd91ecaeab1c5",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/04_二阶矩干预与分层降噪.pdf",
+        "sha256": "71516a9ccda36407cb83372327d64b4800a3d07015008514a98dd91ecaeab1c5"
+      }
+    },
+    {
+      "path": "toy/04_二阶矩干预与分层降噪.png",
+      "bytes": 159932,
+      "sha256": "d082edfbe277fe53858ba875cadfde59e8524a61c8d59fbfe7a8c3514845c0cf",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/04_二阶矩干预与分层降噪.png",
+        "sha256": "d082edfbe277fe53858ba875cadfde59e8524a61c8d59fbfe7a8c3514845c0cf"
+      }
+    },
+    {
+      "path": "toy/05_固定分发的学习曲线.pdf",
+      "bytes": 108603,
+      "sha256": "4130441f78e72dde66f9359785875f64fd0185dba2c37469b6f9252dbc182fb1",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/05_固定分发的学习曲线.pdf",
+        "sha256": "4130441f78e72dde66f9359785875f64fd0185dba2c37469b6f9252dbc182fb1"
+      }
+    },
+    {
+      "path": "toy/05_固定分发的学习曲线.png",
+      "bytes": 177997,
+      "sha256": "63547597f4fa5cb4819fc47189dd4f77917547fd6651365580ef67cbe384f47a",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/05_固定分发的学习曲线.png",
+        "sha256": "63547597f4fa5cb4819fc47189dd4f77917547fd6651365580ef67cbe384f47a"
+      }
+    },
+    {
+      "path": "toy/06_固定步数损失与集中度.pdf",
+      "bytes": 19782,
+      "sha256": "ec0c97025055cbb5700b034e912034a5cd1502db586e3057f959d10371d2d292",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/06_固定步数损失与集中度.pdf",
+        "sha256": "ec0c97025055cbb5700b034e912034a5cd1502db586e3057f959d10371d2d292"
+      }
+    },
+    {
+      "path": "toy/06_固定步数损失与集中度.png",
+      "bytes": 110285,
+      "sha256": "e5f87900798942ed2dd347c056d102bf2918b1e29407301a77c07bf6ed92ed03",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/06_固定步数损失与集中度.png",
+        "sha256": "e5f87900798942ed2dd347c056d102bf2918b1e29407301a77c07bf6ed92ed03"
+      }
+    },
+    {
+      "path": "toy/07_可学习树路由.pdf",
+      "bytes": 24510,
+      "sha256": "db7ba3085d64c526263b639a8c64d5b82c508e7e105fc676ee2ddbcc553413eb",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/07_可学习树路由.pdf",
+        "sha256": "db7ba3085d64c526263b639a8c64d5b82c508e7e105fc676ee2ddbcc553413eb"
+      }
+    },
+    {
+      "path": "toy/07_可学习树路由.png",
+      "bytes": 216290,
+      "sha256": "3e39f3fa6f872f77b77296dc843306b33a529a6804f880d5277f138ed1697a83",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/07_可学习树路由.png",
+        "sha256": "3e39f3fa6f872f77b77296dc843306b33a529a6804f880d5277f138ed1697a83"
+      }
+    },
+    {
+      "path": "toy/08_学习率敏感性.pdf",
+      "bytes": 46114,
+      "sha256": "27c8bc345652af64c8ff33f7bb4200b9788ee4f016896ab3bfa1577968e3696c",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/08_学习率敏感性.pdf",
+        "sha256": "27c8bc345652af64c8ff33f7bb4200b9788ee4f016896ab3bfa1577968e3696c"
+      }
+    },
+    {
+      "path": "toy/08_学习率敏感性.png",
+      "bytes": 225035,
+      "sha256": "dc4663661a3a9d0af391d290f4fa35f80f7ccbda59e08cbc1544b2fffb2c1d16",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/08_学习率敏感性.png",
+        "sha256": "dc4663661a3a9d0af391d290f4fa35f80f7ccbda59e08cbc1544b2fffb2c1d16"
+      }
+    },
+    {
+      "path": "toy/e1_lr_scan.csv",
+      "bytes": 457453,
+      "sha256": "0d0cb87c3c47dcc627accb9d0573b938716a29e90261eaeee2e1436050be922f",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e1_lr_scan.csv",
+        "sha256": "0d0cb87c3c47dcc627accb9d0573b938716a29e90261eaeee2e1436050be922f"
+      }
+    },
+    {
+      "path": "toy/e2_adam_pulse.csv",
+      "bytes": 10910,
+      "sha256": "c7533c769478da6f153fea6af3006bc54631994f50a2524c9279041c7af43be8",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e2_adam_pulse.csv",
+        "sha256": "c7533c769478da6f153fea6af3006bc54631994f50a2524c9279041c7af43be8"
+      }
+    },
+    {
+      "path": "toy/e2_lr_extension_scan.csv",
+      "bytes": 10515,
+      "sha256": "f46f6295ea3d8cb1aeaf3d86c0faf3396b098d97699feac2f02b97d92a402779",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e2_lr_extension_scan.csv",
+        "sha256": "f46f6295ea3d8cb1aeaf3d86c0faf3396b098d97699feac2f02b97d92a402779"
+      }
+    },
+    {
+      "path": "toy/e2_lr_scan.csv",
+      "bytes": 9840,
+      "sha256": "a60ce2e079bcda507fd92b81480c0b5c553a59d6a2aa80049780fe1c86257b69",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e2_lr_scan.csv",
+        "sha256": "a60ce2e079bcda507fd92b81480c0b5c553a59d6a2aa80049780fe1c86257b69"
+      }
+    },
+    {
+      "path": "toy/e2_population_floor.csv",
+      "bytes": 2132,
+      "sha256": "19e3e2ff2948690a70cbed3c71513b35611e688e10e81b16f4aa5a772637b656",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e2_population_floor.csv",
+        "sha256": "19e3e2ff2948690a70cbed3c71513b35611e688e10e81b16f4aa5a772637b656"
+      }
+    },
+    {
+      "path": "toy/e3_e4_lr_scan.csv",
+      "bytes": 3831,
+      "sha256": "f10afd44dd4bfd5126516b06d45e67e48543522da57df7e68bb45abaa94dfa30",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e3_e4_lr_scan.csv",
+        "sha256": "f10afd44dd4bfd5126516b06d45e67e48543522da57df7e68bb45abaa94dfa30"
+      }
+    },
+    {
+      "path": "toy/e3_fixed_loss.csv",
+      "bytes": 8675,
+      "sha256": "33b7e46b54c091464ff66334ac45ad3b24ae0cc934fb5230add214b4532ff41a",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e3_fixed_loss.csv",
+        "sha256": "33b7e46b54c091464ff66334ac45ad3b24ae0cc934fb5230add214b4532ff41a"
+      }
+    },
+    {
+      "path": "toy/e3_population_floor.csv",
+      "bytes": 1072,
+      "sha256": "9b7e0129ae49246d6350525c325488ec26302c6e27c7327ff8987d277a1c03b5",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e3_population_floor.csv",
+        "sha256": "9b7e0129ae49246d6350525c325488ec26302c6e27c7327ff8987d277a1c03b5"
+      }
+    },
+    {
+      "path": "toy/e3_snr_scaling.csv",
+      "bytes": 1292,
+      "sha256": "0e7f7cee1a688aea61da671024edbd3c400704459d1b7f0de69a29f80bc6e93f",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e3_snr_scaling.csv",
+        "sha256": "0e7f7cee1a688aea61da671024edbd3c400704459d1b7f0de69a29f80bc6e93f"
+      }
+    },
+    {
+      "path": "toy/e3_timing.csv",
+      "bytes": 417,
+      "sha256": "bfc8020fb7ce343a8c20cb98915ad729d72cb76351150c72da96610fe0149862",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e3_timing.csv",
+        "sha256": "bfc8020fb7ce343a8c20cb98915ad729d72cb76351150c72da96610fe0149862"
+      }
+    },
+    {
+      "path": "toy/e5_eval.csv",
+      "bytes": 4812,
+      "sha256": "b6e36a06877f8db3e54129f89da02e4ec86b416c71cc15900493e5286237fe4b",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e5_eval.csv",
+        "sha256": "b6e36a06877f8db3e54129f89da02e4ec86b416c71cc15900493e5286237fe4b"
+      }
+    },
+    {
+      "path": "toy/e5_lr_scan.csv",
+      "bytes": 2323,
+      "sha256": "357a57c3af7de7050022e74c63eeb3b798ece8045f494dc5e273567dc85598a5",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/e5_lr_scan.csv",
+        "sha256": "357a57c3af7de7050022e74c63eeb3b798ece8045f494dc5e273567dc85598a5"
+      }
+    },
+    {
+      "path": "toy/protocol_cn.md",
+      "bytes": 8389,
+      "sha256": "c02e6562fbd183b9abe32367420c9c3a13ef8301a02b9a8fd8b8401a38f140bd",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/protocol_cn.md",
+        "sha256": "c02e6562fbd183b9abe32367420c9c3a13ef8301a02b9a8fd8b8401a38f140bd"
+      }
+    },
+    {
+      "path": "toy/source_run_manifest.json",
+      "bytes": 12903,
+      "sha256": "ab17dca1ae652d08c39cdd149279b2a9f938f89284306d94cae171f49a4f1912",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/run_manifest.json",
+        "sha256": "ab17dca1ae652d08c39cdd149279b2a9f938f89284306d94cae171f49a4f1912"
+      }
+    },
+    {
+      "path": "toy/报告_cn.md",
+      "bytes": 9887,
+      "sha256": "96d57b1443830517480f8c31c1556c4bd3ec12f612517ff40b27585e7f0a4e68",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/报告_cn.md",
+        "sha256": "931962fbacc6eb5641160dd3cf644d6811b013a0797dd11e294232a546aa51a6",
+        "change": "Two raw execution-side table links point to the bundle manifest."
+      }
+    },
+    {
+      "path": "toy/表_E1_方向投影.csv",
+      "bytes": 2246,
+      "sha256": "7c6b78eeaaa42c6ad41352b7a469a943fc22c243d9418ceba10dc73c916bb03d",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E1_方向投影.csv",
+        "sha256": "7c6b78eeaaa42c6ad41352b7a469a943fc22c243d9418ceba10dc73c916bb03d"
+      }
+    },
+    {
+      "path": "toy/表_E1_方向投影.md",
+      "bytes": 3520,
+      "sha256": "7ab41c775bb0df17c0b030cdd279c1993b4e61ea6f9b1e404916a0414fd78948",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E1_方向投影.md",
+        "sha256": "7ab41c775bb0df17c0b030cdd279c1993b4e61ea6f9b1e404916a0414fd78948"
+      }
+    },
+    {
+      "path": "toy/表_E1_最优学习率.csv",
+      "bytes": 2775,
+      "sha256": "dde16bcdc13f39fb77adedb0464f016ca9493de16c94e5b85cd0761454719da3",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E1_最优学习率.csv",
+        "sha256": "dde16bcdc13f39fb77adedb0464f016ca9493de16c94e5b85cd0761454719da3"
+      }
+    },
+    {
+      "path": "toy/表_E1_最优学习率.md",
+      "bytes": 8091,
+      "sha256": "59175b67c224cb4764bde1fb54763419fcc5ab14f37a9b29528f426b0180c5d7",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E1_最优学习率.md",
+        "sha256": "59175b67c224cb4764bde1fb54763419fcc5ab14f37a9b29528f426b0180c5d7"
+      }
+    },
+    {
+      "path": "toy/表_E2_三种子时点.csv",
+      "bytes": 1323,
+      "sha256": "c26ee2a96629a658e2d994a9fd63daf7f4a8308a48dbae31d758575bbd075ada",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E2_三种子时点.csv",
+        "sha256": "c26ee2a96629a658e2d994a9fd63daf7f4a8308a48dbae31d758575bbd075ada"
+      }
+    },
+    {
+      "path": "toy/表_E2_三种子时点.md",
+      "bytes": 3149,
+      "sha256": "bc358a98395b7e171c67e9b5d506ffa0143c37d06c0edb3d7024726ea1fa000c",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E2_三种子时点.md",
+        "sha256": "bc358a98395b7e171c67e9b5d506ffa0143c37d06c0edb3d7024726ea1fa000c"
+      }
+    },
+    {
+      "path": "toy/表_E2_事件起点的速度符号.csv",
+      "bytes": 535,
+      "sha256": "4add39652e00549a83378658db4eb4ab8e2155c730c697a5c55ba8de3ede0526",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E2_事件起点的速度符号.csv",
+        "sha256": "4add39652e00549a83378658db4eb4ab8e2155c730c697a5c55ba8de3ede0526"
+      }
+    },
+    {
+      "path": "toy/表_E2_事件起点的速度符号.md",
+      "bytes": 1052,
+      "sha256": "bc8b80a038d505be3165d91382133fa5228a4e94c3e2ccac491125af0e048eda",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E2_事件起点的速度符号.md",
+        "sha256": "bc8b80a038d505be3165d91382133fa5228a4e94c3e2ccac491125af0e048eda"
+      }
+    },
+    {
+      "path": "toy/表_E2_学习率扩网格时点.csv",
+      "bytes": 1176,
+      "sha256": "e342c870f9c651a415914a91bebf8d1fb32963532286fd2f11f8f685a833fe59",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E2_学习率扩网格时点.csv",
+        "sha256": "e342c870f9c651a415914a91bebf8d1fb32963532286fd2f11f8f685a833fe59"
+      }
+    },
+    {
+      "path": "toy/表_E2_学习率扩网格时点.md",
+      "bytes": 3165,
+      "sha256": "477e6bd895d2fd3533e62a434e8dcc1f589d7bb0804d62e355fc4242169fe2f3",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E2_学习率扩网格时点.md",
+        "sha256": "477e6bd895d2fd3533e62a434e8dcc1f589d7bb0804d62e355fc4242169fe2f3"
+      }
+    },
+    {
+      "path": "toy/表_E3_E4_固定分发和学习率.csv",
+      "bytes": 293,
+      "sha256": "8661622773cdce118b85f971bae031ad8a3807201e67854c6cf667095ff20049",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E3_E4_固定分发和学习率.csv",
+        "sha256": "8661622773cdce118b85f971bae031ad8a3807201e67854c6cf667095ff20049"
+      }
+    },
+    {
+      "path": "toy/表_E3_E4_固定分发和学习率.md",
+      "bytes": 763,
+      "sha256": "5a7c8406f182535a9048b795c2b5c71eadff8ed3b256103e59ec57f7e0476b31",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E3_E4_固定分发和学习率.md",
+        "sha256": "5a7c8406f182535a9048b795c2b5c71eadff8ed3b256103e59ec57f7e0476b31"
+      }
+    },
+    {
+      "path": "toy/表_E3_损失与集中度拟合.csv",
+      "bytes": 554,
+      "sha256": "93e445ad639b33573fa8e83f9f88b8b68530227be0641381abfbae85ff7530bd",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E3_损失与集中度拟合.csv",
+        "sha256": "93e445ad639b33573fa8e83f9f88b8b68530227be0641381abfbae85ff7530bd"
+      }
+    },
+    {
+      "path": "toy/表_E3_损失与集中度拟合.md",
+      "bytes": 1341,
+      "sha256": "e5da5aa0bf1945afe31127a87897f1211a6e5309fc359549d417774db6bf30b5",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E3_损失与集中度拟合.md",
+        "sha256": "e5da5aa0bf1945afe31127a87897f1211a6e5309fc359549d417774db6bf30b5"
+      }
+    },
+    {
+      "path": "toy/表_E5_路径与损失.csv",
+      "bytes": 969,
+      "sha256": "d2725c3e1614e0b05425dea49e7173a496c96241c64f13f858fc481539f9e169",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E5_路径与损失.csv",
+        "sha256": "d2725c3e1614e0b05425dea49e7173a496c96241c64f13f858fc481539f9e169"
+      }
+    },
+    {
+      "path": "toy/表_E5_路径与损失.md",
+      "bytes": 2147,
+      "sha256": "3199666f94365a28927ed7d02abeb4da543287bda1175cb9b122ba8a1620bd79",
+      "origin": {
+        "path": "/data/250010109/Research_System/daily_research_reports/1113/meeting_report/snr_toy/表_E5_路径与损失.md",
+        "sha256": "3199666f94365a28927ed7d02abeb4da543287bda1175cb9b122ba8a1620bd79"
+      }
+    },
+    {
+      "path": "讨论导读_cn.md",
+      "bytes": 10547,
+      "sha256": "99262d7ea769796ffd18b72570dd76b530653030c2b02d250331c31c85b4e91b"
+    }
+  ]
+}

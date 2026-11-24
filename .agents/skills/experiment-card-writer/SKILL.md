@@ -5,6 +5,8 @@ description: "Draft or audit an Anchor-aligned Protocol, or write and audit cano
 
 # Experiment Protocol And Result Writer
 
+撰写结论段时，每条先写对研究问题的认识更新，再用一句关键结果解释为什么。用对照的对象、分母与方向说明理想假设对目标预测是否合理。完整的实验细节留在 Detailed；一分钟口头版沿用项目组会写法。
+
 The Anchor owns question, model and scientific choices; Protocol owns exact
 execution/approval; Summary owns purpose, necessary model, hypothesis, bounded
 conclusion and supporting analysis in a reader-driven order; Detailed owns

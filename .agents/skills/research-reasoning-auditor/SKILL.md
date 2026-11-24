@@ -31,9 +31,11 @@ check that the answer advances the requested link rather than only repeating
 caveats, and that any reopened assumption has a stated reason. Preserve the
 checks above; continuity never turns a working assumption into evidence.
 
-When a claim is too strong, give its strongest useful conditional form and the
-untested bridge, plus a usable separator experiment. Before saying something is
-absent, inspect existing work and state the search limit.
+When a measurement supports several stories, identify the inference that
+changes the proposed action. Give your preferred conditional explanation and
+the observation that would make you choose its rival. Use the original
+derivation and existing results to explain why that comparison matters.
+Check existing work before reporting a missing link.
 
 ## References (only when needed)
 
