@@ -11,7 +11,7 @@ define a scientific question, method, result, or claim.
 ## Route By Requested Operation
 
 - For choosing or changing project paths, filenames, Anchor folders,
-  experiment locations, story locations, or Focus locations, read
+  experiment locations, story locations, or exploration logs, read
   [layout_and_naming.md](references/layout_and_naming.md).
 - For deciding which artifact owns a statement, whether the mainline changed,
   or which canonical and derived surfaces need updates, read

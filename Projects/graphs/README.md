@@ -1,13 +1,6 @@
 ﻿# Research Graph Hub
 
-This directory stores Sidecar-readable graph manifests for cross-project
-research navigation.
-
-Workspace for Sidecar:
-
-```text
-/data/250010109/Research_System
-```
+Cross-project YAML manifests are resolved against the Research_System workspace.
 
 Current graph manifests:
 
@@ -15,6 +8,7 @@ Current graph manifests:
 Projects/graphs/expert_specialization.graph.yaml
 Projects/graphs/kv_cache_retrieval.graph.yaml
 Projects/graphs/specialization_papers.graph.yaml
+Projects/graphs/diffusion_language_models.graph.yaml
 ```
 
 Ownership:
@@ -22,7 +16,7 @@ Ownership:
 ```text
 Projects/graphs/                 cross-project graph navigation layer
 Projects/from-attention-to-search current expert-specialization work branch
-Projects/kv_cache                 primary mainline project
+Projects/archive/kv_cache         archived KV project
 paper_reading/                    literature notes linked by paper subgraphs
 ```
 

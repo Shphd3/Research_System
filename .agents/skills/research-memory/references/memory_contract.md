@@ -86,7 +86,7 @@ Environment: <named roots this record's paths resolve against, for example
   failures>
 - Next action: <one concrete action, plus any stop or redirect condition
   already established by an owning source>
-- References: <the smallest set of Focus, Anchor, Protocol, Summary, Detailed,
+- References: <the smallest set of exploration log, Anchor, Protocol, Summary, Detailed,
   code, or evidence paths needed to verify this entry; state why each matters>
 ```
 
@@ -111,7 +111,7 @@ Environment: <named roots this record's paths resolve against, for example
   decision a transition overturns. Never append the old file wholesale as a
   new entry; each entry re-summarizes, does not replay.
 - A checkpoint that covers a change to a canonical artifact (`PROJECTS.md`, a
-  `focus_<problem>.md`, an Anchor, `protocol.md`, `summary.md`, `detailed.md`,
+  the exploration log, an Anchor, `protocol.md`, `summary.md`, `detailed.md`,
   or a catalog Skill) must name that artifact under `References` and, when the
   change supersedes a prior decision or state, under `Supersedes`. Record the
   pointer and its bounded effect only; never restate the artifact's conclusion
@@ -176,7 +176,7 @@ overwrite the newer checkpoint. Reconcile the two current states or keep
 separate logical-conversation records and let the researcher decide.
 
 A checkpoint does not transfer scientific authority. When a new thread modifies
-a scientific problem, it first reads the owning Focus or Anchor. Do not infer
+a scientific problem, it first reads the owning exploration log or Anchor. Do not infer
 authority from the memory record.
 
 ## Retrieval And Resume

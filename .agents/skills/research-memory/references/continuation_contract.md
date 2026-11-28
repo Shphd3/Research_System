@@ -7,7 +7,7 @@ Use `templates/research_process/continuation_brief_template.md` when writing.
 ## Authority and ownership
 
 A continuation owns no scientific claim, priority, approval or decision. Point
-to the owning Focus/Anchor/Protocol/result only when needed for this next action.
+to the owning exploration log/Anchor/Protocol/result only when needed for this next action.
 A user instruction already authorizing local work remains applicable; a brief
 cannot expand it into remote execution, scientific approval or publication.
 If a scientific approval exists only in chat, record `pending canonicalization`

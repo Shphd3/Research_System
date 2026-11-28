@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-28",
+  "source_root": "/data/250010109/Research_System/Projects/from-attention-to-search",
+  "main_resolves_to": "/data/250010109/Research_System/research/from-attention-to-search/main",
+  "source_branch_HEAD": "afb8b7ccfb56984925b5558306573ca0b5a74d01",
+  "scope": {
+    ".side": {
+      "files": 1,
+      "symlinks": 0,
+      "bytes": 6367,
+      "path_size_content_sha256": "fbbbeb749656aea68ac69b1a6711bb1465d9256d39a195abc3a4d750cecd318c"
+    },
+    "XingyuD/Attention_Search_Experiments": {
+      "files": 6066,
+      "symlinks": 0,
+      "bytes": 3443068701,
+      "path_size_content_sha256": "24e98056c858eb86a253cca20e951606d4860361bb1dae8ba3036870b2f35165"
+    },
+    "XingyuD/MoE_Routing_Experiments": {
+      "files": 573,
+      "symlinks": 0,
+      "bytes": 1002532455,
+      "path_size_content_sha256": "f5c593ac79a75018c1f251438d462eeaee39b2cf8ea0bb8f47e250da9eb1127f"
+    },
+    "XingyuD/docs": {
+      "files": 27,
+      "symlinks": 0,
+      "bytes": 242891,
+      "path_size_content_sha256": "1c008814d6f84d36565588e0c42182681dee90b87318379ff7f4f762f2ebc318"
+    },
+    "XingyuD/research_sources": {
+      "files": 35,
+      "symlinks": 0,
+      "bytes": 191571,
+      "path_size_content_sha256": "22ff9dc998e64194b46fe9b8a17f67762bbd10db393f88dbc2f09d21a1b454ef"
+    },
+    "docs": {
+      "files": 3,
+      "symlinks": 0,
+      "bytes": 709752,
+      "path_size_content_sha256": "f3d88aa8794195cd212524b6cdf74ec4ab1b3f605144c8d610635415c644ba58"
+    },
+    "main": {
+      "files": 11563,
+      "symlinks": 8,
+      "bytes": 1121518118,
+      "path_size_content_sha256": "506f5e15fed47d987970942f6a131362564cbfb3ab56bfd96ff1d48695c208b6"
+    },
+    "project_readmes": {
+      "files": 2,
+      "symlinks": 0,
+      "bytes": 3553,
+      "path_size_content_sha256": "79a00833357be65557ce20ba5b87382ff905327e489f2a91c8f8de8ccb2b358f"
+    }
+  },
+  "verification": "Compared every copied source and destination by SHA-256 and every symlink by target text. Main has identical source and destination path sets, including working-tree records. All eight symlinks resolve in both places.",
+  "auxiliary_scope": "Outside the full main tree, include project and branch documents, the May research-map backup, research sources, experiment records, configurations, tables including Parquet, figures, statistical fits and resampling, and files that combine measurements with training trajectories. Runtime environments, corpus payloads, language-model weights and raw tensor caches are held on the execution side.",
+  "digest_format": "For each scope, SHA-256 of sorted archive-relative Path entries serialized as compact UTF-8 JSON lines [path, kind, size, content_sha256_or_link_target]. Link size is zero."
+}

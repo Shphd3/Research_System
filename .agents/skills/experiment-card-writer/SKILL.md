@@ -16,12 +16,13 @@ missing scientific choices or create a parallel implementation plan.
 
 ## Read For The Requested Output
 
-Start at the named source. Protocol authoring also uses Focus and Anchor;
+Start at the named source. A Protocol names its experiment and links its owning Anchor;
 canonical result writing uses the frozen Protocol, evidence and researcher judgment.
 
 | Output | Required reading |
 |---|---|
-| Protocol draft/audit/revision/promotion | [Alignment](references/protocol_focus_alignment.md), [A-G review](references/blockwise_protocol_audit.md), [freeze](references/protocol_self_containment_and_freeze.md) |
+| Protocol draft or targeted revision | [Anchor alignment](references/protocol_focus_alignment.md) and the section being changed |
+| Full Protocol audit or freeze for execution | [A–G review](references/blockwise_protocol_audit.md) and [freeze](references/protocol_self_containment_and_freeze.md) |
 | Summary or result audit | [Evidence lineage](references/result_evidence_lineage.md) |
 | Detailed write/structure audit | Additionally [Detailed standard](references/detailed_record_standard.md) |
 | First complete Summary or explicitly requested standalone experiment brief | Also [plain-language delivery](references/plain_language_completion_reply.md) |
@@ -54,7 +55,7 @@ For a claim that a method works through a mediator, use
 to distinguish that explanation from the method merely improving a proxy.
 
 Draft one `DRAFT_NOT_EXECUTABLE` Protocol, fill grounded fields and expose only
-critical proposed/blocked choices with the A-G ledger. Promotion/amendment follows
+critical proposed/blocked choices. Use the A–G ledger for a full audit or freeze. Promotion/amendment follows
 its owner contract; design confirmation alone is not execution authorization.
 
 For results, eligibility and source lineage precede interpretation. Preserve

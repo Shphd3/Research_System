@@ -12,7 +12,7 @@ nodes:
     type: question
     summary: "Incubating question: separate training-objective inefficiency, unmasking-path error, and repeated-execution cost before attributing the gap to diffusion as a whole."
     files:
-      - path: /Projects/diffusion-language-models/README.md
+      - path: /Projects/archive/diffusion-language-models/README.md
         title: project entry
     status: draft
     tags: [diffusion-lm, failure-mechanism, mainline-draft]
@@ -21,7 +21,7 @@ nodes:
     title: Literature and mechanism audit through 2026-07-17
     type: source
     summary: "Primary-source audit of masked diffusion, block and AR hybrids, likelihood evaluation, decoding order, training scaling, and MoE."
-    file: /Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
+    file: /Projects/archive/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
     status: done
     tags: [literature, mechanism, evidence-boundary]
 
@@ -29,7 +29,7 @@ nodes:
     title: Statistical, algorithmic, and systems planes must be separated
     type: concept
     summary: "Quality at matched training compute, quality per inference budget, and wall-clock latency at declared concurrency are different claims."
-    file: /Projects/diffusion-language-models/main/roadmap.md
+    file: /Projects/archive/diffusion-language-models/main/roadmap.md
     status: draft
     tags: [measurement, compute, latency]
 
@@ -37,7 +37,7 @@ nodes:
     title: Does random-mask any-order supervision waste compute?
     type: question
     summary: "Candidate D01: test objective and data-repeat effects under matched architecture, unique data, repeated tokens, and training FLOPs."
-    file: /Projects/diffusion-language-models/main/roadmap.md
+    file: /Projects/archive/diffusion-language-models/main/roadmap.md
     status: draft
     tags: [d01, objective, data-efficiency]
 
@@ -45,7 +45,7 @@ nodes:
     title: Does parallel commitment create the exact-sequence gap?
     type: question
     summary: "Candidate D02: hold the denoiser fixed and vary reveal order, parallel width, lookahead, and correction under a common inference budget."
-    file: /Projects/diffusion-language-models/main/roadmap.md
+    file: /Projects/archive/diffusion-language-models/main/roadmap.md
     status: draft
     tags: [d02, sampling, dependency, unmasking]
 
@@ -54,9 +54,9 @@ nodes:
     type: question
     summary: "Candidate D03: distinguish active-capacity quality, router load balance, timestep allocation, and expert-weight memory traffic."
     files:
-      - path: /Projects/diffusion-language-models/main/roadmap.md
+      - path: /Projects/archive/diffusion-language-models/main/roadmap.md
         title: candidate D03 decomposition
-      - path: /Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
+      - path: /Projects/archive/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
         title: MoE evidence audit
     status: draft
     tags: [d03, moe, adaptive-compute, systems]
@@ -65,7 +65,7 @@ nodes:
     title: MoE helps capacity and routing efficiency but has not closed the core gap
     type: claim
     summary: "LLaDA-MoE proves feasibility, DiffusionGemma proves a low-batch deployment path, and expert-choice routing supports mask-ratio-adaptive capacity; none establishes that MoE removes sequence-dependency error."
-    file: /Projects/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
+    file: /Projects/archive/diffusion-language-models/main/literature/2026-07-17_diffusion_language_model_evidence_audit.md
     status: done
     tags: [moe, claim-boundary, literature-result]
 
@@ -73,7 +73,7 @@ nodes:
     title: Confirm or correct the diffusion-LM parent question
     type: task
     summary: "Exactly one current decision: settle the mechanism guess, strongest rival, judgment-changing evidence, and D00-D03 order before any formal anchor or experiment."
-    file: /Projects/diffusion-language-models/README.md
+    file: /Projects/archive/diffusion-language-models/README.md
     status: active
     tags: [next-decision, human-confirmation, protocol-blocked]
 

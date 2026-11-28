@@ -1,56 +1,15 @@
 ---
 name: research-progress-core
-description: "Maintain question-level research judgment, discover or refine a question, choose a minimal falsifier, or interpret results and failures. Not remote operations, publication or final-report ownership."
+description: "Refine a research question, derive a discriminating prediction, or interpret a result to guide the next research decision."
 ---
 
-# Research Progress Core
+# 推进一个研究问题
 
-Reduce one consequential uncertainty with the smallest test that can change a
-judgment. The researcher owns scientific choices; AI proposes labeled
-alternatives (`AI 建议`). `Unknown` is valid.
+从研究者点名的问题、最近一次判断和对应证据继续。先说想改善什么、怎样算改善，再指出当前哪一个不确定性会改变做法。
 
-## Exploration lane output (default)
+- **讨论想法或解读结果**　直接回答，给出最看好的机制、最强竞争解释和会使两者分出高下的观察。解释性猜想标“AI 建议”。追问时沿着上次尚未讲清的一步往下推。[Multi-Turn Continuity](../../../docs/methodology/research_exploration_kernel.md#multi-turn-continuity)
+- **设计最小比较**　从可证伪先验推出模型中的量，再说明计算方法、改变和固定的因素。写清支持、不支持和证据不足分别改变哪个决定。比较几何观察、读出、干预和训练收益时，结论贴合实际测到的层次。[问题与结构](../../../docs/methodology/research_exploration_kernel.md#1-question-and-structure)
+- **开始或继续实际探索**　在已有问题的日志按[探索模板](../../../templates/explore_log_cn.md)追加预测和实测结果。已有预测先回看；新解释记上日期。研究者的决定待定时写 `Unknown`。当天结束写“今日认识更新”。另立问题才需要查看[项目问题表](../../../PROJECTS.md)的三个在办名额。
+- **准备组会结论**　用一句话说认识更新，用一项最能区分解释的实测比较支持它，并说明哪一步推导或下一项架构选择因此改变。正式记录按[正式流程](../../../docs/formal_lane.md)归属。
 
-Write or append one entry in `main/explore/MMDD_<slug>/log.md`
-(`templates/explore_log_cn.md`): 假设, 先验→模型→计算, 跑前预测 (A/B/不足 branches), 竞争解释,
-结果 with raw numbers, 研究者决定, 链条位置. Before running, the prediction and
-branches must exist. After results, decide by the pre-written branch first, then
-interpret. End the day with `今日认识更新`. Check the project's active-question
-budget (≤3, `PROJECTS.md`) before opening a new question.
-
-## How to think
-
-- 形成结论时先写一句“这次观察让我们对哪项科研选择改变了看法”，再写一句最能区分两种解释的比较。把实验覆盖和操作细节放在证据记录。评价理想假设时，指出它对哪个预测足够准确、在哪里需要用实测量替换，以及替换后会改变哪一步推导。向导师汇报时收敛为一个可讨论的取舍。
-
-- For ongoing work, anchor interpretation to the sourced original question and
-  pre-result hypotheses before choosing an explanation; apply the kernel's
-  [Question And Structure](../../../docs/methodology/research_exploration_kernel.md#1-question-and-structure)
-  rule. A useful new phenomenon does not replace the question being answered.
-- In follow-ups, use [Multi-Turn Continuity](../../../docs/methodology/research_exploration_kernel.md#multi-turn-continuity)
-  to advance the missing explanatory link without restarting settled discussion;
-  the existing reasoning and evidence checks still apply.
-- Start from structure, not a metric: state the falsifiable prior, derive the
-  mathematical quantity or objective it implies, then the computation that
-  measures it. If a proposed step cannot be traced this way, say so and repair
-  the chain before running.
-
-- Work backward from the desired outcome. Identify the decision that depends
-  on this measurement and the assumption it can change. Put forward your best
-  mechanism conjecture, even if the researcher did not supply it. Explain which
-  observation would favor its strongest rival and how that would change the action.
-- Keep observation, readout, intervention and training benefit apart; a local
-  effect is not a design decision.
-- Prioritize the comparison that resolves that choice. For `纯理解`, say which
-  relation in the explanation or derivation becomes clearer.
-
-## References (read only when needed)
-
-New question: [discovery](references/problem_discovery.md) ·
-child question: [refinement](references/question_refinement.md) ·
-result or failure: [interpretation](references/result_interpretation.md),
-[failure decomposition](references/failure_decomposition.md) ·
-repeated failure: [goal audit](references/goal_audit.md) ·
-fragile algorithm: [specification](references/algorithm_specification.md).
-
-Do not create Focus files (retired), execute, publish or change scientific state
-beyond scope. Formal records keep their own owners (`docs/formal_lane.md`).
+遇到相应困难再查[发现问题](references/problem_discovery.md)、[细化子问题](references/question_refinement.md)、[解释结果](references/result_interpretation.md)、[分解失败](references/failure_decomposition.md)、[复查目标](references/goal_audit.md)或[明确算法](references/algorithm_specification.md)。

@@ -32,9 +32,9 @@ Non-canonical: source pointers only; owns no scientific claim, approval or decis
 |---|---|---|
 | <exact source> | <question it resolves> | yes / no |
 
-Include the Focus/Anchor/Protocol/result only when this action depends on it.
-A simple result explanation can start with its Summary; local code work need
-not invent a scientific Focus. Verify required paths and current identities;
+Include the exploration log/Anchor/Protocol/result only when this action depends on it.
+A simple result explanation can start with its Summary. For local code work,
+start from the named source. Verify required paths and current identities;
 use a hash/version when a stale source would alter the action. An inaccessible
 root is unverifiable, not stale. Missing required evidence blocks its dependent
 action; missing optional background does not block the requested work.

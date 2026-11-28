@@ -13,8 +13,8 @@ that integration, not for every report.
 
 ## Readiness And Inputs
 
-Read the named Anchor, relevant frozen Protocols, Summary/Detailed, human-confirmed
-Focus judgment, and only the parent clause/figures required. The question, result
+Read the named Anchor, relevant frozen Protocols, Summary/Detailed, researcher-confirmed
+bounded judgment in the Anchor or exploration log, and only the parent clause/figures required. The question, result
 eligibility, contradictions/limits, bounded answer and upward obligation must be
 clear. If finality is unsupported, name the missing piece; an explicitly requested
 provisional synthesis remains a labeled draft, not a declared settled result.

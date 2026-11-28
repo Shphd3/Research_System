@@ -37,7 +37,7 @@ correlated diagnostic into an observed result. Use `NOT RUN`, `UNKNOWN`,
 
 The researcher owns the initial result judgment. AI verifies measurements,
 sources, consistency and wording. Reuse judgment already provided in this session
-or active Focus; do not demand a duplicate closed-book account. If interpretation
+or the question log; do not demand a duplicate closed-book account. If interpretation
 is missing, complete the authorized factual records and evidence lineage. Mark
 the missing human judgment `Unknown`, keep any AI interpretation `AI_PROPOSAL`,
 and scaffold only the unfilled interpretation/decision fields below. This does
@@ -263,26 +263,16 @@ decision-bearing setup.
 For a settled-question final report and question closure, use this ownership chain:
 
 ```text
-confirmed plain-language design in the active Focus
--> Protocol -> authorized execution
--> Summary / summary_cn.md + Detailed + Anchor update
--> researcher-completed result and boundary in the same Focus
--> <anchor_stem>_final_report.md
--> cycle close
+confirmed question and design in the owning Anchor
+-> named Protocol and authorized execution
+-> Summary / Detailed with evidence and eligibility
+-> researcher-confirmed claim, boundary and next decision in Anchor sections 7–8
+-> final report when the bounded question is settled
 ```
 
-The final report may repeat verified material needed for a cold reader, but
-every decision-bearing number and figure must link to its canonical lineage.
-Its eligibility, verdict, boundary, and next question must match Summary,
-Detailed, the Anchor, and the researcher's result account in the active Focus.
-Before human confirmation, mark its knowledge wording
-`AI_DRAFT_AWAITING_HUMAN_CONFIRMATION`. A settled-question final report requires
-the researcher's result and boundary in the active Focus and a stable bounded
-conclusion. An explicitly requested provisional synthesis may be written earlier:
-complete source-backed facts, label it provisional, and leave unresolved judgment
-unknown. It neither closes the question nor promotes evidence. The Focus cannot become
-the sole source of a number, eligibility decision, deviation, or verdict; those
-remain in canonical result records.
+Link each decisive value and figure to its experiment record. Preserve limits and
+unknowns in a requested provisional synthesis. Existing researcher judgment in
+the current session or owning record can be used directly.
 
 ## Final Audit
 
@@ -300,7 +290,7 @@ Detailed is the only complete evidence ledger:
 Figures have source, aggregation, observed result, and limitation:
 Summary, Detailed, and Anchor verdicts and boundaries agree:
 Any final report preserves canonical eligibility, verdict, lineage, boundary, and next question:
-A settled final report has a human-confirmed Focus result; a requested provisional synthesis remains labeled and preserves unknowns:
+A settled final report has a researcher-confirmed result; a requested provisional synthesis remains labeled and preserves unknowns:
 A confirmed next decision has the necessary completion conditions; an unconfirmed decision is stated as Unknown without empty fields:
 No missing value, expected pattern, or filename was turned into evidence:
 ```
@@ -308,9 +298,9 @@ No missing value, expected pattern, or filename was turned into evidence:
 Any `FAIL` blocks result finalization or Anchor promotion, not the requested
 read-only audit or independent evidence verification. Report the failing item
 and its evidence without changing human-owned scientific state. Result records
-do not constitute the human-owned Focus conclusion; update Anchor sections 7–8
+do not constitute the researcher's scientific conclusion; update Anchor sections 7–8
 only after eligible evidence and human judgment agree. After a stable bounded
-question and the human-completed Focus, route its one final report to
+question and the researcher's confirmed judgment, route its one final report to
 `research-final-report`; the researcher closes or corrects the cycle. Explicit
 line synthesis belongs to `research-communication`, placement/state changes to
 `research-mainline`; do not create a separate closure report here.

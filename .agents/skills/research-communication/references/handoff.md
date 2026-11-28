@@ -17,7 +17,7 @@ Use source priority:
 
 ```text
 completed meeting surface, when included
-selected problem Focus
+selected question and its exploration log or Anchor
 Anchor
 Summary
 Detailed
@@ -32,7 +32,7 @@ Include only requested and directly referenced items:
 
 ```text
 meeting brief or outline
-selected problem Focus
+selected question and its exploration log or Anchor
 Anchor
 protocol.md
 summary.md

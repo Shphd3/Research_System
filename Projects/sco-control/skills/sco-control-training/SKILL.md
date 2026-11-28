@@ -5,10 +5,11 @@ description: Prepare and inspect SenseCore ACP training, including multi-node RT
 
 # SCO Control Training
 
-Use this skill to operate `sco` pragmatically from shell templates and known command patterns. Prefer the embedded patterns below before reading references. Load reference files only when the user asks for a less common flag, a YAML example, or a precise command variant.
+Use this skill to operate `sco` from shell templates and known command patterns. Use the workflow below for routine commands and load the reference relevant to the task.
 
-Use the RTX 5090 recipe for that topology, the distributed ACP guide for cross-job rendezvous and RDMA checks, and the AOSS guide for storage operations.
+Use the device list for ACP resource selection, the RTX 5090 recipe for Socket tuning, the distributed ACP guide for cross-job rendezvous and RDMA checks, and the AOSS guide for storage operations.
 
+- [ACP training devices and default priority](references/training-devices-cn.md)
 - [RTX 5090 training recipe](references/rtx5090-training-cn.md)
 - [Distributed ACP jobs](references/acp-distributed-cn.md)
 - [AOSS mounts and AFS comparisons](references/aoss-storage-cn.md)
@@ -26,6 +27,7 @@ Use the RTX 5090 recipe for that topology, the distributed ACP guide for cross-j
 
 - Use an authorized named profile for each identity. Pass `sco --profile "$SCO_PROFILE" ...` to every command in a multi-account workflow. The bundled ACP template takes the same `SCO_PROFILE` variable. Before submitting, verify the target workspace, cluster, quota and storage with that profile. For an existing job, verify its owner by job ID before modifying it. A shared workspace list can include jobs owned by other members.
 - For shared training inputs, use a versioned AFS directory and grant read-only access to the participating users or group. Verify that a recipient's actual ACP worker can read a known file and that writes to a disposable test location under the same permissions are denied. See [AEC2 and AFS](references/aec2-afs.md#afs-acl).
+- For multi-account training, designate one account as the owner of the shared AOSS bucket. Record its profile, bucket, endpoint and a unique prefix per run. Each account submits its own ACP. For one distributed run, all workers use the same AOSS prefix for coordination and NCCL for gradient exchange. See [multi-account AOSS setup](references/aoss-storage-cn.md#多账号训练指定主账号的-aoss).
 - Automatic RDMA provisioning in the tested H100 ACP configuration requires **at least two worker nodes per ACP job** on an RDMA-capable pool. GPU count within one worker does not trigger this provisioning. See [ACP multi-node RDMA](references/acp.md#multi-node-rdma) for the submission and verification steps.
 - For one DDP run spanning separately submitted ACP jobs, verify worker reachability to the rendezvous endpoint. Run a small all-reduce with ranks from both jobs and inspect the NCCL logs for the actual cross-job transport. Each rank reads its own batches. For replicated DDP, use the designated writer (usually global rank 0) to save reduced metrics and checkpoints to the owning account's output directory.
 
@@ -38,7 +40,7 @@ Use the RTX 5090 recipe for that topology, the distributed ACP guide for cross-j
    sco afs volume list
    sco ccr images list
    ```
-2. Query compute capacity:
+2. Choose ACP training resources from the [device list](references/training-devices-cn.md). Follow the user's requested GPU, topology and quota. If the user gives no device, check the default entries in order and choose the first eligible configuration. Use the optional entries when the task calls for one. Query the target pool with the selected profile:
    ```bash
    sco aec2 clusters list-workerspec --workspace-name "$WORKSPACE" --aec2-name "$AEC2"
    sco aec2 clusters describe --name "$AEC2"
@@ -63,7 +65,7 @@ ACP jobs, highest priority:
 ```bash
 sco acp jobs create --workspace-name "$WORKSPACE" --aec2-name "$AEC2" --job-name "$JOB" \
   --container-image-url "$IMAGE" --training-framework pytorch --worker-nodes "$NODES" \
-  --worker-spec "$SPEC" --priority normal --quota-type reserved --storage-mount "$VOL:/data" \
+  --worker-spec "$SPEC" --priority normal --quota-type "$QUOTA_TYPE" --storage-mount "$VOL:/data" \
   --command "$COMMAND"
 sco acp jobs list --workspace-name "$WORKSPACE" --page-size 20 -o table
 sco acp jobs list --workspace-name "$WORKSPACE" --page-size 100 -o json
@@ -133,8 +135,7 @@ sco ccr labels update "$IMAGE_NAME" -n "$NAMESPACE" -c gpu,cpu -p acp,ams
 
 When the user asks to create or adapt a submission template, preserve this shape unless they override it:
 
-- worker spec from the target pool: `SPEC`
-- default worker nodes: `1`
+- pass the selected per-worker spec, node count and quota as `SPEC`, `WORKER_NODES` and `QUOTA_TYPE`. Set all three after selecting a device from the priority list.
 - default image variable: `CONTAINER_IMAGE_URL`
 - default storage mount format: `volume_id:/data`
 - workspace and AEC2 cluster are environment variables, not hard-coded constants

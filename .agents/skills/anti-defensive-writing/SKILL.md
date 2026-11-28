@@ -25,7 +25,7 @@ comparison and finding. Explain necessary terms at first use.
 
 ## Research_System integration
 
-This is an editing helper. The existing Focus, Anchor, experiment or meeting
+This is an editing helper. The existing exploration log, Anchor, experiment or meeting
 owner continues to determine purpose, evidence and scientific state. Use the
 [shared writing contract](../../../docs/report_writing.md) and the requested
 [result review mode](../../../docs/research_analysis_review_contract.md#review-mode).

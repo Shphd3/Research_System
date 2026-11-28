@@ -7,10 +7,10 @@ System 与 `Projects/` 下的研究项目是独立仓库。只取得 System，�
 本地项目配置的上游是 [BinaryCheater/from-attention-to-search](https://github.com/BinaryCheater/from-attention-to-search)，
 分支为 `Xingyu`。本地修改只有在另行请求提交和推送后才会上游可见，读取仍需要相应仓库权限。
 
-`ntp-learning-mechanisms` 位于 `Projects/ntp_learning_mechanisms/`。
-从[项目路线](../Projects/ntp_learning_mechanisms/main/roadmap_cn.md)或
-[中文入口](../Projects/ntp_learning_mechanisms/README_cn.md)读取；
-[资产清单](../Projects/ntp_learning_mechanisms/asset_manifest.json)继续持有该项目的运行资产身份。
+`ntp-learning-mechanisms` 位于 `Projects/archive/ntp_learning_mechanisms/`。
+从[项目路线](../Projects/archive/ntp_learning_mechanisms/main/roadmap_cn.md)或
+[中文入口](../Projects/archive/ntp_learning_mechanisms/README_cn.md)读取；
+[资产清单](../Projects/archive/ntp_learning_mechanisms/asset_manifest.json)继续持有该项目的运行资产身份。
 主机绝对路径由项目内不入 Git 的 `.local/asset_locations.json` 保存；迁移后更新其中的根路径，
 再用项目的 `tools/asset_workflow.py verify` 检查大小与哈希。
 历史小写路径 `projects/ntp_learning_mechanisms/` 及其下的文件可用 `tools/research_paths.py` 查询新位置。

@@ -6,7 +6,7 @@ description: "Inspect or maintain a research graph when the user asks for graph 
 # Research Graph
 
 Keep the graph a small navigation map. Scientific judgments and evidence remain
-in their owning Focus, Anchor, Protocol and result records; a tidy graph cannot
+in their owning exploration log, Anchor, Protocol and result records; a tidy graph cannot
 confirm a claim or choose a research direction.
 
 ## Choose the requested operation

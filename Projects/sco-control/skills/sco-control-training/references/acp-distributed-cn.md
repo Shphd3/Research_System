@@ -9,6 +9,8 @@
 3. 为四个 Worker 分配互不重复的 `node_rank=0,1,2,3`。如果共用 AFS，由提交方把四个 Pod IP 按 rank 排列为一个 JSON 字符串数组，以临时文件原子重命名发布。每个 Worker 用自己的 Pod IP 查 rank。跨账号不共享 AFS 时，双方可交换本次的四个 Pod IP、端口和 rank 表，分别写到自己账号的可读路径，或在各自 Worker 的终端传参启动。训练时数据与初始权重仍需按同一运行配置准备，梯度通过 NCCL 通信。
 4. 每个 Worker 清除平台为各自作业预置的会合参数，再用统一参数启动。以下变量应由脚本从本次清单取得，或在该 Worker 终端显式设置。
 
+正式跨账号联训先选定主账号的 AOSS 桶，同一训练组共用一个运行前缀，并按 [多账号 AOSS 配置](aoss-storage-cn.md#多账号训练指定主账号的-aoss) 验证每个 Worker 的读取和所需的写入权限。
+
 两项作业的 SCO 提交参数均使用 `--worker-nodes 2`，`--worker-spec` 填该池的一卡规格，`--command` 填下文的 To run 命令。分别传入 `--quota-type spot` 和 `--quota-type reserved`，并为每项作业设置不同的 `--job-name`。默认 AFS 挂载参数为 `--storage-mount "<卷 ID>:/data"`。提交一项后记录作业 ID。另一项若被拒绝，可停止这次已提交的探针，释放等待资源。
 
 ```bash

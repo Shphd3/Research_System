@@ -10,10 +10,10 @@ The local project's configured upstream is
 on branch `Xingyu`. Local edits appear upstream only after separately requested
 commits and pushes; repository access is still required.
 
-`ntp-learning-mechanisms` is checked out at `Projects/ntp_learning_mechanisms/`.
-Start at its [roadmap](../Projects/ntp_learning_mechanisms/main/roadmap.md) or
-[Chinese entry](../Projects/ntp_learning_mechanisms/README_cn.md). Its
-[asset manifest](../Projects/ntp_learning_mechanisms/asset_manifest.json) remains
+`ntp-learning-mechanisms` is checked out at `Projects/archive/ntp_learning_mechanisms/`.
+Start at its [roadmap](../Projects/archive/ntp_learning_mechanisms/main/roadmap.md) or
+[Chinese entry](../Projects/archive/ntp_learning_mechanisms/README_cn.md). Its
+[asset manifest](../Projects/archive/ntp_learning_mechanisms/asset_manifest.json) remains
 the runtime-asset authority. The ignored `.local/asset_locations.json` inside
 that checkout holds this host's absolute roots; update those roots after a move,
 then use the project's `tools/asset_workflow.py verify` to check size and hashes.

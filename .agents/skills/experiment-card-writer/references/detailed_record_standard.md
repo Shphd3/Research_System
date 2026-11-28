@@ -158,7 +158,7 @@ day-by-day execution diary:
 A round that records items 1-4 and `NOT RUN` is a **complete** round. A completed
 round carries all six. Never fabricate a result; `NOT RUN` is a valid and
 complete state. Do not duplicate the full round history into `summary.md` or
-into the Focus.
+into the project question index.
 
 ## 11. Interpretation
 

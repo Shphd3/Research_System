@@ -16,7 +16,7 @@
 
 混合配额请求仍采用每作业两节点、每节点一张 H100。2026 年 11 月 16 日，Spot 作业 `pt-n4prpyoo` 创建成功，Reserved 创建返回 `MEMBER_QUOTA_EXCEEDED`，请求两卡、44 核，剩余零卡、零核。Spot 随后停止到 `SUSPENDED`。本轮未组成四秩进程组，混合配额的 RDMA 和训练效率均待验证。 [计划](/data/250010109/MoE_Router/experiments/1115_acp_independent_jobs/h100-mixed-quota-NSPQOWio/plan.md) · [Reserved 拒绝回执](/data/250010109/MoE_Router/experiments/1115_acp_independent_jobs/h100-mixed-quota-NSPQOWio/compare-8ef8379672ac/pair-1/create-1.log) · [Spot 终态](/data/250010109/MoE_Router/experiments/1115_acp_independent_jobs/h100-mixed-quota-NSPQOWio/compare-8ef8379672ac/pair-1/terminal-0.json)
 
-提交命令、To run、rank/IP 分配与 NCCL 日志判定见 [SCO 跨作业手册](../Projects/sco-control/skills/sco-control/references/acp-distributed-cn.md)。
+提交命令、To run、rank/IP 分配与 NCCL 日志判定见 [SCO 跨作业手册](../Projects/sco-control/skills/sco-control-training/references/acp-distributed-cn.md)。
 
 ## AOSS 的入口按产品区分
 

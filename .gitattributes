@@ -9,3 +9,6 @@
 
 # Reading bundles carry byte-exact sources and hashes.
 sync/** -text
+
+# Imported theory originals are verified byte-for-byte against source_documents.tsv.
+research/small-model-moe/sources/theory/*/** -text -whitespace

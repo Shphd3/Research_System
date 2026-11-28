@@ -14,9 +14,10 @@ The bundled references are intentionally small. They capture practical command p
 
 ## 操作指南
 
+- [ACP 训练设备清单与默认优先级](skills/sco-control-training/references/training-devices-cn.md)
 - [RTX 5090 多节点训练与 Socket 调优](skills/sco-control-training/references/rtx5090-training-cn.md)
 - [ACP 双任务互联、RDMA 和短训验收](skills/sco-control-training/references/acp-distributed-cn.md)
-- [ACP、CCI 的 AOSS 挂载与 AFS 对照测速](skills/sco-control-training/references/aoss-storage-cn.md)
+- [ACP、CCI 的 AOSS 挂载、多账号主桶与 AFS 对照测速](skills/sco-control-training/references/aoss-storage-cn.md)
 
 此版本保留 [BinaryCheater/sco-skill](https://github.com/BinaryCheater/sco-skill) 的 MIT 许可和原作者署名。已同步上游通用流程至 `1d6bb6a`，并保留本仓库的训练和存储配方。
 

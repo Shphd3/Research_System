@@ -7,6 +7,7 @@ description: "Audit research purposes, hypotheses, causal or mathematical mechan
 
 Clarify the inference before polishing. A quick question needs no new artifact.
 Lead with the most useful conditional explanation, then audit the decisive step.
+For a narrow question, report that step and the source or comparison that would settle it.
 
 ## Checks (only those that could change the conclusion or next decision)
 

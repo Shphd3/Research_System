@@ -10907,6 +10907,26 @@
       "date": "2026-11-09",
       "source_sha256": "d2906b5c35a376fed856d7c3b2e55bbde61b41eb6d0422b4eba0a72d1ee20a46",
       "scientific_state_changed": false
+    },
+    {
+      "old": "--help",
+      "new": "research/from-attention-to-search/main/experiments/A17/17_10_shared_update_conditional_interference/historical_checks/numerical_core_torch_2_3.json",
+      "role": "historical_numerical_check",
+      "source_sha256": "09a82c1dfcacb298f0fac3c4d9a0590ccf25423ea1701d1492a0d999f8c78687",
+      "date": "2026-11-28"
+    },
+    {
+      "old": "checks/numerical_core.json",
+      "new": "research/from-attention-to-search/main/experiments/A17/17_10_shared_update_conditional_interference/historical_checks/numerical_core_torch_2_3.json",
+      "role": "historical_numerical_check",
+      "source_sha256": "09a82c1dfcacb298f0fac3c4d9a0590ccf25423ea1701d1492a0d999f8c78687",
+      "date": "2026-11-28"
+    },
+    {
+      "old": "Projects/README_local_worktrees.md",
+      "new": "Projects/README.md",
+      "role": "project_directory_index",
+      "date": "2026-11-28"
     }
   ],
   "maintenance": "Existing historical rows preserved; appended 2026-10-22 numbered organization, exact-file and directory-prefix relocation chains. Appended 2026-11-09 process-record archive moves (docs/archive/process_records/). Appended 2026-11-09 Focus retirement (directory relocation to execution-side archive).",
@@ -11265,6 +11285,75 @@
       "role": "historical_execution_surface_stays_in_project",
       "date": "2026-11-09",
       "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/Ruijun_Separable_Gating",
+      "new": "Projects/archive/Ruijun_Separable_Gating",
+      "role": "archived_project",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/decommon-router-training",
+      "new": "Projects/archive/decommon-router-training",
+      "role": "archived_project",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/decommon-router-evaluation",
+      "new": "Projects/archive/decommon-router-evaluation",
+      "role": "archived_project",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/diffusion-language-models",
+      "new": "Projects/archive/diffusion-language-models",
+      "role": "archived_project",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/kv_cache_main_latest",
+      "new": "Projects/kv_cache",
+      "role": "consolidated_checkout",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/kv_cache",
+      "new": "Projects/archive/kv_cache",
+      "role": "archived_project",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/sco-skill",
+      "new": "Projects/archive/sco-skill",
+      "role": "archived_project",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/ntp_learning_mechanisms",
+      "new": "Projects/archive/ntp_learning_mechanisms",
+      "role": "archived_project",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "Projects/router-representation-coupling",
+      "new": "Projects/archive/router-representation-coupling",
+      "role": "archived_project",
+      "date": "2026-11-28",
+      "scientific_state_changed": false
+    },
+    {
+      "old": "acp_receipts",
+      "new": "/data/250010109/MoE_Router/storage_cleanup_receipts/20261128_research_system_root/acp_receipts",
+      "role": "execution_receipts",
+      "date": "2026-11-28"
     }
   ]
 }

@@ -67,6 +67,6 @@ rival and a distinguishing prediction. Make clear what this adds to understandin
 For other requests, finish when the user's question is answered. A comprehension
 check or precise zoom-in menu is useful when teaching is requested, not a gate.
 
-This skill does not edit, approve or change Focus, Anchor, Protocol, results or
+This skill does not edit, approve or change the active question, Anchor, Protocol, results or
 execution state. Switch to the owning artifact skill only if the user requests
 that work; a brief explanation does not automatically require it.

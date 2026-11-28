@@ -6,9 +6,9 @@ System owns shared process and access; daily folders own dated communication.
 ## Stable project layout
 
 ```text
-Projects/<project>/main/
+research/<project>/main/
   roadmap.md                         project workstreams and reading route
-  focus/focus_<problem>.md            stable question and researcher decision
+  explore/MMDD_<question>/log.md      working question, prediction and decision
   problem_anchors/<line>/<question>/  sole design and any settled-question report
   experiments/<line>/<question>/<experiment>/
     protocol.md
@@ -35,10 +35,7 @@ experiment IDs with their recorded owner and reason; do not mechanically
 renumber them merely to match a newer folder style. Supporting notes never
 replace a formal owner. Do not invent new Anchors to fill a directory.
 
-A Focus keeps its problem_key and project path across meetings, dates and model
-switches. Move an existing Focus only as part of authorized reorganization, with
-old/new paths recorded. A translation is a companion, not another question.
-Retained legacy records do not become current merely by appearing in an index.
+Projects/<project>/ owns runnable source, configs and the replay command. Register the actual run location and code revision with the named experiment and its Anchor. Record old/new paths when moving an experiment. Historical Focus records retain their original identity.
 
 ## Daily reading
 

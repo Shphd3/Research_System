@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>
+      科研系统组织图
+    </title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f7f6ef;
+        color: #1c342d;
+        font: 16px/1.65 "Source Sans 3","Noto Sans CJK SC",sans-serif;
+      }
+      main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 34px clamp(18px,4vw,58px) 55px;
+      }
+      header {
+        border-bottom: 1px solid #adc0b2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 12px;
+        font-size: .88rem;
+      }
+      a {
+        color: #145544;
+        text-underline-offset: 4px;
+      }
+      h1 {
+        font: 600 clamp(2.5rem,6vw,4.6rem)/1.1 "Noto Serif CJK SC",serif;
+        letter-spacing: -.055em;
+        margin: 38px 0 14px;
+      }
+      h2 {
+        font-size: 1.42rem;
+        margin: 32px 0 12px;
+      }
+      p {
+        margin: 8px 0 20px;
+      }
+      .layers {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1px;
+        background: #b9c7bc;
+        border: 1px solid #b9c7bc;
+      }
+      .layer {
+        display: block;
+        padding: 15px 18px;
+        background: #edf2e8;
+        text-decoration: none;
+      }
+      .layer:hover,.layer:focus-visible {
+        background: #e0e8d9;
+      }
+      code {
+        font: .82rem/1.5 "IBM Plex Mono",monospace;
+        overflow-wrap: anywhere;
+        display: block;
+        color: #4a6258;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0 0 14px;
+      }
+      button {
+        border: 1px solid #aebeb3;
+        background: transparent;
+        border-radius: 25px;
+        padding: 6px 12px;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+      button[aria-pressed=true] {
+        background: #234e42;
+        color: white;
+      }
+      button b {
+        font-size: .77rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th {
+        text-align: left;
+        font-size: .83rem;
+        color: #54665e;
+        background: #e9ece3;
+      }
+      th,td {
+        padding: 12px 9px;
+        border-bottom: 1px solid #cdd5cb;
+      }
+      td:first-child {
+        width: 65px;
+      }
+      td:nth-child(2) {
+        width: 35%;
+      }
+      td a {
+        font-weight: 650;
+      }
+      .tag {
+        font-size: .8rem;
+        color: #174d3f;
+        background: #deeade;
+        padding: 3px 7px;
+        white-space: nowrap;
+      }
+      .g1 {
+        color: #2b5370;
+        background: #dfeaf0;
+      }
+      .g2 {
+        color: #675426;
+        background: #f2ead8;
+      }
+      .g3 {
+        background: #e6e3e0;
+        color: #584f4b;
+      }
+      .note {
+        margin-top: 24px;
+        border-left: 3px solid #957c4a;
+        padding: 6px 16px;
+        background: #efede2;
+      }
+      footer {
+        font-size: .9rem;
+        margin-top: 28px;
+      }
+      @media (max-width:680px) {
+        .layers {
+          grid-template-columns: repeat(2,1fr);
+        }
+        td,th {
+          padding: 8px 4px;
+        }
+        td:nth-child(2) {
+          width: 40%;
+        }
+        td:last-child {
+          font-size: .86rem;
+        }
+        .layer {
+          padding: 12px 9px;
+        }
+      }
+      @media print {
+        nav {
+          display: none;
+        }
+        tr[hidden] {
+          display: table-row;
+        }
+      }
+      .flow {
+        list-style: none;
+        margin: 16px 0 24px;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3,minmax(0,1fr));
+        grid-template-areas: "a b c" "f e d";
+        gap: 36px 30px;
+      }
+      .flow li {
+        position: relative;
+        padding: 15px 16px;
+        border: 1px solid #a8bbae;
+        border-top: 4px solid #49775d;
+        background: #fffefa;
+      }
+      .flow li:nth-child(1) {
+        grid-area: a;
+      }
+      .flow li:nth-child(2) {
+        grid-area: b;
+      }
+      .flow li:nth-child(3) {
+        grid-area: c;
+      }
+      .flow li:nth-child(4) {
+        grid-area: d;
+        border-top-color: #a57830;
+      }
+      .flow li:nth-child(5) {
+        grid-area: e;
+      }
+      .flow li:nth-child(6) {
+        grid-area: f;
+      }
+      .flow li p {
+        font-size: .9rem;
+        margin: 6px 0;
+      }
+      .flow li:after {
+        position: absolute;
+        color: #557164;
+        font-size: 21px;
+        line-height: 1;
+      }
+      .flow li:nth-child(1):after,.flow li:nth-child(2):after {
+        content: "→";
+        left: calc(100% + 4px);
+        top: 45%;
+      }
+      .flow li:nth-child(3):after {
+        content: "↓";
+        left: 48%;
+        top: calc(100% + 7px);
+      }
+      .flow li:nth-child(4):after,.flow li:nth-child(5):after {
+        content: "←";
+        right: calc(100% + 4px);
+        top: 45%;
+      }
+      .example {
+        padding: 12px 16px;
+        background: #e8eee6;
+      }
+      .example code {
+        display: inline;
+      }
+      .flow strong {
+        display: block;
+        color: #204f40;
+      }
+      @media (max-width:760px) {
+        .flow {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+        .flow li:not(:last-child):after {
+          content: "↓";
+          left: 48%;
+          top: calc(100% + 1px);
+          right: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <strong>
+          Research System
+        </strong>
+        <time datetime="2026-11-28">
+          2026 年 11 月 28 日
+        </time>
+      </header>
+      <h1>
+        科研系统组织图
+      </h1>
+      <p>
+        推进当前小模型问题，从
+        <a href="../research/small-model-moe/README.md">
+          研究入口
+        </a>
+        阅读推导与证据，从
+        <a href="../Projects/small_model/users/">
+          组内协作仓
+        </a>
+        核对实现。
+      </p>
+      <h2>
+        按任务找位置
+      </h2>
+      <section class="layers">
+        <a class="layer" href="../Projects/README.md">
+          <b>
+            研究代码与协作仓
+          </b>
+          <code>
+            Projects/
+          </code>
+        </a>
+        <a class="layer" href="../research/">
+          <b>
+            探索日志、设计与证据
+          </b>
+          <code>
+            research/
+          </code>
+        </a>
+        <a class="layer" href="../daily_research_reports/README_cn.md">
+          <b>
+            按日期查组会
+          </b>
+          <code>
+            daily_research_reports/
+          </code>
+        </a>
+        <a class="layer" href="../assets/README_cn.md">
+          <b>
+            定位模型与数据
+          </b>
+          <code>
+            assets/
+          </code>
+        </a>
+        <a class="layer" href="../AGENTS.md">
+          <b>
+            系统规则、核验与模板
+          </b>
+          <code>
+            docs/ · tools/ · templates/
+          </code>
+        </a>
+        <a class="layer" href="../../MoE_Router/">
+          <b>
+            执行侧原始输出与存档
+          </b>
+          <code>
+            MoE_Router/
+          </code>
+        </a>
+      </section>
+      <p>
+        <a href="../papers/">
+          论文资料
+        </a>
+        ·
+        <a href="../paper_reading/">
+          阅读笔记
+        </a>
+        ·
+        <a href="../templates/">
+          实验模板
+        </a>
+        ·
+        <a href="../tools/">
+          核验脚本
+        </a>
+        ·
+        <a href="../.research/memory/conversations/">
+          会话记忆
+        </a>
+      </p>
+      <section aria-labelledby="workflow">
+        <h2 id="workflow">
+          一项实验如何追溯到研究问题
+        </h2>
+        <ol aria-label="从研究设计、运行到归档的顺序" class="flow">
+          <li>
+            <strong>
+              Anchor · 定义问题
+            </strong>
+            <p>
+              为可证伪的问题保留稳定编号、原文路径和判定条件。Anchor 登记它所拥有的实验。
+            </p>
+          </li>
+          <li>
+            <strong>
+              实验名 · 对应 Anchor
+            </strong>
+            <p>
+              每项实验有唯一名称。Protocol 开头写明所属 Anchor 的编号与链接，约定比较对象、预期与判断标准。
+            </p>
+          </li>
+          <li>
+            <strong>
+              项目代码 · 可执行入口
+            </strong>
+            <p>
+              在 Projects 下的项目仓保存启动脚本、配置、依赖和复现命令。记录代码版本、配置路径及输入资产编号。
+            </p>
+          </li>
+          <li>
+            <strong>
+              执行 · 可在项目之外
+            </strong>
+            <p>
+              在执行工作区按同一版本运行。记录实验名、运行 ID、实际目录和输出清单。日志、原始结果和检查点可保存在执行侧。
+            </p>
+          </li>
+          <li>
+            <strong>
+              结果 · 回到实验目录
+            </strong>
+            <p>
+              Summary 和 Detailed 回链 Anchor、Protocol、代码版本和运行记录。精选证据随记录保留，大文件通过资产编号与位置定位。
+            </p>
+          </li>
+          <li>
+            <strong>
+              版本与归档 · 保留来路
+            </strong>
+            <p>
+              检查正式记录及项目代码可被所属 Git 仓跟踪，核对相对链接和复现入口。获授权后提交并推送。归档时一并保留 Git 历史、启动入口和路径映射。在新位置复跑最小示例，检查依赖与输入路径。
+            </p>
+          </li>
+        </ol>
+        <p class="example">
+          <b>
+            已归档的真实例子
+          </b>
+          <code>
+            router_representation_gradient_feedback
+          </code>
+          的
+          <a href="../Projects/archive/router-representation-coupling/main/experiments/router_representation_gradient_feedback/protocol.md">
+            Protocol
+          </a>
+          明确链接
+          <a href="../Projects/archive/router-representation-coupling/main/problem_anchors/router_representation_gradient_feedback/anchor.md">
+            所属 Anchor
+          </a>
+          。同一实验目录保留
+          <a href="../Projects/archive/router-representation-coupling/main/experiments/router_representation_gradient_feedback/summary.md">
+            结果摘要
+          </a>
+          与
+          <a href="../Projects/archive/router-representation-coupling/main/experiments/router_representation_gradient_feedback/detailed.md">
+            证据明细
+          </a>
+          。
+        </p>
+      </section>
+      <h2>
+        项目目录
+      </h2>
+      <nav aria-label="筛选项目">
+        <button aria-pressed="true" data-key="全部" type="button">
+          全部
+          <b>
+            14
+          </b>
+        </button>
+        <button aria-pressed="false" data-key="研究" type="button">
+          研究
+          <b>
+            2
+          </b>
+        </button>
+        <button aria-pressed="false" data-key="协作" type="button">
+          协作
+          <b>
+            1
+          </b>
+        </button>
+        <button aria-pressed="false" data-key="工具" type="button">
+          工具
+          <b>
+            3
+          </b>
+        </button>
+        <button aria-pressed="false" data-key="归档" type="button">
+          归档
+          <b>
+            8
+          </b>
+        </button>
+      </nav>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              用途
+            </th>
+            <th>
+              项目入口
+            </th>
+            <th>
+              何时使用
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-group="研究">
+            <td>
+              <span class="tag g0">
+                研究
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/small-model-moe/README.md">
+                小模型 · 长尾特征如何分给专家
+              </a>
+              <code>
+                small-model-moe
+              </code>
+            </td>
+            <td>
+              本轮问题、理论原件和消融候选从这里读。
+            </td>
+          </tr>
+          <tr data-group="协作">
+            <td>
+              <span class="tag g1">
+                协作
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/small_model/users/">
+                小模型组内协作
+              </a>
+              <code>
+                small_model
+              </code>
+            </td>
+            <td>
+              CHJ、HRJ 与其他成员的代码和阶段结果按作者归集。
+            </td>
+          </tr>
+          <tr data-group="研究">
+            <td>
+              <span class="tag g0">
+                研究
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/from-attention-to-search/main/roadmap_cn.md">
+                表征、路由与注意力
+              </a>
+              <code>
+                from-attention-to-search
+              </code>
+            </td>
+            <td>
+              原有研究路线、实验设计和结果的出处。
+            </td>
+          </tr>
+          <tr data-group="工具">
+            <td>
+              <span class="tag g2">
+                工具
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/sco-control/skills/sco-control-training/SKILL.md">
+                SCO 训练手册
+              </a>
+              <code>
+                sco-control
+              </code>
+            </td>
+            <td>
+              本机已安装 sco-control-training。多节点 ACP、H100 RDMA 与跨作业训练从这里进入。
+            </td>
+          </tr>
+          <tr data-group="工具">
+            <td>
+              <span class="tag g2">
+                工具
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/graphs/README.md">
+                跨项目研究图
+              </a>
+              <code>
+                graphs
+              </code>
+            </td>
+            <td>
+              多个研究主题共用的图文件和阅读入口。
+            </td>
+          </tr>
+          <tr data-group="工具">
+            <td>
+              <span class="tag g2">
+                工具
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/research-exploration-skill/README.md">
+                研究流程参考
+              </a>
+              <code>
+                research-exploration-skill
+              </code>
+            </td>
+            <td>
+              保留外部方法来源及脚本，供探索流程对照。
+            </td>
+          </tr>
+          <tr data-group="归档">
+            <td>
+              <span class="tag g3">
+                归档
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/archive/ntp_learning_mechanisms/main/roadmap_cn.md">
+                下一词预测的学习机制
+              </a>
+              <code>
+                ntp_learning_mechanisms
+              </code>
+            </td>
+            <td>
+              独立项目的路线图和证据记录。
+            </td>
+          </tr>
+          <tr data-group="归档">
+            <td>
+              <span class="tag g3">
+                归档
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/archive/router-representation-coupling/README.md">
+                路由与表征的梯度反馈
+              </a>
+              <code>
+                router-representation-coupling
+              </code>
+            </td>
+            <td>
+              保留既有对照、配置和结果，供机制比较。
+            </td>
+          </tr>
+          <tr data-group="归档">
+            <td>
+              <span class="tag g3">
+                归档
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/archive/kv_cache/">
+                KV cache 协作参考
+              </a>
+              <code>
+                kv_cache
+              </code>
+            </td>
+            <td>
+              已拉取 main 至 a252bae。两个原检出合为一处，本地仅保留 main。
+            </td>
+          </tr>
+          <tr data-group="归档">
+            <td>
+              <span class="tag g3">
+                归档
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/archive/sco-skill/skills/sco-control/SKILL.md">
+                SCO 资源与任务控制
+              </a>
+              <code>
+                sco-skill
+              </code>
+            </td>
+            <td>
+              保留旧版技能与 Git 历史。公开指南保存在 Git 分支 sco-multi-account-guide。
+            </td>
+          </tr>
+          <tr data-group="归档">
+            <td>
+              <span class="tag g3">
+                归档
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/archive/Ruijun_Separable_Gating/_history_by_major_definition_20260613/">
+                可分门控研究
+              </a>
+              <code>
+                Ruijun_Separable_Gating
+              </code>
+            </td>
+            <td>
+              需要复核特征定义或旧探针时，从原研究索引进入。
+            </td>
+          </tr>
+          <tr data-group="归档">
+            <td>
+              <span class="tag g3">
+                归档
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/archive/decommon-router-training/README.md">
+                Decommon 训练实现
+              </a>
+              <code>
+                decommon-router-training
+              </code>
+            </td>
+            <td>
+              复用数据加载、检查点或训练脚手架时查阅。
+            </td>
+          </tr>
+          <tr data-group="归档">
+            <td>
+              <span class="tag g3">
+                归档
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/archive/decommon-router-evaluation/README.md">
+                Decommon 评估实现
+              </a>
+              <code>
+                decommon-router-evaluation
+              </code>
+            </td>
+            <td>
+              复用留出评测与下游测试流程时查阅。
+            </td>
+          </tr>
+          <tr data-group="归档">
+            <td>
+              <span class="tag g3">
+                归档
+              </span>
+            </td>
+            <td>
+              <a href="../Projects/archive/diffusion-language-models/main/roadmap.md">
+                扩散语言模型
+              </a>
+              <code>
+                diffusion-language-models
+              </code>
+            </td>
+            <td>
+              恢复该方向讨论时读取原路线图。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">
+        此表按共享工作区展示。独立代码仓保有各自的 Git 历史，运行产物按实验记录在执行盘定位。Projects/archive/ 集中保存八个项目。scholar-mode 工程已移出工作区，研究讨论仍可使用系统内的
+        <a href="../.agents/skills/scholar-mode/SKILL.md">
+          scholar-mode 技能
+        </a>
+        。多节点训练使用
+        <a href="../Projects/sco-control/skills/sco-control-training/SKILL.md">
+          sco-control-training
+        </a>
+        。日常操作可从指定文件直接开始，专门任务按
+        <a href="skills.md">
+          技能索引
+        </a>
+        进入。
+      </p>
+      <footer>
+        <a href="../PROJECTS.md">
+          系统项目表
+        </a>
+        ·
+        <a href="../Projects/archive/README.md">
+          归档索引
+        </a>
+        ·
+        <a href="training_reuse_index.md">
+          训练复用索引
+        </a>
+      </footer>
+    </main>
+    <script>
+      const filters = document.querySelectorAll("button[data-key]");
+      const projects = document.querySelectorAll("tr[data-group]");
+
+      for (const selected of filters) {
+        selected.addEventListener("click", () => {
+          for (const filter of filters) {
+            filter.setAttribute("aria-pressed", String(filter === selected));
+          }
+          const group = selected.dataset.key;
+          for (const project of projects) {
+            project.hidden = group !== "全部" && project.dataset.group !== group;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

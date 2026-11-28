@@ -1,0 +1,12 @@
+panel,condition,training_tokens,value,lo95,hi95,unit,source
+A,one_parent,,0.3601194619913138,,,fraction,/data/250010109/MoE_Router/experiments/1126_sae_feature_clusters/night_overlap/table3_routing.csv
+A,free,,0.44685363394893474,,,fraction,/data/250010109/MoE_Router/experiments/1126_sae_feature_clusters/night_overlap/table3_routing.csv
+B,Overall,500000000,-0.058738059886955206,-0.06040932828648373,-0.05715435080053372,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_500000000.csv
+B,Rare target word,500000000,-0.10686254418554429,-0.11170309204314043,-0.10214595388734679,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_500000000.csv
+B,Low-frequency SAE,500000000,-0.10481740185114155,-0.10826764350663254,-0.10116237946827994,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_500000000.csv
+B,Overall,1000000000,-0.02853155467373566,-0.030327024442865724,-0.026930721882510607,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_1000000000.csv
+B,Rare target word,1000000000,-0.05454298308620893,-0.05906777668503243,-0.04988761602867224,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_1000000000.csv
+B,Low-frequency SAE,1000000000,-0.05346842227672254,-0.05706791715506761,-0.04997089720940709,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_1000000000.csv
+B,Overall,3000000000,-0.007795341742361131,-0.009290467477925913,-0.006313953834715945,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_3000000000.csv
+B,Rare target word,3000000000,-0.0265990272228233,-0.031824161614496846,-0.022400461439815708,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_3000000000.csv
+B,Low-frequency SAE,3000000000,-0.020099385732941146,-0.023052768752727628,-0.01725667118128349,nat,/data/250010109/MoE_Router/experiments/1127_qwen_hd4_oracle/runs/formal/Qwen-HD4-Oracle/paired_3000000000.csv

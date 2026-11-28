@@ -9,7 +9,7 @@ one-off formats belong in their original records, not in a template archive.
 | Template | Use only when |
 |---|---|
 | `research_process/task_start_template.md` | The researcher opens a conversation and wants one task clarified and advanced from minimal context. |
-| `research_process/focus_writing_template.md` | The researcher activates or resets one workstream question. |
+| [Explore log](explore_log_cn.md) | An actual exploration begins or continues under an active question. |
 | `research_process/experiment_summary_template.md` / `_cn.md` companion | A complete experiment Summary is written or revised in Purpose → Model → Hypothesis → Conclusion → Analysis order. |
 | `research_process/parking_lot_template.md` | A project needs a concise list of consequential inactive questions and has no local format. |
 | `research_process/continuation_brief_template.md` | A workstream is handed to a different conversation and needs one current entry point. |
@@ -23,9 +23,7 @@ one-off formats belong in their original records, not in a template archive.
 
 - Templates shape a requested artifact; they do not require an artifact for a
   narrow answer, local diagnosis, or temporary exploration.
-- A Focus stores `task_state`, `question_state`, `design_state`, and
-  `result_state`. Protocol approval and execution status remain in their own
-  files.
+- The exploration log records predictions and the researcher’s decision. The Protocol records execution approval; the experiment record identifies the actual run.
 - The Anchor is the sole canonical current research design. No template creates
   a parallel `design.md`.
 - Meeting and reading templates cannot create or strengthen scientific claims.

@@ -43,6 +43,9 @@ __pycache__/
 .ruff_cache/
 .side/
 .research/runtime/
+/acp_receipts/
+/--help
+/claude
 
 # Local environments
 .venv/
@@ -53,6 +56,19 @@ env/
 # hub and explicitly curated course-delivery projects visible to this root
 # research-system repo.
 Projects/*
+!Projects/README.md
+!Projects/archive/
+Projects/archive/*
+!Projects/archive/README.md
+!Projects/archive/router-representation-coupling/
+!Projects/archive/router-representation-coupling/**
+!Projects/small-model-moe/
+Projects/small-model-moe/*
+!Projects/small-model-moe/README.md
+!Projects/small-model-moe/AGENTS.md
+!Projects/small-model-moe/code/
+!Projects/small-model-moe/main
+!Projects/small-model-moe/research
 !Projects/sco-control/
 !Projects/sco-control/**
 !Projects/graphs/
@@ -69,6 +85,14 @@ Projects/academic_writing/**/exports/
 Projects/academic_writing/**/*.zip
 Projects/academic_writing/**/*.pdf
 Projects/academic_writing/**/~$*
+
+# The imported working-tree snapshot and original meeting attachments live on shared storage.
+/research/small-model-moe/history/2026-11-28_from-attention-to-search/*
+!/research/small-model-moe/history/2026-11-28_from-attention-to-search/copy_verification.json
+/research/small-model-moe/sources/meetings/*
+!/research/small-model-moe/sources/meetings/README.md
+
+!/research/small-model-moe/main/explore/1128_feature_grouping/figures/feature_grouping.pdf
 
 # Daily research: retain canonical Markdown and scripts, keep generated payloads local.
 /daily_research_reports/**/*.csv

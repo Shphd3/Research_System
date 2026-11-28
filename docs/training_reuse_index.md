@@ -1,6 +1,6 @@
 # Model Training Reuse Index
 
-> **2026-10-31 storage retirement:** The old decommon runs, training configs and launchers were removed at the researcher's request. Only reusable model/data/checkpoint source and evaluation tools remain at the original sibling paths. Old scientific records below resolve to a byte-preserving archive; historical approvals do not authorize new work. Actual spectral routing is in the separate early spectral execution packages, not the decommon source. [Cleanup receipt](/data/250010109/MoE_Router/storage_cleanup_receipts/20261031T033809Z_decommon_academic_order/completion.json).
+> **2026-10-31 storage retirement:** The old decommon runs, training configs and launchers were removed at the researcher's request. Only reusable model/data/checkpoint source and evaluation tools are retained in the archived project directories linked below. Old scientific records below resolve to a byte-preserving archive; historical approvals do not authorize new work. Actual spectral routing is in the separate early spectral execution packages, not the decommon source. [Cleanup receipt](/data/250010109/MoE_Router/storage_cleanup_receipts/20261031T033809Z_decommon_academic_order/completion.json).
 
 
 Verified locally: 2026-09-12
@@ -12,10 +12,10 @@ Code, datasets, checkpoints, and raw runs remain in their original workspaces.
 
 ## Start Here
 
-Read these four sources first:
+Choose the source that matches the work. For a new training run also read the execution and observability contracts:
 
-1. [Source audit](../Projects/decommon-router-training/docs/source_audit.md) — what the clean trainer reused from the older project and where the historical runtime evidence lives.
-2. [Training scaffold README](../Projects/decommon-router-training/README.md) — current code layout, supported training path, tests, and known retired configurations.
+1. [Source audit](../Projects/archive/decommon-router-training/docs/source_audit.md) — what the clean trainer reused from the older project and where the historical runtime evidence lives.
+2. [Training scaffold README](../Projects/archive/decommon-router-training/README.md) — current code layout, supported training path, tests, and known retired configurations.
 3. [Execution envelope](execution_envelope.md) — the current compute profile, image, runtime layer, and only supported submission entry point.
 4. [Training observability contract](training_observability_contract.md) — required TensorBoard loss tags and the valid-token comparison coordinate.
 
@@ -26,10 +26,10 @@ or **not reused**, and why.
 
 | Priority | Source | Reuse for | Boundary |
 |---|---|---|---|
-| 1 | `Projects/decommon-router-training/` | Data loading, distributed training, checkpoint/resume, provenance, health guards, launch structure | Best engineering reference. Its old production pairs are retired, and the whole directory is ignored by the root Git repository; verify that it exists in the current environment. |
+| 1 | `Projects/archive/decommon-router-training/` | Data loading, distributed training, checkpoint/resume, provenance, health guards, launch structure | Best engineering reference. Its old production pairs are retired, and the whole directory is ignored by the root Git repository; verify that it exists in the current environment. |
 | 2 | `/data/250010109/MoE_Router/` | Original Qwen3 MoE semantics and older training behavior | Execution workspace, not a current Git repository. Reuse selected code only after source inspection. |
 | 3 | `/mnt/bucket/MoE_Router/experiments/active/exp_hierarchical/2026-05-05-real_dclm_qwen3_hier_moe/` | Actual historical configs, launcher, logs, and checkpoints from a stable training family | Mounted historical record. Runtime artifacts outrank its planning files, but its architecture and submission environment are old. |
-| 4 | `Projects/decommon-router-evaluation/` | Held-out loss and downstream-evaluation pipeline | Evaluation only; it does not authorize or launch training. |
+| 4 | `Projects/archive/decommon-router-evaluation/` | Held-out loss and downstream-evaluation pipeline | Evaluation only; it does not authorize or launch training. |
 
 The 0912 draft under `daily_research_reports/0912/docs/code/` is a design
 reference, not yet a runnable package: its imports expect missing `model/`,
@@ -66,17 +66,17 @@ result.
 
 | Need | Preferred source |
 |---|---|
-| Training loop and distributed execution | `Projects/decommon-router-training/src/decommon_router/train.py` |
-| Packed binary-token loader and sampler | `Projects/decommon-router-training/src/decommon_router/data.py` |
-| Frozen data-view checks | `Projects/decommon-router-training/src/decommon_router/data_contract.py` |
-| Atomic checkpoint and exact resume | `Projects/decommon-router-training/src/decommon_router/checkpoint.py` |
-| Tokenizer identity | `Projects/decommon-router-training/src/decommon_router/tokenizer_contract.py` |
-| Qwen3 model and MoE implementation | `Projects/decommon-router-training/src/decommon_router/model/qwen3.py` and `model/moe.py` |
-| Parallel groups and expert synchronization | `Projects/decommon-router-training/src/decommon_router/model/parallel.py` |
+| Training loop and distributed execution | `Projects/archive/decommon-router-training/src/decommon_router/train.py` |
+| Packed binary-token loader and sampler | `Projects/archive/decommon-router-training/src/decommon_router/data.py` |
+| Frozen data-view checks | `Projects/archive/decommon-router-training/src/decommon_router/data_contract.py` |
+| Atomic checkpoint and exact resume | `Projects/archive/decommon-router-training/src/decommon_router/checkpoint.py` |
+| Tokenizer identity | `Projects/archive/decommon-router-training/src/decommon_router/tokenizer_contract.py` |
+| Qwen3 model and MoE implementation | `Projects/archive/decommon-router-training/src/decommon_router/model/qwen3.py` and `model/moe.py` |
+| Parallel groups and expert synchronization | `Projects/archive/decommon-router-training/src/decommon_router/model/parallel.py` |
 | Original trainer | `/data/250010109/MoE_Router/train_qwen3_moe.py` |
 | Original data utilities | `/data/250010109/MoE_Router/src/data_utils.py` |
 | Original Qwen3 MoE model | `/data/250010109/MoE_Router/src/model/qwen3_moe/myqwen.py` |
-| Downstream evaluator | `Projects/decommon-router-evaluation/src/decommon_eval/` |
+| Downstream evaluator | `Projects/archive/decommon-router-evaluation/src/decommon_eval/` |
 
 For a new dense-model-plus-SAE experiment, prefer reusing the clean scaffold's
 training, data, checkpoint, provenance, and monitoring components. Adapt the
@@ -139,7 +139,7 @@ This is not automatically the default validation set for a new experiment.
 ### Clean four-H100 engineering acceptance
 
 - Record:
-  `Projects/decommon-router-training/results/implementation_smokes/20260724_remote_4gpu_idle_full_pipeline/summary_cn.md`
+  `/data/250010109/MoE_Router/storage_cleanup_receipts/20261031T033809Z_decommon_academic_order/historical_records/decommon_training/results/implementation_smokes/20260724_remote_4gpu_idle_full_pipeline/summary_cn.md`
 - Demonstrated: a 342,097,408-parameter, 12-layer, 8-expert top-2 model; native
   four-GPU data parallelism; 100 optimizer updates; checkpoint/resume; held-out
   loss; and downstream-evaluation wiring.

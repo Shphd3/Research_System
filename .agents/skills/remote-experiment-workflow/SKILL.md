@@ -17,7 +17,7 @@ are Research_System-root-relative unless linked. Read only the selected mode.
 
 Use `PROJECTS.md` only to resolve unknown ownership; no Graph/roadmap preamble.
 For explicit SSH/CCI, read [transport.md](references/transport.md). Use
-`sco-control` for needed platform commands; the execution envelope governs.
+[sco-control-training](../../../Projects/sco-control/skills/sco-control-training/SKILL.md) for platform commands; the execution envelope governs.
 Training/resume or analysis that reads asset payloads uses the
 [asset lifecycle](../../../assets/README.md#training-and-analysis-lifecycle).
 Completed-training artifact handoff includes registration of actual saved
@@ -43,7 +43,7 @@ not execution approval. Full/expensive runs, changed scope and confirmation
 access follow existing authorization and frozen gates; never relax a failed
 gate. Small in-scope local checks follow root AGENTS without added gates.
 
-Append job ID, status and result paths to the owning explore log. Completion cannot update scientific judgment. Code/raw outputs/checkpoints/logs
-stay execution-side; research records stay here. Preserve concurrent work.
+Append job ID, status and result paths to the owning explore log. Completion cannot update scientific judgment. Keep runnable code and configuration in the project repository. Link its revision,
+actual run directory, logs and checkpoints from the research record. Preserve concurrent work.
 Commit/push/publication, Graph edits and collaborator sync are explicit actions
 outside this skill.

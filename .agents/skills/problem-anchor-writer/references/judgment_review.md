@@ -6,7 +6,7 @@ a formal Anchor. It does not require a new Focus or a separate judgment file.
 ## Human Account
 
 For a new or reopened scientific core, reuse the researcher's explicit account
-already present in the request, session or active Focus. Ask only for missing
+already present in the request, session or question log. Ask only for missing
 decision-bearing items; do not re-request approved direction or require a new
 intake form. The account covers:
 
@@ -24,7 +24,7 @@ Known source material, or Unknown:
 ```
 
 The human may mark an item `unknown`. Do not manufacture a confident answer.
-Keep this judgment in the active Focus or the conversation until it is approved
+Keep this judgment in the exploration log or the conversation until it is approved
 for formalization in the Anchor.
 
 ## Short AI Audit

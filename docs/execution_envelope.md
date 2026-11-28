@@ -505,8 +505,8 @@ the run must keep reproducing under one exact image.
 Submit through `templates/execution/acp_submit_template.sh`. Its dedicated
 resolver reads this document, prints the selected tuple, defaults to
 `DRY_RUN=1`, enforces the gates, and writes a submission receipt. Point `REMOTE_DIR` at the
-experiment's own workspace and `RUN_ROOT` at its run root; the repository
-defaults exist only for a quick verification.
+experiment's own workspace and `RUN_ROOT` at its run root. With no run root
+override, submission receipts go to `/data/250010109/MoE_Router/acp_receipts/`.
 
 Every submitted job leaves an execution certificate with the fields of
 `templates/execution/execution_certificate_template.md`. It records the expanded
@@ -519,8 +519,9 @@ what ran.
 
 The platform keeps no stdout from a finished pod, so `stream-logs` returns only
 the scheduling line. The submit template tees each run's output into
-`<REMOTE_DIR>/acp_receipts/pod/`; a run without that log has no durable evidence
-of what it did.
+`<REMOTE_DIR>/acp_receipts/pod/` for an external experiment workspace. When the
+pod works in the System root, logs go to `/data/250010109/MoE_Router/acp_receipts/pod/`.
+Set `POD_LOG_DIR` to select another mounted destination.
 
 ## 6. Agents
 

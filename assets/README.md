@@ -48,11 +48,11 @@ The tables below provide navigation; detailed identities, revisions, probes and 
 |---|---|---|
 | `research-system` | `/data/250010109/Research_System` | entrypoint accessible |
 | `from-attention-to-search` | `/data/250010109/Research_System/Projects/from-attention-to-search` | entrypoint accessible |
-| `router-representation-coupling` | `/data/250010109/Research_System/Projects/router-representation-coupling` | entrypoint accessible |
-| `diffusion-language-models` | `/data/250010109/Research_System/Projects/diffusion-language-models` | entrypoint accessible |
-| `decommon-router-training` | `/data/250010109/Research_System/Projects/decommon-router-training` | entrypoint accessible |
-| `decommon-router-evaluation` | `/data/250010109/Research_System/Projects/decommon-router-evaluation` | entrypoint accessible |
-| `kv_cache` | `/data/250010109/Research_System/Projects/kv_cache` | entrypoint accessible |
+| `router-representation-coupling` | `/data/250010109/Research_System/Projects/archive/router-representation-coupling` | entrypoint accessible |
+| `diffusion-language-models` | `/data/250010109/Research_System/Projects/archive/diffusion-language-models` | entrypoint accessible |
+| `decommon-router-training` | `/data/250010109/Research_System/Projects/archive/decommon-router-training` | entrypoint accessible |
+| `decommon-router-evaluation` | `/data/250010109/Research_System/Projects/archive/decommon-router-evaluation` | entrypoint accessible |
+| `kv_cache` | `/data/250010109/Research_System/Projects/archive/kv_cache` | entrypoint accessible |
 | `academic_writing` | `/data/250010109/Research_System/Projects/academic_writing` | entrypoint accessible |
 | `moe-router-execution` | `/data/250010109/MoE_Router` | entrypoint accessible |
 | `shared-data-cache` | `/data/share/109_cache_dir` | entrypoint accessible |

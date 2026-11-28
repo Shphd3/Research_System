@@ -33,7 +33,8 @@ SCO_IMAGE="${SCO_IMAGE:-}"
 REMOTE_DIR="${REMOTE_DIR:-/data/250010109/Research_System}"
 REMOTE_CMD="${REMOTE_CMD:-}"
 JOB_NAME="${JOB_NAME:-}"
-RUN_ROOT="${RUN_ROOT:-${REPO_ROOT}/acp_receipts}"
+SHARED_RECEIPTS=/data/250010109/MoE_Router/acp_receipts
+RUN_ROOT="${RUN_ROOT:-${SHARED_RECEIPTS}}"
 DRY_RUN="${DRY_RUN:-1}"
 ALLOW_SUBMIT="${ALLOW_SUBMIT:-0}"
 PROTOCOL_APPROVED="${PROTOCOL_APPROVED:-0}"
@@ -66,7 +67,8 @@ printf '%-26s %s\n' \
   image_url "${IMAGE_URL}" \
   interpreter "${IMAGE_INTERPRETER}" \
   torch_cuda "${IMAGE_TORCH} / cuda ${IMAGE_CUDA}" \
-  entry_point "${SUBMISSION_ENTRY_POINT}"
+  entry_point "${SUBMISSION_ENTRY_POINT}" \
+  receipt_directory "${RUN_ROOT}"
 
 if [[ -z "${REMOTE_CMD}" ]]; then
   echo >&2
@@ -74,7 +76,11 @@ if [[ -z "${REMOTE_CMD}" ]]; then
   exit 2
 fi
 
-POD_LOG_DIR="${POD_LOG_DIR:-${REMOTE_DIR}/acp_receipts/pod}"
+case "${REMOTE_DIR%/}" in
+  "${REPO_ROOT}"|/data/250010109/Research_System) default_pod_logs="${SHARED_RECEIPTS}/pod" ;;
+  *) default_pod_logs="${REMOTE_DIR%/}/acp_receipts/pod" ;;
+esac
+POD_LOG_DIR="${POD_LOG_DIR:-${default_pod_logs}}"
 
 # The platform does not retain a finished pod's stdout: `stream-logs` returns
 # only the scheduling line. Every run therefore tees its output into the mounted

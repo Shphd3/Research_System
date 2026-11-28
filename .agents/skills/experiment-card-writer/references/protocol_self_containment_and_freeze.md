@@ -93,9 +93,8 @@ name, or Anchor label cannot substitute for an explanation.
 
 ## Approval Snapshot
 
-Link the confirmed active Focus. Preserve its question, purpose, at-most-three
-plain-language analysis steps, completion rule and supporting/non-supporting/
-insufficient branches. Explain technical labels locally; links support audit.
+Name the experiment and link its owning Anchor. Preserve the agreed question,
+purpose, decisive comparison, completion rule and outcome branches. Explain technical labels locally; links support audit.
 
 For a training Protocol, read and apply the repository's
 `docs/training_observability_contract.md`: freeze effective global batch,
@@ -115,7 +114,7 @@ Execution scope approved:
 Design frozen at / registered revision:
 Purpose:
 Primary Anchor:
-Confirmed active Focus:
+Experiment name and owning Anchor path:
 Anchor decision question:
 Anchor physical prior tested:
 Anchor core model term tested:

@@ -3,7 +3,7 @@
 Date: YYYY-MM-DD UTC
 Status: DRAFT / RESEARCHER_CONFIRMED
 
-Sources: Focus path · Anchor path · Summary path · Detailed path (replace with working links)
+Sources: link the exploration log or the relevant Anchor and experiment records
 
 ## Knowledge update
 
@@ -18,8 +18,8 @@ length yields to a necessary definition, logical connection or claim boundary.]
 
 - **Cannot claim:** [nearest unsupported step].
 - **Researcher-owned next decision:** [one confirmed decision, or `Unknown／待研究者判断`].
-- **Learning before implementation:** [minimum reading order, the question each item resolves, and one brief comprehension output; omit only when this report has no next work].
+- **Source needed for the next decision (if any):** [link and the question it helps answer].
 
 Do not paste the Protocol, Summary, Detailed ledger, figures, or large tables here. Keep the evidence in their owning artifacts and use date-local reading copies for any figure displayed in this report.
 Use this template only when a dated record is requested; a chat recap creates no
-file or Focus transition by default. Keep one researcher-owned decision above.
+file by default. Keep one researcher-owned decision above.

@@ -11,7 +11,7 @@ surface.
 | `protocol.md` | Draft-to-approved experiment contract and authorization scope | Post-hoc question changes or results |
 | `summary.md` | Complete first result reading, central evidence, boundary, next-step analysis | Full evidence ledger |
 | `detailed.md` | Setup, conformance, deviations, evidence lineage, failures, artifact map | A stronger second conclusion |
-| `focus_<problem>.md` | Stable human-owned question, design confirmation, result boundary, next decision | Technical Protocol or run history |
+| Exploration log | Working question, predictions, observations and researcher decision | Frozen formal design |
 | final report | Paper-style self-contained explanation, one per settled question | New evidence or a competing verdict |
 | story | Explicit line-level synthesis | New experimental claim |
 | Graph, roadmap, sync | Derived navigation or reading view | Independent scientific state |
@@ -22,7 +22,7 @@ The canonical experiment chain is:
 Anchor -> protocol.md -> summary.md / summary_cn.md -> detailed.md -> Anchor update
 ```
 
-Briefs derive from Focus/evidence without question closure. Final reports still
+Briefs derive from the question and its evidence without question closure. Final reports still
 require a researcher-confirmed bounded answer.
 
 ## Smallest Update Test

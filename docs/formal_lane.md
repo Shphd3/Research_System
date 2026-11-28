@@ -23,6 +23,10 @@ of rewriting history.
   in `PROJECTS.md` (active set), its explore log, and Anchor section 8. Where an
   older skill or reference says "Focus", read it as that active-question entry
   plus Anchor section 8; do not create new Focus files.
+- Each named formal experiment records its stable name and owning Anchor path in
+  its Protocol. Link the experiment from the Anchor or its experiment index.
+  Keep replayable code and configuration in the project repository; record the
+  actual execution directory and code revision with its results.
 - A completed Anchor round records question/hypothesis, setup/controls, data,
   confirmation split, result or `NOT RUN`, and insight/boundary/next decision.
 - Canonical formal records are English with `_cn.md` companions unless the

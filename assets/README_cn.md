@@ -50,11 +50,11 @@ python tools/check_assets.py --project from-attention-to-search \
 |---|---|---|
 | System：规则与访问入口 | `/data/250010109/Research_System` | 本次入口可访问 |
 | 当前主研究项目 | `/data/250010109/Research_System/Projects/from-attention-to-search` | 本次入口可访问 |
-| 路由表征梯度反馈独立项目 | `/data/250010109/Research_System/Projects/router-representation-coupling` | 本次入口可访问 |
-| 扩散语言模型项目 | `/data/250010109/Research_System/Projects/diffusion-language-models` | 本次入口可访问 |
-| 训练实现参考 | `/data/250010109/Research_System/Projects/decommon-router-training` | 本次入口可访问 |
-| 评估实现参考 | `/data/250010109/Research_System/Projects/decommon-router-evaluation` | 本次入口可访问 |
-| KV cache参考项目（只登记目录访问） | `/data/250010109/Research_System/Projects/kv_cache` | 本次入口可访问 |
+| 路由表征梯度反馈独立项目 | `/data/250010109/Research_System/Projects/archive/router-representation-coupling` | 本次入口可访问 |
+| 扩散语言模型项目 | `/data/250010109/Research_System/Projects/archive/diffusion-language-models` | 本次入口可访问 |
+| 训练实现参考 | `/data/250010109/Research_System/Projects/archive/decommon-router-training` | 本次入口可访问 |
+| 评估实现参考 | `/data/250010109/Research_System/Projects/archive/decommon-router-evaluation` | 本次入口可访问 |
+| KV cache参考项目（只登记目录访问） | `/data/250010109/Research_System/Projects/archive/kv_cache` | 本次入口可访问 |
 | 学术写作项目 | `/data/250010109/Research_System/Projects/academic_writing` | 本次入口可访问 |
 | 实验代码与原始产物执行工作区 | `/data/250010109/MoE_Router` | 本次入口可访问 |
 | 共享数据与模型缓存存储 | `/data/share/109_cache_dir` | 本次入口可访问 |
